@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!--
+	There is a bug in Opera addons site that breaks order of "background.scripts" array values
+	in manifest.json. Thus we use this page to force order of scripts until this will be fixed.
+	http://forums.opera.com/discussion/1874611/bugpublication-extension-manifest-broken-after-extension-publicated
+-->
+<html>
+	<head><title>.</title></head>
+
+	<body>
+	Hallo
+		<!--<script src="include/external/jquery-2.1.4.js"></script>
+		<script src="include/i18n.js"></script>
+		<script src="include/constants.js"></script>
+		<script src="include/compat-common.js"></script>
+		<script src="include/gsc.js"></script>
+		<script src="include/notifications.js"></script>
+		<script src="include/update.js"></script>
+		<script src="include/sync.js"></script>-->
+		<script src="extension.js"></script>
+
+		<!--<script>
+            console.log("script jo");
+		</script>-->
+	</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title data-i18n="options_title, __MSG_gs_chrome__"></title>
+		<link href="css/tabby.min.css" rel="stylesheet" type="text/css" />
+		<link href="css/options.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src="include/external/jquery-2.1.4.js"></script>
+		<script type="text/javascript" src="include/external/tabby-10.1.0.js"></script>
+		<script type="text/javascript" src="include/i18n.js"></script>
+		<script type="text/javascript" src="include/constants.js"></script>
+		<script type="text/javascript" src="include/compat-common.js"></script>
+		<script type="text/javascript" src="include/gsc.js"></script>
+		<script type="text/javascript" src="include/sync.js"></script>
+	</head>
+	<body>
+		<ul data-tabs='tabs' class="tabs">
+			<li><a href="#options" class='active' data-i18n='options_link' data-tab='tab'></a></li>
+			<li><a href="#synchronization" data-i18n='synchronization' data-tab='tab'></a></li>
+			<li class='translation_credits_container'><a href="#translation_credits" data-i18n='translation_credits_title' data-tab='tab'></a></li>
+		</ul>
+		<div data-tabs-content='tabs-content'>
+			<div id="options" class="tabs-pane active" data-tabs-pane='tabs-pane'>
+				<div id="status" data-i18n="options_saved"></div>
+				<div id="error"></div>
+
+				<fieldset>
+					<dl>
+						<dt><span data-i18n="options_update_check"></span>:</dt>
+						<dd>
+							<label for='update_check_yes' data-i18n="yes"></label> <input type='radio' id='update_check_yes' name='update_check' />
+							<label for='update_check_no' data-i18n="no"></label> <input type='radio' id='update_check_no' name='update_check' />
+
+							<div class='notice'><span data-i18n="options_last_check"></span>: <span id="last_update_check" data-i18n="never"></span></div>
+						</dd>
+					</dl>
+					<dl>
+						<dt><label for='update_check_period' data-i18n="options_check_period"></label>:</dt>
+						<dd>
+							<input id='update_check_period' type='number' min="3"  /> <span data-i18n="hours"></span>
+
+							<div class='notice'><span data-i18n="options_next_check"></span>: <span id="next_update_check" data-i18n="never"></span></div>
+						</dd>
+					</dl>
+					<dl>
+						<dt>
+							<label for='synchronize_extensions_yes' data-i18n="options_synchronize_extensions"></label>:<br />
+							<span class="notice wrapped" data-i18n="options_synchronize_extensions_notice"></span>
+						</dt>
+						<dd>
+							<label for='synchronize_extensions_yes' data-i18n="yes"></label> <input type='radio' id='synchronize_extensions_yes' name='synchronize_extensions' />
+							<label for='synchronize_extensions_no' data-i18n="no"></label> <input type='radio' id='synchronize_extensions_no' name='synchronize_extensions' />
+						</dd>
+					</dl>
+					<dl>
+						<dt>
+							<label for='show_network_errors_yes' data-i18n="options_show_network_errors"></label>:<br />
+							<span class="notice wrapped" data-i18n="options_show_network_errors_notice"></span>
+						</dt>
+						<dd>
+							<label for='show_network_errors_yes' data-i18n="yes"></label> <input type='radio' id='show_network_errors_yes' name='show_network_errors' />
+							<label for='show_network_errors_no' data-i18n="no"></label> <input type='radio' id='show_network_errors_no' name='show_network_errors' />
+						</dd>
+					</dl>
+					<dl>
+						<dt><span data-i18n="options_show_release_notes"></span>:</dt>
+						<dd>
+							<label for='show_release_notes_yes' data-i18n="yes"></label> <input type='radio' id='show_release_notes_yes' name='show_release_notes' />
+							<label for='show_release_notes_no' data-i18n="no"></label> <input type='radio' id='show_release_notes_no' name='show_release_notes' />
+						</dd>
+					</dl>
+				</fieldset>
+
+				<div class='buttons'>
+					<button id="save" data-i18n="save"></button>
+				</div>
+			</div>
+			<div id="synchronization" class="tabs-pane" data-tabs-pane='tabs-pane'>
+				<table>
+					<thead>
+						<tr>
+							<th data-i18n="extension_name"></th>
+							<th data-i18n="extension_installed"></th>
+							<th data-i18n="extension_enabled"></th>
+							<th data-i18n="extension_synchronized"></th>
+						</tr>
+					</thead>
+					<tbody></tbody>
+				</table>
+			</div>
+			<div id="translation_credits" class="tabs-pane translation_credits_container" data-tabs-pane='tabs-pane'>
+				<div data-i18n='translation_credits' data-i18n-html='true'></div>
+			</div>
+		</div>
+
+		<dialog id='syncChoice'>
+			<h2 data-i18n='synchronization_storage_exists'></h2>
+			<form method="dialog">
+				<button type='submit' value='local' data-i18n='synchronization_use_local'></button>
+				<button type='submit' value='remote' data-i18n='synchronization_use_remote'></button>
+				<button type='submit' value='cancel' data-i18n='synchronization_cancel'></button>
+			</form>
+		</dialog>
+		<script type="text/javascript" src="options.js"></script>
+	</body>
+</html>
