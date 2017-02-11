@@ -16,6 +16,10 @@ function connectHost() {
     port = chrome.runtime.connectNative("org.kde.plasma.chrome_integration");
 }
 
+var kdeConnectDefaultDeviceId = "";
+var kdeConnectDefaultDeviceName = "";
+var hasKdeConnectMenu = false;
+
 port.onMessage.addListener(function (message) {
     console.log("PORT MESSAGE", message);
 
@@ -29,6 +33,51 @@ port.onMessage.addListener(function (message) {
         }
 
         break;
+
+    case "kdeconnect":
+
+        if (message.defaultDeviceId) {
+            kdeConnectDefaultDeviceId = message.defaultDeviceId
+        }
+        if (message.defaultDeviceName) {
+            kdeConnectDefaultDeviceName = message.defaultDeviceName
+        }
+
+        var menuEntryTitle = "Open via KDE Connect"
+
+        if (kdeConnectDefaultDeviceName) {
+            menuEntryTitle = "Open on '" + kdeConnectDefaultDeviceName + "'"
+        }
+
+        if (kdeConnectDefaultDeviceId) {
+            if (hasKdeConnectMenu) {
+                chrome.contextMenus.update("kdeconnect_page", {title: menuEntryTitle});
+            } else {
+                hasKdeConnectMenu = true; // TODO check error
+                chrome.contextMenus.create({
+                    id: "kdeconnect_page",
+                    contexts: ["link"],
+                    title: menuEntryTitle
+                });
+            }
+        } else if (hasKdeConnectMenu) {
+            chrome.contextMenus.remove("kdeconnect_page")
+            hasKdeConnectMenu = false;
+        }
+
+    }
+});
+
+chrome.contextMenus.onClicked.addListener(function (info) {
+    if (info.menuItemId === "kdeconnect_page") {
+        var url = info.linkUrl;
+        console.log("Send url", url, "to kdeconnect device", kdeConnectDefaultDeviceId);
+        port.postMessage({
+            subsystem: "kdeconnect",
+            event: "shareUrl",
+            url: url,
+            deviceId: kdeConnectDefaultDeviceId
+        });
     }
 });
 
@@ -73,15 +122,6 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
         }
     }
 });
-
-
-
-var kdeConnectMenu = chrome.contextMenus.create({
-    id: "kdeconnect_page",
-    contexts: ["link"],
-    title: "Open on 'Nexus 5'",
-});
-
 
 
 chrome.windows.getAll({
