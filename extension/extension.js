@@ -40,7 +40,7 @@ port.onDisconnect.addListener(function() {
   chrome.notifications.create(null, {
       type: "basic",
       title: "Plasma Chrome Integration Error",
-      message: "The native host disconnected unexpectedly: ",
+      message: "The native host disconnected unexpectedly: " + error.message,
       iconUrl: "icons/sad-face-128.png"
   });
 
