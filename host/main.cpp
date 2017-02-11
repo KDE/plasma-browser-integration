@@ -1,4 +1,4 @@
-#include <QGuiApplication>
+#include <QApplication>
 
 #include <QTextStream>
 #include <QDebug>
@@ -7,6 +7,7 @@
 #include <QJsonObject>
 #include <QJsonDocument>
 
+#include <QMenu>
 #include <QTimer>
 
 #include <stdio.h>
@@ -24,9 +25,13 @@
 #include <KIO/JobTracker>
 #include <KJobTrackerInterface>
 
+#include <KStatusNotifierItem>
+
 #include "mpris.h"
 
 static QHash<int, DownloadJob *> s_jobs;
+
+static KStatusNotifierItem *s_incognitoItem = nullptr;
 
 static void sendData(const QJsonObject &data)
 {
@@ -64,7 +69,7 @@ static void sendError(const QString &error, const QJsonObject &info = QJsonObjec
 
 int main(int argc, char *argv[])
 {
-    QGuiApplication a(argc, argv);
+    QApplication a(argc, argv);
     // otherwise will close when download job finishes
     a.setQuitOnLastWindowClosed(false);
 
@@ -192,6 +197,46 @@ int main(int argc, char *argv[])
                 sendData({ {"mpris play", true} });
             } else if (event == QLatin1String("pause")) {
                 sendData({ {"mpris pause", true} });
+            }
+
+        } else if (subsystem == QLatin1String("incognito")) {
+
+            if (event == QLatin1String("show")) {
+
+                if (s_incognitoItem) {
+                    sendData({ {"incognito already there", true} });
+                    return;
+                }
+
+                s_incognitoItem = new KStatusNotifierItem();
+
+                s_incognitoItem->setIconByName("face-smirk");
+                s_incognitoItem->setTitle("Incognito Tabs");
+                s_incognitoItem->setStandardActionsEnabled(false);
+                s_incognitoItem->setStatus(KStatusNotifierItem::Active);
+
+                QMenu *menu = new QMenu();
+
+                QAction *closeAllAction = menu->addAction(QIcon::fromTheme("window-close"), "Close all Incognito Tabs");
+                QObject::connect(closeAllAction, &QAction::triggered, [] {
+                    sendData({ {"subsystem", "incognito"}, {"action", "close"} });
+                });
+
+                s_incognitoItem->setContextMenu(menu);
+
+                sendData({ {"incognito indicator", true} });
+
+            } else if (event == QLatin1String("hide")) {
+
+                if (!s_incognitoItem) {
+                    sendData({ {"no incongito there but wanted to hide", true} });
+                    return;
+                }
+
+                delete s_incognitoItem;
+                s_incognitoItem = nullptr;
+
+                sendData({ {"incognito indicator", false} });
             }
 
         }

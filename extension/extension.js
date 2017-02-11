@@ -18,6 +18,18 @@ function connectHost() {
 
 port.onMessage.addListener(function (message) {
     console.log("PORT MESSAGE", message);
+
+    switch (message.subsystem) {
+    case "incognito":
+
+        if (message.action === "close") {
+            console.log("close all incognito tabs!");
+
+            chrome.tabs.remove(incognitoTabs)
+        }
+
+        break;
+    }
 });
 
 port.onDisconnect.addListener(function() {
@@ -148,4 +160,46 @@ chrome.downloads.onChanged.addListener(function (delta) {
     }
 
     port.postMessage({subsystem: "downloads", event: "update", id: delta.id, payload: payload});
+});
+
+
+var incognitoTabs = [];
+
+function tabAdded(tab) {
+        console.log("got a new tab", tab);
+
+    if (tab.incognito) {
+        console.log("it's incognito");
+
+        if (incognitoTabs.length === 0) {
+            port.postMessage({subsystem: "incognito", event: "show" });
+        }
+
+        incognitoTabs.push(tab.id)
+    }
+}
+
+// query all tabs
+chrome.tabs.query({}, function (tabs) {
+    tabs.forEach(tabAdded);
+});
+
+chrome.tabs.onCreated.addListener(tabAdded);
+
+chrome.tabs.onRemoved.addListener(function (tabId, removeInfo) {
+   console.log("removed a tab", tabId);
+
+   var idx = incognitoTabs.indexOf(tabId);
+   if (idx > -1) {
+       console.log("it's an incognito we know");
+
+       incognitoTabs.splice(idx, 1); // remove item at idx
+
+       if (incognitoTabs.length === 0) {
+           console.log("no more incognito");
+           port.postMessage({subsystem: "incognito", event: "hide" });
+       } else {
+           console.log("still know", incognitoTabs.length, "incognito tabs");
+        }
+   }
 });
