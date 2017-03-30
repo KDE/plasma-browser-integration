@@ -42,27 +42,13 @@ static void sendData(const QJsonObject &data)
 {
     const QByteArray rawData = QJsonDocument(data).toJson(QJsonDocument::Compact);
 
-    unsigned int len = rawData.count();
+    QFile stdoutfile;
+    stdoutfile.open(stdout, QIODevice::WriteOnly);
 
-    std::cerr << "Sende data of length" << len;
-
-    char first = char(len >> 0);
-    char second = char(len >> 8);
-    char third = char(len >> 16);
-    char fourth = char(len >> 24);
-
-    setbuf(stdout, nullptr); // needed?
-/*
-    write(1, &first, 1);
-    write(1, &second, 1);
-    write(1, &third, 1);
-    write(1, &fourth, 1);
-
-    write(1, partyData.constData(), partyData.count());*/
-
-    std::cout << first << second << third << fourth << rawData.constData();
-
-    std::cerr << errno;
+    //note, don't use QDataStream as we need to control the binary format used
+    quint32 len = rawData.count();
+    stdoutfile.write((char*)&len, sizeof(len));
+    stdoutfile.write(rawData);
 }
 
 static void sendError(const QString &error, const QJsonObject &info = QJsonObject())
