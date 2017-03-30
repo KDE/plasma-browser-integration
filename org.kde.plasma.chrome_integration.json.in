@@ -1,0 +1,9 @@
+{
+  "name": "org.kde.plasma.chrome_integration",
+  "description": "Native connector for KDE Plasma",
+  "path": "@CMAKE_INSTALL_PREFIX@/bin/plasma-chrome-integration-host",
+  "type": "stdio",
+  "allowed_origins": [
+    "chrome-extension://edojnojcbjgegpldmdclciadmigjhapa/"
+  ]
+}

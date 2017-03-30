@@ -6,5 +6,4 @@ target_link_libraries(plasma-chrome-integration-host Qt5::DBus Qt5::Gui Qt5::Wid
 
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
 
-# install(TARGETS compositorplugin DESTINATION ${KDE_INSTALL_QMLDIR}/org/dave)
-# install(FILES qmldir DESTINATION ${KDE_INSTALL_QMLDIR}/org/dave)
+install(TARGETS plasma-chrome-integration-host ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})

@@ -30,3 +30,10 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
 )
 
 add_subdirectory(host)
+
+configure_file(org.kde.plasma.chrome_integration.json.in org.kde.plasma.chrome_integration.json @ONLY)
+
+#chromium
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.plasma.chrome_integration.json DESTINATION /etc/chromium/native-messaging-hosts/)
+#google-chrome
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.plasma.chrome_integration.json DESTINATION /etc/opt/chrome/native-messaging-hosts/)
