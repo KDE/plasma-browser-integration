@@ -81,25 +81,6 @@ int main(int argc, char *argv[])
     a.setApplicationName("google-chrome");
     a.setApplicationDisplayName("Google Chrome");
 
-    /*QFile partyFile("/home/broulik/partyfilee");
-    partyFile.open(QIODevice::WriteOnly | QIODevice::Append);
-
-    QTextStream stream(stdin);
-    QString line;
-    while (stream.readLineInto(&line)) {
-        partyFile.write(line.toUtf8());
-    }*/
-
-    //setmode(fileno(stdout), O_BINARY);
-
-    QFile partyFile("/home/broulik/partyfilee");
-    partyFile.open(QIODevice::WriteOnly | QIODevice::Append);
-
-    //QFile stdinfile;
-    //stdinfile.open(stdin, QIODevice::ReadOnly);
-
-    //QDataStream party(&stdinfile);
-
     QSocketNotifier notifier(STDIN_FILENO, QSocketNotifier::Read);
     QObject::connect(&notifier, &QSocketNotifier::activated, [] {
         QFile stdinfile;
@@ -263,19 +244,6 @@ int main(int argc, char *argv[])
             }
 
         }
-
-
-
-
-        /*partyFile.write(stdinfile.readAll());
-        partyFile.flush();
-        partyFile.close();*/
-        /*QTextStream party(stdin);
-        party.setCodec("UTF-8");
-        partyFile.write(party.readAll().toUtf8());
-        partyFile.close();*/
-
-        //sendParty();
     });
 
     new MPris(&a);
@@ -324,104 +292,5 @@ int main(int argc, char *argv[])
         }
         watcher->deleteLater();
     });
-
-
-
-    /*QTimer timer;
-    timer.setInterval(1000);
-    QObject::connect(&timer, &QTimer::timeout, [&nr] {
-        sendData({ {"party", ++nr} });
-    });
-    timer.start();*/
-
-    //QTimer::singleShot(1000, [] {
-
-
-        /*QFile file("/home/broulik/partyfilee");
-        file.open(stdout, QIODevice::WriteOnly);
-        //file.open(QIODevice::WriteOnly);
-
-        uint32_t bla = partyData.count();;
-
-        uint32_t result = 0;
-
-
-        {
-            QDataStream stream(&file);
-            stream.setByteOrder(QDataStream::LittleEndian);
-
-            result |= (bla & 0x000000FF);// << 24;
-            result |= (bla & 0x0000FF00);// << 8;
-            result |= (bla & 0x00FF0000);// >> 8;
-            result |= (bla & 0xFF000000);// >> 24;
-
-            //stream << quint32(partyData.count());//2 ;// 0 << 0 << quint32(partyData.count());
-
-            stream << char(0) << char(0) << char(0) << char(5) << partyData;
-
-                   //stream << quint32(partyData.count()) <<partyData;
-
-
-        file.close();*/
-
-
-
-
-        //QTextStream stream(stdout);
-
-/*        int nMsgLen = partyData.length();
-
-             const char first = (unsigned char)(nMsgLen & 0x000000ff);
-            const char second = (unsigned char)((nMsgLen >> 8) & 0x000000ff);
-            const char third = (unsigned char)((nMsgLen >> 16) & 0x000000ff);
-             const char fourth = (unsigned char)((nMsgLen >> 24) & 0x000000ff);
-
-        QFile file;
-        file.open(stdout, QIODevice::WriteOnly);
-        //file.write(&first);
-        //file.write(&second);
-        //file.write(&third);
-        //file.write(&fourth);
-
-        file.write(0);
-        file.write(0);
-        file.write(0);
-        file.write(reinterpret_cast<const char*>(0x2));
-
-        file.write(partyData);
-        file.close();*/
-
-
-
-        //stream.flush();
-        //return;
-
-
-        //stream << first << second << third << fourth << partyData;
-        //stream << __bswap_32(nMsgLen) << partyData;
-       //stream << quint32(5) << "{\"hallo\"}";
-       //stream << __bswap_32() << "{\"hallo\": \"du\"}";
-        //stream.flush();
-
-/*
-        QFile partyFile("/home/broulik/partyfilee");
-        partyFile.open(QIODevice::WriteOnly | QIODevice::Append);*/
-
-        //QByteArray bla;
-        //QTextStream partyStream(bla);
-
-        //partyStream << first << second << third << fourth << partyData;
-        //partyStream.flush();
-
-        //partyFile.write(bla);
-        //partyFile.write(first);
-        //partyFile.write(second);
-        //partyFile.write(third);
-        //partyFile.write(fourth);
-        //partyFile.write(partyData);*/
-
-
-    //});
-
     return a.exec();
 }
