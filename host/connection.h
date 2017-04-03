@@ -1,7 +1,6 @@
 #include <QObject>
 #include <QFile>
-
-class QJsonObject;
+#include <QJsonObject>
 
 /*
  * This class is responsible for managing all stdout/stdin connections emitting JSON
