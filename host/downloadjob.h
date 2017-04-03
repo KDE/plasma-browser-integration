@@ -1,3 +1,5 @@
+#pragma once
+
 #include <KJob>
 
 #include <QUrl>
