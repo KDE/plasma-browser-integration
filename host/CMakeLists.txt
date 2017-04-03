@@ -6,7 +6,9 @@ set(FOO_SOURCES main.cpp
                 mprisplayer.cpp
                 connection.cpp
                 abstractbrowserplugin.cpp
-                incognitoplugin.cpp)
+                incognitoplugin.cpp
+                kdeconnectplugin.cpp
+                )
 
 add_executable(plasma-chrome-integration-host ${FOO_SOURCES})
 target_link_libraries(plasma-chrome-integration-host Qt5::DBus Qt5::Gui Qt5::Widgets KF5::KIOCore KF5::Notifications)
