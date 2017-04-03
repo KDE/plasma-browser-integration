@@ -34,6 +34,8 @@
 
 #include "mpris.h"
 #include "connection.h"
+#include "abstractbrowserplugin.h"
+#include "incognitoplugin.h"
 
 static QHash<int, DownloadJob *> s_jobs;
 
@@ -57,14 +59,11 @@ int main(int argc, char *argv[])
     a.setApplicationName("google-chrome");
     a.setApplicationDisplayName("Google Chrome");
 
-    qDebug() << "hello world";
+    QList<AbstractBrowserPlugin*> m_plugins;
+    m_plugins << new IncognitoPlugin(&a);
 
-    QObject::connect(Connection::self(), &Connection::dataReceived, [](const QJsonObject &json) {
-
-        Connection::self()->sendError("MESSAGE");
-
+    QObject::connect(Connection::self(), &Connection::dataReceived, [m_plugins](const QJsonObject &json) {
         if (json.isEmpty()) {
-//             Connection::self()->sendData({ {"error", "json empty or parse error"}, {"data was", QString::fromUtf8(data) }, {"l", data.length()}, {"LEN", (int)length} });
             return;
         }
         const QString subsystem = json.value(QStringLiteral("subsystem")).toString();
@@ -75,6 +74,13 @@ int main(int argc, char *argv[])
         }
 
         const QString event = json.value(QStringLiteral("event")).toString();
+
+        foreach(AbstractBrowserPlugin *plugin, m_plugins) {
+            if (plugin->subsystem() == subsystem) {
+                //design question, should we have a JSON of subsystem, event, payload, or have all data at the root level?
+                plugin->handleData(event, json);
+            }
+        }
 
         if (subsystem == QLatin1String("downloads")) {
             const int id = json.value(QStringLiteral("id")).toInt(-1);
@@ -129,47 +135,6 @@ int main(int argc, char *argv[])
             } else if (event == QLatin1String("pause")) {
                 Connection::self()->sendData({ {"mpris pause", true} });
             }
-
-        } else if (subsystem == QLatin1String("incognito")) {
-
-            if (event == QLatin1String("show")) {
-
-                if (s_incognitoItem) {
-                    Connection::self()->sendData({ {"incognito already there", true} });
-                    return;
-                }
-
-                s_incognitoItem = new KStatusNotifierItem();
-
-                s_incognitoItem->setIconByName("face-smirk");
-                s_incognitoItem->setTitle("Incognito Tabs");
-                s_incognitoItem->setStandardActionsEnabled(false);
-                s_incognitoItem->setStatus(KStatusNotifierItem::Active);
-
-                QMenu *menu = new QMenu();
-
-                QAction *closeAllAction = menu->addAction(QIcon::fromTheme("window-close"), "Close all Incognito Tabs");
-                QObject::connect(closeAllAction, &QAction::triggered, [] {
-                    Connection::self()->sendData({ {"subsystem", "incognito"}, {"action", "close"} });
-                });
-
-                s_incognitoItem->setContextMenu(menu);
-
-                Connection::self()->sendData({ {"incognito indicator", true} });
-
-            } else if (event == QLatin1String("hide")) {
-
-                if (!s_incognitoItem) {
-                    Connection::self()->sendData({ {"no incongito there but wanted to hide", true} });
-                    return;
-                }
-
-                delete s_incognitoItem;
-                s_incognitoItem = nullptr;
-
-                Connection::self()->sendData({ {"incognito indicator", false} });
-            }
-
         } else if (subsystem == QLatin1String("kdeconnect")) {
             Connection::self()->sendError("ACK");
             if (event == QLatin1String("shareUrl")) {
