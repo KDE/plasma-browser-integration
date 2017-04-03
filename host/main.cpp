@@ -39,8 +39,17 @@ static QHash<int, DownloadJob *> s_jobs;
 
 static KStatusNotifierItem *s_incognitoItem = nullptr;
 
+void msgHandler(QtMsgType type, const QMessageLogContext &context, const QString &msg)
+{
+    Q_UNUSED(type);
+    Q_UNUSED(context);
+    Connection::self()->sendError(msg);
+}
+
 int main(int argc, char *argv[])
 {
+    qInstallMessageHandler(msgHandler);
+
     QApplication a(argc, argv);
     // otherwise will close when download job finishes
     a.setQuitOnLastWindowClosed(false);
@@ -48,7 +57,12 @@ int main(int argc, char *argv[])
     a.setApplicationName("google-chrome");
     a.setApplicationDisplayName("Google Chrome");
 
+    qDebug() << "hello world";
+
     QObject::connect(Connection::self(), &Connection::dataReceived, [](const QJsonObject &json) {
+
+        Connection::self()->sendError("MESSAGE");
+
         if (json.isEmpty()) {
 //             Connection::self()->sendData({ {"error", "json empty or parse error"}, {"data was", QString::fromUtf8(data) }, {"l", data.length()}, {"LEN", (int)length} });
             return;
@@ -157,7 +171,7 @@ int main(int argc, char *argv[])
             }
 
         } else if (subsystem == QLatin1String("kdeconnect")) {
-
+            Connection::self()->sendError("ACK");
             if (event == QLatin1String("shareUrl")) {
 
                 const QString &deviceId = json.value("deviceId").toString();
