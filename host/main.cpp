@@ -1,36 +1,5 @@
 #include <QApplication>
 
-#include <QTextStream>
-#include <QDebug>
-#include <QFile>
-
-#include <QDBusConnection>
-#include <QDBusMessage>
-#include <QDBusPendingReply>
-#include <QDBusPendingCallWatcher>
-
-#include <QJsonObject>
-#include <QJsonDocument>
-
-#include <QMenu>
-#include <QTimer>
-
-#include <stdio.h>
-
-#include <iostream>
-
-#include <QDataStream>
-
-#include <QSocketNotifier>
-
-#include <unistd.h>
-
-#include "downloadjob.h"
-
-
-
-#include <KStatusNotifierItem>
-
 #include "mpris.h"
 #include "connection.h"
 #include "abstractbrowserplugin.h"
