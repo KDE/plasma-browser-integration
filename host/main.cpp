@@ -7,8 +7,6 @@
 #include "kdeconnectplugin.h"
 #include "downloadplugin.h"
 
-static KStatusNotifierItem *s_incognitoItem = nullptr;
-
 void msgHandler(QtMsgType type, const QMessageLogContext &context, const QString &msg)
 {
     Q_UNUSED(type);
