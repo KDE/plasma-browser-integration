@@ -1,13 +1,14 @@
 include_directories("${CMAKE_CURRENT_BINARY_DIR}")
 
 set(FOO_SOURCES main.cpp
-                downloadjob.cpp
                 mpris.cpp
                 mprisplayer.cpp
                 connection.cpp
                 abstractbrowserplugin.cpp
                 incognitoplugin.cpp
                 kdeconnectplugin.cpp
+                downloadplugin.cpp
+                downloadjob.cpp
                 )
 
 add_executable(plasma-chrome-integration-host ${FOO_SOURCES})
