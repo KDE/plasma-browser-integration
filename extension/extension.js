@@ -13,7 +13,7 @@ var port
 connectHost();
 
 function connectHost() {
-    port = chrome.runtime.connectNative("org.kde.plasma.chrome_integration");
+    port = chrome.runtime.connectNative("org.kde.plasma.browser_integration");
 }
 
 var kdeConnectDefaultDeviceId = "";

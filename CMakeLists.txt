@@ -35,8 +35,8 @@ configure_file(org.kde.plasma.chrome_integration.json.in org.kde.plasma.chrome_i
 configure_file(org.kde.plasma.firefox_integration.json.in org.kde.plasma.firefox_integration.json @ONLY)
 
 # #chromium
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.plasma.chrome_integration.json DESTINATION /etc/chromium/native-messaging-hosts/)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.plasma.chrome_integration.json DESTINATION /etc/chromium/native-messaging-hosts/ RENAME org.kde.plasma.browser_integration.json)
 # #google-chrome
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.plasma.chrome_integration.json DESTINATION /etc/opt/chrome/native-messaging-hosts/)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.plasma.chrome_integration.json DESTINATION /etc/opt/chrome/native-messaging-hosts/ RENAME org.kde.plasma.browser_integration.json)
 # firefox
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.plasma.firefox_integration.json DESTINATION /usr/lib/mozilla/native-messaging-hosts/)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.plasma.firefox_integration.json DESTINATION /usr/lib/mozilla/native-messaging-hosts/ RENAME org.kde.plasma.browser_integration.json)
