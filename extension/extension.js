@@ -161,6 +161,12 @@ setInterval(function() {
 //chrome.downloads.setShelfEnabled(false);
 
 chrome.downloads.onCreated.addListener(function (download) {
+    // don't bother telling us about completed downloads...
+    // otherwise on browser startup we'll spawn a gazillion download progress notification
+    if (download.state === "complete" || download.state === "interrupted") {
+        return;
+    }
+
     var payload = {
         url: download.url,
         finalUrl: download.finalUrl,
