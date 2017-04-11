@@ -13,7 +13,6 @@ class Connection : public QObject
 public:
     static Connection* self();
     void sendData(const QJsonObject &data);
-    void sendError(const QString &error, const QJsonObject &info = QJsonObject());
 
 signals:
     void dataReceived(const QJsonObject &data);

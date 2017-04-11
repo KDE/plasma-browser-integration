@@ -236,7 +236,18 @@ chrome.tabs.onRemoved.addListener(function (tabId, removeInfo) {
    }
 });
 
+// Debug
+// ------------------------------------------------------------------------
+//
+addCallback("debug", "debug", function(payload) {
+    console.log("From host:", payload.message);
+}
+)
 
+addCallback("debug", "warning", function(payload) {
+    console.warn("From host:", payload.message);
+}
+)
 
 // System
 // ------------------------------------------------------------------------

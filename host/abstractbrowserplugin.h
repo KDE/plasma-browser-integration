@@ -2,6 +2,7 @@
 
 #include <QObject>
 #include <QJsonObject>
+#include <QDebug>
 
 class AbstractBrowserPlugin : public QObject
 {
@@ -11,9 +12,10 @@ public:
     QString subsystem() const;
     virtual void handleData(const QString &event, const QJsonObject &data);
 
-    void sendData(const QString &action, const QJsonObject &payload = QJsonObject());
 protected:
     AbstractBrowserPlugin(const QString &subsystemId, QObject *parent);
+    void sendData(const QString &action, const QJsonObject &payload = QJsonObject());
+    QDebug debug() const;
 private:
     QString m_subsystem;
 };

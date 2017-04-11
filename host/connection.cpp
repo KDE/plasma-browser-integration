@@ -27,14 +27,6 @@ void Connection::sendData(const QJsonObject &data)
     m_stdOut.flush();
 }
 
-void Connection::sendError(const QString &error, const QJsonObject &info)
-{
-    QJsonObject data = info;
-    data.insert(QStringLiteral("error"), error);
-    sendData(data);
-}
-
-
 Connection* Connection::self()
 {
     static Connection *s = 0;

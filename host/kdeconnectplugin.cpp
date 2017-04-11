@@ -4,12 +4,11 @@
 #include <QDBusMessage>
 #include <QDBusPendingReply>
 #include <QDBusConnection>
-#include <QDebug>
 
 KDEConnectPlugin::KDEConnectPlugin(QObject* parent) :
     AbstractBrowserPlugin(QStringLiteral("kdeconnect"), parent)
 {
-    qDebug() << "kdeconnect" << "querying";
+    debug() << "kdeconnect" << "querying";
 
     QDBusMessage msg = QDBusMessage::createMethodCall("org.kde.kdeconnect",
                                                       "/modules/kdeconnect",
@@ -21,7 +20,7 @@ KDEConnectPlugin::KDEConnectPlugin(QObject* parent) :
     QObject::connect(watcher, &QDBusPendingCallWatcher::finished, this, [this](QDBusPendingCallWatcher *watcher) {
         QDBusPendingReply<QStringList> reply = *watcher;
         if (reply.isError()) {
-            Connection::self()->sendError("kdeconnect discovery", { {"error", reply.error().name()} });
+            debug() << "kdeconnect discovery" << reply.error().name();
         } else {
             const QStringList &devices = reply.value();
             QString defaultDevice;
@@ -39,7 +38,7 @@ KDEConnectPlugin::KDEConnectPlugin(QObject* parent) :
                 QObject::connect(watcher, &QDBusPendingCallWatcher::finished, this, [this, defaultDevice](QDBusPendingCallWatcher *watcher) {
                     QDBusPendingReply<QDBusVariant> reply = *watcher;
                     if (reply.isError()) {
-                        Connection::self()->sendError("kdeconnect query default name " + reply.error().message());
+                        debug() << "query default name " + reply.error().message();
                     } else {
                         const QString name = reply.value().variant().toString();
                         sendData("devicesChanged", {{"defaultDeviceName", name}, {"defaultDeviceId", defaultDevice}});
@@ -58,7 +57,7 @@ void KDEConnectPlugin::handleData(const QString& event, const QJsonObject& json)
             const QString deviceId = json.value("deviceId").toString();
             const QString url = json.value("url").toString();
 
-            qDebug() << "sending kde connect url" << url << "to device" << deviceId;
+            debug() << "sending kde connect url" << url << "to device" << deviceId;
 
             QDBusMessage msg = QDBusMessage::createMethodCall("org.kde.kdeconnect",
                                                                 "/modules/kdeconnect/devices/" + deviceId + "/share",

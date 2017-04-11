@@ -15,7 +15,7 @@ void DownloadPlugin::handleData(const QString& event, const QJsonObject& json)
 {
     const int id = json.value(QStringLiteral("id")).toInt(-1);
     if (id < 0) {
-        Connection::self()->sendError("download id invalid", { {"id", id} });
+        debug() << "download id invalid, id:" << id;
         return;
     }
 
@@ -27,35 +27,32 @@ void DownloadPlugin::handleData(const QString& event, const QJsonObject& json)
 
         KIO::getJobTracker()->registerJob(job);
 
-        Connection::self()->sendData({ {"download begins", id}, {"payload", payload} });
+        debug() << "download begins" << id << "payload" << payload;
 
         m_jobs.insert(id, job);
 
         QObject::connect(job, &QObject::destroyed, this, [this, id] {
-            Connection::self()->sendData({ {"download job destroyed", id} });
             m_jobs.remove(id);
-            Connection::self()->sendData({ {"download job removed", id} });
         });
 
         job->start();
 
         QObject::connect(job, &KJob::finished, this, [this, job, id] {
-            Connection::self()->sendData({ {"job finished", id}, {"error", job->error()} });
         });
 
 
     } else if (event == QLatin1String("update")) {
         auto *job = m_jobs.value(id);
         if (!job) {
-            Connection::self()->sendError("failed to find download id to update", { {"id", id} });
+            debug() << "failed to find download id to update ID: "<< id;
             return;
         }
 
-        Connection::self()->sendData({ {"download update ABOUT TO", id}, {"payload", payload} });
+        debug() << "download update ABOUT TO" << id << "payload" << payload;
 
         job->update(payload);
 
-        Connection::self()->sendData({ {"download update DONE", id}, {"payload", payload} });
+        debug() << "download update DONE" << id << "payload" << payload;
     }
 }
 

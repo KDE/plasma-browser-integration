@@ -12,7 +12,20 @@ void msgHandler(QtMsgType type, const QMessageLogContext &context, const QString
 {
     Q_UNUSED(type);
     Q_UNUSED(context);
-    Connection::self()->sendError(msg);
+
+    QJsonObject data;
+    data["subsystem"] = QStringLiteral("debug");
+    switch(type) {
+        case QtDebugMsg:
+        case QtInfoMsg:
+            data["action"] = "debug";
+            break;
+        default:
+            data["action"] = "warning";
+    }
+    data["payload"] = QJsonObject({{"message", msg}});
+
+    Connection::self()->sendData(data);
 }
 
 int main(int argc, char *argv[])

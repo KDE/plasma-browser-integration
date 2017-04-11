@@ -25,6 +25,13 @@ void AbstractBrowserPlugin::sendData(const QString &action, const QJsonObject &p
     Connection::self()->sendData(data);
 }
 
+QDebug AbstractBrowserPlugin::debug() const
+{
+    auto d = qDebug();
+    d << m_subsystem << ": ";
+    return d;
+}
+
 QString AbstractBrowserPlugin::subsystem() const
 {
     return m_subsystem;
