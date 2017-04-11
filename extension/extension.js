@@ -24,10 +24,9 @@ function connectHost() {
     port = chrome.runtime.connectNative("org.kde.plasma.browser_integration");
 }
 
-addCallback("incognito", "close", function() {
-    console.log("close all incognito tabs!");
-    chrome.tabs.remove(incognitoTabs)
-});
+// KDE Connect
+// ------------------------------------------------------------------------
+//
 
 var kdeConnectDefaultDeviceId = "";
 var kdeConnectDefaultDeviceName = "";
@@ -79,14 +78,9 @@ addCallback("kdeconnect", "devicesChanged", function(message) {
 });
 
 
-//port.postMessage({MachstDu: "PARTY"});
-
-/*var msgNr = 0;
-setInterval(function() {
-    console.log("POST MSG", msgNr);
-    port.postMessage({msg: msgNr});
-    ++msgNr;
-}, 5000);*/
+// MPRIS
+// ------------------------------------------------------------------------
+//
 
 var currentPlayerTab;
 
@@ -105,6 +99,9 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     }
 });
 
+// MISC
+// ------------------------------------------------------------------------
+//
 
 chrome.windows.getAll({
     populate: true
@@ -113,7 +110,9 @@ chrome.windows.getAll({
 });
 
 
-
+// Downloads
+// ------------------------------------------------------------------------
+//
 
 var activeDownloads = []
 
@@ -191,6 +190,10 @@ chrome.downloads.onChanged.addListener(function (delta) {
 });
 
 
+// Incognito
+// ------------------------------------------------------------------------
+//
+
 var incognitoTabs = [];
 
 function tabAdded(tab) {
@@ -206,6 +209,12 @@ function tabAdded(tab) {
         incognitoTabs.push(tab.id)
     }
 }
+
+addCallback("incognito", "close", function() {
+    console.log("close all incognito tabs!");
+    chrome.tabs.remove(incognitoTabs)
+});
+
 
 // query all tabs
 chrome.tabs.query({}, function (tabs) {
@@ -233,6 +242,10 @@ chrome.tabs.onRemoved.addListener(function (tabId, removeInfo) {
 });
 
 
+
+// System
+// ------------------------------------------------------------------------
+//
 
 connectHost();
 
