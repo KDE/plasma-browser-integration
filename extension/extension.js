@@ -254,7 +254,9 @@ port.onMessage.addListener(function (message) {
         return;
     }
 
-    callbacks[subsystem][action](message.payload);
+    if (callbacks[subsystem] && callbacks[subsystem][action]) {
+        callbacks[subsystem][action](message.payload);
+    }
 });
 
 port.onDisconnect.addListener(function() {
