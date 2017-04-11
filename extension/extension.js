@@ -10,63 +10,43 @@
 console.log("HALLO?");
 
 var port
+var callbacks = [];
 connectHost();
 
 function connectHost() {
     port = chrome.runtime.connectNative("org.kde.plasma.browser_integration");
 }
 
-var kdeConnectDefaultDeviceId = "";
-var kdeConnectDefaultDeviceName = "";
-var hasKdeConnectMenu = false;
+function addCallback(subsystem, action, callback)
+{
+    if (!callbacks[subsystem]) {
+        callbacks[subsystem] = [];
+    }
+    callbacks[subsystem][action] = callback;
+}
+
 
 port.onMessage.addListener(function (message) {
     console.log("PORT MESSAGE", message);
 
-    switch (message.subsystem) {
-    case "incognito":
+    var subsystem = message.subsystem;
+    var action = message.action;
 
-        if (message.action === "close") {
-            console.log("close all incognito tabs!");
-
-            chrome.tabs.remove(incognitoTabs)
-        }
-
-        break;
-
-    case "kdeconnect":
-
-        if (message.defaultDeviceId) {
-            kdeConnectDefaultDeviceId = message.defaultDeviceId
-        }
-        if (message.defaultDeviceName) {
-            kdeConnectDefaultDeviceName = message.defaultDeviceName
-        }
-
-        var menuEntryTitle = "Open via KDE Connect"
-
-        if (kdeConnectDefaultDeviceName) {
-            menuEntryTitle = "Open on '" + kdeConnectDefaultDeviceName + "'"
-        }
-
-        if (kdeConnectDefaultDeviceId) {
-            if (hasKdeConnectMenu) {
-                chrome.contextMenus.update("kdeconnect_page", {title: menuEntryTitle});
-            } else {
-                hasKdeConnectMenu = true; // TODO check error
-                chrome.contextMenus.create({
-                    id: "kdeconnect_page",
-                    contexts: ["link"],
-                    title: menuEntryTitle
-                });
-            }
-        } else if (hasKdeConnectMenu) {
-            chrome.contextMenus.remove("kdeconnect_page")
-            hasKdeConnectMenu = false;
-        }
-
+    if (!subsystem || !action) {
+        return;
     }
+
+    callbacks[subsystem][action](message);
 });
+
+addCallback("incognito", "close", function() {
+    console.log("close all incognito tabs!");
+    chrome.tabs.remove(incognitoTabs)
+});
+
+var kdeConnectDefaultDeviceId = "";
+var kdeConnectDefaultDeviceName = "";
+var hasKdeConnectMenu = false;
 
 chrome.contextMenus.onClicked.addListener(function (info) {
     if (info.menuItemId === "kdeconnect_page") {
@@ -80,6 +60,39 @@ chrome.contextMenus.onClicked.addListener(function (info) {
         });
     }
 });
+
+addCallback("kdeconnect", "devicesChanged", function(message) {
+    console.log("devices chagned CB");
+    if (message.defaultDeviceId) {
+        kdeConnectDefaultDeviceId = message.defaultDeviceId
+    }
+    if (message.defaultDeviceName) {
+        kdeConnectDefaultDeviceName = message.defaultDeviceName
+    }
+
+    var menuEntryTitle = "Open via KDE Connect"
+
+    if (kdeConnectDefaultDeviceName) {
+        menuEntryTitle = "Open on '" + kdeConnectDefaultDeviceName + "'"
+    }
+
+    if (kdeConnectDefaultDeviceId) {
+        if (hasKdeConnectMenu) {
+            chrome.contextMenus.update("kdeconnect_page", {title: menuEntryTitle});
+        } else {
+            hasKdeConnectMenu = true; // TODO check error
+            chrome.contextMenus.create({
+                id: "kdeconnect_page",
+                contexts: ["link"],
+                title: menuEntryTitle
+            });
+        }
+    } else if (hasKdeConnectMenu) {
+        chrome.contextMenus.remove("kdeconnect_page")
+        hasKdeConnectMenu = false;
+    }
+});
+
 
 port.onDisconnect.addListener(function() {
   var error = chrome.runtime.lastError;

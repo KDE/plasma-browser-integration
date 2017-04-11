@@ -4,6 +4,7 @@
 #include <QDBusMessage>
 #include <QDBusPendingReply>
 #include <QDBusConnection>
+#include <QDebug>
 
 KDEConnectPlugin::KDEConnectPlugin(QObject* parent) :
     AbstractBrowserPlugin(QStringLiteral("kdeconnect"), parent)
@@ -26,7 +27,7 @@ KDEConnectPlugin::KDEConnectPlugin(QObject* parent) :
             if (!devices.isEmpty()) {
                 defaultDevice = devices.first();
             }
-            sendData({ {"subsystem", "kdeconnect"}, {"status", "finished querying default device"}, {"defaultDeviceId", defaultDevice} });
+            sendData({ {"subsystem", "kdeconnect"}, {"action", "devicesChanged"}, {"status", "finished querying default device"}, {"defaultDeviceId", defaultDevice} });
 
             if (!devices.isEmpty()) {
                 QDBusMessage msg = QDBusMessage::createMethodCall("org.kde.kdeconnect",
@@ -42,7 +43,7 @@ KDEConnectPlugin::KDEConnectPlugin(QObject* parent) :
                         Connection::self()->sendError("kdeconnect query default name " + reply.error().message());
                     } else {
                         const QString name = reply.value().variant().toString();
-                        sendData({ {"subsystem", "kdeconnect"}, {"status", "finished querying default device"}, {"defaultDeviceName", name} });
+                        sendData({ {"subsystem", "kdeconnect"}, {"action", "devicesChanged"}, {"status", "finished querying default device"}, {"defaultDeviceName", name} });
                     }
                     watcher->deleteLater();
                 });
@@ -58,7 +59,7 @@ void KDEConnectPlugin::handleData(const QString& event, const QJsonObject& json)
             const QString &deviceId = json.value("deviceId").toString();
             const QString &url = json.value("url").toString();
 
-            sendData({ {"send kde connect url", url}, {"to device", deviceId} });
+            qDebug() << "sending kde connect url" << url << "to device" << deviceId;
 
             QDBusMessage msg = QDBusMessage::createMethodCall("org.kde.kdeconnect",
                                                                 "/modules/kdeconnect/devices/" + deviceId + "/share",
