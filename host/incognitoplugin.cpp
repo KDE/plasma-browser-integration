@@ -4,7 +4,7 @@
 #include <QMenu>
 
 IncognitoPlugin::IncognitoPlugin(QObject* parent) :
-    AbstractBrowserPlugin(QStringLiteral("incognito"), parent)
+    AbstractBrowserPlugin(QStringLiteral("incognito"), 1, parent)
 {
 }
 

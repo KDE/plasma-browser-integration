@@ -1,11 +1,11 @@
 #include "abstractbrowserplugin.h"
 #include "connection.h"
 
-AbstractBrowserPlugin::AbstractBrowserPlugin::AbstractBrowserPlugin(const QString& subsystemId, QObject* parent):
+AbstractBrowserPlugin::AbstractBrowserPlugin::AbstractBrowserPlugin(const QString& subsystemId, int protocolVersion, QObject* parent):
     QObject(parent),
     m_subsystem(subsystemId)
 {
-    sendData(QStringLiteral("loaded"));
+    sendData(QStringLiteral("loaded"), {{"version", protocolVersion}});
 }
 
 void AbstractBrowserPlugin::handleData(const QString& event, const QJsonObject& data)

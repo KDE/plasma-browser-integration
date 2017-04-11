@@ -6,7 +6,7 @@
 #include <QDBusConnection>
 
 KDEConnectPlugin::KDEConnectPlugin(QObject* parent) :
-    AbstractBrowserPlugin(QStringLiteral("kdeconnect"), parent)
+    AbstractBrowserPlugin(QStringLiteral("kdeconnect"), 1, parent)
 {
     debug() << "kdeconnect" << "querying";
 

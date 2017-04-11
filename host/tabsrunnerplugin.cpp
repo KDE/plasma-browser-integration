@@ -13,7 +13,7 @@
 #include "tabsrunneradaptor.h"
 
 TabsRunnerPlugin::TabsRunnerPlugin(QObject* parent) :
-    AbstractBrowserPlugin(QStringLiteral("tabsrunner"), parent)
+    AbstractBrowserPlugin(QStringLiteral("tabsrunner"), 1, parent)
 {
     new TabsRunnerAdaptor(this);
 

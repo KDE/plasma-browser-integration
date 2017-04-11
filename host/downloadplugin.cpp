@@ -7,7 +7,7 @@
 #include <KJobTrackerInterface>
 
 DownloadPlugin::DownloadPlugin(QObject* parent) :
-    AbstractBrowserPlugin(QStringLiteral("downloads"), parent)
+    AbstractBrowserPlugin(QStringLiteral("downloads"), 1, parent)
 {
 }
 
