@@ -8,6 +8,7 @@ IncognitoPlugin::IncognitoPlugin(QObject* parent) :
 {
 }
 
+
 void IncognitoPlugin::handleData(const QString& event, const QJsonObject& data)
 {
     if (event == QLatin1String("show")) {
@@ -27,11 +28,10 @@ void IncognitoPlugin::handleData(const QString& event, const QJsonObject& data)
         QMenu *menu = new QMenu();
         QAction *closeAllAction = menu->addAction(QIcon::fromTheme("window-close"), "Close all Incognito Tabs");
         QObject::connect(closeAllAction, &QAction::triggered, this, [this] {
-            sendData({ {"subsystem", "incognito"}, {"action", "close"} });
+            sendData(QStringLiteral("close"));
         });
 
         m_ksni->setContextMenu(menu);
-        sendData({ {"incognito indicator", true} });
     } else if (event == QLatin1String("hide")) {
         if (!m_ksni) {
             qDebug() << "no incongito there but wanted to hide";
@@ -40,6 +40,5 @@ void IncognitoPlugin::handleData(const QString& event, const QJsonObject& data)
         qDebug() << "removing incognito icon";
 
         delete m_ksni.data();
-        sendData({{"incognito indicator", false}});
     }
 }

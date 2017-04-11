@@ -9,7 +9,8 @@
 KDEConnectPlugin::KDEConnectPlugin(QObject* parent) :
     AbstractBrowserPlugin(QStringLiteral("kdeconnect"), parent)
 {
-    sendData({ {"subsystem", "kdeconnect" }, {"status", "querying" } });
+    qDebug() << "kdeconnect" << "querying";
+
     QDBusMessage msg = QDBusMessage::createMethodCall("org.kde.kdeconnect",
                                                       "/modules/kdeconnect",
                                                       "org.kde.kdeconnect.daemon",
@@ -27,7 +28,7 @@ KDEConnectPlugin::KDEConnectPlugin(QObject* parent) :
             if (!devices.isEmpty()) {
                 defaultDevice = devices.first();
             }
-            sendData({ {"subsystem", "kdeconnect"}, {"action", "devicesChanged"}, {"status", "finished querying default device"}, {"defaultDeviceId", defaultDevice} });
+            sendData("devicesChanged", {{"defaultDeviceId", defaultDevice}});
 
             if (!devices.isEmpty()) {
                 QDBusMessage msg = QDBusMessage::createMethodCall("org.kde.kdeconnect",
@@ -43,7 +44,7 @@ KDEConnectPlugin::KDEConnectPlugin(QObject* parent) :
                         Connection::self()->sendError("kdeconnect query default name " + reply.error().message());
                     } else {
                         const QString name = reply.value().variant().toString();
-                        sendData({ {"subsystem", "kdeconnect"}, {"action", "devicesChanged"}, {"status", "finished querying default device"}, {"defaultDeviceName", name} });
+                        sendData("devicesChanged", {{"defaultDeviceName", name}});
                     }
                     watcher->deleteLater();
                 });
@@ -56,8 +57,8 @@ KDEConnectPlugin::KDEConnectPlugin(QObject* parent) :
 void KDEConnectPlugin::handleData(const QString& event, const QJsonObject& json)
 {
     if (event == QLatin1String("shareUrl")) {
-            const QString &deviceId = json.value("deviceId").toString();
-            const QString &url = json.value("url").toString();
+            const QString deviceId = json.value("deviceId").toString();
+            const QString url = json.value("url").toString();
 
             qDebug() << "sending kde connect url" << url << "to device" << deviceId;
 
@@ -65,7 +66,7 @@ void KDEConnectPlugin::handleData(const QString& event, const QJsonObject& json)
                                                                 "/modules/kdeconnect/devices/" + deviceId + "/share",
                                                                 "org.kde.kdeconnect.device.share",
                                                                 "shareUrl");
-            msg.setArguments({json.value("url").toString()});
+            msg.setArguments({url});
             QDBusPendingReply<QStringList> reply = QDBusConnection::sessionBus().asyncCall(msg);
 
         }

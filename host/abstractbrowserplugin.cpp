@@ -5,6 +5,7 @@ AbstractBrowserPlugin::AbstractBrowserPlugin::AbstractBrowserPlugin(const QStrin
     QObject(parent),
     m_subsystem(subsystemId)
 {
+    sendData(QStringLiteral("loaded"));
 }
 
 void AbstractBrowserPlugin::handleData(const QString& event, const QJsonObject& data)
@@ -13,8 +14,14 @@ void AbstractBrowserPlugin::handleData(const QString& event, const QJsonObject& 
     Q_UNUSED(data);
 }
 
-void AbstractBrowserPlugin::sendData(const QJsonObject& data)
+void AbstractBrowserPlugin::sendData(const QString &action, const QJsonObject &payload)
 {
+    QJsonObject data;
+    data["subsystem"] = m_subsystem;
+    data["action"] = action;
+    if (!payload.isEmpty()) {
+        data["payload"] = payload;
+    }
     Connection::self()->sendData(data);
 }
 

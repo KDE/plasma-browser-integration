@@ -259,7 +259,7 @@ port.onMessage.addListener(function (message) {
         return;
     }
 
-    callbacks[subsystem][action](message);
+    callbacks[subsystem][action](message.payload);
 });
 
 port.onDisconnect.addListener(function() {
