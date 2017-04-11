@@ -13,10 +13,10 @@ void IncognitoPlugin::handleData(const QString& event, const QJsonObject& data)
 {
     if (event == QLatin1String("show")) {
         if (m_ksni) {
-            qDebug() << "incognito already there";
+            debug() << "incognito already there";
             return;
         }
-        qDebug() << "adding incongito icon";
+        debug() << "adding incongito icon";
 
         m_ksni = new KStatusNotifierItem(this);
 
@@ -34,10 +34,10 @@ void IncognitoPlugin::handleData(const QString& event, const QJsonObject& data)
         m_ksni->setContextMenu(menu);
     } else if (event == QLatin1String("hide")) {
         if (!m_ksni) {
-            qDebug() << "no incongito there but wanted to hide";
+            debug() << "no incongito there but wanted to hide";
             return;
         }
-        qDebug() << "removing incognito icon";
+        debug() << "removing incognito icon";
 
         delete m_ksni.data();
     }
