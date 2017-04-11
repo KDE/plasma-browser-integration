@@ -1,4 +1,5 @@
 #include <QApplication>
+#include <QDebug>
 
 #include "mpris.h"
 #include "connection.h"
@@ -31,24 +32,29 @@ int main(int argc, char *argv[])
     m_plugins << new DownloadPlugin(&a);
 
     QObject::connect(Connection::self(), &Connection::dataReceived, [m_plugins](const QJsonObject &json) {
-        if (json.isEmpty()) {
-            return;
-        }
         const QString subsystem = json.value(QStringLiteral("subsystem")).toString();
 
         if (subsystem.isEmpty()) {
-            Connection::self()->sendError("No subsystem provided");
+            qDebug() << "No subsystem provided";
             return;
         }
 
         const QString event = json.value(QStringLiteral("event")).toString();
+        if (event.isEmpty()) {
+            qDebug() << "No event provided";
+            return;
+        }
 
         foreach(AbstractBrowserPlugin *plugin, m_plugins) {
             if (plugin->subsystem() == subsystem) {
+                qDebug() << "handling";
                 //design question, should we have a JSON of subsystem, event, payload, or have all data at the root level?
                 plugin->handleData(event, json);
+                return;
             }
         }
+        qDebug() << "not handling";
+
     });
 
     return a.exec();

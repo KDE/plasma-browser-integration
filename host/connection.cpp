@@ -10,7 +10,7 @@ Connection::Connection() :
     QObject()
 {
     m_stdOut.open(stdout, QIODevice::WriteOnly);
-    qDebug() << m_stdIn.open(stdin, QIODevice::ReadOnly | QIODevice::Unbuffered);
+    m_stdIn.open(stdin, QIODevice::ReadOnly | QIODevice::Unbuffered);
 
     auto notifier = new QSocketNotifier(STDIN_FILENO, QSocketNotifier::Read, this);
     connect(notifier, &QSocketNotifier::activated, this, &Connection::readData);
