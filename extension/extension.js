@@ -11,11 +11,6 @@ console.log("HALLO?");
 
 var port
 var callbacks = [];
-connectHost();
-
-function connectHost() {
-    port = chrome.runtime.connectNative("org.kde.plasma.browser_integration");
-}
 
 function addCallback(subsystem, action, callback)
 {
@@ -25,19 +20,9 @@ function addCallback(subsystem, action, callback)
     callbacks[subsystem][action] = callback;
 }
 
-
-port.onMessage.addListener(function (message) {
-    console.log("PORT MESSAGE", message);
-
-    var subsystem = message.subsystem;
-    var action = message.action;
-
-    if (!subsystem || !action) {
-        return;
-    }
-
-    callbacks[subsystem][action](message);
-});
+function connectHost() {
+    port = chrome.runtime.connectNative("org.kde.plasma.browser_integration");
+}
 
 addCallback("incognito", "close", function() {
     console.log("close all incognito tabs!");
@@ -93,22 +78,6 @@ addCallback("kdeconnect", "devicesChanged", function(message) {
     }
 });
 
-
-port.onDisconnect.addListener(function() {
-  var error = chrome.runtime.lastError;
-
-  console.log("Disconnected", error);
-
-  chrome.notifications.create(null, {
-      type: "basic",
-      title: "Plasma Chrome Integration Error",
-      message: "The native host disconnected unexpectedly: " + error.message,
-      iconUrl: "icons/sad-face-128.png"
-  });
-
-  // TODO crash recursion guard
-  connectHost();
-});
 
 //port.postMessage({MachstDu: "PARTY"});
 
@@ -261,4 +230,37 @@ chrome.tabs.onRemoved.addListener(function (tabId, removeInfo) {
            console.log("still know", incognitoTabs.length, "incognito tabs");
         }
    }
+});
+
+
+
+connectHost();
+
+port.onMessage.addListener(function (message) {
+    console.log("PORT MESSAGE", message);
+
+    var subsystem = message.subsystem;
+    var action = message.action;
+
+    if (!subsystem || !action) {
+        return;
+    }
+
+    callbacks[subsystem][action](message);
+});
+
+port.onDisconnect.addListener(function() {
+  var error = chrome.runtime.lastError;
+
+  console.log("Disconnected", error);
+
+  chrome.notifications.create(null, {
+      type: "basic",
+      title: "Plasma Chrome Integration Error",
+      message: "The native host disconnected unexpectedly: " + error.message,
+      iconUrl: "icons/sad-face-128.png"
+  });
+
+  // TODO crash recursion guard
+  connectHost();
 });
