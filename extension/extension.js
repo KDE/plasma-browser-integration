@@ -46,13 +46,8 @@ chrome.contextMenus.onClicked.addListener(function (info) {
 });
 
 addCallback("kdeconnect", "devicesChanged", function(message) {
-    console.log("devices chagned CB");
-    if (message.defaultDeviceId) {
-        kdeConnectDefaultDeviceId = message.defaultDeviceId
-    }
-    if (message.defaultDeviceName) {
-        kdeConnectDefaultDeviceName = message.defaultDeviceName
-    }
+    kdeConnectDefaultDeviceId = message.defaultDeviceId
+    kdeConnectDefaultDeviceName = message.defaultDeviceName
 
     var menuEntryTitle = "Open via KDE Connect"
 

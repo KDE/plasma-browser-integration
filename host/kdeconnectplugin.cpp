@@ -28,8 +28,6 @@ KDEConnectPlugin::KDEConnectPlugin(QObject* parent) :
             if (!devices.isEmpty()) {
                 defaultDevice = devices.first();
             }
-            sendData("devicesChanged", {{"defaultDeviceId", defaultDevice}});
-
             if (!devices.isEmpty()) {
                 QDBusMessage msg = QDBusMessage::createMethodCall("org.kde.kdeconnect",
                                                                   "/modules/kdeconnect/devices/" + defaultDevice,
@@ -38,13 +36,13 @@ KDEConnectPlugin::KDEConnectPlugin(QObject* parent) :
                 msg.setArguments({"org.kde.kdeconnect.device", "name"});
                 QDBusPendingReply<QDBusVariant> reply = QDBusConnection::sessionBus().asyncCall(msg);
                 QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
-                QObject::connect(watcher, &QDBusPendingCallWatcher::finished, this, [this](QDBusPendingCallWatcher *watcher) {
+                QObject::connect(watcher, &QDBusPendingCallWatcher::finished, this, [this, defaultDevice](QDBusPendingCallWatcher *watcher) {
                     QDBusPendingReply<QDBusVariant> reply = *watcher;
                     if (reply.isError()) {
                         Connection::self()->sendError("kdeconnect query default name " + reply.error().message());
                     } else {
                         const QString name = reply.value().variant().toString();
-                        sendData("devicesChanged", {{"defaultDeviceName", name}});
+                        sendData("devicesChanged", {{"defaultDeviceName", name}, {"defaultDeviceId", defaultDevice}});
                     }
                     watcher->deleteLater();
                 });
