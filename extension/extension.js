@@ -335,8 +335,6 @@ addCallback("debug", "warning", function(payload) {
 connectHost();
 
 port.onMessage.addListener(function (message) {
-    console.log("PORT MESSAGE", message);
-
     var subsystem = message.subsystem;
     var action = message.action;
 
