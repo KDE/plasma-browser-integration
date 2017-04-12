@@ -52,6 +52,14 @@ void TabsRunnerPlugin::Activate(int tabId)
     });
 }
 
+void TabsRunnerPlugin::SetMuted(int tabId, bool muted)
+{
+    sendData(QStringLiteral("setMuted"), {
+        {QStringLiteral("tabId"), tabId},
+        {QStringLiteral("muted"), muted}
+    });
+}
+
 void TabsRunnerPlugin::handleData(const QString& event, const QJsonObject& json)
 {
     if (event == QLatin1String("gotTabs")) {

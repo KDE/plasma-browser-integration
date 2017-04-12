@@ -16,6 +16,7 @@ public:
     // dbus-exported
     QList<QHash<QString, QVariant>> GetTabs();
     void Activate(int tabId);
+    void SetMuted(int tabId, bool muted);
 
 private:
     QDBusMessage m_tabsReplyMessage;

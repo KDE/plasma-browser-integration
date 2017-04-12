@@ -20,6 +20,8 @@
 
 #include <KRunner/AbstractRunner>
 
+#include <QDBusMessage>
+
 class TabsRunner : public Plasma::AbstractRunner
 {
     Q_OBJECT
@@ -33,5 +35,9 @@ public:
 
 protected slots:
     QMimeData *mimeDataForMatch(const Plasma::QueryMatch &match) override;
+    QList<QAction *> actionsForMatch(const Plasma::QueryMatch &match) override;
+
+private:
+    static QDBusMessage createMessage(const QString &method);
 
 };

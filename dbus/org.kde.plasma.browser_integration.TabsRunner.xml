@@ -9,5 +9,9 @@
     <method name="Activate">
       <arg type="i" direction="in" />
     </method>
+    <method name="SetMuted">
+      <arg type="i" direction="in" />
+      <arg type="b" direction="in" />
+    </method>
   </interface>
 </node>

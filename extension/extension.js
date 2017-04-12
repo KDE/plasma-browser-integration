@@ -280,6 +280,21 @@ addCallback("tabsrunner", "activate", function (message) {
 
 });
 
+addCallback("tabsrunner", "setMuted", function (message) {
+
+    var tabId = message.tabId;
+    var muted = message.muted;
+
+    chrome.tabs.update(tabId, {muted: muted}, function (tab) {
+
+        if (chrome.runtime.lastError || !tab) { // this "lastError" stuff feels so archaic
+            // failed to mute/unmute
+            return;
+        }
+    });
+
+});
+
 // only forward certain tab properties back to our host
 var whitelistedTabProperties = [
     "id", "active", "audible", "favIconUrl", "incognito", "title", "url"

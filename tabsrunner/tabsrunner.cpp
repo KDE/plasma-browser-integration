@@ -28,6 +28,9 @@
 
 #include <KLocalizedString>
 
+static const QString s_muteTab = QStringLiteral("mute");
+static const QString s_unmuteTab = QStringLiteral("unmute");
+
 TabsRunner::TabsRunner(QObject *parent, const QVariantList &args)
     : Plasma::AbstractRunner(parent, args)
 {
@@ -37,6 +40,11 @@ TabsRunner::TabsRunner(QObject *parent, const QVariantList &args)
     setPriority(AbstractRunner::HighestPriority);
 
     addSyntax(Plasma::RunnerSyntax(QStringLiteral(":q:"), i18n("Finds browser tabs whose title match :q:")));
+
+    // should we actually show the current state instead of what the button will do?
+    addAction(s_muteTab, QIcon::fromTheme(QStringLiteral("audio-volume-muted")), i18n("Mute Tab"));
+    addAction(s_unmuteTab, QIcon::fromTheme(QStringLiteral("audio-volume-high")), i18n("Unmute Tab"));
+
 }
 
 TabsRunner::~TabsRunner() = default;
@@ -84,10 +92,23 @@ void TabsRunner::match(Plasma::RunnerContext &context)
                 continue;
             }
 
+            const bool incognito = tab.value(QStringLiteral("incognito")).toBool();
+            const bool audible = tab.value(QStringLiteral("audible")).toBool();
+
+            QVariantHash mutedInfo;
+            tab.value(QStringLiteral("mutedInfo")).value<QDBusArgument>() >> mutedInfo;
+
+            const bool muted = mutedInfo.value(QStringLiteral("muted")).toBool();
+
+            const QVariantHash tabData = {
+                {QStringLiteral("tabId"), tabId},
+                {QStringLiteral("audible"), audible},
+                {QStringLiteral("muted"), muted}
+            };
+
             Plasma::QueryMatch match(this);
             match.setText(text);
-            match.setData(tabId);
-            match.setSubtext(url.toDisplayString());
+            match.setData(tabData);
 
             qreal relevance = 0;
 
@@ -122,7 +143,17 @@ void TabsRunner::match(Plasma::RunnerContext &context)
 
             match.setRelevance(relevance);
 
-            match.setIconName(QStringLiteral("google-chrome")); // TODO favicon or at least correct browser icon
+            QString iconName = QStringLiteral("google-chrome"); // TODO favicon or at least correct browser icon
+
+            if (incognito) {
+                iconName = QStringLiteral("face-smirk");// TODO QStringLiteral("incognito");
+            }
+
+            if (audible && !muted) {
+                iconName = QStringLiteral("audio-volume-high");
+            }
+
+            match.setIconName(iconName);
 
             matches << match;
         }
@@ -135,15 +166,33 @@ void TabsRunner::run(const Plasma::RunnerContext &context, const Plasma::QueryMa
 {
     Q_UNUSED(context);
 
-    QDBusMessage message =
-        QDBusMessage::createMethodCall(QStringLiteral("org.kde.plasma.browser_integration"),
-                                       QStringLiteral("/TabsRunner"),
-                                       QStringLiteral("org.kde.plasma.browser_integration.TabsRunner"),
-                                       QStringLiteral("Activate")
-        );
-    message.setArguments({match.data().toInt()});
+    const int tabId = match.data().toHash().value(QStringLiteral("tabId")).toInt();
 
+    if (match.selectedAction() == action(s_unmuteTab)) {
+        QDBusMessage message = createMessage(QStringLiteral("SetMuted"));
+        message.setArguments({tabId, false});
+        QDBusConnection::sessionBus().call(message); // asyncCall?
+        return;
+    }
+
+    if (match.selectedAction() == action(s_muteTab)) {
+        QDBusMessage message = createMessage(QStringLiteral("SetMuted"));
+        message.setArguments({tabId, true});
+        QDBusConnection::sessionBus().call(message); // asyncCall?
+        return;
+    }
+
+    QDBusMessage message = createMessage(QStringLiteral("Activate"));
+    message.setArguments({tabId});
     QDBusConnection::sessionBus().call(message); // asyncCall?
+}
+
+QDBusMessage TabsRunner::createMessage(const QString &method)
+{
+    return QDBusMessage::createMethodCall(QStringLiteral("org.kde.plasma.browser_integration"),
+                                          QStringLiteral("/TabsRunner"),
+                                          QStringLiteral("org.kde.plasma.browser_integration.TabsRunner"),
+                                          method);
 }
 
 QMimeData *TabsRunner::mimeDataForMatch(const Plasma::QueryMatch &match)
@@ -151,6 +200,26 @@ QMimeData *TabsRunner::mimeDataForMatch(const Plasma::QueryMatch &match)
     Q_UNUSED(match);
     // TODO return tab url or maybe for firefox a magic "dragging tab off a window" mime?
     return nullptr;
+}
+
+QList<QAction *> TabsRunner::actionsForMatch(const Plasma::QueryMatch &match)
+{
+    QList<QAction *> actions;
+
+    const QVariantHash &tabData = match.data().toHash();
+
+    const bool audible = tabData.value(QStringLiteral("audible")).toBool();
+    const bool muted = tabData.value(QStringLiteral("muted")).toBool();
+
+    if (audible) {
+        if (muted) {
+            actions << action(s_unmuteTab);
+        } else {
+            actions << action(s_muteTab);
+        }
+    }
+
+    return actions;
 }
 
 K_EXPORT_PLASMA_RUNNER(browsertabs, TabsRunner)
