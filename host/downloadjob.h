@@ -24,6 +24,9 @@ public:
 
     void update(const QJsonObject &payload);
 
+signals:
+    void killRequested();
+
 private slots:
     void doStart();
 

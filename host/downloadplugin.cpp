@@ -11,25 +11,31 @@ DownloadPlugin::DownloadPlugin(QObject* parent) :
 {
 }
 
-void DownloadPlugin::handleData(const QString& event, const QJsonObject& json)
+void DownloadPlugin::handleData(const QString& event, const QJsonObject& payload)
 {
-    const int id = json.value(QStringLiteral("id")).toInt(-1);
+    const QJsonObject &download = payload.value(QStringLiteral("download")).toObject();
+
+    const int id = download.value(QStringLiteral("id")).toInt(-1);
     if (id < 0) {
-        debug() << "download id invalid, id:" << id;
+        qWarning() << "Cannot update download with invalid id" << id;
         return;
     }
 
-    const QJsonObject &payload = json.value(QStringLiteral("payload")).toObject();
-
     if (event == QLatin1String("created")) {
         auto *job = new DownloadJob(id);
-        job->update(payload);
 
+        // first register and then update, otherwise we miss the initial population..
         KIO::getJobTracker()->registerJob(job);
 
-        debug() << "download begins" << id << "payload" << payload;
+        job->update(download);
 
         m_jobs.insert(id, job);
+
+        connect(job, &DownloadJob::killRequested, this, [this, id] {
+            sendData(QStringLiteral("cancel"), {
+                {QStringLiteral("downloadId"), id}
+            });
+        });
 
         QObject::connect(job, &QObject::destroyed, this, [this, id] {
             m_jobs.remove(id);
@@ -40,19 +46,14 @@ void DownloadPlugin::handleData(const QString& event, const QJsonObject& json)
         QObject::connect(job, &KJob::finished, this, [this, job, id] {
         });
 
-
     } else if (event == QLatin1String("update")) {
         auto *job = m_jobs.value(id);
         if (!job) {
-            debug() << "failed to find download id to update ID: "<< id;
+            debug() << "Failed to find download to update with id" << id;
             return;
         }
 
-        debug() << "download update ABOUT TO" << id << "payload" << payload;
-
-        job->update(payload);
-
-        debug() << "download update DONE" << id << "payload" << payload;
+        job->update(download);
     }
 }
 

@@ -21,7 +21,10 @@ void DownloadJob::doStart()
 
 bool DownloadJob::doKill()
 {
-    return false;
+    emit killRequested();
+    // TODO what if the user kills us from notification area while the
+    // "Save As" prompt is still open?
+    return true;
 }
 
 void DownloadJob::update(const QJsonObject &payload)
@@ -36,7 +39,7 @@ void DownloadJob::update(const QJsonObject &payload)
         descriptionDirty = true; // TODO only if actually changed
     }
 
-    it = payload.constFind(QStringLiteral("destination"));
+    it = payload.constFind(QStringLiteral("filename"));
     if (it != end) {
         m_destination = QUrl::fromLocalFile(it->toString());
         descriptionDirty = true;
@@ -52,14 +55,25 @@ void DownloadJob::update(const QJsonObject &payload)
         setProcessedAmount(Bytes, it->toDouble());
     }
 
+    // TODO use the estimatedEndTime to calculate transfer speed
+
     it = payload.constFind(QStringLiteral("state"));
     if (it != end) {
         const QString status = it->toString();
         if (status == QLatin1String("in_progress")) {
 
         } else if (status == QLatin1String("interrupted")) {
-            // TODO check interruptreason
-            // e.g. USER_CANCELED
+
+            const QString &error = payload.value(QStringLiteral("error")).toString();
+
+            if (error == QLatin1String("USER_CANCELED")) {
+                // don't show an error, KIO::ERR_USER_CANCELED is 1 which the notification applet looks for
+                setError(1);
+            } else {
+                setError(2); // TODO proper values
+                setErrorText(error); // TODO nice text
+            }
+
             emitResult();
             return;
         } else if (status == QLatin1String("complete")) {

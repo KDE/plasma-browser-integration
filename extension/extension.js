@@ -145,15 +145,22 @@ setInterval(function() {
             }
 
             var payload = {
-                bytesReceived: download.bytesReceived
+                id: download.id,
+                bytesReceived: download.bytesReceived,
+                estimatedEndTime: download.estimatedEndTime
             };
 
-            port.postMessage({subsystem: "downloads", event: "update", id: download.id, payload: payload});
+            port.postMessage({subsystem: "downloads", event: "update", download: payload});
         });
     });
 }, 1000);
 
 //chrome.downloads.setShelfEnabled(false);
+
+// only forward certain download properties back to our host
+var whitelistedDownloadProperties = [
+    "id", "url", "finalUrl", "filename", "startTime", "estimatedEndTime", "totalBytes", "bytesReceived", "state", "error"
+];
 
 chrome.downloads.onCreated.addListener(function (download) {
     // don't bother telling us about completed downloads...
@@ -162,19 +169,11 @@ chrome.downloads.onCreated.addListener(function (download) {
         return;
     }
 
-    var payload = {
-        url: download.url,
-        finalUrl: download.finalUrl,
-        destination: download.filename,
-        startTime: download.startTime,
-
-        totalBytes: download.totalBytes,
-        bytesReceived: download.bytesReceived
-    };
+    var filteredDownload = filterObject(download, whitelistedDownloadProperties);
 
     activeDownloads.push(download.id);
 
-    port.postMessage({subsystem: "downloads", event: "created", id: download.id, payload: payload});
+    port.postMessage({subsystem: "downloads", event: "created", download: filteredDownload});
 });
 
 chrome.downloads.onChanged.addListener(function (delta) {
@@ -184,25 +183,24 @@ chrome.downloads.onChanged.addListener(function (delta) {
 
     var payload = {};
 
-    if (delta.url) {
-        payload.url = delta.url.current;
-    }
+    whitelistedDownloadProperties.forEach(function (item) {
+        if (delta[item]) {
+            payload[item] = delta[item].current;
+        }
+    });
 
-    if (delta.filename) {
-        payload.destination = delta.filename.current;
-    }
+    payload.id = delta.id; // not a delta, ie. has no current and thus isn't added by the loop below
 
-    if (delta.state) {
-        payload.state = delta.state.current;
-    }
-
-    if (delta.error) {
-        payload.error = delta.error.current;
-    }
-
-    port.postMessage({subsystem: "downloads", event: "update", id: delta.id, payload: payload});
+    port.postMessage({subsystem: "downloads", event: "update", download: payload});
 });
 
+addCallback("downloads", "cancel", function (message) {
+    var downloadId = message.downloadId;
+
+    console.log("Requested to cancel download", downloadId);
+
+    chrome.downloads.cancel(downloadId);
+});
 
 // Incognito
 // ------------------------------------------------------------------------
