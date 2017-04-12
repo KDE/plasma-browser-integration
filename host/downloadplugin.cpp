@@ -37,6 +37,18 @@ void DownloadPlugin::handleData(const QString& event, const QJsonObject& payload
             });
         });
 
+        connect(job, &DownloadJob::suspendRequested, this, [this, id] {
+            sendData(QStringLiteral("suspend"), {
+                {QStringLiteral("downloadId"), id}
+            });
+        });
+
+        connect(job, &DownloadJob::resumeRequested, this, [this, id] {
+            sendData(QStringLiteral("resume"), {
+                {QStringLiteral("downloadId"), id}
+            });
+        });
+
         QObject::connect(job, &QObject::destroyed, this, [this, id] {
             m_jobs.remove(id);
         });

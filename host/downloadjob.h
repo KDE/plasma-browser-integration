@@ -26,12 +26,16 @@ public:
 
 signals:
     void killRequested();
+    void suspendRequested();
+    void resumeRequested();
 
 private slots:
     void doStart();
 
 protected:
     bool doKill() override;
+    bool doSuspend() override;
+    bool doResume() override;
 
 private:
     void updateDescription();

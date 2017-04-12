@@ -6,7 +6,12 @@ DownloadJob::DownloadJob(int id)
     : KJob()
     , m_id(id)
 {
-    setCapabilities(Killable);
+    // the thing with "canResume" in chrome downloads is that it just means
+    // "this download can be resumed right now because it is paused",
+    // it's not a general thing. I think we can always pause/resume downloads
+    // unless they're canceled/interrupted at which point we don't have a DownloadJob
+    // anymore anyway
+    setCapabilities(Killable | Suspendable);
 }
 
 void DownloadJob::start()
@@ -24,6 +29,18 @@ bool DownloadJob::doKill()
     emit killRequested();
     // TODO what if the user kills us from notification area while the
     // "Save As" prompt is still open?
+    return true;
+}
+
+bool DownloadJob::doSuspend()
+{
+    emit suspendRequested();
+    return true;
+}
+
+bool DownloadJob::doResume()
+{
+    emit resumeRequested();
     return true;
 }
 
@@ -53,6 +70,17 @@ void DownloadJob::update(const QJsonObject &payload)
     it = payload.constFind(QStringLiteral("bytesReceived"));
     if (it != end) {
         setProcessedAmount(Bytes, it->toDouble());
+    }
+
+    it = payload.constFind(QStringLiteral("paused"));
+    if (it != end) {
+        const bool paused = it->toBool();
+
+        if (paused) {
+            suspend();
+        } else {
+            resume();
+        }
     }
 
     it = payload.constFind(QStringLiteral("estimatedEndTime"));

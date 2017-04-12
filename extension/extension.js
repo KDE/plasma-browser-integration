@@ -159,7 +159,7 @@ setInterval(function() {
 
 // only forward certain download properties back to our host
 var whitelistedDownloadProperties = [
-    "id", "url", "finalUrl", "filename", "startTime", "estimatedEndTime", "totalBytes", "bytesReceived", "state", "error"
+    "id", "url", "finalUrl", "filename", "startTime", "estimatedEndTime", "totalBytes", "bytesReceived", "state", "error", /*"canResume"*/, "paused"
 ];
 
 chrome.downloads.onCreated.addListener(function (download) {
@@ -200,6 +200,22 @@ addCallback("downloads", "cancel", function (message) {
     console.log("Requested to cancel download", downloadId);
 
     chrome.downloads.cancel(downloadId);
+});
+
+addCallback("downloads", "suspend", function (message) {
+    var downloadId = message.downloadId;
+
+    console.log("Requested to suspend download", downloadId);
+
+    chrome.downloads.pause(downloadId);
+});
+
+addCallback("downloads", "resume", function (message) {
+    var downloadId = message.downloadId;
+
+    console.log("Requested to resume download", downloadId);
+
+    chrome.downloads.resume(downloadId);
 });
 
 // Incognito
