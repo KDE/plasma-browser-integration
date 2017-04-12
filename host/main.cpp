@@ -1,4 +1,5 @@
 #include <QApplication>
+#include <QDBusConnection>
 #include <QDebug>
 
 #include "mpris.h"
@@ -7,6 +8,7 @@
 #include "incognitoplugin.h"
 #include "kdeconnectplugin.h"
 #include "downloadplugin.h"
+#include "tabsrunnerplugin.h"
 
 void msgHandler(QtMsgType type, const QMessageLogContext &context, const QString &msg)
 {
@@ -43,6 +45,12 @@ int main(int argc, char *argv[])
     m_plugins << new IncognitoPlugin(&a);
     m_plugins << new KDEConnectPlugin(&a);
     m_plugins << new DownloadPlugin(&a);
+    m_plugins << new TabsRunnerPlugin(&a);
+
+    // TODO pid suffix or so if we want to allow multiple extensions (which we probably should)
+    if (!QDBusConnection::sessionBus().registerService(QStringLiteral("org.kde.plasma.browser_integration"))) {
+        qWarning() << "Failed to register DBus service";
+    }
 
     QObject::connect(Connection::self(), &Connection::dataReceived, [m_plugins](const QJsonObject &json) {
         const QString subsystem = json.value(QStringLiteral("subsystem")).toString();

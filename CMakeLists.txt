@@ -26,10 +26,13 @@ Widgets
 set(KF5_MIN_VERSION "5.2.0")
 find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
     KIO
+    I18n
     Notifications
+    Runner
 )
 
 add_subdirectory(host)
+add_subdirectory(tabsrunner)
 
 configure_file(org.kde.plasma.chrome_integration.json.in org.kde.plasma.chrome_integration.json @ONLY)
 configure_file(org.kde.plasma.firefox_integration.json.in org.kde.plasma.firefox_integration.json @ONLY)

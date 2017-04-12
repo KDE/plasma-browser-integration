@@ -1,0 +1,14 @@
+[Desktop Entry]
+Name=Browser Tabs
+Comment=Find and activate browser tabs
+X-KDE-ServiceTypes=Plasma/Runner
+Type=Service
+Icon=internet-web-browser
+X-KDE-Library=krunner_browsertabs
+X-KDE-PluginInfo-Author=Kai Uwe Broulik
+X-KDE-PluginInfo-Email=kde@privat.broulik.de
+X-KDE-PluginInfo-Name=browsertabs
+X-KDE-PluginInfo-Version=1.0
+X-KDE-PluginInfo-License=LGPL
+X-KDE-PluginInfo-EnabledByDefault=true
+X-Plasma-AdvertiseSingleRunnerQueryMode=true

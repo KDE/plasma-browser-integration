@@ -9,7 +9,10 @@ set(FOO_SOURCES main.cpp
                 kdeconnectplugin.cpp
                 downloadplugin.cpp
                 downloadjob.cpp
+                tabsrunnerplugin.cpp
                 )
+
+qt5_add_dbus_adaptor(FOO_SOURCES ../dbus/org.kde.plasma.browser_integration.TabsRunner.xml tabsrunnerplugin.h TabsRunnerPlugin)
 
 add_executable(plasma-browser-integration-host ${FOO_SOURCES})
 target_link_libraries(plasma-browser-integration-host Qt5::DBus Qt5::Gui Qt5::Widgets KF5::KIOCore KF5::Notifications)

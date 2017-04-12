@@ -22,6 +22,27 @@ function connectHost() {
     port = chrome.runtime.connectNative("org.kde.plasma.browser_integration");
 }
 
+// returns an Object which only contains values for keys in allowedKeys
+function filterObject(obj, allowedKeys) {
+    var newObj = {}
+
+    // I bet this can be done in a more efficient way
+    for (key in obj) {
+        if (obj.hasOwnProperty(key) && allowedKeys.indexOf(key) > -1) {
+            newObj[key] = obj[key];
+        }
+    }
+
+    return newObj;
+}
+
+// filters objects within an array so they only contain values for keys in allowedKeys
+function filterArrayObjects(arr, allowedKeys) {
+    return arr.map(function (item) {
+        return filterObject(item, allowedKeys);
+    });
+}
+
 // KDE Connect
 // ------------------------------------------------------------------------
 //
@@ -232,6 +253,51 @@ chrome.tabs.onRemoved.addListener(function (tabId, removeInfo) {
            console.log("still know", incognitoTabs.length, "incognito tabs");
         }
    }
+});
+
+// Tabs Runner
+// ------------------------------------------------------------------------
+//
+addCallback("tabsrunner", "activate", function (message) {
+
+    var tabId = message.tabId;
+
+    console.log("Tabs Runner requested to activate tab with id", tabId);
+
+    // first activate the tab, this means it's current in its window
+    chrome.tabs.update(tabId, {active: true}, function (tab) {
+
+        if (chrome.runtime.lastError || !tab) { // this "lastError" stuff feels so archaic
+            // failed to update
+            return;
+        }
+
+        // then raise the tab's window too
+        chrome.windows.update(tab.windowId, {focused: true}, function (window) {
+
+        });
+    });
+
+});
+
+// only forward certain tab properties back to our host
+var whitelistedTabProperties = [
+    "id", "active", "audible", "favIconUrl", "incognito", "title", "url"
+];
+
+// FIXME We really should enforce some kind of security policy, so only e.g. plasmashell and krunner
+// may access your tabs
+addCallback("tabsrunner", "getTabs", function (message) {
+    chrome.tabs.query({}, function (tabs) {
+        // remove properties not in whitelist
+        var filteredTabs = filterArrayObjects(tabs, whitelistedTabProperties);
+
+        port.postMessage({
+            subsystem: "tabsrunner",
+            event: "gotTabs",
+            tabs: tabs
+        });
+    });
 });
 
 // Debug
