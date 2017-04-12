@@ -53,7 +53,7 @@ var hasKdeConnectMenu = false;
 
 chrome.contextMenus.onClicked.addListener(function (info) {
     if (info.menuItemId === "kdeconnect_page") {
-        var url = info.linkUrl;
+        var url = info.linkUrl || info.pageUrl;
         console.log("Send url", url, "to kdeconnect device", kdeConnectDefaultDeviceId);
         port.postMessage({
             subsystem: "kdeconnect",
@@ -81,7 +81,7 @@ addCallback("kdeconnect", "devicesChanged", function(message) {
             hasKdeConnectMenu = true; // TODO check error
             chrome.contextMenus.create({
                 id: "kdeconnect_page",
-                contexts: ["link"],
+                contexts: ["link", "page"],
                 title: menuEntryTitle
             });
         }
