@@ -55,6 +55,29 @@ void DownloadJob::update(const QJsonObject &payload)
         setProcessedAmount(Bytes, it->toDouble());
     }
 
+    it = payload.constFind(QStringLiteral("estimatedEndTime"));
+    if (it != end) {
+        qulonglong speed = 0;
+
+        // now calculate the speed from estimated end time and total size
+        // funny how chrome only gives us a time whereas KJob operates on speed
+        // and calculates the time this way :)
+
+        const QDateTime endTime = QDateTime::fromString(it->toString(), Qt::ISODate);
+        if (endTime.isValid()) {
+            const QDateTime now = QDateTime::currentDateTimeUtc();
+
+            qulonglong remainingBytes = totalAmount(Bytes) - processedAmount(Bytes);
+            quint64 remainingTime = now.secsTo(endTime);
+
+            if (remainingTime > 0) {
+                speed = remainingBytes / remainingTime;
+            }
+        }
+
+        emitSpeed(speed);
+    }
+
     // TODO use the estimatedEndTime to calculate transfer speed
 
     it = payload.constFind(QStringLiteral("state"));
