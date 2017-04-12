@@ -8,14 +8,33 @@
  */
 
 var port
-var callbacks = {};
+var callbacks = {}; // TODO rename to "portCallbacks"?
+var runtimeCallbacks = {};
 
-function addCallback(subsystem, action, callback)
+function addCallback(subsystem, action, callback) // TODO rename to "addPortCallbacks"?
 {
     if (!callbacks[subsystem]) {
         callbacks[subsystem] = {};
     }
     callbacks[subsystem][action] = callback;
+}
+
+function sendPortMessage(subsystem, event, payload)
+{
+    // why do we put stuff on root level here but otherwise have a "payload"? :(
+    var message = payload || {}
+    message.subsystem = subsystem;
+    message.event = event;
+
+    port.postMessage(message);
+}
+
+function addRuntimeCallback(subsystem, action, callback)
+{
+    if (!runtimeCallbacks[subsystem]) {
+        runtimeCallbacks[subsystem] = {};
+    }
+    runtimeCallbacks[subsystem][action] = callback;
 }
 
 function connectHost() {
@@ -96,21 +115,63 @@ addCallback("kdeconnect", "devicesChanged", function(message) {
 // ------------------------------------------------------------------------
 //
 
-var currentPlayerTab;
+var currentPlayerTabId = 0;
 
-chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
-    if (request.subsystem === "mpris") {
-        switch (request.action) {
-        case "play":
-            currentPlayerTab = sender.tab;
-            console.log("TAB", currentPlayerTab);
-            port.postMessage({subsystem: "mpris", event: "play", title: currentPlayerTab.title});
-            break;
-        case "pause":
-            port.postMessage({subsystem: "mpris", event: "pause"});
-            break;
-        }
+chrome.tabs.onRemoved.addListener(function (tab) {
+    if (tab == currentPlayerTabId) {
+        // our player is gone :(
+        currentPlayerTabId = 0;
+        sendPortMessage("mpris", "gone");
     }
+});
+
+// callbacks from host (Plasma) to our extension
+addCallback("mpris", "play", function (message) {
+    if (currentPlayerTabId) {
+        chrome.tabs.sendMessage(currentPlayerTabId, {
+            subsystem: "mpris",
+            action: "play"
+        });
+    }
+});
+
+addCallback("mpris", "pause", function (message) {
+    if (currentPlayerTabId) {
+        chrome.tabs.sendMessage(currentPlayerTabId, {
+            subsystem: "mpris",
+            action: "pause"
+        });
+    }
+});
+
+addCallback("mpris", "playPause", function (message) {
+    if (currentPlayerTabId) {
+        chrome.tabs.sendMessage(currentPlayerTabId, {
+            subsystem: "mpris",
+            action: "playPause"
+        });
+    }
+});
+
+// callbacks from a browser tab to our extension
+addRuntimeCallback("mpris", "playing", function (message, sender) {
+    currentPlayerTabId = sender.tab.id;
+    sendPortMessage("mpris", "playing", {
+        title: sender.tab.title,
+        url: sender.tab.url
+    });
+});
+
+addRuntimeCallback("mpris", "paused", function (message) {
+    sendPortMessage("mpris", "paused");
+});
+
+addRuntimeCallback("mpris", "duration", function (message) {
+    sendPortMessage("mpris", "duration", message);
+});
+
+addRuntimeCallback("mpris", "seeked", function (message) {
+    // TODO
 });
 
 // MISC
@@ -358,6 +419,8 @@ port.onMessage.addListener(function (message) {
 
     if (callbacks[subsystem] && callbacks[subsystem][action]) {
         callbacks[subsystem][action](message.payload);
+    } else {
+        console.warn("Don't know what to do with host message", subsystem, action);
     }
 });
 
@@ -375,4 +438,21 @@ port.onDisconnect.addListener(function() {
 
   // TODO crash recursion guard
   connectHost();
+});
+
+chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
+    // TODO check sender for privilege
+
+    var subsystem = message.subsystem;
+    var action = message.action;
+
+    if (!subsystem || !action) {
+        return;
+    }
+
+    if (runtimeCallbacks[subsystem] && runtimeCallbacks[subsystem][action]) {
+        runtimeCallbacks[subsystem][action](message.payload, sender);
+    } else {
+        console.warn("Don't know what to do with runtime message", subsystem, action);
+    }
 });

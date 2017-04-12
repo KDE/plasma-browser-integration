@@ -2,13 +2,14 @@
 #include <QDBusConnection>
 #include <QDebug>
 
-#include "mpris.h"
 #include "connection.h"
+
 #include "abstractbrowserplugin.h"
 #include "incognitoplugin.h"
 #include "kdeconnectplugin.h"
 #include "downloadplugin.h"
 #include "tabsrunnerplugin.h"
+#include "mprisplugin.h"
 
 void msgHandler(QtMsgType type, const QMessageLogContext &context, const QString &msg)
 {
@@ -46,6 +47,7 @@ int main(int argc, char *argv[])
     m_plugins << new KDEConnectPlugin(&a);
     m_plugins << new DownloadPlugin(&a);
     m_plugins << new TabsRunnerPlugin(&a);
+    m_plugins << new MPrisPlugin(&a);
 
     // TODO pid suffix or so if we want to allow multiple extensions (which we probably should)
     if (!QDBusConnection::sessionBus().registerService(QStringLiteral("org.kde.plasma.browser_integration"))) {
@@ -74,8 +76,8 @@ int main(int argc, char *argv[])
                 return;
             }
         }
-        qDebug() << "not handling";
 
+        qDebug() << "Don't know how to handle event" << event << "for subsystem" << subsystem;
     });
 
     return a.exec();
