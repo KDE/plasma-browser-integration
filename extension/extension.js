@@ -7,15 +7,13 @@
     (at your option) any later version.
  */
 
-console.log("HALLO?");
-
 var port
-var callbacks = [];
+var callbacks = {};
 
 function addCallback(subsystem, action, callback)
 {
     if (!callbacks[subsystem]) {
-        callbacks[subsystem] = [];
+        callbacks[subsystem] = {};
     }
     callbacks[subsystem][action] = callback;
 }
