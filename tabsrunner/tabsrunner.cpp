@@ -149,8 +149,12 @@ void TabsRunner::match(Plasma::RunnerContext &context)
                 iconName = QStringLiteral("face-smirk");// TODO QStringLiteral("incognito");
             }
 
-            if (audible && !muted) {
-                iconName = QStringLiteral("audio-volume-high");
+            if (audible) {
+                if (muted) {
+                    iconName = QStringLiteral("audio-volume-muted");
+                } else {
+                    iconName = QStringLiteral("audio-volume-high");
+                }
             }
 
             match.setIconName(iconName);
