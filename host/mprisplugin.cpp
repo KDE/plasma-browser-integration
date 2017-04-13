@@ -70,9 +70,8 @@ void MPrisPlugin::handleData(const QString &event, const QJsonObject &data)
         unregisterService();
     } else if (event == QLatin1String("playing")) {
         setPlaybackStatus(QStringLiteral("Playing"));
-        m_title = data.value(QStringLiteral("title")).toString();
+        m_pageTitle = data.value(QStringLiteral("title")).toString();
         m_url = QUrl(data.value(QStringLiteral("url")).toString());
-        // TODO proper metadata
         emit metadataChanged();
 
         registerService();
@@ -83,6 +82,48 @@ void MPrisPlugin::handleData(const QString &event, const QJsonObject &data)
 
         // <video> duration is in seconds, mpris uses microseconds
         setLength(length * 1000 * 1000);
+    } else if (event == QLatin1String("metadata")) {
+        m_title = data.value(QStringLiteral("title")).toString();
+        m_artist = data.value(QStringLiteral("artist")).toString();
+
+        // for simplicity we just use the biggest artwork it offers, perhaps we could limit it to some extent
+        // TODO download/cache artwork somewhere
+        QSize biggest;
+        QUrl artworkUrl;
+        const QJsonArray &artwork = data.value(QStringLiteral("artwork")).toArray();
+        for (auto it = artwork.constBegin(), end = artwork.constEnd(); it != end; ++it) {
+            const QJsonObject &item = it->toObject();
+
+            const QUrl url = QUrl(item.value(QStringLiteral("src")).toString());
+            if (!url.isValid()) {
+                continue;
+            }
+
+            // why is this named "sizes" when it's just a string and the examples don't mention how one could specify multiple?
+            // also, how on Earth could a single image src have multiple sizes? ...
+            const QString sizeString = item.value(QStringLiteral("sizes")).toString();
+            // now parse the size...
+            const auto &sizeParts = sizeString.splitRef(QLatin1Char('x'));
+            if (sizeParts.count() != 2) {
+                continue;
+            }
+
+            const int width = sizeParts.first().toInt();
+            const int height = sizeParts.last().toInt();
+            if (width <= 0 || height <= 0) {
+                continue;
+            }
+
+            const QSize actualSize(width, height);
+            if (!biggest.isValid() || (actualSize.width() >= biggest.width() && actualSize.height() >= biggest.height())) {
+                artworkUrl = url;
+                biggest = actualSize;
+            }
+        }
+
+        m_artworkUrl = artworkUrl;
+
+        emit metadataChanged();
     } else {
         qWarning() << "Don't know how to handle mpris event" << event;
     }
@@ -131,16 +172,27 @@ QString MPrisPlugin::playbackStatus() const
 QVariantMap MPrisPlugin::metadata() const
 {
     QVariantMap metadata;
-    // TODO get proper metadata, possibly from the new media sessions API?
-    if (!m_title.isEmpty()) {
-        metadata.insert(QStringLiteral("xesam:title"), m_title);
+
+    const QString &effectiveTitle = !m_title.isEmpty() ? m_title : m_pageTitle;
+    if (!effectiveTitle.isEmpty()) {
+        metadata.insert(QStringLiteral("xesam:title"), effectiveTitle);
     }
+
     if (m_url.isValid()) {
         metadata.insert(QStringLiteral("xesam:url"), m_url.toDisplayString());
     }
     if (m_length > 0) {
         metadata.insert(QStringLiteral("mpris:length"), m_length);
     }
+    if (!m_artist.isEmpty()) {
+        metadata.insert(QStringLiteral("xesam:artist"), m_artist);
+    }
+    if (m_artworkUrl.isValid()) {
+        metadata.insert(QStringLiteral("mpris:artUrl"), m_artworkUrl.toDisplayString());
+    }
+
+    // TODO album name and stuff
+
     return metadata;
 }
 

@@ -17,8 +17,6 @@ function sendMessage(subsystem, action, payload)
     });
 }
 
-var activePlayer;
-
 chrome.runtime.onMessage.addListener(function (message, sender) {
     // TODO do something with sender (check privilige or whatever)
 
@@ -37,6 +35,10 @@ chrome.runtime.onMessage.addListener(function (message, sender) {
 // MPRIS
 // ------------------------------------------------------------------------
 //
+var activePlayer;
+
+var players = [];
+
 addCallback("mpris", "play", function () {
     if (activePlayer) {
         activePlayer.play();
@@ -59,6 +61,13 @@ addCallback("mpris", "playPause", function () {
     }
 });
 
+// TODO this thing will eventually be invoked by our extension to ask the page
+// for a player. We could potentially hook that up to the "playing audio" icon on the tab
+// or check that when new metadata arrives over media sessions or something like that
+addCallback("mpris", "checkPlayer", function () {
+    //registerAllPlayers();
+});
+
 function setPlayerActive(player) {
     activePlayer = player;
     sendMessage("mpris", "playing");
@@ -72,42 +81,137 @@ function sendPlayerInfo(player, event, payload) {
     sendMessage("mpris", event, payload);
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-    // TODO recognize when a new player arrives
-    // TODO could be done if we just look for the "audio playing in this tab" and only then check for player?
+function registerPlayer(player) {
+    if (players.indexOf(player) > -1) {
+        console.log("Already know", player);
+    }
 
-    var players = document.querySelectorAll("video");
-    players.forEach(function (player) {
-        // auto-playing player, become active right away
-        if (!player.paused) {
-            setPlayerActive(player);
-        }
-        player.addEventListener("play", function () {
-            setPlayerActive(player);
-        });
+    console.log("Register player", player);
 
-        player.addEventListener("pause", function () {
-            sendPlayerInfo(player, "paused");
-        });
+    // auto-playing player, become active right away
+    if (!player.paused) {
+        setPlayerActive(player);
+    }
+    player.addEventListener("play", function () {
+        setPlayerActive(player);
+    });
 
-        // TODO use "rate" instead
-        /*player.addEventListener("timeupdate", function () {
+    player.addEventListener("pause", function () {
+        sendPlayerInfo(player, "paused");
+    });
 
-        });*/
+    // TODO use "rate" instead
+    /*player.addEventListener("timeupdate", function () {
 
-        // TODO use player.seekable for determining whether we can seek?
+    });*/
+
+    // TODO use player.seekable for determining whether we can seek?
+    sendPlayerInfo(player, "duration", {
+        duration: player.duration
+    });
+    player.addEventListener("durationchange", function () {
         sendPlayerInfo(player, "duration", {
             duration: player.duration
         });
-        player.addEventListener("durationchange", function () {
-            sendPlayerInfo(player, "duration", {
-                duration: player.duration
-            });
-        });
+    });
 
-        player.addEventListener("seeked", function () {
-            // TODO send pos along so we can update the mpris Position
+    player.addEventListener("seeked", function () {
+        // TODO send pos along so we can update the mpris Position
+    });
+
+    // TODO remove it again when it goes away
+    players.push(player);
+}
+
+function registerAllPlayers() {
+    var players = document.querySelectorAll("video,audio");
+    players.forEach(registerPlayer);
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+
+    registerAllPlayers();
+
+    // TODO figure out somehow when a <video> tag is added dynamically and autoplays
+    // as can happen on Ajax-heavy pages like YouTube
+    // could also be done if we just look for the "audio playing in this tab" and only then check for player?
+    // cf. "checkPlayer" event above
+
+/*
+    var observer = new MutationObserver(function (mutations) {
+        mutations.forEach(function (mutation) {
+            mutation.addedNodes.forEach(function (node) {
+                console.log(node.tagName);
+                if (node.tagName === "VIDEO") {
+                    registerPlayer(node);
+                }
+            });
         });
     });
 
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true
+    });*/
+
+});
+
+// This adds a shim for the Chrome media sessions API which is currently only supported on Android
+// Documentation: https://developers.google.com/web/updates/2017/02/media-session
+// Try it here: https://googlechrome.github.io/samples/media-session/video.html
+//
+// TODO Forward mpris calls to the actionHandlers on the page
+// previoustrack, nexttrack, seekbackward, seekforward, play, pause
+
+var scriptTag = document.createElement("script");
+scriptTag.innerHTML = `
+    var plasmaMediaSessions = function() {};
+    plasmaMediaSessions.callbacks = {};
+    plasmaMediaSessions.metadata = {};
+    plasmaMediaSessions.sendMessage = function(action, payload) {
+        var transferItem = document.getElementById('plasma-browser-integration-media-session-transfer');
+        transferItem.innerText = JSON.stringify({action: action, payload: payload});
+
+        var event = document.createEvent('CustomEvent');
+        event.initEvent('payloadChanged', true, true);
+        transferItem.dispatchEvent(event);
+    };
+
+    navigator.mediaSession = {};
+    navigator.mediaSession.setActionHandler = function (name, cb) {
+        plasmaMediaSessions.callbacks[name] = cb;
+    };
+    Object.defineProperty(navigator.mediaSession, "metadata", {
+        get: function() { return plasmaMediaSessions.metadata; },
+        set: function(newValue) {
+            plasmaMediaSessions.metadata = newValue;
+            plasmaMediaSessions.sendMessage("metadata", newValue.data);
+        }
+    });
+
+    window.MediaMetadata = function (data) {
+        this.data = data;
+    };
+`;
+
+(document.head || document.documentElement).appendChild(scriptTag);
+
+// now the fun part of getting the stuff from our page back into our extension...
+// cannot access extensions from innocent page JS for security
+var transferItem = document.createElement("div");
+transferItem.setAttribute("id", "plasma-browser-integration-media-session-transfer");
+transferItem.style.display = "none";
+
+(document.head || document.documentElement).appendChild(transferItem);
+
+transferItem.addEventListener('payloadChanged', function() {
+    var json = JSON.parse(this.innerText);
+
+    var action = json.action
+
+    if (action === "metadata") {
+        // FIXME filter metadata, this stuff comes from a hostile environment after all
+
+        sendMessage("mpris", "metadata", json.payload);
+    }
 });

@@ -79,8 +79,14 @@ private:
     void setLength(quint64 length);
 
     QString m_playbackStatus;
-    QString m_title;
+
+    QString m_pageTitle;
     QUrl m_url;
+
+    QString m_title;
+    QString m_artist;
+    QUrl m_artworkUrl;
+
     quint64 m_length = 0;
 
 };

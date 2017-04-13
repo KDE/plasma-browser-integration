@@ -174,6 +174,10 @@ addRuntimeCallback("mpris", "seeked", function (message) {
     // TODO
 });
 
+addRuntimeCallback("mpris", "metadata", function (message) {
+    sendPortMessage("mpris", "metadata", message);
+});
+
 // MISC
 // ------------------------------------------------------------------------
 //
