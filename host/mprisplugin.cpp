@@ -30,7 +30,7 @@ void MPrisPlugin::emitPropertyChange(const QDBusAbstractAdaptor *interface, cons
     const QString interfaceName = QString::fromUtf8(interface->metaObject()->classInfo(0).value());
 
     QDBusMessage signal = QDBusMessage::createSignal(
-        QStringLiteral("/org/mpris/MediaPlayer"),
+        QStringLiteral("/org/mpris/MediaPlayer2"),
         QStringLiteral("org.freedesktop.DBus.Properties"),
         QStringLiteral("PropertiesChanged")
     );
