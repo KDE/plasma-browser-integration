@@ -174,25 +174,25 @@ addRuntimeCallback("mpris", "gone", function (message, sender) {
     }
 });
 
-addRuntimeCallback("mpris", "paused", function (message) {
+addRuntimeCallback("mpris", "paused", function (message, sender) {
     if (currentPlayerTabId == sender.tab.id) {
         sendPortMessage("mpris", "paused");
     }
 });
 
-addRuntimeCallback("mpris", "duration", function (message) {
+addRuntimeCallback("mpris", "duration", function (message, sender) {
     if (currentPlayerTabId == sender.tab.id) {
         sendPortMessage("mpris", "duration", message);
     }
 });
 
-addRuntimeCallback("mpris", "seeked", function (message) {
+addRuntimeCallback("mpris", "seeked", function (message, sender) {
     if (currentPlayerTabId == sender.tab.id) {
         // TODO
     }
 });
 
-addRuntimeCallback("mpris", "metadata", function (message) {
+addRuntimeCallback("mpris", "metadata", function (message, sender) {
     if (currentPlayerTabId == sender.tab.id) {
         sendPortMessage("mpris", "metadata", message);
     }
