@@ -83,7 +83,8 @@ function sendPlayerInfo(player, event, payload) {
 
 function registerPlayer(player) {
     if (players.indexOf(player) > -1) {
-        console.log("Already know", player);
+        //console.log("Already know", player);
+        return;
     }
 
     console.log("Register player", player);
@@ -137,13 +138,13 @@ document.addEventListener("DOMContentLoaded", function() {
     // could also be done if we just look for the "audio playing in this tab" and only then check for player?
     // cf. "checkPlayer" event above
 
-/*
     var observer = new MutationObserver(function (mutations) {
         mutations.forEach(function (mutation) {
             mutation.addedNodes.forEach(function (node) {
-                console.log(node.tagName);
                 if (node.tagName === "VIDEO") {
                     registerPlayer(node);
+                } else {
+                    registerAllPlayers(); // FIXME omg this is horrible, doing that every single time the dom changes
                 }
             });
         });
@@ -152,7 +153,15 @@ document.addEventListener("DOMContentLoaded", function() {
     observer.observe(document.body, {
         childList: true,
         subtree: true
-    });*/
+    });
+
+    window.addEventListener("beforeunload", function () {
+        // about to navigate to a different page, tell our extension that the player will be gone shortly
+        // we listen for tab closed in the extension but we don't for navigating away as URL change doesn't
+        // neccesarily mean a navigation but beforeunload *should* be the thing we want
+
+        sendMessage("mpris", "gone");
+    });
 
 });
 

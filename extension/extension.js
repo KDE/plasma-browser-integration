@@ -117,8 +117,11 @@ addCallback("kdeconnect", "devicesChanged", function(message) {
 
 var currentPlayerTabId = 0;
 
-chrome.tabs.onRemoved.addListener(function (tab) {
-    if (tab == currentPlayerTabId) {
+// when tab is closed, tell the player is gone
+// below we also have a "gone" signal listener from the content script
+// which is invoked in the onbeforeunload handler of the page
+chrome.tabs.onRemoved.addListener(function (tabId) {
+    if (tabId == currentPlayerTabId) {
         // our player is gone :(
         currentPlayerTabId = 0;
         sendPortMessage("mpris", "gone");
@@ -156,37 +159,49 @@ addCallback("mpris", "playPause", function (message) {
 // callbacks from a browser tab to our extension
 addRuntimeCallback("mpris", "playing", function (message, sender) {
     currentPlayerTabId = sender.tab.id;
+    console.log("player tab is now", currentPlayerTabId);
     sendPortMessage("mpris", "playing", {
         title: sender.tab.title,
         url: sender.tab.url
     });
 });
 
+addRuntimeCallback("mpris", "gone", function (message, sender) {
+    if (currentPlayerTabId == sender.tab.id) {
+        console.log("Player navigated away");
+        currentPlayerTabId = 0;
+        sendPortMessage("mpris", "gone");
+    }
+});
+
 addRuntimeCallback("mpris", "paused", function (message) {
-    sendPortMessage("mpris", "paused");
+    if (currentPlayerTabId == sender.tab.id) {
+        sendPortMessage("mpris", "paused");
+    }
 });
 
 addRuntimeCallback("mpris", "duration", function (message) {
-    sendPortMessage("mpris", "duration", message);
+    if (currentPlayerTabId == sender.tab.id) {
+        sendPortMessage("mpris", "duration", message);
+    }
 });
 
 addRuntimeCallback("mpris", "seeked", function (message) {
-    // TODO
+    if (currentPlayerTabId == sender.tab.id) {
+        // TODO
+    }
 });
 
 addRuntimeCallback("mpris", "metadata", function (message) {
-    sendPortMessage("mpris", "metadata", message);
+    if (currentPlayerTabId == sender.tab.id) {
+        sendPortMessage("mpris", "metadata", message);
+    }
 });
 
 // MISC
 // ------------------------------------------------------------------------
 //
 
-chrome.windows.getAll({
-    populate: true
-}, function (windows) {
-    console.log("CHROME WINS", windows);
-});
 
 
 // Downloads
