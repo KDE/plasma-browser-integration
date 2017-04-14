@@ -6,6 +6,7 @@
 #include <QUrl>
 
 class QDBusObjectPath;
+class QDBusAbstractAdaptor;
 
 class MPrisPlugin : public AbstractBrowserPlugin
 {
@@ -68,15 +69,17 @@ signals:
     void maximumRateChanged();
     void metadataChanged();
 
-private slots:
-    void onPropertyChanged();
-
 private:
+    void emitPropertyChange(const QDBusAbstractAdaptor *interface, const char *propertyName);
+
     bool registerService();
     bool unregisterService();
 
     void setPlaybackStatus(const QString &playbackStatus);
     void setLength(quint64 length);
+
+    QDBusAbstractAdaptor *m_root;
+    QDBusAbstractAdaptor *m_player;
 
     QString m_playbackStatus;
 

@@ -12,29 +12,22 @@ static const QString s_serviceName = QStringLiteral("org.mpris.MediaPlayer2.plas
 
 MPrisPlugin::MPrisPlugin(QObject *parent)
     : AbstractBrowserPlugin(QStringLiteral("mpris"), 1, parent)
+    , m_root(new MPrisRoot(this))
+    , m_player(new MPrisPlayer(this))
 {
-    new MPrisRoot(this);
-    new MPrisPlayer(this);
 
     if (!QDBusConnection::sessionBus().registerObject(QStringLiteral("/org/mpris/MediaPlayer2"), this)) {
         qWarning() << "Failed to register MPris object";
         return;
     }
-
-    // TODO use some introspection and QSignalMapper magic to auto-emit the correct PropertyChanged signal :D
-    /*QMetaMethod changedHandler = metaObject()->method(metaObject()->indexOfSlot("onPropertyChanged()"));
-
-    for (int i = metaObject()->propertyOffset(); i < metaObject()->propertyCount(); ++i) {
-        QMetaProperty prop = metaObject()->property(i);
-        if (prop.hasNotifySignal()) {
-            connect(this, prop.notifySignal(), this, changedHandler);
-        }
-    }*/
 }
 
-void MPrisPlugin::onPropertyChanged()
+// TODO this can surely be done in a much beter way with introspection and what not
+void MPrisPlugin::emitPropertyChange(const QDBusAbstractAdaptor *interface, const char *propertyName)
 {
-    /*// FIXME emit the correct one and not just all the things
+    // TODO don't assume it's index 0
+    // TODO figure out encoding encoding
+    const QString interfaceName = QString::fromUtf8(interface->metaObject()->classInfo(0).value());
 
     QDBusMessage signal = QDBusMessage::createSignal(
         QStringLiteral("/org/mpris/MediaPlayer"),
@@ -42,14 +35,18 @@ void MPrisPlugin::onPropertyChanged()
         QStringLiteral("PropertiesChanged")
     );
 
+    QMetaProperty prop = metaObject()->property(metaObject()->indexOfProperty(propertyName));
+
     signal.setArguments({
-        QStringLiteral("org.mpris.MediaPlayer2.Player"),
+        interfaceName,
         QVariantMap{
-            {QStringLiteral("PlaybackStatus"), playbackStatus()}
+            {QString::fromUtf8(prop.name()), prop.read(this)}
         }
     });
 
-    QDBusConnection::sessionBus().send(signal);*/
+    QDBusConnection::sessionBus().send(signal);
+
+    //qDebug() << "emitted change on iface" << interfaceName << "for prop" << propertyName << "which was" << signal;
 }
 
 bool MPrisPlugin::registerService()
@@ -200,7 +197,9 @@ void MPrisPlugin::setPlaybackStatus(const QString &playbackStatus)
 {
     if (m_playbackStatus != playbackStatus) {
         m_playbackStatus = playbackStatus;
-        emit playbackStatusChanged();
+        //emit playbackStatusChanged();
+
+        emitPropertyChange(m_player, "PlaybackStatus");
     }
 }
 
@@ -209,9 +208,10 @@ void MPrisPlugin::setLength(quint64 length)
     if (m_length != length) {
         m_length = length;
 
-        emit metadataChanged();
+        //emit metadataChanged();
 
-        emit canSeekChanged(); // TODO
+        emitPropertyChange(m_player, "Metadata");
+        emitPropertyChange(m_player, "CanSeek");
     }
 }
 
