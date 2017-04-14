@@ -39,9 +39,10 @@ void MPrisPlugin::emitPropertyChange(const QDBusAbstractAdaptor *interface, cons
 
     signal.setArguments({
         interfaceName,
-        QVariantMap{
+        QVariantMap{ // updated
             {QString::fromUtf8(prop.name()), prop.read(this)}
-        }
+        },
+        QStringList() // invalidated
     });
 
     QDBusConnection::sessionBus().send(signal);
