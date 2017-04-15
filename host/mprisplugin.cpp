@@ -137,6 +137,11 @@ QString MPrisPlugin::desktopEntry() const
     return QStringLiteral("google-chrome"); // TODO return correct browser
 }
 
+bool MPrisPlugin::canRaise() const
+{
+    return true; // really?
+}
+
 bool MPrisPlugin::canControl() const
 {
     return true; // really?
@@ -228,7 +233,7 @@ void MPrisPlugin::setLength(quint64 length)
 
 void MPrisPlugin::Raise()
 {
-
+    sendData(QStringLiteral("raise"));
 }
 
 void MPrisPlugin::Quit()

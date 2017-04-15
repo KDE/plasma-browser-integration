@@ -62,6 +62,26 @@ function filterArrayObjects(arr, allowedKeys) {
     });
 }
 
+// activates giveb tab and raises its window, used by tabs runner and mpris Raise command
+function raiseTab(tabId) {
+// first activate the tab, this means it's current in its window
+    chrome.tabs.update(tabId, {active: true}, function (tab) {
+
+        if (chrome.runtime.lastError || !tab) { // this "lastError" stuff feels so archaic
+            // failed to update
+            return;
+        }
+
+        // then raise the tab's window too
+        chrome.windows.update(tab.windowId, {focused: true}, function (window) {
+
+        });
+
+        // now check if the window was minimized and then unminimize it
+        // problem is that we cannot restore, we can just set state (normal or maximized)
+    });
+}
+
 // KDE Connect
 // ------------------------------------------------------------------------
 //
@@ -129,6 +149,12 @@ chrome.tabs.onRemoved.addListener(function (tabId) {
 });
 
 // callbacks from host (Plasma) to our extension
+addCallback("mpris", "raise", function (message) {
+    if (currentPlayerTabId) {
+        raiseTab(currentPlayerTabId);
+    }
+});
+
 addCallback("mpris", "play", function (message) {
     if (currentPlayerTabId) {
         chrome.tabs.sendMessage(currentPlayerTabId, {
@@ -353,25 +379,11 @@ chrome.tabs.onRemoved.addListener(function (tabId, removeInfo) {
 // ------------------------------------------------------------------------
 //
 addCallback("tabsrunner", "activate", function (message) {
-
     var tabId = message.tabId;
 
     console.log("Tabs Runner requested to activate tab with id", tabId);
 
-    // first activate the tab, this means it's current in its window
-    chrome.tabs.update(tabId, {active: true}, function (tab) {
-
-        if (chrome.runtime.lastError || !tab) { // this "lastError" stuff feels so archaic
-            // failed to update
-            return;
-        }
-
-        // then raise the tab's window too
-        chrome.windows.update(tab.windowId, {focused: true}, function (window) {
-
-        });
-    });
-
+    raiseTab(tabId);
 });
 
 addCallback("tabsrunner", "setMuted", function (message) {

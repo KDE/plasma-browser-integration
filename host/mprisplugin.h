@@ -15,6 +15,7 @@ class MPrisPlugin : public AbstractBrowserPlugin
     // Root
     Q_PROPERTY(QString Identity READ identity)
     Q_PROPERTY(QString DesktopEntry READ desktopEntry)
+    Q_PROPERTY(bool CanRaise READ canRaise)
 
     // Player
     Q_PROPERTY(bool CanControl READ canControl NOTIFY canControlChanged)
@@ -38,6 +39,7 @@ public:
     // Root
     QString identity() const;
     QString desktopEntry() const;
+    bool canRaise() const;
 
     // Player
     bool canControl() const;
