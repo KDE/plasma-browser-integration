@@ -183,6 +183,7 @@ scriptTag.innerHTML = `
     var plasmaMediaSessions = function() {};
     plasmaMediaSessions.callbacks = {};
     plasmaMediaSessions.metadata = {};
+    plasmaMediaSessions.playbackState = "none";
     plasmaMediaSessions.sendMessage = function(action, payload) {
         var transferItem = document.getElementById('plasma-browser-integration-media-session-transfer');
         transferItem.innerText = JSON.stringify({action: action, payload: payload});
@@ -194,13 +195,24 @@ scriptTag.innerHTML = `
 
     navigator.mediaSession = {};
     navigator.mediaSession.setActionHandler = function (name, cb) {
-        plasmaMediaSessions.callbacks[name] = cb;
+        if (cb) {
+            plasmaMediaSessions.callbacks[name] = cb;
+        } else {
+            delete plasmaMediaSessions.callbacks[name];
+        }
     };
     Object.defineProperty(navigator.mediaSession, "metadata", {
         get: function() { return plasmaMediaSessions.metadata; },
         set: function(newValue) {
             plasmaMediaSessions.metadata = newValue;
             plasmaMediaSessions.sendMessage("metadata", newValue.data);
+        }
+    });
+    Object.defineProperty(navigator.mediaSession, "playbackState", {
+        get: function() { return plasmaMediaSessions.playbackState; },
+        set: function(newValue) {
+            plasmaMediaSessions.playbackState = newValue;
+            plasmaMediaSessions.sendMessage("playbackState", newValue);
         }
     });
 

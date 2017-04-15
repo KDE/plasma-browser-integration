@@ -7,6 +7,7 @@
 #include "mprisplayer.h"
 
 #include <QDebug>
+#include <QImageReader>
 
 static const QString s_serviceName = QStringLiteral("org.mpris.MediaPlayer2.plasma-chrome-integration");
 
@@ -211,6 +212,9 @@ void MPrisPlugin::processMetadata(const QJsonObject &data)
     QSize biggest;
     QUrl artworkUrl;
     const QJsonArray &artwork = data.value(QStringLiteral("artwork")).toArray();
+
+    const auto &supportedImageMimes = QImageReader::supportedMimeTypes();
+
     for (auto it = artwork.constBegin(), end = artwork.constEnd(); it != end; ++it) {
         const QJsonObject &item = it->toObject();
 
@@ -221,20 +225,27 @@ void MPrisPlugin::processMetadata(const QJsonObject &data)
 
         // why is this named "sizes" when it's just a string and the examples don't mention how one could specify multiple?
         // also, how on Earth could a single image src have multiple sizes? ...
+        // spec says this is a space-separated list of sizes for ... some reason
         const QString sizeString = item.value(QStringLiteral("sizes")).toString();
+        QSize actualSize;
+
         // now parse the size...
         const auto &sizeParts = sizeString.splitRef(QLatin1Char('x'));
-        if (sizeParts.count() != 2) {
+        if (sizeParts.count() == 2) {
+            const int width = sizeParts.first().toInt();
+            const int height = sizeParts.last().toInt();
+            if (width <= 0 || height <= 0) {
+                continue;
+            }
+
+            actualSize = QSize(width, height);
+        }
+
+        const QString type = item.value(QStringLiteral("type")).toString();
+        if (!type.isEmpty() && !supportedImageMimes.contains(type.toUtf8())) {
             continue;
         }
 
-        const int width = sizeParts.first().toInt();
-        const int height = sizeParts.last().toInt();
-        if (width <= 0 || height <= 0) {
-            continue;
-        }
-
-        const QSize actualSize(width, height);
         if (!biggest.isValid() || (actualSize.width() >= biggest.width() && actualSize.height() >= biggest.height())) {
             artworkUrl = url;
             biggest = actualSize;
