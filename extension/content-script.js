@@ -36,6 +36,7 @@ chrome.runtime.onMessage.addListener(function (message, sender) {
 // ------------------------------------------------------------------------
 //
 var activePlayer;
+var playerMetadata = {};
 
 var players = [];
 
@@ -70,7 +71,10 @@ addCallback("mpris", "checkPlayer", function () {
 
 function setPlayerActive(player) {
     activePlayer = player;
-    sendMessage("mpris", "playing");
+    // when playback starts, send along metadata
+    // a website might have set Media Sessions metadata prior to playing
+    // and then we would have ignored the metadata signal because there was no player
+    sendMessage("mpris", "playing", playerMetadata);
 }
 
 function sendPlayerInfo(player, event, payload) {
@@ -160,6 +164,8 @@ document.addEventListener("DOMContentLoaded", function() {
         // we listen for tab closed in the extension but we don't for navigating away as URL change doesn't
         // neccesarily mean a navigation but beforeunload *should* be the thing we want
 
+        activePlayer = undefined;
+        playerMetadata = {};
         sendMessage("mpris", "gone");
     });
 
@@ -220,6 +226,8 @@ transferItem.addEventListener('payloadChanged', function() {
 
     if (action === "metadata") {
         // FIXME filter metadata, this stuff comes from a hostile environment after all
+
+        playerMetadata = json.payload;
 
         sendMessage("mpris", "metadata", json.payload);
     }

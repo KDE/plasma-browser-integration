@@ -182,14 +182,29 @@ addCallback("mpris", "playPause", function (message) {
     }
 });
 
+addCallback("mpris", "setPosition", function (message) {
+    consoe.log("SET POS", message);
+    if (currentPlayerTabId) {
+        chrome.tabs.sendMessage(currentPlayerTabId, {
+            subsystem: "mpris",
+            action: "setPosition",
+            payload: {
+                position: message.position
+            }
+        });
+    }
+})
+
 // callbacks from a browser tab to our extension
 addRuntimeCallback("mpris", "playing", function (message, sender) {
     currentPlayerTabId = sender.tab.id;
     console.log("player tab is now", currentPlayerTabId);
-    sendPortMessage("mpris", "playing", {
-        title: sender.tab.title,
-        url: sender.tab.url
-    });
+
+    var metadata = message || {};
+    metadata.tabTitle = sender.tab.title;
+    metadata.url = sender.tab.url;
+
+    sendPortMessage("mpris", "playing", metadata);
 });
 
 addRuntimeCallback("mpris", "gone", function (message, sender) {

@@ -75,9 +75,10 @@ void MPrisPlugin::handleData(const QString &event, const QJsonObject &data)
         m_length = 0;
     } else if (event == QLatin1String("playing")) {
         setPlaybackStatus(QStringLiteral("Playing"));
-        m_pageTitle = data.value(QStringLiteral("title")).toString();
+        m_pageTitle = data.value(QStringLiteral("tabTitle")).toString();
         m_url = QUrl(data.value(QStringLiteral("url")).toString());
-        emit metadataChanged();
+
+        processMetadata(data); // also emits metadataChanged signal
 
         registerService();
     } else if (event == QLatin1String("paused")) {
@@ -87,48 +88,10 @@ void MPrisPlugin::handleData(const QString &event, const QJsonObject &data)
 
         // <video> duration is in seconds, mpris uses microseconds
         setLength(length * 1000 * 1000);
+    } else if (event == QLatin1String("positionChanged")) { // emitted after e.g. seeked
+        // setPosition(position * 1000 * 1000);
     } else if (event == QLatin1String("metadata")) {
-        m_title = data.value(QStringLiteral("title")).toString();
-        m_artist = data.value(QStringLiteral("artist")).toString();
-
-        // for simplicity we just use the biggest artwork it offers, perhaps we could limit it to some extent
-        // TODO download/cache artwork somewhere
-        QSize biggest;
-        QUrl artworkUrl;
-        const QJsonArray &artwork = data.value(QStringLiteral("artwork")).toArray();
-        for (auto it = artwork.constBegin(), end = artwork.constEnd(); it != end; ++it) {
-            const QJsonObject &item = it->toObject();
-
-            const QUrl url = QUrl(item.value(QStringLiteral("src")).toString());
-            if (!url.isValid()) {
-                continue;
-            }
-
-            // why is this named "sizes" when it's just a string and the examples don't mention how one could specify multiple?
-            // also, how on Earth could a single image src have multiple sizes? ...
-            const QString sizeString = item.value(QStringLiteral("sizes")).toString();
-            // now parse the size...
-            const auto &sizeParts = sizeString.splitRef(QLatin1Char('x'));
-            if (sizeParts.count() != 2) {
-                continue;
-            }
-
-            const int width = sizeParts.first().toInt();
-            const int height = sizeParts.last().toInt();
-            if (width <= 0 || height <= 0) {
-                continue;
-            }
-
-            const QSize actualSize(width, height);
-            if (!biggest.isValid() || (actualSize.width() >= biggest.width() && actualSize.height() >= biggest.height())) {
-                artworkUrl = url;
-                biggest = actualSize;
-            }
-        }
-
-        m_artworkUrl = artworkUrl;
-
-        emit metadataChanged();
+        processMetadata(data);
     } else {
         qWarning() << "Don't know how to handle mpris event" << event;
     }
@@ -236,6 +199,51 @@ void MPrisPlugin::setLength(quint64 length)
         emitPropertyChange(m_player, "Metadata");
         emitPropertyChange(m_player, "CanSeek");
     }
+}
+
+void MPrisPlugin::processMetadata(const QJsonObject &data)
+{
+    m_title = data.value(QStringLiteral("title")).toString();
+    m_artist = data.value(QStringLiteral("artist")).toString();
+
+    // for simplicity we just use the biggest artwork it offers, perhaps we could limit it to some extent
+    // TODO download/cache artwork somewhere
+    QSize biggest;
+    QUrl artworkUrl;
+    const QJsonArray &artwork = data.value(QStringLiteral("artwork")).toArray();
+    for (auto it = artwork.constBegin(), end = artwork.constEnd(); it != end; ++it) {
+        const QJsonObject &item = it->toObject();
+
+        const QUrl url = QUrl(item.value(QStringLiteral("src")).toString());
+        if (!url.isValid()) {
+            continue;
+        }
+
+        // why is this named "sizes" when it's just a string and the examples don't mention how one could specify multiple?
+        // also, how on Earth could a single image src have multiple sizes? ...
+        const QString sizeString = item.value(QStringLiteral("sizes")).toString();
+        // now parse the size...
+        const auto &sizeParts = sizeString.splitRef(QLatin1Char('x'));
+        if (sizeParts.count() != 2) {
+            continue;
+        }
+
+        const int width = sizeParts.first().toInt();
+        const int height = sizeParts.last().toInt();
+        if (width <= 0 || height <= 0) {
+            continue;
+        }
+
+        const QSize actualSize(width, height);
+        if (!biggest.isValid() || (actualSize.width() >= biggest.width() && actualSize.height() >= biggest.height())) {
+            artworkUrl = url;
+            biggest = actualSize;
+        }
+    }
+
+    m_artworkUrl = artworkUrl;
+
+    emitPropertyChange(m_player, "Metadata");
 }
 
 void MPrisPlugin::Raise()

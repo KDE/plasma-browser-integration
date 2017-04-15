@@ -86,6 +86,7 @@ private:
 
     void setPlaybackStatus(const QString &playbackStatus);
     void setLength(quint64 length);
+    void processMetadata(const QJsonObject &data);
 
     QDBusAbstractAdaptor *m_root;
     QDBusAbstractAdaptor *m_player;
