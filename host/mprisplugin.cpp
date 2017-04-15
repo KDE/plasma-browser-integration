@@ -66,6 +66,13 @@ void MPrisPlugin::handleData(const QString &event, const QJsonObject &data)
 {
     if (event == QLatin1String("gone")) {
         unregisterService();
+        setPlaybackStatus(QStringLiteral("Stopped")); // just in case
+        m_pageTitle.clear();
+        m_url.clear();
+        m_title.clear();
+        m_artist.clear();
+        m_artworkUrl.clear();
+        m_length = 0;
     } else if (event == QLatin1String("playing")) {
         setPlaybackStatus(QStringLiteral("Playing"));
         m_pageTitle = data.value(QStringLiteral("title")).toString();
