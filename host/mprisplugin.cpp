@@ -127,6 +127,16 @@ void MPrisPlugin::handleData(const QString &event, const QJsonObject &data)
     }
 }
 
+QString MPrisPlugin::identity() const
+{
+    return QStringLiteral("Google Chrome"); // TODO return correct browser
+}
+
+QString MPrisPlugin::desktopEntry() const
+{
+    return QStringLiteral("google-chrome"); // TODO return correct browser
+}
+
 bool MPrisPlugin::canControl() const
 {
     return true; // really?

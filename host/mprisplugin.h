@@ -12,6 +12,11 @@ class MPrisPlugin : public AbstractBrowserPlugin
 {
     Q_OBJECT
 
+    // Root
+    Q_PROPERTY(QString Identity READ identity)
+    Q_PROPERTY(QString DesktopEntry READ desktopEntry)
+
+    // Player
     Q_PROPERTY(bool CanControl READ canControl NOTIFY canControlChanged)
     Q_PROPERTY(bool CanPause READ canPause NOTIFY playbackStatusChanged)
     Q_PROPERTY(bool CanPlay READ canPlay NOTIFY playbackStatusChanged)
@@ -31,6 +36,8 @@ public:
     // mpris properties ____________
 
     // Root
+    QString identity() const;
+    QString desktopEntry() const;
 
     // Player
     bool canControl() const;
