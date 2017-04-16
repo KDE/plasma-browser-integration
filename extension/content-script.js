@@ -125,6 +125,19 @@ function registerPlayer(player) {
         sendPlayerInfo(player, "paused");
     });
 
+    // what about "stalled" event?
+    player.addEventListener("waiting", function () {
+        sendPlayerInfo(player, "waiting");
+    });
+
+    // opposite of "waiting", we finished buffering enough
+    // only if we are playing, though, should we set playback state back to playing
+    player.addEventListener("canplay", function () {
+        if (!player.paused) {
+            sendPlayerInfo(player, "canplay");
+        }
+    });
+
     player.addEventListener("timeupdate", function () {
         sendPlayerInfo(player, "timeupdate", {
             currentTime: player.currentTime

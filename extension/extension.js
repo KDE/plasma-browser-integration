@@ -241,6 +241,18 @@ addRuntimeCallback("mpris", "paused", function (message, sender) {
     }
 });
 
+addRuntimeCallback("mpris", "waiting", function (message, sender) {
+    if (currentPlayerTabId == sender.tab.id) {
+        sendPortMessage("mpris", "waiting");
+    }
+});
+
+addRuntimeCallback("mpris", "canplay", function (message, sender) {
+    if (currentPlayerTabId == sender.tab.id) {
+        sendPortMessage("mpris", "canplay");
+    }
+});
+
 addRuntimeCallback("mpris", "duration", function (message, sender) {
     if (currentPlayerTabId == sender.tab.id) {
         sendPortMessage("mpris", "duration", message);
