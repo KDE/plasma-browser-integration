@@ -3,8 +3,9 @@
 #include <QDebug>
 
 #include "connection.h"
-
 #include "abstractbrowserplugin.h"
+
+#include "windowmapper.h"
 #include "incognitoplugin.h"
 #include "kdeconnectplugin.h"
 #include "downloadplugin.h"
@@ -43,6 +44,7 @@ int main(int argc, char *argv[])
     a.setApplicationDisplayName("Google Chrome");
 
     QList<AbstractBrowserPlugin*> m_plugins;
+    m_plugins << &WindowMapper::self();
     m_plugins << new IncognitoPlugin(&a);
     m_plugins << new KDEConnectPlugin(&a);
     m_plugins << new DownloadPlugin(&a);

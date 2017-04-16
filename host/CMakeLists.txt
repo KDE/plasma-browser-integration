@@ -1,8 +1,9 @@
 include_directories("${CMAKE_CURRENT_BINARY_DIR}")
 
 set(FOO_SOURCES main.cpp
-                mprisplugin.cpp
                 connection.cpp
+                windowmapper.cpp
+                mprisplugin.cpp
                 abstractbrowserplugin.cpp
                 incognitoplugin.cpp
                 kdeconnectplugin.cpp
@@ -17,7 +18,15 @@ qt5_add_dbus_adaptor(FOO_SOURCES ../dbus/org.mpris.MediaPlayer2.xml mprisplugin.
 qt5_add_dbus_adaptor(FOO_SOURCES ../dbus/org.mpris.MediaPlayer2.Player.xml mprisplugin.h MPrisPlugin mprisplayer MPrisPlayer)
 
 add_executable(plasma-browser-integration-host ${FOO_SOURCES})
-target_link_libraries(plasma-browser-integration-host Qt5::DBus Qt5::Gui Qt5::Widgets KF5::KIOCore KF5::Notifications)
+target_link_libraries(
+    plasma-browser-integration-host
+    Qt5::DBus
+    Qt5::Gui
+    Qt5::Widgets
+    KF5::KIOCore
+    KF5::Notifications
+    KF5::WindowSystem
+)
 
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
 

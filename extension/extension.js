@@ -440,6 +440,77 @@ addCallback("tabsrunner", "getTabs", function (message) {
     });
 });
 
+// Window Mapper
+// ------------------------------------------------------------------------
+//
+function notifyWindowAdded(window) {
+    if (!window.id) {
+        console.warn("Cannot notify creation of window without id");
+        return;
+    }
+
+    port.postMessage({
+        subsystem: "windows",
+        event: "added",
+        browserId: window.id
+    });
+}
+
+chrome.windows.onCreated.addListener(function (window) {
+    notifyWindowAdded(window);
+});
+
+chrome.windows.onRemoved.addListener(function (windowId) {
+    port.postMessage({
+        subsystem: "windows",
+        event: "removed",
+        browserId: windowId
+    });
+});
+
+addCallback("windows", "getAll", function (message) {
+    chrome.windows.getAll({
+        populate: true // TODO needed for just the id?
+    }, function (windows) {
+        windows.forEach(function (window) {
+            notifyWindowAdded(window)
+        });
+    });
+});
+
+// maps a given window resolve request to a tab (key: window id, value: tab id)
+var resolverTabs = {};
+
+addCallback("windows", "resolve", function (message) {
+    var browserId = message.browserId;
+
+    // now open a new tab with a special page that will set its title to the browser id we pass in
+    // this we can then detect from the host and generate a mapping. Yuck.
+
+    chrome.tabs.create({
+        windowId: browserId,
+        active: true,
+        url: chrome.runtime.getURL("windowmapper.htm") + "#" + Number(browserId)
+    }, function (tab) {
+        resolverTabs[browserId] = tab.id;
+    });
+});
+
+addCallback("windows", "resolved", function (message) {
+    var browserId = message.browserId;
+
+    // now close the tab again
+    var tabId = resolverTabs[browserId];
+    if (!tabId) {
+        console.warn("Got told that resolving", browserId, "succeeded but we don't actually know the tab that did it?!");
+        return;
+    }
+
+    chrome.tabs.remove(tabId, function () {
+        delete resolverTabs[browserId];
+    });
+});
+
 // Debug
 // ------------------------------------------------------------------------
 //
