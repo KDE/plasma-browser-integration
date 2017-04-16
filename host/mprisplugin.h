@@ -18,6 +18,8 @@ class MPrisPlugin : public AbstractBrowserPlugin
     Q_PROPERTY(bool CanRaise READ canRaise)
 
     // Player
+    Q_PROPERTY(bool CanGoNext READ canGoNext)
+    Q_PROPERTY(bool CanGoPrevious READ canGoPrevious)
     Q_PROPERTY(bool CanControl READ canControl NOTIFY canControlChanged)
     Q_PROPERTY(bool CanPause READ canPause NOTIFY playbackStatusChanged)
     Q_PROPERTY(bool CanPlay READ canPlay NOTIFY playbackStatusChanged)
@@ -42,6 +44,8 @@ public:
     bool canRaise() const;
 
     // Player
+    bool canGoNext() const;
+    bool canGoPrevious() const;
     bool canControl() const;
     bool canPause() const;
     bool canPlay() const;
@@ -87,11 +91,15 @@ private:
     void setPlaybackStatus(const QString &playbackStatus);
     void setLength(quint64 length);
     void processMetadata(const QJsonObject &data);
+    void processCallbacks(const QJsonArray &data);
 
     QDBusAbstractAdaptor *m_root;
     QDBusAbstractAdaptor *m_player;
 
     QString m_playbackStatus;
+
+    bool m_canGoNext = false;
+    bool m_canGoPrevious = false;
 
     QString m_pageTitle;
     QUrl m_url;

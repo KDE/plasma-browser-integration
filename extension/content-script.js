@@ -17,6 +17,12 @@ function sendMessage(subsystem, action, payload)
     });
 }
 
+function executeScript(script) {
+    var element = document.createElement('script');
+    element.innerHTML = '('+ script +')();';
+    (document.body || document.head || document.documentElement).appendChild(element);
+}
+
 chrome.runtime.onMessage.addListener(function (message, sender) {
     // TODO do something with sender (check privilige or whatever)
 
@@ -37,28 +43,37 @@ chrome.runtime.onMessage.addListener(function (message, sender) {
 //
 var activePlayer;
 var playerMetadata = {};
+var playerCallbacks = [];
 
 var players = [];
 
 addCallback("mpris", "play", function () {
-    if (activePlayer) {
-        activePlayer.play();
-    }
+    playerPlay();
 });
 
 addCallback("mpris", "pause", function () {
-    if (activePlayer) {
-        activePlayer.pause();
-    }
+    playerPause();
 });
 
 addCallback("mpris", "playPause", function () {
     if (activePlayer) {
-        if (activePlayer.paused) {
-            activePlayer.play();
+        if (activePlayer.paused) { // TODO take into account media sessions playback state
+            playerPlay();
         } else {
-            activePlayer.pause();
+            playerPause();
         }
+    }
+});
+
+addCallback("mpris", "next", function () {
+    if (playerCallbacks.indexOf("nexttrack") > -1) {
+        executeScript("plasmaMediaSessions.executeCallback('nexttrack')");
+    }
+});
+
+addCallback("mpris", "previous", function () {
+    if (playerCallbacks.indexOf("previoustrack") > -1) {
+        executeScript("plasmaMediaSessions.executeCallback('previoustrack')");
     }
 });
 
@@ -74,7 +89,10 @@ function setPlayerActive(player) {
     // when playback starts, send along metadata
     // a website might have set Media Sessions metadata prior to playing
     // and then we would have ignored the metadata signal because there was no player
-    sendMessage("mpris", "playing", playerMetadata);
+    sendMessage("mpris", "playing", {
+        metadata: playerMetadata,
+        callbacks: playerCallbacks
+    });
 }
 
 function sendPlayerInfo(player, event, payload) {
@@ -166,6 +184,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         activePlayer = undefined;
         playerMetadata = {};
+        playerCallbacks = [];
         sendMessage("mpris", "gone");
     });
 
@@ -180,7 +199,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 var scriptTag = document.createElement("script");
 scriptTag.innerHTML = `
-    var plasmaMediaSessions = function() {};
+    plasmaMediaSessions = function() {};
     plasmaMediaSessions.callbacks = {};
     plasmaMediaSessions.metadata = {};
     plasmaMediaSessions.playbackState = "none";
@@ -192,6 +211,9 @@ scriptTag.innerHTML = `
         event.initEvent('payloadChanged', true, true);
         transferItem.dispatchEvent(event);
     };
+    plasmaMediaSessions.executeCallback = function (action) {
+        this.callbacks[action]();
+    };
 
     navigator.mediaSession = {};
     navigator.mediaSession.setActionHandler = function (name, cb) {
@@ -200,6 +222,7 @@ scriptTag.innerHTML = `
         } else {
             delete plasmaMediaSessions.callbacks[name];
         }
+        plasmaMediaSessions.sendMessage("callbacks", Object.keys(plasmaMediaSessions.callbacks));
     };
     Object.defineProperty(navigator.mediaSession, "metadata", {
         get: function() { return plasmaMediaSessions.metadata; },
@@ -242,5 +265,11 @@ transferItem.addEventListener('payloadChanged', function() {
         playerMetadata = json.payload;
 
         sendMessage("mpris", "metadata", json.payload);
+    /*} else if (action === "playbackState") {
+        playerPlaybackState = json.payload;
+        sendMessage("mpris", "playbackState", json.payload);*/
+    } else if (action === "callbacks") {
+        playerCallbacks = json.payload;
+        sendMessage("mpris", "callbacks", json.payload);
     }
 });

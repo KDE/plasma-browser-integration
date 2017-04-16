@@ -155,6 +155,8 @@ addCallback("mpris", "raise", function (message) {
     }
 });
 
+// TODO would be cool for all those that we just forward verbatim if we could pass addCallback an array, e.g.
+// addCallback("mpris", ["play", "pause", "playPause", ...], function (action, message) { ... }
 addCallback("mpris", "play", function (message) {
     if (currentPlayerTabId) {
         chrome.tabs.sendMessage(currentPlayerTabId, {
@@ -182,6 +184,24 @@ addCallback("mpris", "playPause", function (message) {
     }
 });
 
+addCallback("mpris", "next", function (message) {
+    if (currentPlayerTabId) {
+        chrome.tabs.sendMessage(currentPlayerTabId, {
+            subsystem: "mpris",
+            action: "next"
+        });
+    }
+});
+
+addCallback("mpris", "previous", function (message) {
+    if (currentPlayerTabId) {
+        chrome.tabs.sendMessage(currentPlayerTabId, {
+            subsystem: "mpris",
+            action: "previous"
+        });
+    }
+});
+
 addCallback("mpris", "setPosition", function (message) {
     consoe.log("SET POS", message);
     if (currentPlayerTabId) {
@@ -200,11 +220,12 @@ addRuntimeCallback("mpris", "playing", function (message, sender) {
     currentPlayerTabId = sender.tab.id;
     console.log("player tab is now", currentPlayerTabId);
 
-    var metadata = message || {};
-    metadata.tabTitle = sender.tab.title;
-    metadata.url = sender.tab.url;
-
-    sendPortMessage("mpris", "playing", metadata);
+    sendPortMessage("mpris", "playing", {
+        tabTitle: sender.tab.title,
+        url: sender.tab.url,
+        metadata: message.metadata,
+        callbacks: message.callbacks
+    });
 });
 
 addRuntimeCallback("mpris", "gone", function (message, sender) {
@@ -235,7 +256,17 @@ addRuntimeCallback("mpris", "seeked", function (message, sender) {
 
 addRuntimeCallback("mpris", "metadata", function (message, sender) {
     if (currentPlayerTabId == sender.tab.id) {
-        sendPortMessage("mpris", "metadata", message);
+        sendPortMessage("mpris", "metadata", {
+            metadata: message
+        });
+    }
+});
+
+addRuntimeCallback("mpris", "callbacks", function (message, sender) {
+    if (currentPlayerTabId == sender.tab.id) {
+        sendPortMessage("mpris", "callbacks", {
+            callbacks: message
+        });
     }
 });
 

@@ -68,6 +68,8 @@ void MPrisPlugin::handleData(const QString &event, const QJsonObject &data)
     if (event == QLatin1String("gone")) {
         unregisterService();
         setPlaybackStatus(QStringLiteral("Stopped")); // just in case
+        m_canGoNext = false;
+        m_canGoPrevious = false;
         m_pageTitle.clear();
         m_url.clear();
         m_title.clear();
@@ -79,7 +81,8 @@ void MPrisPlugin::handleData(const QString &event, const QJsonObject &data)
         m_pageTitle = data.value(QStringLiteral("tabTitle")).toString();
         m_url = QUrl(data.value(QStringLiteral("url")).toString());
 
-        processMetadata(data); // also emits metadataChanged signal
+        processMetadata(data.value(QStringLiteral("metadata")).toObject()); // also emits metadataChanged signal
+        processCallbacks(data.value(QStringLiteral("callbacks")).toArray());
 
         registerService();
     } else if (event == QLatin1String("paused")) {
@@ -92,7 +95,9 @@ void MPrisPlugin::handleData(const QString &event, const QJsonObject &data)
     } else if (event == QLatin1String("positionChanged")) { // emitted after e.g. seeked
         // setPosition(position * 1000 * 1000);
     } else if (event == QLatin1String("metadata")) {
-        processMetadata(data);
+        processMetadata(data.value(QStringLiteral("metadata")).toObject());
+    } else if (event == QLatin1String("callbacks")) {
+        processCallbacks(data.value(QStringLiteral("callbacks")).toArray());
     } else {
         qWarning() << "Don't know how to handle mpris event" << event;
     }
@@ -111,6 +116,16 @@ QString MPrisPlugin::desktopEntry() const
 bool MPrisPlugin::canRaise() const
 {
     return true; // really?
+}
+
+bool MPrisPlugin::canGoNext() const
+{
+    return m_canGoNext;
+}
+
+bool MPrisPlugin::canGoPrevious() const
+{
+    return m_canGoPrevious;
 }
 
 bool MPrisPlugin::canControl() const
@@ -257,6 +272,21 @@ void MPrisPlugin::processMetadata(const QJsonObject &data)
     emitPropertyChange(m_player, "Metadata");
 }
 
+void MPrisPlugin::processCallbacks(const QJsonArray &data)
+{
+    const bool canGoNext = data.contains(QLatin1String("nexttrack"));
+    if (m_canGoNext != canGoNext) {
+        m_canGoNext = canGoNext;
+        emitPropertyChange(m_player, "CanGoNext");
+    }
+
+    const bool canGoPrevious = data.contains(QLatin1String("previoustrack"));
+    if (m_canGoPrevious != canGoPrevious) {
+        m_canGoPrevious = canGoPrevious;
+        emitPropertyChange(m_player, "CanGoPrevious");
+    }
+}
+
 void MPrisPlugin::Raise()
 {
     sendData(QStringLiteral("raise"));
@@ -269,12 +299,12 @@ void MPrisPlugin::Quit()
 
 void MPrisPlugin::Next()
 {
-
+    sendData(QStringLiteral("next"));
 }
 
 void MPrisPlugin::Previous()
 {
-
+    sendData(QStringLiteral("previous"));
 }
 
 void MPrisPlugin::Pause()
