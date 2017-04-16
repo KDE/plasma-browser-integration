@@ -70,7 +70,6 @@ int main(int argc, char *argv[])
 
         foreach(AbstractBrowserPlugin *plugin, m_plugins) {
             if (plugin->subsystem() == subsystem) {
-                qDebug() << "handling";
                 //design question, should we have a JSON of subsystem, event, payload, or have all data at the root level?
                 plugin->handleData(event, json);
                 return;
