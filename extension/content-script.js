@@ -125,10 +125,11 @@ function registerPlayer(player) {
         sendPlayerInfo(player, "paused");
     });
 
-    // TODO use "rate" instead
-    /*player.addEventListener("timeupdate", function () {
-
-    });*/
+    player.addEventListener("timeupdate", function () {
+        sendPlayerInfo(player, "timeupdate", {
+            currentTime: player.currentTime
+        });
+    });
 
     // TODO use player.seekable for determining whether we can seek?
     player.addEventListener("durationchange", function () {
@@ -138,7 +139,9 @@ function registerPlayer(player) {
     });
 
     player.addEventListener("seeked", function () {
-        // TODO send pos along so we can update the mpris Position
+        sendPlayerInfo(player, "seeked", {
+            currentTime: player.currentTime
+        });
     });
 
     // TODO remove it again when it goes away

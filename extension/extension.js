@@ -247,9 +247,15 @@ addRuntimeCallback("mpris", "duration", function (message, sender) {
     }
 });
 
+addRuntimeCallback("mpris", "timeupdate", function (message, sender) {
+    if (currentPlayerTabId === sender.tab.id) {
+        sendPortMessage("mpris", "timeupdate", message);
+    }
+});
+
 addRuntimeCallback("mpris", "seeked", function (message, sender) {
     if (currentPlayerTabId == sender.tab.id) {
-        // TODO
+        sendPortMessage("mpris", "seeked", message);
     }
 });
 

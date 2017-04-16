@@ -100,8 +100,14 @@ void MPrisPlugin::handleData(const QString &event, const QJsonObject &data)
 
         // <video> duration is in seconds, mpris uses microseconds
         setLength(length * 1000 * 1000);
-    } else if (event == QLatin1String("positionChanged")) { // emitted after e.g. seeked
-        // setPosition(position * 1000 * 1000);
+    } else if (event == QLatin1String("timeupdate")) {
+        // not signalling to avoid excess dbus traffic
+        // media controller asks for this property once when it opens
+        m_position = data.value(QStringLiteral("currentTime")).toDouble() * 1000 * 1000;
+    } else if (event == QLatin1String("seeked")) {
+        // seeked is explicit user interaction, signal a change on dbus
+        const qreal position = data.value(QStringLiteral("currentTime")).toDouble();
+        setPosition(position * 1000 * 1000);
     } else if (event == QLatin1String("metadata")) {
         processMetadata(data.value(QStringLiteral("metadata")).toObject());
     } else if (event == QLatin1String("callbacks")) {
