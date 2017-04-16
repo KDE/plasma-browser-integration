@@ -149,6 +149,23 @@ function registerAllPlayers() {
     players.forEach(registerPlayer);
 }
 
+function playerPlay() {
+    // if a media sessions callback is registered, it takes precedence over us manually messing with the player
+    if (playerCallbacks.indexOf("play") > -1) {
+        executeScript("plasmaMediaSessions.executeCallback('play')");
+    } else if (activePlayer) {
+        activePlayer.play();
+    }
+}
+
+function playerPause() {
+    if (playerCallbacks.indexOf("pause") > -1) {
+        executeScript("plasmaMediaSessions.executeCallback('pause')");
+    } else if (activePlayer) {
+        activePlayer.pause();
+    }
+}
+
 document.addEventListener("DOMContentLoaded", function() {
 
     registerAllPlayers();
