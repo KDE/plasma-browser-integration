@@ -65,6 +65,23 @@ addCallback("mpris", "playPause", function () {
     }
 });
 
+// there's no dedicated "stop", simulate it be rewinding and reloading
+addCallback("mpris", "stop", function () {
+    if (activePlayer) {
+        activePlayer.pause();
+        activePlayer.currentTime = 0;
+        // calling load() now as is suggested in some "how to fake video Stop" code snippets
+        // utterly breaks stremaing sites
+        //activePlayer.load();
+
+        // needs to be delayed slightly otherwise we pause(), then send "stopped", and only after that
+        // the "paused" signal is handled and we end up in Paused instead of Stopped state
+        setTimeout(function() {
+            sendMessage("mpris", "stopped");
+        }, 1);
+    }
+});
+
 addCallback("mpris", "next", function () {
     if (playerCallbacks.indexOf("nexttrack") > -1) {
         executeScript("plasmaMediaSessions.executeCallback('nexttrack')");

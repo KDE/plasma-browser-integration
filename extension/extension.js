@@ -184,6 +184,15 @@ addCallback("mpris", "playPause", function (message) {
     }
 });
 
+addCallback("mpris", "stop", function (message) {
+    if (currentPlayerTabId) {
+        chrome.tabs.sendMessage(currentPlayerTabId, {
+            subsystem: "mpris",
+            action: "stop"
+        });
+    }
+});
+
 addCallback("mpris", "next", function (message) {
     if (currentPlayerTabId) {
         chrome.tabs.sendMessage(currentPlayerTabId, {
@@ -237,6 +246,12 @@ addRuntimeCallback("mpris", "gone", function (message, sender) {
 addRuntimeCallback("mpris", "paused", function (message, sender) {
     if (currentPlayerTabId == sender.tab.id) {
         sendPortMessage("mpris", "paused");
+    }
+});
+
+addRuntimeCallback("mpris", "stopped", function (message, sender) {
+    if (currentPlayerTabId == sender.tab.id) {
+        sendPortMessage("mpris", "stopped");
     }
 });
 

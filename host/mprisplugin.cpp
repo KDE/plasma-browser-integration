@@ -95,6 +95,8 @@ void MPrisPlugin::handleData(const QString &event, const QJsonObject &data)
         registerService();
     } else if (event == QLatin1String("paused")) {
         setPlaybackStatus(QStringLiteral("Paused"));
+    } else if (event == QLatin1String("stopped")) {
+        setPlaybackStatus(QStringLiteral("Stopped"));
     } else if (event == QLatin1String("waiting")) {
         // unfortunately MPris doesn't have a "Buffering" playback state
         // set it to Paused when waiting for the player to avoid the seek slider
