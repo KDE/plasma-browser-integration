@@ -203,7 +203,6 @@ addCallback("mpris", "previous", function (message) {
 });
 
 addCallback("mpris", "setPosition", function (message) {
-    consoe.log("SET POS", message);
     if (currentPlayerTabId) {
         chrome.tabs.sendMessage(currentPlayerTabId, {
             subsystem: "mpris",

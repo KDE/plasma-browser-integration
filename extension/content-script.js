@@ -77,6 +77,12 @@ addCallback("mpris", "previous", function () {
     }
 });
 
+addCallback("mpris", "setPosition", function (message) {
+    if (activePlayer) {
+        activePlayer.currentTime = message.position;
+    }
+});
+
 // TODO this thing will eventually be invoked by our extension to ask the page
 // for a player. We could potentially hook that up to the "playing audio" icon on the tab
 // or check that when new metadata arrives over media sessions or something like that

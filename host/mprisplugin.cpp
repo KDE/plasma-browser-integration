@@ -201,6 +201,10 @@ QVariantMap MPrisPlugin::metadata() const
 {
     QVariantMap metadata;
 
+    // HACK this is needed or else SetPosition won't do anything
+    // TODO use something more sensible, e.g. at least have the tab id with the player in there or so
+    metadata.insert(QStringLiteral("mpris:trackid"), QVariant::fromValue(QDBusObjectPath(QStringLiteral("/org/kde/plasma/browser_integration/1337"))));
+
     const QString &effectiveTitle = !m_title.isEmpty() ? m_title : m_pageTitle;
     if (!effectiveTitle.isEmpty()) {
         metadata.insert(QStringLiteral("xesam:title"), effectiveTitle);
@@ -372,8 +376,11 @@ void MPrisPlugin::Seek(qlonglong offset)
 
 void MPrisPlugin::SetPosition(const QDBusObjectPath &path, qlonglong position)
 {
-    Q_UNUSED(path);
-    Q_UNUSED(position);
+    Q_UNUSED(path); // TODO use?
+
+    sendData(QStringLiteral("setPosition"), {
+        {QStringLiteral("position"), position / 1000.0 / 1000.0
+    } });
 }
 
 void MPrisPlugin::OpenUri(const QString &uri)
