@@ -220,12 +220,11 @@ addRuntimeCallback("mpris", "playing", function (message, sender) {
     currentPlayerTabId = sender.tab.id;
     console.log("player tab is now", currentPlayerTabId);
 
-    sendPortMessage("mpris", "playing", {
-        tabTitle: sender.tab.title,
-        url: sender.tab.url,
-        metadata: message.metadata,
-        callbacks: message.callbacks
-    });
+    var payload = message || {};
+    payload.tabTitle = sender.tab.title;
+    payload.url = sender.tab.url;
+
+    sendPortMessage("mpris", "playing", payload);
 });
 
 addRuntimeCallback("mpris", "gone", function (message, sender) {

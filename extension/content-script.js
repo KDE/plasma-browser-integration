@@ -90,6 +90,7 @@ function setPlayerActive(player) {
     // a website might have set Media Sessions metadata prior to playing
     // and then we would have ignored the metadata signal because there was no player
     sendMessage("mpris", "playing", {
+        duration: player.duration,
         metadata: playerMetadata,
         callbacks: playerCallbacks
     });
@@ -129,9 +130,6 @@ function registerPlayer(player) {
     });*/
 
     // TODO use player.seekable for determining whether we can seek?
-    sendPlayerInfo(player, "duration", {
-        duration: player.duration
-    });
     player.addEventListener("durationchange", function () {
         sendPlayerInfo(player, "duration", {
             duration: player.duration

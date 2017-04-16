@@ -81,6 +81,10 @@ void MPrisPlugin::handleData(const QString &event, const QJsonObject &data)
         m_pageTitle = data.value(QStringLiteral("tabTitle")).toString();
         m_url = QUrl(data.value(QStringLiteral("url")).toString());
 
+        const qreal length = data.value(QStringLiteral("duration")).toDouble();
+        // <video> duration is in seconds, mpris uses microseconds
+        setLength(length * 1000 * 1000);
+
         processMetadata(data.value(QStringLiteral("metadata")).toObject()); // also emits metadataChanged signal
         processCallbacks(data.value(QStringLiteral("callbacks")).toArray());
 
