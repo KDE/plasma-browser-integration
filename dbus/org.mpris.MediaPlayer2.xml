@@ -12,11 +12,14 @@
     <property name="CanQuit" type="b" tp:name-for-bindings="Can_Quit" access="read">
     </property>
 
-    <property name="Fullscreen" type="b" tp:name-for-bindings="Fullscreen" access="readwrite">
+    <!-- There's no simple mechanism for telling it "please full screen this player in the same manner
+    as the website would do", we can just requestFullscreen on the video element but that usually
+    breaks pages in interesting ways, so we cannot support this -->
+    <!--<property name="Fullscreen" type="b" tp:name-for-bindings="Fullscreen" access="readwrite">
     </property>
 
     <property name="CanSetFullscreen" type="b" tp:name-for-bindings="Can_Set_Fullscreen" access="read">
-    </property>
+    </property>-->
 
     <property name="CanRaise" type="b" tp:name-for-bindings="Can_Raise" access="read">
     </property>

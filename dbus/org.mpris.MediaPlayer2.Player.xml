@@ -49,9 +49,10 @@
       <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="true"/>
     </property>
 
-    <property name="Shuffle" tp:name-for-bindings="Shuffle" type="b" access="readwrite">
+    <!-- There's no shuffle on video, heck, it doesn't even know playlists -->
+    <!--<property name="Shuffle" tp:name-for-bindings="Shuffle" type="b" access="readwrite">
       <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="true"/>
-    </property>
+    </property>-->
 
     <property name="Metadata" tp:name-for-bindings="Metadata" type="a{sv}" tp:type="Metadata_Map" access="read">
       <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="true"/>
