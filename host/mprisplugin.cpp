@@ -75,12 +75,19 @@ void MPrisPlugin::handleData(const QString &event, const QJsonObject &data)
         m_title.clear();
         m_artist.clear();
         m_artworkUrl.clear();
+        m_volume = 1.0;
         m_length = 0;
         m_position = 0;
     } else if (event == QLatin1String("playing")) {
         setPlaybackStatus(QStringLiteral("Playing"));
         m_pageTitle = data.value(QStringLiteral("tabTitle")).toString();
         m_url = QUrl(data.value(QStringLiteral("url")).toString());
+
+        const qreal volume = data.value(QStringLiteral("volume")).toDouble(1);
+        if (m_volume != volume) {
+            m_volume = volume;
+            emitPropertyChange(m_player, "Volume");
+        }
 
         const qreal length = data.value(QStringLiteral("duration")).toDouble();
         // <video> duration is in seconds, mpris uses microseconds
@@ -119,7 +126,11 @@ void MPrisPlugin::handleData(const QString &event, const QJsonObject &data)
     } else if (event == QLatin1String("seeked")) {
         // seeked is explicit user interaction, signal a change on dbus
         const qreal position = data.value(QStringLiteral("currentTime")).toDouble();
+        // FIXME actually invoke "Seeked" signal
         setPosition(position * 1000 * 1000);
+    } else if (event == QLatin1String("volumechange")) {
+        m_volume = data.value(QStringLiteral("volume")).toDouble(1);
+        emitPropertyChange(m_player, "Volume");
     } else if (event == QLatin1String("metadata")) {
         processMetadata(data.value(QStringLiteral("metadata")).toObject());
     } else if (event == QLatin1String("callbacks")) {
@@ -173,6 +184,18 @@ bool MPrisPlugin::canSeek() const
 {
     // TODO use player.seekable for determining whether we can seek?
     return m_length > 0;
+}
+
+qreal MPrisPlugin::volume() const
+{
+    return m_volume;
+}
+
+void MPrisPlugin::setVolume(qreal volume)
+{
+    sendData(QStringLiteral("setVolume"), {
+        {QStringLiteral("volume"), volume}
+    });
 }
 
 qlonglong MPrisPlugin::position() const

@@ -178,6 +178,18 @@ addCallback("mpris", ["play", "pause", "playPause", "stop", "next", "previous"],
     }
 });
 
+addCallback("mpris", "setVolume", function (message) {
+    if (currentPlayerTabId) {
+        chrome.tabs.sendMessage(currentPlayerTabId, {
+            subsystem: "mpris",
+            action: "setVolume",
+            payload: {
+                volume: message.volume
+            }
+        });
+    }
+});
+
 addCallback("mpris", "setPosition", function (message) {
     if (currentPlayerTabId) {
         chrome.tabs.sendMessage(currentPlayerTabId, {
@@ -216,7 +228,7 @@ addRuntimeCallback("mpris", ["paused", "stopped", "waiting", "canplay"], functio
     }
 });
 
-addRuntimeCallback("mpris", ["duration", "timeupdate", "seeked"], function (message, sender, action) {
+addRuntimeCallback("mpris", ["duration", "timeupdate", "seeked", "volumechange"], function (message, sender, action) {
     if (currentPlayerTabId == sender.tab.id) {
         sendPortMessage("mpris", action, message);
     }
