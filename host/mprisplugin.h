@@ -24,6 +24,7 @@ class MPrisPlugin : public AbstractBrowserPlugin
     Q_PROPERTY(bool CanPause READ canPause NOTIFY playbackStatusChanged)
     Q_PROPERTY(bool CanPlay READ canPlay NOTIFY playbackStatusChanged)
     Q_PROPERTY(bool CanSeek READ canSeek NOTIFY canSeekChanged)
+    Q_PROPERTY(qlonglong Position READ position)
     Q_PROPERTY(double MinimumRate READ minimumRate NOTIFY minimumRateChanged)
     Q_PROPERTY(double MaximumRate READ maximumRate NOTIFY maximumRateChanged)
     // TODO Volume
@@ -51,6 +52,7 @@ public:
     bool canPlay() const;
     bool canSeek() const;
 
+    qlonglong position() const;
     double minimumRate() const;
     double maximumRate() const;
 
@@ -89,7 +91,8 @@ private:
     bool unregisterService();
 
     void setPlaybackStatus(const QString &playbackStatus);
-    void setLength(quint64 length);
+    void setLength(qlonglong length);
+    void setPosition(qlonglong position);
     void processMetadata(const QJsonObject &data);
     void processCallbacks(const QJsonArray &data);
 
@@ -108,6 +111,7 @@ private:
     QString m_artist;
     QUrl m_artworkUrl;
 
-    quint64 m_length = 0;
+    qlonglong m_length = 0;
+    qlonglong m_position = 0;
 
 };

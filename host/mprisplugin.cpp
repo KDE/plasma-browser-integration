@@ -76,6 +76,7 @@ void MPrisPlugin::handleData(const QString &event, const QJsonObject &data)
         m_artist.clear();
         m_artworkUrl.clear();
         m_length = 0;
+        m_position = 0;
     } else if (event == QLatin1String("playing")) {
         setPlaybackStatus(QStringLiteral("Playing"));
         m_pageTitle = data.value(QStringLiteral("tabTitle")).toString();
@@ -84,6 +85,9 @@ void MPrisPlugin::handleData(const QString &event, const QJsonObject &data)
         const qreal length = data.value(QStringLiteral("duration")).toDouble();
         // <video> duration is in seconds, mpris uses microseconds
         setLength(length * 1000 * 1000);
+
+        const qreal position = data.value(QStringLiteral("currentTime")).toDouble();
+        setPosition(position * 1000 * 1000);
 
         processMetadata(data.value(QStringLiteral("metadata")).toObject()); // also emits metadataChanged signal
         processCallbacks(data.value(QStringLiteral("callbacks")).toArray());
@@ -153,6 +157,11 @@ bool MPrisPlugin::canSeek() const
     return m_length > 0;
 }
 
+qlonglong MPrisPlugin::position() const
+{
+    return m_position;
+}
+
 qreal MPrisPlugin::minimumRate() const
 {
     return 1; // TODO
@@ -209,7 +218,7 @@ void MPrisPlugin::setPlaybackStatus(const QString &playbackStatus)
     }
 }
 
-void MPrisPlugin::setLength(quint64 length)
+void MPrisPlugin::setLength(qlonglong length)
 {
     if (m_length != length) {
         m_length = length;
@@ -218,6 +227,15 @@ void MPrisPlugin::setLength(quint64 length)
 
         emitPropertyChange(m_player, "Metadata");
         emitPropertyChange(m_player, "CanSeek");
+    }
+}
+
+void MPrisPlugin::setPosition(qlonglong position)
+{
+    if (m_position != position) {
+        m_position = position;
+
+        emitPropertyChange(m_player, "Position");
     }
 }
 
