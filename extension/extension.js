@@ -13,6 +13,13 @@ var runtimeCallbacks = {};
 
 function addCallback(subsystem, action, callback) // TODO rename to "addPortCallbacks"?
 {
+    if (action.constructor === Array) {
+        action.forEach(function(item) {
+            addCallback(subsystem, item, callback);
+        });
+        return;
+    }
+
     if (!callbacks[subsystem]) {
         callbacks[subsystem] = {};
     }
@@ -31,6 +38,13 @@ function sendPortMessage(subsystem, event, payload)
 
 function addRuntimeCallback(subsystem, action, callback)
 {
+    if (action.constructor === Array) {
+        action.forEach(function(item) {
+            addRuntimeCallback(subsystem, item, callback);
+        });
+        return;
+    }
+
     if (!runtimeCallbacks[subsystem]) {
         runtimeCallbacks[subsystem] = {};
     }
@@ -155,58 +169,11 @@ addCallback("mpris", "raise", function (message) {
     }
 });
 
-// TODO would be cool for all those that we just forward verbatim if we could pass addCallback an array, e.g.
-// addCallback("mpris", ["play", "pause", "playPause", ...], function (action, message) { ... }
-addCallback("mpris", "play", function (message) {
+addCallback("mpris", ["play", "pause", "playPause", "stop", "next", "previous"], function (message, action) {
     if (currentPlayerTabId) {
         chrome.tabs.sendMessage(currentPlayerTabId, {
             subsystem: "mpris",
-            action: "play"
-        });
-    }
-});
-
-addCallback("mpris", "pause", function (message) {
-    if (currentPlayerTabId) {
-        chrome.tabs.sendMessage(currentPlayerTabId, {
-            subsystem: "mpris",
-            action: "pause"
-        });
-    }
-});
-
-addCallback("mpris", "playPause", function (message) {
-    if (currentPlayerTabId) {
-        chrome.tabs.sendMessage(currentPlayerTabId, {
-            subsystem: "mpris",
-            action: "playPause"
-        });
-    }
-});
-
-addCallback("mpris", "stop", function (message) {
-    if (currentPlayerTabId) {
-        chrome.tabs.sendMessage(currentPlayerTabId, {
-            subsystem: "mpris",
-            action: "stop"
-        });
-    }
-});
-
-addCallback("mpris", "next", function (message) {
-    if (currentPlayerTabId) {
-        chrome.tabs.sendMessage(currentPlayerTabId, {
-            subsystem: "mpris",
-            action: "next"
-        });
-    }
-});
-
-addCallback("mpris", "previous", function (message) {
-    if (currentPlayerTabId) {
-        chrome.tabs.sendMessage(currentPlayerTabId, {
-            subsystem: "mpris",
-            action: "previous"
+            action: action
         });
     }
 });
@@ -243,61 +210,24 @@ addRuntimeCallback("mpris", "gone", function (message, sender) {
     }
 });
 
-addRuntimeCallback("mpris", "paused", function (message, sender) {
+addRuntimeCallback("mpris", ["paused", "stopped", "waiting", "canplay"], function (message, sender, action) {
     if (currentPlayerTabId == sender.tab.id) {
-        sendPortMessage("mpris", "paused");
+        sendPortMessage("mpris", action);
     }
 });
 
-addRuntimeCallback("mpris", "stopped", function (message, sender) {
+addRuntimeCallback("mpris", ["duration", "timeupdate", "seeked"], function (message, sender, action) {
     if (currentPlayerTabId == sender.tab.id) {
-        sendPortMessage("mpris", "stopped");
+        sendPortMessage("mpris", action, message);
     }
 });
 
-addRuntimeCallback("mpris", "waiting", function (message, sender) {
+addRuntimeCallback("mpris", ["metadata", "callbacks"], function (message, sender, action) {
     if (currentPlayerTabId == sender.tab.id) {
-        sendPortMessage("mpris", "waiting");
-    }
-});
+        var payload = {};
+        payload[action] = message;
 
-addRuntimeCallback("mpris", "canplay", function (message, sender) {
-    if (currentPlayerTabId == sender.tab.id) {
-        sendPortMessage("mpris", "canplay");
-    }
-});
-
-addRuntimeCallback("mpris", "duration", function (message, sender) {
-    if (currentPlayerTabId == sender.tab.id) {
-        sendPortMessage("mpris", "duration", message);
-    }
-});
-
-addRuntimeCallback("mpris", "timeupdate", function (message, sender) {
-    if (currentPlayerTabId === sender.tab.id) {
-        sendPortMessage("mpris", "timeupdate", message);
-    }
-});
-
-addRuntimeCallback("mpris", "seeked", function (message, sender) {
-    if (currentPlayerTabId == sender.tab.id) {
-        sendPortMessage("mpris", "seeked", message);
-    }
-});
-
-addRuntimeCallback("mpris", "metadata", function (message, sender) {
-    if (currentPlayerTabId == sender.tab.id) {
-        sendPortMessage("mpris", "metadata", {
-            metadata: message
-        });
-    }
-});
-
-addRuntimeCallback("mpris", "callbacks", function (message, sender) {
-    if (currentPlayerTabId == sender.tab.id) {
-        sendPortMessage("mpris", "callbacks", {
-            callbacks: message
-        });
+        sendPortMessage("mpris", action, payload);
     }
 });
 
@@ -526,7 +456,7 @@ port.onMessage.addListener(function (message) {
     }
 
     if (callbacks[subsystem] && callbacks[subsystem][action]) {
-        callbacks[subsystem][action](message.payload);
+        callbacks[subsystem][action](message.payload, action);
     } else {
         console.warn("Don't know what to do with host message", subsystem, action);
     }
@@ -559,7 +489,7 @@ chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
     }
 
     if (runtimeCallbacks[subsystem] && runtimeCallbacks[subsystem][action]) {
-        runtimeCallbacks[subsystem][action](message.payload, sender);
+        runtimeCallbacks[subsystem][action](message.payload, sender, action);
     } else {
         console.warn("Don't know what to do with runtime message", subsystem, action);
     }
