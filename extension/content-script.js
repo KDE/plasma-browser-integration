@@ -10,7 +10,7 @@ function addCallback(subsystem, action, callback)
 
 function sendMessage(subsystem, action, payload)
 {
-    chrome.extension.sendMessage({
+    (chrome.extension.sendMessage || browser.runtime.sendMessage)({
         subsystem: subsystem,
         action: action,
         payload: payload
