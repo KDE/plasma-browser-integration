@@ -9,12 +9,14 @@
 #include <QDebug>
 #include <QImageReader>
 
-static const QString s_serviceName = QStringLiteral("org.mpris.MediaPlayer2.plasma-chrome-integration");
+static const QString s_serviceName = QStringLiteral("org.mpris.MediaPlayer2.plasma-browser-integration");
 
 MPrisPlugin::MPrisPlugin(QObject *parent)
     : AbstractBrowserPlugin(QStringLiteral("mpris"), 1, parent)
     , m_root(new MPrisRoot(this))
     , m_player(new MPrisPlayer(this))
+    , m_playbackStatus(QStringLiteral("Stopped"))
+    , m_loopStatus(QStringLiteral("None"))
 {
 
     if (!QDBusConnection::sessionBus().registerObject(QStringLiteral("/org/mpris/MediaPlayer2"), this)) {
