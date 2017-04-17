@@ -50,7 +50,7 @@
   ],
     "applications": {
     "gecko": {
-      "id": "plasma-shell-integration@gnome.org",
+      "id": "plasma-browser-integration@kde.org",
       "strict_min_version": "50.0"
     }
   },
