@@ -284,7 +284,10 @@ setInterval(function() {
             var payload = {
                 id: download.id,
                 bytesReceived: download.bytesReceived,
-                estimatedEndTime: download.estimatedEndTime
+                estimatedEndTime: download.estimatedEndTime,
+                // Firefox ends along "-1" as totalBytes on download creation
+                // but then never updates it, so we send this along periodically, too
+                totalBytes: download.totalBytes
             };
 
             port.postMessage({subsystem: "downloads", event: "update", download: payload});
