@@ -3,5 +3,5 @@
   "description": "Native connector for KDE Plasma",
   "path": "@CMAKE_INSTALL_PREFIX@/bin/plasma-browser-integration-host",
   "type": "stdio",
-  "allowed_extensions": ["plasma-shell-integration@gnome.org"]
+  "allowed_extensions": ["plasma-browser-integration@kde.org"]
 }
