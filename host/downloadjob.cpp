@@ -1,4 +1,5 @@
 #include "downloadjob.h"
+#include "settings.h"
 
 #include <QJsonObject>
 
@@ -12,6 +13,12 @@ DownloadJob::DownloadJob(int id)
     // unless they're canceled/interrupted at which point we don't have a DownloadJob
     // anymore anyway
     setCapabilities(Killable | Suspendable);
+
+    // TODO When suspending on Firefox the download job goes away for some reason?!
+    // Until I have the virtue to figure that out just disallow suspending downloads on Firefox :)
+    if (Settings::self().environment() == Settings::Environment::Firefox) {
+        setCapabilities(Killable);
+    }
 }
 
 void DownloadJob::start()
