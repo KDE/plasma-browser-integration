@@ -21,6 +21,12 @@ MPrisPlugin::MPrisPlugin(QObject *parent)
         qWarning() << "Failed to register MPris object";
         return;
     }
+
+    m_possibleLoopStatus = {
+        {QStringLiteral("None"), false},
+        {QStringLiteral("Track"), true},
+        {QStringLiteral("Playlist"), true}
+    };
 }
 
 // TODO this can surely be done in a much beter way with introspection and what not
@@ -95,6 +101,15 @@ void MPrisPlugin::handleData(const QString &event, const QJsonObject &data)
 
         const qreal position = data.value(QStringLiteral("currentTime")).toDouble();
         setPosition(position * 1000 * 1000);
+
+        // check if we're already looping, that keeps us from forcefully
+        // overwriting Playlist loop with Track loop
+        const bool oldLoop = m_possibleLoopStatus.value(m_loopStatus);
+        const bool loop = data.value(QStringLiteral("loop")).toBool();
+
+        if (loop != oldLoop) {
+            setLoopStatus(loop ? QStringLiteral("Track") : QStringLiteral("None"));
+        }
 
         processMetadata(data.value(QStringLiteral("metadata")).toObject()); // also emits metadataChanged signal
         processCallbacks(data.value(QStringLiteral("callbacks")).toArray());
@@ -215,11 +230,28 @@ qreal MPrisPlugin::maximumRate() const
 
 // TODO volume
 
-// TODO loop status
-
 QString MPrisPlugin::playbackStatus() const
 {
     return m_playbackStatus;
+}
+
+QString MPrisPlugin::loopStatus() const
+{
+    return m_loopStatus;
+}
+
+void MPrisPlugin::setLoopStatus(const QString &loopStatus)
+{
+    if (!m_possibleLoopStatus.contains(loopStatus)) {
+        return;
+    }
+
+    sendData(QStringLiteral("setLoop"), {
+        {QStringLiteral("loop"), m_possibleLoopStatus.value(loopStatus)}
+    });
+
+    m_loopStatus = loopStatus;
+    emitPropertyChange(m_player, "LoopStatus");
 }
 
 QVariantMap MPrisPlugin::metadata() const

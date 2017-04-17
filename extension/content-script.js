@@ -106,6 +106,12 @@ addCallback("mpris", "setVolume", function (message) {
     }
 });
 
+addCallback("mpris", "setLoop", function (message) {
+    if (activePlayer) {
+        activePlayer.loop = message.loop;
+    }
+});
+
 // TODO this thing will eventually be invoked by our extension to ask the page
 // for a player. We could potentially hook that up to the "playing audio" icon on the tab
 // or check that when new metadata arrives over media sessions or something like that
@@ -122,6 +128,7 @@ function setPlayerActive(player) {
         duration: player.duration,
         currentTime: player.currentTime,
         volume: player.volume,
+        loop: player.loop,
         metadata: playerMetadata,
         callbacks: playerCallbacks
     });

@@ -28,8 +28,8 @@ class MPrisPlugin : public AbstractBrowserPlugin
     Q_PROPERTY(qlonglong Position READ position)
     Q_PROPERTY(double MinimumRate READ minimumRate NOTIFY minimumRateChanged)
     Q_PROPERTY(double MaximumRate READ maximumRate NOTIFY maximumRateChanged)
-    // TODO LoopStatus
     Q_PROPERTY(QString PlaybackStatus READ playbackStatus NOTIFY playbackStatusChanged)
+    Q_PROPERTY(QString LoopStatus READ loopStatus WRITE setLoopStatus)
     Q_PROPERTY(QVariantMap Metadata READ metadata NOTIFY metadataChanged)
 
 public:
@@ -60,6 +60,10 @@ public:
     double maximumRate() const;
 
     QString playbackStatus() const;
+
+    QString loopStatus() const;
+    void setLoopStatus(const QString &loopStatus);
+
     QVariantMap metadata() const;
 
     // dbus-exported methods ________
@@ -103,6 +107,8 @@ private:
     QDBusAbstractAdaptor *m_player;
 
     QString m_playbackStatus;
+    QString m_loopStatus;
+    QHash<QString, bool> m_possibleLoopStatus;
 
     bool m_canGoNext = false;
     bool m_canGoPrevious = false;

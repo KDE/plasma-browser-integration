@@ -190,6 +190,18 @@ addCallback("mpris", "setVolume", function (message) {
     }
 });
 
+addCallback("mpris", "setLoop", function (message) {
+    if (currentPlayerTabId) {
+        chrome.tabs.sendMessage(currentPlayerTabId, {
+            subsystem: "mpris",
+            action: "setLoop",
+            payload: {
+                loop: message.loop
+            }
+        });
+    }
+});
+
 addCallback("mpris", "setPosition", function (message) {
     if (currentPlayerTabId) {
         chrome.tabs.sendMessage(currentPlayerTabId, {
