@@ -1,13 +1,15 @@
 #include "mprisplugin.h"
 
+#include <QCoreApplication>
 #include <QDBusConnection>
 #include <QDBusObjectPath>
+#include <QDebug>
+#include <QImageReader>
 
 #include "mprisroot.h"
 #include "mprisplayer.h"
 
-#include <QDebug>
-#include <QImageReader>
+#include "settings.h"
 
 static const QString s_serviceName = QStringLiteral("org.mpris.MediaPlayer2.plasma-browser-integration");
 
@@ -61,14 +63,31 @@ void MPrisPlugin::emitPropertyChange(const QDBusAbstractAdaptor *interface, cons
 
 bool MPrisPlugin::registerService()
 {
-    // TODO append pid
-    return QDBusConnection::sessionBus().registerService(s_serviceName);
+    QString serviceName = s_serviceName;
+
+    if (QDBusConnection::sessionBus().registerService(serviceName)) {
+        m_serviceName = serviceName;
+        return true;
+    }
+
+    // now try appending PID in case multiple hosts are running
+    serviceName.append(QLatin1String("-")).append(QString::number(QCoreApplication::applicationPid()));
+
+    if (QDBusConnection::sessionBus().registerService(serviceName)) {
+        m_serviceName = serviceName;
+        return true;
+    }
+
+    m_serviceName.clear();
+    return false;
 }
 
 bool MPrisPlugin::unregisterService()
 {
-    // TODO append pid
-    return QDBusConnection::sessionBus().unregisterService(s_serviceName);
+    if (m_serviceName.isEmpty()) {
+        return false;
+    }
+    return QDBusConnection::sessionBus().unregisterService(m_serviceName);
 }
 
 void MPrisPlugin::handleData(const QString &event, const QJsonObject &data)
@@ -159,12 +178,30 @@ void MPrisPlugin::handleData(const QString &event, const QJsonObject &data)
 
 QString MPrisPlugin::identity() const
 {
-    return QStringLiteral("Google Chrome"); // TODO return correct browser
+    switch (Settings::self().environment()) {
+    case Settings::Environment::Unknown: return QString();
+    case Settings::Environment::Chrome: return QStringLiteral("Google Chrome");
+    case Settings::Environment::Chromium: return QStringLiteral("Chromium");
+    case Settings::Environment::Firefox: return QStringLiteral("Firefox Web Browser");
+    case Settings::Environment::Opera: return QStringLiteral("Opera");
+    }
+
+    return QString();
 }
 
 QString MPrisPlugin::desktopEntry() const
 {
-    return QStringLiteral("google-chrome"); // TODO return correct browser
+    switch (Settings::self().environment()) {
+    case Settings::Environment::Unknown: return QString();
+    case Settings::Environment::Chrome: return QStringLiteral("google-chrome");
+    // TODO account for distros that want to be super special and install these with a different name
+    // perhaps we could do a KService lookup of some sort
+    case Settings::Environment::Chromium: return QStringLiteral("chromium-browser");
+    case Settings::Environment::Firefox: return QStringLiteral("firefox");
+    case Settings::Environment::Opera: return QStringLiteral("opera");
+    }
+
+    return QString();
 }
 
 bool MPrisPlugin::canRaise() const

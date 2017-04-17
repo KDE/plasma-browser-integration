@@ -106,6 +106,8 @@ private:
     QDBusAbstractAdaptor *m_root;
     QDBusAbstractAdaptor *m_player;
 
+    QString m_serviceName;
+
     QString m_playbackStatus;
     QString m_loopStatus;
     QHash<QString, bool> m_possibleLoopStatus;
