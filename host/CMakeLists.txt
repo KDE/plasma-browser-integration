@@ -2,6 +2,7 @@ include_directories("${CMAKE_CURRENT_BINARY_DIR}")
 
 set(FOO_SOURCES main.cpp
                 connection.cpp
+                settings.cpp
                 windowmapper.cpp
                 mprisplugin.cpp
                 abstractbrowserplugin.cpp
