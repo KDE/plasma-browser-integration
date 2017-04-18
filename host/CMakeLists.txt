@@ -11,6 +11,7 @@ set(FOO_SOURCES main.cpp
                 downloadplugin.cpp
                 downloadjob.cpp
                 tabsrunnerplugin.cpp
+                slcplugin.cpp
                 )
 
 qt5_add_dbus_adaptor(FOO_SOURCES ../dbus/org.kde.plasma.browser_integration.TabsRunner.xml tabsrunnerplugin.h TabsRunnerPlugin)
@@ -27,6 +28,7 @@ target_link_libraries(
     KF5::KIOCore
     KF5::Notifications
     KF5::WindowSystem
+    KF5::Activities
 )
 
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)

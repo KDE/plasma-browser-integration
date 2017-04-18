@@ -12,6 +12,7 @@
 #include "downloadplugin.h"
 #include "tabsrunnerplugin.h"
 #include "mprisplugin.h"
+#include "slcplugin.h"
 
 void msgHandler(QtMsgType type, const QMessageLogContext &context, const QString &msg)
 {
@@ -52,6 +53,7 @@ int main(int argc, char *argv[])
     m_plugins << new DownloadPlugin(&a);
     m_plugins << new TabsRunnerPlugin(&a);
     m_plugins << new MPrisPlugin(&a);
+    m_plugins << new SlcPlugin(&a);
 
     // TODO pid suffix or so if we want to allow multiple extensions (which we probably should)
     if (!QDBusConnection::sessionBus().registerService(QStringLiteral("org.kde.plasma.browser_integration"))) {
