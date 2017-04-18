@@ -609,6 +609,10 @@ addRuntimeCallback("settings", "changed", function () {
     sendSettings();
 });
 
+addRuntimeCallback("settings", "openKRunnerSettings", function () {
+    sendPortMessage("settings", "openKRunnerSettings");
+});
+
 port.onMessage.addListener(function (message) {
     var subsystem = message.subsystem;
     var action = message.action;

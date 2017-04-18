@@ -1,6 +1,7 @@
 #include "settings.h"
 
 #include <QCoreApplication>
+#include <QProcess>
 
 Settings::Settings()
     : AbstractBrowserPlugin(QStringLiteral("settings"), 1, nullptr)
@@ -36,6 +37,8 @@ void Settings::handleData(const QString &event, const QJsonObject &data)
     if (event == QLatin1String("changed")) {
         m_settings = data;
         emit changed(data);
+    } else if (event == QLatin1String("openKRunnerSettings")) {
+        QProcess::startDetached(QStringLiteral("kcmshell5"), {QStringLiteral("kcm_plasmasearch")});
     }
 }
 

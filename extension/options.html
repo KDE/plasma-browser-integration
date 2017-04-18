@@ -31,24 +31,21 @@
                 <input type="checkbox" data-extension="kdeconnect"> Send via KDE Connect
             </label>
             <p>
-                Adds a context menu entry to links and websites enabling you to send them to your phone and other devices through <a href="https://community.kde.org/KDEConnect">KDE Connect</a>.
+                Adds a context menu entry to links enabling you to send them to your phone and other paired devices using <a href="https://community.kde.org/KDEConnect">KDE Connect</a>.
             </p>
         </li>
         <li>
             <label>
-                <input type="checkbox" data-extension="downloads"> Downloads in Notification Area
+                <input type="checkbox" data-extension="downloads"> Show downloads in notification area
             </label>
-            <p>
-                Show download progress in Plasma’s notification area.
-            </p>
+            <p></p>
         </li>
         <li>
             <label>
-                <input type="checkbox" data-extension="tabsrunner"> Window Tabs in KRunner
+                <input type="checkbox" data-extension="tabsrunner"> Find browser tabs in “Run Command” window
             </label>
             <p>
-                Lets you search for open browser tabs in Plasma’s Run Command window.<br>
-                By default, it is opened by pressing <code>Alt+Space</code>. Make sure the “Browser Tabs” module is enabled in <a href="#TODO open kcmshell5 kcm_plasmasearch">Plasma Search settings</a>.
+                Make sure the “Browser Tabs” module is enabled in <a id="open-krunner-settings" href="#">Plasma Search settings</a>.
             </p>
         </li>
         <li>
@@ -56,7 +53,7 @@
                 <input type="checkbox" data-extension="slc"> Statistics and Quick Share
             </label>
             <p>
-                Notifies the KDE Activity Service which tab is currently being viewed, allowing for quick sharing of websites and pictures through the Quick Share plasmoid.
+                Tracks visited websites in KDE Activities and also allows for easy sharing using the Quick Share plasmoid.
             </p>
         </li>
         <li>
@@ -64,17 +61,15 @@
                 <input type="checkbox" data-extension="incognito"> Show icon when incognito windows are open
             </label>
             <p>
-                Adds an icon to System Tray whenever an incognito window is opened and allows to close all of them at once.
-            </p>
-            <p class="note">
-                This only works if the extension is allowed to run in Incognito mode at which point incongito pages are also accessible through KRunner and other means.
+                Adds an icon to System Tray whenever an incognito window is opened that allows to close them at once.<br>
+                <small>This only works if the extension is allowed to run in Incognito mode at which point incongito pages are available to the listed features (including KRunner, if enabled).</small>
             </p>
         </li>
     </ul>
 
     <div class="dialog-button-box">
         <span id="save-message"></span>
-        <a href="#" id="clear-settings">Defaults</a>
+        <a href="#" id="clear-settings">Restore Defaults</a>
         <button id="save">Save</button>
     </div>
 </div>
@@ -91,7 +86,7 @@
         If you find an issue, please check the <a href="https://bugs.kde.org/buglist.cgi?product=plasma-browser-integration&resolution=---">list of open bugs</a> and then <a href="https://bugs.kde.org/enter_bug.cgi?product=plasma-browser-integration">file a bug report</a> .
     </p>
     <p><!-- taken frmo kaboutkdedialog_p.cpp in kxmlgui-->
-        <b>KDE</b> is a world-wide network of software engineers, artists, writers, translators and facilitators who are committed to <a href="http://www.gnu.org/philosophy/free-sw.html">Free Software</a> development. This community has created hundreds of Free Software applications as part of the KDE frameworks, workspaces and applications.<br>
+        KDE is a world-wide network of software engineers, artists, writers, translators and facilitators who are committed to <a href="http://www.gnu.org/philosophy/free-sw.html">Free Software</a> development. This community has created hundreds of Free Software applications as part of the KDE frameworks, workspaces and applications.<br>
         KDE is a cooperative enterprise in which no single entity controls the efforts or products of KDE to the exclusion of others. Everyone is welcome to join and contribute to KDE, including you.
     </p>
     <p>

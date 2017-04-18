@@ -7,6 +7,15 @@
     (at your option) any later version.
  */
 
+function sendMessage(action, payload)
+{
+    (chrome.extension.sendMessage || browser.runtime.sendMessage)({
+        subsystem: "settings",
+        action: action,
+        payload: payload
+    });
+}
+
 function tabClicked(tabbar, tabbutton) {
     tabbar.buttons.forEach(function (button) {
         var tablink = button.dataset.tabLink
@@ -116,10 +125,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
             saveMessage.innerText = "Settings successfully saved";
-            (chrome.extension.sendMessage || browser.runtime.sendMessage)({
-                subsystem: "settings",
-                action: "changed"
-            });
+            sendMessage("changed");
         });
     });
 
@@ -133,6 +139,10 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log("Settings cleared");
             loadSettings();
         });
+    });
+
+    document.getElementById("open-krunner-settings").addEventListener("click", function () {
+        sendMessage("openKRunnerSettings");
     });
 
 });
