@@ -134,10 +134,10 @@ addCallback("kdeconnect", "devicesChanged", function(message) {
     kdeConnectDefaultDeviceId = message ? message.defaultDeviceId : ""
     kdeConnectDefaultDeviceName = message ? message.defaultDeviceName : ""
 
-    var menuEntryTitle = "Open via KDE Connect"
+    var menuEntryTitle = chrome.i18n.getMessage("kdeconnect_open_via");
 
     if (kdeConnectDefaultDeviceName) {
-        menuEntryTitle = "Open on '" + kdeConnectDefaultDeviceName + "'"
+        menuEntryTitle = chrome.i18n.getMessage("kdeconnect_open_device", kdeConnectDefaultDeviceName);
     }
 
     if (kdeConnectDefaultDeviceId) {
@@ -635,8 +635,9 @@ port.onDisconnect.addListener(function() {
 
   chrome.notifications.create(null, {
       type: "basic",
-      title: "Plasma Browser Integration Error",
-      message: "The native host disconnected unexpectedly: " + (error ? error.message : "Unknown error"),
+      title: chrome.i18n.getMessage("general_error_title"),
+      message: chrome.i18n.getMessage("general_error_port_disconnect", (error ? error.message
+                                                                              : chrome.i18n.getMessage("general_error_unknown"))),
       iconUrl: "icons/sad-face-128.png"
   });
 

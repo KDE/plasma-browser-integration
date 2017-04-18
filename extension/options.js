@@ -120,11 +120,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
         saveSettings(function (error) {
             if (error) {
-                saveMessage.innerText = "Saving settings failed";
+                saveMessage.innerText = chrome.i18n.getMessage("options_save_failed");
                 return;
             }
 
-            saveMessage.innerText = "Settings successfully saved";
+            saveMessage.innerText = chrome.i18n.getMessage("options_save_success");
             sendMessage("changed");
         });
     });
