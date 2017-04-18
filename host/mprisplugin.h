@@ -35,6 +35,8 @@ class MPrisPlugin : public AbstractBrowserPlugin
 public:
     MPrisPlugin(QObject *parent);
 
+    void onUnload() override;
+
     void handleData(const QString &event, const QJsonObject &data) override;
 
     // mpris properties ____________

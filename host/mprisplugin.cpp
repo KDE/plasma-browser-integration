@@ -33,6 +33,11 @@ MPrisPlugin::MPrisPlugin(QObject *parent)
     };
 }
 
+void MPrisPlugin::onUnload()
+{
+    unregisterService();
+}
+
 // TODO this can surely be done in a much beter way with introspection and what not
 void MPrisPlugin::emitPropertyChange(const QDBusAbstractAdaptor *interface, const char *propertyName)
 {

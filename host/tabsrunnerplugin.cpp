@@ -16,8 +16,16 @@ TabsRunnerPlugin::TabsRunnerPlugin(QObject* parent) :
     AbstractBrowserPlugin(QStringLiteral("tabsrunner"), 1, parent)
 {
     new TabsRunnerAdaptor(this);
+}
 
+void TabsRunnerPlugin::onLoad()
+{
     QDBusConnection::sessionBus().registerObject(QStringLiteral("/TabsRunner"), this);
+}
+
+void TabsRunnerPlugin::onUnload()
+{
+    QDBusConnection::sessionBus().unregisterObject(QStringLiteral("/TabsRunner"));
 }
 
 // FIXME We really should enforce some kind of security policy, so only e.g. plasmashell and krunner

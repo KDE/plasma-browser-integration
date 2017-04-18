@@ -8,7 +8,14 @@
 KDEConnectPlugin::KDEConnectPlugin(QObject* parent) :
     AbstractBrowserPlugin(QStringLiteral("kdeconnect"), 1, parent)
 {
+
+}
+
+void KDEConnectPlugin::onLoad()
+{
     debug() << "kdeconnect" << "querying";
+
+    sendData("devicesChanged", {{"defaultDeviceName", QStringLiteral("Hallo")}, {"defaultDeviceId", QStringLiteral("1337")}});
 
     QDBusMessage msg = QDBusMessage::createMethodCall("org.kde.kdeconnect",
                                                       "/modules/kdeconnect",
@@ -49,6 +56,12 @@ KDEConnectPlugin::KDEConnectPlugin(QObject* parent) :
         }
         watcher->deleteLater();
     });
+}
+
+void KDEConnectPlugin::onUnload()
+{
+    // pretend we don't have any devices anymore, this simplifies context menu handling significantly
+    sendData("devicesChanged");
 }
 
 void KDEConnectPlugin::handleData(const QString& event, const QJsonObject& json)

@@ -8,6 +8,7 @@ class IncognitoPlugin : public AbstractBrowserPlugin
     Q_OBJECT
 public:
     IncognitoPlugin(QObject *parent);
+    void onUnload() override;
     void handleData(const QString &event, const QJsonObject &data);
 private:
     QPointer<KStatusNotifierItem> m_ksni;

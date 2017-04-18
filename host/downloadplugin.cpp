@@ -11,6 +11,13 @@ DownloadPlugin::DownloadPlugin(QObject* parent) :
 {
 }
 
+void DownloadPlugin::onUnload()
+{
+    for (auto it = m_jobs.constBegin(), end = m_jobs.constEnd(); it != end; ++it) {
+        it.value()->deleteLater(); // kill() would abort the download
+    }
+}
+
 void DownloadPlugin::handleData(const QString& event, const QJsonObject& payload)
 {
     const QJsonObject &download = payload.value(QStringLiteral("download")).toObject();

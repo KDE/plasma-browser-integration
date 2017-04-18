@@ -36,6 +36,17 @@ function sendPortMessage(subsystem, event, payload)
     port.postMessage(message);
 }
 
+function sendSettings() {
+    chrome.storage.sync.get(DEFAULT_EXTENSION_SETTINGS, function (items) {
+        if (chrome.runtime.lastError) {
+            console.warn("Failed to load settings");
+            return;
+        }
+
+        sendPortMessage("settings", "changed", items);
+    });
+}
+
 function addRuntimeCallback(subsystem, action, callback)
 {
     if (action.constructor === Array) {
@@ -53,6 +64,8 @@ function addRuntimeCallback(subsystem, action, callback)
 
 function connectHost() {
     port = chrome.runtime.connectNative("org.kde.plasma.browser_integration");
+
+    sendSettings();
 }
 
 // returns an Object which only contains values for keys in allowedKeys
@@ -118,8 +131,8 @@ chrome.contextMenus.onClicked.addListener(function (info) {
 });
 
 addCallback("kdeconnect", "devicesChanged", function(message) {
-    kdeConnectDefaultDeviceId = message.defaultDeviceId
-    kdeConnectDefaultDeviceName = message.defaultDeviceName
+    kdeConnectDefaultDeviceId = message ? message.defaultDeviceId : ""
+    kdeConnectDefaultDeviceName = message ? message.defaultDeviceName : ""
 
     var menuEntryTitle = "Open via KDE Connect"
 
@@ -588,6 +601,13 @@ addCallback("debug", "warning", function(payload) {
 //
 
 connectHost();
+
+addRuntimeCallback("settings", "changed", function () {
+    // we could also just reload our extension :)
+    // but this also causes the settings dialog to quit
+    //chrome.runtime.reload();
+    sendSettings();
+});
 
 port.onMessage.addListener(function (message) {
     var subsystem = message.subsystem;

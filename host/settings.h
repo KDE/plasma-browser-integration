@@ -28,10 +28,18 @@ public:
     Environment environment() const;
     // TODO should we have additional getters like browserName(), browserDesktopEntry(), etc?
 
+    bool pluginEnabled(const QString &subsystem) const;
+    QJsonObject settingsForPlugin(const QString &subsystem) const;
+
+signals:
+    void changed(const QJsonObject &settings);
+
 private:
     Settings();
     ~Settings() override = default;
 
     Environment m_environment = Environment::Unknown;
+
+    QJsonObject m_settings;
 
 };

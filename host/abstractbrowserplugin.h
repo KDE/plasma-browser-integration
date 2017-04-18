@@ -12,6 +12,14 @@ public:
     QString subsystem() const;
     virtual void handleData(const QString &event, const QJsonObject &data);
 
+    virtual void onLoad();
+    virtual void onUnload();
+    virtual void onSettingsChanged(const QJsonObject &newSettings);
+
+    bool isLoaded() const;
+    // FIXME this should not be public but we need to change it from main.cpp
+    void setLoaded(bool loaded);
+
 protected:
     /*
      * @arg subsystemId
@@ -24,6 +32,10 @@ protected:
     AbstractBrowserPlugin(const QString &subsystemId, int protocolVersion, QObject *parent);
     void sendData(const QString &action, const QJsonObject &payload = QJsonObject());
     QDebug debug() const;
+
+    QJsonObject settings() const;
+
 private:
     QString m_subsystem;
+    bool m_loaded = false;
 };

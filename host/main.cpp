@@ -45,6 +45,9 @@ int main(int argc, char *argv[])
     a.setApplicationName("google-chrome");
     a.setApplicationDisplayName("Google Chrome");
 
+    // NOTE if you add a new plugin here, make sure to adjust the
+    // "DEFAULT_EXTENSION_SETTINGS" in constants.js or else it won't
+    // even bother loading your shiny new plugin!
     QList<AbstractBrowserPlugin*> m_plugins;
     m_plugins << &Settings::self();
     m_plugins << &WindowMapper::self();
@@ -54,6 +57,10 @@ int main(int argc, char *argv[])
     m_plugins << new TabsRunnerPlugin(&a);
     m_plugins << new MPrisPlugin(&a);
     m_plugins << new SlcPlugin(&a);
+
+    // TODO make this prettier, also prevent unloading them at any cost
+    Settings::self().setLoaded(true);
+    WindowMapper::self().setLoaded(true);
 
     // TODO pid suffix or so if we want to allow multiple extensions (which we probably should)
     if (!QDBusConnection::sessionBus().registerService(QStringLiteral("org.kde.plasma.browser_integration"))) {
@@ -75,6 +82,10 @@ int main(int argc, char *argv[])
         }
 
         foreach(AbstractBrowserPlugin *plugin, m_plugins) {
+            if (!plugin->isLoaded()) {
+                continue;
+            }
+
             if (plugin->subsystem() == subsystem) {
                 //design question, should we have a JSON of subsystem, event, payload, or have all data at the root level?
                 plugin->handleData(event, json);
@@ -83,6 +94,35 @@ int main(int argc, char *argv[])
         }
 
         qDebug() << "Don't know how to handle event" << event << "for subsystem" << subsystem;
+    });
+
+    QObject::connect(&Settings::self(), &Settings::changed, [m_plugins](const QJsonObject &settings) {
+        foreach(AbstractBrowserPlugin *plugin, m_plugins) {
+            const QJsonValue &val = settings.value(plugin->subsystem());
+            if (val.type() != QJsonValue::Object) {
+                qWarning() << "Plugin" << plugin->subsystem() << "not handled by settings change";
+                continue;
+            }
+
+            // FIXME let a plugin somehow tell that it must not be unloaded
+            if (plugin->subsystem() == QLatin1String("settings") || plugin->subsystem() == QLatin1String("windows")) {
+                continue;
+            }
+
+            const QJsonObject &settingsObject = val.toObject();
+
+            const bool enabled = settingsObject.value(QStringLiteral("enabled")).toBool();
+
+            if (enabled && !plugin->isLoaded()) {
+                plugin->onLoad();
+            } else if (!enabled && plugin->isLoaded()) {
+                plugin->onUnload();
+            }
+
+            plugin->setLoaded(enabled);
+
+            plugin->onSettingsChanged(settingsObject);
+        }
     });
 
     return a.exec();

@@ -112,9 +112,14 @@ document.addEventListener("DOMContentLoaded", function () {
         saveSettings(function (error) {
             if (error) {
                 saveMessage.innerText = "Saving settings failed";
-            } else {
-                saveMessage.innerText = "Settings successfully saved";
+                return;
             }
+
+            saveMessage.innerText = "Settings successfully saved";
+            (chrome.extension.sendMessage || browser.runtime.sendMessage)({
+                subsystem: "settings",
+                action: "changed"
+            });
         });
     });
 

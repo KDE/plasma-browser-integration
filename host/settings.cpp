@@ -5,7 +5,6 @@
 Settings::Settings()
     : AbstractBrowserPlugin(QStringLiteral("settings"), 1, nullptr)
 {
-
     const auto &args = QCoreApplication::arguments();
     if (args.count() > 1) {
         const QString &extensionPath = args.at(1);
@@ -34,12 +33,23 @@ Settings &Settings::self()
 
 void Settings::handleData(const QString &event, const QJsonObject &data)
 {
-    Q_UNUSED(event);
-    Q_UNUSED(data);
-    // TODO here we will eventually receive things like "user disabled feature xyz"
+    if (event == QLatin1String("changed")) {
+        m_settings = data;
+        emit changed(data);
+    }
 }
 
 Settings::Environment Settings::environment() const
 {
     return m_environment;
+}
+
+bool Settings::pluginEnabled(const QString &subsystem) const
+{
+    return settingsForPlugin(subsystem).value(QStringLiteral("enabled")).toBool();
+}
+
+QJsonObject Settings::settingsForPlugin(const QString &subsystem) const
+{
+    return m_settings.value(subsystem).toObject();
 }

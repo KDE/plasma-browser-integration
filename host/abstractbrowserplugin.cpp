@@ -1,11 +1,12 @@
 #include "abstractbrowserplugin.h"
 #include "connection.h"
+#include "settings.h"
 
 AbstractBrowserPlugin::AbstractBrowserPlugin::AbstractBrowserPlugin(const QString& subsystemId, int protocolVersion, QObject* parent):
     QObject(parent),
     m_subsystem(subsystemId)
 {
-    sendData(QStringLiteral("loaded"), {{"version", protocolVersion}});
+    sendData(QStringLiteral("created"), {{"version", protocolVersion}});
 }
 
 void AbstractBrowserPlugin::handleData(const QString& event, const QJsonObject& data)
@@ -25,6 +26,21 @@ void AbstractBrowserPlugin::sendData(const QString &action, const QJsonObject &p
     Connection::self()->sendData(data);
 }
 
+void AbstractBrowserPlugin::onLoad()
+{
+
+}
+
+void AbstractBrowserPlugin::onUnload()
+{
+
+}
+
+void AbstractBrowserPlugin::onSettingsChanged(const QJsonObject &newSettings)
+{
+    Q_UNUSED(newSettings);
+}
+
 QDebug AbstractBrowserPlugin::debug() const
 {
     auto d = qDebug();
@@ -37,3 +53,27 @@ QString AbstractBrowserPlugin::subsystem() const
     return m_subsystem;
 }
 
+bool AbstractBrowserPlugin::isLoaded() const
+{
+    return m_loaded;
+}
+
+void AbstractBrowserPlugin::setLoaded(bool loaded)
+{
+    if (m_loaded == loaded) {
+        return;
+    }
+
+    if (loaded) {
+        sendData(QStringLiteral("loaded"));
+    } else {
+        sendData(QStringLiteral("unloaded"));
+    }
+
+    m_loaded = loaded;
+}
+
+QJsonObject AbstractBrowserPlugin::settings() const
+{
+    return Settings::self().settingsForPlugin(m_subsystem);
+}

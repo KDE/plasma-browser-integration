@@ -11,6 +11,8 @@ class TabsRunnerPlugin : public AbstractBrowserPlugin, protected QDBusContext
 
 public:
     TabsRunnerPlugin(QObject *parent);
+    void onLoad() override;
+    void onUnload() override;
     void handleData(const QString &event, const QJsonObject &data) override;
 
     // dbus-exported
