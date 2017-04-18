@@ -483,6 +483,50 @@ chrome.windows.onRemoved.addListener(function (windowId) {
     });
 });
 
+// when the currently active tab changes
+chrome.tabs.onActivated.addListener(function (activeInfo) {
+    // maybe we should just keep track of all tabs, e.g. in Window have QHash<int tabId, Tab* > and just update them
+    chrome.tabs.get(activeInfo.tabId, function (tab) {
+        port.postMessage({
+            subsystem: "windows",
+            event: "update",
+            browserId: tab.windowId,
+            title: tab.title,
+            activeTabId: tab.id,
+            activeTabUrl: tab.url,
+            audible: tab.audible, // FIXME this should be whether the window is audible not if the current tab is audible
+            muted: tab.mutedInfo
+        });
+    });
+});
+
+chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
+    if (!tab.active || !tab.windowId) {
+        return;
+    }
+
+    var payload = {
+        subsystem: "windows",
+        event: "update",
+        browserId: tab.windowId
+    };
+
+    if (changeInfo.title) {
+        payload.title = changeInfo.title;
+    }
+    if (changeInfo.url) {
+        payload.activeTabUrl = changeInfo.url;
+    }
+    if (changeInfo.audible) {
+        payload.audible = changeInfo.audible;
+    }
+    if (changeInfo.mutedInfo) {
+        payload.muted = changeInfo.mutedInfo;
+    }
+
+    port.postMessage(payload);
+});
+
 addCallback("windows", "getAll", function (message) {
     chrome.windows.getAll({
         populate: true // TODO needed for just the id?

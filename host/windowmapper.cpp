@@ -11,6 +11,88 @@
 
 static const QString s_keyword = QLatin1String("@PLASMABROWSERINTEGRATION");
 
+Window::Window(int browserId, QObject *parent)
+    : QObject(parent)
+    , m_browserId(browserId)
+{
+
+}
+
+int Window::browserId() const
+{
+    return m_browserId;
+}
+
+WId Window::windowId() const
+{
+    return m_windowId;
+}
+
+void Window::setWindowId(WId windowId)
+{
+    if (m_windowId != windowId) {
+        m_windowId = windowId;
+        emit windowIdChanged(windowId);
+    }
+}
+
+QString Window::title() const
+{
+    return m_title;
+}
+
+int Window::activeTabId() const
+{
+    return m_activeTabId;
+}
+
+QUrl Window::activeTabUrl() const
+{
+    return m_activeTabUrl;
+}
+
+bool Window::audible() const
+{
+    return m_audible;
+}
+
+bool Window::muted() const
+{
+    return m_muted;
+}
+
+void Window::update(const QJsonObject &payload)
+{
+    auto end = payload.constEnd();
+
+    auto it = payload.constFind(QStringLiteral("title"));
+    if (it != end) {
+        const QString &newTitle = it->toString();
+        if (m_title != newTitle) {
+            m_title = newTitle;
+            emit titleChanged(newTitle);
+        }
+    }
+
+    it = payload.constFind(QStringLiteral("activeTabId"));
+    if (it != end) {
+        const int newTabId = it->toInt();
+        if (m_activeTabId != newTabId) {
+            m_activeTabId = newTabId;
+            emit activeTabIdChanged(newTabId);
+        }
+    }
+
+    it = payload.constFind(QStringLiteral("activeTabUrl"));
+    if (it != end) {
+        const QUrl newTabUrl(it->toString());
+        if (m_activeTabUrl != newTabUrl) {
+            m_activeTabUrl = newTabUrl;
+            emit activeTabUrlChanged(newTabUrl);
+        }
+    }
+}
+
 WindowMapper::WindowMapper()
     : AbstractBrowserPlugin(QStringLiteral("windows"), 1, nullptr)
 {
@@ -30,7 +112,7 @@ WindowMapper &WindowMapper::self()
 
 void WindowMapper::handleData(const QString &event, const QJsonObject &data)
 {
-    qDebug() << "window maper handle" << event << data;
+    //qDebug() << "window maper handle" << event << data;
     const int browserId = data.value(QStringLiteral("browserId")).toInt();
     if (browserId <= 0) {
         qWarning() << "Got window event for invalid browser id" << browserId;
@@ -38,19 +120,44 @@ void WindowMapper::handleData(const QString &event, const QJsonObject &data)
     }
 
     if (event == QLatin1String("removed")) {
-        m_windows.remove(browserId);
-        emit windowRemoved(browserId);
+        Window *window = m_windows.take(browserId);
+        if (window) {
+            emit windowRemoved(window);
+            delete window;
+        }  else {
+            qWarning() << "Got told that window" << browserId << "was removed but we don't know it";
+        }
     } else if (event == QLatin1String("added")) {
-        emit windowAdded(browserId);
+        Q_ASSERT(!m_windows.contains(browserId));
+
+        Window *window = new Window(browserId, this);
+        // TODO have a constructor that takes QJsonObject and populates without emitting?
+        window->update(data);
+        m_windows.insert(browserId, window);
+        emit windowAdded(window);
+
         resolveWindow(browserId);
+    } else if (event == QLatin1String("update")) {
+        Window *window = m_windows.value(browserId);
+        if (window) {
+            window->update(data);
+        }  else {
+            qWarning() << "Got told that window" << browserId << "was updated but we don't know it";
+        }
     }
 
     //qDebug() << "we know the following windows" << m_windows;
 }
 
-WId WindowMapper::winIdForBrowserId(int browserId) const
+Window *WindowMapper::getWindow(int browserId) const
 {
     return m_windows.value(browserId);
+}
+
+// should we just make this thing return the QHash to avoid creating a list just to then later iterate it?
+QList<Window *> WindowMapper::windows() const
+{
+    return m_windows.values();
 }
 
 void WindowMapper::resolveWindow(int browserId)
@@ -71,7 +178,12 @@ void WindowMapper::windowChanged(WId id, NET::Properties properties, NET::Proper
         return;
     }
 
-    if (m_windows.key(id)) { // "hasKey"
+    // don't bother if we have already resolved this window
+    auto it = std::find_if(m_windows.constBegin(), m_windows.constEnd(), [id](Window *window) {
+        return window->windowId() == id;
+    });
+
+    if (it != m_windows.constEnd()) {
         return;
     }
 
@@ -112,8 +224,13 @@ void WindowMapper::windowChanged(WId id, NET::Properties properties, NET::Proper
 
     //qDebug() << "Mapped" << id << "to" << browserId;
 
-    m_windows.insert(browserId, id);
-    emit windowResolved(browserId, id);
+    Window *window = m_windows.value(browserId);
+    if (!window) {
+        qWarning() << "Got mapping result for" << browserId << "but we don't know this window";
+        return;
+    }
+
+    window->setWindowId(id);
 
     // now tell the extension that it may close the tab again
     sendData(QStringLiteral("resolved"), {
