@@ -1,6 +1,3 @@
-body {
-
-}
 
 .tabbar {
     display: block;
@@ -58,4 +55,10 @@ body {
 .dialog-button-box {
     float: right;
     padding-bottom: 14px;
+}
+
+
+img.konqi {
+    float: right;
+    margin-right: -14px;
 }
