@@ -1,13 +1,3 @@
-/*
-* {
-    font-family: "Comic Sans MS" !important;
-}*/
-
-.jira-issue-status-lozenge {
-    font-family: "Comic Sans MS" !important;
-}
-
-
 ::-webkit-scrollbar {
     /* we'll add padding as "border" in the thumb*/
     height: 20px;

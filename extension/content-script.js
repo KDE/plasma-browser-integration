@@ -38,6 +38,18 @@ chrome.runtime.onMessage.addListener(function (message, sender) {
     }
 });
 
+// BREEZE SCROLL BARS
+// ------------------------------------------------------------------------
+//
+chrome.storage.sync.get(DEFAULT_EXTENSION_SETTINGS, function (items) {
+    if (items.breezeScrollBars.enabled) {
+        var linkTag = document.createElement("link");
+        linkTag.rel = "stylesheet";
+        linkTag.href =  chrome.extension.getURL("breeze-scroll-bars.css");
+        (document.head || document.documentElement).appendChild(linkTag);
+    }
+});
+
 // MPRIS
 // ------------------------------------------------------------------------
 //

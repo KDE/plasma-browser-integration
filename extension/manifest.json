@@ -26,9 +26,8 @@
   "content_scripts": [
     {
       "matches": ["*://*/*"],
-      "js": ["content-script.js"],
-      "run_at":"document_start",
-      "css": ["style.css"]
+      "js": ["constants.js", "content-script.js"],
+      "run_at":"document_start"
     }
   ],
 
@@ -55,5 +54,5 @@
     }
   },
   "optional_permissions": [ "webRequest" ],
-  "web_accessible_resources": ["include/sweettooth-api.js"]
+  "web_accessible_resources": ["breeze-scroll-bars.css"]
 }
