@@ -25,3 +25,5 @@ DEFAULT_EXTENSION_SETTINGS = {
         enabled: false
     }
 };
+
+IS_FIREFOX = (typeof InstallTrigger !== "undefined"); // heh.

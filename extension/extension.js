@@ -37,7 +37,9 @@ function sendPortMessage(subsystem, event, payload)
 }
 
 function sendSettings() {
-    chrome.storage.sync.get(DEFAULT_EXTENSION_SETTINGS, function (items) {
+    var storage = (IS_FIREFOX ? chrome.storage.local : chrome.storage.sync);
+
+    storage.get(DEFAULT_EXTENSION_SETTINGS, function (items) {
         if (chrome.runtime.lastError) {
             console.warn("Failed to load settings");
             return;

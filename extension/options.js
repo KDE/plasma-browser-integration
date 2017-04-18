@@ -7,6 +7,8 @@
     (at your option) any later version.
  */
 
+var storage = (IS_FIREFOX ? chrome.storage.local : chrome.storage.sync);
+
 function sendMessage(action, payload)
 {
     (chrome.extension.sendMessage || browser.runtime.sendMessage)({
@@ -37,9 +39,9 @@ function extensionCheckboxes() {
 }
 
 function loadSettings() {
-    chrome.storage.sync.get(DEFAULT_EXTENSION_SETTINGS, function (items) {
+    storage.get(DEFAULT_EXTENSION_SETTINGS, function (items) {
         if (chrome.runtime.lastError) {
-            return cb(chrome.runtime.lastError);
+            return;
         }
 
         for (var key in items) {
@@ -82,7 +84,7 @@ function saveSettings(cb) {
         // TODO save additional stuff if we have it
     }
 
-    chrome.storage.sync.set(settings, function () {
+    storage.set(settings, function () {
         return cb(chrome.runtime.lastError);
     });
 }
@@ -130,7 +132,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     document.getElementById("clear-settings").addEventListener("click", function () {
-        chrome.storage.sync.clear(function () {
+        storage.clear(function () {
             if (chrome.runtime.lastError) {
                 console.warn("Clearing settings failed", chrome.runtime.lastError);
                 return;
