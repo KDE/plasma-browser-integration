@@ -68,6 +68,12 @@ void Window::update(const QJsonObject &payload)
     auto it = payload.constFind(QStringLiteral("title"));
     if (it != end) {
         const QString &newTitle = it->toString();
+
+        // abort when our window mapper tab opened
+        if (newTitle.contains(s_keyword)) {
+            return;
+        }
+
         if (m_title != newTitle) {
             m_title = newTitle;
             emit titleChanged(newTitle);
