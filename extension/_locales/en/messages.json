@@ -1,189 +1,46 @@
 {
-	"gs_chrome": {
-		"message": "Plasma Shell integration",
-		"description": "This is a project title. Used as extension name in Chrome Store and in some titlebars."
-	},
-	"manifest_description": {
-		"message": "This extension provides integration with KDE Shell and the corresponding extensions repository https://extensions.gnome.org plasma plamsa",
-		"description": "Used as extension description in Chrome Store"
-	},
-	"extension_name": {
-		"message": "Extension",
-		"description": "Used as title, eg in table header. Means 'KDE Shell extension name'."
-	},
-	"extension_installed": {
-		"message": "Installed",
-		"description": "Used as title, eg in table header. Means 'Does KDE Shell extension installed?'"
-	},
-	"extension_enabled": {
-		"message": "Enabled",
-		"description": "Used as title, eg in table header. Means 'Does KDE Shell extension enabled?'"
-	},
-	"extension_synchronized": {
-		"message": "Synchronized",
-		"description": "Used as title, eg in table header. Means 'Does KDE Shell extension status synchronized with remote browser storage?'"
-	},
-	"extension_status_upgrade": {
-		"message": "can be upgraded",
-		"description": "This is a part of phrase like 'Extension Top Icons can be upgraded'."
-	},
-	"extension_status_downgrade": {
-		"message": "must be downgraded",
-		"description": "This is a part of phrase like 'Extension Top Icons must be downgraded'."
-	},
-	"native_request_failed": {
-		"message": "«$REQUEST$» native request failed",
-		"description": "$REQUEST$ is a placeholder for technical name of request that web extension make via native messaging host application.",
-		"placeholders": {
-			"request": {
-				"content": "$1"
-			}
-		}
-	},
-	"network_error": {
-		"message": "A network error has occurred. Please check your Internet connection and/or proxy settings."
-	},
-	"no_host_response": {
-		"message": "No host response",
-		"description": "Means 'Web extension does not received answer from native messaging host application.'"
-	},
-	"platform_not_supported": {
-		"message": "Native host connector is not supported for your platform."
-	},
-	"update_check_failed": {
-		"message": "Failed to check extensions updates: $CAUSE$",
-		"description": "$CAUSE$ is placeholder for error that caused update failure.",
-		"placeholders": {
-			"cause": {
-				"content": "$1"
-			}
-		}
-	},
-	"update_available": {
-		"message": "An update for KDE Shell extensions available"
-	},
-	"options_title": {
-		"message": "$GS_CHROME$ options",
-		"description": "$GS_CHROME$ is placeholder for 'KDE Shell integration' string. This string used as title for Options page. This title is not shown in Chrome, but may be shown in other browsers.",
-		"placeholders": {
-			"gs_chrome": {
-				"content": "$1"
-			}
-		}
-	},
-	"options_link": {
-		"message": "Options",
-		"description": "Link name for options tab."
-	},
-	"options_saved": {
-		"message": "Options saved.",
-		"description": "Means 'Options were saved successfully after user clicked Save button'"
-	},
-	"options_update_check": {
-		"message": "Check for extensions update",
-		"description": "Option name. Allow enable/disable update check for KDE Shell extensions."
-	},
-	"options_check_period": {
-		"message": "Update check period",
-		"description": "Option name. Allow to set interval between KDE Shell extensions update checks."
-	},
-	"options_show_network_errors": {
-		"message": "Show information about network errors",
-		"description": "Option name. By default Chrome do not reveal exact network error in case of request failure. Allow enable/disable extended error information."
-	},
-	"options_show_network_errors_notice": {
-		"message": "Chrome permission «webRequest» required.",
-		"description": "This is a notice under option name. Warns user that additional browser permission is required if option will be enabled."
-	},
-	"options_show_release_notes": {
-		"message": "Show release notes when extension updated",
-		"description": "Option name. Allow to enable/disable popup with release notes when Web extension is updated."
-	},
-	"options_synchronize_extensions": {
-		"message": "Synchronize extensions list",
-		"description": "Option name. Allow to enable/disable synchronization of KDE Shell extensions with remote browser storage."
-	},
-	"options_synchronize_extensions_notice": {
-		"message": "If enabled, your KDE Shell extensions list will be synchronized with your Google account.",
-		"description": "This is a notice under option name."
-	},
-	"options_last_check": {
-		"message": "Last check",
-		"description": "This is a start of phrase (followed by date/time) of last KDE Shell extensions update check."
-	},
-	"options_next_check": {
-		"message": "Next check",
-		"description": "This is a start of phrase (followed by date/time) of next KDE Shell extensions update check."
-	},
-	"synchronization": {
-		"message": "Synchronization",
-		"description": "Link name for synchronization tab in options dialog."
-	},
-	"synchronization_storage_exists": {
-		"message": "Your remote synchronization storage already contains extensions list."
-	},
-	"synchronization_use_local": {
-		"message": "Use local extensions list, overwrite remote."
-	},
-	"synchronization_use_remote": {
-		"message": "Use remote extensions list, overwrite local."
-	},
-	"synchronization_cancel": {
-		"message": "Do not enable synchronization."
-	},
-	"synchronization_failed": {
-		"message": "Failed to synchronize extensions: $CAUSE$",
-		"description": "$CAUSE$ is placeholder for error that caused synchronization failure.",
-		"placeholders": {
-			"cause": {
-				"content": "$1"
-			}
-		}
-	},
-	"translation_credits_title": {
-		"message": "About translation",
-		"description": "Link name for translation credits tab in options dialog."
-	},
-	"translation_credits": {
-		"message": "",
-		"description": "This is content of 'About translation' tab in Options dialog. Thank you for translation and feel free to add yourself here. HTML markup enabled for this string. New line character is treated as line break (<br />)"
-	},
-	"unknown_error": {
-		"message": "unknown error",
-		"description": "This should newer be shown to user. However better safe than sorry."
-	},
-	"hours": {
-		"message": "hours",
-		"description": "This is a part of phrase 'Update check period: xx hours'"
-	},
-	"yes": {
-		"message": "Yes"
-	},
-	"no": {
-		"message": "No"
-	},
-	"never": {
-		"message": "never",
-		"description": "This is a part of phrase 'Last check: never'"
-	},
-	"retry": {
-		"message": "Retry"
-	},
-	"close": {
-		"message": "Close"
-	},
-	"save": {
-		"message": "Save"
-	},
-	"error_extension_response": {
-		"message": "Wrong extension response received",
-		"description": "Shown to user when response of extension API call does not follow known format."
-	},
-	"no_host_connector": {
-		"message": "Although KDE Shell integration extension is running, native host connector is not detected. Refer <a href='https://wiki.gnome.org/Projects/GnomeShellIntegrationForChrome/Installation'>documentation</a> for instructions about installing connector."
-	},
-	"warning_apis_missing": {
-		"message": "Your native host connector do not support following APIs: $$1. Probably you should upgrade native host connector or install plugins for missing APIs. Refer <a href='https://wiki.gnome.org/Projects/GnomeShellIntegrationForChrome/Installation'>documentation</a> for instructions.",
-		"description": "$$1 is a placeholder for a list of missing APIs"
-	}
+    "options_title": {
+        "description": "Title for settings page",
+        "message": "Plasma Integration Settings"
+    },
+    "options_tab_general": {
+        "description": "The 'General settings' tab in settings",
+        "message": "General"
+    },
+    "options_tab_about": {
+        "description": "The 'About this plugin' tab in settings",
+        "message": "About"
+    },
+
+    "options_plugin_mpris_title": {
+        "description": "Title for Media Controls plugin",
+        "message": "Media Controls"
+    },
+    "options_plugin_mpris_description": {
+        "description": "Description for Media Controls plugin",
+        "message": "Lets you control video and audio players in websites using the Media Controller plasmoid."
+    },
+
+    "options_plugin_kdeconnect_title": {
+        "description": "Title for KDE Connect plugin",
+        "message": "Send via KDE Connect"
+    },
+    "options_plugin_kdeconnect_description": {
+        "description": "Description for KDE Connect plugin",
+        "message": "Adds a context menu entry to links enabling you to send them to your phone and other paired devices using <a href=\"$1\">KDE Connect</a>."
+    },
+
+    "options_plugin_downloads_title": {
+        "description": "Title for Downloads plugin",
+        "message": "Show downloads in notification area"
+    },
+
+    "options_plugin_tabsrunner_title": {
+        "description": "Title for Browser Tabs KRunner plugin",
+        "message": "Find browser tabs in “Run Command” window"
+    },
+    "options_plugin_tabsrunner_description": {
+        "description": "Description for Browser Tabs KRunner plugin",
+        "message": "Make sure the “Browser Tabs” module is enabled in <a id=\"$1\" href=\"$2\">Plasma Search settings</a>."
+    }
 }

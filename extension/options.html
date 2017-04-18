@@ -3,50 +3,45 @@
 
 <head>
     <meta charset="utf-8">
-    <title data-i18n="options_title, __MSG_gs_chrome__"></title>
+    <title data-i18n="options_title"></title>
     <link rel="stylesheet" href="options.css">
     <script src="constants.js"></script>
+    <script src="i18n.js"></script>
     <script src="options.js"></script>
 </head>
 
 <body>
 
 <ul class="tabbar">
-    <li><a href="#" data-tab-link="general" data-tab-active="true">General</a></li>
-    <li><a href="#" data-tab-link="about">About</a></li>
+    <li><a href="#" data-tab-link="general" data-tab-active="true" data-i18n="options_tab_general">I18N</a></li>
+    <li><a href="#" data-tab-link="about" data-i18n="options_tab_about">I18N</a></li>
 </ul>
 
 <div class="tab active" data-tab-id="general">
     <ul id="extensions-selection">
         <li>
             <label>
-                <input type="checkbox" data-extension="mpris"> Media Controls
+                <input type="checkbox" data-extension="mpris"> <span data-i18n="options_plugin_mpris_title">I18N</span>
             </label>
-            <p>
-                Lets you control video and audio players in websites using the Media Controller plasmoid.
-            </p>
+            <p data-i18n="options_plugin_mpris_description">I18N</p>
         </li>
         <li>
             <label>
-                <input type="checkbox" data-extension="kdeconnect"> Send via KDE Connect
+                <input type="checkbox" data-extension="kdeconnect"> <span data-i18n="options_plugin_kdeconnect_title">I18N</span>
             </label>
-            <p>
-                Adds a context menu entry to links enabling you to send them to your phone and other paired devices using <a href="https://community.kde.org/KDEConnect">KDE Connect</a>.
-            </p>
+            <p data-i18n="options_plugin_kdeconnect_description, https://community.kde.org/KDEConnect" data-i18n-html="true">I18N</p>
         </li>
         <li>
             <label>
-                <input type="checkbox" data-extension="downloads"> Show downloads in notification area
+                <input type="checkbox" data-extension="downloads"> <span data-i18n="options_plugin_downloads_title">I18N</span>
             </label>
             <p></p>
         </li>
         <li>
             <label>
-                <input type="checkbox" data-extension="tabsrunner"> Find browser tabs in “Run Command” window
+                <input type="checkbox" data-extension="tabsrunner"> <span data-i18n="options_plugin_tabsrunner_title">I18N</span>
             </label>
-            <p>
-                Make sure the “Browser Tabs” module is enabled in <a id="open-krunner-settings" href="#">Plasma Search settings</a>.
-            </p>
+            <p data-i18n="options_plugin_tabsrunner_description, open-krunner-settings, #" data-i18n-html="true">I18N</p>
         </li>
         <li>
             <label>
