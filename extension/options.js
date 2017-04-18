@@ -114,6 +114,12 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    if (IS_FIREFOX) {
+        document.querySelectorAll("[data-not-show-in=firefox]").forEach(function (item) {
+            item.style.display = "none";
+        });
+    }
+
     loadSettings();
 
     document.getElementById("save").addEventListener("click", function () {
