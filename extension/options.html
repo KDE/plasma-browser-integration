@@ -1,105 +1,104 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title data-i18n="options_title, __MSG_gs_chrome__"></title>
-		<link href="css/tabby.min.css" rel="stylesheet" type="text/css" />
-		<link href="css/options.css" rel="stylesheet" type="text/css" />
-		<script type="text/javascript" src="include/external/jquery-2.1.4.js"></script>
-		<script type="text/javascript" src="include/external/tabby-10.1.0.js"></script>
-		<script type="text/javascript" src="include/i18n.js"></script>
-		<script type="text/javascript" src="include/constants.js"></script>
-		<script type="text/javascript" src="include/compat-common.js"></script>
-		<script type="text/javascript" src="include/gsc.js"></script>
-		<script type="text/javascript" src="include/sync.js"></script>
-	</head>
-	<body>
-		<ul data-tabs='tabs' class="tabs">
-			<li><a href="#options" class='active' data-i18n='options_link' data-tab='tab'></a></li>
-			<li><a href="#synchronization" data-i18n='synchronization' data-tab='tab'></a></li>
-			<li class='translation_credits_container'><a href="#translation_credits" data-i18n='translation_credits_title' data-tab='tab'></a></li>
-		</ul>
-		<div data-tabs-content='tabs-content'>
-			<div id="options" class="tabs-pane active" data-tabs-pane='tabs-pane'>
-				<div id="status" data-i18n="options_saved"></div>
-				<div id="error"></div>
 
-				<fieldset>
-					<dl>
-						<dt><span data-i18n="options_update_check"></span>:</dt>
-						<dd>
-							<label for='update_check_yes' data-i18n="yes"></label> <input type='radio' id='update_check_yes' name='update_check' />
-							<label for='update_check_no' data-i18n="no"></label> <input type='radio' id='update_check_no' name='update_check' />
+<head>
+    <meta charset="utf-8">
+    <title data-i18n="options_title, __MSG_gs_chrome__"></title>
+    <link rel="stylesheet" href="options.css">
+    <script src="constants.js"></script>
+    <script src="options.js"></script>
+</head>
 
-							<div class='notice'><span data-i18n="options_last_check"></span>: <span id="last_update_check" data-i18n="never"></span></div>
-						</dd>
-					</dl>
-					<dl>
-						<dt><label for='update_check_period' data-i18n="options_check_period"></label>:</dt>
-						<dd>
-							<input id='update_check_period' type='number' min="3"  /> <span data-i18n="hours"></span>
+<body>
 
-							<div class='notice'><span data-i18n="options_next_check"></span>: <span id="next_update_check" data-i18n="never"></span></div>
-						</dd>
-					</dl>
-					<dl>
-						<dt>
-							<label for='synchronize_extensions_yes' data-i18n="options_synchronize_extensions"></label>:<br />
-							<span class="notice wrapped" data-i18n="options_synchronize_extensions_notice"></span>
-						</dt>
-						<dd>
-							<label for='synchronize_extensions_yes' data-i18n="yes"></label> <input type='radio' id='synchronize_extensions_yes' name='synchronize_extensions' />
-							<label for='synchronize_extensions_no' data-i18n="no"></label> <input type='radio' id='synchronize_extensions_no' name='synchronize_extensions' />
-						</dd>
-					</dl>
-					<dl>
-						<dt>
-							<label for='show_network_errors_yes' data-i18n="options_show_network_errors"></label>:<br />
-							<span class="notice wrapped" data-i18n="options_show_network_errors_notice"></span>
-						</dt>
-						<dd>
-							<label for='show_network_errors_yes' data-i18n="yes"></label> <input type='radio' id='show_network_errors_yes' name='show_network_errors' />
-							<label for='show_network_errors_no' data-i18n="no"></label> <input type='radio' id='show_network_errors_no' name='show_network_errors' />
-						</dd>
-					</dl>
-					<dl>
-						<dt><span data-i18n="options_show_release_notes"></span>:</dt>
-						<dd>
-							<label for='show_release_notes_yes' data-i18n="yes"></label> <input type='radio' id='show_release_notes_yes' name='show_release_notes' />
-							<label for='show_release_notes_no' data-i18n="no"></label> <input type='radio' id='show_release_notes_no' name='show_release_notes' />
-						</dd>
-					</dl>
-				</fieldset>
+<ul class="tabbar">
+    <li><a href="#" data-tab-link="general" data-tab-active="true">General</a></li>
+    <li><a href="#" data-tab-link="about">About</a></li>
+</ul>
 
-				<div class='buttons'>
-					<button id="save" data-i18n="save"></button>
-				</div>
-			</div>
-			<div id="synchronization" class="tabs-pane" data-tabs-pane='tabs-pane'>
-				<table>
-					<thead>
-						<tr>
-							<th data-i18n="extension_name"></th>
-							<th data-i18n="extension_installed"></th>
-							<th data-i18n="extension_enabled"></th>
-							<th data-i18n="extension_synchronized"></th>
-						</tr>
-					</thead>
-					<tbody></tbody>
-				</table>
-			</div>
-			<div id="translation_credits" class="tabs-pane translation_credits_container" data-tabs-pane='tabs-pane'>
-				<div data-i18n='translation_credits' data-i18n-html='true'></div>
-			</div>
-		</div>
+<div class="tab active" data-tab-id="general">
+    <ul id="extensions-selection">
+        <li>
+            <label>
+                <input type="checkbox" data-extension="mpris"> Media Controls
+            </label>
+            <p>
+                Lets you control video and audio players in websites using the Media Controller plasmoid.
+            </p>
+        </li>
+        <li>
+            <label>
+                <input type="checkbox" data-extension="kdeconnect"> Send via KDE Connect
+            </label>
+            <p>
+                Adds a context menu entry to links and websites enabling you to send them to your phone and other devices through <a href="https://community.kde.org/KDEConnect">KDE Connect</a>.
+            </p>
+        </li>
+        <li>
+            <label>
+                <input type="checkbox" data-extension="downloads"> Downloads in Notification Area
+            </label>
+            <p>
+                Show download progress in Plasma’s notification area.
+            </p>
+        </li>
+        <li>
+            <label>
+                <input type="checkbox" data-extension="tabsrunner"> Window Tabs in KRunner
+            </label>
+            <p>
+                Lets you search for open browser tabs in Plasma’s Run Command window.<br>
+                By default, it is opened by pressing <code>Alt+Space</code>. Make sure the “Browser Tabs” module is enabled in <a href="#TODO open kcmshell5 kcm_plasmasearch">Plasma Search settings</a>.
+            </p>
+        </li>
+        <li>
+            <label>
+                <input type="checkbox" data-extension="slc"> Statistics and Quick Share
+            </label>
+            <p>
+                Notifies the KDE Activity Service which tab is currently being viewed, allowing for quick sharing of websites and pictures through the Quick Share plasmoid.
+            </p>
+        </li>
+        <li>
+            <label>
+                <input type="checkbox" data-extension="incognito"> Show icon when incognito windows are open
+            </label>
+            <p>
+                Adds an icon to System Tray whenever an incognito window is opened and allows to close all of them at once.
+            </p>
+            <p class="note">
+                This only works if the extension is allowed to run in Incognito mode at which point incongito pages are also accessible through KRunner and other means.
+            </p>
+        </li>
+    </ul>
 
-		<dialog id='syncChoice'>
-			<h2 data-i18n='synchronization_storage_exists'></h2>
-			<form method="dialog">
-				<button type='submit' value='local' data-i18n='synchronization_use_local'></button>
-				<button type='submit' value='remote' data-i18n='synchronization_use_remote'></button>
-				<button type='submit' value='cancel' data-i18n='synchronization_cancel'></button>
-			</form>
-		</dialog>
-		<script type="text/javascript" src="options.js"></script>
-	</body>
+    <div class="dialog-button-box">
+        <span id="save-message"></span>
+        <a href="#" id="clear-settings">Defaults</a>
+        <button id="save">Save</button>
+    </div>
+</div>
+
+<div class="tab" data-tab-id="about">
+    <p>
+        © 2017 Kai Uwe Broulik and David Edmundson<br>
+        License: <a href="https://www.gnu.org/licenses/gpl-3.0.de.html">GNU General Public License Version 3</a>
+    </p>
+    <p>
+        This browser extension was created by the <a href="http://www.kde.org">KDE Community</a>.
+    </p>
+    <p>
+        If you find an issue, please check the <a href="https://bugs.kde.org/buglist.cgi?product=plasma-browser-integration&resolution=---">list of open bugs</a> and then <a href="https://bugs.kde.org/enter_bug.cgi?product=plasma-browser-integration">file a bug report</a> .
+    </p>
+    <p><!-- taken frmo kaboutkdedialog_p.cpp in kxmlgui-->
+        <b>KDE</b> is a world-wide network of software engineers, artists, writers, translators and facilitators who are committed to <a href="http://www.gnu.org/philosophy/free-sw.html">Free Software</a> development. This community has created hundreds of Free Software applications as part of the KDE frameworks, workspaces and applications.<br>
+        KDE is a cooperative enterprise in which no single entity controls the efforts or products of KDE to the exclusion of others. Everyone is welcome to join and contribute to KDE, including you.
+    </p>
+    <p>
+        If you like what you saw, please consider <a href="https://www.kde.org/community/donations/?app=plasma-browser-integration">donating to KDE</a>, so we can continue to make the best free software possible.
+    </p>
+</div>
+
+</body>
+
 </html>
