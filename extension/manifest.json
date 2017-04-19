@@ -4,12 +4,13 @@
   "name": "Plasma Integration",
   "short_name": "Plasma",
   "description": "Provides better integration with the KDE Plasma 5 desktop.",
-  "version": "0.1",
+  "version": "0.0.1",
 
   "default_locale": "en",
 
   "author": "Kai Uwe Broulik <kde@prviat.broulik.de>",
-  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0c6iHx4x17WlILpcwyyLVD9clJ05hs6pwfFECFDZk3Rcqauys1wxNgi6/VJxLy/kghvQADF+IJvdImGzUc2USKR5J97aAi7jZ0QBzirANwXue2sD/sjSuXtMcg/l2clmY4exWRR4d8ciIOKKXqHqKhW/Vwx6inm1gPWVk4or4T2EQrpvyTvKi9rsb8cLB7LoaS4DQS1gEHXlUsd3R9KymPAE+hyuOsH6L8dkjl8AnSRZ1Ml1O7243sHHlBtiSEuYLPyv41nyJpmv19R5Iz/bdV4K4xVWeotYsIRQ1qEirfSExCg02JhfkiE2w/WAhV85iUs1/L6pL68FIpr2U/fH3wIDAQAB",
+
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA1Wz6JigIdPBxPJvYrnjuKM3X4YEaUHgyOW2TM1G1Maxook1HO8vLFGhBR7g3jEQ7Yw9PTa6ZAa8J/I9a/1EQz0Ssx2+m3R9SvJfdKSCrCth8nwMpB8V8I5EhiUoW57kM0v9r/18Buem5cBIo0EnSAVCbmNG95R5jtg62P4+LNGEwHk5L7RSblXUN2hhUwXty4A98EXD6T2Pnpu1m8nRF2B1t5AcspSMV5ECnL9x8kT5bup1gJo0FGTz6C+1huDNRaI3OY1YDWyvCVRFXlAhuFERTW6siMdghK++kYM43H7cvJMFYnVVuffD9WNRsUCI9V0SrqYbPre/2nEl+8VUXVwIDAQAB",
 
   "icons": {
     "16": "icons/plasma-16.png",
