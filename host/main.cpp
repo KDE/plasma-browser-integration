@@ -62,9 +62,13 @@ int main(int argc, char *argv[])
     Settings::self().setLoaded(true);
     WindowMapper::self().setLoaded(true);
 
-    // TODO pid suffix or so if we want to allow multiple extensions (which we probably should)
-    if (!QDBusConnection::sessionBus().registerService(QStringLiteral("org.kde.plasma.browser_integration"))) {
-        qWarning() << "Failed to register DBus service";
+    QString serviceName = QStringLiteral("org.kde.plasma.browser_integration");
+    if (!QDBusConnection::sessionBus().registerService(serviceName)) {
+        // now try appending PID in case multiple hosts are running
+        serviceName.append(QLatin1String("-")).append(QString::number(QCoreApplication::applicationPid()));
+        if (!QDBusConnection::sessionBus().registerService(serviceName)) {
+            qWarning() << "Failed to register DBus service name" << serviceName;
+        }
     }
 
     QObject::connect(Connection::self(), &Connection::dataReceived, [m_plugins](const QJsonObject &json) {
