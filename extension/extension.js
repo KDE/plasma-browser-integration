@@ -502,6 +502,10 @@ chrome.windows.onRemoved.addListener(function (windowId) {
 chrome.tabs.onActivated.addListener(function (activeInfo) {
     // maybe we should just keep track of all tabs, e.g. in Window have QHash<int tabId, Tab* > and just update them
     chrome.tabs.get(activeInfo.tabId, function (tab) {
+        if (!tab) {
+            return;
+        }
+
         port.postMessage({
             subsystem: "windows",
             event: "update",
@@ -566,6 +570,10 @@ addCallback("windows", "resolve", function (message) {
         active: true,
         url: chrome.runtime.getURL("windowmapper.htm") + "#" + Number(browserId)
     }, function (tab) {
+        if (!tab) {
+            return;
+        }
+
         resolverTabs[browserId] = tab.id;
     });
 });
