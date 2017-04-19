@@ -15,8 +15,6 @@ void KDEConnectPlugin::onLoad()
 {
     debug() << "kdeconnect" << "querying";
 
-    sendData("devicesChanged", {{"defaultDeviceName", QStringLiteral("Hallo")}, {"defaultDeviceId", QStringLiteral("1337")}});
-
     QDBusMessage msg = QDBusMessage::createMethodCall("org.kde.kdeconnect",
                                                       "/modules/kdeconnect",
                                                       "org.kde.kdeconnect.daemon",
