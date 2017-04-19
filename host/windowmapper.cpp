@@ -61,6 +61,11 @@ bool Window::muted() const
     return m_muted;
 }
 
+void Window::unminimize()
+{
+    KWindowSystem::unminimizeWindow(windowId());
+}
+
 void Window::update(const QJsonObject &payload)
 {
     auto end = payload.constEnd();
@@ -149,6 +154,12 @@ void WindowMapper::handleData(const QString &event, const QJsonObject &data)
             window->update(data);
         }  else {
             qWarning() << "Got told that window" << browserId << "was updated but we don't know it";
+        }
+    } else if (event == QLatin1String("unminimize")) {
+        if (Window *window = m_windows.value(browserId)) {
+            window->unminimize();
+        } else {
+            qWarning() << "Got told to unminimize" << browserId << "but we don't know it";
         }
     }
 

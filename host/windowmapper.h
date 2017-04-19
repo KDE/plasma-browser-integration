@@ -28,6 +28,8 @@ public:
     bool audible() const;
     bool muted() const;
 
+    void unminimize();
+
     // TODO stuff like state, geometry, blabla?
 
     friend class WindowMapper;
