@@ -38,6 +38,9 @@ protected slots:
     QList<QAction *> actionsForMatch(const Plasma::QueryMatch &match) override;
 
 private:
-    static QDBusMessage createMessage(const QString &method);
+    static QDBusMessage createMessage(const QString &service, const QString &method);
+
+    // accessed in match()
+    QHash<QString /*dbus service name*/, QString /*browser (chrome, firefox, ..)*/> m_serviceToBrowser;
 
 };

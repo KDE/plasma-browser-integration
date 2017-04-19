@@ -24,6 +24,7 @@
 
 #include <QDBusArgument>
 #include <QDBusConnection>
+#include <QDBusConnectionInterface>
 #include <QDBusMessage>
 
 #include <KLocalizedString>
@@ -56,16 +57,53 @@ void TabsRunner::match(Plasma::RunnerContext &context)
         return;
     }
 
-    QDBusMessage message =
-        QDBusMessage::createMethodCall(QStringLiteral("org.kde.plasma.browser_integration"),
-                                       QStringLiteral("/TabsRunner"),
-                                       QStringLiteral("org.kde.plasma.browser_integration.TabsRunner"),
-                                       QStringLiteral("GetTabs")
-        );
+    // first look for all running hosts, there can be multiple browsers running
+    QDBusReply<QStringList> servicesReply = QDBusConnection::sessionBus().interface()->registeredServiceNames();
+    QStringList services;
+    if (servicesReply.isValid()) {
+        services = servicesReply.value();
+    }
 
-    QDBusMessage reply = QDBusConnection::sessionBus().call(message);
+    for (const QString &service: services) {
+        if (!service.startsWith(QLatin1String("org.kde.plasma.browser_integration"))) {
+            continue;
+        }
 
-    if (reply.type() == QDBusMessage::ReplyMessage) {
+        QString browser = m_serviceToBrowser.value(service);
+        if (browser.isEmpty()) { // now ask what browser we're dealing with
+            // FIXME can we use our dbus xml for this?
+            QDBusMessage message = QDBusMessage::createMethodCall(service,
+                                               QStringLiteral("/Settings"),
+                                               QStringLiteral("org.freedesktop.DBus.Properties"),
+                                               QStringLiteral("Get"));
+            message.setArguments({
+                QStringLiteral("org.kde.plasma.browser_integration.Settings"),
+                QStringLiteral("Environment")
+            });
+
+            QDBusMessage reply = QDBusConnection::sessionBus().call(message);
+
+            if (reply.type() != QDBusMessage::ReplyMessage || reply.arguments().count() != 1) {
+                continue;
+            }
+
+            // what a long tail of calls...
+            browser = reply.arguments().at(0).value<QDBusVariant>().variant().toString();
+            m_serviceToBrowser.insert(service, browser);
+        }
+
+        QDBusMessage message =
+            QDBusMessage::createMethodCall(service,
+                                           QStringLiteral("/TabsRunner"),
+                                           QStringLiteral("org.kde.plasma.browser_integration.TabsRunner"),
+                                           QStringLiteral("GetTabs")
+            );
+
+        QDBusMessage reply = QDBusConnection::sessionBus().call(message);
+
+        if (reply.type() != QDBusMessage::ReplyMessage) {
+            continue;
+        }
 
         QList<Plasma::QueryMatch> matches;
 
@@ -101,6 +139,7 @@ void TabsRunner::match(Plasma::RunnerContext &context)
             const bool muted = mutedInfo.value(QStringLiteral("muted")).toBool();
 
             const QVariantHash tabData = {
+                {QStringLiteral("service"), service},
                 {QStringLiteral("tabId"), tabId},
                 {QStringLiteral("audible"), audible},
                 {QStringLiteral("muted"), muted}
@@ -143,7 +182,17 @@ void TabsRunner::match(Plasma::RunnerContext &context)
 
             match.setRelevance(relevance);
 
-            QString iconName = QStringLiteral("google-chrome"); // TODO favicon or at least correct browser icon
+            QString iconName;
+
+            if (browser == QLatin1String("chrome")) {
+                iconName = QStringLiteral("google-chrome");
+            } else if (browser == QLatin1String("chromium")) {
+                iconName = QStringLiteral("chromium-browser");
+            } else if (browser == QLatin1String("firefox")) {
+                iconName = QStringLiteral("firefox");
+            } else if (browser == QLatin1String("opera")) {
+                iconName = QStringLiteral("opera");
+            }
 
             if (incognito) {
                 iconName = QStringLiteral("face-smirk");// TODO QStringLiteral("incognito");
@@ -170,30 +219,33 @@ void TabsRunner::run(const Plasma::RunnerContext &context, const Plasma::QueryMa
 {
     Q_UNUSED(context);
 
-    const int tabId = match.data().toHash().value(QStringLiteral("tabId")).toInt();
+    const QVariantHash &tabData = match.data().toHash();
+
+    const QString &service = tabData.value(QStringLiteral("service")).toString();
+    const int tabId = tabData.value(QStringLiteral("tabId")).toInt();
 
     if (match.selectedAction() == action(s_unmuteTab)) {
-        QDBusMessage message = createMessage(QStringLiteral("SetMuted"));
+        QDBusMessage message = createMessage(service, QStringLiteral("SetMuted"));
         message.setArguments({tabId, false});
         QDBusConnection::sessionBus().call(message); // asyncCall?
         return;
     }
 
     if (match.selectedAction() == action(s_muteTab)) {
-        QDBusMessage message = createMessage(QStringLiteral("SetMuted"));
+        QDBusMessage message = createMessage(service, QStringLiteral("SetMuted"));
         message.setArguments({tabId, true});
         QDBusConnection::sessionBus().call(message); // asyncCall?
         return;
     }
 
-    QDBusMessage message = createMessage(QStringLiteral("Activate"));
+    QDBusMessage message = createMessage(service, QStringLiteral("Activate"));
     message.setArguments({tabId});
     QDBusConnection::sessionBus().call(message); // asyncCall?
 }
 
-QDBusMessage TabsRunner::createMessage(const QString &method)
+QDBusMessage TabsRunner::createMessage(const QString &service, const QString &method)
 {
-    return QDBusMessage::createMethodCall(QStringLiteral("org.kde.plasma.browser_integration"),
+    return QDBusMessage::createMethodCall(service,
                                           QStringLiteral("/TabsRunner"),
                                           QStringLiteral("org.kde.plasma.browser_integration.TabsRunner"),
                                           method);
