@@ -1,4 +1,4 @@
-project(asdf)
+project(plasma-browser-integration)
 set(PROJECT_VERSION "5.1.90")
 set(PROJECT_VERSION_MAJOR 5)
 

@@ -1,6 +1,6 @@
 include_directories("${CMAKE_CURRENT_BINARY_DIR}")
 
-set(FOO_SOURCES main.cpp
+set(HOST_SOURCES main.cpp
                 connection.cpp
                 settings.cpp
                 windowmapper.cpp
@@ -12,14 +12,15 @@ set(FOO_SOURCES main.cpp
                 downloadjob.cpp
                 tabsrunnerplugin.cpp
                 slcplugin.cpp
+                wallpaperplugin.cpp
                 )
 
-qt5_add_dbus_adaptor(FOO_SOURCES ../dbus/org.kde.plasma.browser_integration.TabsRunner.xml tabsrunnerplugin.h TabsRunnerPlugin)
+qt5_add_dbus_adaptor(HOST_SOURCES ../dbus/org.kde.plasma.browser_integration.TabsRunner.xml tabsrunnerplugin.h TabsRunnerPlugin)
 
-qt5_add_dbus_adaptor(FOO_SOURCES ../dbus/org.mpris.MediaPlayer2.xml mprisplugin.h MPrisPlugin mprisroot MPrisRoot)
-qt5_add_dbus_adaptor(FOO_SOURCES ../dbus/org.mpris.MediaPlayer2.Player.xml mprisplugin.h MPrisPlugin mprisplayer MPrisPlayer)
+qt5_add_dbus_adaptor(HOST_SOURCES ../dbus/org.mpris.MediaPlayer2.xml mprisplugin.h MPrisPlugin mprisroot MPrisRoot)
+qt5_add_dbus_adaptor(HOST_SOURCES ../dbus/org.mpris.MediaPlayer2.Player.xml mprisplugin.h MPrisPlugin mprisplayer MPrisPlayer)
 
-add_executable(plasma-browser-integration-host ${FOO_SOURCES})
+add_executable(plasma-browser-integration-host ${HOST_SOURCES})
 target_link_libraries(
     plasma-browser-integration-host
     Qt5::DBus
