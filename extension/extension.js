@@ -333,7 +333,7 @@ chrome.downloads.onCreated.addListener(function (download) {
 
 chrome.downloads.onChanged.addListener(function (delta) {
     if (activeDownloads.indexOf(delta.id) === -1) {
-        console.log("ignoring download", delta.id, "that we didn't track");
+        return;
     }
 
     var payload = {};
