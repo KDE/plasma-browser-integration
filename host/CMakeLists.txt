@@ -12,7 +12,6 @@ set(HOST_SOURCES main.cpp
                 downloadjob.cpp
                 tabsrunnerplugin.cpp
                 slcplugin.cpp
-                wallpaperplugin.cpp
                 )
 
 qt5_add_dbus_adaptor(HOST_SOURCES ../dbus/org.kde.plasma.browser_integration.TabsRunner.xml tabsrunnerplugin.h TabsRunnerPlugin)
