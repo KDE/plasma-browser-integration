@@ -36,6 +36,14 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
 add_subdirectory(host)
 add_subdirectory(tabsrunner)
 
+if(NOT DEFINED CHROME_EXTENSION_ID)
+    # The extension ID is based on the key used to sign the extension
+    # see https://stackoverflow.com/questions/23873623/obtaining-chrome-extension-id-for-development
+    set(CHROME_EXTENSION_ID "ibdaehlocjfbcfinfdpaoaaidncbgeeo")
+
+    # TODO would be nice if we could automate the packaging and generation of the crx
+endif()
+
 configure_file(org.kde.plasma.chrome_integration.json.in org.kde.plasma.chrome_integration.json @ONLY)
 configure_file(org.kde.plasma.firefox_integration.json.in org.kde.plasma.firefox_integration.json @ONLY)
 

@@ -1,15 +1,15 @@
 {
   "manifest_version": 2,
 
-  "name": "KDE Plasma Integration",
-  "short_name": "KDE Plasma Chrome",
-  "description": "This extension provides desktop integration between KDE Plasma and Chrome",
+  "name": "Plasma Integration",
+  "short_name": "Plasma",
+  "description": "Provides better integration with the KDE Plasma 5 desktop.",
   "version": "0.1",
 
   "default_locale": "en",
 
   "author": "Kai Uwe Broulik <kde@prviat.broulik.de>",
-  "key": "TODO",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0c6iHx4x17WlILpcwyyLVD9clJ05hs6pwfFECFDZk3Rcqauys1wxNgi6/VJxLy/kghvQADF+IJvdImGzUc2USKR5J97aAi7jZ0QBzirANwXue2sD/sjSuXtMcg/l2clmY4exWRR4d8ciIOKKXqHqKhW/Vwx6inm1gPWVk4or4T2EQrpvyTvKi9rsb8cLB7LoaS4DQS1gEHXlUsd3R9KymPAE+hyuOsH6L8dkjl8AnSRZ1Ml1O7243sHHlBtiSEuYLPyv41nyJpmv19R5Iz/bdV4K4xVWeotYsIRQ1qEirfSExCg02JhfkiE2w/WAhV85iUs1/L6pL68FIpr2U/fH3wIDAQAB",
 
   "icons": {
     "16": "icons/plasma-16.png",

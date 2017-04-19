@@ -4,6 +4,6 @@
   "path": "@CMAKE_INSTALL_PREFIX@/bin/plasma-browser-integration-host",
   "type": "stdio",
   "allowed_origins": [
-    "chrome-extension://edojnojcbjgegpldmdclciadmigjhapa/"
+    "chrome-extension://@CHROME_EXTENSION_ID@/"
   ]
 }
