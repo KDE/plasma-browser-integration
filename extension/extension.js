@@ -604,6 +604,11 @@ addCallback("debug", "warning", function(payload) {
 // ------------------------------------------------------------------------
 //
 
+// only if we received a message at least once through the post, we consider it
+// working and restart it on disconnect. Otherwise, if we're forbidden to connect
+// we would end up in an endless loop as onDisconnect would fire right after connecting
+var autoRestartHost = false;
+
 connectHost();
 
 function connectHost() {
@@ -617,6 +622,8 @@ function connectHost() {
             return;
         }
 
+        autoRestartHost = true;
+
         if (callbacks[subsystem] && callbacks[subsystem][action]) {
             callbacks[subsystem][action](message.payload, action);
         } else {
@@ -627,7 +634,7 @@ function connectHost() {
     port.onDisconnect.addListener(function() {
         var error = chrome.runtime.lastError;
 
-        console.log("Disconnected", error);
+        console.log("Host disconnected", error);
 
         chrome.notifications.create(null, {
             type: "basic",
@@ -637,8 +644,12 @@ function connectHost() {
             iconUrl: "icons/sad-face-128.png"
         });
 
-        // TODO crash recursion guard
-        connectHost();
+        if (autoRestartHost) {
+            console.log("Auto-restarting it");
+            connectHost();
+        } else {
+            console.warn("Not auto-restarting host as we haven't received any message from it before. Check that it's working/installed correctly");
+        }
     });
 
     sendSettings();
