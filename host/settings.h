@@ -11,6 +11,8 @@ class Settings : public AbstractBrowserPlugin
 {
     Q_OBJECT
 
+    Q_PROPERTY(QString Environment READ environmentString)
+
 public:
     static Settings &self();
 
@@ -26,6 +28,7 @@ public:
     void handleData(const QString &event, const QJsonObject &data);
 
     Environment environment() const;
+    QString environmentString() const; // dbus
     // TODO should we have additional getters like browserName(), browserDesktopEntry(), etc?
 
     bool pluginEnabled(const QString &subsystem) const;

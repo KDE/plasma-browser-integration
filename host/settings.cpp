@@ -1,7 +1,10 @@
 #include "settings.h"
 
 #include <QCoreApplication>
+#include <QDBusConnection>
 #include <QProcess>
+
+#include "settingsadaptor.h"
 
 Settings::Settings()
     : AbstractBrowserPlugin(QStringLiteral("settings"), 1, nullptr)
@@ -24,6 +27,10 @@ Settings::Settings()
 
         qDebug() << "Extension running in" << m_environment;
     }
+
+    new SettingsAdaptor(this);
+    QDBusConnection::sessionBus().registerObject(QStringLiteral("/Settings"), this);
+
 }
 
 Settings &Settings::self()
@@ -45,6 +52,19 @@ void Settings::handleData(const QString &event, const QJsonObject &data)
 Settings::Environment Settings::environment() const
 {
     return m_environment;
+}
+
+QString Settings::environmentString() const
+{
+    switch (m_environment) {
+    case Settings::Environment::Unknown: return QString();
+    case Settings::Environment::Chrome: return QStringLiteral("chrome");
+    case Settings::Environment::Chromium: return QStringLiteral("chromium");
+    case Settings::Environment::Firefox: return QStringLiteral("firefox");
+    case Settings::Environment::Opera: return QStringLiteral("opera");
+    }
+
+    return QString();
 }
 
 bool Settings::pluginEnabled(const QString &subsystem) const
