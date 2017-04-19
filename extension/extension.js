@@ -64,12 +64,6 @@ function addRuntimeCallback(subsystem, action, callback)
     runtimeCallbacks[subsystem][action] = callback;
 }
 
-function connectHost() {
-    port = chrome.runtime.connectNative("org.kde.plasma.browser_integration");
-
-    sendSettings();
-}
-
 // returns an Object which only contains values for keys in allowedKeys
 function filterObject(obj, allowedKeys) {
     var newObj = {}
@@ -612,6 +606,44 @@ addCallback("debug", "warning", function(payload) {
 
 connectHost();
 
+function connectHost() {
+    port = chrome.runtime.connectNative("org.kde.plasma.browser_integration");
+
+    port.onMessage.addListener(function (message) {
+        var subsystem = message.subsystem;
+        var action = message.action;
+
+        if (!subsystem || !action) {
+            return;
+        }
+
+        if (callbacks[subsystem] && callbacks[subsystem][action]) {
+            callbacks[subsystem][action](message.payload, action);
+        } else {
+            console.warn("Don't know what to do with host message", subsystem, action);
+        }
+    });
+
+    port.onDisconnect.addListener(function() {
+        var error = chrome.runtime.lastError;
+
+        console.log("Disconnected", error);
+
+        chrome.notifications.create(null, {
+            type: "basic",
+            title: chrome.i18n.getMessage("general_error_title"),
+            message: chrome.i18n.getMessage("general_error_port_disconnect", (error ? error.message
+                                                                                    : chrome.i18n.getMessage("general_error_unknown"))),
+            iconUrl: "icons/sad-face-128.png"
+        });
+
+        // TODO crash recursion guard
+        connectHost();
+    });
+
+    sendSettings();
+}
+
 addRuntimeCallback("settings", "changed", function () {
     // we could also just reload our extension :)
     // but this also causes the settings dialog to quit
@@ -621,38 +653,6 @@ addRuntimeCallback("settings", "changed", function () {
 
 addRuntimeCallback("settings", "openKRunnerSettings", function () {
     sendPortMessage("settings", "openKRunnerSettings");
-});
-
-port.onMessage.addListener(function (message) {
-    var subsystem = message.subsystem;
-    var action = message.action;
-
-    if (!subsystem || !action) {
-        return;
-    }
-
-    if (callbacks[subsystem] && callbacks[subsystem][action]) {
-        callbacks[subsystem][action](message.payload, action);
-    } else {
-        console.warn("Don't know what to do with host message", subsystem, action);
-    }
-});
-
-port.onDisconnect.addListener(function() {
-  var error = chrome.runtime.lastError;
-
-  console.log("Disconnected", error);
-
-  chrome.notifications.create(null, {
-      type: "basic",
-      title: chrome.i18n.getMessage("general_error_title"),
-      message: chrome.i18n.getMessage("general_error_port_disconnect", (error ? error.message
-                                                                              : chrome.i18n.getMessage("general_error_unknown"))),
-      iconUrl: "icons/sad-face-128.png"
-  });
-
-  // TODO crash recursion guard
-  connectHost();
 });
 
 chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
