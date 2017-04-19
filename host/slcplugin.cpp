@@ -20,11 +20,13 @@ SlcPlugin::SlcPlugin(QObject *parent)
 SlcPlugin::~SlcPlugin()
 {
     qDeleteAll(m_resources);
+    m_resources.clear();
 }
 
 void SlcPlugin::onUnload()
 {
     qDeleteAll(m_resources);
+    m_resources.clear();
 }
 
 void SlcPlugin::handleData(const QString &event, const QJsonObject &data)
