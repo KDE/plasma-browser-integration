@@ -14,7 +14,6 @@ Connection::Connection() :
 
     auto notifier = new QSocketNotifier(STDIN_FILENO, QSocketNotifier::Read, this);
     connect(notifier, &QSocketNotifier::activated, this, &Connection::readData);
-    readData();
 }
 
 void Connection::sendData(const QJsonObject &data)
