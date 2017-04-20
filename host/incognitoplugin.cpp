@@ -8,11 +8,12 @@ IncognitoPlugin::IncognitoPlugin(QObject* parent) :
 {
 }
 
-void IncognitoPlugin::onUnload()
+bool IncognitoPlugin::onUnload()
 {
     if (m_ksni) {
         m_ksni->deleteLater();
     }
+    return true;
 }
 
 void IncognitoPlugin::handleData(const QString& event, const QJsonObject& data)

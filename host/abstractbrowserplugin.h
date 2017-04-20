@@ -12,8 +12,8 @@ public:
     QString subsystem() const;
     virtual void handleData(const QString &event, const QJsonObject &data);
 
-    virtual void onLoad();
-    virtual void onUnload();
+    virtual bool onLoad();
+    virtual bool onUnload();
     virtual void onSettingsChanged(const QJsonObject &newSettings);
 
     bool isLoaded() const;

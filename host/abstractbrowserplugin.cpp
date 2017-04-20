@@ -26,14 +26,14 @@ void AbstractBrowserPlugin::sendData(const QString &action, const QJsonObject &p
     Connection::self()->sendData(data);
 }
 
-void AbstractBrowserPlugin::onLoad()
+bool AbstractBrowserPlugin::onLoad()
 {
-
+    return true;
 }
 
-void AbstractBrowserPlugin::onUnload()
+bool AbstractBrowserPlugin::onUnload()
 {
-
+    return true;
 }
 
 void AbstractBrowserPlugin::onSettingsChanged(const QJsonObject &newSettings)

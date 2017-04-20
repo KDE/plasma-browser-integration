@@ -11,7 +11,7 @@ KDEConnectPlugin::KDEConnectPlugin(QObject* parent) :
 
 }
 
-void KDEConnectPlugin::onLoad()
+bool KDEConnectPlugin::onLoad()
 {
     debug() << "kdeconnect" << "querying";
 
@@ -54,12 +54,14 @@ void KDEConnectPlugin::onLoad()
         }
         watcher->deleteLater();
     });
+    return true;
 }
 
-void KDEConnectPlugin::onUnload()
+bool KDEConnectPlugin::onUnload()
 {
     // pretend we don't have any devices anymore, this simplifies context menu handling significantly
     sendData("devicesChanged");
+    return true;
 }
 
 void KDEConnectPlugin::handleData(const QString& event, const QJsonObject& json)

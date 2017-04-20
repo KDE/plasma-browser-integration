@@ -33,9 +33,10 @@ MPrisPlugin::MPrisPlugin(QObject *parent)
     };
 }
 
-void MPrisPlugin::onUnload()
+bool MPrisPlugin::onUnload()
 {
     unregisterService();
+    return true;
 }
 
 // TODO this can surely be done in a much beter way with introspection and what not

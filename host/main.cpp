@@ -116,14 +116,23 @@ int main(int argc, char *argv[])
             const QJsonObject &settingsObject = val.toObject();
 
             const bool enabled = settingsObject.value(QStringLiteral("enabled")).toBool();
+            bool ok = false;
 
             if (enabled && !plugin->isLoaded()) {
-                plugin->onLoad();
+                ok = plugin->onLoad();
+                if (!ok) {
+                    qWarning() << "Plugin" << plugin->subsystem() << "refused to load";
+                }
             } else if (!enabled && plugin->isLoaded()) {
-                plugin->onUnload();
+                ok = plugin->onUnload();
+                if (!ok) {
+                    qWarning() << "Plugin" << plugin->subsystem() << "refused to unload";
+                }
             }
 
-            plugin->setLoaded(enabled);
+            if (ok) {
+                plugin->setLoaded(enabled);
+            }
 
             plugin->onSettingsChanged(settingsObject);
         }

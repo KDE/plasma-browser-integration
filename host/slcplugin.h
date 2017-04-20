@@ -15,7 +15,7 @@ public:
     SlcPlugin(QObject *parent);
     ~SlcPlugin() override;
 
-    void onUnload() override;
+    bool onUnload() override;
     void handleData(const QString &event, const QJsonObject &data) override;
 
 private:

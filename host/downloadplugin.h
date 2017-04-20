@@ -8,7 +8,7 @@ class DownloadPlugin : public AbstractBrowserPlugin
     Q_OBJECT
 public:
     DownloadPlugin(QObject *parent);
-    void onUnload() override;
+    bool onUnload() override;
     void handleData(const QString &event, const QJsonObject &data);
 private:
     QHash<int, DownloadJob *> m_jobs;

@@ -23,10 +23,11 @@ SlcPlugin::~SlcPlugin()
     m_resources.clear();
 }
 
-void SlcPlugin::onUnload()
+bool SlcPlugin::onUnload()
 {
     qDeleteAll(m_resources);
     m_resources.clear();
+    return true;
 }
 
 void SlcPlugin::handleData(const QString &event, const QJsonObject &data)
