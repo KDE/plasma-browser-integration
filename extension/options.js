@@ -122,7 +122,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
     loadSettings();
 
-    document.getElementById("save").addEventListener("click", function () {
+    // auto save when changing any setting
+    // TODO can we do that on closing, or does it not matter how often we do chrome storage sync thing?
+    document.querySelectorAll("input[type=checkbox]").forEach(function (item) {
+        item.addEventListener("click", function () {
+            var saveMessage = document.getElementById("save-message");
+            saveMessage.innerText = "";
+
+            saveSettings(function (error) {
+                if (error) {
+                    saveMessage.innerText = chrome.i18n.getMessage("options_save_failed");
+                    return;
+                }
+
+                //saveMessage.innerText = chrome.i18n.getMessage("options_save_success");
+                sendMessage("changed");
+            });
+        });
+    });
+
+    /*document.getElementById("save").addEventListener("click", function () {
         var saveMessage = document.getElementById("save-message");
         saveMessage.innerText = "";
 
@@ -135,7 +154,7 @@ document.addEventListener("DOMContentLoaded", function () {
             saveMessage.innerText = chrome.i18n.getMessage("options_save_success");
             sendMessage("changed");
         });
-    });
+    });*/
 
     document.getElementById("clear-settings").addEventListener("click", function () {
         storage.clear(function () {
