@@ -154,7 +154,7 @@ document.addEventListener("DOMContentLoaded", function () {
             saveMessage.innerText = chrome.i18n.getMessage("options_save_success");
             sendMessage("changed");
         });
-    });*/
+    });
 
     document.getElementById("clear-settings").addEventListener("click", function () {
         storage.clear(function () {
@@ -166,7 +166,7 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log("Settings cleared");
             loadSettings();
         });
-    });
+    });*/
 
     document.getElementById("open-krunner-settings").addEventListener("click", function () {
         sendMessage("openKRunnerSettings");
