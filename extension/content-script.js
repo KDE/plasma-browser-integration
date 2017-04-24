@@ -286,79 +286,87 @@ document.addEventListener("DOMContentLoaded", function() {
 // TODO Forward mpris calls to the actionHandlers on the page
 // previoustrack, nexttrack, seekbackward, seekforward, play, pause
 
-var scriptTag = document.createElement("script");
-scriptTag.innerHTML = `
-    plasmaMediaSessions = function() {};
-    plasmaMediaSessions.callbacks = {};
-    plasmaMediaSessions.metadata = {};
-    plasmaMediaSessions.playbackState = "none";
-    plasmaMediaSessions.sendMessage = function(action, payload) {
-        var transferItem = document.getElementById('plasma-browser-integration-media-session-transfer');
-        transferItem.innerText = JSON.stringify({action: action, payload: payload});
+// Bug 379087: Only inject this stuff if we're a proper HTML page
+// otherwise we might end up messing up XML stuff
+// only if our documentElement is a "html" tag we'll do it
+// the rest is only set up in DOMContentLoaded which is only executed for proper pages anyway
 
-        var event = document.createEvent('CustomEvent');
-        event.initEvent('payloadChanged', true, true);
-        transferItem.dispatchEvent(event);
-    };
-    plasmaMediaSessions.executeCallback = function (action) {
-        this.callbacks[action]();
-    };
+// tagName always returned "HTML" for me but I wouldn't trust it always being uppercase
+if (document.documentElement.tagName.toLowerCase() === "html") {
+    var scriptTag = document.createElement("script");
+    scriptTag.innerHTML = `
+        plasmaMediaSessions = function() {};
+        plasmaMediaSessions.callbacks = {};
+        plasmaMediaSessions.metadata = {};
+        plasmaMediaSessions.playbackState = "none";
+        plasmaMediaSessions.sendMessage = function(action, payload) {
+            var transferItem = document.getElementById('plasma-browser-integration-media-session-transfer');
+            transferItem.innerText = JSON.stringify({action: action, payload: payload});
 
-    navigator.mediaSession = {};
-    navigator.mediaSession.setActionHandler = function (name, cb) {
-        if (cb) {
-            plasmaMediaSessions.callbacks[name] = cb;
-        } else {
-            delete plasmaMediaSessions.callbacks[name];
-        }
-        plasmaMediaSessions.sendMessage("callbacks", Object.keys(plasmaMediaSessions.callbacks));
-    };
-    Object.defineProperty(navigator.mediaSession, "metadata", {
-        get: function() { return plasmaMediaSessions.metadata; },
-        set: function(newValue) {
-            plasmaMediaSessions.metadata = newValue;
-            plasmaMediaSessions.sendMessage("metadata", newValue.data);
+            var event = document.createEvent('CustomEvent');
+            event.initEvent('payloadChanged', true, true);
+            transferItem.dispatchEvent(event);
+        };
+        plasmaMediaSessions.executeCallback = function (action) {
+            this.callbacks[action]();
+        };
+
+        navigator.mediaSession = {};
+        navigator.mediaSession.setActionHandler = function (name, cb) {
+            if (cb) {
+                plasmaMediaSessions.callbacks[name] = cb;
+            } else {
+                delete plasmaMediaSessions.callbacks[name];
+            }
+            plasmaMediaSessions.sendMessage("callbacks", Object.keys(plasmaMediaSessions.callbacks));
+        };
+        Object.defineProperty(navigator.mediaSession, "metadata", {
+            get: function() { return plasmaMediaSessions.metadata; },
+            set: function(newValue) {
+                plasmaMediaSessions.metadata = newValue;
+                plasmaMediaSessions.sendMessage("metadata", newValue.data);
+            }
+        });
+        Object.defineProperty(navigator.mediaSession, "playbackState", {
+            get: function() { return plasmaMediaSessions.playbackState; },
+            set: function(newValue) {
+                plasmaMediaSessions.playbackState = newValue;
+                plasmaMediaSessions.sendMessage("playbackState", newValue);
+            }
+        });
+
+        window.MediaMetadata = function (data) {
+            this.data = data;
+        };
+    `;
+
+    (document.head || document.documentElement).appendChild(scriptTag);
+
+    // now the fun part of getting the stuff from our page back into our extension...
+    // cannot access extensions from innocent page JS for security
+    var transferItem = document.createElement("div");
+    transferItem.setAttribute("id", "plasma-browser-integration-media-session-transfer");
+    transferItem.style.display = "none";
+
+    (document.head || document.documentElement).appendChild(transferItem);
+
+    transferItem.addEventListener('payloadChanged', function() {
+        var json = JSON.parse(this.innerText);
+
+        var action = json.action
+
+        if (action === "metadata") {
+            // FIXME filter metadata, this stuff comes from a hostile environment after all
+
+            playerMetadata = json.payload;
+
+            sendMessage("mpris", "metadata", json.payload);
+        /*} else if (action === "playbackState") {
+            playerPlaybackState = json.payload;
+            sendMessage("mpris", "playbackState", json.payload);*/
+        } else if (action === "callbacks") {
+            playerCallbacks = json.payload;
+            sendMessage("mpris", "callbacks", json.payload);
         }
     });
-    Object.defineProperty(navigator.mediaSession, "playbackState", {
-        get: function() { return plasmaMediaSessions.playbackState; },
-        set: function(newValue) {
-            plasmaMediaSessions.playbackState = newValue;
-            plasmaMediaSessions.sendMessage("playbackState", newValue);
-        }
-    });
-
-    window.MediaMetadata = function (data) {
-        this.data = data;
-    };
-`;
-
-(document.head || document.documentElement).appendChild(scriptTag);
-
-// now the fun part of getting the stuff from our page back into our extension...
-// cannot access extensions from innocent page JS for security
-var transferItem = document.createElement("div");
-transferItem.setAttribute("id", "plasma-browser-integration-media-session-transfer");
-transferItem.style.display = "none";
-
-(document.head || document.documentElement).appendChild(transferItem);
-
-transferItem.addEventListener('payloadChanged', function() {
-    var json = JSON.parse(this.innerText);
-
-    var action = json.action
-
-    if (action === "metadata") {
-        // FIXME filter metadata, this stuff comes from a hostile environment after all
-
-        playerMetadata = json.payload;
-
-        sendMessage("mpris", "metadata", json.payload);
-    /*} else if (action === "playbackState") {
-        playerPlaybackState = json.payload;
-        sendMessage("mpris", "playbackState", json.payload);*/
-    } else if (action === "callbacks") {
-        playerCallbacks = json.payload;
-        sendMessage("mpris", "callbacks", json.payload);
-    }
-});
+}
