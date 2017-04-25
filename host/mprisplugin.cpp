@@ -337,6 +337,9 @@ void MPrisPlugin::setPlaybackStatus(const QString &playbackStatus)
         //emit playbackStatusChanged();
 
         emitPropertyChange(m_player, "PlaybackStatus");
+        // these depend on playback status, so signal a change for these, too
+        emitPropertyChange(m_player, "CanPlay");
+        emitPropertyChange(m_player, "CanPause");
     }
 }
 
