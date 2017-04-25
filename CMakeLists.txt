@@ -32,6 +32,9 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
     Activities
 )
 
+# Options
+option(INSTALL_CHROME_EXTENSION "Whether to install the Chrome extension locally instead of downloading it from the Extension Store")
+
 add_subdirectory(host)
 add_subdirectory(tabsrunner)
 
@@ -39,9 +42,9 @@ if(NOT DEFINED CHROME_EXTENSION_ID)
     # The extension ID is based on the key used to sign the extension
     # see https://stackoverflow.com/questions/23873623/obtaining-chrome-extension-id-for-development
     set(CHROME_EXTENSION_ID "cimiefiiaegbelhefglklhhakcgmhkai")
-
-    # TODO would be nice if we could automate the packaging and generation of the crx
 endif()
+
+# TODO configure manifest.json
 
 configure_file(org.kde.plasma.chrome_integration.json.in org.kde.plasma.chrome_integration.json @ONLY)
 configure_file(org.kde.plasma.firefox_integration.json.in org.kde.plasma.firefox_integration.json @ONLY)
@@ -53,11 +56,25 @@ install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.plasma.chrome_integration.json
 # firefox
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.plasma.firefox_integration.json DESTINATION /usr/lib/mozilla/native-messaging-hosts/ RENAME org.kde.plasma.browser_integration.json)
 
-# Install a policy to have browsers automatically add the extension
-configure_file(chrome_auto_install_policy.json.in chrome_auto_install_policy.json @ONLY)
+if(INSTALL_CHROME_EXTENSION)
+    configure_file(chrome_install_locally_policy.in chrome_install_locally_policy @ONLY)
 
-# google-chrome
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/chrome_auto_install_policy.json DESTINATION /usr/share/google-chrome/extensions RENAME ${CHROME_EXTENSION_ID}.json)
-# chromium
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/chrome_auto_install_policy.json DESTINATION /usr/share/chromium-browser/extensions RENAME ${CHROME_EXTENSION_ID}.json)
+    # google-chrome
+    install(FILES ${CMAKE_CURRENT_BINARY_DIR}/chrome_install_locally_policy DESTINATION /usr/share/google-chrome/extensions RENAME ${CHROME_EXTENSION_ID}.json)
+    # chromium
+    install(FILES ${CMAKE_CURRENT_BINARY_DIR}/chrome_install_locally_policy DESTINATION /usr/share/chromium-browser/extensions RENAME ${CHROME_EXTENSION_ID}.json)
+
+    # The actual extension file
+    # TODO would be nice if we could automate the packaging and generation of the crx
+    # TODO do we need to use some form of KDE_INSTALL_TARGETS_DEFAULT_ARGS?
+    install(FILES extension.crx DESTINATION ${CMAKE_INSTALL_PREFIX}/share/plasma-browser-integration)
+
+else() # Install a policy to have browsers automatically add the extension
+
+    # google-chrome
+    install(FILES chrome_install_from_store_policy DESTINATION /usr/share/google-chrome/extensions RENAME ${CHROME_EXTENSION_ID}.json)
+    # chromium
+    install(FILES chrome_install_from_store_policy DESTINATION /usr/share/chromium-browser/extensions RENAME ${CHROME_EXTENSION_ID}.json)
+endif()
+
 # TODO firefox
