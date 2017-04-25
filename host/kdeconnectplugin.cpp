@@ -28,27 +28,27 @@ bool KDEConnectPlugin::onLoad()
             debug() << "kdeconnect discovery" << reply.error().name();
         } else {
             const QStringList &devices = reply.value();
-            QString defaultDevice;
-            if (!devices.isEmpty()) {
-                defaultDevice = devices.first();
-            }
-            if (!devices.isEmpty()) {
+
+            foreach (const QString &deviceId, devices) {
                 QDBusMessage msg = QDBusMessage::createMethodCall("org.kde.kdeconnect",
-                                                                  "/modules/kdeconnect/devices/" + defaultDevice,
+                                                                  "/modules/kdeconnect/devices/" + deviceId,
                                                                   "org.freedesktop.DBus.Properties",
-                                                                  "Get");
-                msg.setArguments({"org.kde.kdeconnect.device", "name"});
-                QDBusPendingReply<QDBusVariant> reply = QDBusConnection::sessionBus().asyncCall(msg);
+                                                                  "GetAll");
+                msg.setArguments({"org.kde.kdeconnect.device"});
+                QDBusPendingReply<QVariantMap> reply = QDBusConnection::sessionBus().asyncCall(msg);
                 QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
-                QObject::connect(watcher, &QDBusPendingCallWatcher::finished, this, [this, defaultDevice](QDBusPendingCallWatcher *watcher) {
-                    QDBusPendingReply<QDBusVariant> reply = *watcher;
-                    if (reply.isError()) {
-                        debug() << "query default name " + reply.error().message();
-                    } else {
-                        const QString name = reply.value().variant().toString();
-                        sendData("devicesChanged", {{"defaultDeviceName", name}, {"defaultDeviceId", defaultDevice}});
-                    }
+
+                QObject::connect(watcher, &QDBusPendingCallWatcher::finished, this, [this, deviceId](QDBusPendingCallWatcher *watcher) {
                     watcher->deleteLater();
+                    QDBusPendingReply<QVariantMap> reply = *watcher;
+                    if (reply.isError()) {
+                        debug() << "getting device properties " + reply.error().message();
+                    } else {
+                        auto props = reply.value();
+                        props["id"] = deviceId;
+                        m_devices.append(deviceId);
+                        sendData("deviceAdded", QJsonObject::fromVariantMap(props));
+                    }
                 });
             }
         }
@@ -59,8 +59,9 @@ bool KDEConnectPlugin::onLoad()
 
 bool KDEConnectPlugin::onUnload()
 {
-    // pretend we don't have any devices anymore, this simplifies context menu handling significantly
-    sendData("devicesChanged");
+    foreach(const QString &deviceId, m_devices) {
+        sendData("deviceRemoved", {{"id", deviceId}});
+    }
     return true;
 }
 

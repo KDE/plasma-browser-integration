@@ -122,50 +122,36 @@ function raiseTab(tabId) {
 // ------------------------------------------------------------------------
 //
 
-var kdeConnectDefaultDeviceId = "";
-var kdeConnectDefaultDeviceName = "";
-var hasKdeConnectMenu = false;
+addCallback("kdeconnect", "deviceAdded", function(message) {
+    var id = message.id;
+    var name = message.name;
 
-chrome.contextMenus.onClicked.addListener(function (info) {
-    if (info.menuItemId === "kdeconnect_page") {
-        var url = info.linkUrl || info.pageUrl;
-        console.log("Send url", url, "to kdeconnect device", kdeConnectDefaultDeviceId);
-        port.postMessage({
-            subsystem: "kdeconnect",
-            event: "shareUrl",
-            url: url,
-            deviceId: kdeConnectDefaultDeviceId
-        });
-    }
-});
+    var menuEntryTitle = chrome.i18n.getMessage("kdeconnect_open_device", name);
+    var menuId = "kdeconnect_page_" + id;
 
-addCallback("kdeconnect", "devicesChanged", function(message) {
-    kdeConnectDefaultDeviceId = message ? message.defaultDeviceId : ""
-    kdeConnectDefaultDeviceName = message ? message.defaultDeviceName : ""
+    chrome.contextMenus.create({
+        id: menuId,
+        contexts: ["link", "page"],
+        title: menuEntryTitle,
+    });
 
-    var menuEntryTitle = chrome.i18n.getMessage("kdeconnect_open_via");
-
-    if (kdeConnectDefaultDeviceName) {
-        menuEntryTitle = chrome.i18n.getMessage("kdeconnect_open_device", kdeConnectDefaultDeviceName);
-    }
-
-    if (kdeConnectDefaultDeviceId) {
-        if (hasKdeConnectMenu) {
-            chrome.contextMenus.update("kdeconnect_page", {title: menuEntryTitle});
-        } else {
-            hasKdeConnectMenu = true; // TODO check error
-            chrome.contextMenus.create({
-                id: "kdeconnect_page",
-                contexts: ["link", "page"],
-                title: menuEntryTitle
+    chrome.contextMenus.onClicked.addListener(function (info) {
+        if (info.menuItemId == menuId) {
+            var url = info.linkUrl || info.pageUrl;
+            console.log("Send url", url, "to kdeconnect device", id);
+            port.postMessage({
+                subsystem: "kdeconnect",
+                event: "shareUrl",
+                url: url,
+                deviceId: id
             });
         }
-    } else if (hasKdeConnectMenu) {
-        chrome.contextMenus.remove("kdeconnect_page")
-        hasKdeConnectMenu = false;
-    }
+    });
 });
 
+addCallback("kdeconnect", "deviceRemoved", function(message) {
+    chrome.contextMenus.remove("kdeconnect_page_" + id)
+});
 
 // MPRIS
 // ------------------------------------------------------------------------
