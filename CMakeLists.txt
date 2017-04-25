@@ -55,8 +55,10 @@ install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.plasma.chrome_integration.json
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.plasma.firefox_integration.json DESTINATION /usr/lib/mozilla/native-messaging-hosts/ RENAME org.kde.plasma.browser_integration.json)
 
 # Install a policy to have browsers automatically add the extension
+configure_file(chrome_auto_install_policy.json.in chrome_auto_install_policy.json @ONLY)
+
 # google-chrome
-install(FILES chrome_auto_install_policy.json DESTINATION /usr/share/google-chrome/extensions RENAME ${CHROME_EXTENSION_ID}.json)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/chrome_auto_install_policy.json DESTINATION /usr/share/google-chrome/extensions RENAME ${CHROME_EXTENSION_ID}.json)
 # chromium
-install(FILES chrome_auto_install_policy.json DESTINATION /usr/share/chromium-browser/extensions RENAME ${CHROME_EXTENSION_ID}.json)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/chrome_auto_install_policy.json DESTINATION /usr/share/chromium-browser/extensions RENAME ${CHROME_EXTENSION_ID}.json)
 # TODO firefox
