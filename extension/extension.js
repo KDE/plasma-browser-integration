@@ -472,6 +472,11 @@ function notifyWindowAdded(window) {
         return;
     }
 
+    // ignore popup windows and the like, otherwise we'd inadvertently spawn a new regular browser window
+    if (window.type !== "normal") {
+        return;
+    }
+
     port.postMessage({
         subsystem: "windows",
         event: "added",
