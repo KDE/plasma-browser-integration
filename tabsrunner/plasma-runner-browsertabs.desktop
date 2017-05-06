@@ -1,6 +1,20 @@
 [Desktop Entry]
 Name=Browser Tabs
+Name[ca]=Pestanyes del navegador
+Name[es]=Pestañas del navegador
+Name[nl]=Browsertabbladen
+Name[pt]=Páginas do Navegador
+Name[sv]=Webbläsarflikar
+Name[uk]=Вкладки навігатора
+Name[x-test]=xxBrowser Tabsxx
 Comment=Find and activate browser tabs
+Comment[ca]=Cerca i activa les pestanyes del navegador
+Comment[es]=Buscar y activar pestañas del navegador
+Comment[nl]=Zoek en activeer browsertabbladen
+Comment[pt]=Procurar e activar páginas do navegador
+Comment[sv]=Sök efter och aktivera webbläsarflikar
+Comment[uk]=Пошук і задіяння вкладок навігатора
+Comment[x-test]=xxFind and activate browser tabsxx
 X-KDE-ServiceTypes=Plasma/Runner
 Type=Service
 Icon=internet-web-browser
