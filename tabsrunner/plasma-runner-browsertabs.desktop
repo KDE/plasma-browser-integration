@@ -1,6 +1,7 @@
 [Desktop Entry]
 Name=Browser Tabs
 Name[ca]=Pestanyes del navegador
+Name[ca@valencia]=Pestanyes del navegador
 Name[es]=Pestañas del navegador
 Name[nl]=Browsertabbladen
 Name[pt]=Páginas do Navegador
@@ -10,6 +11,7 @@ Name[uk]=Вкладки навігатора
 Name[x-test]=xxBrowser Tabsxx
 Comment=Find and activate browser tabs
 Comment[ca]=Cerca i activa les pestanyes del navegador
+Comment[ca@valencia]=Busca i activa les pestanyes del navegador
 Comment[es]=Buscar y activar pestañas del navegador
 Comment[nl]=Zoek en activeer browsertabbladen
 Comment[pt]=Procurar e activar páginas do navegador
