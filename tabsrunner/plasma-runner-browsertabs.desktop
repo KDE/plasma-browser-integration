@@ -2,6 +2,7 @@
 Name=Browser Tabs
 Name[ca]=Pestanyes del navegador
 Name[ca@valencia]=Pestanyes del navegador
+Name[cs]=Karty prohlížeče
 Name[es]=Pestañas del navegador
 Name[nl]=Browsertabbladen
 Name[pt]=Páginas do Navegador
@@ -13,6 +14,7 @@ Name[zh_CN]=浏览器标签
 Comment=Find and activate browser tabs
 Comment[ca]=Cerca i activa les pestanyes del navegador
 Comment[ca@valencia]=Busca i activa les pestanyes del navegador
+Comment[cs]=Najít a aktivovat karty prohlížeče
 Comment[es]=Buscar y activar pestañas del navegador
 Comment[nl]=Zoek en activeer browsertabbladen
 Comment[pt]=Procurar e activar páginas do navegador
