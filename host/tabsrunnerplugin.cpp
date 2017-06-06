@@ -113,7 +113,7 @@ void TabsRunnerPlugin::handleData(const QString& event, const QJsonObject& json)
 
             QDBusConnection::sessionBus().send(
                 // TODO why does it unwrap this? didn't we want a a(a{sv}) instead of a{sv}a{sv}a{sv}..? :/
-                m_tabsReplyMessage.createReply({tabsReply})
+                m_tabsReplyMessage.createReply(QList<QVariant>{tabsReply})
             );
         }
     }
