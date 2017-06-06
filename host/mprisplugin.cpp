@@ -348,12 +348,12 @@ QVariantMap MPrisPlugin::metadata() const
         metadata.insert(QStringLiteral("mpris:artUrl"), m_artworkUrl.toDisplayString());
     }
 
+    if (!m_album.isEmpty()) {
+        metadata.insert(QStringLiteral("xesam:album"), m_album);
     // when we don't have artist information use the scheme+domain as "album" (that's what Chrome on Android does)
-    if (m_artist.isEmpty() && m_url.isValid()) {
+    } else if (m_album.isEmpty() && m_url.isValid()) {
         metadata.insert(QStringLiteral("xesam:album"), m_url.toDisplayString(QUrl::RemovePath | QUrl::RemoveQuery | QUrl::RemoveFragment));
     }
-
-    // TODO album name and stuff
 
     return metadata;
 }
@@ -396,6 +396,7 @@ void MPrisPlugin::processMetadata(const QJsonObject &data)
 {
     m_title = data.value(QStringLiteral("title")).toString();
     m_artist = data.value(QStringLiteral("artist")).toString();
+    m_album = data.value(QStringLiteral("album")).toString();
 
     // for simplicity we just use the biggest artwork it offers, perhaps we could limit it to some extent
     // TODO download/cache artwork somewhere
