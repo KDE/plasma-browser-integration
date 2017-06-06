@@ -557,6 +557,8 @@ addCallback("windows", "getAll", function (message) {
 // maps a given window resolve request to a tab (key: window id, value: tab id)
 var resolverTabs = {};
 
+var windowMapperUrl = chrome.runtime.getURL("windowmapper.htm");
+
 addCallback("windows", "resolve", function (message) {
     var browserId = message.browserId;
 
@@ -566,7 +568,7 @@ addCallback("windows", "resolve", function (message) {
     chrome.tabs.create({
         windowId: browserId,
         active: true,
-        url: chrome.runtime.getURL("windowmapper.htm") + "#" + Number(browserId)
+        url: windowMapperUrl + "#" + Number(browserId)
     }, function (tab) {
         if (!tab) {
             return;
@@ -588,6 +590,11 @@ addCallback("windows", "resolved", function (message) {
 
     chrome.tabs.remove(tabId, function () {
         delete resolverTabs[browserId];
+
+        // remove the tab from history to avoid cluttering it with technical stuff
+        chrome.history.deleteUrl({
+            url: windowMapperUrl + "#" + Number(browserId)
+        });
     });
 });
 
