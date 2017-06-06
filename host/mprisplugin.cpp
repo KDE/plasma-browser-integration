@@ -351,7 +351,7 @@ QVariantMap MPrisPlugin::metadata() const
     if (!m_album.isEmpty()) {
         metadata.insert(QStringLiteral("xesam:album"), m_album);
     // when we don't have artist information use the scheme+domain as "album" (that's what Chrome on Android does)
-    } else if (m_album.isEmpty() && m_url.isValid()) {
+    } else if (m_artist.isEmpty() && m_url.isValid()) {
         metadata.insert(QStringLiteral("xesam:album"), m_url.toDisplayString(QUrl::RemovePath | QUrl::RemoveQuery | QUrl::RemoveFragment));
     }
 
