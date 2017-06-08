@@ -162,7 +162,11 @@ void WindowMapper::handleData(const QString &event, const QJsonObject &data)
             qWarning() << "Got told that window" << browserId << "was removed but we don't know it";
         }
     } else if (event == QLatin1String("added")) {
-        Q_ASSERT(!m_windows.contains(browserId));
+        // This used to be an assert but apparently we can't do that (Bug 380186)
+        if (m_windows.contains(browserId)) {
+            qWarning() << "Got told that window" << browserId << "was added but we already know it";
+            return; // TODO should we still "resolveWindow" in this case?
+        }
 
         Window *window = new Window(browserId, this);
         // TODO have a constructor that takes QJsonObject and populates without emitting?
