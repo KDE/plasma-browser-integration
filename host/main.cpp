@@ -98,13 +98,13 @@ int main(int argc, char *argv[])
         const QString subsystem = json.value(QStringLiteral("subsystem")).toString();
 
         if (subsystem.isEmpty()) {
-            qDebug() << "No subsystem provided";
+            //qDebug() << "No subsystem provided";
             return;
         }
 
         const QString event = json.value(QStringLiteral("event")).toString();
         if (event.isEmpty()) {
-            qDebug() << "No event provided";
+            //qDebug() << "No event provided";
             return;
         }
 
