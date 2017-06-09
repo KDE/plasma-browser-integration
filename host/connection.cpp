@@ -74,6 +74,10 @@ void Connection::readData()
         return;
     }
 
+    if (data.isEmpty()) {
+        return;
+    }
+
     m_stdIn.commitTransaction();
     const QJsonObject json = QJsonDocument::fromJson(data).object();
     emit dataReceived(json);
