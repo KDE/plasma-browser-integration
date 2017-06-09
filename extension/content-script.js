@@ -348,7 +348,30 @@ if (document.documentElement.tagName.toLowerCase() === "html") {
             this.data = data;
         };
     `;
+    (document.head || document.documentElement).appendChild(scriptTag);
 
+    // here we replace the document.createElement function with our own so we can detect
+    // when an <audio> tag is created that is not added to the DOM which most pages do
+    // while a <video> tag typically ends up being displayed to the user, audio is not.
+    // HACK We cannot really pass variables from the page's scope to our content-script's scope
+    // so we just blatantly insert the <audio> tag in the DOM and pick it up through our regular
+    // mechanism. Let's see how this goes :D
+
+    var scriptTag = document.createElement("script");
+    scriptTag.innerHTML = `
+        var oldCreateElement = document.createElement;
+        document.createElement = function () {
+            var createdTag = oldCreateElement.apply(this, arguments);
+
+            var tagName = arguments[0];
+
+            if (tagName && tagName.toLowerCase() === "audio") {
+                (document.head || document.documentElement).appendChild(createdTag);
+            }
+
+            return createdTag;
+        };
+    `;
     (document.head || document.documentElement).appendChild(scriptTag);
 
     // now the fun part of getting the stuff from our page back into our extension...
