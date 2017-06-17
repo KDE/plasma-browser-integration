@@ -28,7 +28,8 @@
     {
       "matches": ["*://*/*"],
       "js": ["constants.js", "content-script.js"],
-      "run_at":"document_start"
+      "run_at":"document_start",
+      "all_frames": true
     }
   ],
 
