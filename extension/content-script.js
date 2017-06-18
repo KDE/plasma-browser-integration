@@ -302,6 +302,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // tagName always returned "HTML" for me but I wouldn't trust it always being uppercase
 if (document.documentElement.tagName.toLowerCase() === "html") {
+    // we give our transfer div a "random id" for privacy
+    // from https://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript
+    var transferDivId ='xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+        var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
+        return v.toString(16);
+    });
+
     var scriptTag = document.createElement("script");
     scriptTag.innerHTML = `
         plasmaMediaSessions = function() {};
@@ -309,7 +316,7 @@ if (document.documentElement.tagName.toLowerCase() === "html") {
         plasmaMediaSessions.metadata = {};
         plasmaMediaSessions.playbackState = "none";
         plasmaMediaSessions.sendMessage = function(action, payload) {
-            var transferItem = document.getElementById('plasma-browser-integration-media-session-transfer');
+            var transferItem = document.getElementById('${transferDivId}');
             transferItem.innerText = JSON.stringify({action: action, payload: payload});
 
             var event = document.createEvent('CustomEvent');
@@ -377,7 +384,7 @@ if (document.documentElement.tagName.toLowerCase() === "html") {
     // now the fun part of getting the stuff from our page back into our extension...
     // cannot access extensions from innocent page JS for security
     var transferItem = document.createElement("div");
-    transferItem.setAttribute("id", "plasma-browser-integration-media-session-transfer");
+    transferItem.setAttribute("id", transferDivId);
     transferItem.style.display = "none";
 
     (document.head || document.documentElement).appendChild(transferItem);
