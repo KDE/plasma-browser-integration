@@ -34,6 +34,8 @@
 
 #include "settings.h"
 
+#include <unistd.h> // getppid
+
 static const QString s_serviceName = QStringLiteral("org.mpris.MediaPlayer2.plasma-browser-integration");
 
 MPrisPlugin::MPrisPlugin(QObject *parent)
@@ -329,6 +331,10 @@ QVariantMap MPrisPlugin::metadata() const
     // HACK this is needed or else SetPosition won't do anything
     // TODO use something more sensible, e.g. at least have the tab id with the player in there or so
     metadata.insert(QStringLiteral("mpris:trackid"), QVariant::fromValue(QDBusObjectPath(QStringLiteral("/org/kde/plasma/browser_integration/1337"))));
+
+    // Task Manager matches the window to the player's PID but in our case
+    // the browser window isn't owned by us
+    metadata.insert(QStringLiteral("kde:pid"), getppid());
 
     const QString &effectiveTitle = !m_title.isEmpty() ? m_title : m_pageTitle;
     if (!effectiveTitle.isEmpty()) {
