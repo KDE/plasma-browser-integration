@@ -319,49 +319,51 @@ if (document.documentElement.tagName.toLowerCase() === "html") {
 
     var scriptTag = document.createElement("script");
     scriptTag.innerHTML = `
-        plasmaMediaSessions = function() {};
-        plasmaMediaSessions.callbacks = {};
-        plasmaMediaSessions.metadata = {};
-        plasmaMediaSessions.playbackState = "none";
-        plasmaMediaSessions.sendMessage = function(action, payload) {
-            var transferItem = document.getElementById('${transferDivId}');
-            transferItem.innerText = JSON.stringify({action: action, payload: payload});
+        (function() {
+            plasmaMediaSessions = function() {};
+            plasmaMediaSessions.callbacks = {};
+            plasmaMediaSessions.metadata = {};
+            plasmaMediaSessions.playbackState = "none";
+            plasmaMediaSessions.sendMessage = function(action, payload) {
+                var transferItem = document.getElementById('${transferDivId}');
+                transferItem.innerText = JSON.stringify({action: action, payload: payload});
 
-            var event = document.createEvent('CustomEvent');
-            event.initEvent('payloadChanged', true, true);
-            transferItem.dispatchEvent(event);
-        };
-        plasmaMediaSessions.executeCallback = function (action) {
-            this.callbacks[action]();
-        };
+                var event = document.createEvent('CustomEvent');
+                event.initEvent('payloadChanged', true, true);
+                transferItem.dispatchEvent(event);
+            };
+            plasmaMediaSessions.executeCallback = function (action) {
+                this.callbacks[action]();
+            };
 
-        navigator.mediaSession = {};
-        navigator.mediaSession.setActionHandler = function (name, cb) {
-            if (cb) {
-                plasmaMediaSessions.callbacks[name] = cb;
-            } else {
-                delete plasmaMediaSessions.callbacks[name];
-            }
-            plasmaMediaSessions.sendMessage("callbacks", Object.keys(plasmaMediaSessions.callbacks));
-        };
-        Object.defineProperty(navigator.mediaSession, "metadata", {
-            get: function() { return plasmaMediaSessions.metadata; },
-            set: function(newValue) {
-                plasmaMediaSessions.metadata = newValue;
-                plasmaMediaSessions.sendMessage("metadata", newValue.data);
-            }
-        });
-        Object.defineProperty(navigator.mediaSession, "playbackState", {
-            get: function() { return plasmaMediaSessions.playbackState; },
-            set: function(newValue) {
-                plasmaMediaSessions.playbackState = newValue;
-                plasmaMediaSessions.sendMessage("playbackState", newValue);
-            }
-        });
+            navigator.mediaSession = {};
+            navigator.mediaSession.setActionHandler = function (name, cb) {
+                if (cb) {
+                    plasmaMediaSessions.callbacks[name] = cb;
+                } else {
+                    delete plasmaMediaSessions.callbacks[name];
+                }
+                plasmaMediaSessions.sendMessage("callbacks", Object.keys(plasmaMediaSessions.callbacks));
+            };
+            Object.defineProperty(navigator.mediaSession, "metadata", {
+                get: function() { return plasmaMediaSessions.metadata; },
+                set: function(newValue) {
+                    plasmaMediaSessions.metadata = newValue;
+                    plasmaMediaSessions.sendMessage("metadata", newValue.data);
+                }
+            });
+            Object.defineProperty(navigator.mediaSession, "playbackState", {
+                get: function() { return plasmaMediaSessions.playbackState; },
+                set: function(newValue) {
+                    plasmaMediaSessions.playbackState = newValue;
+                    plasmaMediaSessions.sendMessage("playbackState", newValue);
+                }
+            });
 
-        window.MediaMetadata = function (data) {
-            this.data = data;
-        };
+            window.MediaMetadata = function (data) {
+                this.data = data;
+            };
+        })();
     `;
     (document.head || document.documentElement).appendChild(scriptTag);
 
@@ -374,18 +376,20 @@ if (document.documentElement.tagName.toLowerCase() === "html") {
 
     var scriptTag = document.createElement("script");
     scriptTag.innerHTML = `
-        var oldCreateElement = document.createElement;
-        document.createElement = function () {
-            var createdTag = oldCreateElement.apply(this, arguments);
+        (function() {
+            var oldCreateElement = document.createElement;
+            document.createElement = function () {
+                var createdTag = oldCreateElement.apply(this, arguments);
 
-            var tagName = arguments[0];
+                var tagName = arguments[0];
 
-            if (tagName && tagName.toLowerCase() === "audio") {
-                (document.head || document.documentElement).appendChild(createdTag);
-            }
+                if (tagName && tagName.toLowerCase() === "audio") {
+                    (document.head || document.documentElement).appendChild(createdTag);
+                }
 
-            return createdTag;
-        };
+                return createdTag;
+            };
+        })();
     `;
     (document.head || document.documentElement).appendChild(scriptTag);
 
