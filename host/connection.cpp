@@ -75,6 +75,7 @@ void Connection::readData()
     }
 
     if (data.isEmpty()) {
+        m_stdIn.rollbackTransaction();
         return;
     }
 
