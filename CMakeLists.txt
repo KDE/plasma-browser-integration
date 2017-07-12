@@ -34,6 +34,7 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
 
 # Options
 option(INSTALL_CHROME_EXTENSION "Whether to install the Chrome extension locally instead of downloading it from the Extension Store")
+option(INSTALL_CHROME_MANIFEST "Whether to install the a configuration file that mkaes chrome automatically download the extension from the store" TRUE)
 
 add_subdirectory(host)
 add_subdirectory(tabsrunner)
@@ -69,7 +70,7 @@ if(INSTALL_CHROME_EXTENSION)
     # TODO do we need to use some form of KDE_INSTALL_TARGETS_DEFAULT_ARGS?
     install(FILES extension.crx DESTINATION ${CMAKE_INSTALL_PREFIX}/share/plasma-browser-integration)
 
-else() # Install a policy to have browsers automatically add the extension
+elif (INSTALL_CHROME_MANIFEST) # Install a policy to have browsers automatically add the extension
 
     # google-chrome
     install(FILES chrome_install_from_store_policy DESTINATION /usr/share/google-chrome/extensions RENAME ${CHROME_EXTENSION_ID}.json)
