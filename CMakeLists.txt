@@ -70,7 +70,7 @@ if(INSTALL_CHROME_EXTENSION)
     # TODO do we need to use some form of KDE_INSTALL_TARGETS_DEFAULT_ARGS?
     install(FILES extension.crx DESTINATION ${CMAKE_INSTALL_PREFIX}/share/plasma-browser-integration)
 
-elif (INSTALL_CHROME_MANIFEST) # Install a policy to have browsers automatically add the extension
+elseif (INSTALL_CHROME_MANIFEST) # Install a policy to have browsers automatically add the extension
 
     # google-chrome
     install(FILES chrome_install_from_store_policy DESTINATION /usr/share/google-chrome/extensions RENAME ${CHROME_EXTENSION_ID}.json)
