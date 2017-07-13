@@ -67,6 +67,7 @@ QList<QVariantHash> TabsRunnerPlugin::GetTabs()
                 QStringLiteral("GetTabs got cancelled because a another request came in")
             )
         );
+        return {};
     }
 
     m_tabsReplyMessage = message();
@@ -115,6 +116,7 @@ void TabsRunnerPlugin::handleData(const QString& event, const QJsonObject& json)
                 // TODO why does it unwrap this? didn't we want a a(a{sv}) instead of a{sv}a{sv}a{sv}..? :/
                 m_tabsReplyMessage.createReply(QList<QVariant>{tabsReply})
             );
+            m_tabsReplyMessage = QDBusMessage();
         }
     }
 }
