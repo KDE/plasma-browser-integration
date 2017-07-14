@@ -106,11 +106,12 @@ void TabsRunner::match(Plasma::RunnerContext &context)
 
         QList<Plasma::QueryMatch> matches;
 
-        // TODO why does it unwrap this? didn't we want a a(a{sv}) instead of a{sv}a{sv}a{sv}..? :/
-        for (const auto &arg : reply.arguments()) {
-            QVariantHash tab;
-            // urgh?
-            arg.value<QDBusArgument>() >> tab;
+        auto arg = reply.arguments().at(0).value<QDBusArgument>();
+        auto tabvs = qdbus_cast<QList<QVariant>>(arg);
+
+        for (const QVariant &tabv : tabvs)
+        {
+            auto tab = qdbus_cast<QVariantHash>(tabv.value<QDBusArgument>());
 
             // add browser name or window name or so to it maybe?
             const QString &text = tab.value(QStringLiteral("title")).toString();
