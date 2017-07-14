@@ -466,7 +466,7 @@ addCallback("tabsrunner", "getTabs", function (message) {
         port.postMessage({
             subsystem: "tabsrunner",
             event: "gotTabs",
-            tabs: tabs
+            tabs: filteredTabs
         });
     });
 });
