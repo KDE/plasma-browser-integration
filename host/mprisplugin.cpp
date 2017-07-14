@@ -215,6 +215,7 @@ QString MPrisPlugin::identity() const
     case Settings::Environment::Chromium: return QStringLiteral("Chromium");
     case Settings::Environment::Firefox: return QStringLiteral("Firefox Web Browser");
     case Settings::Environment::Opera: return QStringLiteral("Opera");
+    case Settings::Environment::Vivaldi: return QStringLiteral("Vivaldi");
     }
 
     return QString();
@@ -230,6 +231,7 @@ QString MPrisPlugin::desktopEntry() const
     case Settings::Environment::Chromium: return QStringLiteral("chromium-browser");
     case Settings::Environment::Firefox: return QStringLiteral("firefox");
     case Settings::Environment::Opera: return QStringLiteral("opera");
+    case Settings::Environment::Vivaldi: return QStringLiteral("vivaldi");
     }
 
     return QString();

@@ -47,6 +47,31 @@ function sendPortMessage(subsystem, event, payload)
     port.postMessage(message);
 }
 
+function sendEnvironment() {
+    var browser = "";
+
+    var ua = navigator.userAgent;
+    // Try to match the most derived first
+    if (ua.match(/vivaldi/i)) {
+        browser = "vivaldi";
+    } else if(ua.match(/OPR/i)) {
+        browser = "opera";
+    } else if(ua.match(/chrome/i)) {
+        browser = "chromium";
+        // Apparently there is no better way to distinuish chromium from chrome
+        for (i in window.navigator.plugins) {
+            if (window.navigator.plugins[i].name === "Chrome PDF Viewer") {
+                browser = "chrome";
+                break;
+            }
+        }
+    } else if(ua.match(/firefox/i)) {
+        browser = "firefox";
+    }
+
+    sendPortMessage("settings", "setEnvironment", {browserName: browser});
+}
+
 function sendSettings() {
     var storage = (IS_FIREFOX ? chrome.storage.local : chrome.storage.sync);
 
@@ -686,6 +711,7 @@ function connectHost() {
         }
     });
 
+    sendEnvironment();
     sendSettings();
 }
 

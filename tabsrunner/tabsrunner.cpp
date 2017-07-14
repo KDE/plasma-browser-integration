@@ -192,6 +192,8 @@ void TabsRunner::match(Plasma::RunnerContext &context)
                 iconName = QStringLiteral("firefox");
             } else if (browser == QLatin1String("opera")) {
                 iconName = QStringLiteral("opera");
+            } else if (browser == QLatin1String("vivaldi")) {
+                iconName = QStringLiteral("vivaldi");
             }
 
             if (incognito) {

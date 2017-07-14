@@ -42,11 +42,14 @@ public:
     enum class Environment {
         Unknown,
         Chrome,
-        Chromium, // can we actually distinguish Chromium from Chrome?
+        Chromium,
         Firefox,
-        Opera
+        Opera,
+        Vivaldi,
     };
     Q_ENUM(Environment)
+
+    static const QMap<Environment, QString> environmentNames;
 
     void handleData(const QString &event, const QJsonObject &data);
 
