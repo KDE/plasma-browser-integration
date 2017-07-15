@@ -100,7 +100,7 @@ void TabsRunner::match(Plasma::RunnerContext &context)
 
         QDBusMessage reply = QDBusConnection::sessionBus().call(message);
 
-        if (reply.type() != QDBusMessage::ReplyMessage) {
+        if (reply.type() != QDBusMessage::ReplyMessage || reply.arguments().length() != 1) {
             continue;
         }
 
