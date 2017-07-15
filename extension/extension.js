@@ -488,11 +488,63 @@ addCallback("tabsrunner", "getTabs", function (message) {
         // remove properties not in whitelist
         var filteredTabs = filterArrayObjects(tabs, whitelistedTabProperties);
 
-        port.postMessage({
-            subsystem: "tabsrunner",
-            event: "gotTabs",
-            tabs: filteredTabs
-        });
+        // Shared between the callbacks
+        var total = tabs.length;
+
+        var sendTabsIfComplete = function() {
+            if (--total > 0) {
+                return;
+            }
+
+            port.postMessage({
+                subsystem: "tabsrunner",
+                event: "gotTabs",
+                tabs: filteredTabs
+            });
+        };
+
+        for (let tabIndex in tabs) {
+            let currentIndex = tabIndex; // Not shared
+            var favIconUrl = tabs[tabIndex].favIconUrl;
+
+            if (!favIconUrl) {
+                sendTabsIfComplete();
+            } else if (favIconUrl.match(/^data:image/)) {
+                // Already a data URL
+                filteredTabs[currentIndex].favIconData = favIconUrl;
+                sendTabsIfComplete();
+            } else {
+                // Send a request to fill the cache (=no timeout)
+                let xhrForCache = new XMLHttpRequest();
+                xhrForCache.open("GET", favIconUrl);
+                xhrForCache.send();
+
+                // Try to fetch from (hopefully) the cache (100ms timeout)
+                let xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState != 4) {
+                        return;
+                    }
+
+                    if (!xhr.response) {
+                        filteredTabs[currentIndex].favIconData = "";
+                        sendTabsIfComplete();
+                        return;
+                    }
+
+                    var reader = new FileReader();
+                    reader.onloadend = function() {
+                        filteredTabs[currentIndex].favIconData = reader.result;
+                        sendTabsIfComplete();
+                    }
+                    reader.readAsDataURL(xhr.response);
+                };
+                xhr.open('GET', favIconUrl);
+                xhr.responseType = 'blob';
+                xhr.timeout = 100;
+                xhr.send();
+            }
+        }
     });
 });
 

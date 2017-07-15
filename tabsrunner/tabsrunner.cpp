@@ -183,17 +183,30 @@ void TabsRunner::match(Plasma::RunnerContext &context)
             match.setRelevance(relevance);
 
             QString iconName;
+            QIcon icon;
 
-            if (browser == QLatin1String("chrome")) {
-                iconName = QStringLiteral("google-chrome");
-            } else if (browser == QLatin1String("chromium")) {
-                iconName = QStringLiteral("chromium-browser");
-            } else if (browser == QLatin1String("firefox")) {
-                iconName = QStringLiteral("firefox");
-            } else if (browser == QLatin1String("opera")) {
-                iconName = QStringLiteral("opera");
-            } else if (browser == QLatin1String("vivaldi")) {
-                iconName = QStringLiteral("vivaldi");
+            const QString favIconData = tab.value(QStringLiteral("favIconData")).toString();
+            const int b64start = favIconData.indexOf(',');
+            if (b64start != -1) {
+                QByteArray b64 = favIconData.rightRef(favIconData.size() - b64start - 1).toLatin1();
+                QByteArray data = QByteArray::fromBase64(b64);
+                QPixmap pixmap;
+                if (pixmap.loadFromData(data))
+                   icon = QIcon(pixmap);
+            }
+
+            if (icon.isNull()) {
+                if (browser == QLatin1String("chrome")) {
+                    iconName = QStringLiteral("google-chrome");
+                } else if (browser == QLatin1String("chromium")) {
+                    iconName = QStringLiteral("chromium-browser");
+                } else if (browser == QLatin1String("firefox")) {
+                    iconName = QStringLiteral("firefox");
+                } else if (browser == QLatin1String("opera")) {
+                    iconName = QStringLiteral("opera");
+                } else if (browser == QLatin1String("vivaldi")) {
+                    iconName = QStringLiteral("vivaldi");
+                }
             }
 
             if (incognito) {
@@ -208,7 +221,11 @@ void TabsRunner::match(Plasma::RunnerContext &context)
                 }
             }
 
-            match.setIconName(iconName);
+            if (!iconName.isEmpty()) {
+                match.setIconName(iconName);
+            } else if(!icon.isNull()) {
+                match.setIcon(icon);
+            }
 
             matches << match;
         }
