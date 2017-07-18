@@ -22,12 +22,14 @@
 */
 
 #include "connection.h"
+#include <QCoreApplication>
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QSocketNotifier>
 
 #include <QDebug>
 #include <unistd.h>
+#include <poll.h>
 
 Connection::Connection() :
     QObject()
@@ -60,6 +62,23 @@ Connection* Connection::self()
 
 void Connection::readData()
 {
+    /* Qt does not recognize POLLHUP as an error and
+     * as that flag never gets cleared, we enter an
+     * infinite busy loop polling STDIN.
+     * So we need to check for this condition ourselves
+     * and exit. */
+
+    struct pollfd poll_stdin = {
+        .fd = STDIN_FILENO,
+        .events = POLLHUP,
+        .revents = 0
+    };
+    if (poll (&poll_stdin, 1, 0) != 0) {
+        // STDIN has HUP/ERR/NVAL condition
+        qApp->exit(0);
+        return;
+    }
+
     m_stdIn.startTransaction();
     quint32 length = 0;
     auto rc = m_stdIn.read((char*)(&length), sizeof(quint32));
