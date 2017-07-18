@@ -61,6 +61,10 @@ int main(int argc, char *argv[])
 {
     qInstallMessageHandler(msgHandler);
 
+    // otherwise when logging out, session manager will ask the host to quit
+    // (it's a "regular X app" after all) and then the browser will complain
+    qunsetenv("SESSION_MANAGER");
+
     QApplication a(argc, argv);
     // otherwise will close when download job finishes
     a.setQuitOnLastWindowClosed(false);
