@@ -558,7 +558,8 @@ function notifyWindowAdded(window) {
     }
 
     // ignore popup windows and the like, otherwise we'd inadvertently spawn a new regular browser window
-    if (window.type !== "normal") {
+    if (window.type !== "normal" ||
+        (window.extData && JSON.parse(window.extData).windowType === "popup")) {
         return;
     }
 
