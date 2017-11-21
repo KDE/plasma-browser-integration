@@ -26,6 +26,7 @@ target_link_libraries(
     Qt5::DBus
     Qt5::Gui
     Qt5::Widgets
+    KF5::I18n
     KF5::KIOCore
     KF5::Notifications
     KF5::WindowSystem
