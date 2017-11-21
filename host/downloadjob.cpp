@@ -86,6 +86,12 @@ void DownloadJob::update(const QJsonObject &payload)
         descriptionDirty = true; // TODO only if actually changed
     }
 
+    it = payload.constFind(QStringLiteral("finalUrl"));
+    if (it != end) {
+        m_finalUrl = QUrl(it->toString());
+        descriptionDirty = true;
+    }
+
     it = payload.constFind(QStringLiteral("filename"));
     if (it != end) {
         m_destination = QUrl::fromLocalFile(it->toString());
@@ -171,7 +177,7 @@ void DownloadJob::update(const QJsonObject &payload)
 void DownloadJob::updateDescription()
 {
     description(this, "Downloading",
-        qMakePair<QString, QString>("Source", m_url.toDisplayString()),
+        qMakePair<QString, QString>("Source", (m_finalUrl.isValid() ? m_finalUrl : m_url).toDisplayString()),
         qMakePair<QString, QString>("Destination", m_destination.toLocalFile())
     );
 }
