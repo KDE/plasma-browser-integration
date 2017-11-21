@@ -26,6 +26,8 @@
 
 #include <QJsonObject>
 
+#include <KLocalizedString>
+
 DownloadJob::DownloadJob(int id)
     : KJob()
     , m_id(id)
@@ -176,8 +178,8 @@ void DownloadJob::update(const QJsonObject &payload)
 
 void DownloadJob::updateDescription()
 {
-    description(this, "Downloading",
-        qMakePair<QString, QString>("Source", (m_finalUrl.isValid() ? m_finalUrl : m_url).toDisplayString()),
-        qMakePair<QString, QString>("Destination", m_destination.toLocalFile())
+    description(this, i18nc("Job heading, like 'Copying'", "Downloading"),
+        qMakePair<QString, QString>(i18nc("The URL being downloaded", "Source"), (m_finalUrl.isValid() ? m_finalUrl : m_url).toDisplayString()),
+        qMakePair<QString, QString>(i18nc("The location being downloaded to", "Destination"), m_destination.toLocalFile())
     );
 }
