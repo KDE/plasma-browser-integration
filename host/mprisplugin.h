@@ -49,6 +49,7 @@ class MPrisPlugin : public AbstractBrowserPlugin
     Q_PROPERTY(bool CanSeek READ canSeek NOTIFY canSeekChanged)
     Q_PROPERTY(qreal Volume READ volume WRITE setVolume)
     Q_PROPERTY(qlonglong Position READ position)
+    Q_PROPERTY(double Rate READ playbackRate WRITE setPlaybackRate NOTIFY playbackRateChanged)
     Q_PROPERTY(double MinimumRate READ minimumRate NOTIFY minimumRateChanged)
     Q_PROPERTY(double MaximumRate READ maximumRate NOTIFY maximumRateChanged)
     Q_PROPERTY(QString PlaybackStatus READ playbackStatus NOTIFY playbackStatusChanged)
@@ -81,6 +82,10 @@ public:
     void setVolume(qreal volume);
 
     qlonglong position() const;
+
+    double playbackRate() const;
+    void setPlaybackRate(double playbackRate);
+
     double minimumRate() const;
     double maximumRate() const;
 
@@ -112,6 +117,7 @@ signals:
     void canControlChanged();
     void playbackStatusChanged();
     void canSeekChanged();
+    void playbackRateChanged();
     void minimumRateChanged();
     void maximumRateChanged();
     void metadataChanged();
@@ -152,5 +158,6 @@ private:
 
     qlonglong m_length = 0;
     qlonglong m_position = 0;
+    qreal m_playbackRate = 1.0;
 
 };

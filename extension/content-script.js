@@ -131,6 +131,12 @@ addCallback("mpris", "setPosition", function (message) {
     }
 });
 
+addCallback("mpris", "setPlaybackRate", function (message) {
+    if (activePlayer) {
+        activePlayer.playbackRate = message.playbackRate;
+    }
+});
+
 addCallback("mpris", "setVolume", function (message) {
     if (activePlayer) {
         activePlayer.volume = message.volume;
@@ -152,12 +158,14 @@ addCallback("mpris", "checkPlayer", function () {
 
 function setPlayerActive(player) {
     activePlayer = player;
+
     // when playback starts, send along metadata
     // a website might have set Media Sessions metadata prior to playing
     // and then we would have ignored the metadata signal because there was no player
     sendMessage("mpris", "playing", {
         duration: player.duration,
         currentTime: player.currentTime,
+        playbackRate: player.playbackRate,
         volume: player.volume,
         loop: player.loop,
         metadata: playerMetadata,
@@ -209,6 +217,12 @@ function registerPlayer(player) {
     player.addEventListener("timeupdate", function () {
         sendPlayerInfo(player, "timeupdate", {
             currentTime: player.currentTime
+        });
+    });
+
+    player.addEventListener("ratechange", function () {
+        sendPlayerInfo(player, "ratechange", {
+            playbackRate: player.playbackRate
         });
     });
 

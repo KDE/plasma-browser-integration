@@ -255,6 +255,18 @@ addCallback("mpris", "setPosition", function (message) {
     }
 })
 
+addCallback("mpris", "setPlaybackRate", function (message) {
+    if (currentPlayerTabId) {
+        chrome.tabs.sendMessage(currentPlayerTabId, {
+            subsystem: "mpris",
+            action: "setPlaybackRate",
+            payload: {
+                playbackRate: message.playbackRate
+            }
+        });
+    }
+});
+
 // callbacks from a browser tab to our extension
 addRuntimeCallback("mpris", "playing", function (message, sender) {
     currentPlayerTabId = sender.tab.id;
@@ -281,7 +293,7 @@ addRuntimeCallback("mpris", ["paused", "stopped", "waiting", "canplay"], functio
     }
 });
 
-addRuntimeCallback("mpris", ["duration", "timeupdate", "seeked", "volumechange"], function (message, sender, action) {
+addRuntimeCallback("mpris", ["duration", "timeupdate", "seeked", "ratechange", "volumechange"], function (message, sender, action) {
     if (currentPlayerTabId == sender.tab.id) {
         sendPortMessage("mpris", action, message);
     }
