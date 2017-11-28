@@ -325,8 +325,6 @@ double MPrisPlugin::maximumRate() const
     return 32; // random
 }
 
-// TODO volume
-
 QString MPrisPlugin::playbackStatus() const
 {
     return m_playbackStatus;
