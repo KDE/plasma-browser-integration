@@ -490,7 +490,7 @@ addCallback("tabsrunner", "setMuted", function (message) {
 
 // only forward certain tab properties back to our host
 var whitelistedTabProperties = [
-    "id", "active", "audible", "favIconUrl", "incognito", "title", "url"
+    "id", "active", "audible", "favIconUrl", "incognito", "title", "url", "mutedInfo"
 ];
 
 // FIXME We really should enforce some kind of security policy, so only e.g. plasmashell and krunner
