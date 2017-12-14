@@ -331,9 +331,8 @@ if (document.documentElement.tagName.toLowerCase() === "html") {
         return v.toString(16);
     });
 
-    var scriptTag = document.createElement("script");
-    scriptTag.innerHTML = `
-        (function() {
+    executeScript(`
+        function() {
             plasmaMediaSessions = function() {};
             plasmaMediaSessions.callbacks = {};
             plasmaMediaSessions.metadata = {};
@@ -377,9 +376,8 @@ if (document.documentElement.tagName.toLowerCase() === "html") {
             window.MediaMetadata = function (data) {
                 this.data = data;
             };
-        })();
-    `;
-    (document.head || document.documentElement).appendChild(scriptTag);
+        }
+    `);
 
     // here we replace the document.createElement function with our own so we can detect
     // when an <audio> tag is created that is not added to the DOM which most pages do
@@ -388,9 +386,7 @@ if (document.documentElement.tagName.toLowerCase() === "html") {
     // so we just blatantly insert the <audio> tag in the DOM and pick it up through our regular
     // mechanism. Let's see how this goes :D
 
-    var scriptTag = document.createElement("script");
-    scriptTag.innerHTML = `
-        (function() {
+    executeScript(`function() {
             var oldCreateElement = document.createElement;
             document.createElement = function () {
                 var createdTag = oldCreateElement.apply(this, arguments);
@@ -403,9 +399,8 @@ if (document.documentElement.tagName.toLowerCase() === "html") {
 
                 return createdTag;
             };
-        })();
-    `;
-    (document.head || document.documentElement).appendChild(scriptTag);
+        }
+    `);
 
     // now the fun part of getting the stuff from our page back into our extension...
     // cannot access extensions from innocent page JS for security
