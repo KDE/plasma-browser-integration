@@ -38,6 +38,9 @@ function executeScript(script) {
     var element = document.createElement('script');
     element.innerHTML = '('+ script +')();';
     (document.body || document.head || document.documentElement).appendChild(element);
+    // We need to remove the script tag after inserting or else websites relying on the order of items in
+    // document.getElementsByTagName("script") will break (looking at you, Google Hangouts)
+    element.parentNode.removeChild(element);
 }
 
 chrome.runtime.onMessage.addListener(function (message, sender) {
