@@ -118,13 +118,29 @@ addCallback("mpris", "stop", function () {
 
 addCallback("mpris", "next", function () {
     if (playerCallbacks.indexOf("nexttrack") > -1) {
-        executeScript("plasmaMediaSessions.executeCallback('nexttrack')");
+        executeScript(`
+            function() {
+                try {
+                    plasmaMediaSessions.executeCallback("nexttrack");
+                } catch (e) {
+                    console.warn("Exception executing 'nexttrack' media sessions callback", e);
+                }
+            }
+        `);
     }
 });
 
 addCallback("mpris", "previous", function () {
     if (playerCallbacks.indexOf("previoustrack") > -1) {
-        executeScript("plasmaMediaSessions.executeCallback('previoustrack')");
+        executeScript(`
+            function() {
+                try {
+                    plasmaMediaSessions.executeCallback("previoustrack");
+                } catch (e) {
+                    console.warn("Exception executing 'previoustrack' media sessions callback", e);
+                }
+            }
+        `);
     }
 });
 
@@ -260,7 +276,15 @@ function registerAllPlayers() {
 function playerPlay() {
     // if a media sessions callback is registered, it takes precedence over us manually messing with the player
     if (playerCallbacks.indexOf("play") > -1) {
-        executeScript("plasmaMediaSessions.executeCallback('play')");
+        executeScript(`
+            function() {
+                try {
+                    plasmaMediaSessions.executeCallback("play");
+                } catch (e) {
+                    console.warn("Exception executing 'play' media sessions callback", e);
+                }
+            }
+        `);
     } else if (activePlayer) {
         activePlayer.play();
     }
@@ -268,7 +292,15 @@ function playerPlay() {
 
 function playerPause() {
     if (playerCallbacks.indexOf("pause") > -1) {
-        executeScript("plasmaMediaSessions.executeCallback('pause')");
+        executeScript(`
+            function() {
+                try {
+                    plasmaMediaSessions.executeCallback("pause");
+                } catch (e) {
+                    console.warn("Exception executing 'pause' media sessions callback", e);
+                }
+            }
+        `);
     } else if (activePlayer) {
         activePlayer.pause();
     }
