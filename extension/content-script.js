@@ -81,6 +81,8 @@ var playerCallbacks = [];
 
 var players = [];
 
+var pendingSeekingUpdate = 0;
+
 addCallback("mpris", "play", function () {
     playerPlay();
 });
@@ -249,6 +251,21 @@ function registerPlayer(player) {
     player.addEventListener("durationchange", function () {
         sendPlayerInfo(player, "duration", {
             duration: player.duration
+        });
+    });
+
+    player.addEventListener("seeking", function () {
+        if (pendingSeekingUpdate) {
+            return;
+        }
+
+        // Compress "seeking" signals, this is invoked continuously as the user drags the slider
+        pendingSeekingUpdate = setTimeout(function() {
+            pendingSeekingUpdate = 0;
+        }, 250);
+
+        sendPlayerInfo(player, "seeking", {
+            currentTime: player.currentTime
         });
     });
 

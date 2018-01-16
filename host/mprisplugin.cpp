@@ -199,7 +199,7 @@ void MPrisPlugin::handleData(const QString &event, const QJsonObject &data)
     } else if (event == QLatin1String("ratechange")) {
         m_playbackRate = data.value(QStringLiteral("playbackRate")).toDouble(1);
         emitPropertyChange(m_player, "Rate");
-    } else if (event == QLatin1String("seeked")) {
+    } else if (event == QLatin1String("seeking") || event == QLatin1String("seeked")) {
         // seeked is explicit user interaction, signal a change on dbus
         const qreal position = data.value(QStringLiteral("currentTime")).toDouble();
         // FIXME actually invoke "Seeked" signal
