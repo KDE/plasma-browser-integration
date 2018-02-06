@@ -418,11 +418,7 @@ addCallback("downloads", "resume", function (message) {
 var incognitoTabs = [];
 
 function tabAdded(tab) {
-        console.log("got a new tab", tab);
-
     if (tab.incognito) {
-        console.log("it's incognito");
-
         if (incognitoTabs.length === 0) {
             port.postMessage({subsystem: "incognito", event: "show" });
         }
