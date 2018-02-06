@@ -445,7 +445,7 @@ if (document.documentElement.tagName.toLowerCase() === "html") {
 
                 var tagName = arguments[0];
 
-                if (tagName && tagName.toLowerCase() === "audio") {
+                if (typeof tagName === "string" && tagName.toLowerCase() === "audio") {
                     (document.head || document.documentElement).appendChild(createdTag);
                 }
 
