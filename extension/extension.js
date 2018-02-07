@@ -441,19 +441,12 @@ chrome.tabs.query({}, function (tabs) {
 chrome.tabs.onCreated.addListener(tabAdded);
 
 chrome.tabs.onRemoved.addListener(function (tabId, removeInfo) {
-   console.log("removed a tab", tabId);
-
    var idx = incognitoTabs.indexOf(tabId);
    if (idx > -1) {
-       console.log("it's an incognito we know");
-
        incognitoTabs.splice(idx, 1); // remove item at idx
 
        if (incognitoTabs.length === 0) {
-           console.log("no more incognito");
            port.postMessage({subsystem: "incognito", event: "hide" });
-       } else {
-           console.log("still know", incognitoTabs.length, "incognito tabs");
         }
    }
 });
