@@ -268,12 +268,12 @@ bool MPrisPlugin::canControl() const
 
 bool MPrisPlugin::canPause() const
 {
-    return canControl() && playbackStatus() == QLatin1String("Playing");
+    return canControl();
 }
 
 bool MPrisPlugin::canPlay() const
 {
-    return canControl() && playbackStatus() != QLatin1String("Playing");
+    return canControl();
 }
 
 bool MPrisPlugin::canSeek() const
