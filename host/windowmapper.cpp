@@ -206,6 +206,8 @@ QList<Window *> WindowMapper::windows() const
 
 void WindowMapper::resolveWindow(int browserId)
 {
+    // Disable for now as it causes an annoying tab to appear
+    return;
     qDebug() << "will resolve window" << browserId;
     sendData(QStringLiteral("resolve"), {
         {QStringLiteral("browserId"), browserId}
