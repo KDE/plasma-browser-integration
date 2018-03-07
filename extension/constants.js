@@ -29,7 +29,7 @@ DEFAULT_EXTENSION_SETTINGS = {
         enabled: true
     },
     slc: {
-        enabled: true
+        enabled: false
     },
     incognito: {
         // somewhat buggy, only works when allow in incognito is on
