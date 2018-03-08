@@ -178,6 +178,12 @@ addCallback("mpris", "checkPlayer", function () {
 });
 
 function setPlayerActive(player) {
+    // Ignore short sounds, they are most likely a chat notification sound
+    // but still allow when undetermined (e.g. video stream)
+    if (!isNaN(player.duration) && player.duration > 0 && player.duration < 5) {
+        return;
+    }
+
     activePlayer = player;
 
     // when playback starts, send along metadata
