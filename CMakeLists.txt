@@ -81,3 +81,5 @@ elseif (INSTALL_CHROME_MANIFEST) # Install a policy to have browsers automatical
 endif()
 
 # TODO firefox
+
+feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
