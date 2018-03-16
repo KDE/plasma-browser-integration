@@ -1,5 +1,3 @@
-include_directories("${CMAKE_CURRENT_BINARY_DIR}")
-
 set(HOST_SOURCES main.cpp
                 connection.cpp
                 settings.cpp
