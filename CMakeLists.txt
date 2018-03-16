@@ -4,7 +4,8 @@ project(plasma-browser-integration)
 set(PROJECT_VERSION "5.12.80")
 set(PROJECT_VERSION_MAJOR 5)
 
-set(QT_MIN_VERSION "5.7.0")
+set(QT_MIN_VERSION "5.9.0")
+set(KF5_MIN_VERSION "5.42.0")
 
 find_package(ECM 0.0.11 REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR})
@@ -24,7 +25,6 @@ DBus
 Widgets
 )
 
-set(KF5_MIN_VERSION "5.2.0")
 find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
     KIO
     I18n
