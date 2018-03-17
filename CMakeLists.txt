@@ -66,7 +66,7 @@ if(INSTALL_CHROME_EXTENSION)
     # The actual extension file
     # TODO would be nice if we could automate the packaging and generation of the crx
     # TODO do we need to use some form of KDE_INSTALL_TARGETS_DEFAULT_ARGS?
-    install(FILES extension.crx DESTINATION ${CMAKE_INSTALL_PREFIX}/share/plasma-browser-integration)
+    install(FILES extension.crx DESTINATION ${KDE_INSTALL_DATADIR}/plasma-browser-integration)
 
 elseif (INSTALL_CHROME_MANIFEST) # Install a policy to have browsers automatically add the extension
 

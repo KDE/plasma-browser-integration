@@ -1,4 +1,4 @@
 {
-    "external_crx": "@CMAKE_INSTALL_PREFIX@/share/plasma-browser-integration/extension.crx",
+    "external_crx": "@KDE_INSTALL_FULL_DATADIR@/plasma-browser-integration/extension.crx",
     "external_version": "@PROJECT_VERSION@"
 }
