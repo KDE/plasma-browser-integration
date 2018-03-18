@@ -32,7 +32,7 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
 
 # Options
 option(INSTALL_CHROME_EXTENSION "Whether to install the Chrome extension locally instead of downloading it from the Extension Store")
-option(INSTALL_CHROME_MANIFEST "Whether to install the a configuration file that mkaes chrome automatically download the extension from the store" TRUE)
+option(INSTALL_CHROME_MANIFEST "Whether to install a configuration file that makes Chrome automatically download the extension from the store" TRUE)
 
 add_subdirectory(host)
 add_subdirectory(tabsrunner)
