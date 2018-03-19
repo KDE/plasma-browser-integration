@@ -341,10 +341,8 @@ document.addEventListener("DOMContentLoaded", function() {
     var observer = new MutationObserver(function (mutations) {
         mutations.forEach(function (mutation) {
             mutation.addedNodes.forEach(function (node) {
-                if (node.tagName === "VIDEO") {
+                if (node.tagName === "VIDEO" || node.tagName === "AUDIO") {
                     registerPlayer(node);
-                } else {
-                    registerAllPlayers(); // FIXME omg this is horrible, doing that every single time the dom changes
                 }
             });
         });
