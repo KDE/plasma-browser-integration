@@ -53,7 +53,7 @@ install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.plasma.chrome_integration.json
 # #google-chrome
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.plasma.chrome_integration.json DESTINATION ${KDE_INSTALL_FULL_SYSCONFDIR}/opt/chrome/native-messaging-hosts/ RENAME org.kde.plasma.browser_integration.json)
 # firefox
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.plasma.firefox_integration.json DESTINATION ${KDE_INSTALL_DATADIR}/mozilla/native-messaging-hosts/ RENAME org.kde.plasma.browser_integration.json)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.plasma.firefox_integration.json DESTINATION ${KDE_INSTALL_LIBDIR}/mozilla/native-messaging-hosts/ RENAME org.kde.plasma.browser_integration.json)
 
 if(INSTALL_CHROME_EXTENSION)
     configure_file(chrome_install_locally_policy.in chrome_install_locally_policy @ONLY)
