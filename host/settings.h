@@ -25,6 +25,15 @@
 
 #include "abstractbrowserplugin.h"
 
+#include <QString>
+
+struct EnvironmentDescription {
+    QString applicationName;
+    QString applicationDisplayName;
+    QString organizationDomain;
+    QString organizationName;
+};
+
 /*
  * This class manages the extension's settings (so that settings in the browser
  * propagate to our extension) and also detects the environment the host is run
@@ -49,8 +58,6 @@ public:
     };
     Q_ENUM(Environment)
 
-    static const QMap<Environment, QString> environmentNames;
-
     void handleData(const QString &event, const QJsonObject &data);
 
     Environment environment() const;
@@ -67,7 +74,11 @@ private:
     Settings();
     ~Settings() override = default;
 
+    static const QMap<Environment, QString> environmentNames;
+    static const QMap<Environment, EnvironmentDescription> environmentDescriptions;
+
     Environment m_environment = Environment::Unknown;
+    EnvironmentDescription m_currentEnvironment;
 
     QJsonObject m_settings;
 

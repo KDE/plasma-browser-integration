@@ -68,9 +68,7 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     // otherwise will close when download job finishes
     a.setQuitOnLastWindowClosed(false);
-
-    a.setApplicationName("google-chrome");
-    a.setApplicationDisplayName("Google Chrome");
+    // applicationName etc will be set in Settings once the browser identifies to us
 
     // NOTE if you add a new plugin here, make sure to adjust the
     // "DEFAULT_EXTENSION_SETTINGS" in constants.js or else it won't

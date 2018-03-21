@@ -23,7 +23,7 @@
 
 #include "settings.h"
 
-#include <QCoreApplication>
+#include <QGuiApplication>
 #include <QDBusConnection>
 #include <QProcess>
 
@@ -35,6 +35,39 @@ const QMap<Settings::Environment, QString> Settings::environmentNames = {
     {Settings::Environment::Firefox, QStringLiteral("firefox")},
     {Settings::Environment::Opera, QStringLiteral("opera")},
     {Settings::Environment::Vivaldi, QStringLiteral("vivaldi")},
+};
+
+const QMap<Settings::Environment, EnvironmentDescription> Settings::environmentDescriptions = {
+    {Settings::Environment::Chrome, {
+        QStringLiteral("google-chrome"),
+        QStringLiteral("Google Chrome"),
+        QStringLiteral("google.com"),
+        QStringLiteral("Google")
+    } },
+    {Settings::Environment::Chromium, {
+        QStringLiteral("chromium-browser"),
+        QStringLiteral("Chromium"),
+        QStringLiteral("google.com"),
+        QStringLiteral("Google")
+    } },
+    {Settings::Environment::Firefox, {
+        QStringLiteral("firefox"),
+        QStringLiteral("Mozilla Firefox"),
+        QStringLiteral("mozilla.org"),
+        QStringLiteral("Mozilla")
+    } },
+    {Settings::Environment::Opera, {
+        QStringLiteral("opera"),
+        QStringLiteral("Opera"),
+        QStringLiteral("opera.com"),
+        QStringLiteral("Opera")
+    } },
+    {Settings::Environment::Vivaldi, {
+        QStringLiteral("vivaldi"),
+        QStringLiteral("Vivaldi"),
+        QStringLiteral("vivaldi.com"),
+        QStringLiteral("Vivaldi")
+    } }
 };
 
 Settings::Settings()
@@ -61,6 +94,12 @@ void Settings::handleData(const QString &event, const QJsonObject &data)
     } else if (event == QLatin1String("setEnvironment")) {
         QString name = data[QStringLiteral("browserName")].toString();
         m_environment = Settings::environmentNames.key(name, Settings::Environment::Unknown);
+        m_currentEnvironment = Settings::environmentDescriptions.value(m_environment);
+
+        qApp->setApplicationName(m_currentEnvironment.applicationName);
+        qApp->setApplicationDisplayName(m_currentEnvironment.applicationDisplayName);
+        qApp->setOrganizationDomain(m_currentEnvironment.organizationDomain);
+        qApp->setOrganizationName(m_currentEnvironment.organizationName);
     }
 }
 
