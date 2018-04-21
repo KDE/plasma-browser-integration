@@ -348,8 +348,6 @@ setInterval(function() {
     });
 }, 1000);
 
-//chrome.downloads.setShelfEnabled(false);
-
 // only forward certain download properties back to our host
 var whitelistedDownloadProperties = [
     "id", "url", "finalUrl", "filename", "startTime", "estimatedEndTime", "totalBytes", "bytesReceived", "state", "error", /*"canResume"*/, "paused"
