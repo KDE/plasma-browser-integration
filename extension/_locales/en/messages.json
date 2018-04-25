@@ -65,7 +65,7 @@
     },
     "options_plugin_breezeScrollBars_description": {
         "description": "Description for Breeze style scroll bars plugin",
-        "message": "<small>This may break the appearance of websites that already style their scroll bars and might also cause issues with scrollable elements within a page.</small>"
+        "message": "<small>This may interfere with the appearance of websites that already apply a custom styling to their scroll bars.</small>"
     },
 
     "options_about_copyright": {
