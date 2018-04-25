@@ -4,7 +4,6 @@ set(HOST_SOURCES main.cpp
                 windowmapper.cpp
                 mprisplugin.cpp
                 abstractbrowserplugin.cpp
-                incognitoplugin.cpp
                 kdeconnectplugin.cpp
                 downloadplugin.cpp
                 downloadjob.cpp

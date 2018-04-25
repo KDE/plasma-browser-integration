@@ -409,46 +409,6 @@ addCallback("downloads", "resume", function (message) {
     chrome.downloads.resume(downloadId);
 });
 
-// Incognito
-// ------------------------------------------------------------------------
-//
-
-var incognitoTabs = [];
-
-function tabAdded(tab) {
-    if (tab.incognito) {
-        if (incognitoTabs.length === 0) {
-            port.postMessage({subsystem: "incognito", event: "show" });
-        }
-
-        incognitoTabs.push(tab.id)
-    }
-}
-
-addCallback("incognito", "close", function() {
-    console.log("close all incognito tabs!");
-    chrome.tabs.remove(incognitoTabs)
-});
-
-
-// query all tabs
-chrome.tabs.query({}, function (tabs) {
-    tabs.forEach(tabAdded);
-});
-
-chrome.tabs.onCreated.addListener(tabAdded);
-
-chrome.tabs.onRemoved.addListener(function (tabId, removeInfo) {
-   var idx = incognitoTabs.indexOf(tabId);
-   if (idx > -1) {
-       incognitoTabs.splice(idx, 1); // remove item at idx
-
-       if (incognitoTabs.length === 0) {
-           port.postMessage({subsystem: "incognito", event: "hide" });
-        }
-   }
-});
-
 // Tabs Runner
 // ------------------------------------------------------------------------
 //

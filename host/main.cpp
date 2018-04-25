@@ -30,7 +30,6 @@
 
 #include "settings.h"
 #include "windowmapper.h"
-#include "incognitoplugin.h"
 #include "kdeconnectplugin.h"
 #include "downloadplugin.h"
 #include "tabsrunnerplugin.h"
@@ -76,7 +75,6 @@ int main(int argc, char *argv[])
     QList<AbstractBrowserPlugin*> m_plugins;
     m_plugins << &Settings::self();
     m_plugins << &WindowMapper::self();
-    m_plugins << new IncognitoPlugin(&a);
     m_plugins << new KDEConnectPlugin(&a);
     m_plugins << new DownloadPlugin(&a);
     m_plugins << new TabsRunnerPlugin(&a);

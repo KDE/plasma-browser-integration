@@ -68,15 +68,6 @@
         "message": "Tracks visited websites in KDE Activities and also allows for easy sharing using the Quick Share plasmoid."
     },
 
-    "options_plugin_incognito_title": {
-        "description": "Title for Incognito indicator plugin",
-        "message": "Show icon when incognito windows are open"
-    },
-    "options_plugin_incognito_description": {
-        "description": "Description for Incognito indicator plugin",
-        "message": "Adds an icon to System Tray whenever an incognito window is opened that allows to close them at once.<br><small>This only works if the extension is allowed to run in Incognito mode at which point incongito pages are available to the listed features (including KRunner, if enabled).</small>"
-    },
-
     "options_plugin_breezeScrollBars_title": {
         "description": "Title for Breeze style scroll bars plugin",
         "message": "Use Breeze-style scroll bars"
