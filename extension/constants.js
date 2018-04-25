@@ -28,9 +28,6 @@ DEFAULT_EXTENSION_SETTINGS = {
     tabsrunner: {
         enabled: true
     },
-    slc: {
-        enabled: false
-    },
     breezeScrollBars: {
         // this breaks pages in interesting ways, disable by default
         enabled: false

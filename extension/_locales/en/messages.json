@@ -59,15 +59,6 @@
         "message": "Make sure the “Browser Tabs” module is enabled in <a id=\"$1\" href=\"$2\">Plasma Search settings</a>."
     },
 
-    "options_plugin_slc_title": {
-        "description": "Title for Share Like Connect / Activities plugin",
-        "message": "Statistics and Quick Share"
-    },
-    "options_plugin_slc_description": {
-        "description": "Description for Share Like Connect / Activities plugin",
-        "message": "Tracks visited websites in KDE Activities and also allows for easy sharing using the Quick Share plasmoid."
-    },
-
     "options_plugin_breezeScrollBars_title": {
         "description": "Title for Breeze style scroll bars plugin",
         "message": "Use Breeze-style scroll bars"

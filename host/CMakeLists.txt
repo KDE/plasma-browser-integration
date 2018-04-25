@@ -1,14 +1,12 @@
 set(HOST_SOURCES main.cpp
                 connection.cpp
                 settings.cpp
-                windowmapper.cpp
                 mprisplugin.cpp
                 abstractbrowserplugin.cpp
                 kdeconnectplugin.cpp
                 downloadplugin.cpp
                 downloadjob.cpp
                 tabsrunnerplugin.cpp
-                slcplugin.cpp
                 )
 
 qt5_add_dbus_adaptor(HOST_SOURCES ../dbus/org.kde.plasma.browser_integration.TabsRunner.xml tabsrunnerplugin.h TabsRunnerPlugin)

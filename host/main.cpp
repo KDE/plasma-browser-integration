@@ -29,12 +29,10 @@
 #include "abstractbrowserplugin.h"
 
 #include "settings.h"
-#include "windowmapper.h"
 #include "kdeconnectplugin.h"
 #include "downloadplugin.h"
 #include "tabsrunnerplugin.h"
 #include "mprisplugin.h"
-#include "slcplugin.h"
 
 void msgHandler(QtMsgType type, const QMessageLogContext &context, const QString &msg)
 {
@@ -74,16 +72,13 @@ int main(int argc, char *argv[])
     // even bother loading your shiny new plugin!
     QList<AbstractBrowserPlugin*> m_plugins;
     m_plugins << &Settings::self();
-    m_plugins << &WindowMapper::self();
     m_plugins << new KDEConnectPlugin(&a);
     m_plugins << new DownloadPlugin(&a);
     m_plugins << new TabsRunnerPlugin(&a);
     m_plugins << new MPrisPlugin(&a);
-    m_plugins << new SlcPlugin(&a);
 
     // TODO make this prettier, also prevent unloading them at any cost
     Settings::self().setLoaded(true);
-    WindowMapper::self().setLoaded(true);
 
     QString serviceName = QStringLiteral("org.kde.plasma.browser_integration");
     if (!QDBusConnection::sessionBus().registerService(serviceName)) {
@@ -132,7 +127,7 @@ int main(int argc, char *argv[])
             }
 
             // FIXME let a plugin somehow tell that it must not be unloaded
-            if (plugin->subsystem() == QLatin1String("settings") || plugin->subsystem() == QLatin1String("windows")) {
+            if (plugin->subsystem() == QLatin1String("settings")) {
                 continue;
             }
 
