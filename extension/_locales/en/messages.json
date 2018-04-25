@@ -69,7 +69,7 @@
     },
 
     "options_about_copyright": {
-        "message": "© 2017 Kai Uwe Broulik and David Edmundson"
+        "message": "© 2017, 2018 Kai Uwe Broulik and David Edmundson"
     },
     "options_about_license": {
         "message": "License: <a href=\"$1\">GNU General Public License Version 3</a>"
