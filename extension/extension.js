@@ -132,22 +132,7 @@ function raiseTab(tabId) {
         }
 
         // then raise the tab's window too
-        chrome.windows.update(tab.windowId, {focused: true}, function (window) {
-            if (chrome.runtime.lastError || !window) {
-                return;
-            }
-
-            // now check if the window was minimized and then unminimize it
-            // problem is that we cannot restore, we can just set state (normal or maximized)
-            // so we'll tell our host to do that through X
-            if (window.state === "minimized") {
-                port.postMessage({
-                    subsystem: "windows",
-                    event: "unminimize",
-                    browserId: window.id
-                });
-            }
-        });
+        chrome.windows.update(tab.windowId, {focused: true});
     });
 }
 
