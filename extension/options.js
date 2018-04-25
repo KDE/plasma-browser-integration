@@ -149,33 +149,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    /*document.getElementById("save").addEventListener("click", function () {
-        var saveMessage = document.getElementById("save-message");
-        saveMessage.innerText = "";
-
-        saveSettings(function (error) {
-            if (error) {
-                saveMessage.innerText = chrome.i18n.getMessage("options_save_failed");
-                return;
-            }
-
-            saveMessage.innerText = chrome.i18n.getMessage("options_save_success");
-            sendMessage("changed");
-        });
-    });
-
-    document.getElementById("clear-settings").addEventListener("click", function () {
-        storage.clear(function () {
-            if (chrome.runtime.lastError) {
-                console.warn("Clearing settings failed", chrome.runtime.lastError);
-                return;
-            }
-
-            console.log("Settings cleared");
-            loadSettings();
-        });
-    });*/
-
     document.getElementById("open-krunner-settings").addEventListener("click", function () {
         sendMessage("openKRunnerSettings");
     });
