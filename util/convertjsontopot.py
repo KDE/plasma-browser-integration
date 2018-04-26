@@ -27,7 +27,7 @@ outfile.write('''msgstr ""
 "Language: \\n"
 "MIME-Version: 1.0\\n"
 "Content-Type: text/plain; charset=UTF-8\\n"
-"Content-Transfer-Encoding: 8bit\n""\n\n''' % datetime.datetime.now())
+"Content-Transfer-Encoding: 8bit"\n\n''' % datetime.datetime.now())
 
 def writeEntry(key, value):
     value = value.replace('"', '\\\"')
