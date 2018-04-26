@@ -39,7 +39,7 @@ add_subdirectory(tabsrunner)
 
 if(NOT DEFINED CHROME_EXTENSION_ID)
     # The extension ID is based on the key used to sign the extension
-    # see https://stackoverflow.com/questions/23873623/obtaining-chrome-extension-id-for-developmoment
+    # see https://stackoverflow.com/questions/23873623/obtaining-chrome-extension-id-for-development
     set(CHROME_EXTENSION_ID "cimiefiiaegbelhefglklhhakcgmhkai")
 endif()
 
