@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-# This script requires
-# https://github.com/i18next/i18next-gettext-converter
-
 # We fill in the en "translations" manually. We extract this to the KDE system as pot as normal, then populate the other json files
 
 
@@ -12,7 +9,7 @@ FILENAME="plasma-browser-extension"
 function export_pot_file # First parameter will be the path of the pot file we have to create, includes $FILENAME
 {
     potfile=$1
-    python3 ./util/convertjsontopot $potfile
+    python3 ./util/convertjsontopot.py $potfile
 }
 
 function import_po_files # First parameter will be a path that will contain several .po files with the format LANG.po
@@ -21,7 +18,7 @@ function import_po_files # First parameter will be a path that will contain seve
     for file in `ls $podir`
     do
         lang=${file%.po} #remove .po from end of file
-        python3 ./util/convertpottojson $podir/$file $lang
+        python3 ./util/convertpottojson.py $podir/$file $lang
     done
 }
 
