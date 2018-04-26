@@ -31,7 +31,7 @@ with open(potFileName, 'r') as infile:
         if len(parts) != 2:
             continue
         if parts[0] == "#:":
-            currentGroup["id"] = parts[1]
+            currentGroup["id"] = parts[1].split(":")[0]
         if parts[0] == "msgstr":
             currentGroup["message"] = parts[1].strip('\"')
 

@@ -36,7 +36,7 @@ def writeEntry(key, value):
 for msgid in data:
     msg = data[msgid]
     outfile.write('\n')
-    outfile.write('#: %s\n' % msgid)
+    outfile.write('#: %s:0\n' % msgid)
 
     if "description" in msg:
         writeEntry('msgctxt', msg["description"])
