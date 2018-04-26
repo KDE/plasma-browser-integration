@@ -157,6 +157,9 @@ addCallback("kdeconnect", "deviceAdded", function(message) {
         if (info.menuItemId == menuId) {
             var url = info.linkUrl || info.pageUrl;
             console.log("Send url", url, "to kdeconnect device", id);
+            if (!url) {
+                return;
+            }
             port.postMessage({
                 subsystem: "kdeconnect",
                 event: "shareUrl",
