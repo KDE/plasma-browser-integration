@@ -38,16 +38,12 @@
     "chrome_style": true
   },
   "permissions": [
-    "alarms",
     "nativeMessaging",
     "notifications",
     "storage",
-    "activeTab",
     "downloads",
     "tabs",
-    "history",
     "<all_urls>",
-
     "contextMenus"
   ],
     "applications": {
