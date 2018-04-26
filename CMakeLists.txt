@@ -59,7 +59,7 @@ find_path(FIREFOX_PATH NAMES firefox)
 if(FIREFOX_PATH)
     set(MOZILLA_PREFIX ${FIREFOX_PATH}/..)
 else()
-    set(MOZILLA_PREFIX ${CMAKE_INSTALL_PREFIX}}
+    set(MOZILLA_PREFIX ${CMAKE_INSTALL_PREFIX}})
 endif()
 
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.plasma.firefox_integration.json DESTINATION ${MOZILLA_PREFIX}/lib/mozilla/native-messaging-hosts/ RENAME org.kde.plasma.browser_integration.json)
