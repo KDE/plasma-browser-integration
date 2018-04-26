@@ -12,7 +12,7 @@ FILENAME="plasma-browser-extension"
 function export_pot_file # First parameter will be the path of the pot file we have to create, includes $FILENAME
 {
     potfile=$1
-    i18next-conv --quiet -l en -s ./extension/_locales/en/messages.json -t $potfile
+    python3 ./util/convertjsontopot $potfile
 }
 
 function import_po_files # First parameter will be a path that will contain several .po files with the format LANG.po
@@ -21,7 +21,7 @@ function import_po_files # First parameter will be a path that will contain seve
     for file in `ls $podir`
     do
         lang=${file%.po} #remove .po from end of file
-        i18next-conv --quiet -l $lang -s $podir/$file -t ./extension/_locales/$lang/messages.json
+        python3 ./util/convertpottojson $podir/$file $lang
     done
 }
 
