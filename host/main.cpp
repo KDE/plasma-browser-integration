@@ -120,14 +120,14 @@ int main(int argc, char *argv[])
 
     QObject::connect(&Settings::self(), &Settings::changed, [m_plugins](const QJsonObject &settings) {
         foreach(AbstractBrowserPlugin *plugin, m_plugins) {
-            const QJsonValue &val = settings.value(plugin->subsystem());
-            if (val.type() != QJsonValue::Object) {
-                qWarning() << "Plugin" << plugin->subsystem() << "not handled by settings change";
+            // FIXME let a plugin somehow tell that it must not be unloaded
+            if (plugin->subsystem() == QLatin1String("settings")) {
                 continue;
             }
 
-            // FIXME let a plugin somehow tell that it must not be unloaded
-            if (plugin->subsystem() == QLatin1String("settings")) {
+            const QJsonValue &val = settings.value(plugin->subsystem());
+            if (val.type() != QJsonValue::Object) {
+                qWarning() << "Plugin" << plugin->subsystem() << "not handled by settings change";
                 continue;
             }
 

@@ -36,8 +36,6 @@ KDEConnectPlugin::KDEConnectPlugin(QObject* parent) :
 
 bool KDEConnectPlugin::onLoad()
 {
-    debug() << "kdeconnect" << "querying";
-
     QDBusMessage msg = QDBusMessage::createMethodCall("org.kde.kdeconnect",
                                                       "/modules/kdeconnect",
                                                       "org.kde.kdeconnect.daemon",
@@ -65,7 +63,7 @@ bool KDEConnectPlugin::onLoad()
                     watcher->deleteLater();
                     QDBusPendingReply<QVariantMap> reply = *watcher;
                     if (reply.isError()) {
-                        debug() << "getting device properties " + reply.error().message();
+                        debug() << "getting device properties" << reply.error().message();
                     } else {
                         auto props = reply.value();
                         props["id"] = deviceId;
