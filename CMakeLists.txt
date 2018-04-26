@@ -39,7 +39,7 @@ add_subdirectory(tabsrunner)
 
 if(NOT DEFINED CHROME_EXTENSION_ID)
     # The extension ID is based on the key used to sign the extension
-    # see https://stackoverflow.com/questions/23873623/obtaining-chrome-extension-id-for-development
+    # see https://stackoverflow.com/questions/23873623/obtaining-chrome-extension-id-for-developmoment
     set(CHROME_EXTENSION_ID "cimiefiiaegbelhefglklhhakcgmhkai")
 endif()
 
@@ -53,7 +53,16 @@ install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.plasma.chrome_integration.json
 # #google-chrome
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.plasma.chrome_integration.json DESTINATION ${KDE_INSTALL_FULL_SYSCONFDIR}/opt/chrome/native-messaging-hosts/ RENAME org.kde.plasma.browser_integration.json)
 # firefox
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.plasma.firefox_integration.json DESTINATION ${KDE_INSTALL_LIBDIR}/mozilla/native-messaging-hosts/ RENAME org.kde.plasma.browser_integration.json)
+
+#these have to match where firefox is installed, not where p-b-i is installed
+find_path(FIREFOX_PATH NAMES firefox)
+if(FIREFOX_PATH)
+    set(MOZILLA_PREFIX ${FIREFOX_PATH}/..)
+else()
+    set(MOZILLA_PREFIX ${CMAKE_INSTALL_PREFIX}}
+endif()
+
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.plasma.firefox_integration.json DESTINATION ${MOZILLA_PREFIX}/lib/mozilla/native-messaging-hosts/ RENAME org.kde.plasma.browser_integration.json)
 
 if(INSTALL_CHROME_EXTENSION)
     configure_file(chrome_install_locally_policy.in chrome_install_locally_policy @ONLY)
