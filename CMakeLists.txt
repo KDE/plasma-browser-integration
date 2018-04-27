@@ -31,8 +31,8 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
 )
 
 # Options
-option(INSTALL_CHROME_EXTENSION "Whether to install the Chrome extension locally instead of downloading it from the Extension Store")
-option(INSTALL_CHROME_MANIFEST "Whether to install a configuration file that makes Chrome automatically download the extension from the store" TRUE)
+option(INSTALL_CHROME_MANIFEST "Whether to install a configuration file that makes Chrome automatically download the extension from the store" FALSE)
+add_feature_info(INSTALL_CHROME_MANIFEST ${INSTALL_CHROME_MANIFEST} "Install extension from Chrome store automatically")
 
 add_subdirectory(host)
 add_subdirectory(tabsrunner)
@@ -64,21 +64,7 @@ endif()
 
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.plasma.firefox_integration.json DESTINATION ${MOZILLA_PREFIX}/lib/mozilla/native-messaging-hosts/ RENAME org.kde.plasma.browser_integration.json)
 
-if(INSTALL_CHROME_EXTENSION)
-    configure_file(chrome_install_locally_policy.in chrome_install_locally_policy @ONLY)
-
-    # google-chrome
-    install(FILES ${CMAKE_CURRENT_BINARY_DIR}/chrome_install_locally_policy DESTINATION ${KDE_INSTALL_DATADIR}/google-chrome/extensions RENAME ${CHROME_EXTENSION_ID}.json)
-    # chromium
-    install(FILES ${CMAKE_CURRENT_BINARY_DIR}/chrome_install_locally_policy DESTINATION ${KDE_INSTALL_DATADIR}/chromium-browser/extensions RENAME ${CHROME_EXTENSION_ID}.json)
-
-    # The actual extension file
-    # TODO would be nice if we could automate the packaging and generation of the crx
-    # TODO do we need to use some form of KDE_INSTALL_TARGETS_DEFAULT_ARGS?
-    install(FILES extension.crx DESTINATION ${KDE_INSTALL_DATADIR}/plasma-browser-integration)
-
-elseif (INSTALL_CHROME_MANIFEST) # Install a policy to have browsers automatically add the extension
-
+if (INSTALL_CHROME_MANIFEST) # Install a policy to have browsers automatically add the extension
     # google-chrome
     install(FILES chrome_install_from_store_policy DESTINATION ${KDE_INSTALL_DATADIR}/google-chrome/extensions RENAME ${CHROME_EXTENSION_ID}.json)
     # chromium
