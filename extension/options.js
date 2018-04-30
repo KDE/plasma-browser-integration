@@ -109,8 +109,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
             var tabtarget = document.querySelector("[data-tab-id=" + tablink + "]");
 
-            button.addEventListener("click", function () {
+            button.addEventListener("click", function (event) {
                 tabClicked(tabbar, button);
+                event.preventDefault();
             });
 
             tabbar.buttons.push(button);
@@ -149,8 +150,9 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    document.getElementById("open-krunner-settings").addEventListener("click", function () {
+    document.getElementById("open-krunner-settings").addEventListener("click", function (event) {
         sendMessage("openKRunnerSettings");
+        event.preventDefault();
     });
 
 });
