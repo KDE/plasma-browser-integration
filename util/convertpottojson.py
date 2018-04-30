@@ -33,7 +33,9 @@ with open(potFileName, 'r') as infile:
         if parts[0] == "#:":
             currentGroup["id"] = parts[1].split(":")[0]
         if parts[0] == "msgstr":
-            currentGroup["message"] = parts[1].strip('\"')
+            msg = parts[1].strip('\"')
+            msg = msg.replace('\\\"', '\"')
+            currentGroup["message"] = msg
 
 
 jsonData = {}
@@ -43,4 +45,4 @@ for d in data:
         continue
     jsonData[d["id"]] = {"message" : d["message"]}
 
-outfile.write(json.JSONEncoder().encode(jsonData))
+outfile.write(json.JSONEncoder(indent=4, ensure_ascii=False).encode(jsonData))
