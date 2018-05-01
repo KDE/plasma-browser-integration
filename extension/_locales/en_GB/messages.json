@@ -1,1 +1,86 @@
-{"options_plugin_breezeScrollBars_description": {"message": ""}, "options_about_created_by_kde": {"message": ""}, "options_plugin_kdeconnect_description": {"message": ""}, "options_tab_about": {"message": "About"}, "options_tab_general": {"message": "General"}, "options_about_translators": {"message": "Kai Uwe Broulik"}, "options_save_failed": {"message": "Saving settings failed"}, "kdeconnect_open_device": {"message": "Open on '$1'"}, "options_about_bugs": {"message": ""}, "options_about_kde": {"message": ""}, "options_plugin_mpris_title": {"message": "Media Controls"}, "options_about_copyright": {"message": "\u00a9 2017, 2018 Kai Uwe Broulik and David Edmundson"}, "options_plugin_breezeScrollBars_title": {"message": "Use Breeze-style scroll bars"}, "general_error_title": {"message": "Plasma Browser Integration Error"}, "options_plugin_downloads_title": {"message": "Show downloads in notification area"}, "options_save": {"message": "Save"}, "options_plugin_tabsrunner_title": {"message": "Find browser tabs in \u201cRun Command\u201d window"}, "options_about_license": {"message": "Licence: <a href=\\\"$1\\\">GNU General Public Licence Version 3</a>"}, "general_error_unknown": {"message": "Unknown Error"}, "options_about_translated_by": {"message": "Translated by: $1"}, "options_plugin_mpris_description": {"message": ""}, "kdeconnect_open_via": {"message": "Open via KDE Connect"}, "general_error_port_disconnect": {"message": "The native host disconnected unexpectedly: $1"}, "options_plugin_tabsrunner_description": {"message": ""}, "options_save_success": {"message": "Settings successfully saved"}, "options_about_donate": {"message": ""}, "options_restore_defaults": {"message": "Restore Defaults"}, "options_plugin_kdeconnect_title": {"message": "Send via KDE Connect"}}
+{
+    "options_tab_about": {
+        "message": "About"
+    },
+    "options_save_failed": {
+        "message": "Saving settings failed"
+    },
+    "options_tab_general": {
+        "message": "General"
+    },
+    "options_plugin_downloads_title": {
+        "message": "Show downloads in notification area"
+    },
+    "general_error_port_disconnect": {
+        "message": "The native host disconnected unexpectedly: $1"
+    },
+    "options_about_license": {
+        "message": "Licence: <a href=\"$1\">GNU General Public Licence Version 3</a>"
+    },
+    "options_plugin_mpris_description": {
+        "message": ""
+    },
+    "options_plugin_breezeScrollBars_description": {
+        "message": ""
+    },
+    "kdeconnect_open_via": {
+        "message": "Open via KDE Connect"
+    },
+    "options_about_kde": {
+        "message": ""
+    },
+    "general_error_unknown": {
+        "message": "Unknown Error"
+    },
+    "options_about_translated_by": {
+        "message": "Translated by: $1"
+    },
+    "options_plugin_kdeconnect_title": {
+        "message": "Send via KDE Connect"
+    },
+    "general_error_title": {
+        "message": "Plasma Browser Integration Error"
+    },
+    "options_about_created_by_kde": {
+        "message": ""
+    },
+    "options_plugin_tabsrunner_description": {
+        "message": ""
+    },
+    "options_plugin_kdeconnect_description": {
+        "message": ""
+    },
+    "options_save_success": {
+        "message": "Settings successfully saved"
+    },
+    "options_plugin_mpris_title": {
+        "message": "Media Controls"
+    },
+    "options_restore_defaults": {
+        "message": "Restore Defaults"
+    },
+    "kdeconnect_open_device": {
+        "message": "Open on '$1'"
+    },
+    "options_plugin_breezeScrollBars_title": {
+        "message": "Use Breeze-style scroll bars"
+    },
+    "options_about_copyright": {
+        "message": "© 2017, 2018 Kai Uwe Broulik and David Edmundson"
+    },
+    "options_plugin_tabsrunner_title": {
+        "message": "Find browser tabs in “Run Command” window"
+    },
+    "options_about_donate": {
+        "message": ""
+    },
+    "options_save": {
+        "message": "Save"
+    },
+    "options_about_translators": {
+        "message": "Kai Uwe Broulik"
+    },
+    "options_about_bugs": {
+        "message": ""
+    }
+}

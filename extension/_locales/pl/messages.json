@@ -1,1 +1,86 @@
-{"options_plugin_downloads_title": {"message": "Poka\u017c pobierania w obszarze powiadomie\u0144"}, "general_error_unknown": {"message": "Nieznany b\u0142\u0105d"}, "options_about_kde": {"message": ""}, "options_about_copyright": {"message": "\u00a9 2017, 2018 Kai Uwe Broulik oraz David Edmundson"}, "options_save_failed": {"message": "Nie uda\u0142o si\u0119 zapisywanie ustawie\u0144"}, "options_tab_general": {"message": "Og\u00f3lne"}, "options_save": {"message": "Zapisz"}, "options_about_bugs": {"message": ""}, "options_about_license": {"message": "Licencja: <a href=\\\"$1\\\">GNU General Public License Version 3</a>"}, "general_error_port_disconnect": {"message": "Natywny gospodarz nieoczekiwanie si\u0119 roz\u0142\u0105czy\u0142: $1"}, "options_plugin_kdeconnect_title": {"message": "Wy\u015blij przez KDE Connect"}, "options_about_created_by_kde": {"message": ""}, "options_plugin_tabsrunner_description": {"message": ""}, "options_plugin_breezeScrollBars_description": {"message": ""}, "options_plugin_kdeconnect_description": {"message": ""}, "kdeconnect_open_device": {"message": "Otw\u00f3rz na '$1'"}, "kdeconnect_open_via": {"message": "Otw\u00f3rz przez KDE Connect"}, "options_about_translators": {"message": "Kai Uwe Broulik"}, "options_tab_about": {"message": "O programie"}, "options_plugin_mpris_title": {"message": "Sterowanie mediami"}, "options_about_donate": {"message": ""}, "options_about_translated_by": {"message": "Przet\u0142umaczone przez: $1"}, "options_restore_defaults": {"message": "Przywr\u00f3\u0107 domy\u015blne"}, "options_plugin_mpris_description": {"message": ""}, "options_plugin_breezeScrollBars_title": {"message": "U\u017cyj pask\u00f3w przewijania z wygl\u0105du Bryzy"}, "options_save_success": {"message": "Pomy\u015blnie zapisano ustawienia"}, "general_error_title": {"message": "B\u0142\u0105d integracji przegl\u0105darki Plazmy"}, "options_plugin_tabsrunner_title": {"message": "Znajduj karty przegl\u0105darki w oknie \\\"Wykonaj polecenie\\"}}
+{
+    "options_about_translators": {
+        "message": "Kai Uwe Broulik"
+    },
+    "general_error_unknown": {
+        "message": "Nieznany błąd"
+    },
+    "options_about_copyright": {
+        "message": "© 2017, 2018 Kai Uwe Broulik oraz David Edmundson"
+    },
+    "options_plugin_breezeScrollBars_description": {
+        "message": ""
+    },
+    "options_tab_general": {
+        "message": "Ogólne"
+    },
+    "options_tab_about": {
+        "message": "O programie"
+    },
+    "options_plugin_breezeScrollBars_title": {
+        "message": "Użyj pasków przewijania z wyglądu Bryzy"
+    },
+    "options_about_kde": {
+        "message": ""
+    },
+    "kdeconnect_open_device": {
+        "message": "Otwórz na '$1'"
+    },
+    "options_about_bugs": {
+        "message": ""
+    },
+    "options_about_license": {
+        "message": "Licencja: <a href=\"$1\">GNU General Public License Version 3</a>"
+    },
+    "options_plugin_mpris_description": {
+        "message": ""
+    },
+    "options_plugin_mpris_title": {
+        "message": "Sterowanie mediami"
+    },
+    "general_error_port_disconnect": {
+        "message": "Natywny gospodarz nieoczekiwanie się rozłączył: $1"
+    },
+    "options_plugin_downloads_title": {
+        "message": "Pokaż pobierania w obszarze powiadomień"
+    },
+    "kdeconnect_open_via": {
+        "message": "Otwórz przez KDE Connect"
+    },
+    "options_plugin_tabsrunner_description": {
+        "message": ""
+    },
+    "options_about_donate": {
+        "message": ""
+    },
+    "options_plugin_tabsrunner_title": {
+        "message": "Znajduj karty przeglądarki w oknie \"Wykonaj polecenie\\"
+    },
+    "options_save_failed": {
+        "message": "Nie udało się zapisywanie ustawień"
+    },
+    "options_restore_defaults": {
+        "message": "Przywróć domyślne"
+    },
+    "options_save": {
+        "message": "Zapisz"
+    },
+    "options_plugin_kdeconnect_description": {
+        "message": ""
+    },
+    "options_plugin_kdeconnect_title": {
+        "message": "Wyślij przez KDE Connect"
+    },
+    "general_error_title": {
+        "message": "Błąd integracji przeglądarki Plazmy"
+    },
+    "options_save_success": {
+        "message": "Pomyślnie zapisano ustawienia"
+    },
+    "options_about_created_by_kde": {
+        "message": ""
+    },
+    "options_about_translated_by": {
+        "message": "Przetłumaczone przez: $1"
+    }
+}

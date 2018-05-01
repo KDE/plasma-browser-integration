@@ -1,1 +1,86 @@
-{"options_plugin_mpris_title": {"message": "Mediakontroller"}, "general_error_title": {"message": "Fel f\u00f6r Plasma webbl\u00e4sarintegrering"}, "general_error_port_disconnect": {"message": "V\u00e4rddatorn kopplades ov\u00e4ntat bort: $1"}, "options_about_translated_by": {"message": "\u00d6versatt av: $1"}, "options_plugin_tabsrunner_description": {"message": ""}, "options_about_copyright": {"message": "\u00a9 2017, 2018 Kai Uwe Broulik och David Edmundson"}, "options_plugin_kdeconnect_title": {"message": "Skicka via KDE:s anslutningstj\u00e4nst"}, "options_save_failed": {"message": "Misslyckades spara inst\u00e4llningar"}, "options_plugin_breezeScrollBars_title": {"message": "Anv\u00e4nd Breeze-liknande rullningslister"}, "options_plugin_breezeScrollBars_description": {"message": ""}, "options_about_donate": {"message": ""}, "options_about_license": {"message": "Licens: <a href=\\\"$1\\\">GNU General Public License Version 3</a>"}, "options_save_success": {"message": "Inst\u00e4llningar sparade med lyckat resultat"}, "options_tab_general": {"message": "Allm\u00e4nt"}, "options_about_created_by_kde": {"message": ""}, "kdeconnect_open_via": {"message": "\u00d6ppna via KDE:s anslutningstj\u00e4nst"}, "options_plugin_tabsrunner_title": {"message": "S\u00f6k efter webbl\u00e4sarflikar i f\u00f6nstret \\\"K\u00f6r kommando\\"}, "options_restore_defaults": {"message": "\u00c5terst\u00e4ll f\u00f6rval"}, "options_about_kde": {"message": ""}, "options_about_bugs": {"message": ""}, "options_plugin_mpris_description": {"message": ""}, "options_plugin_downloads_title": {"message": "Visa nerladdningar i underr\u00e4ttelseomr\u00e5det"}, "options_plugin_kdeconnect_description": {"message": ""}, "options_tab_about": {"message": "Om"}, "options_about_translators": {"message": "Kai Uwe Broulik"}, "kdeconnect_open_device": {"message": "\u00d6ppna p\u00e5 '$1'"}, "options_title": {"message": "Plasma integreringsinst\u00e4llningar"}, "options_save": {"message": "Spara"}, "general_error_unknown": {"message": "Ok\u00e4nt fel"}}
+{
+    "options_about_copyright": {
+        "message": "© 2017, 2018 Kai Uwe Broulik och David Edmundson"
+    },
+    "options_plugin_kdeconnect_description": {
+        "message": ""
+    },
+    "options_plugin_mpris_title": {
+        "message": "Mediakontroller"
+    },
+    "kdeconnect_open_via": {
+        "message": "Öppna via KDE:s anslutningstjänst"
+    },
+    "general_error_port_disconnect": {
+        "message": "Värddatorn kopplades oväntat bort: $1"
+    },
+    "options_about_translators": {
+        "message": "Kai Uwe Broulik"
+    },
+    "options_save": {
+        "message": "Spara"
+    },
+    "general_error_unknown": {
+        "message": "Okänt fel"
+    },
+    "options_about_translated_by": {
+        "message": "Översatt av: $1"
+    },
+    "options_about_bugs": {
+        "message": ""
+    },
+    "options_plugin_kdeconnect_title": {
+        "message": "Skicka via KDE:s anslutningstjänst"
+    },
+    "options_save_failed": {
+        "message": "Misslyckades spara inställningar"
+    },
+    "options_about_donate": {
+        "message": ""
+    },
+    "kdeconnect_open_device": {
+        "message": "Öppna på '$1'"
+    },
+    "options_plugin_downloads_title": {
+        "message": "Visa nerladdningar i underrättelseområdet"
+    },
+    "general_error_title": {
+        "message": "Fel för Plasma webbläsarintegrering"
+    },
+    "options_tab_about": {
+        "message": "Om"
+    },
+    "options_about_created_by_kde": {
+        "message": ""
+    },
+    "options_about_kde": {
+        "message": ""
+    },
+    "options_plugin_breezeScrollBars_description": {
+        "message": ""
+    },
+    "options_about_license": {
+        "message": "Licens: <a href=\"$1\">GNU General Public License Version 3</a>"
+    },
+    "options_plugin_tabsrunner_title": {
+        "message": "Sök efter webbläsarflikar i fönstret \"Kör kommando\\"
+    },
+    "options_tab_general": {
+        "message": "Allmänt"
+    },
+    "options_restore_defaults": {
+        "message": "Återställ förval"
+    },
+    "options_save_success": {
+        "message": "Inställningar sparade med lyckat resultat"
+    },
+    "options_plugin_mpris_description": {
+        "message": ""
+    },
+    "options_plugin_tabsrunner_description": {
+        "message": ""
+    },
+    "options_plugin_breezeScrollBars_title": {
+        "message": "Använd Breeze-liknande rullningslister"
+    }
+}

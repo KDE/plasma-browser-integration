@@ -1,1 +1,86 @@
-{"options_save": {"message": "Salva"}, "options_about_created_by_kde": {"message": ""}, "options_tab_general": {"message": "Generale"}, "options_plugin_tabsrunner_description": {"message": ""}, "general_error_title": {"message": "Errore dell'integrazione con Plasma del browser"}, "options_save_failed": {"message": "Salvataggio delle impostazioni non riuscito"}, "options_about_translators": {"message": "Kai Uwe Broulik"}, "options_plugin_kdeconnect_title": {"message": "Invia tramite KDE Connect"}, "options_plugin_kdeconnect_description": {"message": ""}, "options_about_donate": {"message": ""}, "general_error_unknown": {"message": "Errore sconosciuto"}, "options_about_kde": {"message": ""}, "options_about_bugs": {"message": ""}, "options_about_copyright": {"message": "\u00a9 2017, 2018 Kai Uwe Broulik e David Edmundson"}, "options_plugin_tabsrunner_title": {"message": "Cerca schede del browser nella finestra \u00abEsegui comando\u00bb"}, "options_plugin_downloads_title": {"message": "Mostra gli scaricamenti nell'area di notifica"}, "options_plugin_mpris_description": {"message": ""}, "general_error_port_disconnect": {"message": "L'host nativo si \u00e8 disconnesso all'improvviso: $1"}, "options_about_license": {"message": "Licenza: <a href=\\\"$1\\\">GNU General Public License Versione 3</a>"}, "options_plugin_mpris_title": {"message": "Controlli multimediali"}, "options_restore_defaults": {"message": "Ripristina valori predefiniti"}, "kdeconnect_open_device": {"message": "Apri in \u00ab$1\u00bb"}, "options_tab_about": {"message": "Informazioni"}, "kdeconnect_open_via": {"message": "Apri tramite KDE Connect"}, "options_plugin_breezeScrollBars_title": {"message": "Usa barre di scorrimento in stile Breeze"}, "options_plugin_breezeScrollBars_description": {"message": ""}, "options_save_success": {"message": "Impostazioni salvate correttamente"}, "options_about_translated_by": {"message": "Tradotto da: $1"}}
+{
+    "options_tab_about": {
+        "message": "Informazioni"
+    },
+    "kdeconnect_open_device": {
+        "message": "Apri in «$1»"
+    },
+    "options_about_created_by_kde": {
+        "message": ""
+    },
+    "options_plugin_tabsrunner_description": {
+        "message": ""
+    },
+    "options_plugin_kdeconnect_title": {
+        "message": "Invia tramite KDE Connect"
+    },
+    "options_plugin_breezeScrollBars_title": {
+        "message": "Usa barre di scorrimento in stile Breeze"
+    },
+    "options_about_translated_by": {
+        "message": "Tradotto da: $1"
+    },
+    "options_about_bugs": {
+        "message": ""
+    },
+    "options_plugin_mpris_description": {
+        "message": ""
+    },
+    "options_plugin_kdeconnect_description": {
+        "message": ""
+    },
+    "options_save_success": {
+        "message": "Impostazioni salvate correttamente"
+    },
+    "options_plugin_tabsrunner_title": {
+        "message": "Cerca schede del browser nella finestra «Esegui comando»"
+    },
+    "options_about_translators": {
+        "message": "Kai Uwe Broulik"
+    },
+    "general_error_title": {
+        "message": "Errore dell'integrazione con Plasma del browser"
+    },
+    "options_plugin_breezeScrollBars_description": {
+        "message": ""
+    },
+    "options_restore_defaults": {
+        "message": "Ripristina valori predefiniti"
+    },
+    "options_plugin_downloads_title": {
+        "message": "Mostra gli scaricamenti nell'area di notifica"
+    },
+    "options_save": {
+        "message": "Salva"
+    },
+    "options_about_copyright": {
+        "message": "© 2017, 2018 Kai Uwe Broulik e David Edmundson"
+    },
+    "options_save_failed": {
+        "message": "Salvataggio delle impostazioni non riuscito"
+    },
+    "options_about_donate": {
+        "message": ""
+    },
+    "options_tab_general": {
+        "message": "Generale"
+    },
+    "options_about_license": {
+        "message": "Licenza: <a href=\"$1\">GNU General Public License Versione 3</a>"
+    },
+    "general_error_port_disconnect": {
+        "message": "L'host nativo si è disconnesso all'improvviso: $1"
+    },
+    "options_about_kde": {
+        "message": ""
+    },
+    "options_plugin_mpris_title": {
+        "message": "Controlli multimediali"
+    },
+    "kdeconnect_open_via": {
+        "message": "Apri tramite KDE Connect"
+    },
+    "general_error_unknown": {
+        "message": "Errore sconosciuto"
+    }
+}

@@ -1,1 +1,86 @@
-{"options_about_copyright": {"message": "\u00a9 2017, 2018 Kai Uwe Broulik and David Edmundson"}, "general_error_unknown": {"message": "Error desconegut"}, "options_tab_general": {"message": "General"}, "options_save_success": {"message": "L'arranjament s'ha desat amb \u00e8xit"}, "options_about_bugs": {"message": ""}, "options_tab_about": {"message": "Quant a"}, "general_error_port_disconnect": {"message": "El servidor natiu s'ha desconnectat inesperadament: $1"}, "options_about_created_by_kde": {"message": ""}, "options_save": {"message": "Desa"}, "options_about_translators": {"message": "Kai Uwe Broulik"}, "options_plugin_mpris_description": {"message": ""}, "options_plugin_tabsrunner_description": {"message": ""}, "general_error_title": {"message": "Error d'integraci\u00f3 del navegador al Plasma"}, "options_restore_defaults": {"message": "Restaura als valors predeterminats"}, "options_plugin_breezeScrollBars_description": {"message": ""}, "options_plugin_kdeconnect_title": {"message": "Envia a trav\u00e9s del KDE Connect"}, "options_plugin_mpris_title": {"message": "Controls multim\u00e8dia"}, "options_plugin_kdeconnect_description": {"message": ""}, "options_plugin_tabsrunner_title": {"message": "Cerca les pestanyes del navegador a la finestra \u00abExecuta una ordre\u00bb"}, "options_plugin_downloads_title": {"message": "Mostra les baixades a l'\u00e0rea de notificacions"}, "options_save_failed": {"message": "Ha fallat en desar l'arranjament"}, "options_about_kde": {"message": ""}, "options_plugin_breezeScrollBars_title": {"message": "Usa barres de despla\u00e7ament de l'estil Brisa"}, "kdeconnect_open_device": {"message": "Obre a \u00ab$1\u00bb"}, "options_about_donate": {"message": ""}, "options_about_translated_by": {"message": "Tradu\u00eft per: $1"}, "options_about_license": {"message": ""}, "kdeconnect_open_via": {"message": "Obre via el KDE Connect"}}
+{
+    "options_save_failed": {
+        "message": "Ha fallat en desar l'arranjament"
+    },
+    "options_plugin_mpris_title": {
+        "message": "Controls multimèdia"
+    },
+    "options_tab_general": {
+        "message": "General"
+    },
+    "options_about_created_by_kde": {
+        "message": ""
+    },
+    "general_error_port_disconnect": {
+        "message": "El servidor natiu s'ha desconnectat inesperadament: $1"
+    },
+    "general_error_title": {
+        "message": "Error d'integració del navegador al Plasma"
+    },
+    "options_plugin_breezeScrollBars_description": {
+        "message": ""
+    },
+    "kdeconnect_open_via": {
+        "message": "Obre via el KDE Connect"
+    },
+    "options_about_translators": {
+        "message": "Kai Uwe Broulik"
+    },
+    "options_plugin_tabsrunner_title": {
+        "message": "Cerca les pestanyes del navegador a la finestra «Executa una ordre»"
+    },
+    "options_about_bugs": {
+        "message": ""
+    },
+    "options_about_donate": {
+        "message": ""
+    },
+    "options_plugin_kdeconnect_title": {
+        "message": "Envia a través del KDE Connect"
+    },
+    "options_save_success": {
+        "message": "L'arranjament s'ha desat amb èxit"
+    },
+    "options_plugin_kdeconnect_description": {
+        "message": ""
+    },
+    "options_restore_defaults": {
+        "message": "Restaura als valors predeterminats"
+    },
+    "options_about_license": {
+        "message": ""
+    },
+    "options_about_copyright": {
+        "message": "© 2017, 2018 Kai Uwe Broulik and David Edmundson"
+    },
+    "general_error_unknown": {
+        "message": "Error desconegut"
+    },
+    "options_about_translated_by": {
+        "message": "Traduït per: $1"
+    },
+    "options_plugin_breezeScrollBars_title": {
+        "message": "Usa barres de desplaçament de l'estil Brisa"
+    },
+    "options_tab_about": {
+        "message": "Quant a"
+    },
+    "options_plugin_downloads_title": {
+        "message": "Mostra les baixades a l'àrea de notificacions"
+    },
+    "kdeconnect_open_device": {
+        "message": "Obre a «$1»"
+    },
+    "options_save": {
+        "message": "Desa"
+    },
+    "options_plugin_mpris_description": {
+        "message": ""
+    },
+    "options_plugin_tabsrunner_description": {
+        "message": ""
+    },
+    "options_about_kde": {
+        "message": ""
+    }
+}
