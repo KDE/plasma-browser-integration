@@ -11,11 +11,12 @@ if len(sys.argv) < 3:
 potFileName = sys.argv[1]
 lang = sys.argv[2]
 path = "./extension/_locales/%s" % lang
+enPath = "./extension/_locales/en/messages.json"
 
 os.makedirs(path, exist_ok=True)
 outfile = open(path + "/messages.json" , 'w')
 
-data = []
+translations = {}
 currentGroup = {}
 
 with open(potFileName, 'r') as infile:
@@ -23,7 +24,8 @@ with open(potFileName, 'r') as infile:
         line = line.strip()
 
         if not line:
-            data.append(currentGroup)
+            if 'id' in currentGroup and 'message' in currentGroup:
+                translations[currentGroup["id"]] = currentGroup["message"]
             currentGroup = {}
             continue
         #split at first space
@@ -38,11 +40,17 @@ with open(potFileName, 'r') as infile:
             currentGroup["message"] = msg
 
 
-jsonData = {}
+outTranslations = {}
 
-for d in data:
-    if not 'id' in d or not 'message' in d:
-        continue
-    jsonData[d["id"]] = {"message" : d["message"]}
+with open(enPath, 'r') as infile:
+    enData = json.load(infile)
 
-outfile.write(json.JSONEncoder(indent=4, ensure_ascii=False).encode(jsonData))
+for msgId in enData:
+    msg = ""
+    if msgId in translations:
+        msg = translations[msgId]
+    if not msg:
+        msg = enData[msgId]["message"]
+    outTranslations[msgId] = {"message" : msg}
+
+outfile.write(json.JSONEncoder(indent=4, ensure_ascii=False).encode(outTranslations))
