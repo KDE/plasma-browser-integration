@@ -1,63 +1,63 @@
 {
-    "options_plugin_downloads_title": {
-        "message": ""
-    },
     "options_about_kde": {
-        "message": ""
-    },
-    "general_error_port_disconnect": {
-        "message": "De eigen host heeft onverwacht de verbinding verbroken: $1"
-    },
-    "options_plugin_breezeScrollBars_title": {
-        "message": ""
-    },
-    "options_save_success": {
-        "message": "Instellingen met succes opgeslagen"
-    },
-    "options_plugin_mpris_description": {
-        "message": ""
-    },
-    "options_plugin_kdeconnect_title": {
-        "message": "Via KDE Connect verzenden"
-    },
-    "options_tab_about": {
-        "message": "Info over"
-    },
-    "general_error_unknown": {
-        "message": "Onbekende fout"
-    },
-    "options_plugin_tabsrunner_description": {
-        "message": ""
-    },
-    "options_save": {
-        "message": "Opslaan"
-    },
-    "options_plugin_tabsrunner_title": {
-        "message": "Browsertabbladen in venster “Commando uitvoeren” zoeken"
-    },
-    "options_about_donate": {
-        "message": ""
-    },
-    "options_about_copyright": {
-        "message": ""
-    },
-    "options_plugin_mpris_title": {
-        "message": "Besturing van media"
+        "message": "KDE is a world-wide network of software engineers, artists, writers, translators and facilitators who are committed to <a href=\"$1\">Free Software</a> development. This community has created hundreds of Free Software applications as part of the KDE frameworks, workspaces and applications. KDE is a cooperative enterprise in which no single entity controls the efforts or products of KDE to the exclusion of others. Everyone is welcome to join and contribute to KDE, including you."
     },
     "options_restore_defaults": {
         "message": "Standaardinstellingen herstellen"
     },
-    "options_about_translators": {
-        "message": "Kai Uwe Broulik"
+    "options_about_translated_by": {
+        "message": "Vertaald door: $1"
     },
-    "options_plugin_breezeScrollBars_description": {
-        "message": ""
+    "options_save": {
+        "message": "Opslaan"
+    },
+    "general_error_port_disconnect": {
+        "message": "De eigen host heeft onverwacht de verbinding verbroken: $1"
     },
     "options_about_bugs": {
-        "message": ""
+        "message": "If you find an issue, please check the <a href=\"$1\">list of open bugs</a> and then <a href=\"$2\">file a bug report</a>."
+    },
+    "options_about_created_by_kde": {
+        "message": "This browser extension was created by the <a href=\"$1\">KDE Community</a>."
+    },
+    "options_plugin_tabsrunner_title": {
+        "message": "Browsertabbladen in venster “Commando uitvoeren” zoeken"
+    },
+    "general_error_unknown": {
+        "message": "Onbekende fout"
+    },
+    "options_plugin_breezeScrollBars_title": {
+        "message": "Breeze-stijl schuifbalken gebruiken"
+    },
+    "options_about_donate": {
+        "message": "If you like what you saw, please consider <a href=\"$1\">donating to KDE</a>, so we can continue to make the best free software possible."
+    },
+    "options_title": {
+        "message": "Plasma-integratie-instellingen"
+    },
+    "options_tab_about": {
+        "message": "Info over"
     },
     "options_plugin_kdeconnect_description": {
-        "message": ""
+        "message": "Adds a context menu entry to links enabling you to send them to your phone and other paired devices using <a href=\"$1\">KDE Connect</a>."
+    },
+    "options_plugin_breezeScrollBars_description": {
+        "message": "<small>This may interfere with the appearance of websites that already apply a custom styling to their scroll bars.</small>"
+    },
+    "kdeconnect_open_device": {
+        "message": "Openen op '$1'"
+    },
+    "options_plugin_mpris_title": {
+        "message": "Besturing van media"
+    },
+    "general_error_title": {
+        "message": "Fout in Plasma-browserintegratie"
+    },
+    "kdeconnect_open_via": {
+        "message": "Via KDE Connect openen"
+    },
+    "options_plugin_tabsrunner_description": {
+        "message": "Make sure the “Browser Tabs” module is enabled in <a id=\"$1\" href=\"$2\">Plasma Search settings</a>."
     },
     "options_tab_general": {
         "message": "Algemeen"
@@ -65,22 +65,25 @@
     "options_about_license": {
         "message": "Licentie: <a href=\"$1\">GNU General Public License Versie 3</a>"
     },
-    "kdeconnect_open_via": {
-        "message": "Via KDE Connect openen"
-    },
-    "options_about_created_by_kde": {
-        "message": ""
-    },
     "options_save_failed": {
         "message": "Instellingen opslaan is mislukt"
     },
-    "options_about_translated_by": {
-        "message": ""
+    "options_about_copyright": {
+        "message": "© 2017, 2018 Kai Uwe Broulik en David Edmundson"
     },
-    "kdeconnect_open_device": {
-        "message": "Openen op '$1'"
+    "options_save_success": {
+        "message": "Instellingen met succes opgeslagen"
     },
-    "general_error_title": {
-        "message": "Fout in Plasma-browserintegratie"
+    "options_about_translators": {
+        "message": "Kai Uwe Broulik"
+    },
+    "options_plugin_downloads_title": {
+        "message": "Downloads tonen in gebied voor meldingen"
+    },
+    "options_plugin_mpris_description": {
+        "message": "Lets you control video and audio players in websites using the Media Controller plasmoid."
+    },
+    "options_plugin_kdeconnect_title": {
+        "message": "Via KDE Connect verzenden"
     }
 }
