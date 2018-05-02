@@ -115,5 +115,9 @@
     "general_error_port_disconnect": {
         "description": "When the binary bridge between browser and Plasma quit (usually it crashed or was otherwise killed), placeholder is the reason",
         "message": "The native host disconnected unexpectedly: $1"
+    },
+    "general_error_port_startupfail": {
+        "description": "When the binary bridge between browser and Plasma failed to start (e.g. not installed)",
+        "message": "Failed to connect to the native host. Make sure the 'plasma-browser-integration' package is installed."
     }
 }

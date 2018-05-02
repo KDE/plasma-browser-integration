@@ -512,10 +512,9 @@ addCallback("debug", "warning", function(payload) {
 // ------------------------------------------------------------------------
 //
 
-// only if we received a message at least once through the post, we consider it
-// working and restart it on disconnect. Otherwise, if we're forbidden to connect
-// we would end up in an endless loop as onDisconnect would fire right after connecting
-var autoRestartHost = false;
+// When connecting to native host fails (e.g. not installed), we immediately get a disconnect
+// event immediately afterwards. Also avoid infinite restart loop then.
+var receivedMessageOnce = false;
 
 connectHost();
 
@@ -530,7 +529,7 @@ function connectHost() {
             return;
         }
 
-        autoRestartHost = true;
+        receivedMessageOnce = true;
 
         // keeps track of what extensions are loaded and in what version in subsystemStatus
         if (action === "created") {
@@ -557,17 +556,24 @@ function connectHost() {
     port.onDisconnect.addListener(function() {
         var error = chrome.runtime.lastError;
 
-        console.log("Host disconnected", error);
+        console.warn("Host disconnected", error);
+
+        var reason = chrome.i18n.getMessage("general_error_unknown");
+        if (error && error.message) {
+            reason = error.message;
+        }
+
+        var message = receivedMessageOnce ? chrome.i18n.getMessage("general_error_port_disconnect", reason)
+                                          : chrome.i18n.getMessage("general_error_port_startupfail");
 
         chrome.notifications.create(null, {
             type: "basic",
             title: chrome.i18n.getMessage("general_error_title"),
-            message: chrome.i18n.getMessage("general_error_port_disconnect", (error ? error.message
-                                                                                    : chrome.i18n.getMessage("general_error_unknown"))),
+            message: message,
             iconUrl: "icons/sad-face-128.png"
         });
 
-        if (autoRestartHost) {
+        if (receivedMessageOnce) {
             console.log("Auto-restarting it");
             connectHost();
         } else {
