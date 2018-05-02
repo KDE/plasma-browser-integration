@@ -24,6 +24,7 @@ Widgets
 find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
     KIO
     I18n
+    DBusAddons
     Notifications
     Runner
     WindowSystem
@@ -36,6 +37,7 @@ add_feature_info(INSTALL_CHROME_MANIFEST ${INSTALL_CHROME_MANIFEST} "Install ext
 
 add_subdirectory(host)
 add_subdirectory(tabsrunner)
+add_subdirectory(advert)
 
 if(NOT DEFINED CHROME_EXTENSION_ID)
     # The extension ID is based on the key used to sign the extension
