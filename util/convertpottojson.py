@@ -18,26 +18,33 @@ outfile = open(path + "/messages.json" , 'w')
 
 translations = {}
 currentGroup = {}
+currentId = ""
+currentMsg = ""
 
 with open(potFileName, 'r') as infile:
     for line in infile.readlines():
         line = line.strip()
 
         if not line:
-            if 'id' in currentGroup and 'message' in currentGroup:
-                translations[currentGroup["id"]] = currentGroup["message"]
-            currentGroup = {}
+            if not currentId.isspace() and not currentMsg.isspace():
+                translations[currentId] = currentMsg
+            currentId = ""
+            currentMsg = ""
             continue
         #split at first space
         parts = line.split(' ', 1)
         if len(parts) != 2:
             continue
         if parts[0] == "#:":
-            currentGroup["id"] = parts[1].split(":")[0]
-        if parts[0] == "msgstr":
+            currentId = parts[1].split(":")[0]
+        elif parts[0] == "msgstr":
             msg = parts[1].strip('\"')
             msg = msg.replace('\\\"', '\"')
-            currentGroup["message"] = msg
+            currentMsg = msg
+        else:
+            msg = line.strip('\"')
+            msg = msg.replace('\\\"', '\"')
+            currentMsg += msg
 
 
 outTranslations = {}
