@@ -78,8 +78,8 @@
         "message": "Translated by: $1"
     },
     "options_about_translators": {
-        "description": "Your names go here",
-        "message": "Kai Uwe Broulik"
+        "description": "Name of translators",
+        "message": "Your names"
     },
     "options_about_created_by_kde": {
         "message": "This browser extension was created by the <a href=\"$1\">KDE Community</a>."

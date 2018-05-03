@@ -155,4 +155,18 @@ document.addEventListener("DOMContentLoaded", function () {
         event.preventDefault();
     });
 
+    // Make translators credit behave like the one in KAboutData
+    var translatorsAboutData = "";
+
+    var translators = chrome.i18n.getMessage("options_about_translators");
+    if (translators && translators !== "Your names") {
+        translatorsAboutData = chrome.i18n.getMessage("options_about_translated_by", translators)
+    }
+
+    var translatorsAboutDataItem = document.getElementById("translators-aboutdata");
+    if (translatorsAboutData) {
+        translatorsAboutDataItem.innerText = translatorsAboutData;
+    } else {
+        translatorsAboutDataItem.style.display = "none";
+    }
 });
