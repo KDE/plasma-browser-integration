@@ -26,8 +26,18 @@
 #include <QSet>
 #include <QUrl>
 #include <QHash>
+#include <QPointer>
 
+class KStatusNotifierItem;
 class QDBusServiceWatcher;
+
+/**
+ * This plugin's purpose is to provide the user a link to the PBI extension.
+ * It should run if the user has installed the host, but doesn't have the browser side.
+ *
+ * It creates an SNI for the first N times the user opens a browser with this setup.
+ * Then we give up
+ */
 
 class BrowserLaunchWatcher : public KDEDModule
 {
@@ -44,11 +54,20 @@ private Q_SLOTS:
                             double score,
                             unsigned int lastUpdate,
                             unsigned int firstUpdate);
+
+    void onBrowserStarted(const QString &browserName);
+
+    void unload();
+    void disableAutoload();
+
 private:
     struct BrowserInfo
     {
         QString icon;
-        QUrl extensionUrl;
-    }
+        QUrl url;
+    };
     QHash<QString, BrowserInfo> m_browsers;
+    QPointer<KStatusNotifierItem> m_sni;
+    bool m_debug;
+    int m_shownCount;
 };

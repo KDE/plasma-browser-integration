@@ -24,6 +24,7 @@ Widgets
 find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
     KIO
     I18n
+    Config
     DBusAddons
     Notifications
     Runner
