@@ -1,92 +1,92 @@
 {
-    "options_save_failed": {
-        "message": "Ha fallat en guardar l'arranjament"
-    },
-    "options_about_created_by_kde": {
-        "message": "This browser extension was created by the <a href=\"$1\">KDE Community</a>."
-    },
-    "options_about_license": {
-        "message": "License: <a href=\"$1\">GNU General Public License Version 3</a>"
-    },
-    "kdeconnect_open_via": {
-        "message": "Obri via el KDE Connect"
-    },
-    "options_plugin_mpris_title": {
-        "message": "Controls multimèdia"
-    },
-    "options_about_kde": {
-        "message": "KDE is a world-wide network of software engineers, artists, writers, translators and facilitators who are committed to <a href=\"$1\">Free Software</a> development. This community has created hundreds of Free Software applications as part of the KDE frameworks, workspaces and applications. KDE is a cooperative enterprise in which no single entity controls the efforts or products of KDE to the exclusion of others. Everyone is welcome to join and contribute to KDE, including you."
-    },
-    "general_error_unknown": {
-        "message": "Error desconegut"
-    },
-    "options_plugin_downloads_title": {
-        "message": "Mostra les baixades a l'àrea de notificacions"
-    },
-    "options_plugin_kdeconnect_title": {
-        "message": "Envia a través del KDE Connect"
-    },
-    "options_title": {
-        "message": "Plasma Integration Settings"
-    },
-    "options_about_donate": {
-        "message": "If you like what you saw, please consider <a href=\"$1\">donating to KDE</a>, so we can continue to make the best free software possible."
-    },
-    "options_about_copyright": {
-        "message": "© 2017, 2018 Kai Uwe Broulik and David Edmundson"
-    },
-    "options_restore_defaults": {
-        "message": "Restaura als valors predeterminats"
-    },
-    "options_tab_general": {
-        "message": "General"
-    },
-    "options_save_success": {
-        "message": "L'arranjament s'ha guardat amb èxit"
-    },
-    "options_save": {
-        "message": "Guarda"
-    },
-    "options_plugin_tabsrunner_description": {
-        "message": "Make sure the “Browser Tabs” module is enabled in <a id=\"$1\" href=\"$2\">Plasma Search settings</a>."
+    "options_about_bugs": {
+        "message": "Si trobeu un problema, comproveu la <a href=\"$1\">llista d'errors oberts</a> i després <a href=\"$2\">ompliu un informe d'error</a>."
     },
     "options_plugin_tabsrunner_title": {
         "message": "Cerca les pestanyes del navegador a la finestra «Executa una ordre»"
     },
-    "options_plugin_breezeScrollBars_description": {
-        "message": "<small>This may interfere with the appearance of websites that already apply a custom styling to their scroll bars.</small>"
-    },
     "options_plugin_kdeconnect_description": {
-        "message": "Adds a context menu entry to links enabling you to send them to your phone and other paired devices using <a href=\"$1\">KDE Connect</a>."
-    },
-    "options_about_translated_by": {
-        "message": "Traduït per: $1"
-    },
-    "general_error_port_startupfail": {
-        "message": "Failed to connect to the native host. Make sure the 'plasma-browser-integration' package is installed."
-    },
-    "options_plugin_mpris_description": {
-        "message": "Lets you control video and audio players in websites using the Media Controller plasmoid."
-    },
-    "options_about_translators": {
-        "message": "Kai Uwe Broulik"
-    },
-    "kdeconnect_open_device": {
-        "message": "Obri a «$1»"
+        "message": "Afig una entrada al menú contextual a enllaços que permeten enviar-los al telèfon i a altres dispositius aparellats usant el <a href=\"$1\">Connect del KDE</a>."
     },
     "general_error_title": {
         "message": "Error d'integració del navegador al Plasma"
     },
-    "options_about_bugs": {
-        "message": "If you find an issue, please check the <a href=\"$1\">list of open bugs</a> and then <a href=\"$2\">file a bug report</a>."
+    "options_tab_about": {
+        "message": "Quant a"
+    },
+    "options_title": {
+        "message": "Plasma Integration Settings"
+    },
+    "options_plugin_mpris_title": {
+        "message": "Controls multimèdia"
+    },
+    "options_about_translated_by": {
+        "message": "Traduït per: $1"
     },
     "options_plugin_breezeScrollBars_title": {
         "message": "Usa barres de desplaçament de l'estil Brisa"
     },
+    "options_about_donate": {
+        "message": "Si vos agrada el que veieu, per favor, considereu fer una <a href=\"$1\">donació a KDE</a>, per tal de continuar fent el millor programari lliure possible."
+    },
+    "general_error_port_startupfail": {
+        "message": "Failed to connect to the native host. Make sure the 'plasma-browser-integration' package is installed."
+    },
+    "options_save_success": {
+        "message": "L'arranjament s'ha guardat amb èxit"
+    },
+    "options_save_failed": {
+        "message": "Ha fallat en guardar l'arranjament"
+    },
+    "options_save": {
+        "message": "Guarda"
+    },
+    "options_about_created_by_kde": {
+        "message": "Aquesta ampliació del navegador fou creada per la <a href=\"$1\">Comunitat "
+    },
+    "options_plugin_kdeconnect_title": {
+        "message": "Envia a través del KDE Connect"
+    },
+    "options_about_license": {
+        "message": "Llicència: <a href=\"$1\">Llicència pública general de GNU versió 3</a>"
+    },
+    "options_plugin_mpris_description": {
+        "message": "Permet controlar els reproductors de vídeo i àudio a llocs web usant el plasmoide Media Controller."
+    },
+    "options_plugin_breezeScrollBars_description": {
+        "message": "<small>Això pot interferir amb l'aparença de llocs web que ja apliquen un estil personalitzat a les barres de desplaçament.</small>"
+    },
+    "general_error_unknown": {
+        "message": "Error desconegut"
+    },
     "general_error_port_disconnect": {
         "message": "El servidor natiu s'ha desconnectat inesperadament: $1"
     },
-    "options_tab_about": {
-        "message": "Quant a"
+    "options_plugin_tabsrunner_description": {
+        "message": "Assegureu-vos que el mòdul «Pestanyes del navegador» està activat a l'<a id=\"$1\" href=\"$2\">arranjament de la Cerca del Plasma</a>."
+    },
+    "options_about_kde": {
+        "message": "KDE és una xarxa mundial d'enginyers informàtics, artistes, escriptors, traductors i facilitadors compromesos amb el desenvolupament de <a href=\"$1\">programari lliure</a> (Free Software). Aquesta comunitat ha creat centenars d'aplicacions de programari lliure com a part dels entorns de treball del KDE («KDE Frameworks»), espais de treball i aplicacions. KDE és una iniciativa cooperativa en el qual cap entitat individual controla els esforços o els productes del KDE per a excloure'n d'altres. Tothom és benvingut a afegir-se i col·laborar amb el KDE, incloent-vos."
+    },
+    "options_restore_defaults": {
+        "message": "Restaura als valors predeterminats"
+    },
+    "options_plugin_downloads_title": {
+        "message": "Mostra les baixades a l'àrea de notificacions"
+    },
+    "kdeconnect_open_via": {
+        "message": "Obri via el KDE Connect"
+    },
+    "kdeconnect_open_device": {
+        "message": "Obri a «$1»"
+    },
+    "options_about_translators": {
+        "message": "Kai Uwe Broulik"
+    },
+    "options_about_copyright": {
+        "message": "© 2017, 2018 Kai Uwe Broulik and David Edmundson"
+    },
+    "options_tab_general": {
+        "message": "General"
     }
 }

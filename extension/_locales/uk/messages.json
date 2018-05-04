@@ -1,92 +1,92 @@
 {
-    "options_plugin_tabsrunner_title": {
-        "message": "Шукати вкладки у вікні «Виконати команду»"
-    },
-    "options_plugin_kdeconnect_description": {
-        "message": "Adds a context menu entry to links enabling you to send them to your phone and other paired devices using <a href=\"$1\">KDE Connect</a>."
-    },
-    "options_plugin_downloads_title": {
-        "message": "Показувати отримання даних у області сповіщення"
-    },
-    "options_about_bugs": {
-        "message": "If you find an issue, please check the <a href=\"$1\">list of open bugs</a> and then <a href=\"$2\">file a bug report</a>."
-    },
-    "kdeconnect_open_device": {
-        "message": "Відкрити у «$1»"
-    },
-    "options_plugin_breezeScrollBars_title": {
-        "message": "Смужки гортання у стилі Breeze"
-    },
-    "options_about_donate": {
-        "message": "If you like what you saw, please consider <a href=\"$1\">donating to KDE</a>, so we can continue to make the best free software possible."
-    },
-    "general_error_port_disconnect": {
-        "message": "Зв'язок із модулем обробки неочікувано розірвано: $1"
-    },
-    "options_tab_about": {
-        "message": "Про програму"
+    "options_about_kde": {
+        "message": "KDE — це всесвітня спільнота програмістів, художників, авторів текстів, перекладачів та фахівців з полегшення користування програмами, які роблять свій внесок до розвитку <a href=\"$1\">вільного програмного забезпечення</a> Цією спільнотою створено сотні вільних програм, які є частиною бібліотек Frameworks, робочих просторів та програм KDE.<br />Розробка KDE є спільною працею, у якій жоден з учасників не має переважного контролю над зусиллями або результатами роботи інших розробників KDE. Кожен може долучитися і зробити свій внесок до KDE, зокрема це можете зробити ви."
     },
     "options_plugin_breezeScrollBars_description": {
-        "message": "<small>This may interfere with the appearance of websites that already apply a custom styling to their scroll bars.</small>"
-    },
-    "options_save_success": {
-        "message": "Параметри успішно збережено"
-    },
-    "options_title": {
-        "message": "Параметри інтеграції Плазми"
-    },
-    "options_about_created_by_kde": {
-        "message": "Це розширення браузера створено <a href=\"$1\">Спільнотою KDE</a>."
-    },
-    "options_plugin_kdeconnect_title": {
-        "message": "Надіслати за допомогою KDE Connect"
+        "message": "<small>Це може не відповідати загальній концепції вигляду сайтів, де вже застосовано нетиповий стиль до смужок гортання.</small>"
     },
     "options_about_copyright": {
         "message": "© Kai Uwe Broulik та David Edmundson, 2017, 2018"
     },
-    "options_plugin_tabsrunner_description": {
-        "message": "Make sure the “Browser Tabs” module is enabled in <a id=\"$1\" href=\"$2\">Plasma Search settings</a>."
-    },
-    "options_about_kde": {
-        "message": "KDE is a world-wide network of software engineers, artists, writers, translators and facilitators who are committed to <a href=\"$1\">Free Software</a> development. This community has created hundreds of Free Software applications as part of the KDE frameworks, workspaces and applications. KDE is a cooperative enterprise in which no single entity controls the efforts or products of KDE to the exclusion of others. Everyone is welcome to join and contribute to KDE, including you."
+    "kdeconnect_open_via": {
+        "message": "Відкрити за допомогою KDE Connect"
     },
     "options_about_translators": {
         "message": "Kai Uwe Broulik"
     },
-    "general_error_unknown": {
-        "message": "Невідома помилка"
+    "options_title": {
+        "message": "Параметри інтеграції Плазми"
     },
-    "options_tab_general": {
-        "message": "Загальне"
+    "options_plugin_tabsrunner_description": {
+        "message": "Переконайтеся, що модуль «Вкладки навігатора» увімкнено у <a id=\"$1\" href=\"$2\">параметрах пошуку у Плазмі</a>."
     },
-    "options_plugin_mpris_description": {
-        "message": "Lets you control video and audio players in websites using the Media Controller plasmoid."
+    "options_plugin_kdeconnect_title": {
+        "message": "Надіслати за допомогою KDE Connect"
     },
     "options_restore_defaults": {
         "message": "Відновити типові параметри"
     },
-    "options_save": {
-        "message": "Зберегти"
+    "options_about_created_by_kde": {
+        "message": "Це розширення браузера створено <a href=\"$1\">Спільнотою KDE</a>."
+    },
+    "general_error_unknown": {
+        "message": "Невідома помилка"
+    },
+    "options_plugin_mpris_description": {
+        "message": "Надає вам змогу керувати відтворенням відео та звуку на сайтах за допомогою плазмоїда керування відтворення мультимедійних даних."
+    },
+    "options_tab_about": {
+        "message": "Про програму"
+    },
+    "kdeconnect_open_device": {
+        "message": "Відкрити у «$1»"
     },
     "general_error_port_startupfail": {
-        "message": "Failed to connect to the native host. Make sure the 'plasma-browser-integration' package is installed."
+        "message": "Не вдалося встановити зв'язок із вузлом. Переконайтеся, що встановлено пакунок plasma-browser-integration."
     },
-    "options_about_translated_by": {
-        "message": "Переклад: $1"
+    "options_about_donate": {
+        "message": "Якщо вам подобається наша програма, будь ласка, <a href=\"$1\">допоможіть KDE фінансово</a>, уможлививши подальшу розробку якомога кращого вільного програмного забезпечення."
     },
-    "options_about_license": {
-        "message": "License: <a href=\"$1\">GNU General Public License Version 3</a>"
+    "options_save_success": {
+        "message": "Параметри успішно збережено"
     },
     "options_save_failed": {
         "message": "Не вдалося зберегти параметри"
     },
-    "options_plugin_mpris_title": {
-        "message": "Керування відтворенням"
+    "options_save": {
+        "message": "Зберегти"
+    },
+    "options_plugin_downloads_title": {
+        "message": "Показувати отримання даних у області сповіщення"
+    },
+    "options_plugin_breezeScrollBars_title": {
+        "message": "Смужки гортання у стилі Breeze"
     },
     "general_error_title": {
         "message": "Помилка інтеграція браузера із Плазмою"
     },
-    "kdeconnect_open_via": {
-        "message": "Відкрити за допомогою KDE Connect"
+    "options_about_translated_by": {
+        "message": "Переклад: $1"
+    },
+    "options_plugin_kdeconnect_description": {
+        "message": "Додати до контекстного меню пункт для посилань, який уможливить надсилання посилань на телефон або інший з'єднаний пристрій за допомогою <a href=\"$1\">KDE Connect</a>."
+    },
+    "options_plugin_mpris_title": {
+        "message": "Керування відтворенням"
+    },
+    "options_tab_general": {
+        "message": "Загальне"
+    },
+    "general_error_port_disconnect": {
+        "message": "Зв'язок із модулем обробки неочікувано розірвано: $1"
+    },
+    "options_about_license": {
+        "message": "Умови ліцензування: <a href=\"$1\">Загальна громадська ліцензія GNU версії "
+    },
+    "options_about_bugs": {
+        "message": "Якщо вам вдасться знайти ваду, будь ласка, пошукайте її у <a href=\"$1\">списку відомих вад</a>. Якщо не знайдете, <a href=\"$2\">створіть новий звіт щодо вади</a>."
+    },
+    "options_plugin_tabsrunner_title": {
+        "message": "Шукати вкладки у вікні «Виконати команду»"
     }
 }
