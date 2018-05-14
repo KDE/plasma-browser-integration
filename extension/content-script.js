@@ -182,13 +182,6 @@ addCallback("mpris", "setLoop", function (message) {
     }
 });
 
-// TODO this thing will eventually be invoked by our extension to ask the page
-// for a player. We could potentially hook that up to the "playing audio" icon on the tab
-// or check that when new metadata arrives over media sessions or something like that
-addCallback("mpris", "checkPlayer", function () {
-    //registerAllPlayers();
-});
-
 function playerPlaying(player) {
     setPlayerActive(player);
 }
@@ -233,8 +226,6 @@ function registerPlayer(player) {
         //console.log("Already know", player);
         return;
     }
-
-    console.log("Register player", player);
 
     // auto-playing player, become active right away
     if (!player.paused) {
