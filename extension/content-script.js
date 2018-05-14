@@ -189,6 +189,14 @@ addCallback("mpris", "checkPlayer", function () {
     //registerAllPlayers();
 });
 
+function playerPlaying(player) {
+    setPlayerActive(player);
+}
+
+function playerPaused(player) {
+    sendPlayerInfo(player, "paused");
+}
+
 function setPlayerActive(player) {
     // Ignore short sounds, they are most likely a chat notification sound
     // but still allow when undetermined (e.g. video stream)
@@ -230,14 +238,14 @@ function registerPlayer(player) {
 
     // auto-playing player, become active right away
     if (!player.paused) {
-        setPlayerActive(player);
+        playerPlaying(player);
     }
     player.addEventListener("play", function () {
-        setPlayerActive(player);
+        playerPlaying(player);
     });
 
     player.addEventListener("pause", function () {
-        sendPlayerInfo(player, "paused");
+        playerPaused(player);
     });
 
     // what about "stalled" event?
@@ -482,9 +490,17 @@ if (document.documentElement.tagName.toLowerCase() === "html") {
             playerMetadata = json.payload;
 
             sendMessage("mpris", "metadata", json.payload);
-        /*} else if (action === "playbackState") {
-            playerPlaybackState = json.payload;
-            sendMessage("mpris", "playbackState", json.payload);*/
+        } else if (action === "playbackState") {
+            var playbackState = json.payload;
+
+            if (activePlayer) {
+                if (playbackState === "playing") {
+                    playerPlaying(activePlayer);
+                } else if (playbackState === "paused") {
+                    playerPaused(activePlayer);
+                }
+            }
+
         } else if (action === "callbacks") {
             playerCallbacks = json.payload;
             sendMessage("mpris", "callbacks", json.payload);
