@@ -75,6 +75,18 @@ if (!IS_FIREFOX) {
 // MPRIS
 // ------------------------------------------------------------------------
 //
+
+// we give our transfer div a "random id" for privacy
+// from https://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript
+var mediaSessionsTransferDivId ='xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+    var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
+    return v.toString(16);
+});
+
+// also give the function a "random" name as we have to have it in global scope to be able
+// to invoke callbacks from outside
+var mediaSessionsClassName = mediaSessionsTransferDivId.replace(/-/g, "");
+
 var activePlayer;
 var playerMetadata = {};
 var playerCallbacks = [];
@@ -123,7 +135,7 @@ addCallback("mpris", "next", function () {
         executeScript(`
             function() {
                 try {
-                    plasmaMediaSessions.executeCallback("nexttrack");
+                    ${mediaSessionsClassName}.executeCallback("nexttrack");
                 } catch (e) {
                     console.warn("Exception executing 'nexttrack' media sessions callback", e);
                 }
@@ -137,7 +149,7 @@ addCallback("mpris", "previous", function () {
         executeScript(`
             function() {
                 try {
-                    plasmaMediaSessions.executeCallback("previoustrack");
+                    ${mediaSessionsClassName}.executeCallback("previoustrack");
                 } catch (e) {
                     console.warn("Exception executing 'previoustrack' media sessions callback", e);
                 }
@@ -302,7 +314,7 @@ function playerPlay() {
         executeScript(`
             function() {
                 try {
-                    plasmaMediaSessions.executeCallback("play");
+                    ${mediaSessionsClassName}.executeCallback("play");
                 } catch (e) {
                     console.warn("Exception executing 'play' media sessions callback", e);
                 }
@@ -318,7 +330,7 @@ function playerPause() {
         executeScript(`
             function() {
                 try {
-                    plasmaMediaSessions.executeCallback("pause");
+                    ${mediaSessionsClassName}.executeCallback("pause");
                 } catch (e) {
                     console.warn("Exception executing 'pause' media sessions callback", e);
                 }
@@ -380,52 +392,45 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // tagName always returned "HTML" for me but I wouldn't trust it always being uppercase
 if (document.documentElement.tagName.toLowerCase() === "html") {
-    // we give our transfer div a "random id" for privacy
-    // from https://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript
-    var transferDivId ='xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-        var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
-        return v.toString(16);
-    });
-
     executeScript(`
         function() {
-            plasmaMediaSessions = function() {};
-            plasmaMediaSessions.callbacks = {};
-            plasmaMediaSessions.metadata = {};
-            plasmaMediaSessions.playbackState = "none";
-            plasmaMediaSessions.sendMessage = function(action, payload) {
-                var transferItem = document.getElementById('${transferDivId}');
+            ${mediaSessionsClassName} = function() {};
+            ${mediaSessionsClassName}.callbacks = {};
+            ${mediaSessionsClassName}.metadata = {};
+            ${mediaSessionsClassName}.playbackState = "none";
+            ${mediaSessionsClassName}.sendMessage = function(action, payload) {
+                var transferItem = document.getElementById('${mediaSessionsTransferDivId}');
                 transferItem.innerText = JSON.stringify({action: action, payload: payload});
 
                 var event = document.createEvent('CustomEvent');
                 event.initEvent('payloadChanged', true, true);
                 transferItem.dispatchEvent(event);
             };
-            plasmaMediaSessions.executeCallback = function (action) {
+            ${mediaSessionsClassName}.executeCallback = function (action) {
                 this.callbacks[action]();
             };
 
             navigator.mediaSession = {};
             navigator.mediaSession.setActionHandler = function (name, cb) {
                 if (cb) {
-                    plasmaMediaSessions.callbacks[name] = cb;
+                    ${mediaSessionsClassName}.callbacks[name] = cb;
                 } else {
-                    delete plasmaMediaSessions.callbacks[name];
+                    delete ${mediaSessionsClassName}.callbacks[name];
                 }
-                plasmaMediaSessions.sendMessage("callbacks", Object.keys(plasmaMediaSessions.callbacks));
+                ${mediaSessionsClassName}.sendMessage("callbacks", Object.keys(${mediaSessionsClassName}.callbacks));
             };
             Object.defineProperty(navigator.mediaSession, "metadata", {
-                get: function() { return plasmaMediaSessions.metadata; },
+                get: function() { return ${mediaSessionsClassName}.metadata; },
                 set: function(newValue) {
-                    plasmaMediaSessions.metadata = newValue;
-                    plasmaMediaSessions.sendMessage("metadata", newValue.data);
+                    ${mediaSessionsClassName}.metadata = newValue;
+                    ${mediaSessionsClassName}.sendMessage("metadata", newValue.data);
                 }
             });
             Object.defineProperty(navigator.mediaSession, "playbackState", {
-                get: function() { return plasmaMediaSessions.playbackState; },
+                get: function() { return ${mediaSessionsClassName}.playbackState; },
                 set: function(newValue) {
-                    plasmaMediaSessions.playbackState = newValue;
-                    plasmaMediaSessions.sendMessage("playbackState", newValue);
+                    ${mediaSessionsClassName}.playbackState = newValue;
+                    ${mediaSessionsClassName}.sendMessage("playbackState", newValue);
                 }
             });
 
@@ -461,7 +466,7 @@ if (document.documentElement.tagName.toLowerCase() === "html") {
     // now the fun part of getting the stuff from our page back into our extension...
     // cannot access extensions from innocent page JS for security
     var transferItem = document.createElement("div");
-    transferItem.setAttribute("id", transferDivId);
+    transferItem.setAttribute("id", mediaSessionsTransferDivId);
     transferItem.style.display = "none";
 
     (document.head || document.documentElement).appendChild(transferItem);
