@@ -84,8 +84,8 @@ var mediaSessionsTransferDivId ='xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/
 });
 
 // also give the function a "random" name as we have to have it in global scope to be able
-// to invoke callbacks from outside
-var mediaSessionsClassName = mediaSessionsTransferDivId.replace(/-/g, "");
+// to invoke callbacks from outside, UUID might start with a number, so prepend something
+var mediaSessionsClassName = "f" + mediaSessionsTransferDivId.replace(/-/g, "");
 
 var activePlayer;
 var playerMetadata = {};
