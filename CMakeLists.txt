@@ -72,7 +72,10 @@ if (INSTALL_CHROME_MANIFEST) # Install a policy to have browsers automatically a
     # google-chrome
     install(FILES chrome_install_from_store_policy DESTINATION ${KDE_INSTALL_DATADIR}/google-chrome/extensions RENAME ${CHROME_EXTENSION_ID}.json)
     # chromium
-    install(FILES chrome_install_from_store_policy DESTINATION ${KDE_INSTALL_DATADIR}/chromium-browser/extensions RENAME ${CHROME_EXTENSION_ID}.json)
+    # in ubuntu and derivatives, this should be installed in the chromium-browser/extensions,
+    # but since this is distribution specific path, let's use what upstream uses
+    # ideally ubuntu and derivatives should patch this in their packaging
+    install(FILES chrome_install_from_store_policy DESTINATION ${KDE_INSTALL_DATADIR}/chromium/extensions RENAME ${CHROME_EXTENSION_ID}.json)
 endif()
 
 # TODO firefox
