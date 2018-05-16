@@ -1,7 +1,21 @@
 [Desktop Entry]
 Type=Service
 Name=Plasma Browser Integration Installation Reminder
+Name[ca]=Recordatori d'instal·lació de la Integració del navegador al Plasma
+Name[gl]=Lembranza de instalación da integración co navegador de Plasma
+Name[pt]=Chamada de Atenção da Instalação da Integração com o Navegador do Plasma
+Name[sv]=Påminnelse om installation av Plasma webbläsarintegrering
+Name[uk]=Нагадування щодо встановлення інтеграції браузера із Плазмою
+Name[x-test]=xxPlasma Browser Integration Installation Reminderxx
+Name[zh_TW]=Plasma 瀏覽器整合安裝提醒
 Comment=Provides a link to the browser extension if the Plasma Browser Integration host is installed
+Comment[ca]=Proporciona un enllaç a l'extensió del navegador si està instal·lat el servidor de la Integració del navegador al Plasma
+Comment[gl]=Fornece unha ligazón á extensión do navegador se o servidor de integración co navegador de Plasma está instalado.
+Comment[pt]=Oferece uma ligação para a extensão do navegador, caso o anfitrião da Integração do Navegador do Plasma esteja instalada
+Comment[sv]=Tillhandahåller en länk till webbläsarutökningen om värden för Plasma webbläsarintegrering är installerad
+Comment[uk]=Надає посилання на розширення браузера, якщо встановлено основну частину засобу інтеграції браузера із Плазмою
+Comment[x-test]=xxProvides a link to the browser extension if the Plasma Browser Integration host is installedxx
+Comment[zh_TW]=提供瀏覽器擴充套件連結，如果 Plasma 瀏覽器整合主機已經安裝。
 
 X-KDE-ServiceTypes=KDEDModule
 X-KDE-Library=browserintegrationreminder
