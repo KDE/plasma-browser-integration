@@ -36,6 +36,12 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
 option(INSTALL_CHROME_MANIFEST "Whether to install a configuration file that makes Chrome automatically download the extension from the store" FALSE)
 add_feature_info(INSTALL_CHROME_MANIFEST ${INSTALL_CHROME_MANIFEST} "Install extension from Chrome store automatically")
 
+# in ubuntu and derivatives, this should be installed in the chromium-browser/extensions,
+# but since this is distribution specific path, let's use what upstream uses
+# ideally ubuntu and derivatives should patch this in their packaging
+set(CHROMIUM_EXTENSIONS_DIR "chromium" CACHE STRING "Directory name to install Chromium extensions into")
+add_feature_info(CHROMIUM_EXTENSIONS_DIR On "Directory name to install Chromium extensions into is '${CHROMIUM_EXTENSIONS_DIR}'")
+
 option(COPY_MESSAGING_HOST_FILE_HOME "Copy the native messaging hosts json file to user home dir" FALSE)
 add_feature_info(COPY_MESSAGING_HOST_FILE_HOME ${COPY_MESSAGING_HOST_FILE_HOME} "Enable this option to copy the native messaging hosts json file to home dir if you install plasma-browser-integration to custom prefix (non-/usr)")
 
@@ -72,10 +78,7 @@ if (INSTALL_CHROME_MANIFEST) # Install a policy to have browsers automatically a
     # google-chrome
     install(FILES chrome_install_from_store_policy DESTINATION ${KDE_INSTALL_DATADIR}/google-chrome/extensions RENAME ${CHROME_EXTENSION_ID}.json)
     # chromium
-    # in ubuntu and derivatives, this should be installed in the chromium-browser/extensions,
-    # but since this is distribution specific path, let's use what upstream uses
-    # ideally ubuntu and derivatives should patch this in their packaging
-    install(FILES chrome_install_from_store_policy DESTINATION ${KDE_INSTALL_DATADIR}/chromium/extensions RENAME ${CHROME_EXTENSION_ID}.json)
+    install(FILES chrome_install_from_store_policy DESTINATION ${KDE_INSTALL_DATADIR}/${CHROMIUM_EXTENSIONS_DIR}/extensions RENAME ${CHROME_EXTENSION_ID}.json)
 endif()
 
 # TODO firefox
