@@ -1,5 +1,7 @@
 body {
-    width: 600px;
+    min-width: 600px;
+    /* prevent scroll bars*/
+    overflow: hidden;
 }
 
 .tabbar {
@@ -7,8 +9,8 @@ body {
     padding: 0;
     /* color of separator line below heading */
     background-color: #d3d3d3;
-    /* undo body margins to make tab bar stick to the top*/
-    margin: -15px -17px 0px -17px;
+    /* undo body side margins*/
+    margin: 0 -17px 0px -17px;
     padding: 0px 17px;
 }
 .tabbar > li {
