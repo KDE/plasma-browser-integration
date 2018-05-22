@@ -352,9 +352,13 @@ document.addEventListener("DOMContentLoaded", function() {
     var observer = new MutationObserver(function (mutations) {
         mutations.forEach(function (mutation) {
             mutation.addedNodes.forEach(function (node) {
-                if (node.tagName === "VIDEO" || node.tagName === "AUDIO") {
-                    registerPlayer(node);
+                if (typeof node.querySelectorAll !== "function") {
+                    return;
                 }
+                var players = node.querySelectorAll("video,audio");
+                players.forEach(function (player) {
+                    registerPlayer(player);
+                });
             });
         });
     });
