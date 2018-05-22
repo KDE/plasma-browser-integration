@@ -2,6 +2,7 @@
 Type=Service
 Name=Plasma Browser Integration Installation Reminder
 Name[ca]=Recordatori d'instal·lació de la Integració del navegador al Plasma
+Name[ca@valencia]=Recordatori d'instal·lació de la Integració del navegador al Plasma
 Name[es]=Recordatorio de la instalación de la integración del navegador con Plasma
 Name[gl]=Lembranza de instalación da integración co navegador de Plasma
 Name[it]=Promemoria dell'installazione dell'integrazione del browser con Plasma
@@ -15,6 +16,7 @@ Name[zh_CN]=Plasma 浏览器集成安装提醒
 Name[zh_TW]=Plasma 瀏覽器整合安裝提醒
 Comment=Provides a link to the browser extension if the Plasma Browser Integration host is installed
 Comment[ca]=Proporciona un enllaç a l'extensió del navegador si està instal·lat el servidor de la Integració del navegador al Plasma
+Comment[ca@valencia]=Proporciona un enllaç a l'extensió del navegador si està instal·lat el servidor de la Integració del navegador al Plasma
 Comment[es]=Proporciona un enlace a la extensión del navegador si se ha instalado el servidor de integración del navegador con Plasma
 Comment[gl]=Fornece unha ligazón á extensión do navegador se o servidor de integración co navegador de Plasma está instalado.
 Comment[it]=Fornisce un collegamento all'estensione del browser se l'host dell'integrazione del browser con Plasma è installato
