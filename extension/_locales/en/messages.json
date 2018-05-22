@@ -3,14 +3,6 @@
         "description": "Title for settings page",
         "message": "Plasma Integration Settings"
     },
-    "options_restore_defaults": {
-        "description": "Link to restore the default settings",
-        "message": "Restore Defaults"
-    },
-    "options_save": {
-        "description": "Button to save settings",
-        "message": "Save"
-    },
     "options_save_failed": {
         "message": "Saving settings failed"
     },
