@@ -66,7 +66,7 @@ install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.plasma.chrome_integration.json
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.plasma.chrome_integration.json DESTINATION ${KDE_INSTALL_FULL_SYSCONFDIR}/opt/chrome/native-messaging-hosts/ RENAME org.kde.plasma.browser_integration.json)
 # firefox
 
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.plasma.firefox_integration.json DESTINATION ${CMAKE_INSTALL_PREFIX}/lib/mozilla/native-messaging-hosts/ RENAME org.kde.plasma.browser_integration.json)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.plasma.firefox_integration.json DESTINATION ${CMAKE_INSTALL_LIBDIR}/mozilla/native-messaging-hosts/ RENAME org.kde.plasma.browser_integration.json)
 
 if (COPY_MESSAGING_HOST_FILE_HOME)
     install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.plasma.firefox_integration.json DESTINATION $ENV{HOME}/.mozilla/native-messaging-hosts/ RENAME org.kde.plasma.browser_integration.json)
