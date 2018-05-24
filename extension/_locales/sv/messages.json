@@ -1,86 +1,86 @@
 {
+    "general_error_unknown": {
+        "message": "Okänt fel"
+    },
+    "options_plugin_mpris_description": {
+        "message": "Låter dig styra video- och ljudspelare på webbplatser via Plasmoiden "
+    },
     "kdeconnect_open_device": {
         "message": "Öppna på '$1'"
-    },
-    "options_plugin_downloads_title": {
-        "message": "Visa nerladdningar i underrättelseområdet"
-    },
-    "options_about_license": {
-        "message": "Licens: <a href=\"$1\">GNU General Public License Version 3</a>"
     },
     "options_about_donate": {
         "message": "Om du tycker om vad du ser, fundera gärna på att <a href=\"$1\">bidra till KDE</a>, så att vi kan fortsätta att skapa den bästa möjliga fria "
     },
-    "options_about_kde": {
-        "message": "KDE är ett världsomspännande nätverk av programvaruingenjörer, grafiker, författare, översättare och ledare som har åtagit sig att utveckla <a href=\"$1\">fri programvara</a> Gemenskapen har skapat hundratals program med fri programvara som en del av KDE:s ramverk, arbetsrymder och applikationer. KDE är en kooperativ organisation där ingen enskild enhet bestämmer över arbetet eller KDE:s produkter med uteslutande av andra. Alla är välkomna att gå med och bidra till KDE, även du."
-    },
-    "options_plugin_mpris_title": {
-        "message": "Mediakontroller"
-    },
-    "options_plugin_kdeconnect_title": {
-        "message": "Skicka via KDE:s anslutningstjänst"
-    },
-    "options_save_success": {
-        "message": "Inställningar sparade med lyckat resultat"
-    },
-    "options_save_failed": {
-        "message": "Misslyckades spara inställningar"
+    "general_error_title": {
+        "message": "Fel för Plasma webbläsarintegrering"
     },
     "kdeconnect_open_via": {
         "message": "Öppna via KDE:s anslutningstjänst"
     },
-    "options_about_translated_by": {
-        "message": "Översatt av: $1"
-    },
-    "general_error_unknown": {
-        "message": "Okänt fel"
-    },
     "options_plugin_tabsrunner_title": {
         "message": "Sök efter webbläsarflikar i fönstret \"Kör kommando\\"
-    },
-    "options_plugin_breezeScrollBars_title": {
-        "message": "Använd Breeze-liknande rullningslister"
-    },
-    "options_plugin_kdeconnect_description": {
-        "message": "Lägger till ett sammanhangsberoende menyalternativ till länkar, vilket gör det möjligt att skicka dem till en telefon eller andra ihopparade enheter genom att använda <a href=\"$1\">KDE:s anslutningstjänst</a>."
-    },
-    "general_error_port_disconnect": {
-        "message": "Värddatorn kopplades oväntat bort: $1"
-    },
-    "options_tab_about": {
-        "message": "Om"
-    },
-    "options_plugin_breezeScrollBars_description": {
-        "message": "Det kan påverkar utseendet på webbplatser som redan använder egna stilar för sina rullningslister."
     },
     "options_plugin_tabsrunner_description": {
         "message": "Försäkra dig om att modulen \"Webbläsarflikar\" är aktiverad i <a id=\"$1\" href=\"$2\">Plasma sökinställningar</a>."
     },
-    "options_about_translators": {
-        "message": "Stefan Asserhäll"
+    "options_tab_general": {
+        "message": "Allmänt"
     },
-    "options_title": {
-        "message": "Plasma integreringsinställningar"
-    },
-    "general_error_title": {
-        "message": "Fel för Plasma webbläsarintegrering"
-    },
-    "options_about_created_by_kde": {
-        "message": "Den här webbläsarutökningen skapades av <a href=\"$1\">KDE:s gemenskap</a>. Du hittar mer information om projektet på <a href=\"$2\">KDE Community Wiki</"
-    },
-    "options_about_copyright": {
-        "message": "© 2017, 2018 Kai Uwe Broulik och David Edmundson"
+    "general_error_port_disconnect": {
+        "message": "Värddatorn kopplades oväntat bort: $1"
     },
     "general_error_port_startupfail": {
         "message": "Misslyckades ansluta till värddatorn. Försäkra dig om att paketet 'plasma-browser-integration' är installerat."
     },
+    "options_plugin_kdeconnect_description": {
+        "message": "Lägger till ett sammanhangsberoende menyalternativ till länkar, vilket gör det möjligt att skicka dem till en telefon eller andra ihopparade enheter genom att använda <a href=\"$1\">KDE:s anslutningstjänst</a>."
+    },
+    "options_about_translated_by": {
+        "message": "Översatt av: $1"
+    },
+    "options_about_kde": {
+        "message": "KDE är ett världsomspännande nätverk av programvaruingenjörer, grafiker, författare, översättare och ledare som har åtagit sig att utveckla <a href=\"$1\">fri programvara</a> Gemenskapen har skapat hundratals program med fri programvara som en del av KDE:s ramverk, arbetsrymder och applikationer. KDE är en kooperativ organisation där ingen enskild enhet bestämmer över arbetet eller KDE:s produkter med uteslutande av andra. Alla är välkomna att gå med och bidra till KDE, även du."
+    },
+    "options_about_translators": {
+        "message": "Stefan Asserhäll"
+    },
+    "options_about_copyright": {
+        "message": "© 2017, 2018 Kai Uwe Broulik och David Edmundson"
+    },
+    "options_tab_about": {
+        "message": "Om"
+    },
+    "options_plugin_downloads_title": {
+        "message": "Visa nerladdningar i underrättelseområdet"
+    },
+    "options_plugin_breezeScrollBars_title": {
+        "message": "Använd Breeze-liknande rullningslister"
+    },
+    "options_about_created_by_kde": {
+        "message": "Den här webbläsarutökningen skapades av <a href=\"$1\">KDE:s gemenskap</a>. Du hittar mer information om projektet på <a href=\"$2\">KDE Community Wiki</"
+    },
     "options_about_bugs": {
         "message": "Om du hittar ett problem, kontrollera <a href=\"$1\">listan över befintliga fel</a> och skicka därefter gärna in <a href=\"$2\">en felrapport</a>."
     },
-    "options_tab_general": {
-        "message": "Allmänt"
+    "options_plugin_kdeconnect_title": {
+        "message": "Skicka via KDE:s anslutningstjänst"
     },
-    "options_plugin_mpris_description": {
-        "message": "Låter dig styra video- och ljudspelare på webbplatser via Plasmoiden "
+    "options_title": {
+        "message": "Plasma integreringsinställningar"
+    },
+    "options_save_success": {
+        "message": "Inställningar sparade med lyckat resultat"
+    },
+    "options_plugin_mpris_title": {
+        "message": "Mediakontroller"
+    },
+    "options_save_failed": {
+        "message": "Misslyckades spara inställningar"
+    },
+    "options_plugin_breezeScrollBars_description": {
+        "message": "Det kan påverkar utseendet på webbplatser som redan använder egna stilar för sina rullningslister."
+    },
+    "options_about_license": {
+        "message": "Licens: <a href=\"$1\">GNU General Public License Version 3</a>"
     }
 }
