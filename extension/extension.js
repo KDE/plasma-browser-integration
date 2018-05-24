@@ -257,6 +257,13 @@ addCallback("mpris", "setPlaybackRate", function (message) {
 
 // callbacks from a browser tab to our extension
 addRuntimeCallback("mpris", "playing", function (message, sender) {
+    // Chrome doesn't run extensions in incognito by default but Firefox does
+    // so we disable media controls for them to prevent accidental private
+    // information leak on lock screen or now playing auto status in a messenger
+    if (IS_FIREFOX && sender.tab.incognito) {
+        return;
+    }
+
     currentPlayerTabId = sender.tab.id;
     console.log("player tab is now", currentPlayerTabId);
 
@@ -432,11 +439,20 @@ var whitelistedTabProperties = [
 // may access your tabs
 addCallback("tabsrunner", "getTabs", function (message) {
     chrome.tabs.query({}, function (tabs) {
-        // remove properties not in whitelist
-        var filteredTabs = filterArrayObjects(tabs, whitelistedTabProperties);
+        // remove incognito tabs and properties not in whitelist
+        var filteredTabs = tabs;
+
+        // Chrome doesn't run extensions in incognito by default but Firefox does so we exclude those tabs for it
+        if (IS_FIREFOX) {
+            filteredTabs = filteredTabs.filter(function (tab) {
+                return !tab.incognito;
+            });
+        }
+
+        var filteredTabs = filterArrayObjects(filteredTabs, whitelistedTabProperties);
 
         // Shared between the callbacks
-        var total = tabs.length;
+        var total = filteredTabs.length;
 
         var sendTabsIfComplete = function() {
             if (--total > 0) {
@@ -450,9 +466,9 @@ addCallback("tabsrunner", "getTabs", function (message) {
             });
         };
 
-        for (let tabIndex in tabs) {
+        for (let tabIndex in filteredTabs) {
             let currentIndex = tabIndex; // Not shared
-            var favIconUrl = tabs[tabIndex].favIconUrl;
+            var favIconUrl = filteredTabs[tabIndex].favIconUrl;
 
             if (!favIconUrl) {
                 sendTabsIfComplete();
