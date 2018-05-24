@@ -196,7 +196,9 @@ void TabsRunner::match(Plasma::RunnerContext &context)
             }
 
             if (icon.isNull()) {
-                if (browser == QLatin1String("chrome")) {
+                if (incognito) {
+                    iconName = QStringLiteral("face-smirk");// TODO QStringLiteral("incognito");
+                } else if (browser == QLatin1String("chrome")) {
                     iconName = QStringLiteral("google-chrome");
                 } else if (browser == QLatin1String("chromium")) {
                     iconName = QStringLiteral("chromium-browser");
@@ -207,10 +209,6 @@ void TabsRunner::match(Plasma::RunnerContext &context)
                 } else if (browser == QLatin1String("vivaldi")) {
                     iconName = QStringLiteral("vivaldi");
                 }
-            }
-
-            if (incognito) {
-                iconName = QStringLiteral("face-smirk");// TODO QStringLiteral("incognito");
             }
 
             if (audible) {
