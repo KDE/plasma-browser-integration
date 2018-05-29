@@ -45,6 +45,9 @@ add_feature_info(CHROMIUM_EXTENSIONS_DIR On "Directory name to install Chromium 
 option(COPY_MESSAGING_HOST_FILE_HOME "Copy the native messaging hosts json file to user home dir" FALSE)
 add_feature_info(COPY_MESSAGING_HOST_FILE_HOME ${COPY_MESSAGING_HOST_FILE_HOME} "Enable this option to copy the native messaging hosts json file to home dir if you install plasma-browser-integration to custom prefix (non-/usr)")
 
+set(MOZILLA_DIR "${CMAKE_INSTALL_PREFIX}/lib/mozilla" CACHE STRING "Mozilla directory")
+add_feature_info(MOZILLA_DIR On "Mozilla directory is '${MOZILLA_DIR}'")
+
 add_subdirectory(host)
 add_subdirectory(tabsrunner)
 add_subdirectory(reminder)
@@ -66,7 +69,7 @@ install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.plasma.chrome_integration.json
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.plasma.chrome_integration.json DESTINATION ${KDE_INSTALL_FULL_SYSCONFDIR}/opt/chrome/native-messaging-hosts/ RENAME org.kde.plasma.browser_integration.json)
 # firefox
 
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.plasma.firefox_integration.json DESTINATION ${CMAKE_INSTALL_PREFIX}/lib/mozilla/native-messaging-hosts/ RENAME org.kde.plasma.browser_integration.json)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.plasma.firefox_integration.json DESTINATION ${MOZILLA_DIR}/native-messaging-hosts/ RENAME org.kde.plasma.browser_integration.json)
 
 if (COPY_MESSAGING_HOST_FILE_HOME)
     install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.plasma.firefox_integration.json DESTINATION $ENV{HOME}/.mozilla/native-messaging-hosts/ RENAME org.kde.plasma.browser_integration.json)
