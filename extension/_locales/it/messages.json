@@ -1,78 +1,48 @@
 {
-    "options_tab_general": {
-        "message": "Generale"
-    },
-    "options_about_bugs": {
-        "message": "Se riscontri un problema, verifica la <a href=\"$1\">lista dei bug aperti</a> ed eventualmente <a href=\"$2\">apri una nuova segnalazione di bug</a>."
-    },
-    "options_tab_about": {
-        "message": "Informazioni"
-    },
-    "options_about_kde": {
-        "message": "KDE è una rete mondiale di ingegneri del software, artisti, scrittori, traduttori e assistenti che si dedicano allo sviluppo di <a href=\"$1\">software libero</a>. Questa comunità ha creato centinaia di applicazioni libere come parte di Frameworks, Workspaces e Applications di KDE. KDE è un'impresa cooperativa in cui nessuna singola entità controlla il lavoro o i prodotti di KDE a discapito altrui. Chiunque è invitato a unirsi e contribuire a KDE, tu incluso."
-    },
-    "options_about_created_by_kde": {
-        "message": "Questa estensione per il browser è stata creata dalla <a href=\"$1\">comunità KDE</a>. Puoi trovare ulteriori informazioni sul progetto nel <a href=\"$2\">wiki Community di KDE</a>."
-    },
-    "general_error_unknown": {
-        "message": "Errore sconosciuto"
-    },
-    "options_title": {
-        "message": "Impostazioni dell'integrazione con Plasma"
-    },
-    "general_error_port_startupfail": {
-        "message": "Impossibile contattare l'host nativo. Assicurati che il pacchetto «plasma-browser-integration» sia installato."
-    },
-    "options_plugin_mpris_description": {
-        "message": "Ti permette di controllare riproduttori video e audio presenti in siti web usando il plasmoide «Controllo multimediale»."
+    "options_plugin_downloads_title": {
+        "message": "Mostra gli scaricamenti nell'area di notifica"
     },
     "kdeconnect_open_device": {
         "message": "Apri in «$1»"
     },
-    "options_plugin_tabsrunner_title": {
-        "message": "Cerca schede del browser nella finestra «Esegui comando»"
-    },
-    "options_about_license": {
-        "message": "Licenza: <a href=\"$1\">GNU General Public License Versione 3</a>"
-    },
     "options_plugin_mpris_title": {
         "message": "Controlli multimediali"
-    },
-    "options_about_donate": {
-        "message": "Se ti piace quello che vedi, valuta una <a href=\"$1\">donazione a KDE</a>, in modo che possiamo continuare a realizzare il miglior software libero "
-    },
-    "general_error_title": {
-        "message": "Errore dell'integrazione del browser con Plasma"
-    },
-    "options_plugin_kdeconnect_title": {
-        "message": "Invia tramite KDE Connect"
-    },
-    "options_plugin_breezeScrollBars_title": {
-        "message": "Usa barre di scorrimento in stile Breeze"
-    },
-    "options_plugin_downloads_title": {
-        "message": "Mostra gli scaricamenti nell'area di notifica"
-    },
-    "options_plugin_breezeScrollBars_description": {
-        "message": "Questo può interferire con l'aspetto di siti web che applicano già uno stile personalizzato alla proprie barre di scorrimento."
-    },
-    "options_save_success": {
-        "message": "Impostazioni salvate correttamente"
-    },
-    "general_error_port_disconnect": {
-        "message": "L'host nativo si è disconnesso all'improvviso: $1"
-    },
-    "options_about_translated_by": {
-        "message": "Tradotto da: $1"
-    },
-    "options_plugin_kdeconnect_description": {
-        "message": "Aggiunge una voce al menu contestuale dei collegamenti che permette di inviarli al telefono o ad altri dispositivi associati tramite <a href=\"$1\">KDE Connect</a>."
     },
     "options_plugin_tabsrunner_description": {
         "message": "Assicurati che il modulo «Schede del browser» sia abilitato nelle <a id=\"$1\" href=\"$2\">impostazioni della ricerca di Plasma</a>."
     },
-    "options_about_translators": {
-        "message": "Luigi Toscano"
+    "options_plugin_kdeconnect_title": {
+        "message": "Invia tramite KDE Connect"
+    },
+    "options_plugin_tabsrunner_title": {
+        "message": "Cerca schede del browser nella finestra «Esegui comando»"
+    },
+    "options_plugin_breezeScrollBars_description": {
+        "message": "Questo può interferire con l'aspetto di siti web che applicano già uno stile personalizzato alla proprie barre di scorrimento."
+    },
+    "general_error_port_disconnect": {
+        "message": "L'host nativo si è disconnesso all'improvviso: $1"
+    },
+    "options_plugin_mpris_description": {
+        "message": "Ti permette di controllare riproduttori video e audio presenti in siti web usando il plasmoide «Controllo multimediale»."
+    },
+    "options_plugin_kdeconnect_description": {
+        "message": "Aggiunge una voce al menu contestuale dei collegamenti che permette di inviarli al telefono o ad altri dispositivi associati tramite <a href=\"$1\">KDE Connect</a>."
+    },
+    "options_about_translated_by": {
+        "message": "Tradotto da: $1"
+    },
+    "general_error_unknown": {
+        "message": "Errore sconosciuto"
+    },
+    "options_about_kde": {
+        "message": "KDE è una rete mondiale di ingegneri del software, artisti, scrittori, traduttori e assistenti che si dedicano allo sviluppo di <a href=\"$1\">software libero</a>. Questa comunità ha creato centinaia di applicazioni libere come parte di Frameworks, Workspaces e Applications di KDE. KDE è un'impresa cooperativa in cui nessuna singola entità controlla il lavoro o i prodotti di KDE a discapito altrui. Chiunque è invitato a unirsi e contribuire a KDE, tu incluso."
+    },
+    "options_tab_general": {
+        "message": "Generale"
+    },
+    "options_title": {
+        "message": "Impostazioni dell'integrazione con Plasma"
     },
     "options_about_copyright": {
         "message": "© 2017, 2018 Kai Uwe Broulik e David Edmundson"
@@ -80,7 +50,37 @@
     "options_save_failed": {
         "message": "Salvataggio delle impostazioni non riuscito"
     },
+    "options_about_license": {
+        "message": "Licenza: <a href=\"$1\">GNU General Public License Versione 3</a>"
+    },
+    "options_save_success": {
+        "message": "Impostazioni salvate correttamente"
+    },
+    "options_about_donate": {
+        "message": "Se ti piace quello che vedi, valuta una <a href=\"$1\">donazione a KDE</a>, in modo che possiamo continuare a realizzare il miglior software libero "
+    },
+    "options_about_created_by_kde": {
+        "message": "Questa estensione per il browser è stata creata dalla <a href=\"$1\">comunità KDE</a>. Puoi trovare ulteriori informazioni sul progetto nel <a href=\"$2\">wiki Community di KDE</a>."
+    },
+    "general_error_port_startupfail": {
+        "message": "Impossibile contattare l'host nativo. Assicurati che il pacchetto «plasma-browser-integration» sia installato."
+    },
+    "general_error_title": {
+        "message": "Errore dell'integrazione del browser con Plasma"
+    },
     "kdeconnect_open_via": {
         "message": "Apri tramite KDE Connect"
+    },
+    "options_tab_about": {
+        "message": "Informazioni"
+    },
+    "options_about_translators": {
+        "message": "Luigi Toscano"
+    },
+    "options_about_bugs": {
+        "message": "Se riscontri un problema, verifica la <a href=\"$1\">lista dei bug aperti</a> ed eventualmente <a href=\"$2\">apri una nuova segnalazione di bug</a>."
+    },
+    "options_plugin_breezeScrollBars_title": {
+        "message": "Usa barre di scorrimento in stile Breeze"
     }
 }
