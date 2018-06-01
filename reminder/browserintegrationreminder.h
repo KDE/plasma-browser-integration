@@ -65,6 +65,7 @@ private Q_SLOTS:
 private:
     QHash<QString, QUrl> m_browsers;
     QPointer<KStatusNotifierItem> m_sni;
+    QDBusServiceWatcher *m_watcher = nullptr;
     bool m_debug;
     int m_shownCount;
 };
