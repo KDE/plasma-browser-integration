@@ -47,6 +47,8 @@ K_PLUGIN_FACTORY_WITH_JSON(BrowserIntegrationReminderFactory,
                            "browserintegrationreminder.json",
                            registerPlugin<BrowserIntegrationReminder>();)
 
+static const QString s_dbusServiceName = QStringLiteral("org.kde.plasma.browser_integration");
+
 #define MAX_SHOW_COUNT 3
 
 BrowserIntegrationReminder::BrowserIntegrationReminder(QObject *parent, const QList<QVariant>&)
@@ -117,7 +119,18 @@ void BrowserIntegrationReminder::onBrowserStarted(const QString &browser)
         return;
     }
 
-    if (bus.interface()->isServiceRegistered(QStringLiteral("org.kde.plasma.browser_integration")) && !m_debug) {
+    if (!m_watcher) {
+        m_watcher = new QDBusServiceWatcher(s_dbusServiceName, bus, QDBusServiceWatcher::WatchForRegistration, this);
+        connect(m_watcher, &QDBusServiceWatcher::serviceRegistered, this, [this](const QString &service) {
+            Q_UNUSED(service);
+            if (m_sni) {
+                m_sni->deleteLater();
+                disableAutoload();
+            }
+        });
+    }
+
+    if (!m_debug && bus.interface()->isServiceRegistered(s_dbusServiceName)) {
         //the user has the extension installed, we don't need to keep checking
         //env var exists for easier testing
         disableAutoload();
