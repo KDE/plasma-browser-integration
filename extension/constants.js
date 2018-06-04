@@ -35,3 +35,5 @@ DEFAULT_EXTENSION_SETTINGS = {
 };
 
 IS_FIREFOX = (typeof InstallTrigger !== "undefined"); // heh.
+
+SUPPORTED_PLATFORMS = ["linux", "openbsd"];
