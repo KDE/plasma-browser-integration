@@ -532,7 +532,16 @@ addCallback("debug", "warning", function(payload) {
 // event immediately afterwards. Also avoid infinite restart loop then.
 var receivedMessageOnce = false;
 
-connectHost();
+// Check for supported platform to avoid loading it on e.g. Windows and then failing
+// when the extension got synced to another device and then failing
+chrome.runtime.getPlatformInfo(function (info) {
+    if (!SUPPORTED_PLATFORMS.includes(info.os)) {
+        console.log("This extension is not supported on", info.os);
+        return;
+    }
+
+    connectHost();
+});
 
 function connectHost() {
     port = chrome.runtime.connectNative("org.kde.plasma.browser_integration");
