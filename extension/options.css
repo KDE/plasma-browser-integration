@@ -4,6 +4,16 @@ body {
     overflow: hidden;
 }
 
+.not-supported-info {
+    display: none;
+}
+body.not-supported .not-supported-info {
+    display: block;
+}
+body.not-supported #extensions-selection {
+    display: none;
+}
+
 .tabbar {
     display: block;
     padding: 0;

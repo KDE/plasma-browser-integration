@@ -129,23 +129,30 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    loadSettings();
+    // check whether the platform is supported before loading and activating settings
+    chrome.runtime.getPlatformInfo(function (info) {
+        if (!SUPPORTED_PLATFORMS.includes(info.os)) {
+            document.body.classList.add("not-supported");
+            return;
+        }
 
-    // auto save when changing any setting
-    // TODO can we do that on closing, or does it not matter how often we do chrome storage sync thing?
-    document.querySelectorAll("input[type=checkbox]").forEach(function (item) {
-        item.addEventListener("click", function () {
-            var saveMessage = document.getElementById("save-message");
-            saveMessage.innerText = "";
+        loadSettings();
 
-            saveSettings(function (error) {
-                if (error) {
-                    saveMessage.innerText = chrome.i18n.getMessage("options_save_failed");
-                    return;
-                }
+        // auto save when changing any setting
+        // TODO can we do that on closing, or does it not matter how often we do chrome storage sync thing?
+        document.querySelectorAll("input[type=checkbox]").forEach(function (item) {
+            item.addEventListener("click", function () {
+                var saveMessage = document.getElementById("save-message");
+                saveMessage.innerText = "";
 
-                //saveMessage.innerText = chrome.i18n.getMessage("options_save_success");
-                sendMessage("changed");
+                saveSettings(function (error) {
+                    if (error) {
+                        saveMessage.innerText = chrome.i18n.getMessage("options_save_failed");
+                        return;
+                    }
+
+                    sendMessage("changed");
+                });
             });
         });
     });

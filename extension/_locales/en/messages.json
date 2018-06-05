@@ -9,6 +9,9 @@
     "options_save_success": {
         "message": "Settings successfully saved"
     },
+    "options_not_supported_os": {
+        "message": "This extension is not supported on this operating system."
+    },
 
     "options_tab_general": {
         "description": "The 'General settings' tab in settings",
