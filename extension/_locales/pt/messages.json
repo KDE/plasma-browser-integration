@@ -1,36 +1,75 @@
 {
-    "options_save_failed": {
-        "message": "Não foi possível gravar a configuração"
+    "options_about_bugs": {
+        "message": "Se descobrir algum problema, verifique por favor a <a href=\"$1\">lista de erros abertos</a> e depois <a href=\"$2\">envie um relatório de erros</a>."
     },
-    "options_about_translated_by": {
-        "message": "Traduzido por: $1"
+    "options_save": {
+        "message": "Gravar"
     },
-    "options_plugin_mpris_title": {
-        "message": "Controlos Multimédia"
+    "options_plugin_tabsrunner_description": {
+        "message": "Certifique-se que o módulo de “Páginas do Navegador” está activo na <a id=\"$1\" href=\"$2\">configuração da Pesquisa do Plasma</a>."
+    },
+    "options_tab_general": {
+        "message": "Geral"
+    },
+    "options_about_translators": {
+        "message": "José Nuno Pires"
     },
     "options_plugin_breezeScrollBars_title": {
         "message": "Usar as barras de deslocamento do Brisa"
     },
-    "options_plugin_downloads_title": {
-        "message": "Mostrar as transferências na área de notificações"
+    "options_plugin_tabsrunner_title": {
+        "message": "Procurar páginas do navegador na janela para “Executar um Comando“"
     },
-    "options_about_donate": {
-        "message": "Se gosta do que viu, por favor pense em <a href=\"$1\">fazer uma doação ao KDE</a>, para que possamos continuar a criar o melhor 'software' livre "
-    },
-    "kdeconnect_open_device": {
-        "message": "Abrir no '$1'"
-    },
-    "options_about_kde": {
-        "message": "O KDE é uma rede mundial de engenheiros de 'software', artistas, escritores, tradutores e colaboradores comprometidos com o desenvolvimento de <a href=\"$1\">'Software' Livre</a>. Esta comunidade criou centenas de aplicações de 'Software' Livre, fazendo parte das plataformas, ambientes de trabalho e aplicações do KDE. O KDE é uma empresa cooperativa na qual não existe nenhuma entidade única que controle os esforços ou produtos do KDE e excluindo outras. Todos são bem-vindos a juntarem-se e a contribuírem para o KDE, incluindo você."
-    },
-    "options_about_bugs": {
-        "message": "Se descobrir algum problema, verifique por favor a <a href=\"$1\">lista de erros abertos</a> e depois <a href=\"$2\">envie um relatório de erros</a>."
+    "options_restore_defaults": {
+        "message": "Repor as Predefinições"
     },
     "options_save_success": {
         "message": "A configuração foi gravada com sucesso"
     },
+    "options_plugin_mpris_title": {
+        "message": "Controlos Multimédia"
+    },
+    "general_error_port_startupfail": {
+        "message": "Não foi possível ligar à máquina nativa. Verifique se o pacote 'plasma-browser-integration' está instalado."
+    },
+    "options_about_donate": {
+        "message": "Se gosta do que viu, por favor pense em <a href=\"$1\">fazer uma doação ao KDE</a>, para que possamos continuar a criar o melhor 'software' livre "
+    },
+    "options_about_kde": {
+        "message": "O KDE é uma rede mundial de engenheiros de 'software', artistas, escritores, tradutores e colaboradores comprometidos com o desenvolvimento de <a href=\"$1\">'Software' Livre</a>. Esta comunidade criou centenas de aplicações de 'Software' Livre, fazendo parte das plataformas, ambientes de trabalho e aplicações do KDE. O KDE é uma empresa cooperativa na qual não existe nenhuma entidade única que controle os esforços ou produtos do KDE e excluindo outras. Todos são bem-vindos a juntarem-se e a contribuírem para o KDE, incluindo você."
+    },
+    "options_plugin_kdeconnect_description": {
+        "message": "Adiciona um item do menu de contexto para algumas ligações, permitindo a si enviá-las para o seu telemóvel ou outros dispositivos emparelhados, usando o <a href=\"$1\">KDE Connect</a>."
+    },
+    "general_error_title": {
+        "message": "Erro de Integração do Navegador do Plasma"
+    },
+    "kdeconnect_open_via": {
+        "message": "Abrir com o KDE Connect"
+    },
+    "options_about_created_by_kde": {
+        "message": "Esta extensão do navegador foi criada pela <a href=\"$1\">Comunidade do KDE</a>. Poderá encontrar mais informações sobre este projecto na <a href=\"$2\">Wiki da Comunidade do KDE</a>."
+    },
+    "options_about_translated_by": {
+        "message": "Traduzido por: $1"
+    },
+    "options_plugin_mpris_description": {
+        "message": "Permite-lhe controlar os leitores de áudio e vídeo nas páginas Web, usando o plasmóide do Controlador Multimédia."
+    },
+    "options_title": {
+        "message": "Plasma Integration Settings"
+    },
     "general_error_unknown": {
         "message": "Erro Desconhecido"
+    },
+    "general_error_port_disconnect": {
+        "message": "A máquina nativa desligou-se de forma inesperada: $1"
+    },
+    "options_save_failed": {
+        "message": "Não foi possível gravar a configuração"
+    },
+    "options_about_license": {
+        "message": "Licença: <a href=\"$1\">Licença Pública Geral da GNU (GPL) Versão 3</a>"
     },
     "options_about_copyright": {
         "message": "© 2017, 2018 de Kai Uwe Broulik e David Edmundson"
@@ -38,55 +77,16 @@
     "options_tab_about": {
         "message": "Acerca"
     },
-    "options_about_translators": {
-        "message": "José Nuno Pires"
-    },
-    "options_about_license": {
-        "message": "Licença: <a href=\"$1\">Licença Pública Geral da GNU (GPL) Versão 3</a>"
-    },
-    "options_tab_general": {
-        "message": "Geral"
-    },
-    "options_title": {
-        "message": "Plasma Integration Settings"
-    },
-    "options_plugin_mpris_description": {
-        "message": "Permite-lhe controlar os leitores de áudio e vídeo nas páginas Web, usando o plasmóide do Controlador Multimédia."
-    },
-    "general_error_port_startupfail": {
-        "message": "Não foi possível ligar à máquina nativa. Verifique se o pacote 'plasma-browser-integration' está instalado."
+    "options_plugin_breezeScrollBars_description": {
+        "message": "Isto poderá interferir com a aparência das páginas Web que já aplicam um estilo personalizado às suas barras de deslocamento."
     },
     "options_plugin_kdeconnect_title": {
         "message": "Enviar pelo KDE Connect"
     },
-    "options_plugin_kdeconnect_description": {
-        "message": "Adiciona um item do menu de contexto para algumas ligações, permitindo a si enviá-las para o seu telemóvel ou outros dispositivos emparelhados, usando o <a href=\"$1\">KDE Connect</a>."
+    "options_plugin_downloads_title": {
+        "message": "Mostrar as transferências na área de notificações"
     },
-    "general_error_port_disconnect": {
-        "message": "A máquina nativa desligou-se de forma inesperada: $1"
-    },
-    "kdeconnect_open_via": {
-        "message": "Abrir com o KDE Connect"
-    },
-    "options_save": {
-        "message": "Gravar"
-    },
-    "options_restore_defaults": {
-        "message": "Repor as Predefinições"
-    },
-    "options_plugin_tabsrunner_title": {
-        "message": "Procurar páginas do navegador na janela para “Executar um Comando“"
-    },
-    "options_about_created_by_kde": {
-        "message": "Esta extensão do navegador foi criada pela <a href=\"$1\">Comunidade do KDE</a>. Poderá encontrar mais informações sobre este projecto na <a href=\"$2\">Wiki da Comunidade do KDE</a>."
-    },
-    "options_plugin_breezeScrollBars_description": {
-        "message": "Isto poderá interferir com a aparência das páginas Web que já aplicam um estilo personalizado às suas barras de deslocamento."
-    },
-    "options_plugin_tabsrunner_description": {
-        "message": "Certifique-se que o módulo de “Páginas do Navegador” está activo na <a id=\"$1\" href=\"$2\">configuração da Pesquisa do Plasma</a>."
-    },
-    "general_error_title": {
-        "message": "Erro de Integração do Navegador do Plasma"
+    "kdeconnect_open_device": {
+        "message": "Abrir no '$1'"
     }
 }
