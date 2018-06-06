@@ -352,9 +352,17 @@ document.addEventListener("DOMContentLoaded", function() {
     var observer = new MutationObserver(function (mutations) {
         mutations.forEach(function (mutation) {
             mutation.addedNodes.forEach(function (node) {
-                if (typeof node.querySelectorAll !== "function") {
+                if (typeof node.matches !== "function" || typeof node.querySelectorAll !== "function") {
                     return;
                 }
+
+                // first check whether the node itself is audio/video
+                if (node.matches("video,audio")) {
+                    registerPlayer(node);
+                    return;
+                }
+
+                // if not, check whether any of its children are
                 var players = node.querySelectorAll("video,audio");
                 players.forEach(function (player) {
                     registerPlayer(player);
