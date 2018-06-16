@@ -1,12 +1,24 @@
 {
-    "options_about_kde": {
-        "message": "KDE er eit verdsfemnande nettverk av folk som programmerar, teiknar, komponerer, dokumenterer, set om eller hjelper til på andre måtar med utvikling av <a href=\"$1\">fri programvare</a>. Me har i fellesskap laga fleire hundre frie program, som no inngår som ein del av KDE-utviklingsplattforma og KDE-programdistribusjonen. KDE er eit fellesskap der inga enkel gruppe, firma eller organisasjon kontrollerer kjeldekoden til produkta, og alle er velkomne til å bidra – du òg."
+    "general_error_unknown": {
+        "message": "Ukjend feil"
     },
-    "options_about_donate": {
-        "message": "Viss du likar programmet, vurder å <a href=\"$1\">gje ei pengegåve til KDE</a>, slik at me kan halda fram med å laga den beste frie programvaren."
+    "options_about_license": {
+        "message": "Lisens: <a href=\"$1\">GNU General Public License versjon 3</a>"
     },
-    "options_plugin_kdeconnect_description": {
-        "message": "Legg til ein høgreklikksmeny for lenkjer som gjer det mogleg å senda dei til telefonen din og andre einingar som brukar <a href=\"$1\">KDE Connect</a>."
+    "options_plugin_kdeconnect_title": {
+        "message": "Send via KDE Connect"
+    },
+    "options_about_created_by_kde": {
+        "message": "Denne nettlesarutvidinga var laga av <a href=\"$1\">KDE-fellesskapet</a>. Du kan lesa meir om prosjektet på <a href=\"$2\">wikien</a>."
+    },
+    "options_plugin_breezeScrollBars_title": {
+        "message": "Bruk rullefelt med Breeze-stil"
+    },
+    "options_save_success": {
+        "message": "Innstillinga er no lagra"
+    },
+    "options_about_bugs": {
+        "message": "Viss du finn ein feil, sjå først gjennom oversikta over <a href=\"$1\">opne feilrapportar</a> og meld så eventuelt inn <a href=\"$2\">ein ny "
     },
     "options_plugin_downloads_title": {
         "message": "Vis nedlastingar i varslingsområde"
@@ -14,76 +26,64 @@
     "options_tab_general": {
         "message": "Generelt"
     },
-    "options_save_success": {
-        "message": "Innstillinga er no lagra"
-    },
-    "options_tab_about": {
-        "message": "Om"
-    },
-    "general_error_title": {
-        "message": "Feil ved nettlesarintegrering for Plasma"
-    },
     "kdeconnect_open_via": {
         "message": "Send via KDE Connect"
-    },
-    "options_about_copyright": {
-        "message": "© 2017–2018 Kai Uwe Broulik og David Edmundson"
-    },
-    "options_plugin_tabsrunner_title": {
-        "message": "Finn nettlesarfane i «Køyr kommando»-vindauget"
-    },
-    "options_plugin_mpris_description": {
-        "message": "Lèt deg styra video- og lydavspelarar på nettstadar med skjermelementet for "
-    },
-    "options_about_license": {
-        "message": "Lisens: <a href=\"$1\">GNU General Public License versjon 3</a>"
-    },
-    "options_about_created_by_kde": {
-        "message": "Denne nettlesarutvidinga var laga av <a href=\"$1\">KDE-fellesskapet</a>. Du kan lesa meir om prosjektet på <a href=\"$2\">wikien</a>."
-    },
-    "options_plugin_mpris_title": {
-        "message": "Mediestyring"
-    },
-    "options_plugin_breezeScrollBars_title": {
-        "message": "Bruk rullefelt med Breeze-stil"
-    },
-    "options_plugin_kdeconnect_title": {
-        "message": "Send via KDE Connect"
-    },
-    "options_about_bugs": {
-        "message": "Viss du finn ein feil, sjå først gjennom oversikta over <a href=\"$1\">opne feilrapportar</a> og meld så eventuelt inn <a href=\"$2\">ein ny "
-    },
-    "options_save_failed": {
-        "message": "Klarte ikkje lagra innstillingane"
-    },
-    "options_plugin_breezeScrollBars_description": {
-        "message": "Dette kan påverka nettstadar som allereie brukar ein tilpassa stil på "
-    },
-    "options_about_translators": {
-        "message": "Karl Ove Hufthammer"
-    },
-    "options_plugin_tabsrunner_description": {
-        "message": "Sjå til at «nettlesarfaner»-modulen er slått på i <a id=\"$1\" href=\"$2\">søkjeinnstillingane for Plasma</a>."
-    },
-    "options_not_supported_os": {
-        "message": "Utvidinga er ikkje støtta på dette operativsystemet."
-    },
-    "kdeconnect_open_device": {
-        "message": "Opna på «%1»"
-    },
-    "options_title": {
-        "message": "Plasma Integration Settings"
     },
     "general_error_port_disconnect": {
         "message": "Lokalverten kopla uventa frå: $1"
     },
-    "options_about_translated_by": {
-        "message": "Omsett av: $1"
+    "options_plugin_mpris_description": {
+        "message": "Lèt deg styra video- og lydavspelarar på nettstadar med skjermelementet for "
     },
-    "general_error_unknown": {
-        "message": "Ukjend feil"
+    "options_plugin_breezeScrollBars_description": {
+        "message": "Dette kan påverka nettstadar som allereie brukar ein tilpassa stil på "
+    },
+    "options_plugin_mpris_title": {
+        "message": "Mediestyring"
     },
     "general_error_port_startupfail": {
         "message": "Klarte ikkje kopla til lokalverten. Sjå til at pakken «plasma-browser-integration» er installert."
+    },
+    "options_about_copyright": {
+        "message": "© 2017–2018 Kai Uwe Broulik og David Edmundson"
+    },
+    "options_save_failed": {
+        "message": "Klarte ikkje lagra innstillingane"
+    },
+    "options_about_translators": {
+        "message": "Karl Ove Hufthammer"
+    },
+    "kdeconnect_open_device": {
+        "message": "Opna på «%1»"
+    },
+    "options_plugin_kdeconnect_description": {
+        "message": "Legg til ein høgreklikksmeny for lenkjer som gjer det mogleg å senda dei til telefonen din og andre einingar som brukar <a href=\"$1\">KDE Connect</a>."
+    },
+    "options_title": {
+        "message": "Plasma Integration Settings"
+    },
+    "options_about_translated_by": {
+        "message": "Omsett av: $1"
+    },
+    "options_not_supported_os": {
+        "message": "Utvidinga er ikkje støtta på dette operativsystemet."
+    },
+    "options_about_kde": {
+        "message": "KDE er eit verdsfemnande nettverk av folk som programmerar, teiknar, komponerer, dokumenterer, set om eller hjelper til på andre måtar med utvikling av <a href=\"$1\">fri programvare</a>. Me har i fellesskap laga fleire hundre frie program, som no inngår som ein del av KDE-utviklingsplattforma og KDE-programdistribusjonen. KDE er eit fellesskap der inga enkel gruppe, firma eller organisasjon kontrollerer kjeldekoden til produkta, og alle er velkomne til å bidra – du òg."
+    },
+    "options_about_donate": {
+        "message": "Viss du likar programmet, vurder å <a href=\"$1\">gje ei pengegåve til KDE</a>, slik at me kan halda fram med å laga den beste frie programvaren."
+    },
+    "options_tab_about": {
+        "message": "Om"
+    },
+    "options_plugin_tabsrunner_description": {
+        "message": "Sjå til at «nettlesarfaner»-modulen er slått på i <a id=\"$1\" href=\"$2\">søkjeinnstillingane for Plasma</a>."
+    },
+    "general_error_title": {
+        "message": "Feil ved nettlesarintegrering for Plasma"
+    },
+    "options_plugin_tabsrunner_title": {
+        "message": "Finn nettlesarfane i «Køyr kommando»-vindauget"
     }
 }
