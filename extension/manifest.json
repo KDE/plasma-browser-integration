@@ -4,7 +4,7 @@
   "name": "Plasma Integration",
   "short_name": "Plasma",
   "description": "Provides better integration with the KDE Plasma 5 desktop.",
-  "version": "1.0",
+  "version": "1.1",
 
   "default_locale": "en",
 
