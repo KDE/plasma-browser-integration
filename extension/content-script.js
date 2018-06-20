@@ -1,5 +1,6 @@
 /*
     Copyright (C) 2017 Kai Uwe Broulik <kde@privat.broulik.de>
+    Copyright (C) 2018 David Edmundson <davidedmundson@kde.org>
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License as
@@ -58,19 +59,32 @@ chrome.runtime.onMessage.addListener(function (message, sender) {
     }
 });
 
+var storage = (IS_FIREFOX ? chrome.storage.local : chrome.storage.sync);
+
+storage.get(DEFAULT_EXTENSION_SETTINGS, function (items) {
+    if (items.breezeScrollBars.enabled) {
+        loadBreezeScrollBars();
+    }
+    if (items.mpris.enabled) {
+        loadMpris();
+        if (items.mprisMediaSessions.enabled) {
+            loadMediaSessionsShim();
+        }
+    }
+});
+
 // BREEZE SCROLL BARS
 // ------------------------------------------------------------------------
 //
-if (!IS_FIREFOX) {
-    chrome.storage.sync.get(DEFAULT_EXTENSION_SETTINGS, function (items) {
-        if (items.breezeScrollBars.enabled) {
-            var linkTag = document.createElement("link");
-            linkTag.rel = "stylesheet";
-            linkTag.href =  chrome.extension.getURL("breeze-scroll-bars.css");
-            (document.head || document.documentElement).appendChild(linkTag);
-        }
-    });
+function loadBreezeScrollBars() {
+    if (!IS_FIREFOX) {
+        var linkTag = document.createElement("link");
+        linkTag.rel = "stylesheet";
+        linkTag.href =  chrome.extension.getURL("breeze-scroll-bars.css");
+        (document.head || document.documentElement).appendChild(linkTag);
+    }
 }
+
 
 // MPRIS
 // ------------------------------------------------------------------------
@@ -340,54 +354,55 @@ function playerPause() {
     }
 }
 
-document.addEventListener("DOMContentLoaded", function() {
+function loadMpris() {
+    document.addEventListener("DOMContentLoaded", function() {
+        registerAllPlayers();
 
-    registerAllPlayers();
+        // TODO figure out somehow when a <video> tag is added dynamically and autoplays
+        // as can happen on Ajax-heavy pages like YouTube
+        // could also be done if we just look for the "audio playing in this tab" and only then check for player?
+        // cf. "checkPlayer" event above
 
-    // TODO figure out somehow when a <video> tag is added dynamically and autoplays
-    // as can happen on Ajax-heavy pages like YouTube
-    // could also be done if we just look for the "audio playing in this tab" and only then check for player?
-    // cf. "checkPlayer" event above
+        var observer = new MutationObserver(function (mutations) {
+            mutations.forEach(function (mutation) {
+                mutation.addedNodes.forEach(function (node) {
+                    if (typeof node.matches !== "function" || typeof node.querySelectorAll !== "function") {
+                        return;
+                    }
 
-    var observer = new MutationObserver(function (mutations) {
-        mutations.forEach(function (mutation) {
-            mutation.addedNodes.forEach(function (node) {
-                if (typeof node.matches !== "function" || typeof node.querySelectorAll !== "function") {
-                    return;
-                }
+                    // first check whether the node itself is audio/video
+                    if (node.matches("video,audio")) {
+                        registerPlayer(node);
+                        return;
+                    }
 
-                // first check whether the node itself is audio/video
-                if (node.matches("video,audio")) {
-                    registerPlayer(node);
-                    return;
-                }
-
-                // if not, check whether any of its children are
-                var players = node.querySelectorAll("video,audio");
-                players.forEach(function (player) {
-                    registerPlayer(player);
+                    // if not, check whether any of its children are
+                    var players = node.querySelectorAll("video,audio");
+                    players.forEach(function (player) {
+                        registerPlayer(player);
+                    });
                 });
             });
         });
+
+        observer.observe(document.documentElement, {
+            childList: true,
+            subtree: true
+        });
+
+        window.addEventListener("beforeunload", function () {
+            // about to navigate to a different page, tell our extension that the player will be gone shortly
+            // we listen for tab closed in the extension but we don't for navigating away as URL change doesn't
+            // neccesarily mean a navigation but beforeunload *should* be the thing we want
+
+            activePlayer = undefined;
+            playerMetadata = {};
+            playerCallbacks = [];
+            sendMessage("mpris", "gone");
+        });
+
     });
-
-    observer.observe(document.documentElement, {
-        childList: true,
-        subtree: true
-    });
-
-    window.addEventListener("beforeunload", function () {
-        // about to navigate to a different page, tell our extension that the player will be gone shortly
-        // we listen for tab closed in the extension but we don't for navigating away as URL change doesn't
-        // neccesarily mean a navigation but beforeunload *should* be the thing we want
-
-        activePlayer = undefined;
-        playerMetadata = {};
-        playerCallbacks = [];
-        sendMessage("mpris", "gone");
-    });
-
-});
+}
 
 // This adds a shim for the Chrome media sessions API which is currently only supported on Android
 // Documentation: https://developers.google.com/web/updates/2017/02/media-session
@@ -402,111 +417,113 @@ document.addEventListener("DOMContentLoaded", function() {
 // the rest is only set up in DOMContentLoaded which is only executed for proper pages anyway
 
 // tagName always returned "HTML" for me but I wouldn't trust it always being uppercase
-if (document.documentElement.tagName.toLowerCase() === "html") {
-    executeScript(`
-        function() {
-            ${mediaSessionsClassName} = function() {};
-            ${mediaSessionsClassName}.callbacks = {};
-            ${mediaSessionsClassName}.metadata = {};
-            ${mediaSessionsClassName}.playbackState = "none";
-            ${mediaSessionsClassName}.sendMessage = function(action, payload) {
-                var transferItem = document.getElementById('${mediaSessionsTransferDivId}');
-                transferItem.innerText = JSON.stringify({action: action, payload: payload});
+function loadMediaSessionsShim() {
+    if (document.documentElement.tagName.toLowerCase() === "html") {
+        executeScript(`
+            function() {
+                ${mediaSessionsClassName} = function() {};
+                ${mediaSessionsClassName}.callbacks = {};
+                ${mediaSessionsClassName}.metadata = {};
+                ${mediaSessionsClassName}.playbackState = "none";
+                ${mediaSessionsClassName}.sendMessage = function(action, payload) {
+                    var transferItem = document.getElementById('${mediaSessionsTransferDivId}');
+                    transferItem.innerText = JSON.stringify({action: action, payload: payload});
 
-                var event = document.createEvent('CustomEvent');
-                event.initEvent('payloadChanged', true, true);
-                transferItem.dispatchEvent(event);
-            };
-            ${mediaSessionsClassName}.executeCallback = function (action) {
-                this.callbacks[action]();
-            };
+                    var event = document.createEvent('CustomEvent');
+                    event.initEvent('payloadChanged', true, true);
+                    transferItem.dispatchEvent(event);
+                };
+                ${mediaSessionsClassName}.executeCallback = function (action) {
+                    this.callbacks[action]();
+                };
 
-            navigator.mediaSession = {};
-            navigator.mediaSession.setActionHandler = function (name, cb) {
-                if (cb) {
-                    ${mediaSessionsClassName}.callbacks[name] = cb;
-                } else {
-                    delete ${mediaSessionsClassName}.callbacks[name];
-                }
-                ${mediaSessionsClassName}.sendMessage("callbacks", Object.keys(${mediaSessionsClassName}.callbacks));
-            };
-            Object.defineProperty(navigator.mediaSession, "metadata", {
-                get: function() { return ${mediaSessionsClassName}.metadata; },
-                set: function(newValue) {
-                    ${mediaSessionsClassName}.metadata = newValue;
-                    ${mediaSessionsClassName}.sendMessage("metadata", newValue.data);
-                }
-            });
-            Object.defineProperty(navigator.mediaSession, "playbackState", {
-                get: function() { return ${mediaSessionsClassName}.playbackState; },
-                set: function(newValue) {
-                    ${mediaSessionsClassName}.playbackState = newValue;
-                    ${mediaSessionsClassName}.sendMessage("playbackState", newValue);
-                }
-            });
+                navigator.mediaSession = {};
+                navigator.mediaSession.setActionHandler = function (name, cb) {
+                    if (cb) {
+                        ${mediaSessionsClassName}.callbacks[name] = cb;
+                    } else {
+                        delete ${mediaSessionsClassName}.callbacks[name];
+                    }
+                    ${mediaSessionsClassName}.sendMessage("callbacks", Object.keys(${mediaSessionsClassName}.callbacks));
+                };
+                Object.defineProperty(navigator.mediaSession, "metadata", {
+                    get: function() { return ${mediaSessionsClassName}.metadata; },
+                    set: function(newValue) {
+                        ${mediaSessionsClassName}.metadata = newValue;
+                        ${mediaSessionsClassName}.sendMessage("metadata", newValue.data);
+                    }
+                });
+                Object.defineProperty(navigator.mediaSession, "playbackState", {
+                    get: function() { return ${mediaSessionsClassName}.playbackState; },
+                    set: function(newValue) {
+                        ${mediaSessionsClassName}.playbackState = newValue;
+                        ${mediaSessionsClassName}.sendMessage("playbackState", newValue);
+                    }
+                });
 
-            window.MediaMetadata = function (data) {
-                this.data = data;
-            };
-        }
-    `);
-
-    // here we replace the document.createElement function with our own so we can detect
-    // when an <audio> tag is created that is not added to the DOM which most pages do
-    // while a <video> tag typically ends up being displayed to the user, audio is not.
-    // HACK We cannot really pass variables from the page's scope to our content-script's scope
-    // so we just blatantly insert the <audio> tag in the DOM and pick it up through our regular
-    // mechanism. Let's see how this goes :D
-
-    executeScript(`function() {
-            var oldCreateElement = document.createElement;
-            document.createElement = function () {
-                var createdTag = oldCreateElement.apply(this, arguments);
-
-                var tagName = arguments[0];
-
-                if (typeof tagName === "string" && tagName.toLowerCase() === "audio") {
-                    (document.head || document.documentElement).appendChild(createdTag);
-                }
-
-                return createdTag;
-            };
-        }
-    `);
-
-    // now the fun part of getting the stuff from our page back into our extension...
-    // cannot access extensions from innocent page JS for security
-    var transferItem = document.createElement("div");
-    transferItem.setAttribute("id", mediaSessionsTransferDivId);
-    transferItem.style.display = "none";
-
-    (document.head || document.documentElement).appendChild(transferItem);
-
-    transferItem.addEventListener('payloadChanged', function() {
-        var json = JSON.parse(this.innerText);
-
-        var action = json.action
-
-        if (action === "metadata") {
-            // FIXME filter metadata, this stuff comes from a hostile environment after all
-
-            playerMetadata = json.payload;
-
-            sendMessage("mpris", "metadata", json.payload);
-        } else if (action === "playbackState") {
-            var playbackState = json.payload;
-
-            if (activePlayer) {
-                if (playbackState === "playing") {
-                    playerPlaying(activePlayer);
-                } else if (playbackState === "paused") {
-                    playerPaused(activePlayer);
-                }
+                window.MediaMetadata = function (data) {
+                    this.data = data;
+                };
             }
+        `);
 
-        } else if (action === "callbacks") {
-            playerCallbacks = json.payload;
-            sendMessage("mpris", "callbacks", json.payload);
-        }
-    });
+        // here we replace the document.createElement function with our own so we can detect
+        // when an <audio> tag is created that is not added to the DOM which most pages do
+        // while a <video> tag typically ends up being displayed to the user, audio is not.
+        // HACK We cannot really pass variables from the page's scope to our content-script's scope
+        // so we just blatantly insert the <audio> tag in the DOM and pick it up through our regular
+        // mechanism. Let's see how this goes :D
+
+        executeScript(`function() {
+                var oldCreateElement = document.createElement;
+                document.createElement = function () {
+                    var createdTag = oldCreateElement.apply(this, arguments);
+
+                    var tagName = arguments[0];
+
+                    if (typeof tagName === "string" && tagName.toLowerCase() === "audio") {
+                        (document.head || document.documentElement).appendChild(createdTag);
+                    }
+
+                    return createdTag;
+                };
+            }
+        `);
+
+        // now the fun part of getting the stuff from our page back into our extension...
+        // cannot access extensions from innocent page JS for security
+        var transferItem = document.createElement("div");
+        transferItem.setAttribute("id", mediaSessionsTransferDivId);
+        transferItem.style.display = "none";
+
+        (document.head || document.documentElement).appendChild(transferItem);
+
+        transferItem.addEventListener('payloadChanged', function() {
+            var json = JSON.parse(this.innerText);
+
+            var action = json.action
+
+            if (action === "metadata") {
+                // FIXME filter metadata, this stuff comes from a hostile environment after all
+
+                playerMetadata = json.payload;
+
+                sendMessage("mpris", "metadata", json.payload);
+            } else if (action === "playbackState") {
+                var playbackState = json.payload;
+
+                if (activePlayer) {
+                    if (playbackState === "playing") {
+                        playerPlaying(activePlayer);
+                    } else if (playbackState === "paused") {
+                        playerPaused(activePlayer);
+                    }
+                }
+
+            } else if (action === "callbacks") {
+                playerCallbacks = json.payload;
+                sendMessage("mpris", "callbacks", json.payload);
+            }
+        });
+    }
 }

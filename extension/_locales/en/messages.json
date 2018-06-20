@@ -31,6 +31,15 @@
         "message": "Lets you control video and audio players in websites using the Media Controller plasmoid."
     },
 
+    "options_plugin_mpris_media_sessions_title": {
+        "description": "Title for MediaSessions API Control plugin",
+        "message": "Enhanced Media Controls"
+    },
+    "options_plugin_mpris_media_sessions_description": {
+        "description": "Description for MediaSessions API Control plugin",
+        "message": "Extract metadata and thumbnails of currently playing content. (Experimental)"
+    },
+
     "options_plugin_kdeconnect_title": {
         "description": "Title for KDE Connect plugin",
         "message": "Send via KDE Connect"

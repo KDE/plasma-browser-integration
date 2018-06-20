@@ -1,5 +1,6 @@
 /*
     Copyright (C) 2017 Kai Uwe Broulik <kde@privat.broulik.de>
+    Copyright (C) 2018 David Edmundson <davidedmundson@kde.org>
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License as
@@ -18,6 +19,9 @@
 DEFAULT_EXTENSION_SETTINGS = {
     mpris: {
         enabled: true
+    },
+    mprisMediaSessions: {
+        enabled: false
     },
     kdeconnect: {
         enabled: true

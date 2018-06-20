@@ -1,5 +1,6 @@
 /*
     Copyright (C) 2017 Kai Uwe Broulik <kde@privat.broulik.de>
+    Copyright (C) 2018 David Edmundson <davidedmundson@kde.org>
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License as
@@ -128,6 +129,13 @@ document.addEventListener("DOMContentLoaded", function () {
             item.style.display = "none";
         });
     }
+
+    var mpris = document.querySelectorAll("[data-extension=mpris]")[0];
+    var mprisEx = document.querySelectorAll("[data-extension=mprisMediaSessions]")[0];
+    mpris.addEventListener("change", function() {
+        mprisEx.disabled = !mpris.checked;
+    });
+    mprisEx.disabled = !mpris.checked;
 
     // check whether the platform is supported before loading and activating settings
     chrome.runtime.getPlatformInfo(function (info) {
