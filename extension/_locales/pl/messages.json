@@ -1,95 +1,95 @@
 {
-    "options_plugin_breezeScrollBars_title": {
-        "message": "Użyj pasków przewijania z wyglądu Bryzy"
-    },
-    "options_tab_general": {
-        "message": "Ogólne"
-    },
-    "options_save_success": {
-        "message": "Pomyślnie zapisano ustawienia"
-    },
-    "options_plugin_mpris_media_sessions_title": {
-        "message": "Enhanced Media Controls"
+    "options_plugin_mpris_media_sessions_description": {
+        "message": "Extract metadata and thumbnails of currently playing content. (Experimental)"
     },
     "options_plugin_downloads_title": {
         "message": "Pokaż pobierania w obszarze powiadomień"
     },
-    "options_plugin_kdeconnect_description": {
-        "message": "Dodaje menu podręczne do łączy, umożliwiając wysłanie ich na twój telefon lub inne urządzenia sparowane przez <a href=\"$1\">KDE Connect</a>."
-    },
-    "options_plugin_tabsrunner_title": {
-        "message": "Znajduj karty przeglądarki w oknie \"Wykonaj polecenie\\"
-    },
-    "options_not_supported_os": {
-        "message": "This extension is not supported on this operating system."
-    },
-    "kdeconnect_open_via": {
-        "message": "Otwórz przez KDE Connect"
-    },
-    "options_plugin_mpris_media_sessions_description": {
-        "message": "Extract metadata and thumbnails of currently playing content. (Experimental)"
-    },
-    "options_plugin_mpris_title": {
-        "message": "Sterowanie mediami"
-    },
-    "options_plugin_mpris_description": {
-        "message": "Umożliwia ci sterowanie odtwarzaczami obrazu i dźwięku przy użyciu plazmoida."
-    },
-    "general_error_port_startupfail": {
-        "message": "Nie można podłączyć się do natywnego gospodarza. Upewnij się, że pakiet 'plasma-browser-integration' został wgrany."
-    },
-    "general_error_unknown": {
-        "message": "Nieznany błąd"
-    },
-    "options_title": {
-        "message": "Ustawienia integracji Plazmy"
-    },
-    "options_about_bugs": {
-        "message": "Jeśli znalazłeś błąd, to proszę sprawdź najpierw <a href=\"$1\">wykaz otwartych błędów</a> a dopiero potem <a href=\"$2\">wypełnij zgłoszenie o "
-    },
-    "kdeconnect_open_device": {
-        "message": "Otwórz na '$1'"
+    "options_tab_about": {
+        "message": "O programie"
     },
     "options_plugin_breezeScrollBars_description": {
         "message": "To może wpływać na wygląd stron, które już nakładają swój własny wygląd na paski przewijania."
     },
-    "options_plugin_kdeconnect_title": {
-        "message": "Wyślij przez KDE Connect"
-    },
-    "options_plugin_tabsrunner_description": {
-        "message": "Upewnij się, że moduł “Karty przeglądarki” jest włączony w <a id=\"$1\" href=\"$2\">Ustawieniach wyszukiwarki Plazmy</a>."
-    },
-    "options_save_failed": {
-        "message": "Nie udało się zapisywanie ustawień"
-    },
-    "options_about_translated_by": {
-        "message": "Przetłumaczone przez: $1"
-    },
-    "options_about_copyright": {
-        "message": "© 2017, 2018 Kai Uwe Broulik oraz David Edmundson"
-    },
-    "options_tab_about": {
-        "message": "O programie"
+    "options_about_kde": {
+        "message": "KDE jest światową siecią inżynierów oprogramowania, artystów, pisarzy, tłumaczy oraz osób wspomagających, którzy poświęcają się rozwojowi <a href=\"$1\">Wolnego Oprogramowania</a>. Społeczność ta stworzyła setki programów Wolnego Oprogramowania będących częścią szkieletów KDE, przestrzeni roboczych i aplikacji. KDE jest współpracującym przedsiębiorstwem, w którym nie istnieje pojedynczy byt sterujący pracą lub produktami KDE przy wykluczeniu reszty. Uczestnictwo i współtworzenie w KDE jest mile widziane w każdym przypadku, także w twoim."
     },
     "options_about_translators": {
         "message": "Twoje nazwisko"
     },
-    "options_about_created_by_kde": {
-        "message": "Rozszerzenie przeglądarki zostało stworzone przez <a href=\"$1\">Społeczność KDE</a>. Więcej o tym projekcie można znaleźć na <a href=\"$2\">Wiki społeczności KDE</a>."
+    "options_about_donate": {
+        "message": "Jeśli lubisz to co widzisz, to rozważ proszę <a href=\"$1\">datek na KDE</a>, tak abyśmy mogli kontynuować tworzenie najlepszego wolnego "
     },
-    "options_about_license": {
-        "message": "Licencja: <a href=\"$1\">GNU General Public License Version 3</a>"
+    "options_plugin_breezeScrollBars_title": {
+        "message": "Użyj pasków przewijania z wyglądu Bryzy"
     },
-    "general_error_title": {
-        "message": "Błąd integracji przeglądarki Plazmy"
+    "kdeconnect_open_via": {
+        "message": "Otwórz przez KDE Connect"
+    },
+    "options_not_supported_os": {
+        "message": "This extension is not supported on this operating system."
+    },
+    "options_plugin_tabsrunner_title": {
+        "message": "Znajduj karty przeglądarki w oknie \"Wykonaj polecenie\\"
+    },
+    "options_about_bugs": {
+        "message": "Jeśli znalazłeś błąd, to proszę sprawdź najpierw <a href=\"$1\">wykaz otwartych błędów</a> a dopiero potem <a href=\"$2\">wypełnij zgłoszenie o "
+    },
+    "options_plugin_mpris_description": {
+        "message": "Umożliwia ci sterowanie odtwarzaczami obrazu i dźwięku przy użyciu plazmoida."
     },
     "general_error_port_disconnect": {
         "message": "Natywny gospodarz nieoczekiwanie się rozłączył: $1"
     },
-    "options_about_donate": {
-        "message": "Jeśli lubisz to co widzisz, to rozważ proszę <a href=\"$1\">datek na KDE</a>, tak abyśmy mogli kontynuować tworzenie najlepszego wolnego "
+    "general_error_title": {
+        "message": "Błąd integracji przeglądarki Plazmy"
     },
-    "options_about_kde": {
-        "message": "KDE jest światową siecią inżynierów oprogramowania, artystów, pisarzy, tłumaczy oraz osób wspomagających, którzy poświęcają się rozwojowi <a href=\"$1\">Wolnego Oprogramowania</a>. Społeczność ta stworzyła setki programów Wolnego Oprogramowania będących częścią szkieletów KDE, przestrzeni roboczych i aplikacji. KDE jest współpracującym przedsiębiorstwem, w którym nie istnieje pojedynczy byt sterujący pracą lub produktami KDE przy wykluczeniu reszty. Uczestnictwo i współtworzenie w KDE jest mile widziane w każdym przypadku, także w twoim."
+    "options_about_copyright": {
+        "message": "© 2017, 2018 Kai Uwe Broulik oraz David Edmundson"
+    },
+    "options_about_translated_by": {
+        "message": "Przetłumaczone przez: $1"
+    },
+    "options_about_license": {
+        "message": "Licencja: <a href=\"$1\">GNU General Public License Version 3</a>"
+    },
+    "kdeconnect_open_device": {
+        "message": "Otwórz na '$1'"
+    },
+    "options_tab_general": {
+        "message": "Ogólne"
+    },
+    "general_error_unknown": {
+        "message": "Nieznany błąd"
+    },
+    "options_save_success": {
+        "message": "Pomyślnie zapisano ustawienia"
+    },
+    "options_plugin_mpris_title": {
+        "message": "Sterowanie mediami"
+    },
+    "options_plugin_tabsrunner_description": {
+        "message": "Upewnij się, że moduł “Karty przeglądarki” jest włączony w <a id=\"$1\" href=\"$2\">Ustawieniach wyszukiwarki Plazmy</a>."
+    },
+    "options_plugin_kdeconnect_title": {
+        "message": "Wyślij przez KDE Connect"
+    },
+    "options_save_failed": {
+        "message": "Nie udało się zapisywanie ustawień"
+    },
+    "options_plugin_mpris_media_sessions_title": {
+        "message": "Sterowanie mediami"
+    },
+    "options_plugin_kdeconnect_description": {
+        "message": "Dodaje menu podręczne do łączy, umożliwiając wysłanie ich na twój telefon lub inne urządzenia sparowane przez <a href=\"$1\">KDE Connect</a>."
+    },
+    "general_error_port_startupfail": {
+        "message": "Nie można podłączyć się do natywnego gospodarza. Upewnij się, że pakiet 'plasma-browser-integration' został wgrany."
+    },
+    "options_about_created_by_kde": {
+        "message": "Rozszerzenie przeglądarki zostało stworzone przez <a href=\"$1\">Społeczność KDE</a>. Więcej o tym projekcie można znaleźć na <a href=\"$2\">Wiki społeczności KDE</a>."
+    },
+    "options_title": {
+        "message": "Ustawienia integracji Plazmy"
     }
 }
