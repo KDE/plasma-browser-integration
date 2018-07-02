@@ -47,9 +47,12 @@ function extensionCheckboxes() {
     return document.querySelectorAll("#extensions-selection input[type=checkbox][data-extension]");
 }
 
-function loadSettings() {
+function loadSettings(cb) {
     storage.get(DEFAULT_EXTENSION_SETTINGS, function (items) {
         if (chrome.runtime.lastError) {
+            if (typeof cb === "function") {
+                cb(false);
+            }
             return;
         }
 
@@ -68,6 +71,10 @@ function loadSettings() {
             checkbox.checked = checked;
 
             // TODO restore additional stuff if we have it
+        }
+
+        if (typeof cb === "function") {
+            cb(true);
         }
     });
 }
@@ -130,13 +137,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    var mpris = document.querySelectorAll("[data-extension=mpris]")[0];
-    var mprisEx = document.querySelectorAll("[data-extension=mprisMediaSessions]")[0];
-    mpris.addEventListener("change", function() {
-        mprisEx.disabled = !mpris.checked;
-    });
-    mprisEx.disabled = !mpris.checked;
-
     // check whether the platform is supported before loading and activating settings
     chrome.runtime.getPlatformInfo(function (info) {
         if (!SUPPORTED_PLATFORMS.includes(info.os)) {
@@ -144,7 +144,14 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        loadSettings();
+        loadSettings(function () {
+            var mpris = document.querySelector("[data-extension=mpris]");
+            var mprisEx = document.querySelector("[data-extension=mprisMediaSessions]");
+            mpris.addEventListener("change", function() {
+                mprisEx.disabled = !mpris.checked;
+            });
+            mprisEx.disabled = !mpris.checked;
+        });
 
         // auto save when changing any setting
         // TODO can we do that on closing, or does it not matter how often we do chrome storage sync thing?
