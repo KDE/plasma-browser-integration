@@ -502,8 +502,11 @@ function loadMediaSessionsShim() {
 
                     var tagName = arguments[0];
 
-                    if (typeof tagName === "string" && tagName.toLowerCase() === "audio") {
-                        (document.head || document.documentElement).appendChild(createdTag);
+                    if (typeof tagName === "string") {
+                        if (tagName.toLowerCase() === "audio" || tagName.toLowerCase() === "video") {
+                            (document.head || document.documentElement).appendChild(createdTag);
+                            createdTag.parentNode.removeChild(createdTag);
+                        }
                     }
 
                     return createdTag;
