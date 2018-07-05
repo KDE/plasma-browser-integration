@@ -443,16 +443,16 @@ function loadMediaSessionsShim() {
         executeScript(`
             function() {
                 ${mediaSessionsClassName} = function() {};
+                ${mediaSessionsClassName}.transferItem = null;
                 ${mediaSessionsClassName}.callbacks = {};
                 ${mediaSessionsClassName}.metadata = {};
                 ${mediaSessionsClassName}.playbackState = "none";
                 ${mediaSessionsClassName}.sendMessage = function(action, payload) {
-                    var transferItem = document.getElementById('${mediaSessionsTransferDivId}');
-                    transferItem.innerText = JSON.stringify({action: action, payload: payload});
+                    this.transferItem.innerText = JSON.stringify({action: action, payload: payload});
 
                     var event = document.createEvent('CustomEvent');
                     event.initEvent('payloadChanged', true, true);
-                    transferItem.dispatchEvent(event);
+                    this.transferItem.dispatchEvent(event);
                 };
                 ${mediaSessionsClassName}.executeCallback = function (action) {
                     this.callbacks[action]();
@@ -515,9 +515,19 @@ function loadMediaSessionsShim() {
         // cannot access extensions from innocent page JS for security
         var transferItem = document.createElement("div");
         transferItem.setAttribute("id", mediaSessionsTransferDivId);
-        transferItem.style.display = "none";
 
+        // Add the element to the DOM so the page sees it
         (document.head || document.documentElement).appendChild(transferItem);
+
+        // now keep a reference to it inside the page
+        executeScript(`
+            function() {
+                ${mediaSessionsClassName}.transferItem = document.getElementById('${mediaSessionsTransferDivId}');
+            }
+        `);
+
+        // and remove it again so the website isn't confused
+        transferItem.parentNode.removeChild(transferItem);
 
         transferItem.addEventListener('payloadChanged', function() {
             var json = JSON.parse(this.innerText);
