@@ -376,6 +376,27 @@ document.addEventListener("DOMContentLoaded", function() {
         subtree: true
     });
 
+    // Observe changes to the <title> tag in case it is updated after the player has started playing
+    var titleTag = document.querySelector("head > title");
+    if (titleTag) {
+        var titleObserver = new MutationObserver(function (mutations) {
+            mutations.forEach(function (mutation) {
+                var pageTitle = mutation.target.textContent;
+                if (pageTitle) {
+                    sendMessage("mpris", "titlechange", {
+                        pageTitle: pageTitle
+                    });
+                }
+            });
+        });
+
+        titleObserver.observe(titleTag, {
+            childList: true, // text content is technically a child node
+            subtree: true,
+            characterData: true
+        });
+    }
+
     window.addEventListener("beforeunload", function () {
         // about to navigate to a different page, tell our extension that the player will be gone shortly
         // we listen for tab closed in the extension but we don't for navigating away as URL change doesn't

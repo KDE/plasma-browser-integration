@@ -134,6 +134,8 @@ private:
     void processMetadata(const QJsonObject &data);
     void processCallbacks(const QJsonArray &data);
 
+    QString effectiveTitle() const;
+
     QDBusAbstractAdaptor *m_root;
     QDBusAbstractAdaptor *m_player;
 

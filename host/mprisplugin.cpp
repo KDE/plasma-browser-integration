@@ -211,6 +211,13 @@ void MPrisPlugin::handleData(const QString &event, const QJsonObject &data)
         processMetadata(data.value(QStringLiteral("metadata")).toObject());
     } else if (event == QLatin1String("callbacks")) {
         processCallbacks(data.value(QStringLiteral("callbacks")).toArray());
+    } else if (event == QLatin1String("titlechange")) {
+        const QString oldTitle = effectiveTitle();
+        m_pageTitle = data.value(QStringLiteral("pageTitle")).toString();
+
+        if (oldTitle != effectiveTitle()) {
+            emitPropertyChange(m_player, "Metadata");
+        }
     } else {
         qWarning() << "Don't know how to handle mpris event" << event;
     }
@@ -349,6 +356,14 @@ void MPrisPlugin::setLoopStatus(const QString &loopStatus)
     emitPropertyChange(m_player, "LoopStatus");
 }
 
+QString MPrisPlugin::effectiveTitle() const
+{
+    if (!m_title.isEmpty()) {
+        return m_title;
+    }
+    return m_pageTitle;
+}
+
 QVariantMap MPrisPlugin::metadata() const
 {
     QVariantMap metadata;
@@ -361,9 +376,9 @@ QVariantMap MPrisPlugin::metadata() const
     // the browser window isn't owned by us
     metadata.insert(QStringLiteral("kde:pid"), getppid());
 
-    const QString &effectiveTitle = !m_title.isEmpty() ? m_title : m_pageTitle;
-    if (!effectiveTitle.isEmpty()) {
-        metadata.insert(QStringLiteral("xesam:title"), effectiveTitle);
+    const QString title = effectiveTitle();
+    if (!title.isEmpty()) {
+        metadata.insert(QStringLiteral("xesam:title"), title);
     }
 
     if (m_url.isValid()) {

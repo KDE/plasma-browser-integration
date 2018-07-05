@@ -288,7 +288,7 @@ addRuntimeCallback("mpris", ["paused", "stopped", "waiting", "canplay"], functio
     }
 });
 
-addRuntimeCallback("mpris", ["duration", "timeupdate", "seeking", "seeked", "ratechange", "volumechange"], function (message, sender, action) {
+addRuntimeCallback("mpris", ["duration", "timeupdate", "seeking", "seeked", "ratechange", "volumechange", "titlechange"], function (message, sender, action) {
     if (currentPlayerTabId == sender.tab.id) {
         sendPortMessage("mpris", action, message);
     }
