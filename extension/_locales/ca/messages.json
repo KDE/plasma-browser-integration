@@ -1,60 +1,60 @@
 {
-    "options_tab_general": {
-        "message": "General"
-    },
-    "options_about_translated_by": {
-        "message": "Traduït per: $1"
-    },
-    "options_plugin_mpris_title": {
-        "message": "Controls multimèdia"
-    },
     "options_save_failed": {
         "message": "Ha fallat en desar l'arranjament"
-    },
-    "options_plugin_breezeScrollBars_title": {
-        "message": "Usa barres de desplaçament de l'estil Brisa"
     },
     "options_about_bugs": {
         "message": "Si trobeu un problema, comproveu la <a href=\"$1\">llista d'errors oberts</a> i després <a href=\"$2\">ompliu un informe d'error</a>."
     },
-    "general_error_port_disconnect": {
-        "message": "El servidor natiu s'ha desconnectat inesperadament: $1"
-    },
-    "options_save_success": {
-        "message": "L'arranjament s'ha desat amb èxit"
-    },
-    "general_error_unknown": {
-        "message": "Error desconegut"
-    },
-    "options_about_kde": {
-        "message": "KDE és una xarxa mundial d'enginyers informàtics, artistes, escriptors, traductors i facilitadors compromesos amb el desenvolupament de <a href=\"$1\">programari lliure</a> (Free Software). Aquesta comunitat ha creat centenars d'aplicacions de programari lliure com a part dels entorns de treball del KDE («KDE Frameworks»), espais de treball i aplicacions. KDE és una iniciativa cooperativa en el qual cap entitat individual controla els esforços o els productes del KDE per a excloure'n d'altres. Tothom és benvingut a afegir-se i col·laborar amb el KDE, incloent-vos."
-    },
-    "kdeconnect_open_via": {
-        "message": "Obre via el KDE Connect"
-    },
-    "options_plugin_kdeconnect_description": {
-        "message": "Afegeix una entrada al menú contextual a enllaços que permeten enviar-los al telèfon i a altres dispositius aparellats usant el <a href=\"$1\">Connect del KDE</a>."
+    "options_about_translated_by": {
+        "message": "Traduït per: $1"
     },
     "options_plugin_kdeconnect_title": {
         "message": "Envia a través del KDE Connect"
     },
+    "general_error_unknown": {
+        "message": "Error desconegut"
+    },
+    "kdeconnect_open_via": {
+        "message": "Obre via el KDE Connect"
+    },
+    "options_plugin_downloads_title": {
+        "message": "Mostra les baixades a l'àrea de notificacions"
+    },
     "options_about_translators": {
         "message": "Josep Ma. Ferrer"
     },
-    "options_title": {
-        "message": "Arranjament de la integració del Plasma"
+    "options_about_donate": {
+        "message": "Si us agrada el que veieu, si us plau, considereu fer una <a href=\"$1\">donació a KDE</a>, per tal de continuar fent el millor programari lliure possible."
+    },
+    "options_save_success": {
+        "message": "L'arranjament s'ha desat amb èxit"
     },
     "kdeconnect_open_device": {
         "message": "Obre a «$1»"
     },
-    "options_plugin_mpris_media_sessions_description": {
-        "message": "Extreu les metadades i les miniatures del contingut actualment en reproducció. (Experimental)"
+    "options_title": {
+        "message": "Arranjament de la integració del Plasma"
     },
-    "options_plugin_tabsrunner_description": {
-        "message": "Assegureu-vos que el mòdul «Pestanyes del navegador» està activat a l'<a id=\"$1\" href=\"$2\">arranjament de la Cerca del Plasma</a>."
+    "options_plugin_breezeScrollBars_title": {
+        "message": "Usa barres de desplaçament de l'estil Brisa"
     },
     "options_about_copyright": {
         "message": "© 2017, 2018 Kai Uwe Broulik and David Edmundson"
+    },
+    "options_plugin_tabsrunner_title": {
+        "message": "Cerca les pestanyes del navegador a la finestra «Executa una ordre»"
+    },
+    "general_error_port_disconnect": {
+        "message": "El servidor natiu s'ha desconnectat inesperadament: $1"
+    },
+    "options_plugin_mpris_title": {
+        "message": "Controls multimèdia"
+    },
+    "options_plugin_breezeScrollBars_description": {
+        "message": "Això pot interferir amb l'aparença de llocs web que ja apliquen un estil personalitzat a les barres de desplaçament."
+    },
+    "options_plugin_mpris_media_sessions_title": {
+        "message": "Controls multimèdia millorats"
     },
     "options_about_created_by_kde": {
         "message": "Aquesta ampliació del navegador fou creada per la <a href=\"$1\">Comunitat KDE</a>. Podeu trobar més informació quant a aquest projecte al <a href=\"$2\">KDE Community Wiki</a>."
@@ -62,34 +62,34 @@
     "options_tab_about": {
         "message": "Quant a"
     },
-    "general_error_port_startupfail": {
-        "message": "Ha fallat en connectar al servidor natiu. Assegureu-vos que el paquet «plasma-browser-integration» estigui instal·lat."
+    "options_tab_general": {
+        "message": "General"
     },
-    "options_plugin_mpris_media_sessions_title": {
-        "message": "Controls multimèdia millorats"
-    },
-    "options_about_donate": {
-        "message": "Si us agrada el que veieu, si us plau, considereu fer una <a href=\"$1\">donació a KDE</a>, per tal de continuar fent el millor programari lliure possible."
+    "options_plugin_tabsrunner_description": {
+        "message": "Assegureu-vos que el mòdul «Pestanyes del navegador» està activat a l'<a id=\"$1\" href=\"$2\">arranjament de la Cerca del Plasma</a>."
     },
     "options_plugin_mpris_description": {
         "message": "Permet controlar els reproductors de vídeo i àudio a llocs web usant el plasmoide Media Controller."
     },
-    "options_plugin_breezeScrollBars_description": {
-        "message": "Això pot interferir amb l'aparença de llocs web que ja apliquen un estil personalitzat a les barres de desplaçament."
-    },
     "general_error_title": {
         "message": "Error d'integració del navegador al Plasma"
     },
-    "options_plugin_tabsrunner_title": {
-        "message": "Cerca les pestanyes del navegador a la finestra «Executa una ordre»"
+    "options_plugin_kdeconnect_description": {
+        "message": "Afegeix una entrada al menú contextual a enllaços que permeten enviar-los al telèfon i a altres dispositius aparellats usant el <a href=\"$1\">Connect del KDE</a>."
     },
-    "options_plugin_downloads_title": {
-        "message": "Mostra les baixades a l'àrea de notificacions"
+    "options_about_kde": {
+        "message": "KDE és una xarxa mundial d'enginyers informàtics, artistes, escriptors, traductors i facilitadors compromesos amb el desenvolupament de <a href=\"$1\">programari lliure</a> (Free Software). Aquesta comunitat ha creat centenars d'aplicacions de programari lliure com a part dels entorns de treball del KDE («KDE Frameworks»), espais de treball i aplicacions. KDE és una iniciativa cooperativa en el qual cap entitat individual controla els esforços o els productes del KDE per a excloure'n d'altres. Tothom és benvingut a afegir-se i col·laborar amb el KDE, incloent-vos."
+    },
+    "options_about_license": {
+        "message": "Llicència: <a href=\"$1\">Llicència pública general de GNU versió 3</a>"
     },
     "options_not_supported_os": {
         "message": "Aquesta extensió no s'admet en aquest sistema operatiu."
     },
-    "options_about_license": {
-        "message": "Llicència: <a href=\"$1\">Llicència pública general de GNU versió 3</a>"
+    "options_plugin_mpris_media_sessions_description": {
+        "message": "Extreu les metadades i les miniatures del contingut actualment en reproducció. (Experimental)"
+    },
+    "general_error_port_startupfail": {
+        "message": "Ha fallat en connectar al servidor natiu. Assegureu-vos que el paquet «plasma-browser-integration» estigui instal·lat."
     }
 }
