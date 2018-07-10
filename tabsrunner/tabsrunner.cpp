@@ -186,7 +186,7 @@ void TabsRunner::match(Plasma::RunnerContext &context)
             QIcon icon;
 
             const QString favIconData = tab.value(QStringLiteral("favIconData")).toString();
-            const int b64start = favIconData.indexOf(',');
+            const int b64start = favIconData.indexOf(QLatin1Char(','));
             if (b64start != -1) {
                 QByteArray b64 = favIconData.rightRef(favIconData.size() - b64start - 1).toLatin1();
                 QByteArray data = QByteArray::fromBase64(b64);

@@ -32,6 +32,13 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
     Activities
 )
 
+add_definitions(-DQT_NO_CAST_FROM_ASCII)
+add_definitions(-DQT_NO_CAST_TO_ASCII)
+add_definitions(-DQT_NO_NARROWING_CONVERSIONS_IN_CONNECT)
+add_definitions(-DQT_NO_URL_CAST_FROM_STRING)
+add_definitions(-DQT_USE_QSTRINGBUILDER)
+#add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x060000)
+
 # Options
 option(INSTALL_CHROME_MANIFEST "Whether to install a configuration file that makes Chrome automatically download the extension from the store" FALSE)
 add_feature_info(INSTALL_CHROME_MANIFEST ${INSTALL_CHROME_MANIFEST} "Install extension from Chrome store automatically")

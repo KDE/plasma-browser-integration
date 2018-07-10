@@ -33,7 +33,7 @@ class TabsRunnerPlugin : public AbstractBrowserPlugin, protected QDBusContext
     Q_OBJECT
 
 public:
-    TabsRunnerPlugin(QObject *parent);
+    explicit TabsRunnerPlugin(QObject *parent);
     bool onLoad() override;
     bool onUnload() override;
     void handleData(const QString &event, const QJsonObject &data) override;

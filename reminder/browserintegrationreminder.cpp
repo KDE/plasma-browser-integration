@@ -63,15 +63,15 @@ BrowserIntegrationReminder::BrowserIntegrationReminder(QObject *parent, const QL
         return;
     }
 
-    QUrl firefox("https://addons.mozilla.org/en-US/firefox/addon/plasma-integration/");
-    m_browsers["firefox.desktop"] = firefox;
-    m_browsers["nightly.desktop"] = firefox;
+    QUrl firefox(QStringLiteral("https://addons.mozilla.org/en-US/firefox/addon/plasma-integration/"));
+    m_browsers[QStringLiteral("firefox.desktop")] = firefox;
+    m_browsers[QStringLiteral("nightly.desktop")] = firefox;
 
-    QUrl chrome("https://chrome.google.com/webstore/detail/plasma-integration/cimiefiiaegbelhefglklhhakcgmhkai");
-    m_browsers["google-chrome.desktop"] = chrome;
-    m_browsers["google-chrome-beta.desktop"] = chrome;
-    m_browsers["google-chrome-unstable.desktop"] = chrome;
-    m_browsers["chromium-browser.desktop"] = chrome;
+    QUrl chrome(QStringLiteral("https://chrome.google.com/webstore/detail/plasma-integration/cimiefiiaegbelhefglklhhakcgmhkai"));
+    m_browsers[QStringLiteral("google-chrome.desktop")] = chrome;
+    m_browsers[QStringLiteral("google-chrome-beta.desktop")] = chrome;
+    m_browsers[QStringLiteral("google-chrome-unstable.desktop")] = chrome;
+    m_browsers[QStringLiteral("chromium-browser.desktop")] = chrome;
 
     setModuleName(QStringLiteral("BrowserIntegrationReminder"));
     QDBusConnection dbus = QDBusConnection::sessionBus();
@@ -95,7 +95,7 @@ void BrowserIntegrationReminder::onResourceScoresChanged(const QString &activity
     Q_UNUSED(firstUpdate);
     Q_UNUSED(client)
 
-    if (!resource.startsWith("applications:")) {
+    if (!resource.startsWith(QStringLiteral("applications:"))) {
         return;
     }
     const QString desktopFile = resource.mid(strlen("applications:"));
@@ -143,7 +143,7 @@ void BrowserIntegrationReminder::onBrowserStarted(const QString &browser)
     config.writeEntry("shownCount", m_shownCount);
 
     m_sni->setTitle(i18n("Get Plasma Browser Integration"));
-    m_sni->setIconByName("plasma-browser-integration");
+    m_sni->setIconByName(QStringLiteral("plasma-browser-integration"));
     m_sni->setStandardActionsEnabled(false);
     m_sni->setStatus(KStatusNotifierItem::Active);
 
@@ -156,7 +156,7 @@ void BrowserIntegrationReminder::onBrowserStarted(const QString &browser)
         }
 
         KRun::runApplication(*service, QList<QUrl>() << m_browsers[browser], nullptr, KRun::RunFlags(),
-            QString(), 0);
+            QString(), nullptr);
 
         KActivities::ResourceInstance::notifyAccessed(QUrl(QStringLiteral("applications:") + browser),
             QStringLiteral("org.kde.plasma.browserintegrationreminder"));

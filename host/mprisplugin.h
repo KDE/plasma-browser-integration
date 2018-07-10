@@ -57,7 +57,7 @@ class MPrisPlugin : public AbstractBrowserPlugin
     Q_PROPERTY(QVariantMap Metadata READ metadata NOTIFY metadataChanged)
 
 public:
-    MPrisPlugin(QObject *parent);
+    explicit MPrisPlugin(QObject *parent);
 
     bool onUnload() override;
 

@@ -58,7 +58,7 @@ public:
     };
     Q_ENUM(Environment)
 
-    void handleData(const QString &event, const QJsonObject &data);
+    void handleData(const QString &event, const QJsonObject &data) override;
 
     Environment environment() const;
     QString environmentString() const; // dbus

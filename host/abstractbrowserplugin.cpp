@@ -29,7 +29,7 @@ AbstractBrowserPlugin::AbstractBrowserPlugin::AbstractBrowserPlugin(const QStrin
     QObject(parent),
     m_subsystem(subsystemId)
 {
-    sendData(QStringLiteral("created"), {{"version", protocolVersion}});
+    sendData(QStringLiteral("created"), {{QStringLiteral("version"), protocolVersion}});
 }
 
 void AbstractBrowserPlugin::handleData(const QString& event, const QJsonObject& data)
@@ -41,10 +41,10 @@ void AbstractBrowserPlugin::handleData(const QString& event, const QJsonObject& 
 void AbstractBrowserPlugin::sendData(const QString &action, const QJsonObject &payload)
 {
     QJsonObject data;
-    data["subsystem"] = m_subsystem;
-    data["action"] = action;
+    data[QStringLiteral("subsystem")] = m_subsystem;
+    data[QStringLiteral("action")] = action;
     if (!payload.isEmpty()) {
-        data["payload"] = payload;
+        data[QStringLiteral("payload")] = payload;
     }
     Connection::self()->sendData(data);
 }

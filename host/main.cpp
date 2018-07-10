@@ -40,16 +40,16 @@ void msgHandler(QtMsgType type, const QMessageLogContext &context, const QString
     Q_UNUSED(context);
 
     QJsonObject data;
-    data["subsystem"] = QStringLiteral("debug");
+    data[QStringLiteral("subsystem")] = QStringLiteral("debug");
     switch(type) {
         case QtDebugMsg:
         case QtInfoMsg:
-            data["action"] = "debug";
+            data[QStringLiteral("action")] = QStringLiteral("debug");
             break;
         default:
-            data["action"] = "warning";
+            data[QStringLiteral("action")] = QStringLiteral("warning");
     }
-    data["payload"] = QJsonObject({{"message", msg}});
+    data[QStringLiteral("payload")] = QJsonObject({{QStringLiteral("message"), msg}});
 
     Connection::self()->sendData(data);
 }

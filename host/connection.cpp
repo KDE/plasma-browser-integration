@@ -53,7 +53,7 @@ void Connection::sendData(const QJsonObject &data)
 
 Connection* Connection::self()
 {
-    static Connection *s = 0;
+    static Connection *s = nullptr;
     if (!s) {
         s = new Connection();
     }
