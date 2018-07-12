@@ -52,7 +52,7 @@ outTranslations = {}
 with open(enPath, 'r') as infile:
     enData = json.load(infile)
 
-for msgId in enData:
+for msgId in sorted(enData):
     msg = ""
     if msgId in translations:
         msg = translations[msgId]
