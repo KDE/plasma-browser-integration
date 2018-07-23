@@ -314,13 +314,28 @@ addRuntimeCallback("mpris", ["metadata", "callbacks"], function (message, sender
 //
 
 var activeDownloads = []
+var downloadUpdateInterval = 0;
 
-setInterval(function() {
+function startSendingDownloadUpdates() {
+    if (!downloadUpdateInterval) {
+        downloadUpdateInterval = setInterval(sendDownloadUpdates, 1000);
+    }
+}
+
+function stopSendingDownloadUpdates() {
+    if (downloadUpdateInterval) {
+        clearInterval(downloadUpdateInterval);
+        downloadUpdateInterval = 0;
+    }
+}
+
+function sendDownloadUpdates() {
     chrome.downloads.search({
         state: 'in_progress',
         paused: false
     }, function (results) {
         if (!results.length) {
+            stopSendingDownloadUpdates();
             return;
         }
 
@@ -341,7 +356,7 @@ setInterval(function() {
             port.postMessage({subsystem: "downloads", event: "update", download: payload});
         });
     });
-}, 1000);
+}
 
 // only forward certain download properties back to our host
 var whitelistedDownloadProperties = [
@@ -358,6 +373,7 @@ chrome.downloads.onCreated.addListener(function (download) {
     var filteredDownload = filterObject(download, whitelistedDownloadProperties);
 
     activeDownloads.push(download.id);
+    startSendingDownloadUpdates();
 
     port.postMessage({subsystem: "downloads", event: "created", download: filteredDownload});
 });
