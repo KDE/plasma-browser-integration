@@ -227,6 +227,13 @@ function setPlayerActive(player) {
     });
 }
 
+function sendPlayerGone() {
+    activePlayer = undefined;
+    playerMetadata = {};
+    playerCallbacks = [];
+    sendMessage("mpris", "gone");
+}
+
 function sendPlayerInfo(player, event, payload) {
     if (player != activePlayer) {
         return;
@@ -389,6 +396,27 @@ function loadMpris() {
                         registerPlayer(player);
                     });
                 });
+
+                mutation.removedNodes.forEach(function (node) {
+                    if (typeof node.matches !== "function" || typeof node.querySelectorAll !== "function") {
+                        return;
+                    }
+
+                    if (node.matches("video,audio")) {
+                        if (node == activePlayer) {
+                            sendPlayerGone();
+                        }
+                        return;
+                    }
+
+                    var players = node.querySelectorAll("video,audio");
+                    players.forEach(function (player) {
+                        if (player == activePlayer) {
+                            sendPlayerGone();
+                            return;
+                        }
+                    });
+                });
             });
         });
 
@@ -422,11 +450,7 @@ function loadMpris() {
             // about to navigate to a different page, tell our extension that the player will be gone shortly
             // we listen for tab closed in the extension but we don't for navigating away as URL change doesn't
             // neccesarily mean a navigation but beforeunload *should* be the thing we want
-
-            activePlayer = undefined;
-            playerMetadata = {};
-            playerCallbacks = [];
-            sendMessage("mpris", "gone");
+            sendPlayerGone();
         });
 
     });
