@@ -1,92 +1,92 @@
 {
-    "kdeconnect_open_via": {
-        "message": "Åbn via KDE Connect"
-    },
-    "options_about_license": {
-        "message": "Licens: <a href=\"$1\">GNU General Public License Version 3</a>"
-    },
-    "options_save_success": {
-        "message": "Indstillingerne blev gemt"
-    },
-    "options_save_failed": {
-        "message": "Gemning af indstillinger mislykkedes"
-    },
-    "options_plugin_downloads_title": {
-        "message": "Vis downloads i bekendtgørelsesområdet"
-    },
-    "options_plugin_breezeScrollBars_title": {
-        "message": "Brug rullebjælker med Breeze-stil"
-    },
-    "options_plugin_mpris_title": {
-        "message": "Mediekontroller"
-    },
-    "options_tab_general": {
-        "message": "Generelt"
-    },
-    "options_plugin_mpris_description": {
-        "message": "Lader dig kontrollere video- og lydafspillere på websider med mediekontrol-"
-    },
-    "options_plugin_kdeconnect_title": {
-        "message": "Send via KDE Connect"
-    },
-    "general_error_port_disconnect": {
-        "message": "Det lokale værtsprogram afbrød uventet: $1"
-    },
-    "options_about_copyright": {
-        "message": "© 2017, 2018 Kai Uwe Broulik og David Edmundson"
-    },
-    "options_save": {
-        "message": "Gem"
-    },
-    "options_about_kde": {
-        "message": "KDE er et verdensomspændende netværk af softwareudviklere, kunstnere, forfattere, oversættere og facilitatorer som er engageret i udvikling af <a href=\"$1\">fri software</a>. Dette fællesskab har skabt hundredvis fri software-programmer som del af KDE frameworks, workspaces og  applications. KDE er et kooperativ, hvor ingen enkelt enhed kontrollerer KDE's indsatser eller produkter ved udelukkelse af andre. Alle er velkomne til at være med til at bidrage til KDE, også dig."
-    },
     "options_about_created_by_kde": {
         "message": "Denne browser-tilføjelse er udviklet af <a href=\"$1\">KDE-fællesskabet</a>. Du kan finde mere information om dette projekt på <a href=\"$2\">KDE-fællesskabets wiki</a>."
-    },
-    "options_tab_about": {
-        "message": "Om"
-    },
-    "options_plugin_tabsrunner_description": {
-        "message": "Sørg for at \"browser-faneblade\"-modulet er aktiveret i <a id=\"$1\" href=\"$2\">Indstillingerne af Plasma-søgning</a>."
-    },
-    "options_plugin_kdeconnect_description": {
-        "message": "Føjer en kontekstmenu-indgang til links, som lader dig sende dem til din telefon og andre parrede enheder med brug af <a href=\"$1\">KDE Connect</a>."
-    },
-    "options_about_translators": {
-        "message": "Martin Schlander"
-    },
-    "options_restore_defaults": {
-        "message": "Gendan standardindstillinger"
-    },
-    "options_about_translated_by": {
-        "message": "Oversat af: $1"
-    },
-    "kdeconnect_open_device": {
-        "message": "Åbn på \"$1\\"
-    },
-    "general_error_unknown": {
-        "message": "Ukendt fejl"
-    },
-    "options_plugin_tabsrunner_title": {
-        "message": "Find browser-faneblade i \"Kør kommando\"-vinduet"
-    },
-    "options_title": {
-        "message": "Plasma Integration Settings"
-    },
-    "options_about_bugs": {
-        "message": "Hvis du finder fejl, så tjek venligst <a href=\"$1\">listen over åbne programfejl</a> og <a href=\"$2\">rapportér en programfejl</a> derefter."
     },
     "options_about_donate": {
         "message": "Hvis du kunne lide hvad du så, så overvej at <a href=\"$1\">donere til KDE</a>, så vi kan fortsætte med at skabe den bedst mulige fri software."
     },
-    "general_error_title": {
-        "message": "Fejl i Plasma browser-integration"
-    },
     "general_error_port_startupfail": {
         "message": "Kunne ikke forbinde til det lokale værtsprogram. Sørg for at pakken \"plasma-browser-integration\" er installeret."
     },
+    "options_plugin_tabsrunner_description": {
+        "message": "Sørg for at \"browser-faneblade\"-modulet er aktiveret i <a id=\"$1\" href=\"$2\">Indstillingerne af Plasma-søgning</a>."
+    },
+    "options_about_kde": {
+        "message": "KDE er et verdensomspændende netværk af softwareudviklere, kunstnere, forfattere, oversættere og facilitatorer som er engageret i udvikling af <a href=\"$1\">fri software</a>. Dette fællesskab har skabt hundredvis fri software-programmer som del af KDE frameworks, workspaces og  applications. KDE er et kooperativ, hvor ingen enkelt enhed kontrollerer KDE's indsatser eller produkter ved udelukkelse af andre. Alle er velkomne til at være med til at bidrage til KDE, også dig."
+    },
+    "general_error_port_disconnect": {
+        "message": "Det lokale værtsprogram afbrød uventet: $1"
+    },
+    "options_plugin_mpris_title": {
+        "message": "Mediekontroller"
+    },
     "options_plugin_breezeScrollBars_description": {
         "message": "Dette kan påvirke udseendet af websider som allerede anvender tilpasset tematisering af deres rullebjælker."
+    },
+    "kdeconnect_open_device": {
+        "message": "Åbn på \"$1\\"
+    },
+    "options_tab_about": {
+        "message": "Om"
+    },
+    "options_about_bugs": {
+        "message": "Hvis du finder fejl, så tjek venligst <a href=\"$1\">listen over åbne programfejl</a> og <a href=\"$2\">rapportér en programfejl</a> derefter."
+    },
+    "options_plugin_breezeScrollBars_title": {
+        "message": "Brug rullebjælker med Breeze-stil"
+    },
+    "options_save_success": {
+        "message": "Indstillingerne blev gemt"
+    },
+    "options_tab_general": {
+        "message": "Generelt"
+    },
+    "options_about_translators": {
+        "message": "Martin Schlander"
+    },
+    "options_save": {
+        "message": "Gem"
+    },
+    "options_plugin_downloads_title": {
+        "message": "Vis downloads i bekendtgørelsesområdet"
+    },
+    "options_plugin_kdeconnect_title": {
+        "message": "Send via KDE Connect"
+    },
+    "kdeconnect_open_via": {
+        "message": "Åbn via KDE Connect"
+    },
+    "options_restore_defaults": {
+        "message": "Gendan standardindstillinger"
+    },
+    "options_plugin_mpris_description": {
+        "message": "Lader dig kontrollere video- og lydafspillere på websider med mediekontrol-"
+    },
+    "general_error_unknown": {
+        "message": "Ukendt fejl"
+    },
+    "options_title": {
+        "message": "Plasma Integration Settings"
+    },
+    "general_error_title": {
+        "message": "Fejl i Plasma browser-integration"
+    },
+    "options_save_failed": {
+        "message": "Gemning af indstillinger mislykkedes"
+    },
+    "options_about_license": {
+        "message": "Licens: <a href=\"$1\">GNU General Public License Version 3</a>"
+    },
+    "options_about_copyright": {
+        "message": "© 2017, 2018 Kai Uwe Broulik og David Edmundson"
+    },
+    "options_about_translated_by": {
+        "message": "Oversat af: $1"
+    },
+    "options_plugin_kdeconnect_description": {
+        "message": "Føjer en kontekstmenu-indgang til links, som lader dig sende dem til din telefon og andre parrede enheder med brug af <a href=\"$1\">KDE Connect</a>."
+    },
+    "options_plugin_tabsrunner_title": {
+        "message": "Find browser-faneblade i \"Kør kommando\"-vinduet"
     }
 }
