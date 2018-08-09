@@ -450,6 +450,9 @@ function loadMpris() {
         sendPlayerGone();
     });
 
+    // In some cases DOMContentLoaded won't fire, e.g. when watching a video file directly in the browser
+    // it generates a "video player" page for you but won't fire the event
+    registerAllPlayers();
 
     document.addEventListener("DOMContentLoaded", function() {
         registerAllPlayers();
