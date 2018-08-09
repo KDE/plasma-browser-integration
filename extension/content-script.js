@@ -369,90 +369,90 @@ function playerPause() {
 }
 
 function loadMpris() {
+    // TODO figure out somehow when a <video> tag is added dynamically and autoplays
+    // as can happen on Ajax-heavy pages like YouTube
+    // could also be done if we just look for the "audio playing in this tab" and only then check for player?
+    // cf. "checkPlayer" event above
+
+    var observer = new MutationObserver(function (mutations) {
+        mutations.forEach(function (mutation) {
+            mutation.addedNodes.forEach(function (node) {
+                if (typeof node.matches !== "function" || typeof node.querySelectorAll !== "function") {
+                    return;
+                }
+
+                // first check whether the node itself is audio/video
+                if (node.matches("video,audio")) {
+                    registerPlayer(node);
+                    return;
+                }
+
+                // if not, check whether any of its children are
+                var players = node.querySelectorAll("video,audio");
+                players.forEach(function (player) {
+                    registerPlayer(player);
+                });
+            });
+
+            mutation.removedNodes.forEach(function (node) {
+                if (typeof node.matches !== "function" || typeof node.querySelectorAll !== "function") {
+                    return;
+                }
+
+                if (node.matches("video,audio")) {
+                    if (node == activePlayer) {
+                        sendPlayerGone();
+                    }
+                    return;
+                }
+
+                var players = node.querySelectorAll("video,audio");
+                players.forEach(function (player) {
+                    if (player == activePlayer) {
+                        sendPlayerGone();
+                        return;
+                    }
+                });
+            });
+        });
+    });
+
+    observer.observe(document.documentElement, {
+        childList: true,
+        subtree: true
+    });
+
+    // Observe changes to the <title> tag in case it is updated after the player has started playing
+    var titleTag = document.querySelector("head > title");
+    if (titleTag) {
+        var titleObserver = new MutationObserver(function (mutations) {
+            mutations.forEach(function (mutation) {
+                var pageTitle = mutation.target.textContent;
+                if (pageTitle) {
+                    sendMessage("mpris", "titlechange", {
+                        pageTitle: pageTitle
+                    });
+                }
+            });
+        });
+
+        titleObserver.observe(titleTag, {
+            childList: true, // text content is technically a child node
+            subtree: true,
+            characterData: true
+        });
+    }
+
+    window.addEventListener("beforeunload", function () {
+        // about to navigate to a different page, tell our extension that the player will be gone shortly
+        // we listen for tab closed in the extension but we don't for navigating away as URL change doesn't
+        // neccesarily mean a navigation but beforeunload *should* be the thing we want
+        sendPlayerGone();
+    });
+
+
     document.addEventListener("DOMContentLoaded", function() {
         registerAllPlayers();
-
-        // TODO figure out somehow when a <video> tag is added dynamically and autoplays
-        // as can happen on Ajax-heavy pages like YouTube
-        // could also be done if we just look for the "audio playing in this tab" and only then check for player?
-        // cf. "checkPlayer" event above
-
-        var observer = new MutationObserver(function (mutations) {
-            mutations.forEach(function (mutation) {
-                mutation.addedNodes.forEach(function (node) {
-                    if (typeof node.matches !== "function" || typeof node.querySelectorAll !== "function") {
-                        return;
-                    }
-
-                    // first check whether the node itself is audio/video
-                    if (node.matches("video,audio")) {
-                        registerPlayer(node);
-                        return;
-                    }
-
-                    // if not, check whether any of its children are
-                    var players = node.querySelectorAll("video,audio");
-                    players.forEach(function (player) {
-                        registerPlayer(player);
-                    });
-                });
-
-                mutation.removedNodes.forEach(function (node) {
-                    if (typeof node.matches !== "function" || typeof node.querySelectorAll !== "function") {
-                        return;
-                    }
-
-                    if (node.matches("video,audio")) {
-                        if (node == activePlayer) {
-                            sendPlayerGone();
-                        }
-                        return;
-                    }
-
-                    var players = node.querySelectorAll("video,audio");
-                    players.forEach(function (player) {
-                        if (player == activePlayer) {
-                            sendPlayerGone();
-                            return;
-                        }
-                    });
-                });
-            });
-        });
-
-        observer.observe(document.documentElement, {
-            childList: true,
-            subtree: true
-        });
-
-        // Observe changes to the <title> tag in case it is updated after the player has started playing
-        var titleTag = document.querySelector("head > title");
-        if (titleTag) {
-            var titleObserver = new MutationObserver(function (mutations) {
-                mutations.forEach(function (mutation) {
-                    var pageTitle = mutation.target.textContent;
-                    if (pageTitle) {
-                        sendMessage("mpris", "titlechange", {
-                            pageTitle: pageTitle
-                        });
-                    }
-                });
-            });
-
-            titleObserver.observe(titleTag, {
-                childList: true, // text content is technically a child node
-                subtree: true,
-                characterData: true
-            });
-        }
-
-        window.addEventListener("beforeunload", function () {
-            // about to navigate to a different page, tell our extension that the player will be gone shortly
-            // we listen for tab closed in the extension but we don't for navigating away as URL change doesn't
-            // neccesarily mean a navigation but beforeunload *should* be the thing we want
-            sendPlayerGone();
-        });
-
     });
 }
 
