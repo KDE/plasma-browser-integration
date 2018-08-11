@@ -1,48 +1,75 @@
 {
-    "options_about_license": {
-        "message": "Licencia: <a href=\"$1\">Licencia Pública General de GNU versión 3</a>"
-    },
-    "options_restore_defaults": {
-        "message": "Restaurar valores por omisión"
-    },
-    "options_plugin_mpris_title": {
-        "message": "Controles multimedia"
-    },
-    "options_plugin_kdeconnect_title": {
-        "message": "Enviar usando KDE Connect"
-    },
-    "kdeconnect_open_via": {
-        "message": "Abrir usando KDE Connect"
-    },
-    "options_save_success": {
-        "message": "Las preferencias se han guardado con éxito"
-    },
-    "options_about_copyright": {
-        "message": "© 2017, 2018 Kai Uwe Broulik y David Edmundson"
-    },
-    "options_plugin_mpris_description": {
-        "message": "Le permite controlar los reproductores de vídeo y de sonido de los sitios web usando el plasmoide del «Controlador multimedia»."
-    },
-    "options_about_translated_by": {
-        "message": "Traducido por: $1"
-    },
     "options_about_donate": {
         "message": "Si le gusta lo que ve, considere la posibilidad de <a href=\"$1\">hacer una donación a KDE</a> para que podamos seguir haciendo el mejor software libre que nos sea posible."
-    },
-    "options_plugin_downloads_title": {
-        "message": "Mostrar las descargas en el área de notificaciones"
     },
     "general_error_unknown": {
         "message": "Error desconocido"
     },
+    "options_plugin_breezeScrollBars_description": {
+        "message": "Esto puede interferir con el aspecto de los sitios web que aplican un estilo personalizado a las barras de desplazamiento."
+    },
+    "options_tab_general": {
+        "message": "General"
+    },
+    "options_save_success": {
+        "message": "Las preferencias se han guardado con éxito"
+    },
+    "kdeconnect_open_via": {
+        "message": "Abrir usando KDE Connect"
+    },
+    "general_error_port_startupfail": {
+        "message": "No se ha podido conectar con el servidor nativo. Asegúrese de que está instalado el paquete «plasma-browser-integration»."
+    },
+    "options_about_bugs": {
+        "message": "Si encuentra un problema, compruebe la <a href=\"$1\">lista de errores abiertos</a> y, si procede, <a href=\"$2\">genere un informe de error</a>."
+    },
+    "options_about_translated_by": {
+        "message": "Traducido por: $1"
+    },
+    "options_plugin_downloads_title": {
+        "message": "Mostrar las descargas en el área de notificaciones"
+    },
+    "options_save": {
+        "message": "Guardar"
+    },
+    "options_about_created_by_kde": {
+        "message": "Esta extensión de navegador fue creada por la <a href=\"$1\">Comunidad KDE</a>. Puede encontrar más información sobre este proyecto en la <a href=\"$2\">Wiki de la Comunidad KDE</a>."
+    },
+    "kdeconnect_open_device": {
+        "message": "Abrir en «$1»"
+    },
+    "options_plugin_mpris_description": {
+        "message": "Le permite controlar los reproductores de vídeo y de sonido de los sitios web usando el plasmoide del «Controlador multimedia»."
+    },
+    "options_about_copyright": {
+        "message": "© 2017, 2018 Kai Uwe Broulik y David Edmundson"
+    },
+    "options_about_license": {
+        "message": "Licencia: <a href=\"$1\">Licencia Pública General de GNU versión 3</a>"
+    },
     "options_plugin_tabsrunner_description": {
         "message": "Asegura que el módulo «Pestañas del navegador» está activado en las<a id=\"$1\" href=\"$2\">preferencias de la búsqueda de Plasma</a>."
+    },
+    "options_plugin_kdeconnect_description": {
+        "message": "Añade una entrada al menú de contexto de los enlaces que le permite enviarlos a su teléfono o a otros dispositivos emparejados usando <a href=\"$1\">KDE Connect</a>."
+    },
+    "options_plugin_kdeconnect_title": {
+        "message": "Enviar usando KDE Connect"
+    },
+    "options_restore_defaults": {
+        "message": "Restaurar valores por omisión"
     },
     "options_title": {
         "message": "Preferencias de integración con Plasma"
     },
-    "options_tab_about": {
-        "message": "Acerca de"
+    "options_about_kde": {
+        "message": "KDE es una red mundial de ingenieros de software, artistas, escritores, traductores y coordinadores entregados al desarrollo de <a href=\"$1\">software libre</a>. Esta comunidad ha creado cientos de aplicaciones de software libre como parte de la infraestructura, los espacios de trabajo y las aplicaciones de KDE. KDE es una empresa cooperativa en la que ninguna entidad individual controla la creación ni los productos de KDE para la exclusión de otros. Todo el mundo es bienvenido a unirse y a colaborar con KDE, incluido usted."
+    },
+    "general_error_port_disconnect": {
+        "message": "El servidor nativo se ha desconectado de forma imprevista: $1"
+    },
+    "options_about_translators": {
+        "message": "Eloy Cuadra"
     },
     "options_plugin_breezeScrollBars_title": {
         "message": "Usar las barras de desplazamiento del estilo Brisa"
@@ -50,43 +77,16 @@
     "options_plugin_tabsrunner_title": {
         "message": "Encontrar las pestañas del navegador en la ventana «Ejecutar orden»"
     },
-    "options_save": {
-        "message": "Guardar"
+    "options_tab_about": {
+        "message": "Acerca de"
     },
-    "options_plugin_kdeconnect_description": {
-        "message": "Añade una entrada al menú de contexto de los enlaces que le permite enviarlos a su teléfono o a otros dispositivos emparejados usando <a href=\"$1\">KDE Connect</a>."
-    },
-    "options_tab_general": {
-        "message": "General"
-    },
-    "options_about_translators": {
-        "message": "Eloy Cuadra"
-    },
-    "kdeconnect_open_device": {
-        "message": "Abrir en «$1»"
-    },
-    "general_error_port_startupfail": {
-        "message": "No se ha podido conectar con el servidor nativo. Asegúrese de que está instalado el paquete «plasma-browser-integration»."
-    },
-    "options_plugin_breezeScrollBars_description": {
-        "message": "Esto puede interferir con el aspecto de los sitios web que aplican un estilo personalizado a las barras de desplazamiento."
-    },
-    "general_error_port_disconnect": {
-        "message": "El servidor nativo se ha desconectado de forma imprevista: $1"
-    },
-    "options_about_bugs": {
-        "message": "Si encuentra un problema, compruebe la <a href=\"$1\">lista de errores abiertos</a> y, si procede, <a href=\"$2\">genere un informe de error</a>."
+    "options_save_failed": {
+        "message": "Ha ocurrido un error al guardar las preferencias"
     },
     "general_error_title": {
         "message": "Error de integración del navegador con Plasma"
     },
-    "options_about_kde": {
-        "message": "KDE es una red mundial de ingenieros de software, artistas, escritores, traductores y coordinadores entregados al desarrollo de <a href=\"$1\">software libre</a>. Esta comunidad ha creado cientos de aplicaciones de software libre como parte de la infraestructura, los espacios de trabajo y las aplicaciones de KDE. KDE es una empresa cooperativa en la que ninguna entidad individual controla la creación ni los productos de KDE para la exclusión de otros. Todo el mundo es bienvenido a unirse y a colaborar con KDE, incluido usted."
-    },
-    "options_about_created_by_kde": {
-        "message": "Esta extensión de navegador fue creada por la <a href=\"$1\">Comunidad KDE</a>. Puede encontrar más información sobre este proyecto en la <a href=\"$2\">Wiki de la Comunidad KDE</a>."
-    },
-    "options_save_failed": {
-        "message": "Ha ocurrido un error al guardar las preferencias"
+    "options_plugin_mpris_title": {
+        "message": "Controles multimedia"
     }
 }
