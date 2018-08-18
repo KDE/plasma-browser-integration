@@ -1,92 +1,92 @@
 {
-    "options_about_bugs": {
-        "message": "Als u een probleem vindt, controleer dan de <a href=\"$1\">lijst met open bugs</a> en daarna <a href=\"$2\">stuur een bugrapport</a>."
-    },
-    "options_about_copyright": {
-        "message": "© 2017, 2018 Kai Uwe Broulik en David Edmundson"
+    "options_about_translated_by": {
+        "message": "Vertaald door: $1"
     },
     "options_plugin_breezeScrollBars_title": {
         "message": "Breeze-stijl schuifbalken gebruiken"
     },
-    "options_plugin_mpris_description": {
-        "message": "Laat u video- en audiospelers besturen in websites met de plasmoid "
-    },
-    "options_about_kde": {
-        "message": "KDE is een wereldwijd netwerk van software-ingenieurs, artiesten, schrijvers, vertalers en facilitators, die aan de ontwikkeling van <a href=\"$1\">vrije software</a> zijn toegewijd. Deze gemeenschap heeft honderden vrije software programma's ontwikkeld als onderdeel van KDE frameworks, workspaces en applications. KDE is een samenwerkingsverband waarin geen enkele entiteit de controle heeft over de inspanningen of producten van KDE of exclusief eigenaar is. Iedereen is welkom om mee te doen en te werken aan KDE, inclusief u."
-    },
-    "options_plugin_downloads_title": {
-        "message": "Downloads tonen in gebied voor meldingen"
-    },
-    "options_save_failed": {
-        "message": "Instellingen opslaan is mislukt"
-    },
-    "kdeconnect_open_device": {
-        "message": "Openen op '$1'"
-    },
-    "options_about_created_by_kde": {
-        "message": "Deze extensie van een browser is gemaakt door de <a href=\"$1\">KDE-gemeenschap</a>. U kunt meer informatie over dit project vinden op de <a "
-    },
-    "options_plugin_tabsrunner_description": {
-        "message": "Ga na dat de module “Browser Tabs” is ingeschakeld in <a id=\"$1\" href="
-    },
     "general_error_port_disconnect": {
         "message": "De eigen host heeft onverwacht de verbinding verbroken: $1"
-    },
-    "options_plugin_breezeScrollBars_description": {
-        "message": "Dit kan interfereren met het uiterlijk van websites die reeds een aangepaste stijl hanteren voor hun schuifbalken."
-    },
-    "options_save": {
-        "message": "Opslaan"
-    },
-    "general_error_unknown": {
-        "message": "Onbekende fout"
-    },
-    "options_tab_about": {
-        "message": "Info over"
     },
     "options_about_translators": {
         "message": "Freek de Kruijf"
     },
-    "general_error_title": {
-        "message": "Fout in Plasma-browserintegratie"
+    "kdeconnect_open_device": {
+        "message": "Openen op '$1'"
     },
-    "options_about_translated_by": {
-        "message": "Vertaald door: $1"
-    },
-    "general_error_port_startupfail": {
-        "message": "Verbinden met de inheemse host is mislukt. Ga na dat het pakket 'plasma-browser-integration' is geïnstalleerd."
-    },
-    "options_tab_general": {
-        "message": "Algemeen"
-    },
-    "options_plugin_kdeconnect_description": {
-        "message": "Voegt een item contextmenu toe aan koppelingen waarmee u ze kunt verzenden naar uw telefoon en andere gepaarde apparaten met gebruik van <a href=\"$1\">KDE Connect</a>."
-    },
-    "options_title": {
-        "message": "Plasma-integratie-instellingen"
-    },
-    "options_plugin_kdeconnect_title": {
-        "message": "Via KDE Connect verzenden"
-    },
-    "options_about_license": {
-        "message": "Licentie: <a href=\"$1\">GNU General Public License Versie 3</a>"
-    },
-    "options_restore_defaults": {
-        "message": "Standaardinstellingen herstellen"
-    },
-    "options_save_success": {
-        "message": "Instellingen met succes opgeslagen"
-    },
-    "kdeconnect_open_via": {
-        "message": "Via KDE Connect openen"
+    "options_save_failed": {
+        "message": "Instellingen opslaan is mislukt"
     },
     "options_plugin_tabsrunner_title": {
         "message": "Browsertabbladen in venster “Commando uitvoeren” zoeken"
     },
+    "kdeconnect_open_via": {
+        "message": "Via KDE Connect openen"
+    },
+    "options_restore_defaults": {
+        "message": "Standaardinstellingen herstellen"
+    },
+    "options_plugin_kdeconnect_title": {
+        "message": "Via KDE Connect verzenden"
+    },
+    "options_about_created_by_kde": {
+        "message": "Deze extensie van een browser is gemaakt door de <a href=\"$1\">KDE-gemeenschap</a>. U kunt meer informatie over dit project vinden op de <a "
+    },
+    "general_error_unknown": {
+        "message": "Onbekende fout"
+    },
+    "options_plugin_kdeconnect_description": {
+        "message": "Voegt een item contextmenu toe aan koppelingen waarmee u ze kunt verzenden naar uw telefoon en andere gepaarde apparaten met gebruik van <a href=\"$1\">KDE Connect</a>."
+    },
+    "options_tab_about": {
+        "message": "Info over"
+    },
+    "options_plugin_breezeScrollBars_description": {
+        "message": "Dit kan interfereren met het uiterlijk van websites die reeds een aangepaste stijl hanteren voor hun schuifbalken."
+    },
+    "general_error_title": {
+        "message": "Fout in Plasma-browserintegratie"
+    },
+    "options_about_bugs": {
+        "message": "Als u een probleem vindt, controleer dan de <a href=\"$1\">lijst met open bugs</a> en daarna <a href=\"$2\">stuur een bugrapport</a>."
+    },
+    "options_plugin_mpris_description": {
+        "message": "Laat u video- en audiospelers besturen in websites met de plasmoid "
+    },
+    "options_tab_general": {
+        "message": "Algemeen"
+    },
+    "options_title": {
+        "message": "Plasma-integratie-instellingen"
+    },
     "options_plugin_mpris_title": {
         "message": "Besturing van media"
     },
+    "general_error_port_startupfail": {
+        "message": "Verbinden met de inheemse host is mislukt. Ga na dat het pakket 'plasma-browser-integration' is geïnstalleerd."
+    },
+    "options_save": {
+        "message": "Opslaan"
+    },
+    "options_plugin_tabsrunner_description": {
+        "message": "Ga na dat de module “Browser Tabs” is ingeschakeld in <a id=\"$1\" href="
+    },
+    "options_about_kde": {
+        "message": "KDE is een wereldwijd netwerk van software-ingenieurs, artiesten, schrijvers, vertalers en facilitators, die aan de ontwikkeling van <a href=\"$1\">vrije software</a> zijn toegewijd. Deze gemeenschap heeft honderden vrije software programma's ontwikkeld als onderdeel van KDE frameworks, workspaces en applications. KDE is een samenwerkingsverband waarin geen enkele entiteit de controle heeft over de inspanningen of producten van KDE of exclusief eigenaar is. Iedereen is welkom om mee te doen en te werken aan KDE, inclusief u."
+    },
+    "options_about_license": {
+        "message": "Licentie: <a href=\"$1\">GNU General Public License Versie 3</a>"
+    },
+    "options_about_copyright": {
+        "message": "© 2017, 2018 Kai Uwe Broulik en David Edmundson"
+    },
     "options_about_donate": {
         "message": "Als u wat u zag fijn vond, bekijk dan eens of <a href=\"$1\">doneren aan KDE</a> iets is, zodat we door kunnen gaan om de beste vrije software mogelijk te maken."
+    },
+    "options_plugin_downloads_title": {
+        "message": "Downloads tonen in gebied voor meldingen"
+    },
+    "options_save_success": {
+        "message": "Instellingen met succes opgeslagen"
     }
 }
