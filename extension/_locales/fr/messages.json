@@ -1,48 +1,24 @@
 {
-    "options_about_translated_by": {
-        "message": "Traduit par : $1"
+    "options_plugin_mpris_media_sessions_description": {
+        "message": "Extraire les métadonnées et les vignettes du contenu en cours de lecture. "
     },
-    "options_plugin_kdeconnect_description": {
-        "message": "Ajoute un élément aux menus contextuels des liens vous permettant de les envoyer vers votre téléphone ou autre appareil associé utilisant <a href=\"$1\">KDE Connect</a>."
-    },
-    "kdeconnect_open_via": {
-        "message": "Ouvrir via KDE Connect"
-    },
-    "options_not_supported_os": {
-        "message": "Cette extension n'est pas prise en charge sur ce système d'exploitation."
-    },
-    "options_tab_general": {
-        "message": "Général"
-    },
-    "general_error_port_startupfail": {
-        "message": "Impossible de se connecter à l'hôte natif. Assurez-vous que le paquet « plasma-browser-integration » soit installé."
-    },
-    "options_about_donate": {
-        "message": "Si vous aimez ce que vous voyez, vous pouvez envisager <a href=\"$1\">de faire un don à KDE</a>, afin que nous puissions continuer à développer les meilleurs logiciels libres possibles."
-    },
-    "options_plugin_tabsrunner_description": {
-        "message": "Assurez-vous que le module « Onglets du navigateur » soit activé dans les <a id=\"$1\" href=\"$2\">Paramètres de recherche de Plasma</a>."
-    },
-    "options_plugin_breezeScrollBars_description": {
-        "message": "Cette option peut interférer avec l'apparence de sites Web qui appliquent déjà un style personnalisé à leurs barres de défilement."
-    },
-    "options_about_bugs": {
-        "message": "Si vous rencontrez un problème, veuillez vérifier la <a href=\"$1\">liste des bogues ouverts</a> et <a href=\"$2\">remplir un rapport de bogue</a>."
-    },
-    "options_plugin_mpris_description": {
-        "message": "Vous permet de contrôler les lecteurs audio et vidéo sur les sites Web en utilisant le plasmoïde Contrôleur multimédia."
-    },
-    "options_plugin_mpris_media_sessions_title": {
-        "message": "Contrôles multimédia améliorés"
-    },
-    "general_error_unknown": {
-        "message": "Erreur inconnue"
+    "general_error_title": {
+        "message": "Erreur d'intégration au navigateur Plasma"
     },
     "options_save_success": {
         "message": "Paramètres enregistrés avec succès"
     },
-    "options_plugin_downloads_title": {
-        "message": "Afficher les téléchargements dans la zone de notification"
+    "kdeconnect_open_device": {
+        "message": "Ouvrir sur « %1 »"
+    },
+    "options_about_license": {
+        "message": "Licence : <a href=\"%1\">Version 3 de la Licence Publique Générale GNU</a>"
+    },
+    "options_not_supported_os": {
+        "message": "Cette extension n'est pas prise en charge sur ce système d'exploitation."
+    },
+    "general_error_port_startupfail": {
+        "message": "Impossible de se connecter à l'hôte natif. Assurez-vous que le paquet « plasma-browser-integration » soit installé."
     },
     "options_about_kde": {
         "message": "KDE est un réseau, à l'échelle mondiale, d'ingénieurs en logiciels, d'artistes, de traducteurs et d'animateurs se consacrant au développement de <a href=\"%1\">logiciels libres</a>. Cette communauté a créé des centaines d'applications et logiciels libres dans le cadre de la plate-forme de développement de KDE et de la distribution de KDE. KDE est un mouvement coopératif dans lequel aucune entité unique ne contrôle les efforts ou les produits de KDE au détriment des autres. Chacun est invité à nous rejoindre et à contribuer à KDE, y compris vous."
@@ -50,46 +26,70 @@
     "options_about_translators": {
         "message": "Simon Depiets"
     },
-    "options_plugin_mpris_media_sessions_description": {
-        "message": "Extraire les métadonnées et les vignettes du contenu en cours de lecture. "
+    "options_about_copyright": {
+        "message": "© 2017, 2018 Kai Uwe Broulik et David Edmundson"
     },
-    "options_plugin_mpris_title": {
-        "message": "Contrôles multimédia"
+    "general_error_unknown": {
+        "message": "Erreur inconnue"
     },
-    "options_tab_about": {
-        "message": "À propos"
-    },
-    "options_plugin_breezeScrollBars_title": {
-        "message": "Utiliser les barres de défilement de type Brise"
-    },
-    "options_plugin_tabsrunner_title": {
-        "message": "Chercher les onglets du navigateur dans la fenêtre « Exécuter une commande »"
+    "options_about_created_by_kde": {
+        "message": "Cette extension de navigateur a été créée par la <a href=\"$1\">Communauté KDE</a>. Vous pouvez trouver davantage d'informations relatives à ce projet sur le <a href=\"$2\">Wiki de la Communauté KDE</a>."
     },
     "options_plugin_kdeconnect_title": {
         "message": "Envoyer via KDE Connect"
     },
-    "options_about_license": {
-        "message": "Licence : <a href=\"%1\">Version 3 de la Licence Publique Générale GNU</a>"
-    },
-    "options_about_copyright": {
-        "message": "© 2017, 2018 Kai Uwe Broulik et David Edmundson"
-    },
-    "options_save_failed": {
-        "message": "Échec de l'enregistrement des paramètres"
+    "options_plugin_tabsrunner_description": {
+        "message": "Assurez-vous que le module « Onglets du navigateur » soit activé dans les <a id=\"$1\" href=\"$2\">Paramètres de recherche de Plasma</a>."
     },
     "options_title": {
         "message": "Paramètres d'intégration à Plasma"
     },
-    "general_error_title": {
-        "message": "Erreur d'intégration au navigateur Plasma"
+    "kdeconnect_open_via": {
+        "message": "Ouvrir via KDE Connect"
     },
-    "kdeconnect_open_device": {
-        "message": "Ouvrir sur « %1 »"
+    "options_plugin_tabsrunner_title": {
+        "message": "Chercher les onglets du navigateur dans la fenêtre « Exécuter une commande »"
+    },
+    "options_about_bugs": {
+        "message": "Si vous rencontrez un problème, veuillez vérifier la <a href=\"$1\">liste des bogues ouverts</a> et <a href=\"$2\">remplir un rapport de bogue</a>."
+    },
+    "options_plugin_breezeScrollBars_title": {
+        "message": "Utiliser les barres de défilement de type Brise"
+    },
+    "options_save_failed": {
+        "message": "Échec de l'enregistrement des paramètres"
+    },
+    "options_plugin_downloads_title": {
+        "message": "Afficher les téléchargements dans la zone de notification"
+    },
+    "options_plugin_kdeconnect_description": {
+        "message": "Ajoute un élément aux menus contextuels des liens vous permettant de les envoyer vers votre téléphone ou autre appareil associé utilisant <a href=\"$1\">KDE Connect</a>."
+    },
+    "options_about_donate": {
+        "message": "Si vous aimez ce que vous voyez, vous pouvez envisager <a href=\"$1\">de faire un don à KDE</a>, afin que nous puissions continuer à développer les meilleurs logiciels libres possibles."
+    },
+    "options_about_translated_by": {
+        "message": "Traduit par : $1"
+    },
+    "options_plugin_breezeScrollBars_description": {
+        "message": "Cette option peut interférer avec l'apparence de sites Web qui appliquent déjà un style personnalisé à leurs barres de défilement."
+    },
+    "options_tab_about": {
+        "message": "À propos"
     },
     "general_error_port_disconnect": {
         "message": "L'hôte natif s'est brutalement déconnecté : $1"
     },
-    "options_about_created_by_kde": {
-        "message": "Cette extension de navigateur a été créée par la <a href=\"$1\">Communauté KDE</a>. Vous pouvez trouver davantage d'informations relatives à ce projet sur le <a href=\"$2\">Wiki de la Communauté KDE</a>."
+    "options_plugin_mpris_description": {
+        "message": "Vous permet de contrôler les lecteurs audio et vidéo sur les sites Web en utilisant le plasmoïde Contrôleur multimédia."
+    },
+    "options_plugin_mpris_title": {
+        "message": "Contrôles multimédia"
+    },
+    "options_tab_general": {
+        "message": "Général"
+    },
+    "options_plugin_mpris_media_sessions_title": {
+        "message": "Contrôles multimédia améliorés"
     }
 }
