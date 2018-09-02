@@ -1,78 +1,30 @@
 {
-    "options_plugin_mpris_title": {
-        "message": "媒體控制"
-    },
     "options_plugin_kdeconnect_title": {
         "message": "透過 KDE Connect 傳送"
     },
-    "options_plugin_tabsrunner_description": {
-        "message": "確保已在 <a id=\"$1\" href=\"$2\">Plasma 搜尋設定</a>中啟用「瀏覽器分頁」模"
-    },
-    "general_error_title": {
-        "message": "Plasma 瀏覽器整合錯誤"
-    },
-    "options_plugin_tabsrunner_title": {
-        "message": "在「執行指令」視窗中尋找瀏覽器分頁"
-    },
-    "options_plugin_mpris_media_sessions_title": {
-        "message": "強化的媒體控制"
-    },
-    "general_error_unknown": {
-        "message": "未知的錯誤"
-    },
-    "options_save_success": {
-        "message": "設定成功儲存"
-    },
-    "options_about_donate": {
-        "message": "若您喜歡您看到的東西，請考慮<a href=\"$1\">捐款給 KDE</a>，這樣我們就可以繼續"
-    },
-    "options_title": {
-        "message": "Plasma Integration Settings"
-    },
-    "options_about_bugs": {
-        "message": "若您發現了一些問題，請檢查<a href=\"$1\">開放的錯誤清單</a>然後<a href="
-    },
-    "options_plugin_downloads_title": {
-        "message": "在通知區域顯示下載"
-    },
-    "options_about_kde": {
-        "message": "KDE 是一個接受全世界的軟體工程師、美工畫家、寫作者、翻譯者與服務者提交各種服務與貢獻的<a href=\"$1\">自由軟體</a>開發網路。這個社群建立了由數百個自由軟體應用程式，做為 KDE 框架、工作空間與應用程式的一部份。沒有任何一個單一的團體、公司或組織能完全掌控 KDE 的源碼。每個人都能加入並貢獻到 KDE。"
-    },
-    "options_tab_general": {
-        "message": "一般"
-    },
-    "options_plugin_breezeScrollBars_title": {
-        "message": "使用 Breeze 樣式的捲軸列"
-    },
-    "options_about_copyright": {
-        "message": "© 2017, 2018 Kai Uwe Broulik 與 David Edmundson"
-    },
-    "options_plugin_mpris_description": {
-        "message": "讓您使用媒體控制器 plasmoid 控制在網頁中的視訊與音訊播放器。"
-    },
-    "options_about_translators": {
-        "message": "Jeff Huang"
-    },
-    "options_not_supported_os": {
-        "message": "這個擴充套件不被此作業系統支援。"
-    },
-    "options_save_failed": {
-        "message": "儲存設定失敗"
-    },
-    "options_about_license": {
-        "message": "授權條款：<a href=\"$1\">GNU 通用公共授權第三版</a>"
+    "kdeconnect_open_via": {
+        "message": "透過 KDE Connect 開啟"
     },
     "general_error_port_disconnect": {
         "message": "原生主機非預期的斷線：$1"
     },
-    "kdeconnect_open_device": {
-        "message": "在 '$1' 上開啟"
+    "options_about_bugs": {
+        "message": "若您發現了一些問題，請檢查<a href=\"$1\">開放的錯誤清單</a>然後<a href="
     },
-    "options_plugin_mpris_media_sessions_description": {
-        "message": "從目前播放的內容擷取詮釋資料與縮圖。（實驗性）"
+    "options_about_kde": {
+        "message": "KDE 是一個接受全世界的軟體工程師、美工畫家、寫作者、翻譯者與服務者提交各種服務與貢獻的<a href=\"$1\">自由軟體</a>開發網路。這個社群建立了由數百個自由軟體應用程式，做為 KDE 框架、工作空間與應用程式的一部份。沒有任何一個單一的團體、公司或組織能完全掌控 KDE 的源碼。每個人都能加入並貢獻到 KDE。"
+    },
+    "options_plugin_tabsrunner_title": {
+        "message": "在「執行指令」視窗中尋找瀏覽器分頁"
+    },
+    "options_plugin_mpris_title": {
+        "message": "媒體控制"
     },
     "options_about_created_by_kde": {
         "message": "這個瀏覽器擴充套件由 <a href=\"$1\">KDE 社群</a>建立。您可以在 <a href=\"$2\">KDE Community Wiki</a> 找到更多關於此專案的資訊。"
+    },
+    "options_plugin_breezeScrollBars_description": {
+        "message": "這可能會干擾已經套用自訂樣式到它們的捲軸列的網頁。"
     },
     "general_error_port_startupfail": {
         "message": "連線到原生主機失敗。請確定已安裝 'plasma-browser-integration' 軟體包。"
@@ -80,16 +32,64 @@
     "options_tab_about": {
         "message": "關於"
     },
-    "kdeconnect_open_via": {
-        "message": "透過 KDE Connect 開啟"
+    "options_save_success": {
+        "message": "設定成功儲存"
+    },
+    "options_plugin_kdeconnect_description": {
+        "message": "新增連結的右鍵選單項目以讓您可以將它們使用 <a href=\"$1\">KDE Connect</a> 傳"
+    },
+    "options_plugin_mpris_media_sessions_description": {
+        "message": "從目前播放的內容擷取詮釋資料與縮圖。（實驗性）"
+    },
+    "options_tab_general": {
+        "message": "一般"
+    },
+    "general_error_unknown": {
+        "message": "未知的錯誤"
+    },
+    "options_not_supported_os": {
+        "message": "這個擴充套件不被此作業系統支援。"
+    },
+    "options_about_translators": {
+        "message": "Jeff Huang"
+    },
+    "options_plugin_downloads_title": {
+        "message": "在通知區域顯示下載"
+    },
+    "options_about_copyright": {
+        "message": "© 2017, 2018 Kai Uwe Broulik 與 David Edmundson"
+    },
+    "options_about_license": {
+        "message": "授權條款：<a href=\"$1\">GNU 通用公共授權第三版</a>"
+    },
+    "options_plugin_breezeScrollBars_title": {
+        "message": "使用 Breeze 樣式的捲軸列"
+    },
+    "kdeconnect_open_device": {
+        "message": "在 '$1' 上開啟"
+    },
+    "general_error_title": {
+        "message": "Plasma 瀏覽器整合錯誤"
+    },
+    "options_about_donate": {
+        "message": "若您喜歡您看到的東西，請考慮<a href=\"$1\">捐款給 KDE</a>，這樣我們就可以繼續"
+    },
+    "options_plugin_mpris_description": {
+        "message": "讓您使用媒體控制器 plasmoid 控制在網頁中的視訊與音訊播放器。"
+    },
+    "options_save_failed": {
+        "message": "儲存設定失敗"
     },
     "options_about_translated_by": {
         "message": "翻譯由：$1"
     },
-    "options_plugin_breezeScrollBars_description": {
-        "message": "這可能會干擾已經套用自訂樣式到它們的捲軸列的網頁。"
+    "options_title": {
+        "message": "Plasma Integration Settings"
     },
-    "options_plugin_kdeconnect_description": {
-        "message": "新增連結的右鍵選單項目以讓您可以將它們使用 <a href=\"$1\">KDE Connect</a> 傳"
+    "options_plugin_mpris_media_sessions_title": {
+        "message": "強化的媒體控制"
+    },
+    "options_plugin_tabsrunner_description": {
+        "message": "確保已在 <a id=\"$1\" href=\"$2\">Plasma 搜尋設定</a>中啟用「瀏覽器分頁」模"
     }
 }
