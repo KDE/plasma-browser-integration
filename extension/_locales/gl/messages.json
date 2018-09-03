@@ -1,95 +1,95 @@
 {
-    "options_about_donate": {
-        "message": "Se lle gustou o que viu, considere <a href=\"$1\">doar a KDE</a> para que poidamos contribuír a facer o mellor software libre posíbel."
-    },
-    "options_not_supported_os": {
-        "message": "This extension is not supported on this operating system."
-    },
-    "options_about_translated_by": {
-        "message": "Traducido por: $1"
-    },
-    "general_error_port_startupfail": {
-        "message": "Non se puido conectar co servidor nativo. Asegúrese de que o paquete «plasma-browser-integration» está instalado."
+    "options_plugin_breezeScrollBars_title": {
+        "message": "Usar barras de desprazamento co estilo de Breeze."
     },
     "options_plugin_mpris_title": {
         "message": "Controis de reprodución"
     },
-    "options_plugin_tabsrunner_title": {
-        "message": "Atopar lapelas de navegador na xanela de «Executar unha orde»."
-    },
-    "options_tab_general": {
-        "message": "Xeral"
-    },
-    "options_plugin_kdeconnect_title": {
-        "message": "Enviar mediante KDE Connect"
-    },
     "options_about_created_by_kde": {
         "message": "Esta extensión de navegador creouna a <a href=\"$1\">comunidade de KDE</a>. Pode atopar máis información sobre o proxecto no <a href=\"$2\">no wiki da comunidade de KDE</a>."
-    },
-    "options_about_kde": {
-        "message": "KDE é unha rede mundial de enxeñeiros de software, artistas, escritores, tradutores e facilitadores comprometidos co desenvolvemento do <a href=\"$1\">software libre</a>. Esta comunidade creou centos de aplicativos de software libre como parte das infraestruturas, dos espazos de traballo e dos aplicativos de KDE. KDE é un proxecto cooperativo no que ningunha entidade única controla nin os esforzos nin os produtos de KDE excluíndo os demais. Todo o mundo é benvido a unirse e colaborar con KDE, vostede incluído."
-    },
-    "options_plugin_breezeScrollBars_title": {
-        "message": "Usar barras de desprazamento co estilo de Breeze."
-    },
-    "options_plugin_kdeconnect_description": {
-        "message": "Engade unha entrada ao menú de contexto das ligazóns que lle permite envialas ao seu teléfono ou outros dispositivos emparellados mediante <a href=\"$1\">KDE Connect</a>."
-    },
-    "options_about_bugs": {
-        "message": "Se atopa un problema, revise a <a href=\"$1\">lista de erros abertos</a> e se non o atopa <a href=\"$2\">informe do erro</a>."
-    },
-    "kdeconnect_open_device": {
-        "message": "Abrir en «$1»"
-    },
-    "options_save_success": {
-        "message": "A configuración gardouse correctamente."
     },
     "options_plugin_breezeScrollBars_description": {
         "message": "Isto podería interferir coa aparencia de sitios web que xa aplican un estilo personalizado ás súas barras de desprazamento."
     },
-    "options_plugin_mpris_media_sessions_description": {
-        "message": "Extract metadata and thumbnails of currently playing content. (Experimental)"
-    },
-    "options_save_failed": {
-        "message": "Gardar a configuración fallou."
-    },
-    "general_error_port_disconnect": {
-        "message": "O servidor nativo desconectou inesperadamente: $1"
-    },
-    "options_plugin_mpris_description": {
-        "message": "Permítelle controlar reprodutores de son e vídeo en sitios web usando o plasmoide de controlador de reprodución."
+    "options_plugin_mpris_media_sessions_title": {
+        "message": "Controis de reprodución"
     },
     "options_title": {
         "message": "Configuración de integración con Plasma"
     },
-    "general_error_unknown": {
-        "message": "Erro descoñecido"
-    },
-    "options_plugin_mpris_media_sessions_title": {
-        "message": "Controis de reprodución"
-    },
-    "options_plugin_downloads_title": {
-        "message": "Mostrar as descargas na área de notificación."
-    },
     "general_error_title": {
         "message": "Erro de integración co navegador de Plasma"
     },
-    "options_tab_about": {
-        "message": "Sobre"
+    "general_error_port_disconnect": {
+        "message": "O servidor nativo desconectou inesperadamente: $1"
     },
     "options_about_copyright": {
         "message": "© 2017-2018 Kai Uwe Broulik e David Edmundson"
     },
-    "kdeconnect_open_via": {
-        "message": "Abrir mediante KDE Connect"
+    "options_about_donate": {
+        "message": "Se lle gustou o que viu, considere <a href=\"$1\">doar a KDE</a> para que poidamos contribuír a facer o mellor software libre posíbel."
     },
-    "options_about_license": {
-        "message": "Licenza: <a href=\"%1\">Licenza Pública Xeral de GNU, versión 3</a>"
+    "options_tab_about": {
+        "message": "Sobre"
+    },
+    "options_save_success": {
+        "message": "A configuración gardouse correctamente."
+    },
+    "options_plugin_kdeconnect_title": {
+        "message": "Enviar mediante KDE Connect"
+    },
+    "options_plugin_tabsrunner_title": {
+        "message": "Atopar lapelas de navegador na xanela de «Executar unha orde»."
+    },
+    "options_plugin_mpris_description": {
+        "message": "Permítelle controlar reprodutores de son e vídeo en sitios web usando o plasmoide de controlador de reprodución."
+    },
+    "options_about_kde": {
+        "message": "KDE é unha rede mundial de enxeñeiros de software, artistas, escritores, tradutores e facilitadores comprometidos co desenvolvemento do <a href=\"$1\">software libre</a>. Esta comunidade creou centos de aplicativos de software libre como parte das infraestruturas, dos espazos de traballo e dos aplicativos de KDE. KDE é un proxecto cooperativo no que ningunha entidade única controla nin os esforzos nin os produtos de KDE excluíndo os demais. Todo o mundo é benvido a unirse e colaborar con KDE, vostede incluído."
+    },
+    "options_not_supported_os": {
+        "message": "This extension is not supported on this operating system."
+    },
+    "general_error_port_startupfail": {
+        "message": "Non se puido conectar co servidor nativo. Asegúrese de que o paquete «plasma-browser-integration» está instalado."
+    },
+    "options_save_failed": {
+        "message": "Gardar a configuración fallou."
     },
     "options_plugin_tabsrunner_description": {
         "message": "Asegúrese de que o módulo de «Lapelas de navegador» está activado na <a id=\"$1\" href=\"$2\">configuración de busca de Plasma</a>."
     },
+    "options_plugin_downloads_title": {
+        "message": "Mostrar as descargas na área de notificación."
+    },
+    "general_error_unknown": {
+        "message": "Erro descoñecido"
+    },
+    "options_about_license": {
+        "message": "Licenza: <a href=\"%1\">Licenza Pública Xeral de GNU, versión 3</a>"
+    },
+    "options_about_translated_by": {
+        "message": "Traducido por: $1"
+    },
     "options_about_translators": {
         "message": "Adrián Chaves (Gallaecio)"
+    },
+    "kdeconnect_open_via": {
+        "message": "Abrir mediante KDE Connect"
+    },
+    "options_tab_general": {
+        "message": "Xeral"
+    },
+    "kdeconnect_open_device": {
+        "message": "Abrir en «$1»"
+    },
+    "options_plugin_kdeconnect_description": {
+        "message": "Engade unha entrada ao menú de contexto das ligazóns que lle permite envialas ao seu teléfono ou outros dispositivos emparellados mediante <a href=\"$1\">KDE Connect</a>."
+    },
+    "options_plugin_mpris_media_sessions_description": {
+        "message": "Extract metadata and thumbnails of currently playing content. (Experimental)"
+    },
+    "options_about_bugs": {
+        "message": "Se atopa un problema, revise a <a href=\"$1\">lista de erros abertos</a> e se non o atopa <a href=\"$2\">informe do erro</a>."
     }
 }
