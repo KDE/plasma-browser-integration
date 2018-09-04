@@ -1,95 +1,95 @@
 {
-    "kdeconnect_open_via": {
-        "message": "Abrir via KDE Connect"
-    },
-    "general_error_port_startupfail": {
-        "message": "Falha ao conectar à maquina nativa. Certifique-se de que o pacote 'plasma-browser-integration' está instalado."
-    },
-    "options_plugin_mpris_media_sessions_title": {
-        "message": "Controles de mídia aprimorados"
-    },
-    "general_error_unknown": {
-        "message": "Erro desconhecido"
-    },
-    "options_about_bugs": {
-        "message": "Se você encontrou um erro, verifique a <a href=\"$1\">lista de erros abertos</a> e então <a href=\"$2\">preencha um relatório de erro</a>."
-    },
-    "general_error_port_disconnect": {
-        "message": "A máquina nativa desconectou inesperadamente: $1"
-    },
-    "options_save_failed": {
-        "message": "Falha ao salvar as configurações"
-    },
-    "options_plugin_mpris_media_sessions_description": {
-        "message": "Extrai metadados e miniaturas do conteúdo atualmente em exibição. "
-    },
-    "options_about_donate": {
-        "message": "Se você gostou do que viu, considere <a href=\"$1\">doar para o KDE</a>, assim podemos continuar fazendo o melhor software livre possível."
-    },
-    "options_tab_about": {
-        "message": "Sobre"
-    },
-    "options_plugin_breezeScrollBars_title": {
-        "message": "Usar barras de rolagem no estilo Breeze"
-    },
-    "options_plugin_kdeconnect_description": {
-        "message": "Adiciona uma entrada no menu de contexto para links habilitando enviá-los para seu telefone ou outro dispositivo pareado usando o <a href=\"$1\">KDE "
-    },
-    "general_error_title": {
-        "message": "Erro de integração dos navegadores no Plasma"
-    },
-    "options_about_license": {
-        "message": "Licença: <a href=\"$1\">GNU General Public License Version 3</a>"
-    },
-    "options_plugin_tabsrunner_title": {
-        "message": "Encontrar abas do navegador na janela \"Executar comando\\"
-    },
-    "options_plugin_breezeScrollBars_description": {
-        "message": "Isto pode interferir com a aparência de sites que já aplicam um estilo personalizado para as barras de rolagem."
-    },
-    "options_about_translators": {
-        "message": "Luiz Fernando Ranghetti"
-    },
-    "options_plugin_tabsrunner_description": {
-        "message": "Certifique-se de que o módulo “Abas do navegador” está habilitado nas <a id=\"$1\" href=\"$2\">Configurações de pesquisa do Plasma</a>."
-    },
-    "options_tab_general": {
-        "message": "Geral"
-    },
-    "options_plugin_downloads_title": {
-        "message": "Exibir downloads na área de notificação"
-    },
     "options_about_created_by_kde": {
         "message": "Esta extensão de navegador foi criado pela <a href=\"$1\">Comunidade KDE</a>. Você pode encontrar mais informações sobre este projeto na <a href=\"$2\">wiki da Comunidade KDE</a>."
-    },
-    "options_title": {
-        "message": "Configurações de integração do Plasma"
-    },
-    "options_about_translated_by": {
-        "message": "Traduzido por: $1"
-    },
-    "options_about_kde": {
-        "message": "O KDE é uma rede mundial de engenheiros de software, artistas, escritores, tradutores e facilitadores que estão empenhados com o desenvolvimento do <a href=\"$1\">Software Livre</a>. Esta comunidade criou centenas de aplicativos de software livre como parte das estruturas, áreas de trabalho e aplicativos KDE. O KDE é uma empresa cooperativa na qual nenhuma entidade controla os esforços ou produtos do KDE excluindo outros. Todos são bem-vindos a se juntar e contribuir para o KDE, incluindo você."
-    },
-    "options_plugin_kdeconnect_title": {
-        "message": "Enviar via KDE Connect"
-    },
-    "options_not_supported_os": {
-        "message": "Esta extensão não é suportada neste sistema operacional."
     },
     "options_save_success": {
         "message": "Configurações salvas com sucesso"
     },
-    "options_about_copyright": {
-        "message": "© 2017, 2018 Kai Uwe Broulik e David Edmundson"
+    "options_save_failed": {
+        "message": "Falha ao salvar as configurações"
+    },
+    "options_plugin_mpris_title": {
+        "message": "Controles de mídia"
+    },
+    "options_tab_about": {
+        "message": "Sobre"
+    },
+    "options_about_license": {
+        "message": "Licença: <a href=\"$1\">GNU General Public License Version 3</a>"
     },
     "kdeconnect_open_device": {
         "message": "Abrir em '$1'"
     },
+    "options_about_translated_by": {
+        "message": "Traduzido por: $1"
+    },
+    "options_not_supported_os": {
+        "message": "Esta extensão não é suportada neste sistema operacional."
+    },
+    "general_error_port_disconnect": {
+        "message": "A máquina nativa desconectou inesperadamente: $1"
+    },
+    "options_plugin_tabsrunner_description": {
+        "message": "Certifique-se de que o módulo “Abas do navegador” está habilitado nas <a id=\"$1\" href=\"$2\">Configurações de pesquisa do Plasma</a>."
+    },
+    "options_plugin_kdeconnect_description": {
+        "message": "Adiciona uma entrada no menu de contexto para links habilitando enviá-los para seu telefone ou outro dispositivo pareado usando o <a href=\"$1\">KDE "
+    },
+    "general_error_port_startupfail": {
+        "message": "Falha ao conectar à maquina nativa. Certifique-se de que o pacote 'plasma-browser-integration' está instalado."
+    },
+    "options_about_bugs": {
+        "message": "Se você encontrou um erro, verifique a <a href=\"$1\">lista de erros abertos</a> e então <a href=\"$2\">preencha um relatório de erro</a>."
+    },
+    "kdeconnect_open_via": {
+        "message": "Abrir via KDE Connect"
+    },
+    "options_plugin_downloads_title": {
+        "message": "Exibir downloads na área de notificação"
+    },
+    "options_title": {
+        "message": "Configurações de integração do Plasma"
+    },
+    "options_plugin_tabsrunner_title": {
+        "message": "Encontrar abas do navegador na janela \"Executar comando\\"
+    },
+    "general_error_title": {
+        "message": "Erro de integração dos navegadores no Plasma"
+    },
+    "options_about_translators": {
+        "message": "Luiz Fernando Ranghetti"
+    },
+    "options_about_kde": {
+        "message": "O KDE é uma rede mundial de engenheiros de software, artistas, escritores, tradutores e facilitadores que estão empenhados com o desenvolvimento do <a href=\"$1\">Software Livre</a>. Esta comunidade criou centenas de aplicativos de software livre como parte das estruturas, áreas de trabalho e aplicativos KDE. O KDE é uma empresa cooperativa na qual nenhuma entidade controla os esforços ou produtos do KDE excluindo outros. Todos são bem-vindos a se juntar e contribuir para o KDE, incluindo você."
+    },
     "options_plugin_mpris_description": {
         "message": "Permite controlar os reprodutores de áudio e vídeo em sites usando o plasmoide controlador de mídia."
     },
-    "options_plugin_mpris_title": {
-        "message": "Controles de mídia"
+    "general_error_unknown": {
+        "message": "Erro desconhecido"
+    },
+    "options_plugin_mpris_media_sessions_description": {
+        "message": "Extrai metadados e miniaturas do conteúdo atualmente em exibição. "
+    },
+    "options_plugin_breezeScrollBars_title": {
+        "message": "Usar barras de rolagem no estilo Breeze"
+    },
+    "options_about_donate": {
+        "message": "Se você gostou do que viu, considere <a href=\"$1\">doar para o KDE</a>, assim podemos continuar fazendo o melhor software livre possível."
+    },
+    "options_plugin_mpris_media_sessions_title": {
+        "message": "Controles de mídia aprimorados"
+    },
+    "options_plugin_breezeScrollBars_description": {
+        "message": "Isto pode interferir com a aparência de sites que já aplicam um estilo personalizado para as barras de rolagem."
+    },
+    "options_plugin_kdeconnect_title": {
+        "message": "Enviar via KDE Connect"
+    },
+    "options_about_copyright": {
+        "message": "© 2017, 2018 Kai Uwe Broulik e David Edmundson"
+    },
+    "options_tab_general": {
+        "message": "Geral"
     }
 }
