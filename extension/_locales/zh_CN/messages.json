@@ -1,15 +1,48 @@
 {
+    "options_tab_general": {
+        "message": "常规"
+    },
+    "options_about_bugs": {
+        "message": "如果发现问题，请检查 <a href=\"$1\">打开状态的错误</a>，然后<a href=\"$2\">提"
+    },
+    "options_plugin_breezeScrollBars_description": {
+        "message": "这可能会影响已经对其滚动条应用自定义样式的网站的外观。"
+    },
+    "kdeconnect_open_device": {
+        "message": "在“$1”上打开"
+    },
+    "options_about_translators": {
+        "message": "KDE 中国"
+    },
+    "options_plugin_mpris_title": {
+        "message": "媒体控制"
+    },
     "kdeconnect_open_via": {
         "message": "通过 KDE Connect 打开"
-    },
-    "options_save_success": {
-        "message": "成功保存设置"
     },
     "options_about_copyright": {
         "message": "© 2017, 2018 Kai Uwe Broulik and David Edmundson"
     },
-    "options_about_license": {
-        "message": "许可证：<a href=\"$1\">GNU 通用公共许可证版本 3</a>"
+    "general_error_port_startupfail": {
+        "message": "无法连接到本机主机。请确保安装了 plasma-browser-integration 软件包。"
+    },
+    "options_plugin_breezeScrollBars_title": {
+        "message": "使用微风样式的滚动条"
+    },
+    "options_save": {
+        "message": "保存"
+    },
+    "options_about_created_by_kde": {
+        "message": "此浏览器扩展是由 <a href=\"$1\">KDE 社区</a>创建的。您可以在 <a href=\"$2\">KDE 社区 Wiki</a> 中找到有关此项目的详细信息。"
+    },
+    "options_about_kde": {
+        "message": "KDE 是一个致力于自由软件开发的软件工程师、艺术工作者、作者、翻译人员和推进者的全球网络。这个社区社区开发的数以百计的<a href=\"$1\">自由软件产品</a>已成为 KDE 开发平台和软件仓库的一部分。KDE 是一个协作的事业，里面没有单独的实体排他性的控制 KDE 的成果或产品。欢迎每个人加入和向 KDE 作出贡献，包括您。"
+    },
+    "options_plugin_mpris_description": {
+        "message": "允许您使用媒体控制器小部件控制网站中的视频和音频播放器。"
+    },
+    "options_restore_defaults": {
+        "message": "恢复默认值"
     },
     "options_plugin_kdeconnect_description": {
         "message": "添加上下文菜单项目来让您可以将它们通过<a href=\"$1\">KDE Connect</a>发送到您"
@@ -17,68 +50,17 @@
     "options_plugin_tabsrunner_description": {
         "message": "请确保在<a id=\"$1\" href=\"$2\">Plasma 搜索设置</a>中启用了“浏览器标签”模"
     },
-    "options_plugin_breezeScrollBars_description": {
-        "message": "这可能会影响已经对其滚动条应用自定义样式的网站的外观。"
-    },
-    "options_about_translators": {
-        "message": "KDE 中国"
-    },
-    "options_about_bugs": {
-        "message": "如果发现问题，请检查 <a href=\"$1\">打开状态的错误</a>，然后<a href=\"$2\">提"
-    },
-    "options_plugin_mpris_title": {
-        "message": "媒体控制"
-    },
-    "options_title": {
-        "message": "Plasma Integration Settings"
-    },
-    "options_tab_general": {
-        "message": "常规"
-    },
-    "options_plugin_breezeScrollBars_title": {
-        "message": "使用微风样式的滚动条"
-    },
-    "options_about_translated_by": {
-        "message": "翻译者：$1"
+    "options_save_success": {
+        "message": "成功保存设置"
     },
     "general_error_unknown": {
         "message": "未知错误"
     },
-    "options_about_kde": {
-        "message": "KDE 是一个致力于自由软件开发的软件工程师、艺术工作者、作者、翻译人员和推进者的全球网络。这个社区社区开发的数以百计的<a href=\"$1\">自由软件产品</a>已成为 KDE 开发平台和软件仓库的一部分。KDE 是一个协作的事业，里面没有单独的实体排他性的控制 KDE 的成果或产品。欢迎每个人加入和向 KDE 作出贡献，包括您。"
-    },
-    "options_plugin_tabsrunner_title": {
-        "message": "在“运行命令”窗口中查找浏览器标签"
-    },
-    "options_tab_about": {
-        "message": "关于"
-    },
-    "options_plugin_mpris_description": {
-        "message": "允许您使用媒体控制器小部件控制网站中的视频和音频播放器。"
-    },
-    "kdeconnect_open_device": {
-        "message": "在“$1”上打开"
-    },
     "options_save_failed": {
         "message": "保存设置失败"
     },
-    "general_error_port_disconnect": {
-        "message": "原生主机意外断开连接：$1"
-    },
-    "options_restore_defaults": {
-        "message": "恢复默认值"
-    },
-    "options_plugin_kdeconnect_title": {
-        "message": "通过 KDE Connect 发送"
-    },
-    "options_save": {
-        "message": "保存"
-    },
-    "general_error_port_startupfail": {
-        "message": "无法连接到本机主机。请确保安装了 plasma-browser-integration 软件包。"
-    },
-    "options_about_donate": {
-        "message": "如果您喜欢这个插件，请考虑<a href=\"$1\">捐赠给 KDE</a>，让我们可以让最好的免"
+    "options_about_license": {
+        "message": "许可证：<a href=\"$1\">GNU 通用公共许可证版本 3</a>"
     },
     "general_error_title": {
         "message": "Plasma 浏览器集成错误"
@@ -86,7 +68,25 @@
     "options_plugin_downloads_title": {
         "message": "在通知区域显示下载"
     },
-    "options_about_created_by_kde": {
-        "message": "此浏览器扩展是由 <a href=\"$1\">KDE 社区</a>创建的。您可以在 <a href=\"$2\">KDE 社区 Wiki</a> 中找到有关此项目的详细信息。"
+    "options_about_translated_by": {
+        "message": "翻译者：$1"
+    },
+    "options_about_donate": {
+        "message": "如果您喜欢这个插件，请考虑<a href=\"$1\">捐赠给 KDE</a>，让我们可以让最好的免"
+    },
+    "options_plugin_tabsrunner_title": {
+        "message": "在“运行命令”窗口中查找浏览器标签"
+    },
+    "options_tab_about": {
+        "message": "关于"
+    },
+    "general_error_port_disconnect": {
+        "message": "原生主机意外断开连接：$1"
+    },
+    "options_plugin_kdeconnect_title": {
+        "message": "通过 KDE Connect 发送"
+    },
+    "options_title": {
+        "message": "Plasma Integration Settings"
     }
 }
