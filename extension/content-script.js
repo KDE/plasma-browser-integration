@@ -196,6 +196,20 @@ addCallback("mpris", "setLoop", function (message) {
     }
 });
 
+addCallback("mpris", "identify", function (message) {
+    if (activePlayer) {
+        // We don't have a dedicated "send player info" callback, so we instead send a "playing"
+        // and if we're paused, we'll send a "paused" event right after
+        // TODO figure out a way how to add this to the host without breaking compat
+
+        var paused = activePlayer.paused;
+        playerPlaying(activePlayer);
+        if (paused) {
+            playerPaused(activePlayer);
+        }
+    }
+});
+
 function playerPlaying(player) {
     setPlayerActive(player);
 }
