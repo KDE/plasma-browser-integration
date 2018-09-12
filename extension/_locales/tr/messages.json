@@ -1,78 +1,15 @@
 {
-    "options_about_kde": {
-        "message": "KDE is a world-wide network of software engineers, artists, writers, translators and facilitators who are committed to <a href=\"$1\">Free Software</a> development. This community has created hundreds of Free Software applications as part of the KDE frameworks, workspaces and applications. KDE is a cooperative enterprise in which no single entity controls the efforts or products of KDE to the exclusion of others. Everyone is welcome to join and contribute to KDE, including you."
-    },
-    "options_plugin_breezeScrollBars_description": {
-        "message": "This may interfere with the appearance of websites that already apply a custom styling to their scroll bars."
-    },
-    "general_error_port_disconnect": {
-        "message": "The native host disconnected unexpectedly: $1"
-    },
-    "kdeconnect_open_via": {
-        "message": "Open via KDE Connect"
-    },
-    "options_tab_general": {
-        "message": "An unknown error occurred, usually used when an error message by the system is not provided"
-    },
     "options_plugin_mpris_title": {
         "message": "Media Controls"
-    },
-    "options_about_donate": {
-        "message": "If you like what you saw, please consider <a href=\"$1\">donating to KDE</a>, so we can continue to make the best free software possible."
-    },
-    "options_about_translated_by": {
-        "message": "Translated by: $1"
-    },
-    "general_error_title": {
-        "message": "Plasma Browser Integration Error"
-    },
-    "options_plugin_tabsrunner_title": {
-        "message": "Find browser tabs in “Run Command” window"
-    },
-    "options_tab_about": {
-        "message": "About"
-    },
-    "options_about_license": {
-        "message": "License: <a href=\"$1\">GNU General Public License Version 3</a>"
-    },
-    "general_error_port_startupfail": {
-        "message": "Failed to connect to the native host. Make sure the 'plasma-browser-integration' package is installed."
-    },
-    "options_title": {
-        "message": "Plasma Integration Settings"
-    },
-    "options_about_translators": {
-        "message": "Your names"
-    },
-    "options_about_copyright": {
-        "message": "© 2017, 2018 Kai Uwe Broulik and David Edmundson"
-    },
-    "options_about_bugs": {
-        "message": "If you find an issue, please check the <a href=\"$1\">list of open bugs</a> and then <a href=\"$2\">file a bug report</a>."
-    },
-    "options_plugin_mpris_media_sessions_title": {
-        "message": "Enhanced Media Controls"
     },
     "options_plugin_kdeconnect_description": {
         "message": "Adds a context menu entry to links enabling you to send them to your phone and other paired devices using <a href=\"$1\">KDE Connect</a>."
     },
-    "options_about_created_by_kde": {
-        "message": "This browser extension was created by the <a href=\"$1\">KDE Community</a>. You can find more information about this project on the <a href=\"$2\">KDE Community Wiki</a>."
+    "general_error_port_startupfail": {
+        "message": "Failed to connect to the native host. Make sure the 'plasma-browser-integration' package is installed."
     },
-    "general_error_unknown": {
-        "message": "Unknown Error"
-    },
-    "options_plugin_kdeconnect_title": {
-        "message": "Send via KDE Connect"
-    },
-    "kdeconnect_open_device": {
-        "message": "Open on '$1'"
-    },
-    "options_plugin_mpris_media_sessions_description": {
-        "message": "Extract metadata and thumbnails of currently playing content. (Experimental)"
-    },
-    "options_plugin_downloads_title": {
-        "message": "Show downloads in notification area"
+    "options_about_translators": {
+        "message": "Your names"
     },
     "options_save_success": {
         "message": "Settings successfully saved"
@@ -80,16 +17,79 @@
     "options_plugin_breezeScrollBars_title": {
         "message": "Use Breeze-style scroll bars"
     },
-    "options_plugin_mpris_description": {
-        "message": "Lets you control video and audio players in websites using the Media Controller plasmoid."
-    },
     "options_plugin_tabsrunner_description": {
         "message": "Make sure the “Browser Tabs” module is enabled in <a id=\"$1\" href=\"$2\">Plasma Search settings</a>."
+    },
+    "options_about_bugs": {
+        "message": "If you find an issue, please check the <a href=\"$1\">list of open bugs</a> and then <a href=\"$2\">file a bug report</a>."
+    },
+    "options_about_translated_by": {
+        "message": "Translated by: $1"
+    },
+    "options_about_donate": {
+        "message": "If you like what you saw, please consider <a href=\"$1\">donating to KDE</a>, so we can continue to make the best free software possible."
+    },
+    "options_tab_general": {
+        "message": "An unknown error occurred, usually used when an error message by the system is not provided"
+    },
+    "options_about_kde": {
+        "message": "KDE is a world-wide network of software engineers, artists, writers, translators and facilitators who are committed to <a href=\"$1\">Free Software</a> development. This community has created hundreds of Free Software applications as part of the KDE frameworks, workspaces and applications. KDE is a cooperative enterprise in which no single entity controls the efforts or products of KDE to the exclusion of others. Everyone is welcome to join and contribute to KDE, including you."
+    },
+    "options_save_failed": {
+        "message": "Saving settings failed"
+    },
+    "options_plugin_downloads_title": {
+        "message": "Show downloads in notification area"
+    },
+    "options_plugin_mpris_media_sessions_description": {
+        "message": "Extract metadata and thumbnails of currently playing content. (Experimental)"
+    },
+    "options_about_created_by_kde": {
+        "message": "This browser extension was created by the <a href=\"$1\">KDE Community</a>. You can find more information about this project on the <a href=\"$2\">KDE Community Wiki</a>."
+    },
+    "options_plugin_mpris_media_sessions_title": {
+        "message": "Enhanced Media Controls"
+    },
+    "general_error_unknown": {
+        "message": "Unknown Error"
+    },
+    "options_plugin_breezeScrollBars_description": {
+        "message": "This may interfere with the appearance of websites that already apply a custom styling to their scroll bars."
+    },
+    "options_plugin_tabsrunner_title": {
+        "message": "Find browser tabs in “Run Command” window"
+    },
+    "options_about_license": {
+        "message": "License: <a href=\"$1\">GNU General Public License Version 3</a>"
+    },
+    "options_title": {
+        "message": "Plasma Integration Settings"
     },
     "options_not_supported_os": {
         "message": "This extension is not supported on this operating system."
     },
-    "options_save_failed": {
-        "message": "Saving settings failed"
+    "general_error_port_disconnect": {
+        "message": "The native host disconnected unexpectedly: $1"
+    },
+    "kdeconnect_open_device": {
+        "message": "Open on '$1'"
+    },
+    "general_error_title": {
+        "message": "Plasma Browser Integration Error"
+    },
+    "options_plugin_mpris_description": {
+        "message": "Lets you control video and audio players in websites using the Media Controller plasmoid."
+    },
+    "options_plugin_kdeconnect_title": {
+        "message": "Send via KDE Connect"
+    },
+    "kdeconnect_open_via": {
+        "message": "Open via KDE Connect"
+    },
+    "options_about_copyright": {
+        "message": "© 2017, 2018 Kai Uwe Broulik and David Edmundson"
+    },
+    "options_tab_about": {
+        "message": "About"
     }
 }
