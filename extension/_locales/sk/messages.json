@@ -1,92 +1,92 @@
 {
-    "options_about_kde": {
-        "message": "KDE is a world-wide network of software engineers, artists, writers, translators and facilitators who are committed to <a href=\"$1\">Free Software</a> development. This community has created hundreds of Free Software applications as part of the KDE frameworks, workspaces and applications. KDE is a cooperative enterprise in which no single entity controls the efforts or products of KDE to the exclusion of others. Everyone is welcome to join and contribute to KDE, including you."
-    },
-    "options_plugin_downloads_title": {
-        "message": "Zobrazovať preberania v oblasti oznámení"
+    "options_plugin_breezeScrollBars_title": {
+        "message": "Používať posúvače v štýle Vánok"
     },
     "general_error_title": {
         "message": "Chyba Plasma Browser Integration"
     },
-    "options_about_created_by_kde": {
-        "message": "Toto rozšírenie prehliadača bolo vytvorené <a href=\"$1\">KDE Komunitou</a>. Viac informácií nájdete na <a href=\"$2\">KDE Community Wiki</a>."
-    },
-    "options_about_bugs": {
-        "message": "Ak nájdete chybu, prosím skontrolujte <a href=\"$1\">zoznam otvorených chýb</a> a potom <a href=\"$2\">nahlásiť chybu</a>."
-    },
-    "general_error_port_startupfail": {
-        "message": "Zlyhalo pripojenie k natívnemu host-u. Uistite sa že balík 'plasma-browser-integration' je nainštalovaný."
-    },
-    "options_tab_about": {
-        "message": "O"
-    },
-    "options_plugin_kdeconnect_title": {
-        "message": "Poslať cez KDE Connect"
-    },
-    "options_save_success": {
-        "message": "Nastavenia úspešne uložené"
-    },
-    "options_tab_general": {
-        "message": "Všeobecné"
-    },
-    "options_restore_defaults": {
-        "message": "Obnoviť predvolené"
-    },
-    "options_plugin_breezeScrollBars_title": {
-        "message": "Používať posúvače v štýle Vánok"
-    },
-    "options_plugin_tabsrunner_title": {
-        "message": "Vyhľadá karty prehliadača v okne \"Spustiť Príkaz\\"
-    },
-    "options_plugin_tabsrunner_description": {
-        "message": "Uistite sa že modul “Karty prehliadača” je zapnutý v <a id=\"$1\" href=\"$2\">Plasma nastaveniach vyhľadávania</a>."
-    },
-    "options_about_license": {
-        "message": "Licencia: <a href=\"$1\">GNU General Public License Version 3</a>"
-    },
-    "options_about_copyright": {
-        "message": "© 2017, 2018 Kai Uwe Broulik and David Edmundson"
-    },
     "options_about_donate": {
         "message": "Ak sa vám páčilo čo ste videli, zvážte prosím <a href=\"$1\">prispieť KDE</a>, aby sme mohli pokračovať v robení toho najlepšieho slobodného softvéru."
-    },
-    "options_plugin_mpris_description": {
-        "message": "Umožnuje vám ovládať hudobné a video prehrávače pomocou Media Controller "
-    },
-    "options_title": {
-        "message": "Nastavenia Plasma Integration"
     },
     "options_about_translated_by": {
         "message": "Preložil: $1"
     },
+    "options_plugin_kdeconnect_description": {
+        "message": "Pridá kontextové menu do odkazov a umožnuje poslať ich do vášho telefónu a ostatných spárovaných zariadení pomocou <a href=\"$1\">KDE Connect</a>."
+    },
     "kdeconnect_open_via": {
         "message": "Otvoriť cez KDE Connect"
+    },
+    "options_about_copyright": {
+        "message": "© 2017, 2018 Kai Uwe Broulik and David Edmundson"
+    },
+    "options_title": {
+        "message": "Nastavenia Plasma Integration"
+    },
+    "options_plugin_tabsrunner_title": {
+        "message": "Vyhľadá karty prehliadača v okne \"Spustiť Príkaz\\"
+    },
+    "options_about_bugs": {
+        "message": "Ak nájdete chybu, prosím skontrolujte <a href=\"$1\">zoznam otvorených chýb</a> a potom <a href=\"$2\">nahlásiť chybu</a>."
+    },
+    "options_about_kde": {
+        "message": "KDE is a world-wide network of software engineers, artists, writers, translators and facilitators who are committed to <a href=\"$1\">Free Software</a> development. This community has created hundreds of Free Software applications as part of the KDE frameworks, workspaces and applications. KDE is a cooperative enterprise in which no single entity controls the efforts or products of KDE to the exclusion of others. Everyone is welcome to join and contribute to KDE, including you."
     },
     "general_error_unknown": {
         "message": "Neznáma chyba"
     },
-    "options_plugin_kdeconnect_description": {
-        "message": "Pridá kontextové menu do odkazov a umožnuje poslať ich do vášho telefónu a ostatných spárovaných zariadení pomocou <a href=\"$1\">KDE Connect</a>."
+    "options_tab_general": {
+        "message": "Všeobecné"
+    },
+    "options_plugin_tabsrunner_description": {
+        "message": "Uistite sa že modul “Karty prehliadača” je zapnutý v <a id=\"$1\" href=\"$2\">Plasma nastaveniach vyhľadávania</a>."
+    },
+    "options_plugin_kdeconnect_title": {
+        "message": "Poslať cez KDE Connect"
+    },
+    "options_about_created_by_kde": {
+        "message": "Toto rozšírenie prehliadača bolo vytvorené <a href=\"$1\">KDE Komunitou</a>. Viac informácií nájdete na <a href=\"$2\">KDE Community Wiki</a>."
+    },
+    "options_about_license": {
+        "message": "Licencia: <a href=\"$1\">GNU General Public License Version 3</a>"
+    },
+    "options_restore_defaults": {
+        "message": "Obnoviť predvolené"
     },
     "options_about_translators": {
         "message": "Your names"
     },
-    "general_error_port_disconnect": {
-        "message": "Natívny host sa neočakávane odpojil: $1"
-    },
-    "options_save": {
-        "message": "Uložiť"
-    },
-    "options_plugin_breezeScrollBars_description": {
-        "message": "Toto môže zasahovať do vzhľadu internetových stránok, ktoré používajú vlastný vzhľad a posúvače."
+    "options_tab_about": {
+        "message": "O"
     },
     "options_plugin_mpris_title": {
         "message": "Ovládače médií"
     },
-    "kdeconnect_open_device": {
-        "message": "Otvoriť na '$1'"
+    "options_plugin_downloads_title": {
+        "message": "Zobrazovať preberania v oblasti oznámení"
+    },
+    "general_error_port_startupfail": {
+        "message": "Zlyhalo pripojenie k natívnemu host-u. Uistite sa že balík 'plasma-browser-integration' je nainštalovaný."
+    },
+    "options_save": {
+        "message": "Uložiť"
+    },
+    "options_save_success": {
+        "message": "Nastavenia úspešne uložené"
+    },
+    "options_plugin_mpris_description": {
+        "message": "Umožnuje vám ovládať hudobné a video prehrávače pomocou Media Controller "
+    },
+    "options_plugin_breezeScrollBars_description": {
+        "message": "Toto môže zasahovať do vzhľadu internetových stránok, ktoré používajú vlastný vzhľad a posúvače."
     },
     "options_save_failed": {
         "message": "Ukladanie nastavení zlyhalo"
+    },
+    "general_error_port_disconnect": {
+        "message": "Natívny host sa neočakávane odpojil: $1"
+    },
+    "kdeconnect_open_device": {
+        "message": "Otvoriť na '$1'"
     }
 }
