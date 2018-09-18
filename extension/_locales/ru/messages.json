@@ -1,39 +1,9 @@
 {
-    "options_plugin_mpris_media_sessions_description": {
-        "message": "Извлекать метаданные и миниатюры из проигрываемого содержимого (экспериментальная функция)."
+    "options_plugin_tabsrunner_description": {
+        "message": "Убедитесь, что модуль поиска «Вкладки браузера» включён в <a id=\"$1\" href=\"$2\">параметрах строки поиска и запуска</a>."
     },
-    "options_tab_general": {
-        "message": "Общие параметры"
-    },
-    "options_plugin_kdeconnect_description": {
-        "message": "Добавляет в контекстное меню пункт, позволяющий отправить ссылку на смартфон и другие сопряжённые устройства через <a href=\"$1\">KDE Connect</a>."
-    },
-    "general_error_unknown": {
-        "message": "Неизвестная ошибка"
-    },
-    "options_about_bugs": {
-        "message": "Если вы нашли ошибку, пожалуйста, посетите страницу с уже <a href=\"$1\">известными ошибками</a> , затем можете <a href=\"$2\">отправить отчёт об ошибке</a>."
-    },
-    "options_plugin_mpris_media_sessions_title": {
-        "message": "Расширенное управление мультимедиа"
-    },
-    "general_error_port_disconnect": {
-        "message": "Неожиданное завершение главного процесса: $1"
-    },
-    "kdeconnect_open_via": {
-        "message": "Открыть через KDE Connect"
-    },
-    "options_plugin_mpris_description": {
-        "message": "Позволяет управлять воспроизведением аудио и видео на сайтах, используя виджет «Управление медиапроигрывателем»."
-    },
-    "options_about_kde": {
-        "message": "KDE — международное сообщество программистов, дизайнеров, переводчиков и других людей, так или иначе посвящающих себя разработке <a href=\"$1\">свободного программного обеспечения</a> Это сообщество поддерживает библиотеки KDE Frameworks и основанные на них рабочие среды и прикладные программы. Не существует группы или организации, держащей под исключительным контролем действия или продукты KDE. Мы будем рады каждому, кто захочет внести свой вклад в развитие KDE."
-    },
-    "options_about_created_by_kde": {
-        "message": "Данное расширение создано <a href=\"$1\">сообществом KDE</a>. Больше информации о данном проекте вы можете получить на <a href=\"$2\">вики-"
-    },
-    "options_not_supported_os": {
-        "message": "Данное расширение не поддерживается на вашей операционной системе."
+    "options_plugin_downloads_title": {
+        "message": "Показ загрузок в области уведомлений"
     },
     "options_plugin_breezeScrollBars_title": {
         "message": "Использовать стиль полос прокрутки Breeze"
@@ -41,8 +11,26 @@
     "kdeconnect_open_device": {
         "message": "Открыть на устройстве «$1»"
     },
-    "options_title": {
-        "message": "Настройка интеграции браузера с Plasma"
+    "options_save_success": {
+        "message": "Параметры успешно сохранены"
+    },
+    "general_error_port_disconnect": {
+        "message": "Неожиданное завершение главного процесса: $1"
+    },
+    "options_plugin_mpris_title": {
+        "message": "Управление мультимедиа"
+    },
+    "options_about_bugs": {
+        "message": "Если вы нашли ошибку, пожалуйста, посетите страницу с уже <a href=\"$1\">известными ошибками</a> , затем можете <a href=\"$2\">отправить отчёт об ошибке</a>."
+    },
+    "options_about_license": {
+        "message": "Лицензия: <a href=\"$1\">Универсальная общественная лицензия GNU (GNU General Public License) версии 3</a>"
+    },
+    "options_plugin_mpris_media_sessions_description": {
+        "message": "Извлекать метаданные и миниатюры из проигрываемого содержимого (экспериментальная функция)."
+    },
+    "kdeconnect_open_via": {
+        "message": "Открыть через KDE Connect"
     },
     "options_tab_about": {
         "message": "О расширении"
@@ -50,46 +38,58 @@
     "options_plugin_tabsrunner_title": {
         "message": "Поиск вкладок браузера в строке поиска и запуска Plasma"
     },
-    "options_plugin_mpris_title": {
-        "message": "Управление мультимедиа"
+    "options_not_supported_os": {
+        "message": "Данное расширение не поддерживается на вашей операционной системе."
     },
-    "options_plugin_breezeScrollBars_description": {
-        "message": "Данная функция может мешать работе сайтов, имеющих собственный стиль полос "
-    },
-    "options_about_donate": {
-        "message": "Если вам нравится наше творение, но не знаете, как отблагодарить, то вы можете внести свою лепту, сделав <a href=\"$1\">денежное пожертвование команде KDE</a> для того, чтобы мы могли продолжать делать лучшее свободное ПО ещё лучше."
-    },
-    "options_about_copyright": {
-        "message": "© Kai Uwe Broulik и David Edmundson, 2017, 2018"
-    },
-    "general_error_title": {
-        "message": "Ошибка интеграции браузера с Plasma"
-    },
-    "options_about_translated_by": {
-        "message": "Перевод: $1"
-    },
-    "options_plugin_downloads_title": {
-        "message": "Показ загрузок в области уведомлений"
-    },
-    "options_plugin_kdeconnect_title": {
-        "message": "Отправка через KDE Connect"
-    },
-    "options_save_success": {
-        "message": "Параметры успешно сохранены"
-    },
-    "options_about_license": {
-        "message": "Лицензия: <a href=\"$1\">Универсальная общественная лицензия GNU (GNU General Public License) версии 3</a>"
-    },
-    "options_plugin_tabsrunner_description": {
-        "message": "Убедитесь, что модуль поиска «Вкладки браузера» включён в <a id=\"$1\" href=\"$2\">параметрах строки поиска и запуска</a>."
-    },
-    "general_error_port_startupfail": {
-        "message": "Не удалось подключиться к главному процессу. Возможно, не установлен пакет "
+    "options_title": {
+        "message": "Настройка интеграции браузера с Plasma"
     },
     "options_save_failed": {
         "message": "Не удалось сохранить параметры"
     },
+    "options_about_donate": {
+        "message": "Если вам нравится наше творение, но не знаете, как отблагодарить, то вы можете внести свою лепту, сделав <a href=\"$1\">денежное пожертвование команде KDE</a> для того, чтобы мы могли продолжать делать лучшее свободное ПО ещё лучше."
+    },
+    "options_plugin_mpris_description": {
+        "message": "Позволяет управлять воспроизведением аудио и видео на сайтах, используя виджет «Управление медиапроигрывателем»."
+    },
+    "general_error_port_startupfail": {
+        "message": "Не удалось подключиться к главному процессу. Возможно, не установлен пакет "
+    },
+    "options_plugin_breezeScrollBars_description": {
+        "message": "Данная функция может мешать работе сайтов, имеющих собственный стиль полос "
+    },
+    "general_error_unknown": {
+        "message": "Неизвестная ошибка"
+    },
+    "options_about_kde": {
+        "message": "KDE — международное сообщество программистов, дизайнеров, переводчиков и других людей, так или иначе посвящающих себя разработке <a href=\"$1\">свободного программного обеспечения</a> Это сообщество поддерживает библиотеки KDE Frameworks и основанные на них рабочие среды и прикладные программы. Не существует группы или организации, держащей под исключительным контролем действия или продукты KDE. Мы будем рады каждому, кто захочет внести свой вклад в развитие KDE."
+    },
+    "options_tab_general": {
+        "message": "Общие параметры"
+    },
+    "options_about_copyright": {
+        "message": "© Kai Uwe Broulik и David Edmundson, 2017, 2018"
+    },
+    "options_about_created_by_kde": {
+        "message": "Данное расширение создано <a href=\"$1\">сообществом KDE</a>. Больше информации о данном проекте вы можете получить на <a href=\"$2\">вики-"
+    },
     "options_about_translators": {
         "message": "Шейхнур Латипов"
+    },
+    "general_error_title": {
+        "message": "Ошибка интеграции браузера с Plasma"
+    },
+    "options_plugin_mpris_media_sessions_title": {
+        "message": "Расширенное управление мультимедиа"
+    },
+    "options_about_translated_by": {
+        "message": "Перевод: $1"
+    },
+    "options_plugin_kdeconnect_description": {
+        "message": "Добавляет в контекстное меню пункт, позволяющий отправить ссылку на смартфон и другие сопряжённые устройства через <a href=\"$1\">KDE Connect</a>."
+    },
+    "options_plugin_kdeconnect_title": {
+        "message": "Отправка через KDE Connect"
     }
 }
