@@ -67,7 +67,7 @@ public:
     bool pluginEnabled(const QString &subsystem) const;
     QJsonObject settingsForPlugin(const QString &subsystem) const;
 
-signals:
+Q_SIGNALS:
     void changed(const QJsonObject &settings);
 
 private:

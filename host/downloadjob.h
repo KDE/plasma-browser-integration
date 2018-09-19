@@ -47,12 +47,12 @@ public:
 
     void update(const QJsonObject &payload);
 
-signals:
+Q_SIGNALS:
     void killRequested();
     void suspendRequested();
     void resumeRequested();
 
-private slots:
+private Q_SLOTS:
     void doStart();
 
 protected:

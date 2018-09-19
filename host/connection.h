@@ -37,7 +37,7 @@ public:
     static Connection* self();
     void sendData(const QJsonObject &data);
 
-signals:
+Q_SIGNALS:
     void dataReceived(const QJsonObject &data);
 
 private:

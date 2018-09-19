@@ -113,7 +113,7 @@ public:
     void SetPosition(const QDBusObjectPath &path, qlonglong position);
     void OpenUri(const QString &uri);
 
-signals:
+Q_SIGNALS:
     void canControlChanged();
     void playbackStatusChanged();
     void canSeekChanged();
