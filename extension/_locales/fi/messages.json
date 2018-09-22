@@ -1,95 +1,95 @@
 {
-    "options_plugin_tabsrunner_description": {
-        "message": "Varmista, että ”Selainvälilehdet”-moduuli on käytössä <a id=\"$1\" href=\"$2\">Plasman hakuasetuksissa</a>."
-    },
-    "general_error_unknown": {
-        "message": "Tuntematon virhe"
-    },
-    "options_plugin_mpris_description": {
-        "message": "Antaa sinun hallita sivustojen video- ja äänisoittimia "
-    },
-    "general_error_title": {
-        "message": "Plasma-selainintegrointivirhe"
-    },
-    "options_tab_about": {
-        "message": "Tietoa"
-    },
-    "options_title": {
-        "message": "Plasma-integrointiasetukset"
-    },
-    "options_plugin_mpris_media_sessions_title": {
-        "message": "Laajennetut mediasäätimet"
-    },
     "options_plugin_tabsrunner_title": {
         "message": "Etsi selainvälilehtiä ”Suorita komento” -ikkunassa"
-    },
-    "options_plugin_breezeScrollBars_title": {
-        "message": "Käytä Breeze-tyylisiä vierityspalkkeja"
-    },
-    "options_tab_general": {
-        "message": "Yleistä"
     },
     "general_error_port_startupfail": {
         "message": "Yhteydenotto Plasmaan epäonnistui. Varmista, että plasma-browser-integration-paketti on asennettu."
     },
-    "options_about_bugs": {
-        "message": "Jos havaitset ongelmia, tarkista <a href=\"$1\">tunnetut ohjelmavirheet</a> ja tee tarvittaessa <a href=\"$2\">vikailmoitus</a>."
-    },
-    "options_save_failed": {
-        "message": "Asetusten tallennus epäonnistui"
-    },
-    "options_plugin_mpris_media_sessions_description": {
-        "message": "Lue toistettavan sisällön metatiedot ja pienoiskuvat. (kokeellinen)"
-    },
-    "options_about_copyright": {
-        "message": "© 2017, 2018 Kai Uwe Broulik ja David Edmundson"
-    },
-    "kdeconnect_open_device": {
-        "message": "Avaa sovellukseen ”$1”"
-    },
-    "kdeconnect_open_via": {
-        "message": "Avaa KDE Connectilla"
-    },
-    "general_error_port_disconnect": {
-        "message": "Plasma-silta katkaisi odottamatta yhteyden: $1"
-    },
-    "options_about_translators": {
-        "message": "Tommi Nieminen"
+    "general_error_title": {
+        "message": "Plasma-selainintegrointivirhe"
     },
     "options_about_created_by_kde": {
         "message": "Tämän selainlaajennuksen on kehittänyt <a href=\"$1\">KDE-yhteisö</a>. Löydät projektista lisätietoa <a href=\"$2\">KDE Community Wiki</a>stä."
     },
-    "options_about_kde": {
-        "message": "KDE on maailmanlaajuinen ohjelmoijien, taiteilijoiden, kirjoittajien, kääntäjien ja avustajien verkosto, joka on sitoutunut <a href=\"$1\">vapaiden ohjelmistojen</a> kehitykseen. Yhteisö on luonut satoja vapaita ohjelmistoja KDE:n perustaan, työtiloihin ja sovelluksiin. KDE on yhteistoimintahanke, jota yksikään yksittäinen taho ei yksinomaisesti hallitse. Kaikki ovat tervetulleita liittymään KDE:hen ja avustamaan sitä – myös sinä."
+    "general_error_port_disconnect": {
+        "message": "Plasma-silta katkaisi odottamatta yhteyden: $1"
     },
-    "options_plugin_kdeconnect_title": {
-        "message": "Lähetä KDE Connectilla"
-    },
-    "options_not_supported_os": {
-        "message": "Tämä käyttöjärjestelmä ei tue tätä laajennusta."
-    },
-    "options_about_license": {
-        "message": "Lisenssi: <a href=\"$1\">GNU General Public License, versio 3</a>"
-    },
-    "options_plugin_downloads_title": {
-        "message": "Näytä lataukset ilmoitusalueella"
-    },
-    "options_about_donate": {
-        "message": "Jos pidät näkemästäsi, harkitse <a href=\"$1\">KDE:lle lahjoittamista</a>, jotta voimme jatkaa parhaiden vapaiden ohjelmistojen tekemistä."
+    "options_plugin_mpris_description": {
+        "message": "Antaa sinun hallita sivustojen video- ja äänisoittimia "
     },
     "options_plugin_mpris_title": {
         "message": "Mediasäätimet"
     },
+    "options_tab_general": {
+        "message": "Yleistä"
+    },
     "options_plugin_breezeScrollBars_description": {
         "message": "Tämä voi häiritä sellaisten sivustojen ulkoasua, jotka ovat jo mukauttaneet vierityspalkkiensa tyyliä."
+    },
+    "options_plugin_breezeScrollBars_title": {
+        "message": "Käytä Breeze-tyylisiä vierityspalkkeja"
+    },
+    "general_error_unknown": {
+        "message": "Tuntematon virhe"
+    },
+    "options_about_bugs": {
+        "message": "Jos havaitset ongelmia, tarkista <a href=\"$1\">tunnetut ohjelmavirheet</a> ja tee tarvittaessa <a href=\"$2\">vikailmoitus</a>."
+    },
+    "kdeconnect_open_via": {
+        "message": "Avaa KDE Connectilla"
+    },
+    "options_about_license": {
+        "message": "Lisenssi: <a href=\"$1\">GNU General Public License, versio 3</a>"
+    },
+    "options_save_success": {
+        "message": "Asetusten tallennus onnistui"
     },
     "options_plugin_kdeconnect_description": {
         "message": "Lisää kontekstivalikkoon kohdan, jolla voit lähettää kohteet puhelimeesi tai muuhun <a href=\"$1\">KDE Connect</a> -laitteeseen."
     },
+    "options_plugin_mpris_media_sessions_description": {
+        "message": "Lue toistettavan sisällön metatiedot ja pienoiskuvat. (kokeellinen)"
+    },
+    "options_not_supported_os": {
+        "message": "Tämä käyttöjärjestelmä ei tue tätä laajennusta."
+    },
+    "options_plugin_tabsrunner_description": {
+        "message": "Varmista, että ”Selainvälilehdet”-moduuli on käytössä <a id=\"$1\" href=\"$2\">Plasman hakuasetuksissa</a>."
+    },
+    "options_title": {
+        "message": "Plasma-integrointiasetukset"
+    },
+    "kdeconnect_open_device": {
+        "message": "Avaa sovellukseen ”$1”"
+    },
+    "options_plugin_mpris_media_sessions_title": {
+        "message": "Laajennetut mediasäätimet"
+    },
+    "options_about_copyright": {
+        "message": "© 2017, 2018 Kai Uwe Broulik ja David Edmundson"
+    },
     "options_about_translated_by": {
         "message": "Kääntänyt: $1"
     },
-    "options_save_success": {
-        "message": "Asetusten tallennus onnistui"
+    "options_about_kde": {
+        "message": "KDE on maailmanlaajuinen ohjelmoijien, taiteilijoiden, kirjoittajien, kääntäjien ja avustajien verkosto, joka on sitoutunut <a href=\"$1\">vapaiden ohjelmistojen</a> kehitykseen. Yhteisö on luonut satoja vapaita ohjelmistoja KDE:n perustaan, työtiloihin ja sovelluksiin. KDE on yhteistoimintahanke, jota yksikään yksittäinen taho ei yksinomaisesti hallitse. Kaikki ovat tervetulleita liittymään KDE:hen ja avustamaan sitä – myös sinä."
+    },
+    "options_plugin_downloads_title": {
+        "message": "Näytä lataukset ilmoitusalueella"
+    },
+    "options_save_failed": {
+        "message": "Asetusten tallennus epäonnistui"
+    },
+    "options_about_translators": {
+        "message": "Tommi Nieminen"
+    },
+    "options_tab_about": {
+        "message": "Tietoa"
+    },
+    "options_plugin_kdeconnect_title": {
+        "message": "Lähetä KDE Connectilla"
+    },
+    "options_about_donate": {
+        "message": "Jos pidät näkemästäsi, harkitse <a href=\"$1\">KDE:lle lahjoittamista</a>, jotta voimme jatkaa parhaiden vapaiden ohjelmistojen tekemistä."
     }
 }
