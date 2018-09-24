@@ -102,6 +102,9 @@ var mediaSessionsTransferDivId ='xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/
 var mediaSessionsClassName = "f" + mediaSessionsTransferDivId.replace(/-/g, "");
 
 var activePlayer;
+// When a player has no duration yet, we'll wait for it becoming known
+// to determine whether to ignore it (short sound) or make it active
+var pendingActivePlayer;
 var playerMetadata = {};
 var playerCallbacks = [];
 
@@ -219,9 +222,19 @@ function playerPaused(player) {
 }
 
 function setPlayerActive(player) {
+    if (isNaN(player.duration)) {
+        // Ignore this player for now until we know a duration
+        // In durationchange event handler we'll check for this and end up here again
+        pendingActivePlayer = player;
+        return;
+    }
+
+    pendingActivePlayer = undefined;
+
     // Ignore short sounds, they are most likely a chat notification sound
-    // but still allow when undetermined (e.g. video stream)
-    if (!isNaN(player.duration) && player.duration > 0 && player.duration < 5) {
+    // A stream has a duration of Infinity
+    // Note that "NaN" is also not finite but we already returned earlier for that
+    if (isFinite(player.duration) && player.duration > 0 && player.duration < 5) {
         return;
     }
 
@@ -243,6 +256,7 @@ function setPlayerActive(player) {
 
 function sendPlayerGone() {
     activePlayer = undefined;
+    pendingActivePlayer = undefined;
     playerMetadata = {};
     playerCallbacks = [];
     sendMessage("mpris", "gone");
@@ -308,6 +322,12 @@ function registerPlayer(player) {
 
     // TODO use player.seekable for determining whether we can seek?
     player.addEventListener("durationchange", function () {
+        // Deferred active due to unknown duration
+        if (pendingActivePlayer == player) {
+            setPlayerActive(pendingActivePlayer);
+            return;
+        }
+
         sendPlayerInfo(player, "duration", {
             duration: player.duration
         });
