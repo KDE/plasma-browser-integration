@@ -52,7 +52,7 @@ outTranslations = {}
 with open(enPath, 'r') as infile:
     enData = json.load(infile)
 
-for msgId in sorted(enData):
+for msgId in enData:
     msg = ""
     if msgId in translations:
         msg = translations[msgId]
@@ -60,4 +60,4 @@ for msgId in sorted(enData):
         msg = enData[msgId]["message"]
     outTranslations[msgId] = {"message" : msg}
 
-outfile.write(json.JSONEncoder(indent=4, ensure_ascii=False).encode(outTranslations))
+outfile.write(json.JSONEncoder(indent=4, ensure_ascii=False, sort_keys=True).encode(outTranslations))
