@@ -1,15 +1,63 @@
 {
-    "options_plugin_kdeconnect_title": {
-        "message": "Poslať cez KDE Connect"
+    "options_plugin_tabsrunner_title": {
+        "message": "Nájsť karty prehliadača v okne \"Spustiť príkaz\\"
     },
-    "kdeconnect_open_device": {
-        "message": "Otvoriť na '$1'"
+    "options_tab_general": {
+        "message": "Všeobecné"
+    },
+    "options_save_failed": {
+        "message": "Ukladanie nastavení zlyhalo"
+    },
+    "options_about_created_by_kde": {
+        "message": "Toto rozšírenie prehliadača bolo vytvorené členmi <a href=\"$1\">KDE Community</a>. Môžete nájsť viac informácií o tomto projekte na <a href=\"$2\">KDE Community Wiki</a>."
+    },
+    "options_plugin_kdeconnect_description": {
+        "message": "Pridáva položku v kontextovej ponuke, ktorá vám umožnuje posielať odkazy do vášho telefónu a iných zariadení pripojených pomocou <a href=\"$1\">KDE "
+    },
+    "options_plugin_mpris_media_sessions_description": {
+        "message": "Extrahovať metadáta a náhľady aktuálne prehľadávaného obsahu. "
+    },
+    "general_error_title": {
+        "message": "Chyba Plasma Browser Integration"
+    },
+    "options_title": {
+        "message": "Nastavenia Plasma Integration"
+    },
+    "options_about_kde": {
+        "message": "KDE je celosvetová sieť softvérových inžinierov, umelcov, spisovateľov, prekladateľov a ďalšých, ktorý sú oddaní vývoju <a href=\"$1\">Slobodného Softvéru</a>. Táto komunita vytvorila stovky Slobodných Softvérových aplikácií ako súčasť KDE framework-ov, workspace-ov a aplikácií. KDE je spolupracujúci podnik, v ktorej žiadna entita neovláda záujmy alebo produkty KDE na úkor iných. Každý je vítaný pridať sa a prispieť do KDE, vrátane vás."
+    },
+    "options_tab_about": {
+        "message": "O aplikácii"
+    },
+    "options_plugin_mpris_description": {
+        "message": "Umožnuje vám ovládať hudobné a video prehrávače na internetových stránkach pomocou Plasmoidu Ovládač medií."
+    },
+    "options_save_success": {
+        "message": "Nastavenia úspešne uložené"
+    },
+    "options_about_copyright": {
+        "message": "© 2017, 2018 Kai Uwe Broulik and David Edmundson"
+    },
+    "general_error_port_startupfail": {
+        "message": "Zlyhalo pripojenie k natívnemu host-u. Uistite sa že balík 'plasma-browser-integration' je nainštalovaný."
+    },
+    "general_error_unknown": {
+        "message": "Neznáma chyba"
+    },
+    "options_plugin_mpris_media_sessions_title": {
+        "message": "Vylepšené ovládače médií"
+    },
+    "options_plugin_breezeScrollBars_title": {
+        "message": "Pouužívať posúvače v štýle Vánok"
+    },
+    "options_plugin_downloads_title": {
+        "message": "Zobraziť preberania v notifikačnej oblasti"
     },
     "options_about_license": {
         "message": "Licencia: <a href=\"$1\">GNU General Public License Version 3</a>"
     },
-    "options_about_created_by_kde": {
-        "message": "Toto rozšírenie prehliadača bolo vytvorené členmi <a href=\"$1\">KDE Community</a>. Môžete nájsť viac informácií o tomto projekte na <a href=\"$2\">KDE Community Wiki</a>."
+    "options_about_translated_by": {
+        "message": "Preložil: $1"
     },
     "kdeconnect_open_via": {
         "message": "Otvoriť cez KDE Connect"
@@ -17,79 +65,31 @@
     "options_plugin_tabsrunner_description": {
         "message": "Uistite sa že \"Karty prehliadača\" sú povolené v <a id=\"$1\" href=\"$2\">Plasma nastavenia vyhľadávania</a>."
     },
-    "options_tab_general": {
-        "message": "Všeobecné"
-    },
-    "options_not_supported_os": {
-        "message": "Toto rozšírenie nie je podporované na tomto operačnom systéme."
-    },
-    "options_tab_about": {
-        "message": "O aplikácii"
-    },
-    "general_error_port_disconnect": {
-        "message": "Natívny host sa nečakane odpojil: $1"
-    },
-    "options_plugin_tabsrunner_title": {
-        "message": "Nájsť karty prehliadača v okne \"Spustiť príkaz\\"
-    },
-    "options_plugin_mpris_description": {
-        "message": "Umožnuje vám ovládať hudobné a video prehrávače na internetových stránkach pomocou Plasmoidu Ovládač medií."
-    },
-    "options_save_failed": {
-        "message": "Ukladanie nastavení zlyhalo"
-    },
-    "options_about_translated_by": {
-        "message": "Preložil: $1"
-    },
-    "options_plugin_mpris_title": {
-        "message": "Ovládače médií"
-    },
-    "options_title": {
-        "message": "Nastavenia Plasma Integration"
-    },
-    "options_plugin_breezeScrollBars_description": {
-        "message": "Toto môže prekážať vo vzhľade stránok, ktoré už používajú vlastné štýlovanie pre pousúvače."
-    },
-    "general_error_unknown": {
-        "message": "Neznáma chyba"
-    },
-    "options_about_kde": {
-        "message": "KDE je celosvetová sieť softvérových inžinierov, umelcov, spisovateľov, prekladateľov a ďalšých, ktorý sú oddaní vývoju <a href=\"$1\">Slobodného Softvéru</a>. Táto komunita vytvorila stovky Slobodných Softvérových aplikácií ako súčasť KDE framework-ov, workspace-ov a aplikácií. KDE je spolupracujúci podnik, v ktorej žiadna entita neovláda záujmy alebo produkty KDE na úkor iných. Každý je vítaný pridať sa a prispieť do KDE, vrátane vás."
-    },
-    "options_about_translators": {
-        "message": "Roman Paholík"
-    },
-    "options_plugin_downloads_title": {
-        "message": "Zobraziť preberania v notifikačnej oblasti"
-    },
-    "options_save_success": {
-        "message": "Nastavenia úspešne uložené"
-    },
-    "options_plugin_breezeScrollBars_title": {
-        "message": "Pouužívať posúvače v štýle Vánok"
+    "kdeconnect_open_device": {
+        "message": "Otvoriť na '$1'"
     },
     "options_about_bugs": {
         "message": "Ak nájdete chybu, prosím skontrolujte <a href=\"$1\">zoznam otvorených chýb</a> a potom prípadne <a href=\"$2\">vyplnte hlásenie o chybe</a>."
     },
-    "options_about_copyright": {
-        "message": "© 2017, 2018 Kai Uwe Broulik and David Edmundson"
+    "options_plugin_mpris_title": {
+        "message": "Ovládače médií"
     },
-    "general_error_title": {
-        "message": "Chyba Plasma Browser Integration"
+    "options_not_supported_os": {
+        "message": "Toto rozšírenie nie je podporované na tomto operačnom systéme."
     },
-    "options_plugin_kdeconnect_description": {
-        "message": "Pridáva položku v kontextovej ponuke, ktorá vám umožnuje posielať odkazy do vášho telefónu a iných zariadení pripojených pomocou <a href=\"$1\">KDE "
+    "options_about_translators": {
+        "message": "Roman Paholík"
+    },
+    "options_plugin_kdeconnect_title": {
+        "message": "Poslať cez KDE Connect"
+    },
+    "options_plugin_breezeScrollBars_description": {
+        "message": "Toto môže prekážať vo vzhľade stránok, ktoré už používajú vlastné štýlovanie pre pousúvače."
+    },
+    "general_error_port_disconnect": {
+        "message": "Natívny host sa nečakane odpojil: $1"
     },
     "options_about_donate": {
         "message": "Ak sa vám páči čo vidíte, prosím zvážte <a href=\"$1\">prispieť do KDE</a>, aby sme mohli robiť ten najlepší slobodný softvér ako je možné."
-    },
-    "options_plugin_mpris_media_sessions_description": {
-        "message": "Extrahovať metadáta a náhľady aktuálne prehľadávaného obsahu. "
-    },
-    "general_error_port_startupfail": {
-        "message": "Zlyhalo pripojenie k natívnemu host-u. Uistite sa že balík 'plasma-browser-integration' je nainštalovaný."
-    },
-    "options_plugin_mpris_media_sessions_title": {
-        "message": "Vylepšené ovládače médií"
     }
 }
