@@ -551,12 +551,25 @@ void MPrisPlugin::Play()
 
 void MPrisPlugin::Seek(qlonglong offset)
 {
-    Q_UNUSED(offset);
+    auto newPosition = position() + offset;
+    if (newPosition >= m_length) {
+        Next();
+        return;
+    }
+
+    if (newPosition < 0) {
+        newPosition = 0;
+    }
+    SetPosition(QDBusObjectPath() /*unused*/, newPosition);
 }
 
 void MPrisPlugin::SetPosition(const QDBusObjectPath &path, qlonglong position)
 {
     Q_UNUSED(path); // TODO use?
+
+    if (position < 0 || position >= m_length) {
+        return;
+    }
 
     sendData(QStringLiteral("setPosition"), {
         {QStringLiteral("position"), position / 1000.0 / 1000.0
