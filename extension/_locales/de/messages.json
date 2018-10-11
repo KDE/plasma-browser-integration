@@ -42,7 +42,7 @@
         "message": "Your names"
     },
     "options_not_supported_os": {
-        "message": "This extension is not supported on this operating system."
+        "message": "Diese Erweiterung wird auf diesem Betriebssystem nicht unterstützt."
     },
     "options_plugin_breezeScrollBars_description": {
         "message": "This may interfere with the appearance of websites that already apply a custom styling to their scroll bars."
