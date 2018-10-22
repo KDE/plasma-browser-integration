@@ -42,7 +42,7 @@
         "message": "Adrián Chaves (Gallaecio)"
     },
     "options_not_supported_os": {
-        "message": "This extension is not supported on this operating system."
+        "message": "Esta extensión non é compatíbel con este sistema operativo."
     },
     "options_plugin_breezeScrollBars_description": {
         "message": "Isto podería interferir coa aparencia de sitios web que xa aplican un estilo personalizado ás súas barras de desprazamento."
@@ -63,10 +63,10 @@
         "message": "Permítelle controlar reprodutores de son e vídeo en sitios web usando o plasmoide de controlador de reprodución."
     },
     "options_plugin_mpris_media_sessions_description": {
-        "message": "Extract metadata and thumbnails of currently playing content. (Experimental)"
+        "message": "Extraer medatados e miniaturas do contido que se está a reproducir. (experimental)"
     },
     "options_plugin_mpris_media_sessions_title": {
-        "message": "Controis de reprodución"
+        "message": "Controis de reprodución mellorados"
     },
     "options_plugin_mpris_title": {
         "message": "Controis de reprodución"
