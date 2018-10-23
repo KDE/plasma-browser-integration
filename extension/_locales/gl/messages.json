@@ -63,7 +63,7 @@
         "message": "Permítelle controlar reprodutores de son e vídeo en sitios web usando o plasmoide de controlador de reprodución."
     },
     "options_plugin_mpris_media_sessions_description": {
-        "message": "Extraer medatados e miniaturas do contido que se está a reproducir. (experimental)"
+        "message": "Extraer medatados e miniaturas do contido que se está a reproducir. "
     },
     "options_plugin_mpris_media_sessions_title": {
         "message": "Controis de reprodución mellorados"
