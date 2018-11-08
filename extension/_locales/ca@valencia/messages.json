@@ -54,7 +54,7 @@
         "message": "Mostra les baixades a l'àrea de notificacions"
     },
     "options_plugin_kdeconnect_description": {
-        "message": "Afig una entrada al menú contextual a enllaços que permeten enviar-los al telèfon i a altres dispositius aparellats usant el <a href=\"$1\">Connect del KDE</a>."
+        "message": "Afig una entrada al menú contextual a enllaços que permeten enviar-los al telèfon i a altres dispositius aparellats usant el <a href=\"$1\">Connect del "
     },
     "options_plugin_kdeconnect_title": {
         "message": "Envia a través del KDE Connect"
