@@ -436,6 +436,21 @@ chrome.downloads.onChanged.addListener(function (delta) {
         return;
     }
 
+    // An interrupted download was resumed. When a download is interrupted, we finish (and delete)
+    // the job but the browser re-uses the existing download, so when this happen,
+    // pretend a new download was created.
+    if (delta.state) {
+        if (delta.state.previous === "interrupted" && delta.state.current === "in_progress") {
+            console.log("Resuming previously interrupted download, pretending a new download was created");
+            chrome.downloads.search({
+                id: delta.id
+            }, function (downloads) {
+                createDownload(downloads[0]);
+            });
+            return;
+        }
+    }
+
     var payload = {};
 
     whitelistedDownloadProperties.forEach(function (item) {
