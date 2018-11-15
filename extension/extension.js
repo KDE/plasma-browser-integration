@@ -171,7 +171,7 @@ addCallback("kdeconnect", "deviceAdded", function(message) {
 });
 
 addCallback("kdeconnect", "deviceRemoved", function(message) {
-    chrome.contextMenus.remove("kdeconnect_page_" + id)
+    chrome.contextMenus.remove("kdeconnect_page_" + message.id)
 });
 
 // MPRIS
