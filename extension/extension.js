@@ -405,7 +405,7 @@ var whitelistedDownloadProperties = [
     "id", "url", "finalUrl", "filename", "startTime", "estimatedEndTime", "totalBytes", "bytesReceived", "state", "error", /*"canResume"*/, "paused"
 ];
 
-chrome.downloads.onCreated.addListener(function (download) {
+function createDownload(download) {
     // don't bother telling us about completed downloads...
     // otherwise on browser startup we'll spawn a gazillion download progress notification
     if (download.state === "complete" || download.state === "interrupted") {
@@ -418,7 +418,18 @@ chrome.downloads.onCreated.addListener(function (download) {
     startSendingDownloadUpdates();
 
     port.postMessage({subsystem: "downloads", event: "created", download: filteredDownload});
-});
+}
+
+function sendDownloads() {
+    // When extension is (re)loaded, create each download initially
+    chrome.downloads.search({
+        state: 'in_progress',
+    }, function (results) {
+        results.forEach(createDownload);
+    });
+}
+
+chrome.downloads.onCreated.addListener(createDownload);
 
 chrome.downloads.onChanged.addListener(function (delta) {
     if (activeDownloads.indexOf(delta.id) === -1) {
@@ -666,6 +677,7 @@ function connectHost() {
 
     sendEnvironment();
     sendSettings();
+    sendDownloads();
 }
 
 addRuntimeCallback("settings", "changed", function () {
