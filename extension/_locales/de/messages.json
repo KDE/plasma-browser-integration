@@ -6,19 +6,19 @@
         "message": "Failed to connect to the native host. Make sure the 'plasma-browser-integration' package is installed."
     },
     "general_error_title": {
-        "message": "Plasma Browser Integration Error"
+        "message": "Fehler in der Plasma-Integration für Browser"
     },
     "general_error_unknown": {
         "message": "Unbekannter Fehler"
     },
     "kdeconnect_open_device": {
-        "message": "Open on '$1'"
+        "message": "In „%1“ öffnen"
     },
     "kdeconnect_open_via": {
         "message": "Mit KDE-Connect öffnen"
     },
     "options_about_bugs": {
-        "message": "If you find an issue, please check the <a href=\"$1\">list of open bugs</a> and then <a href=\"$2\">file a bug report</a>."
+        "message": "Bei Problemen überprüfen Sie bitte die <a href=\"$1\">Liste der offenen Fehler</a> und schreiben Sie dann einen <a href=\"$2\">Fehlerbericht</a>."
     },
     "options_about_copyright": {
         "message": "© 2017, 2018 Kai Uwe Broulik und David Edmundson"
@@ -51,7 +51,7 @@
         "message": "Bildlaufleisten im Breeze-Stil verwenden"
     },
     "options_plugin_downloads_title": {
-        "message": "Show downloads in notification area"
+        "message": "Herunterladen im Benachrichtigungsbereich anzeigen"
     },
     "options_plugin_kdeconnect_description": {
         "message": "Adds a context menu entry to links enabling you to send them to your phone and other paired devices using <a href=\"$1\">KDE Connect</a>."
@@ -63,10 +63,10 @@
         "message": "Lets you control video and audio players in websites using the Media Controller plasmoid."
     },
     "options_plugin_mpris_media_sessions_description": {
-        "message": "Extract metadata and thumbnails of currently playing content. (Experimental)"
+        "message": "Extrahiert Metadaten und Inhalt des gerade wieder gegebenen Inhalts. (Experimentell)"
     },
     "options_plugin_mpris_media_sessions_title": {
-        "message": "Enhanced Media Controls"
+        "message": "Erweiterte Mediensteuerung"
     },
     "options_plugin_mpris_title": {
         "message": "Mediensteuerung"
