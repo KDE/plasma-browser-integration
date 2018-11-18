@@ -63,7 +63,7 @@
         "message": "Lets you control video and audio players in websites using the Media Controller plasmoid."
     },
     "options_plugin_mpris_media_sessions_description": {
-        "message": "Extrahiert Metadaten und Inhalt des gerade wieder gegebenen Inhalts. (Experimentell)"
+        "message": "Extrahiert Metadaten und Inhalt des gerade wieder gegebenen Inhalts. "
     },
     "options_plugin_mpris_media_sessions_title": {
         "message": "Erweiterte Mediensteuerung"
