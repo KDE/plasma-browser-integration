@@ -12,7 +12,7 @@
         "message": "Unbekannter Fehler"
     },
     "kdeconnect_open_device": {
-        "message": "In „%1“ öffnen"
+        "message": "In „$1“ öffnen"
     },
     "kdeconnect_open_via": {
         "message": "Mit KDE-Connect öffnen"
@@ -72,7 +72,7 @@
         "message": "Mediensteuerung"
     },
     "options_plugin_tabsrunner_description": {
-        "message": "Make sure the “Browser Tabs” module is enabled in <a id=\"$1\" href=\"$2\">Plasma Search settings</a>."
+        "message": "Überprüfen Sie ob das Modul „Browser-Unterfenster“ in den <a id=\"$1\\ href=\"$2\">Plasma-Sucheinstellungen</a> aktiviert ist."
     },
     "options_plugin_tabsrunner_title": {
         "message": "Find browser tabs in “Run Command” window"
