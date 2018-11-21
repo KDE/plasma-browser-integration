@@ -72,7 +72,7 @@
         "message": "Mediensteuerung"
     },
     "options_plugin_tabsrunner_description": {
-        "message": "Überprüfen Sie ob das Modul „Browser-Unterfenster“ in den <a id=\"$1\\ href=\"$2\">Plasma-Sucheinstellungen</a> aktiviert ist."
+        "message": "Überprüfen Sie ob das Modul „Browser-Unterfenster“ in den <a id=\"$1\" href=\"$2\">Plasma-Sucheinstellungen</a> aktiviert ist."
     },
     "options_plugin_tabsrunner_title": {
         "message": "Find browser tabs in “Run Command” window"
