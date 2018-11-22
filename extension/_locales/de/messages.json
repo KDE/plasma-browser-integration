@@ -54,7 +54,7 @@
         "message": "Herunterladen im Benachrichtigungsbereich anzeigen"
     },
     "options_plugin_kdeconnect_description": {
-        "message": "Adds a context menu entry to links enabling you to send them to your phone and other paired devices using <a href=\"$1\">KDE Connect</a>."
+        "message": "Fügt einen Eintrag zu Verknüpfungen zum Kontextmenü hinzu, mit dem Sie die Verknüpfung zu Ihrem Smartphone oder zu anderen angeschlossenen Geräten mit <a href=\"$1\">KDE-Connect</a> senden können."
     },
     "options_plugin_kdeconnect_title": {
         "message": "Mit KDE-Connect versenden"
