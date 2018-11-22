@@ -140,33 +140,40 @@ function raiseTab(tabId) {
 // ------------------------------------------------------------------------
 //
 
+var kdeConnectMenuIdPrefix = "kdeconnect_page_";
+
+chrome.contextMenus.onClicked.addListener(function (info) {
+    if (!info.menuItemId.startsWith(kdeConnectMenuIdPrefix)) {
+        return;
+    }
+
+    var deviceId = info.menuItemId.substr(kdeConnectMenuIdPrefix.length);
+
+    var url = info.linkUrl || info.pageUrl;
+    console.log("Send url", url, "to kdeconnect device", deviceId);
+    if (!url) {
+        return;
+    }
+
+    port.postMessage({
+        subsystem: "kdeconnect",
+        event: "shareUrl",
+        url: url,
+        deviceId: deviceId
+    });
+});
+
 addCallback("kdeconnect", "deviceAdded", function(message) {
     var id = message.id;
     var name = message.name;
 
     var menuEntryTitle = chrome.i18n.getMessage("kdeconnect_open_device", name);
-    var menuId = "kdeconnect_page_" + id;
+    var menuId = kdeConnectMenuIdPrefix + id;
 
     chrome.contextMenus.create({
         id: menuId,
         contexts: ["link", "page"],
         title: menuEntryTitle,
-    });
-
-    chrome.contextMenus.onClicked.addListener(function (info) {
-        if (info.menuItemId == menuId) {
-            var url = info.linkUrl || info.pageUrl;
-            console.log("Send url", url, "to kdeconnect device", id);
-            if (!url) {
-                return;
-            }
-            port.postMessage({
-                subsystem: "kdeconnect",
-                event: "shareUrl",
-                url: url,
-                deviceId: id
-            });
-        }
     });
 });
 
