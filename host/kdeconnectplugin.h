@@ -32,6 +32,12 @@ public:
     bool onLoad() override;
     bool onUnload() override;
     void handleData(const QString &event, const QJsonObject &data) override;
+
+private Q_SLOTS:
+    void onDeviceAdded(const QString &deviceId);
+    void onDeviceRemoved(const QString &deviceId);
+    void onDeviceVisibilityChanged(const QString &deviceId, bool visible);
+
 private:
     QStringList m_devices;
 };

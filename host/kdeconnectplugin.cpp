@@ -28,6 +28,11 @@
 #include <QDBusPendingReply>
 #include <QDBusConnection>
 
+static const QString s_kdeConnectServiceName = QStringLiteral("org.kde.kdeconnect");
+static const QString s_kdeConnectObjectPath = QStringLiteral("/modules/kdeconnect");
+
+static const QString s_kdeConnectDaemon = QStringLiteral("org.kde.kdeconnect.daemon");
+
 KDEConnectPlugin::KDEConnectPlugin(QObject* parent) :
     AbstractBrowserPlugin(QStringLiteral("kdeconnect"), 1, parent)
 {
@@ -36,71 +41,151 @@ KDEConnectPlugin::KDEConnectPlugin(QObject* parent) :
 
 bool KDEConnectPlugin::onLoad()
 {
-    QDBusMessage msg = QDBusMessage::createMethodCall(QStringLiteral("org.kde.kdeconnect"),
-                                                      QStringLiteral("/modules/kdeconnect"),
-                                                      QStringLiteral("org.kde.kdeconnect.daemon"),
+    QDBusConnection bus = QDBusConnection::sessionBus();
+
+    bus.connect(s_kdeConnectServiceName,
+                s_kdeConnectObjectPath,
+                s_kdeConnectDaemon,
+                QStringLiteral("deviceAdded"),
+                this,
+                SLOT(onDeviceAdded(QString)));
+    bus.connect(s_kdeConnectServiceName,
+                s_kdeConnectObjectPath,
+                s_kdeConnectDaemon,
+                QStringLiteral("deviceRemoved"),
+                this,
+                SLOT(onDeviceRemoved(QString)));
+    bus.connect(s_kdeConnectServiceName,
+                   s_kdeConnectObjectPath,
+                   s_kdeConnectDaemon,
+                   QStringLiteral("deviceVisibilityChanged"),
+                   this,
+                   SLOT(onDeviceVisibilityChanged(QString,bool)));
+
+    QDBusMessage msg = QDBusMessage::createMethodCall(s_kdeConnectServiceName,
+                                                      s_kdeConnectObjectPath,
+                                                      s_kdeConnectDaemon,
                                                       QStringLiteral("devices"));
     msg.setArguments({true /* only reachable */, true /* only paired */});
-    QDBusPendingReply<QStringList> reply = QDBusConnection::sessionBus().asyncCall(msg);
+    QDBusPendingReply<QStringList> reply = bus.asyncCall(msg);
     QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
     QObject::connect(watcher, &QDBusPendingCallWatcher::finished, this, [this](QDBusPendingCallWatcher *watcher) {
         QDBusPendingReply<QStringList> reply = *watcher;
-        if (reply.isError()) {
-            debug() << "kdeconnect discovery" << reply.error().name();
-        } else {
-            const QStringList &devices = reply.value();
-
-            foreach (const QString &deviceId, devices) {
-                QDBusMessage msg = QDBusMessage::createMethodCall(QStringLiteral("org.kde.kdeconnect"),
-                                                                  QStringLiteral("/modules/kdeconnect/devices/") + deviceId,
-                                                                  QStringLiteral("org.freedesktop.DBus.Properties"),
-                                                                  QStringLiteral("GetAll"));
-                msg.setArguments({QStringLiteral("org.kde.kdeconnect.device")});
-                QDBusPendingReply<QVariantMap> reply = QDBusConnection::sessionBus().asyncCall(msg);
-                QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
-
-                QObject::connect(watcher, &QDBusPendingCallWatcher::finished, this, [this, deviceId](QDBusPendingCallWatcher *watcher) {
-                    watcher->deleteLater();
-                    QDBusPendingReply<QVariantMap> reply = *watcher;
-                    if (reply.isError()) {
-                        debug() << "getting device properties" << reply.error().message();
-                    } else {
-                        auto props = reply.value();
-                        props[QStringLiteral("id")] = deviceId;
-                        m_devices.append(deviceId);
-                        sendData(QStringLiteral("deviceAdded"), QJsonObject::fromVariantMap(props));
-                    }
-                });
-            }
-        }
         watcher->deleteLater();
+        if (reply.isError()) {
+            debug() << "kdeconnect discovery failed:" << reply.error().name();
+            return;
+        }
+
+        const QStringList devices = reply.value();
+        for (const QString &deviceId : devices) {
+            onDeviceAdded(deviceId);
+        }
     });
     return true;
 }
 
 bool KDEConnectPlugin::onUnload()
 {
-    foreach(const QString &deviceId, m_devices) {
-        sendData(QStringLiteral("deviceRemoved"), {{QStringLiteral("id"), deviceId}});
+    QDBusConnection bus = QDBusConnection::sessionBus();
+
+    bus.disconnect(s_kdeConnectServiceName,
+                   s_kdeConnectObjectPath,
+                   s_kdeConnectDaemon,
+                   QStringLiteral("deviceAdded"),
+                   this,
+                   SLOT(onDeviceAdded(QString)));
+    bus.disconnect(s_kdeConnectServiceName,
+                   s_kdeConnectObjectPath,
+                   s_kdeConnectDaemon,
+                   QStringLiteral("deviceRemoved"),
+                   this,
+                   SLOT(onDeviceRemoved(QString)));
+    bus.disconnect(s_kdeConnectServiceName,
+                   s_kdeConnectObjectPath,
+                   s_kdeConnectDaemon,
+                   QStringLiteral("deviceVisibilityChanged"),
+                   this,
+                   SLOT(onDeviceVisibilityChanged(QString,bool)));
+
+    for (const QString &deviceId : qAsConst(m_devices)) {
+        onDeviceRemoved(deviceId);
     }
     return true;
+}
+
+void KDEConnectPlugin::onDeviceAdded(const QString &deviceId)
+{
+    if (m_devices.contains(deviceId)) {
+        return;
+    }
+
+    QDBusMessage msg = QDBusMessage::createMethodCall(s_kdeConnectServiceName,
+                                                      QStringLiteral("/modules/kdeconnect/devices/") + deviceId,
+                                                      QStringLiteral("org.freedesktop.DBus.Properties"),
+                                                      QStringLiteral("GetAll"));
+    msg.setArguments({QStringLiteral("org.kde.kdeconnect.device")});
+    QDBusPendingReply<QVariantMap> reply = QDBusConnection::sessionBus().asyncCall(msg);
+    QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
+
+    QObject::connect(watcher, &QDBusPendingCallWatcher::finished, this, [this, deviceId](QDBusPendingCallWatcher *watcher) {
+        QDBusPendingReply<QVariantMap> reply = *watcher;
+        watcher->deleteLater();
+
+        if (reply.isError()) {
+            debug() << "getting device for properties for" << deviceId << "failed:" << reply.error().message();
+            return;
+        }
+
+        // We might have gotten a second deviceAdded signal, check again.
+        if (m_devices.contains(deviceId)) {
+            return;
+        }
+
+        QVariantMap props = reply.value();
+
+        if (!props.value(QStringLiteral("isReachable")).toBool()
+                || !props.value(QStringLiteral("isTrusted")).toBool()) {
+            return;
+        }
+
+        props.insert(QStringLiteral("id"), deviceId);
+
+        m_devices.append(deviceId);
+        sendData(QStringLiteral("deviceAdded"), QJsonObject::fromVariantMap(props));
+    });
+}
+
+void KDEConnectPlugin::onDeviceRemoved(const QString &deviceId)
+{
+    if (m_devices.removeOne(deviceId)) {
+        sendData(QStringLiteral("deviceRemoved"), {{QStringLiteral("id"), deviceId}});
+    }
+}
+
+void KDEConnectPlugin::onDeviceVisibilityChanged(const QString &deviceId, bool visible)
+{
+    if (visible) {
+        onDeviceAdded(deviceId);
+    } else {
+        onDeviceRemoved(deviceId);
+    }
 }
 
 void KDEConnectPlugin::handleData(const QString& event, const QJsonObject& json)
 {
     if (event == QLatin1String("shareUrl")) {
-            const QString deviceId = json.value(QStringLiteral("deviceId")).toString();
-            const QString url = json.value(QStringLiteral("url")).toString();
+        const QString deviceId = json.value(QStringLiteral("deviceId")).toString();
+        const QString url = json.value(QStringLiteral("url")).toString();
 
-            debug() << "sending kde connect url" << url << "to device" << deviceId;
+        debug() << "sending kde connect url" << url << "to device" << deviceId;
 
-            QDBusMessage msg = QDBusMessage::createMethodCall(QStringLiteral("org.kde.kdeconnect"),
-                                                                QStringLiteral("/modules/kdeconnect/devices/") + deviceId + QStringLiteral("/share"),
-                                                                QStringLiteral("org.kde.kdeconnect.device.share"),
-                                                                QStringLiteral("shareUrl"));
-            msg.setArguments({url});
-            QDBusPendingReply<QStringList> reply = QDBusConnection::sessionBus().asyncCall(msg);
-
-        }
+        QDBusMessage msg = QDBusMessage::createMethodCall(QStringLiteral("org.kde.kdeconnect"),
+                                                            QStringLiteral("/modules/kdeconnect/devices/") + deviceId + QStringLiteral("/share"),
+                                                            QStringLiteral("org.kde.kdeconnect.device.share"),
+                                                            QStringLiteral("shareUrl"));
+        msg.setArguments({url});
+        QDBusConnection::sessionBus().call(msg, QDBus::NoBlock);
+    }
 }
 
