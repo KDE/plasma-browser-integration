@@ -30,7 +30,7 @@
         "message": "Si vos agrada el que veieu, per favor, considereu fer una <a href=\"$1\">donació a KDE</a>, per tal de continuar fent el millor programari lliure possible."
     },
     "options_about_kde": {
-        "message": "KDE és una xarxa mundial d'enginyers informàtics, artistes, escriptors, traductors i facilitadors compromesos amb el desenvolupament de <a href=\"$1\">programari lliure</a> (Free Software). Aquesta comunitat ha creat centenars d'aplicacions de programari lliure com a part dels entorns de treball del KDE («KDE Frameworks»), espais de treball i aplicacions. KDE és una iniciativa cooperativa en el qual cap entitat individual controla els esforços o els productes del KDE per a excloure'n d'altres. Tothom és benvingut a afegir-se i col·laborar amb el KDE, incloent-vos."
+        "message": "KDE és una xarxa mundial d'enginyers informàtics, artistes, escriptors, traductors i creadors compromesos amb el desenvolupament de <a href=\"$1\">programari lliure</a> (Free Software). KDE ha creat l'entorn d'escriptori Plasma, centenars d'aplicacions, i moltes biblioteques de programari que les fan funcionar. KDE és una iniciativa cooperativa: cap entitat individual controla la seua direcció ni els seus productes. Altrament, treballem conjuntament per aconseguir l'objectiu comú de crear el programari lliure més refinat del món. Tothom és benvingut a <a href=\"$2\">afegir-se i col·laborar</a> amb el KDE, incloent-vos. Visiteu <a href=\"$3\">$3</a> per a més informació sobre la comunitat KDE i el programari que "
     },
     "options_about_license": {
         "message": "Llicència: <a href=\"$1\">Llicència pública general de GNU versió 3</a>"
@@ -54,7 +54,7 @@
         "message": "Mostra les baixades a l'àrea de notificacions"
     },
     "options_plugin_kdeconnect_description": {
-        "message": "Afig una entrada al menú contextual a enllaços que permeten enviar-los al telèfon i a altres dispositius aparellats usant el <a href=\"$1\">Connect del KDE</a>."
+        "message": "Afig una entrada al menú contextual a enllaços que permeten enviar-los al telèfon i a altres dispositius aparellats usant el <a href=\"$1\">Connect del "
     },
     "options_plugin_kdeconnect_title": {
         "message": "Envia a través del KDE Connect"

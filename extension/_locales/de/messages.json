@@ -30,7 +30,7 @@
         "message": "If you like what you saw, please consider <a href=\"$1\">donating to KDE</a>, so we can continue to make the best free software possible."
     },
     "options_about_kde": {
-        "message": "KDE ist ein weltweites Netzwerk von Programmierern, Künstlern, Autoren, Übersetzern und Unterstützern, die sich der Entwicklung von <a href=\"$1\">Freier Software</a> verschrieben haben Diese Gemeinschaft hat hunderte freie Software-Anwendungen als Teil der KDE-Frameworks, Arbeitsumgebung und Anwendungen geschaffen. KDE wird nicht von einer einzelnen Gruppe, Firma oder Organisation kontrolliert. Jeder ist eingeladen zu KDE beizutragen."
+        "message": "KDE ist ein weltweite Gemeinschaft von Programmierern, Künstlern, Autoren, Übersetzern und Unterstützern, die sich der Entwicklung von <a href=\"$1\">Freier Software</a> verschrieben haben. KDE veröffentlicht die Plasma-Arbeitsumgebung, hunderte von Anwendungen und viele Bibliotheken als Grundlage. KDE ist ein Gemeinschaftsprojekt und wird nicht von einer einzelnen Gruppe, Firma oder Organisation kontrolliert. Statt dessen wirdzusammen die beste freie Software erstellt. Jeder ist eingeladen, bei <a href=\"$2\">KDE mit zu machen</a>. Besuchen Sie <a href=\"$3\">$3</a>, um mehr Informationen über das KDE-Projekt zu erhalten."
     },
     "options_about_license": {
         "message": "Lizenz: <a href=\"$1\">GNU General Public License Version 3</a>"
@@ -54,7 +54,7 @@
         "message": "Herunterladen im Benachrichtigungsbereich anzeigen"
     },
     "options_plugin_kdeconnect_description": {
-        "message": "Adds a context menu entry to links enabling you to send them to your phone and other paired devices using <a href=\"$1\">KDE Connect</a>."
+        "message": "Fügt einen Eintrag zu Verknüpfungen zum Kontextmenü hinzu, mit dem Sie die Verknüpfung zu Ihrem Smartphone oder zu anderen angeschlossenen Geräten mit <a href=\"$1\">KDE-Connect</a> senden können."
     },
     "options_plugin_kdeconnect_title": {
         "message": "Mit KDE-Connect versenden"

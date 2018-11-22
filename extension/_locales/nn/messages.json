@@ -30,7 +30,7 @@
         "message": "Viss du likar programmet, vurder å <a href=\"$1\">gje ei pengegåve til KDE</a>, slik at me kan halda fram med å laga den beste frie programvaren."
     },
     "options_about_kde": {
-        "message": "KDE er eit verdsfemnande nettverk av folk som programmerar, teiknar, komponerer, dokumenterer, set om eller hjelper til på andre måtar med utvikling av <a href=\"$1\">fri programvare</a>. Me har i fellesskap laga fleire hundre frie program, som no inngår som ein del av KDE-utviklingsplattforma og KDE-programdistribusjonen. KDE er eit fellesskap der inga enkel gruppe, firma eller organisasjon kontrollerer kjeldekoden til produkta, og alle er velkomne til å bidra – du òg."
+        "message": "KDE is a world-wide community of software engineers, artists, writers, translators and creators who are committed to <a href=\"$1\">Free Software</a> development. KDE produces the Plasma desktop environment, hundreds of applications, and the many software libraries that support them. KDE is a cooperative enterprise: no single entity controls its direction or products. Instead, we work together to achieve the common goal of building the world's finest Free Software. Everyone is welcome to <a href=\"$2\">join and contribute</a> to KDE, including you. Visit <a href=\"$3\">$3</a> for more information about the KDE community and the software we produce."
     },
     "options_about_license": {
         "message": "Lisens: <a href=\"$1\">GNU General Public License versjon 3</a>"

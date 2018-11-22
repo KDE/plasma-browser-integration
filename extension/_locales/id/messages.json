@@ -30,7 +30,7 @@
         "message": "Jika kamu suka apa yang kamu lihat, silakan mempertimbangkan <a href=\"$1\">donasi ke KDE</a>, sehingga kami bisa terus membuat software bebas sebaik mungkin."
     },
     "options_about_kde": {
-        "message": "KDE adalah jaringan seluruh dunia dari insinyur, seniman, penulis, penerjemah dan pemfasilitas software yang mana berkomitmen untuk developmen <a href=\"$1\">Free Software</a>. Komunitas ini memiliki ratusan aplikasi Free Software yang diciptakan sebagai bagian dari frameworks, workspaces dan aplikasi KDE. KDE adalah perusahaan koperasi di mana tiada entitas satu pun yang mengendalikan usaha atau produk KDE untuk mengesampingkan yang lain. Siapa pun disambut untuk bergabung dan berkontribusi untuk KDE, termasuk "
+        "message": "KDE adalah komunitas seluruh dunia dari insinyur, seniman, penulis, penerjemah dan pemfasilitas software yang mana berkomitmen untuk developmen <a href=\"$1\">Free Software</a>. KDE memproduksi lingkungan desktop Plasma, ratusan aplikasi, dan banyak pustaka software yang mendukungnya. KDE adalah perusahaan koperasi: di mana tiada entitas satu pun yang mengendalikan arah atau usaha. Alih-alih, kami bekerja bersama-sama untuk mencapai tujuan umum pembangunan dalam dunia Free Software yang baik. Siapa pun disambut untuk <a href=\"$2\">bergabung dan berkontribusi</a> untuk KDE, termasuk kamu. Kunjungi <a href=\"$3\">$3</a> untuk informasi tentang komunitas KDE dan software yang kami produksi."
     },
     "options_about_license": {
         "message": "Lisensi: <a href=\"$1\">GNU General Public License Version 3</a>"
