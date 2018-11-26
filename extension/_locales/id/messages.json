@@ -72,7 +72,7 @@
         "message": "Kendali Media"
     },
     "options_plugin_tabsrunner_description": {
-        "message": "Pastikan modul “Browser Tabs” telah diaktifkan dalam <a id=\"$1\" href=\"$2\">setelan Plasma Search</a>."
+        "message": "Pastikan modul “Browser Tabs” telah difungsikan dalam <a id=\"$1\" href=\"$2\">setelan Plasma Search</a>."
     },
     "options_plugin_tabsrunner_title": {
         "message": "Temukan tab-tab browser dalam jendela “Run Command”"
