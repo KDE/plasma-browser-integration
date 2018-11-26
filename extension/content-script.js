@@ -582,6 +582,21 @@ function loadMediaSessionsShim() {
             }
         `);
 
+        // We also briefly add items created as new Audio() to the DOM so we can control it
+        // similar to the document.createElement hack above
+        executeScript(`function() {
+                var oldAudio = window.Audio;
+                window.Audio = function () {
+                    var createdAudio = new (Function.prototype.bind.apply(oldAudio, arguments));
+
+                    (document.head || document.documentElement).appendChild(createdAudio);
+                    createdAudio.parentNode.removeChild(createdAudio);
+
+                    return createdAudio;
+                };
+            }
+        `);
+
         // now the fun part of getting the stuff from our page back into our extension...
         // cannot access extensions from innocent page JS for security
         var transferItem = document.createElement("div");
