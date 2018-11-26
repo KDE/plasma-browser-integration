@@ -52,6 +52,5 @@
       "strict_min_version": "50.0"
     }
   },
-  "optional_permissions": [ "webRequest" ],
-  "web_accessible_resources": ["breeze-scroll-bars.css"]
+  "optional_permissions": [ "webRequest" ]
 }

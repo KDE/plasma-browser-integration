@@ -77,12 +77,60 @@ storage.get(DEFAULT_EXTENSION_SETTINGS, function (items) {
 // ------------------------------------------------------------------------
 //
 function loadBreezeScrollBars() {
-    if (!IS_FIREFOX) {
-        var linkTag = document.createElement("link");
-        linkTag.rel = "stylesheet";
-        linkTag.href =  chrome.extension.getURL("breeze-scroll-bars.css");
-        (document.head || document.documentElement).appendChild(linkTag);
+    if (IS_FIREFOX) {
+        return;
     }
+
+    if (!document.head) {
+        return;
+    }
+
+    // You cannot access cssRules for <link rel="stylesheet" ..> on a different domain.
+    // Since our chrome-extension:// URL for a stylesheet would be, this can
+    // lead to problems in e.g modernizr, so include the <style> inline instead.
+    // "Failed to read the 'cssRules' property from 'CSSStyleSheet': Cannot access rules"
+    var styleTag = document.createElement("style");
+    styleTag.appendChild(document.createTextNode(`
+::-webkit-scrollbar {
+    /* we'll add padding as "border" in the thumb*/
+    height: 20px;
+    width: 20px;
+    background: white;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 20px;
+    border: 7px solid white; /* FIXME why doesn't "transparent" work here?! */
+    background-color: white;
+    width: 6px !important; /* 20px scrollbar - 2 * 7px border */
+    box-sizing: content-box;
+}
+::-webkit-scrollbar-track:hover {
+    background-color: #BFC0C2;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #3DAEE9; /* default blue breeze color */
+    border: 7px solid transparent;
+    border-radius: 20px;
+    background-clip: content-box;
+    width: 6px !important; /* 20px scrollbar - 2 * 7px border */
+    box-sizing: content-box;
+    min-height: 30px;
+}
+::-webkit-scrollbar-thumb:window-inactive {
+   background-color: #949699; /* when window is inactive it's gray */
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #93CEE9; /* hovered is a lighter blue */
+}
+
+::-webkit-scrollbar-corner {
+    background-color: white; /* FIXME why doesn't "transparent" work here?! */
+}
+    `));
+
+    document.head.appendChild(styleTag);
 }
 
 
