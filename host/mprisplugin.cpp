@@ -130,6 +130,7 @@ void MPrisPlugin::handleData(const QString &event, const QJsonObject &data)
         m_canGoPrevious = false;
         m_pageTitle.clear();
         m_url.clear();
+        m_mediaSrc.clear();
         m_title.clear();
         m_artist.clear();
         m_artworkUrl.clear();
@@ -140,6 +141,7 @@ void MPrisPlugin::handleData(const QString &event, const QJsonObject &data)
         setPlaybackStatus(QStringLiteral("Playing"));
         m_pageTitle = data.value(QStringLiteral("tabTitle")).toString();
         m_url = QUrl(data.value(QStringLiteral("url")).toString());
+        m_mediaSrc = QUrl(data.value(QStringLiteral("mediaSrc")).toString());
 
         const qreal volume = data.value(QStringLiteral("volume")).toDouble(1);
         if (m_volume != volume) {
@@ -383,6 +385,9 @@ QVariantMap MPrisPlugin::metadata() const
 
     if (m_url.isValid()) {
         metadata.insert(QStringLiteral("xesam:url"), m_url.toDisplayString());
+    }
+    if (m_mediaSrc.isValid()) {
+        metadata.insert(QStringLiteral("kde:mediaSrc"), m_mediaSrc.toDisplayString());
     }
     if (m_length > 0) {
         metadata.insert(QStringLiteral("mpris:length"), m_length);

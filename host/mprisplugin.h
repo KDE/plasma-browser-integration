@@ -150,6 +150,7 @@ private:
 
     QString m_pageTitle;
     QUrl m_url;
+    QUrl m_mediaSrc;
 
     QString m_title;
     QString m_artist;
