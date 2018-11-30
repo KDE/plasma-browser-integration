@@ -3,7 +3,7 @@
         "message": "Plasma-silta katkaisi odottamatta yhteyden: $1"
     },
     "general_error_port_startupfail": {
-        "message": "Yhteydenotto Plasmaan epäonnistui. Varmista, että plasma-browser-integration-paketti on asennettu."
+        "message": "Yhteydenotto Plasmaan epäonnistui. Varmista, että plasma-browser-integration-paketti on asennettu.Yhteydenotto Plasmaan epäonnistui. Varmista, että plasma-browser-integration-paketti on asennettu."
     },
     "general_error_title": {
         "message": "Plasma-selainintegrointivirhe"
