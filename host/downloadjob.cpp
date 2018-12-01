@@ -146,70 +146,68 @@ void DownloadJob::update(const QJsonObject &payload)
         emitSpeed(speed);
     }
 
-    // TODO use the estimatedEndTime to calculate transfer speed
+    const QString error = payload.value(QStringLiteral("error")).toString();
+    if (!error.isEmpty()) {
+        if (error == QLatin1String("USER_CANCELED")
+            || error == QLatin1String("USER_SHUTDOWN")) {
+            setError(KIO::ERR_USER_CANCELED); // will keep Notification applet from showing a "finished"/error message
+            emitResult();
+            return;
+        }
+
+        // value is a QVariant so we can be lazy and support both KIO errors and custom test
+        // if QVariant is an int: use that as KIO error
+        // if QVariant is a QString: set UserError and message
+        static const QHash<QString, QString> errors {
+            // for a list of these error codes *and their meaning* instead of looking at browser
+            // extension docs, check out Chromium's source code: download_interrupt_reason_values.h
+            {QStringLiteral("FILE_ACCESS_DENIED"), i18n("Access denied.")}, // KIO::ERR_ACCESS_DENIED
+            {QStringLiteral("FILE_NO_SPACE"), i18n("Insufficient free space.")}, // KIO::ERR_DISK_FULL
+            {QStringLiteral("FILE_NAME_TOO_LONG"), i18n("The file name you have chosen is too long.")},
+            {QStringLiteral("FILE_TOO_LARGE"), i18n("The file is too large to be downloaded.")},
+            // haha
+            {QStringLiteral("FILE_VIRUS_INFECTED"), i18n("The file possibly contains malicious contents.")},
+            {QStringLiteral("FILE_TRANSIENT_ERROR"), i18n("A temporary error has occurred. Please try again later.")},
+
+            {QStringLiteral("NETWORK_FAILED"), i18n("A network error has occurred.")},
+            {QStringLiteral("NETWORK_TIMEOUT"), i18n("The network operation timed out.")}, // TODO something less geeky
+            {QStringLiteral("NETWORK_DISCONNECTED"), i18n("The network connection has been lost.")},
+            {QStringLiteral("NETWORK_SERVER_DOWN"), i18n("The server is no longer reachable.")},
+
+            {QStringLiteral("SERVER_FAILED"), i18n("A server error has occurred.")},
+            // chromium code says "internal use" and this is really not something the user should see
+            // SERVER_NO_RANGE"
+            // SERVER_PRECONDITION
+            {QStringLiteral("SERVER_BAD_CONTENT"), i18n("The server does not have the requested data.")},
+
+            {QStringLiteral("CRASH"), i18n("The browser application closed unexpectedly.")}
+        };
+
+
+        const QString &errorValue = errors.value(error);
+        if (errorValue.isEmpty()) { // unknown error
+            setError(KIO::ERR_UNKNOWN);
+            setErrorText(i18n("An unknown error occurred while downloading."));
+            emitResult();
+            return;
+        }
+
+        // KIO::Error doesn't have a UserDefined one, let's just use magic numbers then
+        // TODO at least set the KIO::Errors that we do have
+        setError(1000);
+        setErrorText(errorValue);
+
+        emitResult();
+        return;
+    }
 
     it = payload.constFind(QStringLiteral("state"));
     if (it != end) {
-        const QString status = it->toString();
-        if (status == QLatin1String("in_progress")) {
+        const QString state = it->toString();
 
-        } else if (status == QLatin1String("interrupted")) {
-
-            const QString &error = payload.value(QStringLiteral("error")).toString();
-
-            if (error == QLatin1String("USER_CANCELED")
-                || error == QLatin1String("USER_SHUTDOWN")) {
-                setError(KIO::ERR_USER_CANCELED); // will keep Notification applet from showing a "finished"/error message
-                emitResult();
-                return;
-            }
-
-            // value is a QVariant so we can be lazy and support both KIO errors and custom test
-            // if QVariant is an int: use that as KIO error
-            // if QVariant is a QString: set UserError and message
-            static const QHash<QString, QString> errors {
-                // for a list of these error codes *and their meaning* instead of looking at browser
-                // extension docs, check out Chromium's source code: download_interrupt_reason_values.h
-                {QStringLiteral("FILE_ACCESS_DENIED"), i18n("Access denied.")}, // KIO::ERR_ACCESS_DENIED
-                {QStringLiteral("FILE_NO_SPACE"), i18n("Insufficient free space.")}, // KIO::ERR_DISK_FULL
-                {QStringLiteral("FILE_NAME_TOO_LONG"), i18n("The file name you have chosen is too long.")},
-                {QStringLiteral("FILE_TOO_LARGE"), i18n("The file is too large to be downloaded.")},
-                // haha
-                {QStringLiteral("FILE_VIRUS_INFECTED"), i18n("The file possibly contains malicious contents.")},
-                {QStringLiteral("FILE_TRANSIENT_ERROR"), i18n("A temporary error has occurred. Please try again later.")},
-
-                {QStringLiteral("NETWORK_FAILED"), i18n("A network error has occurred.")},
-                {QStringLiteral("NETWORK_TIMEOUT"), i18n("The network operation timed out.")}, // TODO something less geeky
-                {QStringLiteral("NETWORK_DISCONNECTED"), i18n("The network connection has been lost.")},
-                {QStringLiteral("NETWORK_SERVER_DOWN"), i18n("The server is no longer reachable.")},
-
-                {QStringLiteral("SERVER_FAILED"), i18n("A server error has occurred.")},
-                // chromium code says "internal use" and this is really not something the user should see
-                // SERVER_NO_RANGE"
-                // SERVER_PRECONDITION
-                {QStringLiteral("SERVER_BAD_CONTENT"), i18n("The server does not have the requested data.")},
-
-                {QStringLiteral("CRASH"), i18n("The browser application closed unexpectedly.")}
-            };
-
-
-            const QString &errorValue = errors.value(error);
-            if (errorValue.isEmpty()) { // unknown error
-                setError(KIO::ERR_UNKNOWN);
-                setErrorText(i18n("An unknown error occurred while downloading."));
-                emitResult();
-                return;
-            }
-
-            // KIO::Error doesn't have a UserDefined one, let's just use magic numbers then
-            // TODO at least set the KIO::Errors that we do have
-            setError(1000);
-            setErrorText(errorValue);
-
-            emitResult();
-
-            return;
-        } else if (status == QLatin1String("complete")) {
+        // We ignore "interrupted" state and only cancel if we get supplied an "error"
+        if (state == QLatin1String("complete")) {
+            setError(KJob::NoError);
             emitResult();
             return;
         }
