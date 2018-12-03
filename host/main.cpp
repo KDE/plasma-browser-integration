@@ -56,8 +56,6 @@ void msgHandler(QtMsgType type, const QMessageLogContext &context, const QString
 
 int main(int argc, char *argv[])
 {
-    qInstallMessageHandler(msgHandler);
-
     // otherwise when logging out, session manager will ask the host to quit
     // (it's a "regular X app" after all) and then the browser will complain
     qunsetenv("SESSION_MANAGER");
@@ -66,6 +64,8 @@ int main(int argc, char *argv[])
     // otherwise will close when download job finishes
     a.setQuitOnLastWindowClosed(false);
     // applicationName etc will be set in Settings once the browser identifies to us
+
+    qInstallMessageHandler(msgHandler);
 
     // NOTE if you add a new plugin here, make sure to adjust the
     // "DEFAULT_EXTENSION_SETTINGS" in constants.js or else it won't
