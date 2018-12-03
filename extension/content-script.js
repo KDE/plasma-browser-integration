@@ -588,7 +588,7 @@ function loadMediaSessionsShim() {
                     get: function() { return ${mediaSessionsClassName}.metadata; },
                     set: function(newValue) {
                         ${mediaSessionsClassName}.metadata = newValue;
-                        ${mediaSessionsClassName}.sendMessage("metadata", newValue.data);
+                        ${mediaSessionsClassName}.sendMessage("metadata", newValue ? newValue.data : null);
                     }
                 });
                 Object.defineProperty(navigator.mediaSession, "playbackState", {
