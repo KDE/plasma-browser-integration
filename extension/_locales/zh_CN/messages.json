@@ -54,7 +54,7 @@
         "message": "在通知区域显示下载"
     },
     "options_plugin_kdeconnect_description": {
-        "message": "添加上下文菜单项目来让您可以将它们通过<a href=\"$1\">KDE Connect</a>发送到您"
+        "message": "添加右键菜单项目来让您可以将它们通过<a href=\"$1\">KDE Connect</a>发送到您的"
     },
     "options_plugin_kdeconnect_title": {
         "message": "通过 KDE Connect 发送"
