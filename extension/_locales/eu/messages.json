@@ -30,7 +30,7 @@
         "message": "Ikusitakoa gustuko baduzu, kontuan hartu <a href=\"$1\">KDEri dohaintza egitea</a>, guk ahalik eta software aske onena egiten jarraitzeko aukera izan dezagun."
     },
     "options_about_kde": {
-        "message": "KDE <a href=\"$1\">Software Askearen</a> garapenarekin engaiatuko mundu zabaleko software ingeniari, artista, idazle, itzultzaile eta eragile sare bat da. Elkarte honek ehunka Software Aske aplikazio sortu ditu KDE azpiegituren (frameworks), languneen (workspaces) eta aplikazioen zati gisa. KDE enpresa kooperatibo bat da zeinetan inongo erakundek ez duen kontrolatzen KDEren esfortzu edo produkturik besteak baztertzeko. Denak ongi etorriak dira KDErekin elkartu eta laguntzera, zu barne."
+        "message": "KDE <a href=\"$1\">Software Askearen</a> garapenarekin engaiatutako mundu osoko software ingeniari, artista, idazle, itzultzaile eta sortzaile elkarte bat da. KDEk ekoizten ditu Plasma mahaigain ingurunea, ehunka aplikazio, eta haiei sostengua ematen dieten liburutegi ugariak. KDE ekimen kooperatibo bat da: bere norabidea eta produktuak ez ditu erakunde bakar batek kontrolatzen. Aldiz, elkarrekin lan egiten dugu helburu bera lortzeko, munduko Software Aske bikainena eraikitzearena alegia. Jende oro ongi etorria da  KDErekin <a href=\"$2\">elkartu eta laguntza ematera</a>, zu barne. Bisitatu <a href=\"$3\">$3</a>, KDE elkartearen eta ekoizten dugun softwarearen gaineko informazio zabalagoa eskuratzeko."
     },
     "options_about_license": {
         "message": "Lizentzia: <a href=\"$1\">GNU Lizentzia Publiko Orokorra, 3 bertsioa</a>"
@@ -90,6 +90,6 @@
         "message": "Orokorra"
     },
     "options_title": {
-        "message": "Plasma Integration Settings"
+        "message": "Plama bateratze ezarpenak"
     }
 }
