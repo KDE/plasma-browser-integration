@@ -30,7 +30,7 @@
         "message": "Se você gostou do que viu, considere <a href=\"$1\">doar para o KDE</a>, assim podemos continuar fazendo o melhor software livre possível."
     },
     "options_about_kde": {
-        "message": "O KDE é uma rede mundial de engenheiros de software, artistas, escritores, tradutores e facilitadores que estão empenhados com o desenvolvimento do <a href=\"$1\">Software Livre</a>. Esta comunidade criou centenas de aplicativos de software livre como parte das estruturas, áreas de trabalho e aplicativos KDE. O KDE é uma empresa cooperativa na qual nenhuma entidade controla os esforços ou produtos do KDE excluindo outros. Todos são bem-vindos a se juntar e contribuir para o KDE, incluindo você."
+        "message": "KDE é uma comunidade mundial de engenheiros de software, artistas, escritores, tradutores e colaboradores que estão empenhados com o desenvolvimento de <a href=\"$1\">Software Livre</a>. O KDE desenvolve o ambiente de trabalho Plasma, centenas de aplicativos e muitas das bibliotecas que são utilizadas por esses softwares. É uma companhia cooperativa: nenhuma entidade individual controla a direção ou produtos. Em vez disso, nós trabalhamos juntos para alcançar o objetivo comum de construir um mundo melhor com software livre. Todos são bem-vindos a <a href=\"$2\">participar e contribuir</a> com o KDE, incluindo você. Visite <a href=\"$3\">$3</a> para obter mais informações sobre a comunidade KDE e sobre os softwares que produzimos."
     },
     "options_about_license": {
         "message": "Licença: <a href=\"$1\">GNU General Public License Version 3</a>"
