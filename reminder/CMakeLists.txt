@@ -12,12 +12,12 @@ target_link_libraries(browserintegrationreminder
     Qt5::DBus
     Qt5::Widgets
     KF5::CoreAddons
-    KF5::DBusAddons
+    KF5::DBusAddons # for KDEDModule
     KF5::I18n
-    KF5::Notifications
+    KF5::Notifications # for KStatusNotifierItem
     KF5::ConfigCore
-    KF5::Activities
-    KF5::KIOWidgets
-    KF5::WindowSystem)
+    KF5::Activities # for KActivities::ResourceInstance
+    KF5::KIOWidgets # for KRun
+)
 
 install(TARGETS browserintegrationreminder  DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf5/kded)

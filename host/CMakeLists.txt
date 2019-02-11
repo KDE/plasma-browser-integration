@@ -23,9 +23,6 @@ target_link_libraries(
     Qt5::Widgets
     KF5::I18n
     KF5::KIOCore
-    KF5::Notifications
-    KF5::WindowSystem
-    KF5::Activities
 )
 
 install(TARGETS plasma-browser-integration-host ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})

@@ -38,7 +38,6 @@
 #include <KRun>
 #include <KService>
 #include <KSharedConfig>
-#include <KStartupInfo>
 #include <KStatusNotifierItem>
 
 #include "browserintegrationreminder.h"
