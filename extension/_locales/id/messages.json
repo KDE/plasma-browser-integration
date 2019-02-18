@@ -1,9 +1,9 @@
 {
     "general_error_port_disconnect": {
-        "message": "Host bawaan terdiskonek secara tiba-tiba: $1"
+        "message": "Host bawaan terdiskoneksi secara tiba-tiba: $1"
     },
     "general_error_port_startupfail": {
-        "message": "Gagal mengonek ke host bawaan. Pastikan paket 'plasma-browser-integration' sudah terinstal."
+        "message": "Gagal mengkoneksikan ke host bawaan. Pastikan paket 'plasma-browser-integration' sudah terinstal."
     },
     "general_error_title": {
         "message": "Plasma Browser Integration, Error"
