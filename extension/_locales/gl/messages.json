@@ -18,7 +18,7 @@
         "message": "Abrir mediante KDE Connect"
     },
     "options_about_bugs": {
-        "message": "Se atopa un problema, revise a <a href=\"$1\">lista de erros abertos</a> e se non o atopa <a href=\"$2\">informe do erro</a>."
+        "message": "Se atopa un problema, revise a <a href=\"$1\">lista de fallos abertos</a> e se non o atopa <a href=\"$2\">informe do fallo</a>."
     },
     "options_about_copyright": {
         "message": "© 2017-2018 Kai Uwe Broulik e David Edmundson"
