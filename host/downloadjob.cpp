@@ -98,7 +98,11 @@ void DownloadJob::update(const QJsonObject &payload)
 
     it = payload.constFind(QStringLiteral("filename"));
     if (it != end) {
-        m_destination = QUrl::fromLocalFile(it->toString());
+        const QUrl destination = QUrl::fromLocalFile(it->toString());
+
+        setProperty("destUrl", destination.toString(QUrl::RemoveFilename | QUrl::StripTrailingSlash));
+
+        m_destination = destination;
         descriptionDirty = true;
     }
 
@@ -111,6 +115,8 @@ void DownloadJob::update(const QJsonObject &payload)
     if (it != end) {
         setProcessedAmount(Bytes, it->toDouble());
     }
+
+    setTotalAmount(Files, 1);
 
     it = payload.constFind(QStringLiteral("paused"));
     if (it != end) {
