@@ -48,7 +48,7 @@
         "message": "Cette option peut interférer avec l'apparence de sites Web qui appliquent déjà un style personnalisé à leurs barres de défilement."
     },
     "options_plugin_breezeScrollBars_title": {
-        "message": "Utiliser les barres de défilement de type Brise"
+        "message": "Utiliser les barres de défilement de type Breeze"
     },
     "options_plugin_downloads_title": {
         "message": "Afficher les téléchargements dans la zone de notification"
