@@ -152,6 +152,10 @@ void DownloadJob::update(const QJsonObject &payload)
         emitSpeed(speed);
     }
 
+    if (descriptionDirty) {
+        updateDescription();
+    }
+
     const QString error = payload.value(QStringLiteral("error")).toString();
     if (!error.isEmpty()) {
         if (error == QLatin1String("USER_CANCELED")
@@ -217,10 +221,6 @@ void DownloadJob::update(const QJsonObject &payload)
             emitResult();
             return;
         }
-    }
-
-    if (descriptionDirty) {
-        updateDescription();
     }
 }
 
