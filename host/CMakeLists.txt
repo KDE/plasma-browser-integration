@@ -1,3 +1,5 @@
+add_definitions(-DTRANSLATION_DOMAIN=\"plasma-browser-integration-host\")
+
 set(HOST_SOURCES main.cpp
                 connection.cpp
                 settings.cpp
