@@ -566,6 +566,7 @@ addCallback("tabsrunner", "getTabs", function (message) {
             } else if (favIconUrl.match(/^data:image/)) {
                 // Already a data URL
                 filteredTabs[currentIndex].favIconData = favIconUrl;
+                filteredTabs[currentIndex].favIconUrl = "";
                 sendTabsIfComplete();
             } else {
                 // Send a request to fill the cache (=no timeout)
