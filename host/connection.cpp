@@ -37,12 +37,13 @@ Connection::Connection() :
     m_stdOut.open(STDOUT_FILENO, QIODevice::WriteOnly);
     m_stdIn.open(STDIN_FILENO, QIODevice::ReadOnly | QIODevice::Unbuffered);
 
-    auto notifier = new QSocketNotifier(STDIN_FILENO, QSocketNotifier::Read, this);
-    connect(notifier, &QSocketNotifier::activated, this, &Connection::readData);
+//     auto notifier = new QSocketNotifier(STDIN_FILENO, QSocketNotifier::Read, this);
+//     connect(notifier, &QSocketNotifier::activated, this, &Connection::readData);
 }
 
 void Connection::sendData(const QJsonObject &data)
 {
+    return;
     const QByteArray rawData = QJsonDocument(data).toJson(QJsonDocument::Compact);
     //note, don't use QDataStream as we need to control the binary format used
     quint32 len = rawData.count();

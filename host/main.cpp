@@ -65,7 +65,7 @@ int main(int argc, char *argv[])
     a.setQuitOnLastWindowClosed(false);
     // applicationName etc will be set in Settings once the browser identifies to us
 
-    qInstallMessageHandler(msgHandler);
+//     qInstallMessageHandler(msgHandler);
 
     // NOTE if you add a new plugin here, make sure to adjust the
     // "DEFAULT_EXTENSION_SETTINGS" in constants.js or else it won't
@@ -80,27 +80,29 @@ int main(int argc, char *argv[])
     // TODO make this prettier, also prevent unloading them at any cost
     Settings::self().setLoaded(true);
 
-    QString serviceName = QStringLiteral("org.kde.plasma.browser_integration");
-    if (!QDBusConnection::sessionBus().registerService(serviceName)) {
-        // now try appending PID in case multiple hosts are running
-        serviceName.append(QLatin1String("-")).append(QString::number(QCoreApplication::applicationPid()));
-        if (!QDBusConnection::sessionBus().registerService(serviceName)) {
-            qWarning() << "Failed to register DBus service name" << serviceName;
-        }
-    }
+//     QString serviceName = QStringLiteral("org.kde.plasma.browser_integration");
+//     if (!QDBusConnection::sessionBus().registerService(serviceName)) {
+//         // now try appending PID in case multiple hosts are running
+//         serviceName.append(QLatin1String("-")).append(QString::number(QCoreApplication::applicationPid()));
+//         if (!QDBusConnection::sessionBus().registerService(serviceName)) {
+//             qWarning() << "Failed to register DBus service name" << serviceName;
+//         }
+//     }
+
+    qDebug() << "AA";
 
     QObject::connect(Connection::self(), &Connection::dataReceived, [m_plugins](const QJsonObject &json) {
         const QString subsystem = json.value(QStringLiteral("subsystem")).toString();
 
         if (subsystem.isEmpty()) {
             //qDebug() << "No subsystem provided";
-            return;
+            exit(0); //return
         }
 
         const QString event = json.value(QStringLiteral("event")).toString();
         if (event.isEmpty()) {
             //qDebug() << "No event provided";
-            return;
+            exit(0); //return
         }
 
         foreach(AbstractBrowserPlugin *plugin, m_plugins) {
@@ -111,50 +113,18 @@ int main(int argc, char *argv[])
             if (plugin->subsystem() == subsystem) {
                 //design question, should we have a JSON of subsystem, event, payload, or have all data at the root level?
                 plugin->handleData(event, json);
-                return;
+                exit(0); //return
             }
         }
 
+        exit(0);
         qDebug() << "Don't know how to handle event" << event << "for subsystem" << subsystem;
     });
 
-    QObject::connect(&Settings::self(), &Settings::changed, [m_plugins](const QJsonObject &settings) {
-        foreach(AbstractBrowserPlugin *plugin, m_plugins) {
-            // FIXME let a plugin somehow tell that it must not be unloaded
-            if (plugin->subsystem() == QLatin1String("settings")) {
-                continue;
-            }
 
-            const QJsonValue &val = settings.value(plugin->subsystem());
-            if (val.type() != QJsonValue::Object) {
-                qWarning() << "Plugin" << plugin->subsystem() << "not handled by settings change";
-                continue;
-            }
+    qDebug() << "CC";
+    Connection::self()->readData();
 
-            const QJsonObject &settingsObject = val.toObject();
-
-            const bool enabled = settingsObject.value(QStringLiteral("enabled")).toBool();
-            bool ok = false;
-
-            if (enabled && !plugin->isLoaded()) {
-                ok = plugin->onLoad();
-                if (!ok) {
-                    qWarning() << "Plugin" << plugin->subsystem() << "refused to load";
-                }
-            } else if (!enabled && plugin->isLoaded()) {
-                ok = plugin->onUnload();
-                if (!ok) {
-                    qWarning() << "Plugin" << plugin->subsystem() << "refused to unload";
-                }
-            }
-
-            if (ok) {
-                plugin->setLoaded(enabled);
-            }
-
-            plugin->onSettingsChanged(settingsObject);
-        }
-    });
-
-    return a.exec();
+    qDebug() << "BB";
+    exit(0);
 }

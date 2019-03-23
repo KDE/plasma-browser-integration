@@ -36,6 +36,7 @@ class Connection : public QObject
 public:
     static Connection* self();
     void sendData(const QJsonObject &data);
+    void readData();
 
 Q_SIGNALS:
     void dataReceived(const QJsonObject &data);
@@ -43,7 +44,6 @@ Q_SIGNALS:
 private:
     Connection();
     ~Connection() = default;
-    void readData();
     QFile m_stdOut;
     QFile m_stdIn;
 };
