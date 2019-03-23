@@ -89,25 +89,24 @@ int main(int argc, char *argv[])
 //         }
 //     }
 
-    qDebug() << "AA";
-
     QObject::connect(Connection::self(), &Connection::dataReceived, [m_plugins](const QJsonObject &json) {
         const QString subsystem = json.value(QStringLiteral("subsystem")).toString();
 
+
         if (subsystem.isEmpty()) {
-            //qDebug() << "No subsystem provided";
+            qDebug() << "No subsystem provided";
             exit(0); //return
         }
 
         const QString event = json.value(QStringLiteral("event")).toString();
         if (event.isEmpty()) {
-            //qDebug() << "No event provided";
+            qDebug() << "No event provided";
             exit(0); //return
         }
 
         foreach(AbstractBrowserPlugin *plugin, m_plugins) {
             if (!plugin->isLoaded()) {
-                continue;
+//                 continue;
             }
 
             if (plugin->subsystem() == subsystem) {
@@ -122,9 +121,7 @@ int main(int argc, char *argv[])
     });
 
 
-    qDebug() << "CC";
     Connection::self()->readData();
 
-    qDebug() << "BB";
     exit(0);
 }

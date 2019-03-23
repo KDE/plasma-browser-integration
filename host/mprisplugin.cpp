@@ -123,6 +123,8 @@ bool MPrisPlugin::unregisterService()
 
 void MPrisPlugin::handleData(const QString &event, const QJsonObject &data)
 {
+    qDebug() << "event";
+
     if (event == QLatin1String("gone")) {
         unregisterService();
         setPlaybackStatus(QStringLiteral("Stopped")); // just in case
@@ -142,6 +144,8 @@ void MPrisPlugin::handleData(const QString &event, const QJsonObject &data)
         m_pageTitle = data.value(QStringLiteral("tabTitle")).toString();
         m_url = QUrl(data.value(QStringLiteral("url")).toString());
         m_mediaSrc = QUrl(data.value(QStringLiteral("mediaSrc")).toString());
+
+        qDebug() <<" YAY";
 
         const qreal volume = data.value(QStringLiteral("volume")).toDouble(1);
         if (m_volume != volume) {
