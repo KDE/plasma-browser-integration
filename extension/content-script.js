@@ -304,6 +304,11 @@ function setPlayerActive(player) {
 }
 
 function sendPlayerGone() {
+    var playerIdx = players.indexOf(activePlayer);
+    if (playerIdx > -1) {
+        players.splice(playerIdx, 1);
+    }
+
     activePlayer = undefined;
     pendingActivePlayer = undefined;
     playerMetadata = {};
@@ -409,7 +414,6 @@ function registerPlayer(player) {
         });
     });
 
-    // TODO remove it again when it goes away
     players.push(player);
 }
 
