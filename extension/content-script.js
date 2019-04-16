@@ -91,25 +91,25 @@ function loadBreezeScrollBars() {
     // "Failed to read the 'cssRules' property from 'CSSStyleSheet': Cannot access rules"
     var styleTag = document.createElement("style");
     styleTag.appendChild(document.createTextNode(`
-::-webkit-scrollbar {
+html::-webkit-scrollbar {
     /* we'll add padding as "border" in the thumb*/
     height: 20px;
     width: 20px;
     background: white;
 }
 
-::-webkit-scrollbar-track {
+html::-webkit-scrollbar-track {
     border-radius: 20px;
     border: 7px solid white; /* FIXME why doesn't "transparent" work here?! */
     background-color: white;
     width: 6px !important; /* 20px scrollbar - 2 * 7px border */
     box-sizing: content-box;
 }
-::-webkit-scrollbar-track:hover {
+html::-webkit-scrollbar-track:hover {
     background-color: #BFC0C2;
 }
 
-::-webkit-scrollbar-thumb {
+html::-webkit-scrollbar-thumb {
     background-color: #3DAEE9; /* default blue breeze color */
     border: 7px solid transparent;
     border-radius: 20px;
@@ -118,14 +118,14 @@ function loadBreezeScrollBars() {
     box-sizing: content-box;
     min-height: 30px;
 }
-::-webkit-scrollbar-thumb:window-inactive {
+html::-webkit-scrollbar-thumb:window-inactive {
    background-color: #949699; /* when window is inactive it's gray */
 }
-::-webkit-scrollbar-thumb:hover {
+html::-webkit-scrollbar-thumb:hover {
     background-color: #93CEE9; /* hovered is a lighter blue */
 }
 
-::-webkit-scrollbar-corner {
+html::-webkit-scrollbar-corner {
     background-color: white; /* FIXME why doesn't "transparent" work here?! */
 }
     `));
