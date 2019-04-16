@@ -492,6 +492,11 @@ function loadMpris() {
 
                 players.forEach(function (player) {
                     if (player == activePlayer) {
+                        // If the player is still in the visible DOM, don't consider it gone
+                        if (document.body.contains(player)) {
+                            return; // continue
+                        }
+
                         sendPlayerGone();
                         return;
                     }
