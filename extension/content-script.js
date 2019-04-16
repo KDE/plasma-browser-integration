@@ -468,14 +468,12 @@ function loadMpris() {
                     return;
                 }
 
-                // first check whether the node itself is audio/video
+                // Check whether the node itself or any of its children is a player
+                var players = Array.from(node.querySelectorAll("video,audio"));
                 if (node.matches("video,audio")) {
-                    registerPlayer(node);
-                    return;
+                    players.unshift(node);
                 }
 
-                // if not, check whether any of its children are
-                var players = node.querySelectorAll("video,audio");
                 players.forEach(function (player) {
                     registerPlayer(player);
                 });
@@ -486,14 +484,12 @@ function loadMpris() {
                     return;
                 }
 
+                // Check whether the node itself or any of its children is the current player
+                var players = Array.from(node.querySelectorAll("video,audio"));
                 if (node.matches("video,audio")) {
-                    if (node == activePlayer) {
-                        sendPlayerGone();
-                    }
-                    return;
+                    players.unshift(node);
                 }
 
-                var players = node.querySelectorAll("video,audio");
                 players.forEach(function (player) {
                     if (player == activePlayer) {
                         sendPlayerGone();
