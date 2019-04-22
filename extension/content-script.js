@@ -604,20 +604,51 @@ function loadMediaSessionsShim() {
                     this.callbacks[action]();
                 };
 
-                navigator.mediaSession = {};
+                if (!navigator.mediaSession) {
+                    navigator.mediaSession = {};
+                }
+
+                var noop = function() { };
+
+                var oldSetActionHandler = navigator.mediaSession.setActionHandler || noop;
                 navigator.mediaSession.setActionHandler = function (name, cb) {
+                    // Call the original native implementation
+                    // "call()" is needed as the real setActionHandler is a class member
+                    // and calling it directly is illegal as it lacks the context
+                    // We'll register the callback for ourself after this since it may
+                    // throw for unsupported callback names.
+                    var ret = oldSetActionHandler.call(navigator.mediaSession, name, cb);
+
                     if (cb) {
                         ${mediaSessionsClassName}.callbacks[name] = cb;
                     } else {
                         delete ${mediaSessionsClassName}.callbacks[name];
                     }
                     ${mediaSessionsClassName}.sendMessage("callbacks", Object.keys(${mediaSessionsClassName}.callbacks));
+
+                    return ret;
                 };
+
                 Object.defineProperty(navigator.mediaSession, "metadata", {
                     get: function() { return ${mediaSessionsClassName}.metadata; },
                     set: function(newValue) {
                         ${mediaSessionsClassName}.metadata = newValue;
-                        ${mediaSessionsClassName}.sendMessage("metadata", newValue ? newValue.data : null);
+
+                        // MediaMetadata is not a regular Object so we cannot just JSON.stringify it
+                        var newMetadata = {};
+                        if (newValue) {
+                            var keys = Object.getOwnPropertyNames(Object.getPrototypeOf(newValue));
+
+                            keys.forEach(function (key) {
+                                var value = newValue[key];
+                                if (typeof value === "function") {
+                                    return; // continue
+                                }
+                                newMetadata[key] = newValue[key];
+                            });
+                        }
+
+                        ${mediaSessionsClassName}.sendMessage("metadata", newMetadata);
                     }
                 });
                 Object.defineProperty(navigator.mediaSession, "playbackState", {
@@ -628,9 +659,15 @@ function loadMediaSessionsShim() {
                     }
                 });
 
-                window.MediaMetadata = function (data) {
-                    this.data = data;
-                };
+                if (!window.MediaMetadata) {
+                    window.MediaMetadata = function (data) {
+                        Object.assign(this, data);
+                    };
+                    window.MediaMetadata.prototype.title = "";
+                    window.MediaMetadata.prototype.artist = "";
+                    window.MediaMetadata.prototype.album = "";
+                    window.MediaMetadata.prototype.artwork = [];
+                }
             }
         `);
 
