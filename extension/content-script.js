@@ -178,8 +178,22 @@ addCallback("mpris", "playPause", function () {
     }
 });
 
-// there's no dedicated "stop", simulate it be rewinding and reloading
 addCallback("mpris", "stop", function () {
+    // When available, use the "stop" media sessions action
+    if (playerCallbacks.indexOf("stop") > -1) {
+        executeScript(`
+            function() {
+                try {
+                    ${mediaSessionsClassName}.executeCallback("stop");
+                } catch (e) {
+                    console.warn("Exception executing 'stop' media sessions callback", e);
+                }
+            }
+        `);
+        return;
+    }
+
+    // otherwise since there's no "stop" on the player, simulate it be rewinding and reloading
     if (activePlayer) {
         activePlayer.pause();
         activePlayer.currentTime = 0;
@@ -192,6 +206,7 @@ addCallback("mpris", "stop", function () {
         setTimeout(function() {
             sendMessage("mpris", "stopped");
         }, 1);
+        return;
     }
 });
 
