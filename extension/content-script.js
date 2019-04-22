@@ -156,6 +156,9 @@ var pendingActivePlayer;
 var playerMetadata = {};
 var playerCallbacks = [];
 
+// Playback state communicated via media sessions api
+var playerPlaybackState = "";
+
 var players = [];
 
 var pendingSeekingUpdate = 0;
@@ -365,6 +368,12 @@ function registerPlayer(player) {
     // playlist is now empty or being reloaded, stop player
     // e.g. when using Ajax page navigation and the user nagivated away
     player.addEventListener("emptied", function () {
+        // When the player is emptied but the website tells us it's just "paused"
+        // keep it around (Bug 402324: Soundcloud does this)
+        if (player === activePlayer && playerPlaybackState === "paused") {
+            return;
+        }
+
         // could have its own signal but for compat it's easier just to pretend to have stopped
         sendPlayerInfo(player, "stopped");
     });
@@ -698,6 +707,7 @@ function loadMediaSessionsShim() {
             } else if (action === "playbackState") {
                 var playbackState = json.payload;
 
+                playerPlaybackState = playbackState;
                 if (activePlayer) {
                     if (playbackState === "playing") {
                         playerPlaying(activePlayer);
