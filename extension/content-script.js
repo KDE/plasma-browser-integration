@@ -591,7 +591,7 @@ function loadMediaSessionsShim() {
                 ${mediaSessionsClassName} = function() {};
                 ${mediaSessionsClassName}.transferItem = null;
                 ${mediaSessionsClassName}.callbacks = {};
-                ${mediaSessionsClassName}.metadata = {};
+                ${mediaSessionsClassName}.metadata = null;
                 ${mediaSessionsClassName}.playbackState = "none";
                 ${mediaSessionsClassName}.sendMessage = function(action, payload) {
                     this.transferItem.innerText = JSON.stringify({action: action, payload: payload});
