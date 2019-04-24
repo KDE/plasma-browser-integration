@@ -108,7 +108,10 @@ void DownloadJob::update(const QJsonObject &payload)
 
     it = payload.constFind(QStringLiteral("totalBytes"));
     if (it != end) {
-        setTotalAmount(Bytes, it->toDouble());
+        const qlonglong totalAmount = it->toDouble();
+        if (totalAmount > -1) {
+            setTotalAmount(Bytes, totalAmount);
+        }
     }
 
     it = payload.constFind(QStringLiteral("bytesReceived"));
