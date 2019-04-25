@@ -249,7 +249,8 @@ QString MPrisPlugin::desktopEntry() const
     case Settings::Environment::Chromium: return QStringLiteral("chromium-browser");
     case Settings::Environment::Firefox: return QStringLiteral("firefox");
     case Settings::Environment::Opera: return QStringLiteral("opera");
-    case Settings::Environment::Vivaldi: return QStringLiteral("vivaldi");
+    // This is what the official package on their website uses
+    case Settings::Environment::Vivaldi: return QStringLiteral("vivaldi-stable");
     }
 
     return QString();
