@@ -21,7 +21,7 @@
         "message": "Si trobeu un problema, comproveu la <a href=\"$1\">llista d'errors oberts</a> i després <a href=\"$2\">ompliu un informe d'error</a>."
     },
     "options_about_copyright": {
-        "message": "© 2017, 2018 Kai Uwe Broulik and David Edmundson"
+        "message": "© 2017-2019 Kai Uwe Broulik and David Edmundson"
     },
     "options_about_created_by_kde": {
         "message": "Aquesta ampliació del navegador fou creada per la <a href=\"$1\">Comunitat KDE</a>. Podeu trobar més informació quant a aquest projecte al <a href=\"$2\">KDE Community Wiki</a>."
