@@ -108,7 +108,8 @@ bool KDEConnectPlugin::onUnload()
                    this,
                    SLOT(onDeviceVisibilityChanged(QString,bool)));
 
-    for (const QString &deviceId : qAsConst(m_devices)) {
+    const QStringList devices = m_devices;
+    for (const QString &deviceId : devices) {
         onDeviceRemoved(deviceId);
     }
     return true;
