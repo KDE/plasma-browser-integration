@@ -100,9 +100,14 @@ function saveSettings(cb) {
         // TODO save additional stuff if we have it
     }
 
-    storage.set(settings, function () {
-        return cb(chrome.runtime.lastError);
-    });
+    try {
+        storage.set(settings, function () {
+            return cb(chrome.runtime.lastError);
+        });
+    // When the extension is reloaded, any call to extension APIs throws
+    } catch (e) {
+        cb(e);
+    }
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -162,7 +167,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 saveSettings(function (error) {
                     if (error) {
-                        saveMessage.innerText = chrome.i18n.getMessage("options_save_failed");
+                        try {
+                            saveMessage.innerText = chrome.i18n.getMessage("options_save_failed");
+                        } catch (e) {
+                            // When the extension is reloaded, any call to extension APIs throws, make sure we show at least some form of error
+                            saveMessage.innerText = "Saving settings failed (" + (error || e) + ")";
+                        }
                         return;
                     }
 
