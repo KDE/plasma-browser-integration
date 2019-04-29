@@ -21,7 +21,7 @@
         "message": "Viss du finn ein feil, sjå først gjennom oversikta over <a href=\"$1\">opne feilrapportar</a> og meld så eventuelt inn <a href=\"$2\">ein ny "
     },
     "options_about_copyright": {
-        "message": "© 2017–2018 Kai Uwe Broulik og David Edmundson"
+        "message": "© 2017–2019 Kai Uwe Broulik og David Edmundson"
     },
     "options_about_created_by_kde": {
         "message": "Denne nettlesarutvidinga var laga av <a href=\"$1\">KDE-fellesskapet</a>. Du kan lesa meir om prosjektet på <a href=\"$2\">wikien</a>."
@@ -90,7 +90,7 @@
         "message": "Generelt"
     },
     "options_title": {
-        "message": "Plasma Integration Settings"
+        "message": "Innstillingar for Plasma-integrering"
     },
     "store_description": {
         "message": "Multitask efficiently by controlling browser functions from the desktop, even while Chrome is in the background. Manage audio and video playback, check downloads in the notification area, send files to your phone using KDE Connect and more inside the KDE Plasma Desktop!\\n\\nThe plasma-browser-integration package must be installed for this extension to work. It should be available from your distribution's package manager when running Plasma 5.13 or later.\\n\\nNOTE: This extension is not supported on Debian."

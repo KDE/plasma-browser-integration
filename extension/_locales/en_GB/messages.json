@@ -33,7 +33,7 @@
         "message": "KDE is a world-wide community of software engineers, artists, writers, translators and creators who are committed to <a href=\"$1\">Free Software</a> development. KDE produces the Plasma desktop environment, hundreds of applications, and the many software libraries that support them. KDE is a cooperative enterprise: no single entity controls its direction or products. Instead, we work together to achieve the common goal of building the world's finest Free Software. Everyone is welcome to <a href=\"$2\">join and contribute</a> to KDE, including you. Visit <a href=\"$3\">$3</a> for more information about the KDE community and the software we produce."
     },
     "options_about_license": {
-        "message": "License: <a href=\"$1\">GNU General Public License Version 3</a>"
+        "message": "Licence: <a href=\"$1\">GNU General Public Licence Version 3</a>"
     },
     "options_about_translated_by": {
         "message": "Translated by: $1"
@@ -93,6 +93,6 @@
         "message": "Plasma Integration Settings"
     },
     "store_description": {
-        "message": "Multitask efficiently by controlling browser functions from the desktop, even while Chrome is in the background. Manage audio and video playback, check downloads in the notification area, send files to your phone using KDE Connect and more inside the KDE Plasma Desktop!\\n\\nThe plasma-browser-integration package must be installed for this extension to work. It should be available from your distribution's package manager when running Plasma 5.13 or later.\\n\\nNOTE: This extension is not supported on Debian."
+        "message": "Multitask efficiently by controlling browser functions from the desktop, even while Chrome is in the background. Manage audio and video playback, check downloads in the notification area, send files to your phone using KDE Connect and more inside the KDE Plasma Desktop!\\nThe plasma-browser-integration package must be installed for this extension to work. It should be available from your distribution's package manager when running Plasma 5.13 or later.\\nNOTE: This extension is not supported on Debian."
     }
 }

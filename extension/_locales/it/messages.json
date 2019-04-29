@@ -1,96 +1,96 @@
 {
     "general_error_port_disconnect": {
-        "message": "The native host disconnected unexpectedly: $1"
+        "message": "L'host nativo si è disconnesso all'improvviso: $1"
     },
     "general_error_port_startupfail": {
-        "message": "Failed to connect to the native host. Make sure the 'plasma-browser-integration' package is installed."
+        "message": "Impossibile contattare l'host nativo. Assicurati che il pacchetto «plasma-browser-integration» sia installato."
     },
     "general_error_title": {
-        "message": "Plasma Browser Integration Error"
+        "message": "Errore dell'integrazione del browser con Plasma"
     },
     "general_error_unknown": {
-        "message": "Unknown Error"
+        "message": "Errore sconosciuto"
     },
     "kdeconnect_open_device": {
-        "message": "Open on '$1'"
+        "message": "Apri in «$1»"
     },
     "kdeconnect_open_via": {
-        "message": "Open via KDE Connect"
+        "message": "Apri tramite KDE Connect"
     },
     "options_about_bugs": {
-        "message": "If you find an issue, please check the <a href=\"$1\">list of open bugs</a> and then <a href=\"$2\">file a bug report</a>."
+        "message": "Se riscontri un problema, verifica la <a href=\"$1\">lista dei bug aperti</a> ed eventualmente <a href=\"$2\">apri una nuova segnalazione di bug</a>."
     },
     "options_about_copyright": {
-        "message": "© 2017-2019 Kai Uwe Broulik and David Edmundson"
+        "message": "© 2017, 2018 Kai Uwe Broulik e David Edmundson"
     },
     "options_about_created_by_kde": {
-        "message": "This browser extension was created by the <a href=\"$1\">KDE Community</a>. You can find more information about this project on the <a href=\"$2\">KDE Community Wiki</a>."
+        "message": "Questa estensione per il browser è stata creata dalla <a href=\"$1\">comunità KDE</a>. Puoi trovare ulteriori informazioni sul progetto nel <a href=\"$2\">wiki Community di KDE</a>."
     },
     "options_about_donate": {
-        "message": "If you like what you saw, please consider <a href=\"$1\">donating to KDE</a>, so we can continue to make the best free software possible."
+        "message": "Se ti piace quello che vedi, valuta una <a href=\"$1\">donazione a KDE</a>, in modo che possiamo continuare a realizzare il miglior software libero "
     },
     "options_about_kde": {
-        "message": "KDE is a world-wide community of software engineers, artists, writers, translators and creators who are committed to <a href=\"$1\">Free Software</a> development. KDE produces the Plasma desktop environment, hundreds of applications, and the many software libraries that support them. KDE is a cooperative enterprise: no single entity controls its direction or products. Instead, we work together to achieve the common goal of building the world's finest Free Software. Everyone is welcome to <a href=\"$2\">join and contribute</a> to KDE, including you. Visit <a href=\"$3\">$3</a> for more information about the KDE community and the software we produce."
+        "message": "KDE è una comunità mondiale di ingegneri del software, artisti, scrittori, traduttori e autori che si dedicano allo sviluppo di <a href=\"$1\">software libero</a>. KDE produce l'ambiente desktop Plasma, centinaia di applicazioni, e le tante librerie software che le supportano. KDE è un'impresa cooperativa: nessuna singola entità controlla la sua direzione o i prodotti. Invece, lavoriamo insieme per raggiungere l'obiettivo comune di costruire il miglior software libero del mondo. Chiunque è invitato a <a href=\"$2\">unirsi e contribuire</a> a KDE, tu incluso. Visita <a href=\"$3\">$3</a> per maggiori informazioni sulla comunità KDE e sul software che sviluppiamo."
     },
     "options_about_license": {
-        "message": "License: <a href=\"$1\">GNU General Public License Version 3</a>"
+        "message": "Licenza: <a href=\"$1\">GNU General Public License Versione 3</a>"
     },
     "options_about_translated_by": {
-        "message": "Translated by: $1"
+        "message": "Tradotto da: $1"
     },
     "options_about_translators": {
-        "message": "Your names"
+        "message": "Luigi Toscano"
     },
     "options_not_supported_os": {
-        "message": "This extension is not supported on this operating system."
+        "message": "L'estensione non è supportata su questo sistema operativo."
     },
     "options_plugin_breezeScrollBars_description": {
-        "message": "This may interfere with the appearance of websites that already apply a custom styling to their scroll bars."
+        "message": "Questo può interferire con l'aspetto di siti web che applicano già uno stile personalizzato alla proprie barre di scorrimento."
     },
     "options_plugin_breezeScrollBars_title": {
-        "message": "Use Breeze-style scroll bars"
+        "message": "Usa barre di scorrimento in stile Breeze"
     },
     "options_plugin_downloads_title": {
-        "message": "Show downloads in notification area"
+        "message": "Mostra gli scaricamenti nell'area di notifica"
     },
     "options_plugin_kdeconnect_description": {
-        "message": "Adds a context menu entry to links enabling you to send them to your phone and other paired devices using <a href=\"$1\">KDE Connect</a>."
+        "message": "Aggiunge una voce al menu contestuale dei collegamenti che permette di inviarli al telefono o ad altri dispositivi associati tramite <a href=\"$1\">KDE Connect</a>."
     },
     "options_plugin_kdeconnect_title": {
-        "message": "Send via KDE Connect"
+        "message": "Invia tramite KDE Connect"
     },
     "options_plugin_mpris_description": {
-        "message": "Lets you control video and audio players in websites using the Media Controller plasmoid."
+        "message": "Ti permette di controllare riproduttori video e audio presenti in siti web usando il plasmoide «Controllo multimediale»."
     },
     "options_plugin_mpris_media_sessions_description": {
-        "message": "Extract metadata and thumbnails of currently playing content. (Experimental)"
+        "message": "Estrae metadati e miniature del contenuto in riproduzione (sperimentale)."
     },
     "options_plugin_mpris_media_sessions_title": {
-        "message": "Enhanced Media Controls"
+        "message": "Controlli multimediali avanzati"
     },
     "options_plugin_mpris_title": {
-        "message": "Media Controls"
+        "message": "Controlli multimediali"
     },
     "options_plugin_tabsrunner_description": {
-        "message": "Make sure the “Browser Tabs” module is enabled in <a id=\"$1\" href=\"$2\">Plasma Search settings</a>."
+        "message": "Assicurati che il modulo «Schede del browser» sia abilitato nelle <a id=\"$1\" href=\"$2\">impostazioni della ricerca di Plasma</a>."
     },
     "options_plugin_tabsrunner_title": {
-        "message": "Find browser tabs in “Run Command” window"
+        "message": "Cerca schede del browser nella finestra «Esegui comando»"
     },
     "options_save_failed": {
-        "message": "Saving settings failed"
+        "message": "Salvataggio delle impostazioni non riuscito"
     },
     "options_save_success": {
-        "message": "Settings successfully saved"
+        "message": "Impostazioni salvate correttamente"
     },
     "options_tab_about": {
-        "message": "About"
+        "message": "Informazioni"
     },
     "options_tab_general": {
-        "message": "General"
+        "message": "Generale"
     },
     "options_title": {
-        "message": "Plasma Integration Settings"
+        "message": "Impostazioni dell'integrazione con Plasma"
     },
     "store_description": {
         "message": "Multitask efficiently by controlling browser functions from the desktop, even while Chrome is in the background. Manage audio and video playback, check downloads in the notification area, send files to your phone using KDE Connect and more inside the KDE Plasma Desktop!\\n\\nThe plasma-browser-integration package must be installed for this extension to work. It should be available from your distribution's package manager when running Plasma 5.13 or later.\\n\\nNOTE: This extension is not supported on Debian."

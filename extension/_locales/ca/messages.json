@@ -1,98 +1,98 @@
 {
     "general_error_port_disconnect": {
-        "message": "The native host disconnected unexpectedly: $1"
+        "message": "El servidor natiu s'ha desconnectat inesperadament: $1"
     },
     "general_error_port_startupfail": {
-        "message": "Failed to connect to the native host. Make sure the 'plasma-browser-integration' package is installed."
+        "message": "Ha fallat en connectar al servidor natiu. Assegureu-vos que el paquet «plasma-browser-integration» estigui instal·lat."
     },
     "general_error_title": {
-        "message": "Plasma Browser Integration Error"
+        "message": "Error d'integració del navegador al Plasma"
     },
     "general_error_unknown": {
-        "message": "Unknown Error"
+        "message": "Error desconegut"
     },
     "kdeconnect_open_device": {
-        "message": "Open on '$1'"
+        "message": "Obre a «$1»"
     },
     "kdeconnect_open_via": {
-        "message": "Open via KDE Connect"
+        "message": "Obre via el KDE Connect"
     },
     "options_about_bugs": {
-        "message": "If you find an issue, please check the <a href=\"$1\">list of open bugs</a> and then <a href=\"$2\">file a bug report</a>."
+        "message": "Si trobeu un problema, comproveu la <a href=\"$1\">llista d'errors oberts</a> i després <a href=\"$2\">ompliu un informe d'error</a>."
     },
     "options_about_copyright": {
         "message": "© 2017-2019 Kai Uwe Broulik and David Edmundson"
     },
     "options_about_created_by_kde": {
-        "message": "This browser extension was created by the <a href=\"$1\">KDE Community</a>. You can find more information about this project on the <a href=\"$2\">KDE Community Wiki</a>."
+        "message": "Aquesta ampliació del navegador fou creada per la <a href=\"$1\">Comunitat KDE</a>. Podeu trobar més informació quant a aquest projecte al <a href=\"$2\">KDE Community Wiki</a>."
     },
     "options_about_donate": {
-        "message": "If you like what you saw, please consider <a href=\"$1\">donating to KDE</a>, so we can continue to make the best free software possible."
+        "message": "Si us agrada el que veieu, si us plau, considereu fer una <a href=\"$1\">donació a KDE</a>, per tal de continuar fent el millor programari lliure possible."
     },
     "options_about_kde": {
-        "message": "KDE is a world-wide community of software engineers, artists, writers, translators and creators who are committed to <a href=\"$1\">Free Software</a> development. KDE produces the Plasma desktop environment, hundreds of applications, and the many software libraries that support them. KDE is a cooperative enterprise: no single entity controls its direction or products. Instead, we work together to achieve the common goal of building the world's finest Free Software. Everyone is welcome to <a href=\"$2\">join and contribute</a> to KDE, including you. Visit <a href=\"$3\">$3</a> for more information about the KDE community and the software we produce."
+        "message": "KDE és una xarxa mundial d'enginyers informàtics, artistes, escriptors, traductors i creadors compromesos amb el desenvolupament de <a href=\"$1\">programari lliure</a> (Free Software). KDE ha creat l'entorn d'escriptori Plasma, centenars d'aplicacions, i moltes biblioteques de programari que les fan funcionar. KDE és una iniciativa cooperativa: cap entitat individual controla la seva direcció ni els seus productes. Altrament, treballem conjuntament per aconseguir l'objectiu comú de crear el programari lliure més refinat del món. Donem la benvinguda a tothom a <a href=\"$2\">afegir-se i col·laborar</a> amb el KDE, incloent-vos. Visiteu <a href=\"$3\">$3</a> per a més informació sobre la comunitat KDE i el programari que produïm."
     },
     "options_about_license": {
-        "message": "License: <a href=\"$1\">GNU General Public License Version 3</a>"
+        "message": "Llicència: <a href=\"$1\">Llicència pública general de GNU versió 3</a>"
     },
     "options_about_translated_by": {
-        "message": "Translated by: $1"
+        "message": "Traduït per: $1"
     },
     "options_about_translators": {
-        "message": "Your names"
+        "message": "Josep Ma. Ferrer"
     },
     "options_not_supported_os": {
-        "message": "This extension is not supported on this operating system."
+        "message": "Aquesta extensió no s'admet en aquest sistema operatiu."
     },
     "options_plugin_breezeScrollBars_description": {
-        "message": "This may interfere with the appearance of websites that already apply a custom styling to their scroll bars."
+        "message": "Això pot interferir amb l'aparença de llocs web que ja apliquen un estil personalitzat a les barres de desplaçament."
     },
     "options_plugin_breezeScrollBars_title": {
-        "message": "Use Breeze-style scroll bars"
+        "message": "Usa barres de desplaçament de l'estil Brisa"
     },
     "options_plugin_downloads_title": {
-        "message": "Show downloads in notification area"
+        "message": "Mostra les baixades a l'àrea de notificacions"
     },
     "options_plugin_kdeconnect_description": {
-        "message": "Adds a context menu entry to links enabling you to send them to your phone and other paired devices using <a href=\"$1\">KDE Connect</a>."
+        "message": "Afegeix una entrada al menú contextual a enllaços que permeten enviar-los al telèfon i a altres dispositius aparellats usant el <a href=\"$1\">Connect del KDE</a>."
     },
     "options_plugin_kdeconnect_title": {
-        "message": "Send via KDE Connect"
+        "message": "Envia a través del KDE Connect"
     },
     "options_plugin_mpris_description": {
-        "message": "Lets you control video and audio players in websites using the Media Controller plasmoid."
+        "message": "Permet controlar els reproductors de vídeo i àudio a llocs web usant el plasmoide Media Controller."
     },
     "options_plugin_mpris_media_sessions_description": {
-        "message": "Extract metadata and thumbnails of currently playing content. (Experimental)"
+        "message": "Extreu les metadades i les miniatures del contingut actualment en reproducció. (Experimental)"
     },
     "options_plugin_mpris_media_sessions_title": {
-        "message": "Enhanced Media Controls"
+        "message": "Controls multimèdia millorats"
     },
     "options_plugin_mpris_title": {
-        "message": "Media Controls"
+        "message": "Controls multimèdia"
     },
     "options_plugin_tabsrunner_description": {
-        "message": "Make sure the “Browser Tabs” module is enabled in <a id=\"$1\" href=\"$2\">Plasma Search settings</a>."
+        "message": "Assegureu-vos que el mòdul «Pestanyes del navegador» està activat a l'<a id=\"$1\" href=\"$2\">arranjament de la Cerca del Plasma</a>."
     },
     "options_plugin_tabsrunner_title": {
-        "message": "Find browser tabs in “Run Command” window"
+        "message": "Cerca les pestanyes del navegador a la finestra «Executa una ordre»"
     },
     "options_save_failed": {
-        "message": "Saving settings failed"
+        "message": "Ha fallat en desar l'arranjament"
     },
     "options_save_success": {
-        "message": "Settings successfully saved"
+        "message": "L'arranjament s'ha desat amb èxit"
     },
     "options_tab_about": {
-        "message": "About"
+        "message": "Quant a"
     },
     "options_tab_general": {
         "message": "General"
     },
     "options_title": {
-        "message": "Plasma Integration Settings"
+        "message": "Arranjament de la integració del Plasma"
     },
     "store_description": {
-        "message": "Multitask efficiently by controlling browser functions from the desktop, even while Chrome is in the background. Manage audio and video playback, check downloads in the notification area, send files to your phone using KDE Connect and more inside the KDE Plasma Desktop!\\n\\nThe plasma-browser-integration package must be installed for this extension to work. It should be available from your distribution's package manager when running Plasma 5.13 or later.\\n\\nNOTE: This extension is not supported on Debian."
+        "message": "Fa eficient la multitasca controlant les funcions del navegador des de l'escriptori, encara que el Chrome estigui en segon pla. Gestiona la reproducció de l'àudio i el vídeo, marca les baixades a l'àrea de notificacions, envia fitxers al telèfon usant el KDE Connect i encara més dins l'escriptori Plasma del KDE!\\nCal instal·lar el paquet «plasma-browser-integration» perquè funcioni aquesta extensió. Hauria d'estar disponible al gestor de paquets de la vostra distribució en executar el Plasma 5.13 o posterior.\\nNOTA: Aquesta extensió no està implementada al Debian."
     }
 }

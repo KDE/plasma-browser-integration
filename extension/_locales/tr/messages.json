@@ -87,7 +87,7 @@
         "message": "About"
     },
     "options_tab_general": {
-        "message": "General"
+        "message": "An unknown error occurred, usually used when an error message by the system is not provided"
     },
     "options_title": {
         "message": "Plasma Integration Settings"

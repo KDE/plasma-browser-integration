@@ -1,98 +1,98 @@
 {
     "general_error_port_disconnect": {
-        "message": "The native host disconnected unexpectedly: $1"
+        "message": "De eigen host heeft onverwacht de verbinding verbroken: $1"
     },
     "general_error_port_startupfail": {
-        "message": "Failed to connect to the native host. Make sure the 'plasma-browser-integration' package is installed."
+        "message": "Verbinden met de inheemse host is mislukt. Ga na dat het pakket 'plasma-browser-integration' is geïnstalleerd."
     },
     "general_error_title": {
-        "message": "Plasma Browser Integration Error"
+        "message": "Fout in Plasma-browserintegratie"
     },
     "general_error_unknown": {
-        "message": "Unknown Error"
+        "message": "Onbekende fout"
     },
     "kdeconnect_open_device": {
-        "message": "Open on '$1'"
+        "message": "Openen op '$1'"
     },
     "kdeconnect_open_via": {
-        "message": "Open via KDE Connect"
+        "message": "Via KDE Connect openen"
     },
     "options_about_bugs": {
-        "message": "If you find an issue, please check the <a href=\"$1\">list of open bugs</a> and then <a href=\"$2\">file a bug report</a>."
+        "message": "Als u een probleem vindt, controleer dan de <a href=\"$1\">lijst met open bugs</a> en daarna <a href=\"$2\">stuur een bugrapport</a>."
     },
     "options_about_copyright": {
-        "message": "© 2017-2019 Kai Uwe Broulik and David Edmundson"
+        "message": "© 2017-2019 Kai Uwe Broulik en David Edmundson"
     },
     "options_about_created_by_kde": {
-        "message": "This browser extension was created by the <a href=\"$1\">KDE Community</a>. You can find more information about this project on the <a href=\"$2\">KDE Community Wiki</a>."
+        "message": "Deze extensie van een browser is gemaakt door de <a href=\"$1\">KDE-gemeenschap</a>. U kunt meer informatie over dit project vinden op de <a "
     },
     "options_about_donate": {
-        "message": "If you like what you saw, please consider <a href=\"$1\">donating to KDE</a>, so we can continue to make the best free software possible."
+        "message": "Als u wat u zag fijn vond, bekijk dan eens of <a href=\"$1\">doneren aan KDE</a> iets is, zodat we door kunnen gaan om de beste vrije software mogelijk te maken."
     },
     "options_about_kde": {
-        "message": "KDE is a world-wide community of software engineers, artists, writers, translators and creators who are committed to <a href=\"$1\">Free Software</a> development. KDE produces the Plasma desktop environment, hundreds of applications, and the many software libraries that support them. KDE is a cooperative enterprise: no single entity controls its direction or products. Instead, we work together to achieve the common goal of building the world's finest Free Software. Everyone is welcome to <a href=\"$2\">join and contribute</a> to KDE, including you. Visit <a href=\"$3\">$3</a> for more information about the KDE community and the software we produce."
+        "message": "KDE is een wereldwijde gemeenschap van software-ingenieurs, artiesten, schrijvers, vertalers en makers, die aan de ontwikkeling van <a href=\"$1\">Vrije Software</a> zijn toegewijd. KDE maakt de Plasma ontwikkelomgeving, honderden toepassingen en de vele softwarebibliotheken die ze ondersteunen. KDE is een samenwerkingsverband: geen enkele entiteit bestuurt zijn richting of producten. In plaats daarvan werken we samen om het gemeenschappelijke doel te bereiken van het bouwen van 's werelds beste Vrije Software. Iedereen is welkom bij <a href=\"$2\">doe mee en draag bij</a> aan KDE, ook u. Kijk voor meer informatie over de KDE-gemeenschap en over de software die we maken op <a href=\"$3\">$3</a>."
     },
     "options_about_license": {
-        "message": "License: <a href=\"$1\">GNU General Public License Version 3</a>"
+        "message": "Licentie: <a href=\"$1\">GNU General Public License Versie 3</a>"
     },
     "options_about_translated_by": {
-        "message": "Translated by: $1"
+        "message": "Vertaald door: $1"
     },
     "options_about_translators": {
-        "message": "Your names"
+        "message": "Freek de Kruijf"
     },
     "options_not_supported_os": {
-        "message": "This extension is not supported on this operating system."
+        "message": "Deze extensie wordt niet ondersteund op dit besturingssysteem."
     },
     "options_plugin_breezeScrollBars_description": {
-        "message": "This may interfere with the appearance of websites that already apply a custom styling to their scroll bars."
+        "message": "Dit kan interfereren met het uiterlijk van websites die reeds een aangepaste stijl hanteren voor hun schuifbalken."
     },
     "options_plugin_breezeScrollBars_title": {
-        "message": "Use Breeze-style scroll bars"
+        "message": "Breeze-stijl schuifbalken gebruiken"
     },
     "options_plugin_downloads_title": {
-        "message": "Show downloads in notification area"
+        "message": "Downloads tonen in gebied voor meldingen"
     },
     "options_plugin_kdeconnect_description": {
-        "message": "Adds a context menu entry to links enabling you to send them to your phone and other paired devices using <a href=\"$1\">KDE Connect</a>."
+        "message": "Voegt een item contextmenu toe aan koppelingen waarmee u ze kunt verzenden naar uw telefoon en andere gepaarde apparaten met gebruik van <a href=\"$1\">KDE Connect</a>."
     },
     "options_plugin_kdeconnect_title": {
-        "message": "Send via KDE Connect"
+        "message": "Via KDE Connect verzenden"
     },
     "options_plugin_mpris_description": {
-        "message": "Lets you control video and audio players in websites using the Media Controller plasmoid."
+        "message": "Laat u video- en audiospelers besturen in websites met de plasmoid "
     },
     "options_plugin_mpris_media_sessions_description": {
-        "message": "Extract metadata and thumbnails of currently playing content. (Experimental)"
+        "message": "Metagegevens en miniaturen van nu spelende inhoud extraheren. (Experimenteel)"
     },
     "options_plugin_mpris_media_sessions_title": {
-        "message": "Enhanced Media Controls"
+        "message": "Verbeterde besturing van media"
     },
     "options_plugin_mpris_title": {
-        "message": "Media Controls"
+        "message": "Besturing van media"
     },
     "options_plugin_tabsrunner_description": {
-        "message": "Make sure the “Browser Tabs” module is enabled in <a id=\"$1\" href=\"$2\">Plasma Search settings</a>."
+        "message": "Ga na dat de module “Browser Tabs” is ingeschakeld in <a id=\"$1\" href="
     },
     "options_plugin_tabsrunner_title": {
-        "message": "Find browser tabs in “Run Command” window"
+        "message": "Browsertabbladen in venster “Commando uitvoeren” zoeken"
     },
     "options_save_failed": {
-        "message": "Saving settings failed"
+        "message": "Instellingen opslaan is mislukt"
     },
     "options_save_success": {
-        "message": "Settings successfully saved"
+        "message": "Instellingen met succes opgeslagen"
     },
     "options_tab_about": {
-        "message": "About"
+        "message": "Info over"
     },
     "options_tab_general": {
-        "message": "General"
+        "message": "Algemeen"
     },
     "options_title": {
-        "message": "Plasma Integration Settings"
+        "message": "Plasma-integratie-instellingen"
     },
     "store_description": {
-        "message": "Multitask efficiently by controlling browser functions from the desktop, even while Chrome is in the background. Manage audio and video playback, check downloads in the notification area, send files to your phone using KDE Connect and more inside the KDE Plasma Desktop!\\n\\nThe plasma-browser-integration package must be installed for this extension to work. It should be available from your distribution's package manager when running Plasma 5.13 or later.\\n\\nNOTE: This extension is not supported on Debian."
+        "message": "Doe multitasking efficient door de browserfuncties te besturen vanaf het bureaublad, zelfs terwijl Chrome in de achtergrond zit. Afspelen van geluid en video besturen, downloads controleren in het meldingengebied, bestanden verzenden naar uw telefoon met KDE Connect en meer binnen het KDE Plasma Het plasma-browser-integratie pakket moet geïnstalleerd zijn voor deze extensie om te werken. Het zou beschikbaar moeten zijn via de pakketbeheerder van uw distributie bij gebruik van Plasma 5.13 of later.\\nNOTE: Deze extensie wordt niet ondersteund op Debian."
     }
 }
