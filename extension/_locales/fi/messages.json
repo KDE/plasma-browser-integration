@@ -21,7 +21,7 @@
         "message": "Jos havaitset ongelmia, tarkista <a href=\"$1\">tunnetut ohjelmavirheet</a> ja tee tarvittaessa <a href=\"$2\">vikailmoitus</a>."
     },
     "options_about_copyright": {
-        "message": "© 2017, 2018 Kai Uwe Broulik ja David Edmundson"
+        "message": "© 2017–19 Kai Uwe Broulik ja David Edmundson"
     },
     "options_about_created_by_kde": {
         "message": "Tämän selainlaajennuksen on kehittänyt <a href=\"$1\">KDE-yhteisö</a>. Löydät projektista lisätietoa <a href=\"$2\">KDE Community Wiki</a>stä."
@@ -93,6 +93,6 @@
         "message": "Plasma-integrointiasetukset"
     },
     "store_description": {
-        "message": "Multitask efficiently by controlling browser functions from the desktop, even while Chrome is in the background. Manage audio and video playback, check downloads in the notification area, send files to your phone using KDE Connect and more inside the KDE Plasma Desktop!\\n\\nThe plasma-browser-integration package must be installed for this extension to work. It should be available from your distribution's package manager when running Plasma 5.13 or later.\\n\\nNOTE: This extension is not supported on Debian."
+        "message": "”Moniaja” tehokkaasti hallitsemalla Chromen toimintoja työpöydältä, jopa vaikka selain olisi taustalla. Hallitse ääni- ja videotoistoa, tarkista lataukset ilmoitusalueelta, lähetä tiedostoja puhelimeen KDE Connectilla ynnä muuta, kaikki KDE Plasma -työpöydältä!\\nJotta laajennus toimisi, on asennettava plasma-browser-integration-paketti. Sen tulisi löytyä jakelusi paketinhallinnasta, kun käytössä on Plasma 5.13 tai uudempi.\\nHUOMAA: Laajennus ei ole saatavilla Debianissa."
     }
 }
