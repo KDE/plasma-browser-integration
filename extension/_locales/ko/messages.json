@@ -30,7 +30,7 @@
         "message": "사용하고 계신 확장 기능에 만족하신다면 <a href=\"$1\">KDE에 기부</a>하는 것을 생각해 보십시오. 자유 소프트웨어를 유지 관리하는 데 도움을 줄 수 있습니다."
     },
     "options_about_kde": {
-        "message": "KDE는 <a href=\"$1\">자유 소프트웨어</a> 개발을 위해 모인 소프트웨어 개발자, 예술가, 집필가, 번역가 및 기타 인원의 모임입니다. KDE 커뮤니티에서는 KDE 프레임워크, 작업 공간 및 프로그램의 일원으로 다양한 프로그램을 개발했습니다. 어떠한 단일 집단도 KDE에 누가 들어가는가, KDE에서 무엇을 개발하는가를 통제하지 않습니다. KDE에는 이 글을 읽는 여러분을 포함한 누구나 참여하고 기여할 수 있습니"
+        "message": "KDE는 <a href=\"$1\">자유 소프트웨어</a> 개발을 위해 모인 소프트웨어 개발자, 예술가, 집필가, 번역가 및 기타 인원의 모임입니다. KDE 커뮤니티에서는 Plasma 데스크톱 환경, 다양한 프로그램 및 지원 라이브러리를 개발합니다. KDE는 협동 조합입니다. 어떠한 단일 집단도 방향이나 제품을 결정하지 않습니다. 우리는 전 세계에서 가장 뛰어난 자유 소프트웨어 개발이라는 공통 목표를 위해서 함께 힘을 모으고 있습니다. KDE에는 이 글을 읽는 여러분을 포함한 누구나 <a href=\"$2\">참여하고 기여</a>할 수 있습니다. <a href=\"$3\">$3</a> 페이지를 방문하셔서 KDE 커뮤니티와 소프트웨어에 대해 알아 보십시오."
     },
     "options_about_license": {
         "message": "라이선스: <a href=\"$1\">GNU 일반 공중 사용 허가서 버전 3</a>"
@@ -48,13 +48,13 @@
         "message": "스크롤 바에 사용자 정의 스타일시트를 사용하는 웹 사이트와 충돌할 수 있습니다."
     },
     "options_plugin_breezeScrollBars_title": {
-        "message": "Breeze 스타일 스크롤바 사용"
+        "message": "Breeze 스타일 스크롤 바 사용"
     },
     "options_plugin_downloads_title": {
         "message": "알림 영역에 다운로드 표시"
     },
     "options_plugin_kdeconnect_description": {
-        "message": "<a href=\"$1\">KDE Connect</a>를 사용하여 휴대폰이나 다른 연결된 장치로 링크를 전송할 수 있는 컨텍스트 메뉴 항목을 추가합니다."
+        "message": "<a href=\"$1\">KDE Connect</a>를 사용하여 휴대폰이나 다른 연결된 장치로 링크를 전송할 수 있는 콘텍스트 메뉴 항목을 추가합니다."
     },
     "options_plugin_kdeconnect_title": {
         "message": "KDE Connect로 보내기"
