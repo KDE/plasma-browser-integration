@@ -18,7 +18,7 @@
         "message": "透過 KDE Connect 開啟"
     },
     "options_about_bugs": {
-        "message": "若您發現問題，請檢查<a href=\"$1\">開放臭蟲清單</a>並<a href="
+        "message": "若您發現問題，請檢查<a href=\"$1\">開放臭蟲清單</a>並<a href=\"$2\">回報錯誤"
     },
     "options_about_copyright": {
         "message": "© 2017-2019 Kai Uwe Broulik 和 David Edmundson"
@@ -54,7 +54,7 @@
         "message": "在通知區域顯示下載項目"
     },
     "options_plugin_kdeconnect_description": {
-        "message": "新增連結的選單項目，以讓您可以將它們使用 <a href=\"$1\">KDE Connect</a> 傳"
+        "message": "新增連結的選單項目，以讓您可以將它們使用 <a href=\"$1\">KDE Connect</a> 傳送"
     },
     "options_plugin_kdeconnect_title": {
         "message": "透過 KDE Connect 傳送"
