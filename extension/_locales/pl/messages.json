@@ -21,7 +21,7 @@
         "message": "Jeśli znalazłeś błąd, to proszę sprawdź najpierw <a href=\"$1\">wykaz otwartych błędów</a> a dopiero potem <a href=\"$2\">wypełnij zgłoszenie o "
     },
     "options_about_copyright": {
-        "message": "© 2017, 2018 Kai Uwe Broulik oraz David Edmundson"
+        "message": "© 2017-2019 Kai Uwe Broulik oraz David Edmundson"
     },
     "options_about_created_by_kde": {
         "message": "Rozszerzenie przeglądarki zostało stworzone przez <a href=\"$1\">Społeczność KDE</a>. Więcej o tym projekcie można znaleźć na <a href=\"$2\">Wiki społeczności KDE</a>."
@@ -93,6 +93,6 @@
         "message": "Ustawienia integracji Plazmy"
     },
     "store_description": {
-        "message": "Multitask efficiently by controlling browser functions from the desktop, even while Chrome is in the background. Manage audio and video playback, check downloads in the notification area, send files to your phone using KDE Connect and more inside the KDE Plasma Desktop!\\n\\nThe plasma-browser-integration package must be installed for this extension to work. It should be available from your distribution's package manager when running Plasma 5.13 or later.\\n\\nNOTE: This extension is not supported on Debian."
+        "message": "Rób wiele rzeczy na raz wydajnie poprzez sterowanie przeglądarką z pulpitu, nawet wtedy gdy chrom jest w tle. Zarządzaj odtwarzaniem obrazu i dźwięku, sprawdzaj pobieranie w obszarze powiadomień, wysyłaj pliki na telefon przy użyciu KDE Connect i wiele innych w Pulpicie Plazmy KDE!\\nAby to rozszerzenie zadziałało, trzeba mieć wgrany pakiet plasma-browser-integration. Powinien być dostępny w twojej dystrybucji, gdy masz Plazmę 5.13 lub późniejszą.\\nUWAGA: Rozszerzenie to nie jest obsługiwane na Debianie."
     }
 }

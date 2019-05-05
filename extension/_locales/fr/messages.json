@@ -21,7 +21,7 @@
         "message": "Si vous rencontrez un problème, veuillez vérifier la <a href=\"$1\">liste des bogues ouverts</a> et <a href=\"$2\">remplir un rapport de bogue</a>."
     },
     "options_about_copyright": {
-        "message": "© 2017, 2018 Kai Uwe Broulik et David Edmundson"
+        "message": "© 2017-2019 Kai Uwe Broulik et David Edmundson"
     },
     "options_about_created_by_kde": {
         "message": "Cette extension de navigateur a été créée par la <a href=\"$1\">Communauté KDE</a>. Vous pouvez trouver davantage d'informations relatives à ce projet sur le <a href=\"$2\">Wiki de la Communauté KDE</a>."
