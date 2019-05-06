@@ -307,6 +307,10 @@ qreal MPrisPlugin::volume() const
 
 void MPrisPlugin::setVolume(qreal volume)
 {
+    if (volume < 0) {
+        volume = 0.0;
+    }
+
     sendData(QStringLiteral("setVolume"), {
         {QStringLiteral("volume"), volume}
     });
