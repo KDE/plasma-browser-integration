@@ -256,6 +256,7 @@ addCallback("mpris", "setPlaybackRate", function (message) {
 addCallback("mpris", "setVolume", function (message) {
     if (activePlayer) {
         activePlayer.volume = message.volume;
+        activePlayer.muted = (message.volume == 0.0);
     }
 });
 
@@ -315,6 +316,7 @@ function setPlayerActive(player) {
         currentTime: player.currentTime,
         playbackRate: player.playbackRate,
         volume: player.volume,
+        muted: player.muted,
         loop: player.loop,
         metadata: playerMetadata,
         callbacks: playerCallbacks
@@ -434,7 +436,8 @@ function registerPlayer(player) {
 
     player.addEventListener("volumechange", function () {
         sendPlayerInfo(player, "volumechange", {
-            volume: player.volume
+            volume: player.volume,
+            muted: player.muted
         });
     });
 

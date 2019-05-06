@@ -158,6 +158,7 @@ private:
     QUrl m_artworkUrl;
 
     qreal m_volume = 1.0;
+    bool m_muted = false;
 
     qlonglong m_length = 0;
     qlonglong m_position = 0;

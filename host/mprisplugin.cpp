@@ -135,6 +135,7 @@ void MPrisPlugin::handleData(const QString &event, const QJsonObject &data)
         m_artist.clear();
         m_artworkUrl.clear();
         m_volume = 1.0;
+        m_muted = false;
         m_length = 0;
         m_position = 0;
     } else if (event == QLatin1String("playing")) {
@@ -143,9 +144,12 @@ void MPrisPlugin::handleData(const QString &event, const QJsonObject &data)
         m_url = QUrl(data.value(QStringLiteral("url")).toString());
         m_mediaSrc = QUrl(data.value(QStringLiteral("mediaSrc")).toString());
 
-        const qreal volume = data.value(QStringLiteral("volume")).toDouble(1);
-        if (m_volume != volume) {
-            m_volume = volume;
+        const qreal oldVolume = volume();
+
+        m_volume = data.value(QStringLiteral("volume")).toDouble(1);
+        m_muted = data.value(QStringLiteral("muted")).toBool();
+
+        if (volume() != oldVolume) {
             emitPropertyChange(m_player, "Volume");
         }
 
@@ -208,6 +212,7 @@ void MPrisPlugin::handleData(const QString &event, const QJsonObject &data)
         setPosition(position * 1000 * 1000);
     } else if (event == QLatin1String("volumechange")) {
         m_volume = data.value(QStringLiteral("volume")).toDouble(1);
+        m_muted = data.value(QStringLiteral("muted")).toBool();
         emitPropertyChange(m_player, "Volume");
     } else if (event == QLatin1String("metadata")) {
         processMetadata(data.value(QStringLiteral("metadata")).toObject());
@@ -294,6 +299,9 @@ bool MPrisPlugin::canSeek() const
 
 qreal MPrisPlugin::volume() const
 {
+    if (m_muted) {
+        return 0.0;
+    }
     return m_volume;
 }
 
