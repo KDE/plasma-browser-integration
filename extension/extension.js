@@ -141,6 +141,7 @@ function raiseTab(tabId) {
 //
 
 var kdeConnectMenuIdPrefix = "kdeconnect_page_";
+var kdeConnectDevices = [];
 
 chrome.contextMenus.onClicked.addListener(function (info) {
     if (!info.menuItemId.startsWith(kdeConnectMenuIdPrefix)) {
@@ -175,10 +176,19 @@ addCallback("kdeconnect", "deviceAdded", function(message) {
         contexts: ["link", "page"],
         title: menuEntryTitle,
     });
+
+    kdeConnectDevices.push(id);
 });
 
 addCallback("kdeconnect", "deviceRemoved", function(message) {
-    chrome.contextMenus.remove("kdeconnect_page_" + message.id)
+    let id = message.id;
+
+    let idx = kdeConnectDevices.indexOf(id);
+    if (idx > -1) {
+        kdeConnectDevices.splice(idx, 1);
+    }
+
+    chrome.contextMenus.remove(kdeConnectMenuIdPrefix + id);
 });
 
 // MPRIS
@@ -674,6 +684,12 @@ function connectHost() {
         var error = chrome.runtime.lastError;
 
         console.warn("Host disconnected", error);
+
+        // Remove all kde connect menu entries since they won't work without a host
+        for (let device of kdeConnectDevices) {
+            chrome.contextMenus.remove(kdeConnectMenuIdPrefix + device);
+        }
+        kdeConnectDevices = [];
 
         var reason = chrome.i18n.getMessage("general_error_unknown");
         if (error && error.message) {
