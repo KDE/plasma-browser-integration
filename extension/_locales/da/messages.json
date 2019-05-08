@@ -39,7 +39,7 @@
         "message": "Oversat af: $1"
     },
     "options_about_translators": {
-        "message": "Your names"
+        "message": "Martin Schlander"
     },
     "options_not_supported_os": {
         "message": "Udvidelsen understøttes ikke på dette styresystem."
@@ -90,6 +90,6 @@
         "message": "Generelt"
     },
     "options_title": {
-        "message": "Plasma Integration Settings"
+        "message": "Indstillinger for Plasma-integration"
     }
 }
