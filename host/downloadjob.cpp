@@ -221,6 +221,7 @@ void DownloadJob::update(const QJsonObject &payload)
         // We ignore "interrupted" state and only cancel if we get supplied an "error"
         if (state == QLatin1String("complete")) {
             setError(KJob::NoError);
+            setProcessedAmount(KJob::Files, 1);
             emitResult();
             return;
         }
