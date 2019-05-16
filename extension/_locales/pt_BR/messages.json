@@ -21,7 +21,7 @@
         "message": "Se você encontrou um erro, verifique a <a href=\"$1\">lista de erros abertos</a> e então <a href=\"$2\">preencha um relatório de erro</a>."
     },
     "options_about_copyright": {
-        "message": "© 2017, 2018 Kai Uwe Broulik e David Edmundson"
+        "message": "© 2017-2019 Kai Uwe Broulik e David Edmundson"
     },
     "options_about_created_by_kde": {
         "message": "Esta extensão de navegador foi criado pela <a href=\"$1\">Comunidade KDE</a>. Você pode encontrar mais informações sobre este projeto na <a href=\"$2\">wiki da Comunidade KDE</a>."
