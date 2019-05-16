@@ -30,7 +30,7 @@
         "message": "Ak sa vám páči čo vidíte, prosím zvážte <a href=\"$1\">prispieť do KDE</a>, aby sme mohli robiť ten najlepší slobodný softvér ako je možné."
     },
     "options_about_kde": {
-        "message": "KDE je celosvetová sieť softvérových inžinierov, umelcov, spisovateľov, prekladateľov a ďalšých, ktorý sú oddaní vývoju <a href=\"$1\">Slobodného Softvéru</a>. Táto komunita vytvorila stovky Slobodných Softvérových aplikácií ako súčasť KDE framework-ov, workspace-ov a aplikácií. KDE je spolupracujúci podnik, v ktorej žiadna entita neovláda záujmy alebo produkty KDE na úkor iných. Každý je vítaný pridať sa a prispieť do KDE, vrátane vás."
+        "message": "KDE je celosvetová sieť softvérových inžinierov, umelcov, spisovateľov, prekladateľov a ďalších, ktorý sú oddaní vývoju <a href=\"$1\">Slobodného Softvéru</a>. Táto komunita vytvorila stovky Slobodných Softvérových aplikácií ako súčasť KDE frameworkov, workspaceov a aplikácií. KDE je spolupracujúci podnik, v ktorej žiadna entita neovláda záujmy alebo produkty KDE na úkor iných. Každý je vítaný <a href=\"$2\">pridať sa a prispieť</a>  do KDE, vrátane vás. Navštívte <a href=\"$3\">$3</a> pre viac informácií o KDE komunite a softvéri, ktorý vytvárame."
     },
     "options_about_license": {
         "message": "Licencia: <a href=\"$1\">GNU General Public License Version 3</a>"
