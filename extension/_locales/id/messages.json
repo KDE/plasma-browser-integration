@@ -21,7 +21,7 @@
         "message": "Jika kamu menemukan masalah, silakan periksa <a href=\"$1\">daftar bug terbuka</a> dan kemudian <a href=\"$2\">ajukan sebuah laporan bug</a>."
     },
     "options_about_copyright": {
-        "message": "© 2017, 2018 Kai Uwe Broulik dan David Edmundson"
+        "message": "© 2017-2019 Kai Uwe Broulik dan David Edmundson"
     },
     "options_about_created_by_kde": {
         "message": "Ekstensi browser ini telah diciptakan oleh <a href=\"$1\">KDE Community</a>. Kamu bisa menemukan informasi selebihnya tentang projek ini pada <a href=\"$2\">KDE Community Wiki</a>."
