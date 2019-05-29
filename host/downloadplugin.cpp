@@ -53,7 +53,14 @@ void DownloadPlugin::handleData(const QString& event, const QJsonObject& payload
     }
 
     if (event == QLatin1String("created")) {
-        auto *job = new DownloadJob(id);
+        // If we get a created event for an already existing job, update it instead
+        auto *job = m_jobs.value(id);
+        if (job) {
+            job->update(download);
+            return;
+        }
+
+        job = new DownloadJob(id);
 
         // first register and then update, otherwise we miss the initial population..
         KIO::getJobTracker()->registerJob(job);
