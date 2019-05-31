@@ -21,7 +21,7 @@
         "message": "Hvis du finder fejl, så tjek venligst <a href=\"$1\">listen over åbne programfejl</a> og <a href=\"$2\">rapportér en programfejl</a> derefter."
     },
     "options_about_copyright": {
-        "message": "© 2017, 2018 Kai Uwe Broulik og David Edmundson"
+        "message": "© 2017-2019 Kai Uwe Broulik og David Edmundson"
     },
     "options_about_created_by_kde": {
         "message": "Denne browser-tilføjelse er udviklet af <a href=\"$1\">KDE-fællesskabet</a>. Du kan finde mere information om dette projekt på <a href=\"$2\">KDE-fællesskabets wiki</a>."
