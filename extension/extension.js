@@ -195,113 +195,117 @@ addCallback("kdeconnect", "deviceRemoved", function(message) {
 // ------------------------------------------------------------------------
 //
 
-var playerTabIds = [];
+let playerIds = [];
 
-function currentPlayerTabId() {
-    return playerTabIds[playerTabIds.length - 1] || 0;
-}
-
-function playerGone(tabId) {
-    var oldPlayer = currentPlayerTabId();
-
-    var removedPlayerIdx = playerTabIds.indexOf(tabId);
-    if (removedPlayerIdx > -1) {
-        playerTabIds.splice(removedPlayerIdx, 1); // remove that player from the array
+function currentPlayer() {
+    let playerId = playerIds[playerIds.length - 1];
+    if (!playerId) {
+        // Returning empty object instead of null so you can call player.id returning undefined instead of throwing
+        return {};
     }
 
-    var newPlayer = currentPlayerTabId();
+    let segments = playerId.split("-");
+    return {
+        id: playerId,
+        tabId: parseInt(segments[0]),
+        frameId: parseInt(segments[1])
+    };
+}
 
-    if (oldPlayer == newPlayer) {
+function playerIdFromSender(sender) {
+    return sender.tab.id + "-" + (sender.frameId || 0);
+}
+
+function sendPlayerTabMessage(player, action, payload) {
+    if (!player) {
+        return;
+    }
+
+    let message = {
+        subsystem: "mpris",
+        action: action
+    };
+    if (payload) {
+        message.payload = payload;
+    }
+
+    chrome.tabs.sendMessage(player.tabId, message, {
+        frameId: player.frameId
+    });
+}
+
+function playerGone(playerId) {
+    let oldPlayer = currentPlayer();
+
+    var removedPlayerIdx = playerIds.indexOf(playerId);
+    if (removedPlayerIdx > -1) {
+        playerIds.splice(removedPlayerIdx, 1); // remove that player from the array
+    }
+
+    let newPlayer = currentPlayer();
+
+    if (oldPlayer.id === newPlayer.id) {
         return;
     }
 
     // all players gone :(
-    if (!newPlayer) {
+    if (!newPlayer.id) {
         sendPortMessage("mpris", "gone");
         return;
     }
 
     // ask the now current player to identify to us
     // we can't just pretend "playing" as the other player might be paused
-    chrome.tabs.sendMessage(newPlayer, {
-        subsystem: "mpris",
-        action: "identify"
-    });
+    sendPlayerTabMessage(newPlayer, "identify");
 }
 
 // when tab is closed, tell the player is gone
 // below we also have a "gone" signal listener from the content script
 // which is invoked in the onbeforeunload handler of the page
-chrome.tabs.onRemoved.addListener(playerGone);
+chrome.tabs.onRemoved.addListener((tabId) => {
+    // Since we only get the tab id, search for all players from this tab and signal a "gone"
+    let players = playerIds;
+    players.forEach((playerId) => {
+        if (playerId.startsWith(tabId + "-")) {
+            playerGone(playerId);
+        }
+    });
+});
 
 // callbacks from host (Plasma) to our extension
 addCallback("mpris", "raise", function (message) {
-    var playerTabId = currentPlayerTabId();
-    if (playerTabId) {
-        raiseTab(playerTabId);
+    let player = currentPlayer();
+    if (player.tabId) {
+        raiseTab(player.tabId);
     }
 });
 
 addCallback("mpris", ["play", "pause", "playPause", "stop", "next", "previous"], function (message, action) {
-    var playerTabId = currentPlayerTabId();
-    if (playerTabId)  {
-        chrome.tabs.sendMessage(playerTabId, {
-            subsystem: "mpris",
-            action: action
-        });
-    }
+    sendPlayerTabMessage(currentPlayer(), action);
 });
 
 addCallback("mpris", "setVolume", function (message) {
-    var playerTabId = currentPlayerTabId();
-    if (playerTabId)  {
-        chrome.tabs.sendMessage(playerTabId, {
-            subsystem: "mpris",
-            action: "setVolume",
-            payload: {
-                volume: message.volume
-            }
-        });
-    }
+    sendPlayerTabMessage(currentPlayer(), "setVolume", {
+        volume: message.volume
+    });
 });
 
 addCallback("mpris", "setLoop", function (message) {
-    var playerTabId = currentPlayerTabId();
-    if (playerTabId)  {
-        chrome.tabs.sendMessage(playerTabId, {
-            subsystem: "mpris",
-            action: "setLoop",
-            payload: {
-                loop: message.loop
-            }
-        });
-    }
+    sendPlayerTabMessage(currentPlayer(), "setLoop", {
+        loop: message.loop
+    });
 });
 
 addCallback("mpris", "setPosition", function (message) {
-    var playerTabId = currentPlayerTabId();
-    if (playerTabId)  {
-        chrome.tabs.sendMessage(playerTabId, {
-            subsystem: "mpris",
-            action: "setPosition",
-            payload: {
-                position: message.position
-            }
-        });
-    }
+    sendPlayerTabMessage(currentPlayer(), "setPosition", {
+        position: message.position
+    });
 })
 
 addCallback("mpris", "setPlaybackRate", function (message) {
-    var playerTabId = currentPlayerTabId();
-    if (playerTabId)  {
-        chrome.tabs.sendMessage(playerTabId, {
-            subsystem: "mpris",
-            action: "setPlaybackRate",
-            payload: {
-                playbackRate: message.playbackRate
-            }
-        });
-    }
+    sendPlayerTabMessage(currentPlayer(), "setPlaybackRate", {
+        playbackRate: message.playbackRate
+    });
 });
 
 // callbacks from a browser tab to our extension
@@ -313,12 +317,14 @@ addRuntimeCallback("mpris", "playing", function (message, sender) {
         return;
     }
 
-    var idx = playerTabIds.indexOf(sender.tab.id);
+    let playerId = playerIdFromSender(sender);
+
+    let idx = playerIds.indexOf(playerId);
     if (idx > -1) {
         // Move it to the end of the list so it becomes current
-        playerTabIds.push(playerTabIds.splice(idx, 1)[0]);
+        playerIds.push(playerIds.splice(idx, 1)[0]);
     } else {
-        playerTabIds.push(sender.tab.id);
+        playerIds.push(playerId);
     }
 
     var payload = message || {};
@@ -329,32 +335,33 @@ addRuntimeCallback("mpris", "playing", function (message, sender) {
 });
 
 addRuntimeCallback("mpris", "gone", function (message, sender) {
-    playerGone(sender.tab.id);
+    playerGone(playerIdFromSender(sender));
 });
 
 addRuntimeCallback("mpris", "stopped", function (message, sender) {
     // When player stopped, check if there's another one we could control now instead
-    if (currentPlayerTabId() == sender.tab.id) {
-        if (playerTabIds.length > 1) {
-            playerGone(sender.tab.id);
+    let playerId = playerIdFromSender(sender);
+    if (currentPlayer().id === playerId) {
+        if (playerIds.length > 1) {
+            playerGone(playerId);
         }
     }
 });
 
 addRuntimeCallback("mpris", ["paused", "waiting", "canplay"], function (message, sender, action) {
-    if (currentPlayerTabId() == sender.tab.id) {
+    if (currentPlayer().id === playerIdFromSender(sender)) {
         sendPortMessage("mpris", action);
     }
 });
 
 addRuntimeCallback("mpris", ["duration", "timeupdate", "seeking", "seeked", "ratechange", "volumechange", "titlechange"], function (message, sender, action) {
-    if (currentPlayerTabId() == sender.tab.id) {
+    if (currentPlayer().id === playerIdFromSender(sender)) {
         sendPortMessage("mpris", action, message);
     }
 });
 
 addRuntimeCallback("mpris", ["metadata", "callbacks"], function (message, sender, action) {
-    if (currentPlayerTabId() == sender.tab.id) {
+    if (currentPlayer().id === playerIdFromSender(sender)) {
         var payload = {};
         payload[action] = message;
 
