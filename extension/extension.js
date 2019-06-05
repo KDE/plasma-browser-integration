@@ -22,6 +22,9 @@ var runtimeCallbacks = {};
 // tracks whether an extension is loaded and what version
 var subsystemStatus = {};
 
+let firefoxVersionMatch = navigator.userAgent.match(/Firefox\/(\d+)/)
+let firefoxVersion = firefoxVersionMatch ? Number(firefoxVersionMatch[1]) : NaN
+
 function addCallback(subsystem, action, callback) // TODO rename to "addPortCallbacks"?
 {
     if (action.constructor === Array) {
@@ -310,10 +313,10 @@ addCallback("mpris", "setPlaybackRate", function (message) {
 
 // callbacks from a browser tab to our extension
 addRuntimeCallback("mpris", "playing", function (message, sender) {
-    // Chrome doesn't run extensions in incognito by default but Firefox does
+    // Before Firefox 67 it ran extensions in incognito mode by default
     // so we disable media controls for them to prevent accidental private
     // information leak on lock screen or now playing auto status in a messenger
-    if (IS_FIREFOX && sender.tab.incognito) {
+    if (!isNaN(firefoxVersion) && firefoxVersion < 67 && sender.tab.incognito) {
         return;
     }
 
@@ -550,8 +553,8 @@ addCallback("tabsrunner", "getTabs", function (message) {
         // remove incognito tabs and properties not in whitelist
         var filteredTabs = tabs;
 
-        // Chrome doesn't run extensions in incognito by default but Firefox does so we exclude those tabs for it
-        if (IS_FIREFOX) {
+        // Firefox before 67 runs extensions in incognito by default, so exclude those tabs for it
+        if (!isNaN(firefoxVersion) && firefoxVersion < 67) {
             filteredTabs = filteredTabs.filter(function (tab) {
                 return !tab.incognito;
             });
