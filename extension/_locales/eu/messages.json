@@ -93,6 +93,6 @@
         "message": "Plama bateratze ezarpenak"
     },
     "store_description": {
-        "message": "Multitask efficiently by controlling browser functions from the desktop, even while Chrome is in the background. Manage audio and video playback, check downloads in the notification area, send files to your phone using KDE Connect and more inside the KDE Plasma Desktop!\\n\\nThe plasma-browser-integration package must be installed for this extension to work. It should be available from your distribution's package manager when running Plasma 5.13 or later.\\n\\nNOTE: This extension is not supported on Debian."
+        "message": "Ataza-anizkun eraginkorra arakatzailearen funtzioak mahaigainetik kontrolatuz, Chrome atzealdean dagoela ere. Kudeatu audio eta bideo atzera-jotzea, egiaztatu zama-jaisteak jakinarazpen eremuan, bidali fitxategiak zure telefonora KDE Connect erabiliz eta gehiago KDE Plasma mahaigain barrutik!\\nHedapen hau ibil dadin «plasma-browser-integration» paketea instalatu behar da. Erabilgarri egon beharko litzateke zure banaketaren pakete kudeatzailean Plasma 5.13 edo berriagoa ibiltzean.\\nOHARRA: Debian-ek hedapen hau ez da onartzen."
     }
 }
