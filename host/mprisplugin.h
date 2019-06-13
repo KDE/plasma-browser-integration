@@ -149,6 +149,8 @@ private:
     bool m_canGoPrevious = false;
 
     QString m_pageTitle;
+    QString m_tabTitle;
+
     QUrl m_url;
     QUrl m_mediaSrc;
 

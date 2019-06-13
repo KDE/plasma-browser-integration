@@ -312,6 +312,7 @@ function setPlayerActive(player) {
     // and then we would have ignored the metadata signal because there was no player
     sendMessage("mpris", "playing", {
         mediaSrc: player.src,
+        pageTitle: document.title,
         duration: player.duration,
         currentTime: player.currentTime,
         playbackRate: player.playbackRate,

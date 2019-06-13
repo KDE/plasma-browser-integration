@@ -129,6 +129,7 @@ void MPrisPlugin::handleData(const QString &event, const QJsonObject &data)
         m_canGoNext = false;
         m_canGoPrevious = false;
         m_pageTitle.clear();
+        m_tabTitle.clear();
         m_url.clear();
         m_mediaSrc.clear();
         m_title.clear();
@@ -140,7 +141,10 @@ void MPrisPlugin::handleData(const QString &event, const QJsonObject &data)
         m_position = 0;
     } else if (event == QLatin1String("playing")) {
         setPlaybackStatus(QStringLiteral("Playing"));
-        m_pageTitle = data.value(QStringLiteral("tabTitle")).toString();
+
+        m_pageTitle = data.value(QStringLiteral("pageTitle")).toString();
+        m_tabTitle = data.value(QStringLiteral("tabTitle")).toString();
+
         m_url = QUrl(data.value(QStringLiteral("url")).toString());
         m_mediaSrc = QUrl(data.value(QStringLiteral("mediaSrc")).toString());
 
@@ -376,7 +380,10 @@ QString MPrisPlugin::effectiveTitle() const
     if (!m_title.isEmpty()) {
         return m_title;
     }
-    return m_pageTitle;
+    if (!m_pageTitle.isEmpty()) {
+        return m_pageTitle;
+    }
+    return m_tabTitle;
 }
 
 QVariantMap MPrisPlugin::metadata() const
