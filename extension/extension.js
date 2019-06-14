@@ -19,9 +19,6 @@ var port
 var callbacks = {}; // TODO rename to "portCallbacks"?
 var runtimeCallbacks = {};
 
-// tracks whether an extension is loaded and what version
-var subsystemStatus = {};
-
 let firefoxVersionMatch = navigator.userAgent.match(/Firefox\/(\d+)/)
 let firefoxVersion = firefoxVersionMatch ? Number(firefoxVersionMatch[1]) : NaN
 
@@ -667,21 +664,6 @@ function connectHost() {
         }
 
         receivedMessageOnce = true;
-
-        // keeps track of what extensions are loaded and in what version in subsystemStatus
-        if (action === "created") {
-            subsystemStatus[subsystem] = {
-                version: message.payload.version,
-                loaded: false
-            };
-            return;
-        } else if (action === "loaded") {
-            subsystemStatus[subsystem].loaded = true;
-            return;
-        } else if (action === "unloaded") {
-            subsystemStatus[subsystem].loaded = false;
-            return;
-        }
 
         if (callbacks[subsystem] && callbacks[subsystem][action]) {
             callbacks[subsystem][action](message.payload, action);

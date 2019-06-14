@@ -29,7 +29,7 @@ AbstractBrowserPlugin::AbstractBrowserPlugin::AbstractBrowserPlugin(const QStrin
     QObject(parent),
     m_subsystem(subsystemId)
 {
-    sendData(QStringLiteral("created"), {{QStringLiteral("version"), protocolVersion}});
+
 }
 
 void AbstractBrowserPlugin::handleData(const QString& event, const QJsonObject& data)
@@ -85,12 +85,6 @@ void AbstractBrowserPlugin::setLoaded(bool loaded)
 {
     if (m_loaded == loaded) {
         return;
-    }
-
-    if (loaded) {
-        sendData(QStringLiteral("loaded"));
-    } else {
-        sendData(QStringLiteral("unloaded"));
     }
 
     m_loaded = loaded;
