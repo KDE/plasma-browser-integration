@@ -60,5 +60,6 @@ protected:
 
 private:
     QString m_subsystem;
+    int m_protocolVersion;
     bool m_loaded = false;
 };

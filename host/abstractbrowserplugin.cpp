@@ -27,7 +27,8 @@
 
 AbstractBrowserPlugin::AbstractBrowserPlugin::AbstractBrowserPlugin(const QString& subsystemId, int protocolVersion, QObject* parent):
     QObject(parent),
-    m_subsystem(subsystemId)
+    m_subsystem(subsystemId),
+    m_protocolVersion(protocolVersion)
 {
 
 }
