@@ -241,6 +241,16 @@ addCallback("mpris", "previous", function () {
     }
 });
 
+addCallback("mpris", "setFullscreen", (message) => {
+    if (activePlayer) {
+        if (message.fullscreen) {
+            activePlayer.requestFullscreen();
+        } else {
+            document.exitFullscreen();
+        }
+    }
+});
+
 addCallback("mpris", "setPosition", function (message) {
     if (activePlayer) {
         activePlayer.currentTime = message.position;
@@ -320,7 +330,9 @@ function setPlayerActive(player) {
         muted: player.muted,
         loop: player.loop,
         metadata: playerMetadata,
-        callbacks: playerCallbacks
+        callbacks: playerCallbacks,
+        fullscreen: document.fullscreenElement !== null,
+        canSetFullscreen: player.tagName.toLowerCase() === "video"
     });
 }
 
@@ -572,6 +584,14 @@ function loadMpris() {
 
     document.addEventListener("DOMContentLoaded", function() {
         registerAllPlayers();
+    });
+
+    document.addEventListener("fullscreenchange", () => {
+        if (activePlayer) {
+            sendPlayerInfo(activePlayer, "fullscreenchange", {
+                fullscreen: document.fullscreenElement !== null
+            });
+        }
     });
 }
 

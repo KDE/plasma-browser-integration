@@ -39,6 +39,8 @@ class MPrisPlugin : public AbstractBrowserPlugin
     Q_PROPERTY(QString Identity READ identity)
     Q_PROPERTY(QString DesktopEntry READ desktopEntry)
     Q_PROPERTY(bool CanRaise READ canRaise)
+    Q_PROPERTY(bool Fullscreen READ fullscreen WRITE setFullscreen NOTIFY fullscreenChanged)
+    Q_PROPERTY(bool CanSetFullscreen READ canSetFullscreen NOTIFY canSetFullscreenChanged)
 
     // Player
     Q_PROPERTY(bool CanGoNext READ canGoNext)
@@ -69,6 +71,10 @@ public:
     QString identity() const;
     QString desktopEntry() const;
     bool canRaise() const;
+
+    bool fullscreen() const;
+    void setFullscreen(bool fullscreen);
+    bool canSetFullscreen() const;
 
     // Player
     bool canGoNext() const;
@@ -114,6 +120,8 @@ public:
     void OpenUri(const QString &uri);
 
 Q_SIGNALS:
+    void fullscreenChanged();
+    void canSetFullscreenChanged();
     void canControlChanged();
     void playbackStatusChanged();
     void canSeekChanged();
@@ -140,6 +148,9 @@ private:
     QDBusAbstractAdaptor *m_player;
 
     QString m_serviceName;
+
+    bool m_fullscreen = false;
+    bool m_canSetFullscreen = false;
 
     QString m_playbackStatus;
     QString m_loopStatus;

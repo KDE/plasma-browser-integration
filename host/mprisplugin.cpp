@@ -179,6 +179,18 @@ void MPrisPlugin::handleData(const QString &event, const QJsonObject &data)
             setLoopStatus(loop ? QStringLiteral("Track") : QStringLiteral("None"));
         }
 
+        const bool fullscreen = data.value(QStringLiteral("fullscreen")).toBool();
+        if (m_fullscreen != fullscreen) {
+            m_fullscreen = fullscreen;
+            emitPropertyChange(m_root, "Fullscreen");
+        }
+
+        const bool canSetFullscreen = data.value(QStringLiteral("canSetFullscreen")).toBool();
+        if (m_canSetFullscreen != canSetFullscreen) {
+            m_canSetFullscreen = canSetFullscreen;
+            emitPropertyChange(m_root, "CanSetFullscreen");
+        }
+
         processMetadata(data.value(QStringLiteral("metadata")).toObject()); // also emits metadataChanged signal
         processCallbacks(data.value(QStringLiteral("callbacks")).toArray());
 
@@ -229,6 +241,12 @@ void MPrisPlugin::handleData(const QString &event, const QJsonObject &data)
         if (oldTitle != effectiveTitle()) {
             emitPropertyChange(m_player, "Metadata");
         }
+    } else if (event == QLatin1String("fullscreenchange")) {
+        const bool fullscreen = data.value(QStringLiteral("fullscreen")).toBool();
+        if (m_fullscreen != fullscreen) {
+            m_fullscreen = fullscreen;
+            emitPropertyChange(m_root, "Fullscreen");
+        }
     } else {
         qWarning() << "Don't know how to handle mpris event" << event;
     }
@@ -268,6 +286,23 @@ QString MPrisPlugin::desktopEntry() const
 bool MPrisPlugin::canRaise() const
 {
     return true; // really?
+}
+
+bool MPrisPlugin::fullscreen() const
+{
+    return m_fullscreen;
+}
+
+void MPrisPlugin::setFullscreen(bool fullscreen)
+{
+    sendData(QStringLiteral("setFullscreen"), {
+        {QStringLiteral("fullscreen"), fullscreen}
+    });
+}
+
+bool MPrisPlugin::canSetFullscreen() const
+{
+    return m_canSetFullscreen;
 }
 
 bool MPrisPlugin::canGoNext() const

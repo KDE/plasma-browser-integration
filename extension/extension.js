@@ -284,6 +284,12 @@ addCallback("mpris", ["play", "pause", "playPause", "stop", "next", "previous"],
     sendPlayerTabMessage(currentPlayer(), action);
 });
 
+addCallback("mpris", "setFullscreen", (message) => {
+    sendPlayerTabMessage(currentPlayer(), "setFullscreen", {
+        fullscreen: message.fullscreen
+    });
+});
+
 addCallback("mpris", "setVolume", function (message) {
     sendPlayerTabMessage(currentPlayer(), "setVolume", {
         volume: message.volume
@@ -354,7 +360,7 @@ addRuntimeCallback("mpris", ["paused", "waiting", "canplay"], function (message,
     }
 });
 
-addRuntimeCallback("mpris", ["duration", "timeupdate", "seeking", "seeked", "ratechange", "volumechange", "titlechange"], function (message, sender, action) {
+addRuntimeCallback("mpris", ["duration", "timeupdate", "seeking", "seeked", "ratechange", "volumechange", "titlechange", "fullscreenchange"], function (message, sender, action) {
     if (currentPlayer().id === playerIdFromSender(sender)) {
         sendPortMessage("mpris", action, message);
     }
