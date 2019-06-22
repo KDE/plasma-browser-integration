@@ -34,7 +34,12 @@
 Connection::Connection() :
     QObject()
 {
-    m_stdOut.open(STDOUT_FILENO, QIODevice::WriteOnly);
+    // Make really sure no one but us, who uses the correct format, prints to stdout
+    int newStdout = dup(STDOUT_FILENO);
+    // redirect it to stderr so it's not just swallowed
+    dup2(STDERR_FILENO, STDOUT_FILENO);
+    m_stdOut.open(newStdout, QIODevice::WriteOnly);
+
     m_stdIn.open(STDIN_FILENO, QIODevice::ReadOnly | QIODevice::Unbuffered);
 
     auto notifier = new QSocketNotifier(STDIN_FILENO, QSocketNotifier::Read, this);
