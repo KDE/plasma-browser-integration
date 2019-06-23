@@ -28,6 +28,7 @@
 #include <QDBusObjectPath>
 #include <QDebug>
 #include <QImageReader>
+#include <QTimer>
 
 #include "mprisroot.h"
 #include "mprisplayer.h"
@@ -51,6 +52,10 @@ MPrisPlugin::MPrisPlugin(QObject *parent)
         return;
     }
 
+    m_propertyChangeSignalTimer.setInterval(0);
+    m_propertyChangeSignalTimer.setSingleShot(true);
+    connect(&m_propertyChangeSignalTimer, &QTimer::timeout, this, &MPrisPlugin::sendPropertyChanges);
+
     m_possibleLoopStatus = {
         {QStringLiteral("None"), false},
         {QStringLiteral("Track"), true},
@@ -71,25 +76,44 @@ void MPrisPlugin::emitPropertyChange(const QDBusAbstractAdaptor *interface, cons
     // TODO figure out encoding encoding
     const QString interfaceName = QString::fromUtf8(interface->metaObject()->classInfo(0).value());
 
-    QDBusMessage signal = QDBusMessage::createSignal(
-        QStringLiteral("/org/mpris/MediaPlayer2"),
-        QStringLiteral("org.freedesktop.DBus.Properties"),
-        QStringLiteral("PropertiesChanged")
-    );
+    const QMetaProperty prop = metaObject()->property(metaObject()->indexOfProperty(propertyName));
 
-    QMetaProperty prop = metaObject()->property(metaObject()->indexOfProperty(propertyName));
+    const QString propertyNameString = QString::fromUtf8(prop.name());
+    const QVariant value = prop.read(this);
 
-    signal.setArguments({
-        interfaceName,
-        QVariantMap{ // updated
-            {QString::fromUtf8(prop.name()), prop.read(this)}
-        },
-        QStringList() // invalidated
-    });
+    m_pendingPropertyChanges[interfaceName][propertyNameString] = value;
 
-    QDBusConnection::sessionBus().send(signal);
+    if (!m_propertyChangeSignalTimer.isActive()) {
+        m_propertyChangeSignalTimer.start();
+    }
+}
 
-    //qDebug() << "emitted change on iface" << interfaceName << "for prop" << propertyName << "which was" << signal;
+void MPrisPlugin::sendPropertyChanges()
+{
+    for (auto it = m_pendingPropertyChanges.constBegin(), end = m_pendingPropertyChanges.constEnd(); it != end; ++it) {
+        const QString &interfaceName = it.key();
+
+        const QVariantMap &changes = it.value();
+        if (changes.isEmpty()) {
+            continue;
+        }
+
+        QDBusMessage signal = QDBusMessage::createSignal(
+            QStringLiteral("/org/mpris/MediaPlayer2"),
+            QStringLiteral("org.freedesktop.DBus.Properties"),
+            QStringLiteral("PropertiesChanged")
+        );
+
+        signal.setArguments({
+            interfaceName,
+            changes,
+            QStringList() // invalidated
+        });
+
+        QDBusConnection::sessionBus().send(signal);
+    }
+
+    m_pendingPropertyChanges.clear();
 }
 
 bool MPrisPlugin::registerService()

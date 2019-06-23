@@ -25,7 +25,9 @@
 
 #include "abstractbrowserplugin.h"
 
+#include <QHash>
 #include <QString>
+#include <QTimer>
 #include <QUrl>
 
 class QDBusObjectPath;
@@ -132,6 +134,7 @@ Q_SIGNALS:
 
 private:
     void emitPropertyChange(const QDBusAbstractAdaptor *interface, const char *propertyName);
+    void sendPropertyChanges();
 
     bool registerService();
     bool unregisterService();
@@ -146,6 +149,10 @@ private:
 
     QDBusAbstractAdaptor *m_root;
     QDBusAbstractAdaptor *m_player;
+
+    QTimer m_propertyChangeSignalTimer;
+    // interface - <property name, value>
+    QHash<QString, QVariantMap> m_pendingPropertyChanges;
 
     QString m_serviceName;
 
