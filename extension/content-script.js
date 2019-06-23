@@ -552,15 +552,17 @@ function loadMpris() {
 
     // Observe changes to the <title> tag in case it is updated after the player has started playing
     var titleTag = document.querySelector("head > title");
+    let oldPageTitle = "";
     if (titleTag) {
         var titleObserver = new MutationObserver(function (mutations) {
             mutations.forEach(function (mutation) {
                 var pageTitle = mutation.target.textContent;
-                if (pageTitle) {
+                if (pageTitle && oldPageTitle !== pageTitle) {
                     sendMessage("mpris", "titlechange", {
                         pageTitle: pageTitle
                     });
                 }
+                oldPageTitle = pageTitle;
             });
         });
 
