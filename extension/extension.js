@@ -481,6 +481,14 @@ chrome.downloads.onChanged.addListener(function (delta) {
         }
     }
 
+    // The update timer stops automatically when there are no running downloads
+    // so make sure to restart it when a download is unpaused
+    if (delta.paused) {
+        if (delta.paused.previous && !delta.paused.current) {
+            startSendingDownloadUpdates();
+        }
+    }
+
     var payload = {};
 
     whitelistedDownloadProperties.forEach(function (item) {
