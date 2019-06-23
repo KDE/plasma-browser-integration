@@ -51,7 +51,7 @@
         "message": "Gunakan bilah gulir gaya Breeze"
     },
     "options_plugin_downloads_title": {
-        "message": "Tampilkan download-an dalam area notifikasi"
+        "message": "Tampilkan unduh-an dalam area notifikasi"
     },
     "options_plugin_kdeconnect_description": {
         "message": "Menambahkan sebuah entri menu konteks untuk tautan memungkinkanmu untuk mengirimnya ke teleponmu dan perangkat yang di-paire menggunakan <a href=\"$1\">KDE Connect</a>."
