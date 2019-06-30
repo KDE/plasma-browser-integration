@@ -19,7 +19,7 @@ with open(jsonFilename, 'r') as infile:
 outfile.write('msgid ""\n')
 outfile.write('''msgstr ""
 "Project-Id-Version: PACKAGE VERSION\\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\\n"
 "POT-Creation-Date: %s\\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\\n"
