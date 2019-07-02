@@ -600,9 +600,6 @@ function loadMpris() {
 // This adds a shim for the Chrome media sessions API which is currently only supported on Android
 // Documentation: https://developers.google.com/web/updates/2017/02/media-session
 // Try it here: https://googlechrome.github.io/samples/media-session/video.html
-//
-// TODO Forward mpris calls to the actionHandlers on the page
-// previoustrack, nexttrack, seekbackward, seekforward, play, pause
 
 // Bug 379087: Only inject this stuff if we're a proper HTML page
 // otherwise we might end up messing up XML stuff
@@ -612,19 +609,72 @@ function loadMpris() {
 // tagName always returned "HTML" for me but I wouldn't trust it always being uppercase
 function loadMediaSessionsShim() {
     if (document.documentElement.tagName.toLowerCase() === "html") {
+
+        window.addEventListener("message", (e) => {
+            let data = e.data || {};
+            if (data.subsystem !== "mpris") {
+                return;
+            }
+
+            let action = data.action;
+            let payload = data.payload;
+
+            switch (action) {
+            case "metadata":
+                playerMetadata = {};
+
+                if (typeof payload !== "object") {
+                    return;
+                }
+
+                playerMetadata = payload;
+                sendMessage("mpris", "metadata", payload);
+
+                return;
+
+            case "playbackState":
+                if (!["none", "paused", "playing"].includes(payload)) {
+                    return;
+                }
+
+                playerPlaybackState = payload;
+
+                if (!activePlayer) {
+                    return;
+                }
+
+                if (playerPlaybackState === "playing") {
+                    playerPlaying(activePlayer);
+                } else if (playerPlaybackState === "paused") {
+                    playerPaused(activePlayer);
+                }
+
+                return;
+
+            case "callbacks":
+                if (Array.isArray(payload)) {
+                    playerCallbacks = payload;
+                } else {
+                    playerCallbacks = [];
+                }
+                sendMessage("mpris", "callbacks", playerCallbacks);
+
+                return;
+            }
+        });
+
         executeScript(`
             function() {
                 ${mediaSessionsClassName} = function() {};
-                ${mediaSessionsClassName}.transferItem = null;
                 ${mediaSessionsClassName}.callbacks = {};
                 ${mediaSessionsClassName}.metadata = null;
                 ${mediaSessionsClassName}.playbackState = "none";
                 ${mediaSessionsClassName}.sendMessage = function(action, payload) {
-                    this.transferItem.innerText = JSON.stringify({action: action, payload: payload});
-
-                    var event = document.createEvent('CustomEvent');
-                    event.initEvent('payloadChanged', true, true);
-                    this.transferItem.dispatchEvent(event);
+                    window.postMessage({
+                        subsystem: "mpris",
+                        action: action,
+                        payload: payload
+                    });
                 };
                 ${mediaSessionsClassName}.executeCallback = function (action) {
                     this.callbacks[action]();
@@ -738,51 +788,5 @@ function loadMediaSessionsShim() {
             }
         `);
 
-        // now the fun part of getting the stuff from our page back into our extension...
-        // cannot access extensions from innocent page JS for security
-        var transferItem = document.createElement("div");
-        transferItem.setAttribute("id", mediaSessionsTransferDivId);
-
-        // Add the element to the DOM so the page sees it
-        (document.head || document.documentElement).appendChild(transferItem);
-
-        // now keep a reference to it inside the page
-        executeScript(`
-            function() {
-                ${mediaSessionsClassName}.transferItem = document.getElementById('${mediaSessionsTransferDivId}');
-            }
-        `);
-
-        // and remove it again so the website isn't confused
-        transferItem.parentNode.removeChild(transferItem);
-
-        transferItem.addEventListener('payloadChanged', function() {
-            var json = JSON.parse(this.innerText);
-
-            var action = json.action
-
-            if (action === "metadata") {
-                // FIXME filter metadata, this stuff comes from a hostile environment after all
-
-                playerMetadata = json.payload;
-
-                sendMessage("mpris", "metadata", json.payload);
-            } else if (action === "playbackState") {
-                var playbackState = json.payload;
-
-                playerPlaybackState = playbackState;
-                if (activePlayer) {
-                    if (playbackState === "playing") {
-                        playerPlaying(activePlayer);
-                    } else if (playbackState === "paused") {
-                        playerPaused(activePlayer);
-                    }
-                }
-
-            } else if (action === "callbacks") {
-                playerCallbacks = json.payload;
-                sendMessage("mpris", "callbacks", json.payload);
-            }
-        });
     }
 }
