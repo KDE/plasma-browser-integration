@@ -27,6 +27,7 @@
 #include <QDBusConnection>
 #include <QDBusObjectPath>
 #include <QDebug>
+#include <QGuiApplication>
 #include <QImageReader>
 #include <QTimer>
 
@@ -292,19 +293,7 @@ QString MPrisPlugin::identity() const
 
 QString MPrisPlugin::desktopEntry() const
 {
-    switch (Settings::self().environment()) {
-    case Settings::Environment::Unknown: return QString();
-    case Settings::Environment::Chrome: return QStringLiteral("google-chrome");
-    // TODO account for distros that want to be super special and install these with a different name
-    // perhaps we could do a KService lookup of some sort
-    case Settings::Environment::Chromium: return QStringLiteral("chromium-browser");
-    case Settings::Environment::Firefox: return QStringLiteral("firefox");
-    case Settings::Environment::Opera: return QStringLiteral("opera");
-    // This is what the official package on their website uses
-    case Settings::Environment::Vivaldi: return QStringLiteral("vivaldi-stable");
-    }
-
-    return QString();
+    return QGuiApplication::desktopFileName();
 }
 
 bool MPrisPlugin::canRaise() const

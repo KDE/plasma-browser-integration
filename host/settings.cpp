@@ -41,30 +41,36 @@ const QMap<Settings::Environment, EnvironmentDescription> Settings::environmentD
     {Settings::Environment::Chrome, {
         QStringLiteral("google-chrome"),
         QStringLiteral("Google Chrome"),
+        QStringLiteral("google-chrome"),
         QStringLiteral("google.com"),
         QStringLiteral("Google")
     } },
     {Settings::Environment::Chromium, {
         QStringLiteral("chromium-browser"),
         QStringLiteral("Chromium"),
+        QStringLiteral("chromium-browser"),
         QStringLiteral("google.com"),
         QStringLiteral("Google")
     } },
     {Settings::Environment::Firefox, {
         QStringLiteral("firefox"),
         QStringLiteral("Mozilla Firefox"),
+        QStringLiteral("firefox"),
         QStringLiteral("mozilla.org"),
         QStringLiteral("Mozilla")
     } },
     {Settings::Environment::Opera, {
         QStringLiteral("opera"),
         QStringLiteral("Opera"),
+        QStringLiteral("opera"),
         QStringLiteral("opera.com"),
         QStringLiteral("Opera")
     } },
     {Settings::Environment::Vivaldi, {
         QStringLiteral("vivaldi"),
         QStringLiteral("Vivaldi"),
+        // This is what the official package on their website uses
+        QStringLiteral("vivaldi-stable"),
         QStringLiteral("vivaldi.com"),
         QStringLiteral("Vivaldi")
     } }
@@ -98,6 +104,7 @@ void Settings::handleData(const QString &event, const QJsonObject &data)
 
         qApp->setApplicationName(m_currentEnvironment.applicationName);
         qApp->setApplicationDisplayName(m_currentEnvironment.applicationDisplayName);
+        qApp->setDesktopFileName(m_currentEnvironment.desktopFileName);
         qApp->setOrganizationDomain(m_currentEnvironment.organizationDomain);
         qApp->setOrganizationName(m_currentEnvironment.organizationName);
     }

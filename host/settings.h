@@ -30,6 +30,7 @@
 struct EnvironmentDescription {
     QString applicationName;
     QString applicationDisplayName;
+    QString desktopFileName;
     QString organizationDomain;
     QString organizationName;
 };
