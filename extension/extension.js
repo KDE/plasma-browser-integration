@@ -526,6 +526,10 @@ addCallback("downloads", "resume", function (message) {
     chrome.downloads.resume(downloadId);
 });
 
+addCallback("downloads", "createAll", () => {
+    sendDownloads();
+});
+
 // Tabs Runner
 // ------------------------------------------------------------------------
 //

@@ -34,6 +34,13 @@ DownloadPlugin::DownloadPlugin(QObject* parent) :
 {
 }
 
+bool DownloadPlugin::onLoad()
+{
+    // Have extension tell us about all the downloads
+    sendData(QStringLiteral("createAll"));
+    return true;
+}
+
 bool DownloadPlugin::onUnload()
 {
     for (auto it = m_jobs.constBegin(), end = m_jobs.constEnd(); it != end; ++it) {

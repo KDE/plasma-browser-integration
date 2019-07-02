@@ -33,6 +33,7 @@ class DownloadPlugin : public AbstractBrowserPlugin
     Q_OBJECT
 public:
     explicit DownloadPlugin(QObject *parent);
+    bool onLoad() override;
     bool onUnload() override;
     void handleData(const QString &event, const QJsonObject &data) override;
 private:
