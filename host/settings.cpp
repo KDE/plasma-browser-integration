@@ -27,6 +27,7 @@
 #include <QDBusConnection>
 #include <QProcess>
 
+#include "pluginmanager.h"
 #include "settingsadaptor.h"
 
 const QMap<Settings::Environment, QString> Settings::environmentNames = {
@@ -94,6 +95,31 @@ void Settings::handleData(const QString &event, const QJsonObject &data)
 {
     if (event == QLatin1String("changed")) {
         m_settings = data;
+
+        for (auto it = data.begin(), end = data.end(); it != end; ++it) {
+            const QString &subsystem = it.key();
+            const QJsonObject &settingsObject = it->toObject();
+
+            const QJsonValue enabledVariant = settingsObject.value(QStringLiteral("enabled"));
+            // probably protocol overhead, not a plugin setting, skip.
+            if (enabledVariant.type() == QJsonValue::Undefined) {
+                continue;
+            }
+
+            auto *plugin = PluginManager::self().pluginForSubsystem(subsystem);
+            if (!plugin) {
+                continue;
+            }
+
+            if (enabledVariant.toBool()) {
+                PluginManager::self().loadPlugin(plugin);
+            } else {
+                PluginManager::self().unloadPlugin(plugin);
+            }
+
+            PluginManager::self().settingsChanged(plugin, settingsObject);
+        }
+
         emit changed(data);
     } else if (event == QLatin1String("openKRunnerSettings")) {
         QProcess::startDetached(QStringLiteral("kcmshell5"), {QStringLiteral("kcm_plasmasearch")});

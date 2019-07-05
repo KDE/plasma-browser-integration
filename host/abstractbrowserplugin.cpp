@@ -77,6 +77,11 @@ QString AbstractBrowserPlugin::subsystem() const
     return m_subsystem;
 }
 
+int AbstractBrowserPlugin::protocolVersion() const
+{
+    return m_protocolVersion;
+}
+
 bool AbstractBrowserPlugin::isLoaded() const
 {
     return m_loaded;

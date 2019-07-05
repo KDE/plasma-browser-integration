@@ -2,6 +2,7 @@ add_definitions(-DTRANSLATION_DOMAIN=\"plasma-browser-integration-host\")
 
 set(HOST_SOURCES main.cpp
                 connection.cpp
+                pluginmanager.cpp
                 settings.cpp
                 mprisplugin.cpp
                 abstractbrowserplugin.cpp

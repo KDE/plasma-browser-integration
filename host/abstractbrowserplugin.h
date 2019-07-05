@@ -33,10 +33,8 @@ class AbstractBrowserPlugin : public QObject
 public:
     ~AbstractBrowserPlugin() = default;
     QString subsystem() const;
-    virtual void handleData(const QString &event, const QJsonObject &data);
+    int protocolVersion() const;
 
-    virtual bool onLoad();
-    virtual bool onUnload();
     virtual void onSettingsChanged(const QJsonObject &newSettings);
 
     bool isLoaded() const;
@@ -53,13 +51,22 @@ protected:
      * Here we inform the browser of the protocol used so if we do ever changed the native API we can at least detect it on the JS side and handle it
      */
     AbstractBrowserPlugin(const QString &subsystemId, int protocolVersion, QObject *parent);
+
+    virtual void handleData(const QString &event, const QJsonObject &data);
+
+    virtual bool onLoad();
+    virtual bool onUnload();
+
     void sendData(const QString &action, const QJsonObject &payload = QJsonObject());
     QDebug debug() const;
 
     QJsonObject settings() const;
 
+    friend class PluginManager;
+
 private:
     QString m_subsystem;
     int m_protocolVersion;
     bool m_loaded = false;
+
 };
