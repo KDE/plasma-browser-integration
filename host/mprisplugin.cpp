@@ -594,11 +594,17 @@ void MPrisPlugin::Quit()
 
 void MPrisPlugin::Next()
 {
+    if (!m_canGoNext) {
+        return;
+    }
     sendData(QStringLiteral("next"));
 }
 
 void MPrisPlugin::Previous()
 {
+    if (!m_canGoPrevious) {
+        return;
+    }
     sendData(QStringLiteral("previous"));
 }
 
