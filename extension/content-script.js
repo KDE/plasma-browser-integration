@@ -595,6 +595,47 @@ function loadMpris() {
             });
         }
     });
+
+    // here we replace the document.createElement function with our own so we can detect
+    // when an <audio> tag is created that is not added to the DOM which most pages do
+    // while a <video> tag typically ends up being displayed to the user, audio is not.
+    // HACK We cannot really pass variables from the page's scope to our content-script's scope
+    // so we just blatantly insert the <audio> tag in the DOM and pick it up through our regular
+    // mechanism. Let's see how this goes :D
+
+    executeScript(`function() {
+            var oldCreateElement = document.createElement;
+            document.createElement = function () {
+                var createdTag = oldCreateElement.apply(this, arguments);
+
+                var tagName = arguments[0];
+
+                if (typeof tagName === "string") {
+                    if (tagName.toLowerCase() === "audio" || tagName.toLowerCase() === "video") {
+                        (document.head || document.documentElement).appendChild(createdTag);
+                        createdTag.parentNode.removeChild(createdTag);
+                    }
+                }
+
+                return createdTag;
+            };
+        }
+    `);
+
+    // We also briefly add items created as new Audio() to the DOM so we can control it
+    // similar to the document.createElement hack above
+    executeScript(`function() {
+            var oldAudio = window.Audio;
+            window.Audio = function () {
+                var createdAudio = new (Function.prototype.bind.apply(oldAudio, arguments));
+
+                (document.head || document.documentElement).appendChild(createdAudio);
+                createdAudio.parentNode.removeChild(createdAudio);
+
+                return createdAudio;
+            };
+        }
+    `);
 }
 
 // This adds a shim for the Chrome media sessions API which is currently only supported on Android
@@ -746,47 +787,5 @@ function loadMediaSessionsShim() {
                 }
             }
         `);
-
-        // here we replace the document.createElement function with our own so we can detect
-        // when an <audio> tag is created that is not added to the DOM which most pages do
-        // while a <video> tag typically ends up being displayed to the user, audio is not.
-        // HACK We cannot really pass variables from the page's scope to our content-script's scope
-        // so we just blatantly insert the <audio> tag in the DOM and pick it up through our regular
-        // mechanism. Let's see how this goes :D
-
-        executeScript(`function() {
-                var oldCreateElement = document.createElement;
-                document.createElement = function () {
-                    var createdTag = oldCreateElement.apply(this, arguments);
-
-                    var tagName = arguments[0];
-
-                    if (typeof tagName === "string") {
-                        if (tagName.toLowerCase() === "audio" || tagName.toLowerCase() === "video") {
-                            (document.head || document.documentElement).appendChild(createdTag);
-                            createdTag.parentNode.removeChild(createdTag);
-                        }
-                    }
-
-                    return createdTag;
-                };
-            }
-        `);
-
-        // We also briefly add items created as new Audio() to the DOM so we can control it
-        // similar to the document.createElement hack above
-        executeScript(`function() {
-                var oldAudio = window.Audio;
-                window.Audio = function () {
-                    var createdAudio = new (Function.prototype.bind.apply(oldAudio, arguments));
-
-                    (document.head || document.documentElement).appendChild(createdAudio);
-                    createdAudio.parentNode.removeChild(createdAudio);
-
-                    return createdAudio;
-                };
-            }
-        `);
-
     }
 }
