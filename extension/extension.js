@@ -15,43 +15,6 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-var port
-var callbacks = {}; // TODO rename to "portCallbacks"?
-var runtimeCallbacks = {};
-
-var storage = (IS_FIREFOX ? chrome.storage.local : chrome.storage.sync);
-
-let firefoxVersionMatch = navigator.userAgent.match(/Firefox\/(\d+)/)
-let firefoxVersion = firefoxVersionMatch ? Number(firefoxVersionMatch[1]) : NaN
-
-// Callback is called with following arguments (in that order);
-// - The actual message data/payload
-// - The name of the action triggered
-function addCallback(subsystem, action, callback) // TODO rename to "addPortCallbacks"?
-{
-    if (Array.isArray(action)) {
-        action.forEach(function(item) {
-            addCallback(subsystem, item, callback);
-        });
-        return;
-    }
-
-    if (!callbacks[subsystem]) {
-        callbacks[subsystem] = {};
-    }
-    callbacks[subsystem][action] = callback;
-}
-
-function sendPortMessage(subsystem, event, payload)
-{
-    // why do we put stuff on root level here but otherwise have a "payload"? :(
-    var message = payload || {}
-    message.subsystem = subsystem;
-    message.event = event;
-
-    port.postMessage(message);
-}
-
 function sendEnvironment() {
     var browser = "";
 
@@ -85,47 +48,6 @@ function sendSettings() {
         }
 
         sendPortMessage("settings", "changed", items);
-    });
-}
-
-// Callback is called with following arguments (in that order);
-// - The actual message data/payload
-// - Information about the sender of the message (including tab and frameId)
-// - The name of the action triggered
-// Return a Promise from the callback if you wish to send a reply to the sender
-function addRuntimeCallback(subsystem, action, callback)
-{
-    if (action.constructor === Array) {
-        action.forEach(function(item) {
-            addRuntimeCallback(subsystem, item, callback);
-        });
-        return;
-    }
-
-    if (!runtimeCallbacks[subsystem]) {
-        runtimeCallbacks[subsystem] = {};
-    }
-    runtimeCallbacks[subsystem][action] = callback;
-}
-
-// returns an Object which only contains values for keys in allowedKeys
-function filterObject(obj, allowedKeys) {
-    var newObj = {}
-
-    // I bet this can be done in a more efficient way
-    for (key in obj) {
-        if (obj.hasOwnProperty(key) && allowedKeys.indexOf(key) > -1) {
-            newObj[key] = obj[key];
-        }
-    }
-
-    return newObj;
-}
-
-// filters objects within an array so they only contain values for keys in allowedKeys
-function filterArrayObjects(arr, allowedKeys) {
-    return arr.map(function (item) {
-        return filterObject(item, allowedKeys);
     });
 }
 
@@ -244,38 +166,4 @@ addRuntimeCallback("settings", "changed", function () {
 
 addRuntimeCallback("settings", "openKRunnerSettings", function () {
     sendPortMessage("settings", "openKRunnerSettings");
-});
-
-chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
-    // TODO check sender for privilege
-
-    var subsystem = message.subsystem;
-    var action = message.action;
-
-    if (!subsystem || !action) {
-        return false;
-    }
-
-    if (runtimeCallbacks[subsystem] && runtimeCallbacks[subsystem][action]) {
-        let result = runtimeCallbacks[subsystem][action](message.payload, sender, action);
-
-        // Not a promise
-        if (typeof result !== "object" || typeof result.then !== "function") {
-            return false;
-        }
-
-        result.then((response) => {
-            sendResponse(response);
-        }, (err) => {
-            sendResponse({
-                rejected: true,
-                message: err
-            });
-        });
-
-        return true;
-    }
-
-    console.warn("Don't know what to do with runtime message", subsystem, action);
-    return false;
 });
