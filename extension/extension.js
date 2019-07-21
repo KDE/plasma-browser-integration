@@ -440,7 +440,7 @@ function sendDownloadUpdates() {
 
 // only forward certain download properties back to our host
 var whitelistedDownloadProperties = [
-    "id", "url", "finalUrl", "filename", "startTime", "estimatedEndTime", "totalBytes", "bytesReceived", "state", "error", /*"canResume"*/, "paused"
+    "id", "url", "finalUrl", "filename", "mime", "startTime", "estimatedEndTime", "totalBytes", "bytesReceived", "state", "error", /*"canResume"*/, "paused"
 ];
 
 function createDownload(download) {
