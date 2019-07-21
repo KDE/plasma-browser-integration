@@ -158,7 +158,7 @@ chrome.contextMenus.onClicked.addListener(function (info) {
 
     var deviceId = info.menuItemId.substr(kdeConnectMenuIdPrefix.length);
 
-    var url = info.linkUrl || info.pageUrl;
+    var url = info.linkUrl || info.srcUrl || info.pageUrl;
     console.log("Send url", url, "to kdeconnect device", deviceId);
     if (!url) {
         return;
@@ -181,7 +181,7 @@ addCallback("kdeconnect", "deviceAdded", function(message) {
 
     chrome.contextMenus.create({
         id: menuId,
-        contexts: ["link", "page"],
+        contexts: ["link", "page", "image", "audio", "video"],
         title: menuEntryTitle,
     });
 
