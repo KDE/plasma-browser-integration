@@ -26,15 +26,6 @@ function addCallback(subsystem, action, callback)
     callbacks[subsystem][action] = callback;
 }
 
-function sendMessage(subsystem, action, payload)
-{
-    (chrome.extension.sendMessage || browser.runtime.sendMessage)({
-        subsystem: subsystem,
-        action: action,
-        payload: payload
-    });
-}
-
 function executeScript(script) {
     var element = document.createElement('script');
     element.innerHTML = '('+ script +')();';

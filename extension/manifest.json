@@ -27,7 +27,7 @@
   "content_scripts": [
     {
       "matches": ["*://*/*"],
-      "js": ["constants.js", "content-script.js"],
+      "js": ["constants.js", "content-utils.js", "content-script.js"],
       "run_at":"document_start",
       "all_frames": true
     }

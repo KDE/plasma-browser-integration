@@ -18,15 +18,6 @@
 
 var storage = (IS_FIREFOX ? chrome.storage.local : chrome.storage.sync);
 
-function sendMessage(action, payload)
-{
-    (chrome.extension.sendMessage || browser.runtime.sendMessage)({
-        subsystem: "settings",
-        action: action,
-        payload: payload
-    });
-}
-
 function tabClicked(tabbar, tabbutton) {
     tabbar.buttons.forEach(function (button) {
         var tablink = button.dataset.tabLink

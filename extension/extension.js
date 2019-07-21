@@ -22,9 +22,12 @@ var runtimeCallbacks = {};
 let firefoxVersionMatch = navigator.userAgent.match(/Firefox\/(\d+)/)
 let firefoxVersion = firefoxVersionMatch ? Number(firefoxVersionMatch[1]) : NaN
 
+// Callback is called with following arguments (in that order);
+// - The actual message data/payload
+// - The name of the action triggered
 function addCallback(subsystem, action, callback) // TODO rename to "addPortCallbacks"?
 {
-    if (action.constructor === Array) {
+    if (Array.isArray(action)) {
         action.forEach(function(item) {
             addCallback(subsystem, item, callback);
         });
@@ -85,6 +88,11 @@ function sendSettings() {
     });
 }
 
+// Callback is called with following arguments (in that order);
+// - The actual message data/payload
+// - Information about the sender of the message (including tab and frameId)
+// - The name of the action triggered
+// Return a Promise from the callback if you wish to send a reply to the sender
 function addRuntimeCallback(subsystem, action, callback)
 {
     if (action.constructor === Array) {
@@ -747,12 +755,29 @@ chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
     var action = message.action;
 
     if (!subsystem || !action) {
-        return;
+        return false;
     }
 
     if (runtimeCallbacks[subsystem] && runtimeCallbacks[subsystem][action]) {
-        runtimeCallbacks[subsystem][action](message.payload, sender, action);
-    } else {
-        console.warn("Don't know what to do with runtime message", subsystem, action);
+        let result = runtimeCallbacks[subsystem][action](message.payload, sender, action);
+
+        // Not a promise
+        if (typeof result !== "object" || typeof result.then !== "function") {
+            return false;
+        }
+
+        result.then((response) => {
+            sendResponse(response);
+        }, (err) => {
+            sendResponse({
+                rejected: true,
+                message: err
+            });
+        });
+
+        return true;
     }
+
+    console.warn("Don't know what to do with runtime message", subsystem, action);
+    return false;
 });
