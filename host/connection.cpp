@@ -73,11 +73,11 @@ void Connection::readData()
      * So we need to check for this condition ourselves
      * and exit. */
 
-    struct pollfd poll_stdin = {
-        .fd = STDIN_FILENO,
-        .events = POLLHUP,
-        .revents = 0
-    };
+    struct pollfd poll_stdin = {};
+    poll_stdin.fd = STDIN_FILENO;
+    poll_stdin.events = POLLHUP;
+    poll_stdin.revents = 0;
+
     if (poll (&poll_stdin, 1, 0) != 0) {
         // STDIN has HUP/ERR/NVAL condition
         qApp->exit(0);
@@ -93,7 +93,7 @@ void Connection::readData()
     }
 
     QByteArray data = m_stdIn.read(length);
-    if (data.length() != length) {
+    if (data.length() != int(length)) {
         m_stdIn.rollbackTransaction();
         return;
     }
