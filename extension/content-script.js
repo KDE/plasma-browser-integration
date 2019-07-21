@@ -224,6 +224,14 @@ addCallback("mpris", "next", function () {
                 }
             }
         `);
+        return;
+    }
+
+    // SoundCloud support
+    // ripped off the browser-mpris2 extension (https://github.com/otommod/browser-mpris2)
+    if (document.location.hostname == "soundcloud.com") {
+        const skipControl = document.querySelector(".skipControl__next");
+        skipControl.click();
     }
 });
 
@@ -238,6 +246,20 @@ addCallback("mpris", "previous", function () {
                 }
             }
         `);
+        return;
+    }
+
+    // SoundCloud support
+    // ripped off the browser-mpris2 extension (https://github.com/otommod/browser-mpris2)
+    if (document.location.hostname == "soundcloud.com") {
+        const skipControl = document.querySelector(".skipControl__previous");
+        const progressWrapper = document.querySelector(".playbackTimeline__progressWrapper");
+        const position = Math.trunc(progressWrapper.getAttribute("aria-valuenow") * 1e6);
+        if (position > 5e6)
+            // if the song is past its 5th second pressing previous will start
+            // it from the beginning again, so we need to press twice
+            skipControl.click();
+        skipControl.click();
     }
 });
 
@@ -334,6 +356,10 @@ function setPlayerActive(player) {
         fullscreen: document.fullscreenElement !== null,
         canSetFullscreen: player.tagName.toLowerCase() === "video"
     });
+
+    if (document.location.hostname == "soundcloud.com") {
+        sendMessage("mpris", "callbacks", ["nexttrack", "previoustrack"]);
+    }
 }
 
 function sendPlayerGone() {
