@@ -765,14 +765,39 @@ function loadMediaSessionsShim() {
         `);
 
         // We also briefly add items created as new Audio() to the DOM so we can control it
-        // similar to the document.createElement hack above
+        // similar to the document.createElement hack above since we cannot share variables
+        // between the actual website and the background script despite them sharing the same DOM
+        // HACK When removing a media object from DOM it is paused, so what we do here is once the
+        // player loaded some data we add it (doesn't work earlier since it cannot pause when
+        // there's nothing loaded to pause) to the DOM and before we remove it, we note down that
+        // we will now get a paused event because of that. When we get it, we just play() the player
+        // so it continues playing :-)
         executeScript(`function() {
                 var oldAudio = window.Audio;
                 window.Audio = function () {
                     var createdAudio = new (Function.prototype.bind.apply(oldAudio, arguments));
 
-                    (document.head || document.documentElement).appendChild(createdAudio);
-                    createdAudio.parentNode.removeChild(createdAudio);
+                    createdAudio.registerInDom = function() {
+                        (document.head || document.documentElement).appendChild(createdAudio);
+                        createdAudio.pausedBecauseOfDomRemoval = true;
+                        createdAudio.parentNode.removeChild(createdAudio);
+
+                        createdAudio.removeEventListener("loadeddata", createdAudio.registerInDom);
+                    };
+
+                    createdAudio.replayAfterRemoval = function() {
+                        if (createdAudio.pausedBecauseOfDomRemoval) {
+                            if (createdAudio.paused) {
+                                createdAudio.play();
+                            }
+                            delete createdAudio.pausedBecauseOfDomRemoval;
+
+                            createdAudio.removeEventListener("pause", createdAudio.replayAfterRemoval);
+                        }
+                    };
+
+                    createdAudio.addEventListener("loadeddata", createdAudio.registerInDom);
+                    createdAudio.addEventListener("pause", createdAudio.replayAfterRemoval);
 
                     return createdAudio;
                 };
