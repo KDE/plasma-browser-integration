@@ -24,6 +24,7 @@
 #include "downloadjob.h"
 #include "settings.h"
 
+#include <QDateTime>
 #include <QJsonObject>
 
 #include <KLocalizedString>

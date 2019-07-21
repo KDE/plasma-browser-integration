@@ -27,8 +27,6 @@
 
 #include <QUrl>
 
-#include <QDateTime>
-
 class DownloadJob : public KJob
 {
     Q_OBJECT
@@ -73,8 +71,5 @@ private:
     QString m_fileName;
 
     QString m_mimeType;
-
-    QDateTime m_startTime;
-    QDateTime m_endTime;
 
 };
