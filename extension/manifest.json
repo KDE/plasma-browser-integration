@@ -20,7 +20,10 @@
   },
 
   "background": {
-    "page": "extension.html",
+    "scripts": [
+        "constants.js",
+        "extension.js"
+    ],
     "persistent": false
   },
 
