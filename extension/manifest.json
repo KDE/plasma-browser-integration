@@ -22,7 +22,12 @@
   "background": {
     "scripts": [
         "constants.js",
-        "extension.js"
+        "extension.js",
+
+        "extension-kdeconnect.js",
+        "extension-mpris.js",
+        "extension-downloads.js",
+        "extension-tabsrunner.js"
     ],
     "persistent": false
   },
