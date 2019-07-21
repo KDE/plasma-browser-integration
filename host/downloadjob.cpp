@@ -98,12 +98,19 @@ void DownloadJob::update(const QJsonObject &payload)
 
     it = payload.constFind(QStringLiteral("filename"));
     if (it != end) {
+        m_fileName = it->toString();
+
         const QUrl destination = QUrl::fromLocalFile(it->toString());
 
         setProperty("destUrl", destination.toString(QUrl::RemoveFilename | QUrl::StripTrailingSlash));
 
         m_destination = destination;
         descriptionDirty = true;
+    }
+
+    it = payload.constFind(QStringLiteral("mime"));
+    if (it != end) {
+        m_mimeType = it->toString();
     }
 
     it = payload.constFind(QStringLiteral("totalBytes"));
