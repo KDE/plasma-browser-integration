@@ -167,14 +167,14 @@ document.addEventListener("DOMContentLoaded", function () {
                         return;
                     }
 
-                    sendMessage("changed");
+                    sendMessage("settings", "changed");
                 });
             });
         });
     });
 
     document.getElementById("open-krunner-settings").addEventListener("click", function (event) {
-        sendMessage("openKRunnerSettings");
+        sendMessage("settings", "openKRunnerSettings");
         event.preventDefault();
     });
 
