@@ -19,6 +19,8 @@ var port
 var callbacks = {}; // TODO rename to "portCallbacks"?
 var runtimeCallbacks = {};
 
+var storage = (IS_FIREFOX ? chrome.storage.local : chrome.storage.sync);
+
 let firefoxVersionMatch = navigator.userAgent.match(/Firefox\/(\d+)/)
 let firefoxVersion = firefoxVersionMatch ? Number(firefoxVersionMatch[1]) : NaN
 
@@ -76,8 +78,6 @@ function sendEnvironment() {
 }
 
 function sendSettings() {
-    var storage = (IS_FIREFOX ? chrome.storage.local : chrome.storage.sync);
-
     storage.get(DEFAULT_EXTENSION_SETTINGS, function (items) {
         if (chrome.runtime.lastError) {
             console.warn("Failed to load settings");
