@@ -39,7 +39,8 @@
       "matches": ["*://*/*"],
       "js": ["constants.js", "content-utils.js", "content-script.js"],
       "run_at":"document_start",
-      "all_frames": true
+      "all_frames": true,
+      "match_about_blank": true
     }
   ],
 
