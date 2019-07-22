@@ -536,7 +536,7 @@ function loadMpris() {
         });
     });
 
-    observer.observe(document.documentElement, {
+    observer.observe(document, {
         childList: true,
         subtree: true
     });
