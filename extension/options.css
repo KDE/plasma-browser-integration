@@ -76,4 +76,6 @@ body.not-supported #extensions-selection {
 img.konqi {
     float: right;
     margin-right: -14px;
+    width: 144px;
+    height: 240px;
 }
