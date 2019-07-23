@@ -16,7 +16,7 @@
  */
 
 var kdeConnectMenuIdPrefix = "kdeconnect_page_";
-var kdeConnectDevices = [];
+var kdeConnectDevices = {};
 
 chrome.contextMenus.onClicked.addListener(function (info) {
     if (!info.menuItemId.startsWith(kdeConnectMenuIdPrefix)) {
@@ -40,11 +40,12 @@ chrome.contextMenus.onClicked.addListener(function (info) {
 });
 
 addCallback("kdeconnect", "deviceAdded", function(message) {
-    var id = message.id;
-    var name = message.name;
+    let deviceId = message.id;
+    let name = message.name;
+    let type = message.type;
 
-    var menuEntryTitle = chrome.i18n.getMessage("kdeconnect_open_device", name);
-    var menuId = kdeConnectMenuIdPrefix + id;
+    let menuEntryTitle = chrome.i18n.getMessage("kdeconnect_open_device", name);
+    let menuId = kdeConnectMenuIdPrefix + deviceId;
 
     chrome.contextMenus.create({
         id: menuId,
@@ -52,16 +53,18 @@ addCallback("kdeconnect", "deviceAdded", function(message) {
         title: menuEntryTitle,
     });
 
-    kdeConnectDevices.push(id);
+    kdeConnectDevices[deviceId] = {
+        name, type
+    };
 });
 
 addCallback("kdeconnect", "deviceRemoved", function(message) {
-    let id = message.id;
+    let deviceId = message.id;
 
-    let idx = kdeConnectDevices.indexOf(id);
-    if (idx > -1) {
-        kdeConnectDevices.splice(idx, 1);
+    if (!kdeConnectDevices[deviceId]) {
+        return;
     }
 
-    chrome.contextMenus.remove(kdeConnectMenuIdPrefix + id);
+    delete kdeConnectDevices[deviceId];
+    chrome.contextMenus.remove(kdeConnectMenuIdPrefix + deviceId);
 });
