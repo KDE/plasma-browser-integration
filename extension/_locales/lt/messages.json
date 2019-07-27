@@ -72,16 +72,16 @@
         "message": "Medijos valdikliai"
     },
     "options_plugin_tabsrunner_description": {
-        "message": "Įsitikinkite, kad <a id=\"$1\" href=\"$2\">Plasma paieškos nustatymuose</a> yra įjungtas \"Naršyklės kortelių\" modulis."
+        "message": "Įsitikinkite, kad <a id=\"$1\" href=\"$2\">Plasma paieškos nuostatose</a> yra įjungtas \"Naršyklės kortelių\" modulis."
     },
     "options_plugin_tabsrunner_title": {
         "message": "Rasti naršyklės korteles \"Paleisti komandą\" lange"
     },
     "options_save_failed": {
-        "message": "Nepavyko įrašyti nustatymų"
+        "message": "Nepavyko įrašyti nuostatų"
     },
     "options_save_success": {
-        "message": "Nustatymai sėkmingai įrašyti"
+        "message": "Nuostatos sėkmingai įrašytos"
     },
     "options_tab_about": {
         "message": "Apie"
