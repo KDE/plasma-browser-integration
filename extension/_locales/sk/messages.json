@@ -30,7 +30,7 @@
         "message": "Ak sa vám páči čo vidíte, prosím zvážte <a href=\"$1\">prispieť do KDE</a>, aby sme mohli robiť ten najlepší slobodný softvér ako je možné."
     },
     "options_about_kde": {
-        "message": "KDE je celosvetová sieť softvérových inžinierov, umelcov, spisovateľov, prekladateľov a ďalšých, ktorý sú oddaní vývoju <a href=\"$1\">Slobodného Softvéru</a>. Táto komunita vytvorila stovky Slobodných Softvérových aplikácií ako súčasť KDE framework-ov, workspace-ov a aplikácií. KDE je spolupracujúci podnik, v ktorej žiadna entita neovláda záujmy alebo produkty KDE na úkor iných. Každý je vítaný pridať sa a prispieť do KDE, vrátane vás."
+        "message": "KDE je celosvetová komunita softvérových inžinierov, umelcov, spisovateľov, prekladateľov a tvorcov, ktorí sa zaviazali k vývoju <a href=\"$1\\>Slobodného softvéru</a>. KDE vytvára Plasma desktopové prostredie, stovky aplikácií a množstvo softvérových knižníc, ktoré ich podporujú. KDE je spolupracujúcim podnikom: žiaden jednotlivec nekontroluje jeho smerovanie alebo produkty.Namiesto toho spolupracujeme na dosiahnutí spoločného cieľa, ktorým je vybudovanie najlepšieho Slobodného softvéru na svete. Každý je vítaný <a href=\"$2\">pripojiť sa a prispievať</a> do KDE, vrátane vás. Viac informácií o komunite KDE a softvéri, ktorý vyrábame, nájdete na stránke <a href=\"$3\">$3</a>."
     },
     "options_about_license": {
         "message": "Licencia: <a href=\"$1\">GNU General Public License Version 3</a>"
@@ -93,6 +93,6 @@
         "message": "Nastavenia Plasma Integration"
     },
     "store_description": {
-        "message": "Multitask efficiently by controlling browser functions from the desktop, even while Chrome is in the background. Manage audio and video playback, check downloads in the notification area, send files to your phone using KDE Connect and more inside the KDE Plasma Desktop!\\n\\nThe plasma-browser-integration package must be installed for this extension to work. It should be available from your distribution's package manager when running Plasma 5.13 or later.\\n\\nNOTE: This extension is not supported on Debian."
+        "message": "Pracujte efektívne ovládaním funkcií prehliadača z počítača,aj keď je Chrome na pozadí. Spravujte prehrávanie zvuku a videa, kontrolujte sťahovanie v oblasti oznámení, posielajte súbory do telefónu pomocou KDE Connect a ešte viac v KDE pracovnej ploche!\\nAby toto rozšírenie fungovalo, musí byť nainštalovaný balík plasma-browser-integration. Mal by byť k dispozícii od správcu balíkov vašej distribúcie pri spustení KDE Plasma verzie 5.13 alebo novšej.\\nPOZNÁMKA: Toto rozšírenie nie je v Debiane podporované."
     }
 }
