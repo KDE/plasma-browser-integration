@@ -60,10 +60,10 @@
         "message": "Kirim via KDE Connect"
     },
     "options_plugin_mpris_description": {
-        "message": "Segera kamu kendalikan player audio dan video dalam website menggunakan plasmoid Media Controller."
+        "message": "Segera kamu kendalikan pemutar audio dan video dalam website menggunakan plasmoid Media Controller."
     },
     "options_plugin_mpris_media_sessions_description": {
-        "message": "Ekstrak metadata dan thumbnail pada konten yang dimainkan baru-baru ini. "
+        "message": "Ekstrak metadata dan gambar-mini pada konten yang diputar baru-baru ini. "
     },
     "options_plugin_mpris_media_sessions_title": {
         "message": "Kendali Media Yang Ditingkatkan"
@@ -72,16 +72,16 @@
         "message": "Kendali Media"
     },
     "options_plugin_tabsrunner_description": {
-        "message": "Pastikan modul “Browser Tabs” telah difungsikan dalam <a id=\"$1\" href=\"$2\">setelan Plasma Search</a>."
+        "message": "Pastikan modul “Browser Tabs” telah difungsikan dalam <a id=\"$1\" href=\"$2\">pengaturan Plasma Search</a>."
     },
     "options_plugin_tabsrunner_title": {
         "message": "Temukan tab-tab browser dalam window “Run Command”"
     },
     "options_save_failed": {
-        "message": "Penyimpanan setelan, gagal"
+        "message": "Penyimpanan pengaturan, gagal"
     },
     "options_save_success": {
-        "message": "Setelan secara sukses disimpan"
+        "message": "Pengaturan secara sukses disimpan"
     },
     "options_tab_about": {
         "message": "Tentang"
@@ -90,7 +90,7 @@
         "message": "Umum"
     },
     "options_title": {
-        "message": "Setelan Plasma Integration"
+        "message": "Pengaturan Plasma Integration"
     },
     "store_description": {
         "message": "Multitask efficiently by controlling browser functions from the desktop, even while Chrome is in the background. Manage audio and video playback, check downloads in the notification area, send files to your phone using KDE Connect and more inside the KDE Plasma Desktop!\\n\\nThe plasma-browser-integration package must be installed for this extension to work. It should be available from your distribution's package manager when running Plasma 5.13 or later.\\n\\nNOTE: This extension is not supported on Debian."
