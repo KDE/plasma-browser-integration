@@ -1,6 +1,7 @@
 [Desktop Entry]
 Name=Browser Tabs
 Name[ar]=ألسنة المتصفّح
+Name[ast]=Llingüetes del restolador
 Name[ca]=Pestanyes del navegador
 Name[ca@valencia]=Pestanyes del navegador
 Name[cs]=Karty prohlížeče
@@ -39,6 +40,7 @@ Name[zh_CN]=浏览器标签
 Name[zh_TW]=瀏覽器分頁
 Comment=Find and activate browser tabs
 Comment[ar]=جِد ألسنة المتصفّح ونشّطها
+Comment[ast]=Alcuentra y activa llingüetes del restolador
 Comment[ca]=Cerca i activa les pestanyes del navegador
 Comment[ca@valencia]=Cerca i activa les pestanyes del navegador
 Comment[cs]=Najít a aktivovat karty prohlížeče
