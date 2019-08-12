@@ -683,13 +683,6 @@ function loadMediaSessionsShim() {
 
                 var oldSetActionHandler = navigator.mediaSession.setActionHandler || noop;
                 navigator.mediaSession.setActionHandler = function (name, cb) {
-                    // Call the original native implementation
-                    // "call()" is needed as the real setActionHandler is a class member
-                    // and calling it directly is illegal as it lacks the context
-                    // We'll register the callback for ourself after this since it may
-                    // throw for unsupported callback names.
-                    var ret = oldSetActionHandler.call(navigator.mediaSession, name, cb);
-
                     if (cb) {
                         ${mediaSessionsClassName}.callbacks[name] = cb;
                     } else {
@@ -697,7 +690,12 @@ function loadMediaSessionsShim() {
                     }
                     ${mediaSessionsClassName}.sendMessage("callbacks", Object.keys(${mediaSessionsClassName}.callbacks));
 
-                    return ret;
+                    // Call the original native implementation
+                    // "call()" is needed as the real setActionHandler is a class member
+                    // and calling it directly is illegal as it lacks the context
+                    // This may throw for unsupported actions but we registered the callback
+                    // ourselves before
+                    return oldSetActionHandler.call(navigator.mediaSession, name, cb);
                 };
 
                 Object.defineProperty(navigator.mediaSession, "metadata", {
