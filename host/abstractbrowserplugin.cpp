@@ -68,7 +68,8 @@ void AbstractBrowserPlugin::onSettingsChanged(const QJsonObject &newSettings)
 QDebug AbstractBrowserPlugin::debug() const
 {
     auto d = qDebug();
-    d << m_subsystem << ": ";
+    QDebugStateSaver saver(d);
+    d.nospace().noquote() << m_subsystem << ":";
     return d;
 }
 
