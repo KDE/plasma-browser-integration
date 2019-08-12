@@ -668,7 +668,11 @@ function loadMediaSessionsShim() {
                     });
                 };
                 ${mediaSessionsClassName}.executeCallback = function (action) {
-                    this.callbacks[action]();
+                    let details = {
+                        action: action
+                        // for seekforward, seekbackward, seekto there's additional information one would need to add
+                    };
+                    this.callbacks[action](details);
                 };
 
                 if (!navigator.mediaSession) {
