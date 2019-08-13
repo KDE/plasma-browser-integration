@@ -30,7 +30,7 @@
         "message": "If you like what you saw, please consider <a href=\"$1\">donating to KDE</a>, so we can continue to make the best free software possible."
     },
     "options_about_kde": {
-        "message": "KDE ye una comunidá global d'inxenieros de software, artistes, escritores, traductores, creadores que tán comprometíos col desendolcu de <a href=\"$1\\>software llibre</a> y una empresa coperativa, denguna entidá contola la direición o productos de so. Somos los creadores del entornu d'escritoriu Plasma, cientos d'aplicaciones y munches biblioteques de software que les sofiten, amás preferimos trabayar xuntos p'algamar la meta común de facer el meyor software llibre del mundu. Dámos-yos l'acoyida a toles persones que quieran <a href=\"$2\">xunise y collaborar</a> en KDE incluyéndote a ti. Visita <a href=\"$3\">$3</a> pa más información tocante a la comunidá de KDE y el software que producimos."
+        "message": "KDE ye una comunidá global d'inxenieros de software, artistes, escritores, traductores, creadores que tán comprometíos col desendolcu de <a href=\"$1\">software llibre</a> y una empresa coperativa, denguna entidá contola la direición o productos de so. Somos los creadores del entornu d'escritoriu Plasma, cientos d'aplicaciones y munches biblioteques de software que les sofiten, amás preferimos trabayar xuntos p'algamar la meta común de facer el meyor software llibre del mundu. Dámos-yos l'acoyida a toles persones que quieran <a href=\"$2\">xunise y collaborar</a> en KDE incluyéndote a ti. Visita <a href=\"$3\">$3</a> pa más información tocante a la comunidá de KDE y el software que producimos."
     },
     "options_about_license": {
         "message": "Llicencia: <a href=\"$1\">GNU General Public License Version 3</a>"
@@ -63,7 +63,7 @@
         "message": "Déxate controlar los reproductores de los sitios web usando'l plasmoide de Mandu multimedia."
     },
     "options_plugin_mpris_media_sessions_description": {
-        "message": "Estrái los metadatos y miniatures del conteníu que tea reproduciéndose. (Esperimental)"
+        "message": "Estrái los metadatos y miniatures del conteníu que tea reproduciéndose. "
     },
     "options_plugin_mpris_media_sessions_title": {
         "message": "Controles multimedia ameyoraos"
