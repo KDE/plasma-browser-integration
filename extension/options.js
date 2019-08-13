@@ -34,10 +34,6 @@ function tabClicked(tabbar, tabbutton) {
     });
 }
 
-function extensionCheckboxes() {
-    return document.querySelectorAll("#extensions-selection input[type=checkbox][data-extension]");
-}
-
 function loadSettings(cb) {
     storage.get(DEFAULT_EXTENSION_SETTINGS, function (items) {
         if (chrome.runtime.lastError) {
@@ -52,16 +48,47 @@ function loadSettings(cb) {
                 continue;
             }
 
-            var checkbox = document.querySelector("input[type=checkbox][data-extension=" + key + "]");
-            if (!checkbox) {
-                console.warn("Failed to find checkbox for extension", key);
-                continue;
+            let controls = document.querySelectorAll("[data-extension=" + key + "]");
+            for (let control of controls) {
+                let settingsKey = control.dataset.settingsKey;
+                if (!settingsKey) {
+                    console.warn("Invalid settings key in", control, "cannot load this");
+                    continue;
+                }
+
+                let value = items[key][settingsKey]
+
+                if (control.type === "checkbox") {
+                    control.checked = !!value;
+                } else {
+                    if (value === true) {
+                        control.value = "TRUE";
+                    } else if (value === false) {
+                        control.value = "FALSE";
+                    } else {
+                        control.value = value;
+                    }
+                }
+
+                control.addEventListener("change", () => {
+                    let saveMessage = document.getElementById("save-message");
+                    saveMessage.innerText = "";
+
+                    saveSettings((error) => {
+                        if (error) {
+                            try {
+                                saveMessage.innerText = chrome.i18n.getMessage("options_save_failed");
+                            } catch (e) {
+                                // When the extension is reloaded, any call to extension APIs throws, make sure we show at least some form of error
+                                saveMessage.innerText = "Saving settings failed (" + (error || e) + ")";
+                            }
+                            return;
+                        }
+
+                        sendMessage("settings", "changed");
+                    });
+                });
             }
-
-            var checked = !!items[key].enabled;
-            checkbox.checked = checked;
-
-            // TODO restore additional stuff if we have it
         }
 
         if (typeof cb === "function") {
@@ -73,22 +100,41 @@ function loadSettings(cb) {
 function saveSettings(cb) {
     var settings = {};
 
-    for (var key in DEFAULT_EXTENSION_SETTINGS) {
-        if (!DEFAULT_EXTENSION_SETTINGS.hasOwnProperty(key)) {
+    let controls = document.querySelectorAll("[data-extension]");
+    for (let control of controls) {
+        let extension = control.dataset.extension;
+
+        if (!DEFAULT_EXTENSION_SETTINGS.hasOwnProperty(extension)) {
+            console.warn("Cannot save settings for extension", extension, "which isn't in DEFAULT_EXTENSION_SETTINGS");
             continue;
         }
 
-        var checkbox = document.querySelector("input[type=checkbox][data-extension=" + key + "]");
-        if (!checkbox) {
-            console.warn("Failed to find checkbox for extension", key);
+        let settingsKey = control.dataset.settingsKey;
+        if (!settingsKey) {
+            console.warn("Invalid settings key in", control, "cannot save this");
             continue;
         }
 
-        settings[key] = {
-            enabled: checkbox.checked
-        };
+        if (!settings[extension]) {
+            settings[extension] = {};
+        }
 
-        // TODO save additional stuff if we have it
+        if (!DEFAULT_EXTENSION_SETTINGS[extension].hasOwnProperty(settingsKey)) {
+            console.warn("Cannot save settings key", settingsKey, "in extension", extension, "which isn't in DEFAULT_EXTENSION_SETTINGS");
+            continue;
+        }
+
+        if (control.type === "checkbox") {
+            settings[extension][settingsKey] = control.checked;
+        } else {
+            let value = control.value;
+            if (value === "TRUE") {
+                value = true;
+            } else if (value === "FALSE") {
+                value = false;
+            }
+            settings[extension][settingsKey] = value;
+        }
     }
 
     try {
@@ -147,29 +193,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 mprisEx.disabled = !mpris.checked;
             });
             mprisEx.disabled = !mpris.checked;
-        });
-
-        // auto save when changing any setting
-        // TODO can we do that on closing, or does it not matter how often we do chrome storage sync thing?
-        document.querySelectorAll("input[type=checkbox]").forEach(function (item) {
-            item.addEventListener("click", function () {
-                var saveMessage = document.getElementById("save-message");
-                saveMessage.innerText = "";
-
-                saveSettings(function (error) {
-                    if (error) {
-                        try {
-                            saveMessage.innerText = chrome.i18n.getMessage("options_save_failed");
-                        } catch (e) {
-                            // When the extension is reloaded, any call to extension APIs throws, make sure we show at least some form of error
-                            saveMessage.innerText = "Saving settings failed (" + (error || e) + ")";
-                        }
-                        return;
-                    }
-
-                    sendMessage("settings", "changed");
-                });
-            });
         });
     });
 
