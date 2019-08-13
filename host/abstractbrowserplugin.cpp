@@ -39,6 +39,14 @@ void AbstractBrowserPlugin::handleData(const QString& event, const QJsonObject& 
     Q_UNUSED(data);
 }
 
+QJsonObject AbstractBrowserPlugin::handleData(int serial, const QString &event, const QJsonObject &data)
+{
+    Q_UNUSED(serial);
+    Q_UNUSED(event);
+    Q_UNUSED(data);
+    return QJsonObject();
+}
+
 void AbstractBrowserPlugin::sendData(const QString &action, const QJsonObject &payload)
 {
     QJsonObject data;
@@ -47,6 +55,19 @@ void AbstractBrowserPlugin::sendData(const QString &action, const QJsonObject &p
     if (!payload.isEmpty()) {
         data[QStringLiteral("payload")] = payload;
     }
+    Connection::self()->sendData(data);
+}
+
+void AbstractBrowserPlugin::sendReply(int requestSerial, const QJsonObject &payload)
+{
+    QJsonObject data{
+        {QStringLiteral("replyToSerial"), requestSerial},
+    };
+
+    if (!payload.isEmpty()) {
+        data.insert(QStringLiteral("payload"), payload);
+    }
+
     Connection::self()->sendData(data);
 }
 

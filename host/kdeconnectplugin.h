@@ -31,6 +31,7 @@ public:
     explicit KDEConnectPlugin(QObject *parent);
     bool onLoad() override;
     bool onUnload() override;
+    using AbstractBrowserPlugin::handleData;
     void handleData(const QString &event, const QJsonObject &data) override;
 
 private Q_SLOTS:

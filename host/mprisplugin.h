@@ -65,6 +65,7 @@ public:
 
     bool onUnload() override;
 
+    using AbstractBrowserPlugin::handleData;
     void handleData(const QString &event, const QJsonObject &data) override;
 
     // mpris properties ____________

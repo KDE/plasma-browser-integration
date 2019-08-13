@@ -20,6 +20,9 @@ var port;
 var callbacks = {}; // TODO rename to "portCallbacks"?
 var runtimeCallbacks = {};
 
+let currentMessageSerial = 0;
+let pendingMessageReplyResolvers = {};
+
 var storage = (IS_FIREFOX ? chrome.storage.local : chrome.storage.sync);
 
 let firefoxVersionMatch = navigator.userAgent.match(/Firefox\/(\d+)/)
@@ -51,6 +54,24 @@ function sendPortMessage(subsystem, event, payload)
     message.event = event;
 
     port.postMessage(message);
+}
+
+function sendPortMessageWithReply(subsystem, event, payload)
+{
+    return new Promise((resolve, reject) => {
+        let message = payload || {};
+        message.subsystem = subsystem;
+        message.event = event;
+        ++currentMessageSerial;
+        if (currentMessageSerial >= Math.pow(2, 31) - 1) { // INT_MAX
+            currentMessageSerial = 0;
+        }
+        message.serial = currentMessageSerial;
+
+        pendingMessageReplyResolvers[message.serial] = resolve;
+
+        port.postMessage(message);
+    });
 }
 
 // Callback is called with following arguments (in that order);

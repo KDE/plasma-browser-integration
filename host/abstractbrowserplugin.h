@@ -53,11 +53,15 @@ protected:
     AbstractBrowserPlugin(const QString &subsystemId, int protocolVersion, QObject *parent);
 
     virtual void handleData(const QString &event, const QJsonObject &data);
+    virtual QJsonObject handleData(int serial, const QString &event, const QJsonObject &data);
 
     virtual bool onLoad();
     virtual bool onUnload();
 
     void sendData(const QString &action, const QJsonObject &payload = QJsonObject());
+
+    void sendReply(int requestSerial, const QJsonObject &payload = QJsonObject());
+
     QDebug debug() const;
 
     QJsonObject settings() const;

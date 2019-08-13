@@ -105,11 +105,25 @@ function connectHost() {
         var subsystem = message.subsystem;
         var action = message.action;
 
-        if (!subsystem || !action) {
+        let isReply = message.hasOwnProperty("replyToSerial");
+        let replyToSerial = message.replyToSerial;
+
+        if (!isReply && (!subsystem || !action)) {
             return;
         }
 
         receivedMessageOnce = true;
+
+        if (isReply) {
+            let replyResolver = pendingMessageReplyResolvers[replyToSerial];
+            if (replyResolver) {
+                replyResolver(message.payload);
+                delete pendingMessageReplyResolvers[replyToSerial];
+            } else {
+                console.warn("There is no reply resolver for message with serial", replyToSerial);
+            }
+            return;
+        }
 
         if (callbacks[subsystem] && callbacks[subsystem][action]) {
             callbacks[subsystem][action](message.payload, action);
