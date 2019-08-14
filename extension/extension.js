@@ -181,3 +181,7 @@ addRuntimeCallback("settings", "changed", function () {
 addRuntimeCallback("settings", "openKRunnerSettings", function () {
     sendPortMessage("settings", "openKRunnerSettings");
 });
+
+addRuntimeCallback("settings", "getSubsystemStatus", (message, sender, action) => {
+    return sendPortMessageWithReply("settings", "getSubsystemStatus");
+});

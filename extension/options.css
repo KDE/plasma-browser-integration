@@ -4,14 +4,18 @@ body {
     overflow: hidden;
 }
 
-.not-supported-info {
+.os-not-supported-info {
     display: none;
 }
-body.not-supported .not-supported-info {
+body.os-not-supported .os-not-supported-info {
     display: block;
 }
-body.not-supported #extensions-selection {
+body.os-not-supported #extensions-selection {
     display: none;
+}
+
+.not-supported {
+    display: none !important;
 }
 
 .tabbar {

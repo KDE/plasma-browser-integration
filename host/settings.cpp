@@ -136,6 +136,29 @@ void Settings::handleData(const QString &event, const QJsonObject &data)
     }
 }
 
+QJsonObject Settings::handleData(int serial, const QString &event, const QJsonObject &data)
+{
+    Q_UNUSED(serial)
+    Q_UNUSED(data)
+
+    QJsonObject ret;
+
+    if (event == QLatin1String("getSubsystemStatus")) {
+       // should we add a PluginManager::knownSubsystems() that returns a QList<AbstractBrowserPlugin*>?
+       const QStringList subsystems = PluginManager::self().knownPluginSubsystems();
+       for (const QString &subsystem : subsystems) {
+           const AbstractBrowserPlugin *plugin = PluginManager::self().pluginForSubsystem(subsystem);
+           QJsonObject details{
+               {QStringLiteral("version"), plugin->protocolVersion()},
+               {QStringLiteral("loaded"), plugin->isLoaded()}
+           };
+           ret.insert(subsystem, details);
+        }
+    }
+
+    return ret;
+}
+
 Settings::Environment Settings::environment() const
 {
     return m_environment;

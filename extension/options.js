@@ -182,7 +182,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // check whether the platform is supported before loading and activating settings
     chrome.runtime.getPlatformInfo(function (info) {
         if (!SUPPORTED_PLATFORMS.includes(info.os)) {
-            document.body.classList.add("not-supported");
+            document.body.classList.add("os-not-supported");
             return;
         }
 
@@ -193,6 +193,41 @@ document.addEventListener("DOMContentLoaded", function () {
                 mprisEx.disabled = !mpris.checked;
             });
             mprisEx.disabled = !mpris.checked;
+        });
+
+        // When getSubsystemStatus fails we assume it's an old host without any of the new features
+        // for which we added the requires-extension attributes. Disable all of them initially
+        // and then have the supported ones enabled below.
+        document.querySelectorAll("[data-requires-extension]").forEach((item) => {
+            item.classList.add("not-supported", "by-host");
+        });
+
+        sendMessage("settings", "getSubsystemStatus").then((status) => {
+            document.querySelectorAll("[data-requires-extension]").forEach((item) => {
+                let requiresExtension = item.dataset.requiresExtension;
+
+                if (requiresExtension && !status.hasOwnProperty(requiresExtension)) {
+                    console.log("Extension", requiresExtension, "is not supported by this version of the host");
+                    return; // continue
+                }
+
+                let requiresMinimumVersion = Number(item.dataset.requiresExtensionVersionMinimum);
+                if (requiresMinimumVersion) {
+                    let runningVersion = status[requiresExtension].version;
+                    if (runningVersion < requiresMinimumVersion) {
+                        console.log("Extension", requiresExtension, "of version", requiresMinimumVersion, "is required but only", runningVersion, "is present in the host");
+                        return; // continue
+                    }
+                }
+
+                item.classList.remove("not-supported", "by-host");
+            });
+        }).catch((e) => {
+            // The host is most likely not working correctly
+            // If we run this against an older host which doesn't support message replies
+            // this handler is never entered, so we really encountered an error just now!
+            console.warn("Failed to determine subsystem status", e);
+            // TODO show helpful error message in UI
         });
     });
 
