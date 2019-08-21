@@ -3,9 +3,6 @@ body {
     /* prevent scroll bars*/
     overflow: hidden;
     margin: 0;
-    /* apply the chrome default styling explicitly so it also works in Firefox */
-    font-family: "Noto Sans", sans-serif;
-    font-size: 75%;
 }
 
 .hidden {

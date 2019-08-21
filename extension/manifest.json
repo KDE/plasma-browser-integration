@@ -35,6 +35,7 @@
   },
 
   "browser_action": {
+    "browser_style": true,
     "default_popup": "action_popup.html"
   },
 
