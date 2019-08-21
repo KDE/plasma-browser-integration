@@ -37,3 +37,13 @@ section > header {
 .message.with-icon.error::before {
     background-image: url('icons/sad-face.svg');
 }
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #232629;
+        color: #eff0f1;
+    }
+    .message.with-icon.error::before {
+        filter: invert(1);
+    }
+}
