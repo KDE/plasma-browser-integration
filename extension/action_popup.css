@@ -35,5 +35,5 @@ section > header {
     background: center no-repeat;
 }
 .message.with-icon.error::before {
-    background-image: url('icons/sad-face-48.png');
+    background-image: url('icons/sad-face.svg');
 }
