@@ -4,14 +4,20 @@ body {
     overflow: hidden;
 }
 
-.os-not-supported-info {
+.os-not-supported-info, .startup-failure-info {
     display: none;
 }
+
+body.os-not-supported #extensions-selection,
+body.startup-failure #extensions-selection {
+    display: none;
+}
+
 body.os-not-supported .os-not-supported-info {
     display: block;
 }
-body.os-not-supported #extensions-selection {
-    display: none;
+body.startup-failure .startup-failure-info {
+    display: block;
 }
 
 .not-supported {

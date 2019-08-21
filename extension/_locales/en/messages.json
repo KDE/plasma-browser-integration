@@ -8,27 +8,6 @@
         "description": "Title for toolbar popup",
         "message": "Plasma Browser Integration"
     },
-    "browseraction_not_supported_os_title": {
-        "message": "Unsupported operating system"
-    },
-    "browseraction_not_supported_os": {
-        "message": "This extension is only supported on Linux and FreeBSD."
-    },
-    "browseraction_startup_failed_title": {
-        "description": "Title for failure to start plasma-browser-integration-host binary",
-        "message": "Failed to connect to the native host."
-    },
-    "browseraction_startup_failed": {
-        "description": "Description for failure to start plasma-browser-integration-host binary",
-        "message": "Make sure the 'plasma-browser-integration' package is installed correctly and that you are running Plasma 5.13 or later."
-    },
-    "browseraction_startup_failed_wiki_link": {
-        "message": "Visit project wiki page for more information"
-    },
-    "browseraction_host_disconnected_title": {
-        "description": "Title for plasma-browser-integration-host binary unexpectedly closing/crashing",
-        "message": "The native host disconnected unexpectedly."
-    },
 
     "options_title": {
         "description": "Title for settings page",
@@ -139,20 +118,29 @@
         "message": "Open on '$1'"
     },
 
-    "general_error_title": {
-        "description": "Title message for most error notifications",
-        "message": "Plasma Browser Integration Error"
-    },
     "general_error_unknown": {
         "description": "An unknown error occurred, usually used when an error message by the system is not provided",
         "message": "Unknown Error"
     },
-    "general_error_port_disconnect": {
-        "description": "When the binary bridge between browser and Plasma quit (usually it crashed or was otherwise killed), placeholder is the reason",
-        "message": "The native host disconnected unexpectedly: $1"
+    "general_error_not_supported_os_title": {
+        "message": "Unsupported operating system"
     },
-    "general_error_port_startupfail": {
-        "description": "When the binary bridge between browser and Plasma failed to start (e.g. not installed)",
-        "message": "Failed to connect to the native host. Make sure the 'plasma-browser-integration' package is installed."
+    "general_error_not_supported_os": {
+        "message": "This extension is only supported on Linux and FreeBSD."
+    },
+    "general_error_startup_failed_title": {
+        "description": "Title for failure to start plasma-browser-integration-host binary",
+        "message": "Failed to connect to the native host."
+    },
+    "general_error_startup_failed": {
+        "description": "Description for failure to start plasma-browser-integration-host binary",
+        "message": "Make sure the 'plasma-browser-integration' package is installed correctly and that you are running Plasma 5.13 or later."
+    },
+    "general_error_startup_failed_wiki_link": {
+        "message": "Visit project wiki page for more information"
+    },
+    "general_error_host_disconnected_title": {
+        "description": "Title for plasma-browser-integration-host binary unexpectedly closing/crashing",
+        "message": "The native host disconnected unexpectedly."
     }
 }

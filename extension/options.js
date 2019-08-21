@@ -227,7 +227,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // If we run this against an older host which doesn't support message replies
             // this handler is never entered, so we really encountered an error just now!
             console.warn("Failed to determine subsystem status", e);
-            // TODO show helpful error message in UI
+            document.body.classList.add("startup-failure");
         });
     });
 
