@@ -41,7 +41,7 @@
     },
     "options_plugin_mpris_media_sessions_description": {
         "description": "Description for MediaSessions API Control plugin",
-        "message": "Extract metadata and thumbnails of currently playing content. (Experimental)"
+        "message": "Extract metadata and thumbnails of currently playing content."
     },
 
     "options_plugin_kdeconnect_title": {

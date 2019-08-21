@@ -21,7 +21,7 @@ DEFAULT_EXTENSION_SETTINGS = {
         enabled: true
     },
     mprisMediaSessions: {
-        enabled: false
+        enabled: true
     },
     kdeconnect: {
         enabled: true
