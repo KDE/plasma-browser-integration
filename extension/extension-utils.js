@@ -68,9 +68,9 @@ function sendPortMessageWithReply(subsystem, event, payload)
         }
         message.serial = currentMessageSerial;
 
-        pendingMessageReplyResolvers[message.serial] = resolve;
-
         port.postMessage(message);
+
+        pendingMessageReplyResolvers[message.serial] = resolve;
     });
 }
 
