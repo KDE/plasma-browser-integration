@@ -26,7 +26,6 @@
 #include <QCoreApplication>
 #include <QDBusConnection>
 #include <QDBusObjectPath>
-#include <QDebug>
 #include <QGuiApplication>
 #include <QImageReader>
 #include <QTimer>

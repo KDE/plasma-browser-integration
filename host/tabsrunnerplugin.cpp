@@ -26,7 +26,6 @@
 #include "connection.h"
 
 #include <QDBusConnection>
-#include <QDebug>
 
 #include <QList>
 #include <QHash>
