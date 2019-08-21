@@ -3,6 +3,33 @@
         "description": "The extension description on the extension store",
         "message": "Multitask efficiently by controlling browser functions from the desktop, even while Chrome is in the background. Manage audio and video playback, check downloads in the notification area, send files to your phone using KDE Connect and more inside the KDE Plasma Desktop!\\n\\nThe plasma-browser-integration package must be installed for this extension to work. It should be available from your distribution's package manager when running Plasma 5.13 or later.\\n\\nNOTE: This extension is not supported on Debian."
     },
+
+    "browseraction_title": {
+        "description": "Title for toolbar popup",
+        "message": "Plasma Browser Integration"
+    },
+    "browseraction_not_supported_os_title": {
+        "message": "Unsupported operating system"
+    },
+    "browseraction_not_supported_os": {
+        "message": "This extension is only supported on Linux and FreeBSD."
+    },
+    "browseraction_startup_failed_title": {
+        "description": "Title for failure to start plasma-browser-integration-host binary",
+        "message": "Failed to connect to the native host."
+    },
+    "browseraction_startup_failed": {
+        "description": "Description for failure to start plasma-browser-integration-host binary",
+        "message": "Make sure the 'plasma-browser-integration' package is installed correctly and that you are running Plasma 5.13 or later."
+    },
+    "browseraction_startup_failed_wiki_link": {
+        "message": "Visit project wiki page for more information"
+    },
+    "browseraction_host_disconnected_title": {
+        "description": "Title for plasma-browser-integration-host binary unexpectedly closing/crashing",
+        "message": "The native host disconnected unexpectedly."
+    },
+
     "options_title": {
         "description": "Title for settings page",
         "message": "Plasma Integration Settings"

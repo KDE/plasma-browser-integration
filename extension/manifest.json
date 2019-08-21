@@ -34,6 +34,10 @@
     "persistent": false
   },
 
+  "browser_action": {
+    "default_popup": "action_popup.html"
+  },
+
   "content_scripts": [
     {
       "matches": ["*://*/*"],

@@ -87,11 +87,46 @@ addCallback("debug", "warning", function(payload) {
 // event immediately afterwards. Also avoid infinite restart loop then.
 var receivedMessageOnce = false;
 
+var portStatus = "";
+var portLastErrorMessage = undefined;
+
+function updateBrowserAction() {
+    let enableAction = false;
+    if (portStatus === "UNSUPPORTED_OS" || portStatus === "STARTUP_FAILED") {
+        chrome.browserAction.setIcon({
+            path: {
+                "16": "icons/plasma-disabled-16.png",
+                "32": "icons/plasma-disabled-32.png",
+                "48": "icons/plasma-disabled-48.png",
+                "128": "icons/plasma-disabled-128.png"
+            }
+        });
+        enableAction = true;
+    }
+
+    if (portLastErrorMessage) {
+        chrome.browserAction.setBadgeText({ text: "!" });
+        chrome.browserAction.setBadgeBackgroundColor({ color: "#da4453" }); // breeze "negative" color
+        enableAction = true;
+    } else {
+        chrome.browserAction.setBadgeText({ text: "" });
+    }
+
+    if (enableAction) {
+        chrome.browserAction.enable();
+    } else {
+        chrome.browserAction.disable();
+    }
+}
+updateBrowserAction();
+
 // Check for supported platform to avoid loading it on e.g. Windows and then failing
 // when the extension got synced to another device and then failing
 chrome.runtime.getPlatformInfo(function (info) {
     if (!SUPPORTED_PLATFORMS.includes(info.os)) {
         console.log("This extension is not supported on", info.os);
+        portStatus = "UNSUPPORTED_OS";
+        updateBrowserAction();
         return;
     }
 
@@ -110,6 +145,11 @@ function connectHost() {
 
         if (!isReply && (!subsystem || !action)) {
             return;
+        }
+
+        if (portStatus) {
+            portStatus = "";
+            updateBrowserAction();
         }
 
         receivedMessageOnce = true;
@@ -138,32 +178,28 @@ function connectHost() {
         console.warn("Host disconnected", error);
 
         // Remove all kde connect menu entries since they won't work without a host
-        for (let device of kdeConnectDevices) {
-            chrome.contextMenus.remove(kdeConnectMenuIdPrefix + device);
+        try {
+            for (let device of kdeConnectDevices) {
+                chrome.contextMenus.remove(kdeConnectMenuIdPrefix + device);
+            }
+        } catch (e) {
+            console.warn("Failed to cleanup after port disconnect", e);
         }
         kdeConnectDevices = [];
 
-        var reason = chrome.i18n.getMessage("general_error_unknown");
-        if (error && error.message) {
-            reason = error.message;
-        }
-
-        var message = receivedMessageOnce ? chrome.i18n.getMessage("general_error_port_disconnect", reason)
-                                          : chrome.i18n.getMessage("general_error_port_startupfail");
-
-        chrome.notifications.create(null, {
-            type: "basic",
-            title: chrome.i18n.getMessage("general_error_title"),
-            message: message,
-            iconUrl: "icons/sad-face-128.png"
-        });
-
         if (receivedMessageOnce) {
+            portLastErrorMessage = error && error.message || "UNKNOWN";
+            portStatus = "DISCONNECTED";
+
             console.log("Auto-restarting it");
             connectHost();
         } else {
+            portLastErrorMessage = "";
+            portStatus = "STARTUP_FAILED";
+
             console.warn("Not auto-restarting host as we haven't received any message from it before. Check that it's working/installed correctly");
         }
+        updateBrowserAction();
     });
 
     sendEnvironment();
@@ -184,4 +220,35 @@ addRuntimeCallback("settings", "openKRunnerSettings", function () {
 
 addRuntimeCallback("settings", "getSubsystemStatus", (message, sender, action) => {
     return sendPortMessageWithReply("settings", "getSubsystemStatus");
+});
+
+addRuntimeCallback("browserAction", "getStatus", (message) => {
+    let info = {
+        portStatus,
+        portLastErrorMessage
+    };
+
+    return Promise.resolve(info);
+});
+
+addRuntimeCallback("browserAction", "ready", () => {
+
+    // HACK there's no way to tell whether the browser action popup got closed
+    // None of onunload, onbeforeunload, onvisibilitychanged are fired.
+    // Instead, we create a port once the browser action is ready and then
+    // listen for the port being disconnected.
+
+    let browserActionPort = chrome.runtime.connect({
+        name: "browserActionPort"
+    });
+    browserActionPort.onDisconnect.addListener((port) => {
+        if (port.name !== "browserActionPort") {
+            return;
+        }
+
+        // disabling the browser action immediately when opening it
+        // causes opening to fail on Firefox, so clear the error only when it's being closed.
+        portLastErrorMessage = "";
+        updateBrowserAction();
+    });
 });

@@ -40,4 +40,5 @@ DEFAULT_EXTENSION_SETTINGS = {
 
 IS_FIREFOX = (typeof InstallTrigger !== "undefined"); // heh.
 
+// NOTE if you change this, make sure to adjust the error message shown in action_popup.html
 SUPPORTED_PLATFORMS = ["linux", "openbsd"];

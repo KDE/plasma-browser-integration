@@ -1,0 +1,39 @@
+body {
+    width: 24em;
+    /* prevent scroll bars*/
+    overflow: hidden;
+    margin: 0;
+    /* apply the chrome default styling explicitly so it also works in Firefox */
+    font-family: "Noto Sans", sans-serif;
+    font-size: 75%;
+}
+
+.hidden {
+    display: none;
+}
+
+header {
+    background: #1d99f3;
+    padding: 2px;
+    color: #fff;
+    text-align: center;
+}
+
+section > header {
+    background: #F0F0F0;
+    color: #757777;
+    margin: 0 -1em .5em -1em;
+}
+
+.message {
+    padding: 10px;
+}
+.message.with-icon::before {
+    content: '';
+    height: 48px;
+    display: block;
+    background: center no-repeat;
+}
+.message.with-icon.error::before {
+    background-image: url('icons/sad-face-48.png');
+}
