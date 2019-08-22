@@ -774,7 +774,23 @@ function loadMediaSessionsShim() {
         // there's nothing loaded to pause) to the DOM and before we remove it, we note down that
         // we will now get a paused event because of that. When we get it, we just play() the player
         // so it continues playing :-)
-        executeScript(`function() {
+        if (IS_FIREFOX) {
+            // Firefox enforces Content-Security-Policy also for scripts injected by the content-script
+            // This causes our executeScript calls to fail for pages like Nextcloud
+            // It also doesn't seem to have the aggressive autoplay prevention Chrome has,
+            // so the horrible replyAfterRemoval hack from above isn't copied into this
+            // See Bug 411148: Music playing from the ownCloud Music app does not show up
+            var oldAudio = window.Audio;
+            exportFunction(function() {
+                var createdAudio = new (Function.prototype.bind.apply(oldAudio, arguments));
+
+                (document.head || document.documentElement).appendChild(createdAudio);
+                createdAudio.parentNode.removeChild(createdAudio);
+
+                return createdAudio;
+            }, window, {defineAs: "Audio"});
+        } else {
+            executeScript(`function() {
                 var oldAudio = window.Audio;
                 window.Audio = function () {
                     var createdAudio = new (Function.prototype.bind.apply(oldAudio, arguments));
@@ -803,8 +819,7 @@ function loadMediaSessionsShim() {
 
                     return createdAudio;
                 };
-            }
-        `);
-
+            }`);
+        }
     }
 }
