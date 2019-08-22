@@ -1,12 +1,24 @@
 {
-    "general_error_port_disconnect": {
-        "message": "El servidor natiu s'ha desconnectat inesperadament: $1"
+    "browseraction_title": {
+        "message": "Plasma Browser Integration"
     },
-    "general_error_port_startupfail": {
-        "message": "Ha fallat en connectar al servidor natiu. Assegureu-vos que el paquet «plasma-browser-integration» estigui instal·lat."
+    "general_error_host_disconnected_title": {
+        "message": "The native host disconnected unexpectedly."
     },
-    "general_error_title": {
-        "message": "Error d'integració del navegador al Plasma"
+    "general_error_not_supported_os": {
+        "message": "This extension is only supported on Linux and FreeBSD."
+    },
+    "general_error_not_supported_os_title": {
+        "message": "Unsupported operating system"
+    },
+    "general_error_startup_failed": {
+        "message": "Make sure the 'plasma-browser-integration' package is installed correctly and that you are running Plasma 5.13 or later."
+    },
+    "general_error_startup_failed_title": {
+        "message": "Failed to connect to the native host."
+    },
+    "general_error_startup_failed_wiki_link": {
+        "message": "Visit project wiki page for more information"
     },
     "general_error_unknown": {
         "message": "Error desconegut"
