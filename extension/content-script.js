@@ -302,7 +302,7 @@ function setPlayerActive(player) {
     // Ignore short sounds, they are most likely a chat notification sound
     // A stream has a duration of Infinity
     // Note that "NaN" is also not finite but we already returned earlier for that
-    if (isFinite(player.duration) && player.duration > 0 && player.duration < 5) {
+    if (isFinite(player.duration) && player.duration > 0 && player.duration < 8) {
         return;
     }
 
