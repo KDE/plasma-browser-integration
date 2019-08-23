@@ -46,6 +46,6 @@ public:
     void SetMuted(int tabId, bool muted);
 
 private:
-    QDBusMessage m_tabsReplyMessage;
+    QVector<QDBusMessage> m_tabRequestMessages;
 
 };

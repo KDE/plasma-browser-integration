@@ -100,6 +100,11 @@ void TabsRunner::match(Plasma::RunnerContext &context)
 
         QDBusMessage reply = QDBusConnection::sessionBus().call(message);
 
+        // By the time the reply came in, the context might have already been invalidated
+        if (!context.isValid()) {
+            return;
+        }
+
         if (reply.type() != QDBusMessage::ReplyMessage || reply.arguments().length() != 1) {
             continue;
         }

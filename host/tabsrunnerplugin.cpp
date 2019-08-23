@@ -55,21 +55,7 @@ bool TabsRunnerPlugin::onUnload()
 // may access your tabs
 QList<QVariantHash> TabsRunnerPlugin::GetTabs()
 {
-    // already a get tabs request pending, abort it and then start anew
-    // TODO would be lovely to marshall that stuff somehow, ie. every GetTabs call gets
-    // its own reply instead of just aborting and serving the one who came last
-    // however, the TabsRunner blocks waiting for a reply, so in practise this isn't as urgent
-    if (m_tabsReplyMessage.type() != QDBusMessage::InvalidMessage) {
-        QDBusConnection::sessionBus().send(
-            m_tabsReplyMessage.createErrorReply(
-                QStringLiteral("org.kde.plasma.browser_integration.TabsRunner.Error.Cancelled"),
-                QStringLiteral("GetTabs got cancelled because a another request came in")
-            )
-        );
-        return {};
-    }
-
-    m_tabsReplyMessage = message();
+    m_tabRequestMessages.append(message());
     setDelayedReply(true);
 
     sendData(QStringLiteral("getTabs"));
@@ -95,7 +81,7 @@ void TabsRunnerPlugin::SetMuted(int tabId, bool muted)
 void TabsRunnerPlugin::handleData(const QString& event, const QJsonObject& json)
 {
     if (event == QLatin1String("gotTabs")) {
-        if (m_tabsReplyMessage.type() != QDBusMessage::InvalidMessage) {
+        if (!m_tabRequestMessages.isEmpty()) {
 
             const QJsonArray &tabs = json.value(QStringLiteral("tabs")).toArray();
 
@@ -111,11 +97,14 @@ void TabsRunnerPlugin::handleData(const QString& event, const QJsonObject& json)
             QList<QVariant> reply;
             reply.append(QVariant(tabsReply));
 
-            QDBusConnection::sessionBus().send(
-                // TODO why does it unwrap this? didn't we want a a(a{sv}) instead of a{sv}a{sv}a{sv}..? :/
-                m_tabsReplyMessage.createReply(QList<QVariant>{tabsReply})
-            );
-            m_tabsReplyMessage = QDBusMessage();
+            for (const QDBusMessage &request : qAsConst(m_tabRequestMessages)) {
+                QDBusConnection::sessionBus().send(
+                    // TODO why does it unwrap this? didn't we want a a(a{sv}) instead of a{sv}a{sv}a{sv}..? :/
+                    request.createReply(QList<QVariant>{tabsReply})
+                );
+            }
+
+            m_tabRequestMessages.clear();
         }
     }
 }
