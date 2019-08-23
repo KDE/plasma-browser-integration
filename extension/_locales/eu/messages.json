@@ -1,24 +1,24 @@
 {
     "browseraction_title": {
-        "message": "Plasma Browser Integration"
+        "message": "Plasman arakatzailea bateratzea"
     },
     "general_error_host_disconnected_title": {
-        "message": "The native host disconnected unexpectedly."
+        "message": "Berezko ostalaria ustekabean deskonektatu da."
     },
     "general_error_not_supported_os": {
-        "message": "This extension is only supported on Linux and FreeBSD."
+        "message": "Hedapen honen euskarria dute soilik Linux eta FreeBSD sistemek."
     },
     "general_error_not_supported_os_title": {
-        "message": "Unsupported operating system"
+        "message": "Sistema eragile honek ez du euskarririk"
     },
     "general_error_startup_failed": {
-        "message": "Make sure the 'plasma-browser-integration' package is installed correctly and that you are running Plasma 5.13 or later."
+        "message": "Ziurtatu ezazu «plasma-browser-integration» paketea ondo instalatuta dagoela eta Plasma 5.13 edo berriagoa erabiltzen duzula."
     },
     "general_error_startup_failed_title": {
-        "message": "Failed to connect to the native host."
+        "message": "Huts egin du berezko ostalarira konektatzea."
     },
     "general_error_startup_failed_wiki_link": {
-        "message": "Visit project wiki page for more information"
+        "message": "Bisitatu proiektuaren wiki orria informazio gehiago nahi baduzu"
     },
     "general_error_unknown": {
         "message": "Errore ezezaguna"
@@ -75,7 +75,7 @@
         "message": "Webguneetako bideo eta audio jotzaileak kontrolatzen uzten dizu «Euskarri kontrolatzailea» plasmoidea erabiliz."
     },
     "options_plugin_mpris_media_sessions_description": {
-        "message": "Atera meta-datuak eta koadro txikiak une honetan jotzen ari den edukitik. "
+        "message": "Atera meta-datuak eta koadro txikiak une honetan jotzen ari den edukitik."
     },
     "options_plugin_mpris_media_sessions_title": {
         "message": "Euskarri-kontrol aurreratuak"
@@ -105,6 +105,6 @@
         "message": "Plama bateratze ezarpenak"
     },
     "store_description": {
-        "message": "Multitask efficiently by controlling browser functions from the desktop, even while Chrome is in the background. Manage audio and video playback, check downloads in the notification area, send files to your phone using KDE Connect and more inside the KDE Plasma Desktop!\\n\\nThe plasma-browser-integration package must be installed for this extension to work. It should be available from your distribution's package manager when running Plasma 5.13 or later.\\n\\nNOTE: This extension is not supported on Debian."
+        "message": "Ataza-anizkun eraginkorra arakatzailearen funtzioak mahaigainetik kontrolatuz, Chrome atzealdean dagoela ere. Kudeatu audio eta bideo atzera-jotzea, egiaztatu zama-jaisteak jakinarazpen eremuan, bidali fitxategiak zure telefonora KDE Connect erabiliz eta gehiago KDE Plasma mahaigain Hedapen hau ibil dadin «plasma-browser-integration» paketea instalatu behar da. Erabilgarri egon beharko litzateke zure banaketaren pakete kudeatzailean Plasma 5.13 edo berriagoa ibiltzean.\\nOHARRA: Debian-ek hedapen hau ez da onartzen."
     }
 }

@@ -1,24 +1,24 @@
 {
     "browseraction_title": {
-        "message": "Plasma Browser Integration"
+        "message": "Integració del navegador al Plasma"
     },
     "general_error_host_disconnected_title": {
-        "message": "The native host disconnected unexpectedly."
+        "message": "El servidor natiu s'ha desconnectat inesperadament."
     },
     "general_error_not_supported_os": {
-        "message": "This extension is only supported on Linux and FreeBSD."
+        "message": "Aquesta extensió només s'admet a Linux i FreeBSD."
     },
     "general_error_not_supported_os_title": {
-        "message": "Unsupported operating system"
+        "message": "Sistema operatiu no admès"
     },
     "general_error_startup_failed": {
-        "message": "Make sure the 'plasma-browser-integration' package is installed correctly and that you are running Plasma 5.13 or later."
+        "message": "Assegureu-vos que el paquet «plasma-browser-integration» estigui instal·lat correctament i que s'estigui executant el Plasma 5.13 o posterior."
     },
     "general_error_startup_failed_title": {
-        "message": "Failed to connect to the native host."
+        "message": "Ha fallat en connectar amb el servidor nadiu."
     },
     "general_error_startup_failed_wiki_link": {
-        "message": "Visit project wiki page for more information"
+        "message": "Visiteu la pàgina wiki del projecte per obtenir més informació"
     },
     "general_error_unknown": {
         "message": "Error desconegut"
@@ -75,7 +75,7 @@
         "message": "Permet controlar els reproductors de vídeo i àudio a llocs web usant el plasmoide Media Controller."
     },
     "options_plugin_mpris_media_sessions_description": {
-        "message": "Extreu les metadades i les miniatures del contingut actualment en reproducció. (Experimental)"
+        "message": "Extreu les metadades i les miniatures del contingut actualment en "
     },
     "options_plugin_mpris_media_sessions_title": {
         "message": "Controls multimèdia millorats"

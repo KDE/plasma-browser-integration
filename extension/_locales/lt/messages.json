@@ -1,15 +1,15 @@
 {
     "browseraction_title": {
-        "message": "Plasma Browser Integration"
+        "message": "Plasma naršyklės integracijos klaida"
     },
     "general_error_host_disconnected_title": {
-        "message": "The native host disconnected unexpectedly."
+        "message": "Savas mazgas netikėtai atsijungė: $1"
     },
     "general_error_not_supported_os": {
-        "message": "This extension is only supported on Linux and FreeBSD."
+        "message": "Ši operacinė sistema nepalaiko šio priedo."
     },
     "general_error_not_supported_os_title": {
-        "message": "Unsupported operating system"
+        "message": "Ši operacinė sistema nepalaiko šio priedo."
     },
     "general_error_startup_failed": {
         "message": "Make sure the 'plasma-browser-integration' package is installed correctly and that you are running Plasma 5.13 or later."
@@ -105,6 +105,6 @@
         "message": "Plasma integracijos nuostatos"
     },
     "store_description": {
-        "message": "Multitask efficiently by controlling browser functions from the desktop, even while Chrome is in the background. Manage audio and video playback, check downloads in the notification area, send files to your phone using KDE Connect and more inside the KDE Plasma Desktop!\\n\\nThe plasma-browser-integration package must be installed for this extension to work. It should be available from your distribution's package manager when running Plasma 5.13 or later.\\n\\nNOTE: This extension is not supported on Debian."
+        "message": "Atlikite daugiaprogramį apdorojimą, valdydami naršyklės funkcijas tiesiai iš darbalaukio netgi tuomet, kai Chrome fone. Valdykite garso ir vaizdo atkūrimą, tikrinkite pranešimų srityje atsiuntimus, siųskite failus į savo telefoną naudodami KDE Connect ir atlikite dar daugiau KDE Plasma Tam, kad veiktų šis priedas, privalo būti įdiegtas paketas \"plasma-browser-integration\". Jis turėtų būti prieinamas iš jūsų platinimo paketų tvarkytuvės, naudojant Plasma 5.13 ar naujesnę versiją.\\nPASTABA: Šis priedas nėra prieinamas Debian sistemose."
     }
 }

@@ -1,15 +1,15 @@
 {
     "browseraction_title": {
-        "message": "Plasma Browser Integration"
+        "message": "Plasma-Integration für Browser"
     },
     "general_error_host_disconnected_title": {
         "message": "The native host disconnected unexpectedly."
     },
     "general_error_not_supported_os": {
-        "message": "This extension is only supported on Linux and FreeBSD."
+        "message": "Diese Erweiterung wird unter Linux und FreeBSD unterstützt."
     },
     "general_error_not_supported_os_title": {
-        "message": "Unsupported operating system"
+        "message": "Nicht unterstütztes Betriebssystem"
     },
     "general_error_startup_failed": {
         "message": "Make sure the 'plasma-browser-integration' package is installed correctly and that you are running Plasma 5.13 or later."
@@ -18,7 +18,7 @@
         "message": "Failed to connect to the native host."
     },
     "general_error_startup_failed_wiki_link": {
-        "message": "Visit project wiki page for more information"
+        "message": "Auf der Wikiseite des Projekts finden Sie weitere Informationen"
     },
     "general_error_unknown": {
         "message": "Unbekannter Fehler"
@@ -75,7 +75,7 @@
         "message": "Lets you control video and audio players in websites using the Media Controller plasmoid."
     },
     "options_plugin_mpris_media_sessions_description": {
-        "message": "Extrahiert Metadaten und Inhalt des gerade wieder gegebenen Inhalts. "
+        "message": "Extrahiert Metadaten und Inhalt des gerade wieder gegebenen Inhalts."
     },
     "options_plugin_mpris_media_sessions_title": {
         "message": "Erweiterte Mediensteuerung"

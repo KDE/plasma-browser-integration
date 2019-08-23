@@ -1,24 +1,24 @@
 {
     "browseraction_title": {
-        "message": "Plasma Browser Integration"
+        "message": "Plasma webbläsarintegrering"
     },
     "general_error_host_disconnected_title": {
-        "message": "The native host disconnected unexpectedly."
+        "message": "Värddatorn kopplades oväntat bort."
     },
     "general_error_not_supported_os": {
-        "message": "This extension is only supported on Linux and FreeBSD."
+        "message": "Utökningen stöds bara på Linux och FreeBSD."
     },
     "general_error_not_supported_os_title": {
-        "message": "Unsupported operating system"
+        "message": "Operativsystemet stöds inte"
     },
     "general_error_startup_failed": {
-        "message": "Make sure the 'plasma-browser-integration' package is installed correctly and that you are running Plasma 5.13 or later."
+        "message": "Försäkra dig om att paketet 'plasma-browser-integration' är riktigt installerat och att du kör Plasma 5.13 eller senare."
     },
     "general_error_startup_failed_title": {
-        "message": "Failed to connect to the native host."
+        "message": "Misslyckades ansluta till värddatorn."
     },
     "general_error_startup_failed_wiki_link": {
-        "message": "Visit project wiki page for more information"
+        "message": "Besök projektets wiki-sida för mer information"
     },
     "general_error_unknown": {
         "message": "Okänt fel"
@@ -75,7 +75,7 @@
         "message": "Låter dig styra video- och ljudspelare på webbplatser via Plasmoiden "
     },
     "options_plugin_mpris_media_sessions_description": {
-        "message": "Extrahera metadata och miniatyrbilder för det som spelas nu (experimentellt)"
+        "message": "Extrahera metadata och miniatyrbilder för det som spelas nu."
     },
     "options_plugin_mpris_media_sessions_title": {
         "message": "Utökade mediakontroller"

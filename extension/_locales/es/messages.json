@@ -1,15 +1,15 @@
 {
     "browseraction_title": {
-        "message": "Plasma Browser Integration"
+        "message": "Error de integración del navegador con Plasma"
     },
     "general_error_host_disconnected_title": {
-        "message": "The native host disconnected unexpectedly."
+        "message": "El servidor nativo se ha desconectado de forma imprevista: $1"
     },
     "general_error_not_supported_os": {
-        "message": "This extension is only supported on Linux and FreeBSD."
+        "message": "Esta extensión no está permitida en este sistema operativo."
     },
     "general_error_not_supported_os_title": {
-        "message": "Unsupported operating system"
+        "message": "Esta extensión no está permitida en este sistema operativo."
     },
     "general_error_startup_failed": {
         "message": "Make sure the 'plasma-browser-integration' package is installed correctly and that you are running Plasma 5.13 or later."

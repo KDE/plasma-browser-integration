@@ -1,15 +1,15 @@
 {
     "browseraction_title": {
-        "message": "Plasma Browser Integration"
+        "message": "Plasma Browser Integration, Error"
     },
     "general_error_host_disconnected_title": {
-        "message": "The native host disconnected unexpectedly."
+        "message": "Host bawaan terdiskoneksi secara tiba-tiba: $1"
     },
     "general_error_not_supported_os": {
-        "message": "This extension is only supported on Linux and FreeBSD."
+        "message": "Ekstensi ini tidaklah didukung pada operasi sitem ini."
     },
     "general_error_not_supported_os_title": {
-        "message": "Unsupported operating system"
+        "message": "Ekstensi ini tidaklah didukung pada operasi sitem ini."
     },
     "general_error_startup_failed": {
         "message": "Make sure the 'plasma-browser-integration' package is installed correctly and that you are running Plasma 5.13 or later."
@@ -105,6 +105,6 @@
         "message": "Pengaturan Plasma Integration"
     },
     "store_description": {
-        "message": "Multitask efficiently by controlling browser functions from the desktop, even while Chrome is in the background. Manage audio and video playback, check downloads in the notification area, send files to your phone using KDE Connect and more inside the KDE Plasma Desktop!\\n\\nThe plasma-browser-integration package must be installed for this extension to work. It should be available from your distribution's package manager when running Plasma 5.13 or later.\\n\\nNOTE: This extension is not supported on Debian."
+        "message": "Multitask efisien dengan mengendalikan fungsi browser dari desktop, bahkan ketika Chrome ada di latarbelakang. Kelola pemutaran audio dan video, periksa unduhan di area notifikasi, kirim file ke ponselmu menggunakan KDE Connect dan lainnya di dalam Desktop Plasma KDE!\\nPaket integrasi plasma browser harus diinstal agar ekstensi ini berfungsi. Itu harus tersedia dari pengelola paket distribusimu ketika menjalankan Plasma 5.13 atau lebih baru.\\nCATATAN: Ekstensi ini tidak didukung di Debian."
     }
 }

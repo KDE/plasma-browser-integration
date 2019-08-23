@@ -1,24 +1,24 @@
 {
     "browseraction_title": {
-        "message": "Plasma Browser Integration"
+        "message": "Plasma-browserintegratie"
     },
     "general_error_host_disconnected_title": {
-        "message": "The native host disconnected unexpectedly."
+        "message": "De eigen host heeft onverwacht de verbinding verbroken."
     },
     "general_error_not_supported_os": {
-        "message": "This extension is only supported on Linux and FreeBSD."
+        "message": "Deze extensie wordt alleen ondersteund op Linux en FreeBSD."
     },
     "general_error_not_supported_os_title": {
-        "message": "Unsupported operating system"
+        "message": "Niet ondersteund besturingssysteem"
     },
     "general_error_startup_failed": {
-        "message": "Make sure the 'plasma-browser-integration' package is installed correctly and that you are running Plasma 5.13 or later."
+        "message": "Ga na dat het 'plasma-browser-integration' pakket juist is geïnstalleerd en dat u Plasma 5.13 of later gebruikt."
     },
     "general_error_startup_failed_title": {
-        "message": "Failed to connect to the native host."
+        "message": "Verbinden met eigen host is mislukt."
     },
     "general_error_startup_failed_wiki_link": {
-        "message": "Visit project wiki page for more information"
+        "message": "Bezoek de wiki-projectpagina voor meer informatie"
     },
     "general_error_unknown": {
         "message": "Onbekende fout"
@@ -75,7 +75,7 @@
         "message": "Laat u video- en audiospelers besturen in websites met de plasmoid "
     },
     "options_plugin_mpris_media_sessions_description": {
-        "message": "Metagegevens en miniaturen van nu spelende inhoud extraheren. (Experimenteel)"
+        "message": "Metagegevens en miniaturen van nu spelende inhoud extraheren."
     },
     "options_plugin_mpris_media_sessions_title": {
         "message": "Verbeterde besturing van media"

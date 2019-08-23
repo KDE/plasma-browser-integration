@@ -1,15 +1,15 @@
 {
     "browseraction_title": {
-        "message": "Plasma Browser Integration"
+        "message": "Plasma 브라우저 통합 오류"
     },
     "general_error_host_disconnected_title": {
-        "message": "The native host disconnected unexpectedly."
+        "message": "네이티브 호스트 연결이 끊김: $1"
     },
     "general_error_not_supported_os": {
-        "message": "This extension is only supported on Linux and FreeBSD."
+        "message": "이 확장 기능은 이 운영 체제에서 지원하지 않습니다."
     },
     "general_error_not_supported_os_title": {
-        "message": "Unsupported operating system"
+        "message": "이 확장 기능은 이 운영 체제에서 지원하지 않습니다."
     },
     "general_error_startup_failed": {
         "message": "Make sure the 'plasma-browser-integration' package is installed correctly and that you are running Plasma 5.13 or later."
@@ -105,6 +105,6 @@
         "message": "Plasma 통합 설정"
     },
     "store_description": {
-        "message": "Multitask efficiently by controlling browser functions from the desktop, even while Chrome is in the background. Manage audio and video playback, check downloads in the notification area, send files to your phone using KDE Connect and more inside the KDE Plasma Desktop!\\n\\nThe plasma-browser-integration package must be installed for this extension to work. It should be available from your distribution's package manager when running Plasma 5.13 or later.\\n\\nNOTE: This extension is not supported on Debian."
+        "message": "Chrome이 백그라운드에서 실행 중이어도 데스크톱에서 브라우저 기능을 제어하여 효율적인 다중 작업을 할 수 있습니다. 오디오 및 비디오 재생, 알림 영역에서 다운로드 확인, KDE Connect로 휴대폰으로 파일 보내기 및 KDE Plasma 데스크톱과 더 깊게 통합됩니다!\\n확장 프로그램을 사용하려면 plasma-browser-integration 패키지를 설치해야 합니다. Plasma 5.13 이상을 실행 중이어야 하며 배포판의 패키지 관리자로 설치할 수 메모: 데비안에서는 이 확장 기능을 지원하지 않습니다."
     }
 }

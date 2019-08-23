@@ -1,24 +1,24 @@
 {
     "browseraction_title": {
-        "message": "Plasma Browser Integration"
+        "message": "Integração do Navegador do Plasma"
     },
     "general_error_host_disconnected_title": {
-        "message": "The native host disconnected unexpectedly."
+        "message": "A máquina nativa desligou-se de forma inesperada."
     },
     "general_error_not_supported_os": {
-        "message": "This extension is only supported on Linux and FreeBSD."
+        "message": "Esta extensão só é suportada no Linux e no FreeBSD."
     },
     "general_error_not_supported_os_title": {
-        "message": "Unsupported operating system"
+        "message": "Sistema operativo não suportado"
     },
     "general_error_startup_failed": {
-        "message": "Make sure the 'plasma-browser-integration' package is installed correctly and that you are running Plasma 5.13 or later."
+        "message": "Certifique-se que o pacote 'plasma-browser-integration' está instalado correctamente e que está a executar o Plasma 5.13 ou posterior."
     },
     "general_error_startup_failed_title": {
-        "message": "Failed to connect to the native host."
+        "message": "Não foi possível contactar a máquina nativa."
     },
     "general_error_startup_failed_wiki_link": {
-        "message": "Visit project wiki page for more information"
+        "message": "Visite a página da Wiki do projecto para mais informações"
     },
     "general_error_unknown": {
         "message": "Erro Desconhecido"
@@ -75,7 +75,7 @@
         "message": "Permite-lhe controlar os leitores de áudio e vídeo nas páginas Web, usando o plasmóide do Controlador Multimédia."
     },
     "options_plugin_mpris_media_sessions_description": {
-        "message": "Extrair os meta-dados e as miniaturas do conteúdo actualmente em reprodução. "
+        "message": "Extrair os meta-dados e as miniaturas do conteúdo actualmente em reprodução."
     },
     "options_plugin_mpris_media_sessions_title": {
         "message": "Controlos Multimédia Melhorados"
@@ -105,6 +105,6 @@
         "message": "Configuração da Integração do Plasma"
     },
     "store_description": {
-        "message": "Multitask efficiently by controlling browser functions from the desktop, even while Chrome is in the background. Manage audio and video playback, check downloads in the notification area, send files to your phone using KDE Connect and more inside the KDE Plasma Desktop!\\n\\nThe plasma-browser-integration package must be installed for this extension to work. It should be available from your distribution's package manager when running Plasma 5.13 or later.\\n\\nNOTE: This extension is not supported on Debian."
+        "message": "Crie várias tarefas de forma eficiente, controlando as funções do navegador a partir da área de trabalho, mesmo quando o Chrome está em segundo plano. Faça a gestão da reprodução de áudio e vídeo, verifique as transferências na área de notificações, envie ficheiros para o seu telefone com o KDE Connect e muito mais na Área de Trabalho do Plasma!\\nO pacote 'plasma-browser-integration' deverá estar instalado para esta extensão funcionar. Deverá estar disponível no gestor de pacotes da sua distribuição quando executar o Plasma 5.13 ou posterior.\\nNOTA: Esta extensão não é suportada no Debian."
     }
 }
