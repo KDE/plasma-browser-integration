@@ -152,6 +152,7 @@ void TabsRunner::match(Plasma::RunnerContext &context)
 
             Plasma::QueryMatch match(this);
             match.setText(text);
+            match.setSubtext(url.toDisplayString());
             match.setData(tabData);
 
             qreal relevance = 0;
