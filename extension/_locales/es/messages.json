@@ -1,24 +1,24 @@
 {
     "browseraction_title": {
-        "message": "Error de integración del navegador con Plasma"
+        "message": "Integración del navegador con Plasma"
     },
     "general_error_host_disconnected_title": {
-        "message": "El servidor nativo se ha desconectado de forma imprevista: $1"
+        "message": "El servidor nativo se ha desconectado de forma imprevista."
     },
     "general_error_not_supported_os": {
-        "message": "Esta extensión no está permitida en este sistema operativo."
+        "message": "Esta extensión solo está permitida en Linux y en FreeBSD."
     },
     "general_error_not_supported_os_title": {
-        "message": "Esta extensión no está permitida en este sistema operativo."
+        "message": "Sistema operativo no permitido"
     },
     "general_error_startup_failed": {
-        "message": "Make sure the 'plasma-browser-integration' package is installed correctly and that you are running Plasma 5.13 or later."
+        "message": "Asegúrese de que el paquete «plasma-browser-integration» se ha instalado correctamente y de que está ejecutando Plasma 5.13 o posterior."
     },
     "general_error_startup_failed_title": {
-        "message": "Failed to connect to the native host."
+        "message": "La conexión con el servidor nativo ha fallado."
     },
     "general_error_startup_failed_wiki_link": {
-        "message": "Visit project wiki page for more information"
+        "message": "Visite la página wiki del proyecto para más información"
     },
     "general_error_unknown": {
         "message": "Error desconocido"
@@ -75,7 +75,7 @@
         "message": "Le permite controlar los reproductores de vídeo y de sonido de los sitios web usando el plasmoide del «Controlador multimedia»."
     },
     "options_plugin_mpris_media_sessions_description": {
-        "message": "Extraer metadatos y miniaturas del contenido que está en reproducción. "
+        "message": "Extraer metadatos y miniaturas del contenido que está en reproducción."
     },
     "options_plugin_mpris_media_sessions_title": {
         "message": "Controles multimedia avanzados"
