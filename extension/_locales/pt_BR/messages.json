@@ -1,24 +1,24 @@
 {
     "browseraction_title": {
-        "message": "Erro de integração dos navegadores no Plasma"
+        "message": "Integração do navegador no Plasma"
     },
     "general_error_host_disconnected_title": {
-        "message": "A máquina nativa desconectou inesperadamente: $1"
+        "message": "A máquina nativa desconectou inesperadamente."
     },
     "general_error_not_supported_os": {
-        "message": "Esta extensão não é suportada neste sistema operacional."
+        "message": "Esta extensão é suportada apenas no Linux e FreeBSD."
     },
     "general_error_not_supported_os_title": {
-        "message": "Esta extensão não é suportada neste sistema operacional."
+        "message": "Sistema operacional não suportado"
     },
     "general_error_startup_failed": {
-        "message": "Make sure the 'plasma-browser-integration' package is installed correctly and that you are running Plasma 5.13 or later."
+        "message": "Certifique-se de que o pacote 'plasma-browser-integration' está instalado corretamente e que você está executando o Plasma 5.13 ou posterior."
     },
     "general_error_startup_failed_title": {
-        "message": "Failed to connect to the native host."
+        "message": "Falha ao conectar-se à máquina nativa."
     },
     "general_error_startup_failed_wiki_link": {
-        "message": "Visit project wiki page for more information"
+        "message": "Visite a página wiki do projeto para mais informações"
     },
     "general_error_unknown": {
         "message": "Erro desconhecido"
@@ -75,7 +75,7 @@
         "message": "Permite controlar os reprodutores de áudio e vídeo em sites usando o plasmoide controlador de mídia."
     },
     "options_plugin_mpris_media_sessions_description": {
-        "message": "Extrai metadados e miniaturas do conteúdo atualmente em exibição. "
+        "message": "Extrai metadados e miniaturas do conteúdo atualmente em exibição."
     },
     "options_plugin_mpris_media_sessions_title": {
         "message": "Controles de mídia aprimorados"

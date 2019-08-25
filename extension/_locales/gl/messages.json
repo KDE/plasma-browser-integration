@@ -1,24 +1,24 @@
 {
     "browseraction_title": {
-        "message": "Erro de integración co navegador de Plasma"
+        "message": "Integración co navegador de Plasma"
     },
     "general_error_host_disconnected_title": {
-        "message": "O servidor nativo desconectou inesperadamente: $1"
+        "message": "O servidor nativo desconectou inesperadamente."
     },
     "general_error_not_supported_os": {
-        "message": "Esta extensión non é compatíbel con este sistema operativo."
+        "message": "Esta extensión só é compatíbel con Linux e FreeBSD."
     },
     "general_error_not_supported_os_title": {
-        "message": "Esta extensión non é compatíbel con este sistema operativo."
+        "message": "Sistema operativo incompatíbel"
     },
     "general_error_startup_failed": {
-        "message": "Make sure the 'plasma-browser-integration' package is installed correctly and that you are running Plasma 5.13 or later."
+        "message": "Asegúrese de que o paquete «plasma-browser-integration» está instalado correctamente e de que está a executar Plasma 5.13 ou posterior."
     },
     "general_error_startup_failed_title": {
-        "message": "Failed to connect to the native host."
+        "message": "Non se puido conectar á máquina nativa."
     },
     "general_error_startup_failed_wiki_link": {
-        "message": "Visit project wiki page for more information"
+        "message": "Consulte a páxina do wiki do proxecto para máis información"
     },
     "general_error_unknown": {
         "message": "Erro descoñecido"
@@ -75,7 +75,7 @@
         "message": "Permítelle controlar reprodutores de son e vídeo en sitios web usando o plasmoide de controlador de reprodución."
     },
     "options_plugin_mpris_media_sessions_description": {
-        "message": "Extraer medatados e miniaturas do contido que se está a reproducir. "
+        "message": "Extraer metadatos e miniaturas do contido que se está a reproducir."
     },
     "options_plugin_mpris_media_sessions_title": {
         "message": "Controis de reprodución mellorados"

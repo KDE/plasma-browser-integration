@@ -1,24 +1,24 @@
 {
     "browseraction_title": {
-        "message": "Plasma naršyklės integracijos klaida"
+        "message": "Plasma naršyklės integracija"
     },
     "general_error_host_disconnected_title": {
-        "message": "Savas mazgas netikėtai atsijungė: $1"
+        "message": "Savas mazgas netikėtai atsijungė."
     },
     "general_error_not_supported_os": {
-        "message": "Ši operacinė sistema nepalaiko šio priedo."
+        "message": "Šis priedas yra palaikomas tik Linux ir FreeBSD sistemose."
     },
     "general_error_not_supported_os_title": {
-        "message": "Ši operacinė sistema nepalaiko šio priedo."
+        "message": "Nepalaikoma operacinė sistema"
     },
     "general_error_startup_failed": {
-        "message": "Make sure the 'plasma-browser-integration' package is installed correctly and that you are running Plasma 5.13 or later."
+        "message": "Įsitikinkite, kad paketas \"plasma-browser-integration\" yra teisingai įdiegtas ir, kad naudojate Plasma 5.13 ar naujesnę versiją."
     },
     "general_error_startup_failed_title": {
-        "message": "Failed to connect to the native host."
+        "message": "Nepavyko prisijungti prie savo mazgo."
     },
     "general_error_startup_failed_wiki_link": {
-        "message": "Visit project wiki page for more information"
+        "message": "Išsamesnei informacijai, apsilankykite projekto vikio puslapyje"
     },
     "general_error_unknown": {
         "message": "Nežinoma klaida"
@@ -75,7 +75,7 @@
         "message": "Leidžia jums internetinėse svetainėse valdyti vaizdo bei garso leistuves, naudojant Medijos valdiklio Plasma įskiepį."
     },
     "options_plugin_mpris_media_sessions_description": {
-        "message": "Išskleisti šiuo metu atkuriamo turinio metaduomenis ir miniatiūras. "
+        "message": "Išskleisti šiuo metu atkuriamo turinio metaduomenis ir miniatiūras."
     },
     "options_plugin_mpris_media_sessions_title": {
         "message": "Išplėstiniai medijos valdikliai"
