@@ -25,6 +25,8 @@
 #include <QDBusConnection>
 #include <QDebug>
 
+#include <KCrash>
+
 #include "connection.h"
 #include "pluginmanager.h"
 #include "abstractbrowserplugin.h"
@@ -67,6 +69,8 @@ int main(int argc, char *argv[])
     // applicationName etc will be set in Settings once the browser identifies to us
 
     qInstallMessageHandler(msgHandler);
+
+    KCrash::initialize();
 
     // NOTE if you add a new plugin here, make sure to adjust the
     // "DEFAULT_EXTENSION_SETTINGS" in constants.js or else it won't
