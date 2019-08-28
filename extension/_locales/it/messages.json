@@ -1,24 +1,24 @@
 {
     "browseraction_title": {
-        "message": "Errore dell'integrazione del browser con Plasma"
+        "message": "Integrazione del browser con Plasma"
     },
     "general_error_host_disconnected_title": {
-        "message": "L'host nativo si è disconnesso all'improvviso: $1"
+        "message": "L'host nativo si è disconnesso all'improvviso."
     },
     "general_error_not_supported_os": {
-        "message": "L'estensione non è supportata su questo sistema operativo."
+        "message": "Questa estensione è supportata solo su Linux e FreeBSD."
     },
     "general_error_not_supported_os_title": {
-        "message": "L'estensione non è supportata su questo sistema operativo."
+        "message": "Sistema operativo non supportato"
     },
     "general_error_startup_failed": {
-        "message": "Make sure the 'plasma-browser-integration' package is installed correctly and that you are running Plasma 5.13 or later."
+        "message": "Assicurati che il pacchetto «plasma-browser-integration» sia installato correttamente e che tu stia usando Plasma 5.13 o successivo."
     },
     "general_error_startup_failed_title": {
-        "message": "Failed to connect to the native host."
+        "message": "Impossibile connettersi con l'host nativo."
     },
     "general_error_startup_failed_wiki_link": {
-        "message": "Visit project wiki page for more information"
+        "message": "Consulta la pagina wiki del progetto per ulteriori informazioni"
     },
     "general_error_unknown": {
         "message": "Errore sconosciuto"
@@ -75,7 +75,7 @@
         "message": "Ti permette di controllare riproduttori video e audio presenti in siti web usando il plasmoide «Controllo multimediale»."
     },
     "options_plugin_mpris_media_sessions_description": {
-        "message": "Estrae metadati e miniature del contenuto in riproduzione (sperimentale)."
+        "message": "Estrae metadati e miniature del contenuto in riproduzione."
     },
     "options_plugin_mpris_media_sessions_title": {
         "message": "Controlli multimediali avanzati"
