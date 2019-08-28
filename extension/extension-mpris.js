@@ -136,10 +136,11 @@ addCallback("mpris", "setPlaybackRate", function (message) {
 
 // callbacks from a browser tab to our extension
 addRuntimeCallback("mpris", "playing", function (message, sender) {
-    // Before Firefox 67 it ran extensions in incognito mode by default
-    // so we disable media controls for them to prevent accidental private
+    // Before Firefox 67 it ran extensions in incognito mode by default.
+    // However, after the update the extension keeps running in incognito mode.
+    // So we keep disabling media controls for them to prevent accidental private
     // information leak on lock screen or now playing auto status in a messenger
-    if (!isNaN(firefoxVersion) && firefoxVersion < 67 && sender.tab.incognito) {
+    if (IS_FIREFOX && sender.tab.incognito) {
         return;
     }
 

@@ -50,8 +50,9 @@ addCallback("tabsrunner", "getTabs", function (message) {
         // remove incognito tabs and properties not in whitelist
         var filteredTabs = tabs;
 
-        // Firefox before 67 runs extensions in incognito by default, so exclude those tabs for it
-        if (!isNaN(firefoxVersion) && firefoxVersion < 67) {
+        // Firefox before 67 runs extensions in incognito by default
+        // but we keep running after an update, so exclude those tabs for it
+        if (IS_FIREFOX) {
             filteredTabs = filteredTabs.filter(function (tab) {
                 return !tab.incognito;
             });

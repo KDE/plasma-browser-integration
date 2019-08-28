@@ -25,9 +25,6 @@ let pendingMessageReplyResolvers = {};
 
 var storage = (IS_FIREFOX ? chrome.storage.local : chrome.storage.sync);
 
-let firefoxVersionMatch = navigator.userAgent.match(/Firefox\/(\d+)/)
-let firefoxVersion = firefoxVersionMatch ? Number(firefoxVersionMatch[1]) : NaN
-
 // Callback is called with following arguments (in that order);
 // - The actual message data/payload
 // - The name of the action triggered
