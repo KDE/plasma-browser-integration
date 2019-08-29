@@ -601,11 +601,8 @@ function loadMpris() {
 function loadMediaSessionsShim() {
     if (document.documentElement.tagName.toLowerCase() === "html") {
 
-        window.addEventListener("message", (e) => {
-            let data = e.data || {};
-            if (data.subsystem !== "mpris") {
-                return;
-            }
+        window.addEventListener("pbiMprisMessage", (e) => {
+            let data = e.detail || {};
 
             let action = data.action;
             let payload = data.payload;
@@ -661,11 +658,13 @@ function loadMediaSessionsShim() {
                 ${mediaSessionsClassName}.metadata = null;
                 ${mediaSessionsClassName}.playbackState = "none";
                 ${mediaSessionsClassName}.sendMessage = function(action, payload) {
-                    window.postMessage({
-                        subsystem: "mpris",
-                        action: action,
-                        payload: payload
+                    let event = new CustomEvent("pbiMprisMessage", {
+                        detail: {
+                            action: action,
+                            payload: payload
+                        }
                     });
+                    window.dispatchEvent(event);
                 };
                 ${mediaSessionsClassName}.executeCallback = function (action) {
                     let details = {
