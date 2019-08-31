@@ -1,24 +1,24 @@
 {
     "browseraction_title": {
-        "message": "Chyba Plasma Browser Integration"
+        "message": "Integrácia prehliadač Plasma"
     },
     "general_error_host_disconnected_title": {
-        "message": "Natívny host sa nečakane odpojil: $1"
+        "message": "Natívny host sa nečakane odpojil."
     },
     "general_error_not_supported_os": {
-        "message": "Toto rozšírenie nie je podporované na tomto operačnom systéme."
+        "message": "Toto rozšírenie je podporované iba v Linuxe a FreeBSD."
     },
     "general_error_not_supported_os_title": {
-        "message": "Toto rozšírenie nie je podporované na tomto operačnom systéme."
+        "message": "Nepodporovaný operačný systém"
     },
     "general_error_startup_failed": {
-        "message": "Make sure the 'plasma-browser-integration' package is installed correctly and that you are running Plasma 5.13 or later."
+        "message": "Uistite sa, že balík 'plasma-browser-integration' je správne nainštalovaný a beží vám Plasma 5.13 alebo novšia."
     },
     "general_error_startup_failed_title": {
-        "message": "Failed to connect to the native host."
+        "message": "Zlyhalo pripojenie k natívnemu hostiteľovi."
     },
     "general_error_startup_failed_wiki_link": {
-        "message": "Visit project wiki page for more information"
+        "message": "Navštívte wiki stránku projektu pre viac informácií"
     },
     "general_error_unknown": {
         "message": "Neznáma chyba"
@@ -75,7 +75,7 @@
         "message": "Umožnuje vám ovládať hudobné a video prehrávače na internetových stránkach pomocou Plasmoidu Ovládač medií."
     },
     "options_plugin_mpris_media_sessions_description": {
-        "message": "Extrahovať metadáta a náhľady aktuálne prehľadávaného obsahu. "
+        "message": "Extrahovať metadáta a náhľady aktuálne prehrávaného obsahu."
     },
     "options_plugin_mpris_media_sessions_title": {
         "message": "Vylepšené ovládače médií"

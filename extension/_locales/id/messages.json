@@ -1,24 +1,24 @@
 {
     "browseraction_title": {
-        "message": "Plasma Browser Integration, Error"
+        "message": "Integrasi Browser Plasma"
     },
     "general_error_host_disconnected_title": {
-        "message": "Host bawaan terdiskoneksi secara tiba-tiba: $1"
+        "message": "Host native terdiskoneksi secara tiba-tiba."
     },
     "general_error_not_supported_os": {
-        "message": "Ekstensi ini tidaklah didukung pada operasi sitem ini."
+        "message": "Ekstensi ini hanyalah didukung pada Linux dan FreeBSD."
     },
     "general_error_not_supported_os_title": {
-        "message": "Ekstensi ini tidaklah didukung pada operasi sitem ini."
+        "message": "Operasi sistem tak didukung"
     },
     "general_error_startup_failed": {
-        "message": "Make sure the 'plasma-browser-integration' package is installed correctly and that you are running Plasma 5.13 or later."
+        "message": "Pastikan paket 'plasma-browser-integration' telah terinstal dengan benar dan pastikan bahwa kamu menjalankan Plasma 5.13 atau lebih baru."
     },
     "general_error_startup_failed_title": {
-        "message": "Failed to connect to the native host."
+        "message": "Gagal mengkoneksikan ke host native."
     },
     "general_error_startup_failed_wiki_link": {
-        "message": "Visit project wiki page for more information"
+        "message": "Kunjungi halaman wiki projek untuk informasi selebihnya"
     },
     "general_error_unknown": {
         "message": "Error Takdiketahui"
@@ -75,7 +75,7 @@
         "message": "Segera kamu kendalikan pemutar audio dan video dalam website menggunakan plasmoid Media Controller."
     },
     "options_plugin_mpris_media_sessions_description": {
-        "message": "Ekstrak metadata dan gambar-mini pada konten yang diputar baru-baru ini. "
+        "message": "Ekstrak metadata dan gambar-mini pada konten yang diputar barusan."
     },
     "options_plugin_mpris_media_sessions_title": {
         "message": "Kendali Media Yang Ditingkatkan"
