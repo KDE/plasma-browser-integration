@@ -1,24 +1,24 @@
 {
     "browseraction_title": {
-        "message": "Ошибка интеграции браузера с Plasma"
+        "message": "Интеграция браузера с Plasma"
     },
     "general_error_host_disconnected_title": {
-        "message": "Неожиданное завершение главного процесса: $1"
+        "message": "Неожиданное завершение главного процесса."
     },
     "general_error_not_supported_os": {
-        "message": "Данное расширение не поддерживается на вашей операционной системе."
+        "message": "Данное расширение поддерживается только в ОС Linux и FreeBSD."
     },
     "general_error_not_supported_os_title": {
-        "message": "Данное расширение не поддерживается на вашей операционной системе."
+        "message": "Неподдерживаемая операционная система"
     },
     "general_error_startup_failed": {
-        "message": "Make sure the 'plasma-browser-integration' package is installed correctly and that you are running Plasma 5.13 or later."
+        "message": "Проверьте правильность установки пакета «plasma-browser-integration». Выполняемая среда окружения рабочего стола Plasma должна быть не младше версии 5.13."
     },
     "general_error_startup_failed_title": {
-        "message": "Failed to connect to the native host."
+        "message": "Не удалось подключиться к главному процессу."
     },
     "general_error_startup_failed_wiki_link": {
-        "message": "Visit project wiki page for more information"
+        "message": "Дополнительная информация доступна на вики-сайте проекта"
     },
     "general_error_unknown": {
         "message": "Неизвестная ошибка"
@@ -75,7 +75,7 @@
         "message": "Позволяет управлять воспроизведением аудио и видео на сайтах, используя виджет «Управление медиапроигрывателем»."
     },
     "options_plugin_mpris_media_sessions_description": {
-        "message": "Извлекать метаданные и миниатюры из проигрываемого содержимого (экспериментальная функция)."
+        "message": "Извлекать метаданные и миниатюры из проигрываемого содержимого."
     },
     "options_plugin_mpris_media_sessions_title": {
         "message": "Расширенное управление мультимедиа"
