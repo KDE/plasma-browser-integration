@@ -27,6 +27,7 @@
 #include <QDateTime>
 #include <QJsonObject>
 
+#include <KFileMetaData/UserMetaData>
 #include <KLocalizedString>
 
 #include <KIO/Global>
@@ -112,6 +113,11 @@ void DownloadJob::update(const QJsonObject &payload)
     it = payload.constFind(QStringLiteral("mime"));
     if (it != end) {
         m_mimeType = it->toString();
+    }
+
+    it = payload.constFind(QStringLiteral("incognito"));
+    if (it != end) {
+        m_incognito = it->toBool();
     }
 
     it = payload.constFind(QStringLiteral("totalBytes"));
@@ -230,6 +236,10 @@ void DownloadJob::update(const QJsonObject &payload)
         if (state == QLatin1String("complete")) {
             setError(KJob::NoError);
             setProcessedAmount(KJob::Files, 1);
+
+            // Write origin url into extended file attributes
+            saveOriginUrl();
+
             emitResult();
             return;
         }
@@ -242,4 +252,27 @@ void DownloadJob::updateDescription()
         qMakePair<QString, QString>(i18nc("The URL being downloaded", "Source"), (m_finalUrl.isValid() ? m_finalUrl : m_url).toDisplayString()),
         qMakePair<QString, QString>(i18nc("The location being downloaded to", "Destination"), m_destination.toLocalFile())
     );
+}
+
+void DownloadJob::saveOriginUrl()
+{
+    if (m_incognito
+        // Blob URLs are dynamically created through JavaScript and cannot be accessed from the outside
+        || m_finalUrl.scheme() == QLatin1String("blob")) {
+        return;
+    }
+
+    const QJsonObject settings = Settings::self().settingsForPlugin(QStringLiteral("downloads"));
+
+    const bool saveOriginUrl = settings.value(QStringLiteral("saveOriginUrl")).toBool();
+    if (!saveOriginUrl) {
+        return;
+    }
+
+    KFileMetaData::UserMetaData md(m_fileName);
+
+    QUrl url = m_finalUrl;
+    url.setPassword(QString());
+
+    md.setOriginUrl(url);
 }

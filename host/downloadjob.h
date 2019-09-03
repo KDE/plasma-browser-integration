@@ -60,6 +60,7 @@ protected:
 
 private:
     void updateDescription();
+    void saveOriginUrl();
 
     int m_id = -1;
 
@@ -71,5 +72,8 @@ private:
     QString m_fileName;
 
     QString m_mimeType;
+
+    // In doubt, assume incognito
+    bool m_incognito = true;
 
 };

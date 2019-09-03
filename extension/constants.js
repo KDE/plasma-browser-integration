@@ -27,7 +27,8 @@ DEFAULT_EXTENSION_SETTINGS = {
         enabled: true
     },
     downloads: {
-        enabled: true
+        enabled: true,
+        saveOriginUrl: false
     },
     tabsrunner: {
         enabled: true

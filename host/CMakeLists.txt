@@ -27,6 +27,7 @@ target_link_libraries(
     KF5::Crash
     KF5::I18n
     KF5::KIOCore
+    KF5::FileMetaData
 )
 
 install(TARGETS plasma-browser-integration-host ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
