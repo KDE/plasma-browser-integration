@@ -43,7 +43,7 @@ function loadSettings(cb) {
             return;
         }
 
-        for (var key in items) {
+        for (let key in items) {
             if (!items.hasOwnProperty(key)) {
                 continue;
             }
@@ -70,9 +70,13 @@ function loadSettings(cb) {
                     }
                 }
 
+                updateDependencies(control, key, settingsKey);
+
                 control.addEventListener("change", () => {
                     let saveMessage = document.getElementById("save-message");
                     saveMessage.innerText = "";
+
+                    updateDependencies(control, key, settingsKey);
 
                     saveSettings((error) => {
                         if (error) {
@@ -147,6 +151,21 @@ function saveSettings(cb) {
     }
 }
 
+function updateDependencies(control, extension, settingsKey) {
+    // Update all depending controls
+    let value = control.type === "checkbox" ? control.checked : control.value;
+    if (value === true) {
+        value = "TRUE";
+    } else if (value === false) {
+        value = "FALSE";
+    }
+
+    let dependencies = document.querySelectorAll("[data-depends-extension=" + extension + "][data-depends-settings-key=" + settingsKey + "]");
+    for (let dependency of dependencies) {
+        dependency.disabled = (value != dependency.dataset.dependsSettingsValue);
+    }
+}
+
 document.addEventListener("DOMContentLoaded", function () {
 
     // poor man's tab widget :)
@@ -186,14 +205,7 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        loadSettings(function () {
-            var mpris = document.querySelector("[data-extension=mpris]");
-            var mprisEx = document.querySelector("[data-extension=mprisMediaSessions]");
-            mpris.addEventListener("change", function() {
-                mprisEx.disabled = !mpris.checked;
-            });
-            mprisEx.disabled = !mpris.checked;
-        });
+        loadSettings();
 
         // When getSubsystemStatus fails we assume it's an old host without any of the new features
         // for which we added the requires-extension attributes. Disable all of them initially
