@@ -747,8 +747,8 @@ function loadMediaSessionsShim() {
         // mechanism. Let's see how this goes :D
 
         executeScript(`function() {
-                var oldCreateElement = document.createElement;
-                document.createElement = function () {
+                var oldCreateElement = Document.prototype.createElement;
+                Document.prototype.createElement = function() {
                     var createdTag = oldCreateElement.apply(this, arguments);
 
                     var tagName = arguments[0];
