@@ -62,6 +62,12 @@
     "options_plugin_breezeScrollBars_title": {
         "message": "Usar barras de desprazamento co estilo de Breeze."
     },
+    "options_plugin_downloads_saveOriginUrl": {
+        "message": "Save URL a file was downloaded from in the file's attributes"
+    },
+    "options_plugin_downloads_saveOriginUrl_description": {
+        "message": "Note: The URL may contain sensitive information that could be disclosed when the file is accessible by or shared with others"
+    },
     "options_plugin_downloads_title": {
         "message": "Mostrar as descargas na área de notificación."
     },
