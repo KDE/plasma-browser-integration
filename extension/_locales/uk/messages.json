@@ -63,10 +63,10 @@
         "message": "Смужки гортання у стилі Breeze"
     },
     "options_plugin_downloads_saveOriginUrl": {
-        "message": "Save URL a file was downloaded from in the file's attributes"
+        "message": "Зберегти адресу, звідки було завантажено файл, у атрибутах файла"
     },
     "options_plugin_downloads_saveOriginUrl_description": {
-        "message": "Note: The URL may contain sensitive information that could be disclosed when the file is accessible by or shared with others"
+        "message": "Зауваження: у адресі можуть міститися конфіденційні дані, які може бути розкрито, якщо відкрити доступ до файла іншим користувачам або поділитися ним."
     },
     "options_plugin_downloads_title": {
         "message": "Показувати отримання даних у області сповіщення"

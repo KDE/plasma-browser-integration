@@ -63,10 +63,10 @@
         "message": "Bruk rullefelt med Breeze-stil"
     },
     "options_plugin_downloads_saveOriginUrl": {
-        "message": "Save URL a file was downloaded from in the file's attributes"
+        "message": "Lagra nettadressa som filer vert lasta ned frå i filattributta"
     },
     "options_plugin_downloads_saveOriginUrl_description": {
-        "message": "Note: The URL may contain sensitive information that could be disclosed when the file is accessible by or shared with others"
+        "message": "Merk: Nettadressa kan innehalda sensitiv informasjon, som andre kan få tilgang til når du deler fila med dei."
     },
     "options_plugin_downloads_title": {
         "message": "Vis nedlastingar i varslingsområde"

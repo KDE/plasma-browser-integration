@@ -63,10 +63,10 @@
         "message": "Usar as barras de deslocamento do Brisa"
     },
     "options_plugin_downloads_saveOriginUrl": {
-        "message": "Save URL a file was downloaded from in the file's attributes"
+        "message": "Gravar o URL de onde foi transferido o ficheiro nos atributos do mesmo"
     },
     "options_plugin_downloads_saveOriginUrl_description": {
-        "message": "Note: The URL may contain sensitive information that could be disclosed when the file is accessible by or shared with others"
+        "message": "Nota: O URL poderá conter informação importante que poderia ser divulgada caso o ficheiro estivesse acessível ou partilhado com outros"
     },
     "options_plugin_downloads_title": {
         "message": "Mostrar as transferências na área de notificações"
