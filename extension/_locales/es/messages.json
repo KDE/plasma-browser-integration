@@ -63,10 +63,10 @@
         "message": "Usar las barras de desplazamiento del estilo Brisa"
     },
     "options_plugin_downloads_saveOriginUrl": {
-        "message": "Save URL a file was downloaded from in the file's attributes"
+        "message": "Guardar el URL de donde se ha descargado un archivo en los atributos del archivo"
     },
     "options_plugin_downloads_saveOriginUrl_description": {
-        "message": "Note: The URL may contain sensitive information that could be disclosed when the file is accessible by or shared with others"
+        "message": "Nota: El URL puede contener información sensible que se puede descubrir al hacerlo accesible o al compartirlo con otros"
     },
     "options_plugin_downloads_title": {
         "message": "Mostrar las descargas en el área de notificaciones"

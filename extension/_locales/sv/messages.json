@@ -63,10 +63,10 @@
         "message": "Använd Breeze-liknande rullningslister"
     },
     "options_plugin_downloads_saveOriginUrl": {
-        "message": "Save URL a file was downloaded from in the file's attributes"
+        "message": "Spara webbadress som en fil laddades ner från i filens egenskaper"
     },
     "options_plugin_downloads_saveOriginUrl_description": {
-        "message": "Note: The URL may contain sensitive information that could be disclosed when the file is accessible by or shared with others"
+        "message": "Observera: Webbadressen kan innehålla känslig information som kan avslöjas när filen kan kommas åt av andra eller delas med andra"
     },
     "options_plugin_downloads_title": {
         "message": "Visa nerladdningar i underrättelseområdet"
