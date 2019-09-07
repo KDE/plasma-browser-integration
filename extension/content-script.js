@@ -154,6 +154,9 @@ var players = [];
 
 var pendingSeekingUpdate = 0;
 
+var titleTagObserver = null;
+var oldPageTitle = "";
+
 addCallback("mpris", "play", function () {
     playerPlay();
 });
@@ -325,6 +328,33 @@ function setPlayerActive(player) {
         fullscreen: document.fullscreenElement !== null,
         canSetFullscreen: player.tagName.toLowerCase() === "video"
     });
+
+    if (!titleTagObserver) {
+
+        // Observe changes to the <title> tag in case it is updated after the player has started playing
+        let titleTag = document.querySelector("head > title");
+        if (titleTag) {
+            oldPageTitle = titleTag.innerText;
+
+            titleTagObserver = new MutationObserver((mutations) => {
+                mutations.forEach((mutation) => {
+                    const pageTitle = mutation.target.textContent;
+                    if (pageTitle && oldPageTitle !== pageTitle) {
+                        sendMessage("mpris", "titlechange", {
+                            pageTitle: pageTitle
+                        });
+                    }
+                    oldPageTitle = pageTitle;
+                });
+            });
+
+            titleTagObserver.observe(titleTag, {
+                childList: true, // text content is technically a child node
+                subtree: true,
+                characterData: true
+            });
+        }
+    }
 }
 
 function sendPlayerGone() {
@@ -338,6 +368,11 @@ function sendPlayerGone() {
     playerMetadata = {};
     playerCallbacks = [];
     sendMessage("mpris", "gone");
+
+    if (titleTagObserver) {
+        titleTagObserver.disconnect();
+        titleTagObserver = null;
+    }
 }
 
 function sendPlayerInfo(player, event, payload) {
@@ -540,29 +575,6 @@ function loadMpris() {
         childList: true,
         subtree: true
     });
-
-    // Observe changes to the <title> tag in case it is updated after the player has started playing
-    var titleTag = document.querySelector("head > title");
-    let oldPageTitle = "";
-    if (titleTag) {
-        var titleObserver = new MutationObserver(function (mutations) {
-            mutations.forEach(function (mutation) {
-                var pageTitle = mutation.target.textContent;
-                if (pageTitle && oldPageTitle !== pageTitle) {
-                    sendMessage("mpris", "titlechange", {
-                        pageTitle: pageTitle
-                    });
-                }
-                oldPageTitle = pageTitle;
-            });
-        });
-
-        titleObserver.observe(titleTag, {
-            childList: true, // text content is technically a child node
-            subtree: true,
-            characterData: true
-        });
-    }
 
     window.addEventListener("beforeunload", function () {
         // about to navigate to a different page, tell our extension that the player will be gone shortly
