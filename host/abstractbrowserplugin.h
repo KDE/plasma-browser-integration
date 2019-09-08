@@ -35,8 +35,6 @@ public:
     QString subsystem() const;
     int protocolVersion() const;
 
-    virtual void onSettingsChanged(const QJsonObject &newSettings);
-
     bool isLoaded() const;
     // FIXME this should not be public but we need to change it from main.cpp
     void setLoaded(bool loaded);
@@ -57,6 +55,8 @@ protected:
 
     virtual bool onLoad();
     virtual bool onUnload();
+
+    virtual void onSettingsChanged(const QJsonObject &newSettings);
 
     void sendData(const QString &action, const QJsonObject &payload = QJsonObject());
 
