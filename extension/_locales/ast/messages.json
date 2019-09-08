@@ -1,15 +1,15 @@
 {
     "browseraction_title": {
-        "message": "Axustes de la integración con Plasma"
+        "message": "Integración del restolador con Plasma"
     },
     "general_error_host_disconnected_title": {
-        "message": "L'agospiu nativu desconeutóse inesperadamente: $1"
+        "message": "L'agospiu nativu desconeutóse inesperadamente."
     },
     "general_error_not_supported_os": {
-        "message": "Esta estensión nun ta sofitada nesti sistema operativu."
+        "message": "Esta estensión namái se sofita en GNU/Linux y FreeBSD."
     },
     "general_error_not_supported_os_title": {
-        "message": "Esta estensión nun ta sofitada nesti sistema operativu."
+        "message": "Nun se sofita esti sistema operativu."
     },
     "general_error_startup_failed": {
         "message": "Make sure the 'plasma-browser-integration' package is installed correctly and that you are running Plasma 5.13 or later."
@@ -18,7 +18,7 @@
         "message": "Failed to connect to the native host."
     },
     "general_error_startup_failed_wiki_link": {
-        "message": "Visit project wiki page for more information"
+        "message": "Visita la páxina wiki del proyeutu pa más información"
     },
     "general_error_unknown": {
         "message": "Unknown Error"
@@ -39,16 +39,16 @@
         "message": "Esta estensión creóla la <a href=\"$1\">comunidá de KDE</a> y pues alcontrar más información tocante a esti proyeutu na <a href=\"$2\">wiki de so</a>."
     },
     "options_about_donate": {
-        "message": "If you like what you saw, please consider <a href=\"$1\">donating to KDE</a>, so we can continue to make the best free software possible."
+        "message": "Si te presta lo que ves, considera <a href=\"$1\">donar a KDE</a> pa que podamos siguir faciendo'l meyor software llibre prosible."
     },
     "options_about_kde": {
-        "message": "KDE ye una comunidá global d'inxenieros de software, artistes, escritores, traductores, creadores que tán comprometíos col desendolcu de <a href=\"$1\">software llibre</a> y una empresa coperativa, denguna entidá contola la direición o productos de so. Somos los creadores del entornu d'escritoriu Plasma, cientos d'aplicaciones y munches biblioteques de software que les sofiten, amás preferimos trabayar xuntos p'algamar la meta común de facer el meyor software llibre del mundu. Dámos-yos l'acoyida a toles persones que quieran <a href=\"$2\">xunise y collaborar</a> en KDE incluyéndote a ti. Visita <a href=\"$3\">$3</a> pa más información tocante a la comunidá de KDE y el software que producimos."
+        "message": "KDE ye una comunidá global d'inxenieros de software, artistes, escritores, traductores, creadores que tán comprometíos col desendolcu de <a href=\"$1\">software llibre</a> y una empresa coperativa (denguna entidá contola la direición o productos de so). Somos los creadores del entornu d'escritoriu Plasma, cientos d'aplicaciones y munches biblioteques de software que les sofiten, amás preferimos trabayar xuntos p'algamar la meta común de facer el meyor software llibre del mundu. Dámos-yos l'acoyida a toles persones que quieran <a href=\"$2\">xunise y collaborar</a> en KDE incluyéndote a ti. Visita <a href=\"$3\">$3</a> pa más información tocante a la comunidá de KDE y el software que producimos."
     },
     "options_about_license": {
         "message": "Llicencia: <a href=\"$1\">GNU General Public License Version 3</a>"
     },
     "options_about_translated_by": {
-        "message": "Translated by: $1"
+        "message": "Traducción fecha por $1"
     },
     "options_about_translators": {
         "message": "Softastur"
@@ -60,7 +60,7 @@
         "message": "This may interfere with the appearance of websites that already apply a custom styling to their scroll bars."
     },
     "options_plugin_breezeScrollBars_title": {
-        "message": "Use Breeze-style scroll bars"
+        "message": "Barres de desplazamientu col estilu Breeze"
     },
     "options_plugin_downloads_saveOriginUrl": {
         "message": "Save URL a file was downloaded from in the file's attributes"
@@ -75,13 +75,13 @@
         "message": "Nos enllaces, amiesta una entrada nel menú contestual pa permitite unvialos a otros preseos empareyaos usando <a href=\" $1\">KDE Connect</a>."
     },
     "options_plugin_kdeconnect_title": {
-        "message": "Send via KDE Connect"
+        "message": "Unviu per KDE Connect"
     },
     "options_plugin_mpris_description": {
         "message": "Déxate controlar los reproductores de los sitios web usando'l plasmoide de Mandu multimedia."
     },
     "options_plugin_mpris_media_sessions_description": {
-        "message": "Estrái los metadatos y miniatures del conteníu que tea reproduciéndose. "
+        "message": "Estrái los metadatos y miniatures del conteníu que tea reproduciéndose."
     },
     "options_plugin_mpris_media_sessions_title": {
         "message": "Controles multimedia ameyoraos"
@@ -111,6 +111,6 @@
         "message": "Axustes de la integración con Plasma"
     },
     "store_description": {
-        "message": "Multitask efficiently by controlling browser functions from the desktop, even while Chrome is in the background. Manage audio and video playback, check downloads in the notification area, send files to your phone using KDE Connect and more inside the KDE Plasma Desktop!\\n\\nThe plasma-browser-integration package must be installed for this extension to work. It should be available from your distribution's package manager when running Plasma 5.13 or later.\\n\\nNOTE: This extension is not supported on Debian."
+        "message": "Multixera eficiente controlando les funciones del restolador dende l'escritoriu magar que tea en segundu planu. Xestiona la reproducción d'audiu y videu, comprueba les descargues nel área d'avisos, unvia ficheros a otros preseos qu'usen KDE Connect y muncho más dientro de KDE Plasma.\\nEl paquete plasma-browser-integration ha tar instaláu pa qu'esta estensión funcione. Debería tar disponible nel xestor de paquetes de la to distribución al executar Plasma 5.13 o mayor.\\nNOTA: Esta estensión nun ta sofitada en Debian."
     }
 }
