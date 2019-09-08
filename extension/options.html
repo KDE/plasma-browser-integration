@@ -72,6 +72,26 @@
             </label>
             <p data-i18n="options_plugin_tabsrunner_description, open-krunner-settings, #" data-i18n-html="true">I18N</p>
         </li>
+        <li data-requires-extension="mediaquery">
+            <label>
+                <input type="checkbox" data-extension="mediaquery" data-settings-key="enabled"> <span data-i18n="options_plugin_mediaquery_title">I18N</span>
+            </label>
+            <p>
+                <span data-i18n="options_plugin_mediaquery_colorscheme_description">I18N</span>
+                <select data-extension="mediaquery" data-settings-key="colorScheme">
+                    <option value="automatic" data-i18n="options_automatic" selected>I18N</option>
+                    <option value="light" data-i18n="options_theme_light">I18N</option>
+                    <option value="dark" data-i18n="options_theme_dark">I18N</option>
+                </select>
+                <br>
+                <span data-i18n="options_plugin_mediaquery_reducedmotion_description">I18N</span>
+                <select data-extension="mediaquery" data-settings-key="reducedMotion">
+                    <option value="automatic" data-i18n="options_automatic" selected>I18N</option>
+                    <option value="TRUE" data-i18n="options_enabled">I18N</option>
+                    <option value="FALSE" data-i18n="options_disabled">I18N</option>
+                </select>
+            </p>
+        </li>
         <li data-not-show-in="firefox">
             <label>
                 <input type="checkbox" data-extension="breezeScrollBars" data-settings-key="enabled"> <span data-i18n="options_plugin_breezeScrollBars_title">I18N</span>

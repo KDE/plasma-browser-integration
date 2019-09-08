@@ -62,6 +62,14 @@ storage.get(DEFAULT_EXTENSION_SETTINGS, function (items) {
             loadMediaSessionsShim();
         }
     }
+    if (items.mediaquery.enabled) {
+        mediaQueryConfiguredScheme = items.mediaquery.colorScheme || "automatic";
+        mediaQueryConfiguredMotion = "automatic";
+        if (typeof items.mediaquery.reducedMotion === "boolean") {
+            mediaQueryConfiguredMotion = items.mediaquery.reducedMotion;
+        }
+        loadMediaQuery();
+    }
 });
 
 // BREEZE SCROLL BARS
@@ -831,6 +839,114 @@ function loadMediaSessionsShim() {
                     return createdAudio;
                 };
             }`);
+        }
+    }
+}
+
+// MEDIA QUERY API
+// ------------------------------------------------------------------------
+//
+var mediaQueryLoaded = false;
+var mediaQueryConfiguredScheme = "automatic";
+var mediaQueryCurrentScheme = "";
+var mediaQueryConfiguredMotion = "automatic";
+var mediaQueryCurrentScheme = "";
+
+var colorSchemeStyleTag = null;
+
+addCallback("mediaquery", "currentScheme", (message) => {
+    if (mediaQueryConfiguredScheme !== "automatic") {
+        return;
+    }
+
+    mediaQueryCurrentScheme = message;
+    applyMediaQuery();
+});
+
+// TODO get setting from system
+
+function loadMediaQuery() {
+    if (mediaQueryLoaded) {
+        return;
+    }
+
+    mediaQueryLoaded = true;
+
+    if (mediaQueryConfiguredScheme === "automatic") {
+        sendMessage("mediaquery", "getCurrentScheme").then((scheme) => {
+            mediaQueryCurrentScheme = scheme;
+            applyMediaQuery();
+        });
+        return;
+    }
+
+    if (mediaQueryConfiguredScheme === "light" || mediaQueryConfiguredScheme === "dark") {
+        applyMediaQuery();
+    }
+}
+
+function unloadMediaQuery() {
+    if (!mediaQueryLoaded) {
+        return;
+    }
+
+    mediaQueryLoaded = false;
+    applyMediaQuery();
+}
+
+function applyMediaQuery() {
+    if (colorSchemeStyleTag) {
+        colorSchemeStyleTag.parentNode.removeChild(colorSchemeStyleTag);
+        colorSchemeStyleTag = null;
+    }
+
+    if (!mediaQueryLoaded) {
+        return;
+    }
+
+    let effectiveColorScheme = (mediaQueryConfiguredScheme === "automatic" ? mediaQueryCurrentScheme : mediaQueryConfiguredScheme);
+    let effectiveReducedMotion = (mediaQueryConfiguredMotion === "automatic" ? mediaQueryConfiguredMotion : mediaQueryConfiguredMotion);
+
+    let prefersColorSchemeRegExp = new RegExp("\\(prefers-color-scheme: " + effectiveColorScheme + "\\)", "gi");
+    let prefersReducedMotionRegExp = new RegExp("\\(prefers-reduced-motion: reduce\\)", "gi");
+
+    for (let styleSheet of document.styleSheets) {
+        // Same origin policy might prevent access to cssRules, ignore this
+        try {
+            for (let cssRule of styleSheet.cssRules) {
+                if (cssRule.type !== CSSRule.MEDIA_RULE || !cssRule.media) {
+                    continue;
+                }
+
+                let mediaText = cssRule.media.mediaText;
+
+                if (!mediaText.match(prefersColorSchemeRegExp)
+                    && !mediaText.match(prefersReducedMotionRegExp)) {
+                    continue;
+                }
+
+                if (!colorSchemeStyleTag) {
+                    colorSchemeStyleTag = document.createElement("style");
+                    colorSchemeStyleTag.appendChild(document.createTextNode("")); // webkit workaround
+                    // Must append immediately, otherwise colorSchemeStyleTag.sheet is null
+                    document.head.appendChild(colorSchemeStyleTag);
+                }
+
+                let newRuleIndex = colorSchemeStyleTag.sheet.insertRule(cssRule.cssText);
+
+                let newRule = colorSchemeStyleTag.sheet.cssRules[newRuleIndex];
+
+                newRule.media.mediaText = newRule.media.mediaText.replace(prefersColorSchemeRegExp, "all");
+
+                if (effectiveReducedMotion === true) {
+                    newRule.media.mediaText = newRule.media.mediaText.replace(prefersReducedMotionRegExp, "all");
+                }
+
+                // Just in case it matched both preferences, "all and all" is not a valid query
+                newRule.media.mediaText = newRule.media.mediaText.replace(/all and all/gi, "all");
+            }
+        } catch (e) {
+            console.warn("Failed to apply media queries to stylesheet:", e);
         }
     }
 }

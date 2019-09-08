@@ -33,6 +33,11 @@ DEFAULT_EXTENSION_SETTINGS = {
     tabsrunner: {
         enabled: true
     },
+    mediaquery: {
+        enabled: false,
+        colorScheme: "automatic",
+        reducedMotion: "automatic"
+    },
     breezeScrollBars: {
         // this breaks pages in interesting ways, disable by default
         enabled: false

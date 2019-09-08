@@ -28,6 +28,7 @@
         "extension-mpris.js",
         "extension-downloads.js",
         "extension-tabsrunner.js",
+        "extension-mediaquery.js",
 
         "extension.js"
     ],
