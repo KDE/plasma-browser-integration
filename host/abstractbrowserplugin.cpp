@@ -111,10 +111,6 @@ bool AbstractBrowserPlugin::isLoaded() const
 
 void AbstractBrowserPlugin::setLoaded(bool loaded)
 {
-    if (m_loaded == loaded) {
-        return;
-    }
-
     m_loaded = loaded;
 }
 
