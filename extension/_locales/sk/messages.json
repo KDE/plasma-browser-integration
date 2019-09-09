@@ -63,10 +63,10 @@
         "message": "Pouužívať posúvače v štýle Vánok"
     },
     "options_plugin_downloads_saveOriginUrl": {
-        "message": "Save URL a file was downloaded from in the file's attributes"
+        "message": "Uložiť adresu URL, z ktorej bol súbor stiahnutý do atribútov súboru"
     },
     "options_plugin_downloads_saveOriginUrl_description": {
-        "message": "Note: The URL may contain sensitive information that could be disclosed when the file is accessible by or shared with others"
+        "message": "Poznámka: URL môže obsahovať citlivé informácie, ktoré by mohli byť zverejnené, keď je súbor prístupný alebo zdieľaný ostatnými"
     },
     "options_plugin_downloads_title": {
         "message": "Zobraziť preberania v notifikačnej oblasti"

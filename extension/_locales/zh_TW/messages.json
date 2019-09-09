@@ -1,24 +1,24 @@
 {
     "browseraction_title": {
-        "message": "Plasma 瀏覽器整合錯誤"
+        "message": "Plasma 瀏覽器整合"
     },
     "general_error_host_disconnected_title": {
-        "message": "原生主機非預期地斷線：$1"
+        "message": "原生主機非預期地斷線。"
     },
     "general_error_not_supported_os": {
-        "message": "這個擴充套件不被此作業系統支援。"
+        "message": "這個擴充套件僅支援 Linux 及 FreeBSD。"
     },
     "general_error_not_supported_os_title": {
-        "message": "這個擴充套件不被此作業系統支援。"
+        "message": "不支援的作業系統"
     },
     "general_error_startup_failed": {
-        "message": "Make sure the 'plasma-browser-integration' package is installed correctly and that you are running Plasma 5.13 or later."
+        "message": "請確保已正確安裝 'plasma-browser-integration' 軟體包，且執行 Plasma 5.13 或更新版本。"
     },
     "general_error_startup_failed_title": {
-        "message": "Failed to connect to the native host."
+        "message": "無法連線至原生主機。"
     },
     "general_error_startup_failed_wiki_link": {
-        "message": "Visit project wiki page for more information"
+        "message": "造訪專案 wiki 頁面取得更多資訊"
     },
     "general_error_unknown": {
         "message": "未知錯誤"
@@ -63,10 +63,10 @@
         "message": "使用 Breeze 樣式的滾動列"
     },
     "options_plugin_downloads_saveOriginUrl": {
-        "message": "Save URL a file was downloaded from in the file's attributes"
+        "message": "在檔案屬性儲存檔案的下載網址"
     },
     "options_plugin_downloads_saveOriginUrl_description": {
-        "message": "Note: The URL may contain sensitive information that could be disclosed when the file is accessible by or shared with others"
+        "message": "註：網址可能會包含敏感資訊，可能會在檔案可供他人存取 (或與他人分享) 時遭洩漏。"
     },
     "options_plugin_downloads_title": {
         "message": "在通知區域顯示下載項目"
@@ -81,7 +81,7 @@
         "message": "讓您使用媒體控制器 plasmoid 控制網頁中的視訊與音訊播放器。"
     },
     "options_plugin_mpris_media_sessions_description": {
-        "message": "從目前播放的內容擷取中繼資料與縮圖。（實驗性）"
+        "message": "從目前播放的內容擷取中繼資料與縮圖。"
     },
     "options_plugin_mpris_media_sessions_title": {
         "message": "強化的媒體控制"
