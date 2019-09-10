@@ -66,7 +66,7 @@
         "message": "Save URL a file was downloaded from in the file's attributes"
     },
     "options_plugin_downloads_saveOriginUrl_description": {
-        "message": "Note: The URL may contain sensitive information that could be disclosed when the file is accessible by or shared with others"
+        "message": "Detalhe: O URL pode conter informações delicadas que podem ser expostas quando o arquivo está acessível ou compartilhado com outras pessoas"
     },
     "options_plugin_downloads_title": {
         "message": "Exibir downloads na área de notificação"

@@ -12,7 +12,7 @@
         "message": "不支援的作業系統"
     },
     "general_error_startup_failed": {
-        "message": "請確保已正確安裝 'plasma-browser-integration' 軟體包，且執行 Plasma 5.13 或更新版本。"
+        "message": "請確保已正確安裝 'plasma-browser-integration' 軟體包，且執行 Plasma 5.13 或更"
     },
     "general_error_startup_failed_title": {
         "message": "無法連線至原生主機。"
@@ -66,7 +66,7 @@
         "message": "在檔案屬性儲存檔案的下載網址"
     },
     "options_plugin_downloads_saveOriginUrl_description": {
-        "message": "註：網址可能會包含敏感資訊，可能會在檔案可供他人存取 (或與他人分享) 時遭洩漏。"
+        "message": "註：網址可能會包含敏感資訊，可能會在檔案可供他人存取 (或與他人分享) 時遭洩"
     },
     "options_plugin_downloads_title": {
         "message": "在通知區域顯示下載項目"
