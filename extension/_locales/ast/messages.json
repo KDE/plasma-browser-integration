@@ -30,7 +30,7 @@
         "message": "Abrir per KDE Connect"
     },
     "options_about_bugs": {
-        "message": "If you find an issue, please check the <a href=\"$1\">list of open bugs</a> and then <a href=\"$2\">file a bug report</a>."
+        "message": "Si alcuentres un fallu, comprueba la <a href=\"$1\">llista de fallos abiertos</a> y <a href=\"$2\">rellena un informe</a> darréu."
     },
     "options_about_copyright": {
         "message": "© 2017-2019 Kai Uwe Broulik y David Edmundson"
