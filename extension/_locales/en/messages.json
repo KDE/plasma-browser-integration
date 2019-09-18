@@ -80,6 +80,15 @@
         "message": "Make sure the “Browser Tabs” module is enabled in <a id=\"$1\" href=\"$2\">Plasma Search settings</a>."
     },
 
+    "options_plugin_purpose_title": {
+        "description": "Title for Purpose / Web Share plugin",
+        "message": "Content Sharing"
+    },
+    "options_plugin_purpose_description": {
+        "description": "Description for Purpose / Web Share plugin",
+        "message": "Adds a \"Share...\" context menu entry and allows websites to open a dialog for sharing contents using the Web Share API."
+    },
+
     "options_plugin_breezeScrollBars_title": {
         "description": "Title for Breeze style scroll bars plugin",
         "message": "Use Breeze-style scroll bars"
@@ -123,6 +132,27 @@
     "kdeconnect_open_device": {
         "description": "Context menu, open link on device $1, similar to 'Open in New Tab'",
         "message": "Open on '$1'"
+    },
+
+    "purpose_share": {
+        "description": "Context menu, share link or page via Purpose framework",
+        "message": "Share..."
+    },
+    "purpose_share_finished_title": {
+        "description": "Title of share finished notification",
+        "message": "Content Shared"
+    },
+    "purpose_share_finished_text": {
+        "description": "Text of the share finished notification",
+        "message": "The shared content link ($1) has been copied to the clipboard."
+    },
+    "purpose_share_failed_title": {
+        "description": "Title of share failed notification",
+        "message": "Sharing Failed"
+    },
+    "purpose_share_failed_text": {
+        "description": "Text of share failed notification",
+        "message": "Could not share this content: $1"
     },
 
     "general_error_unknown": {

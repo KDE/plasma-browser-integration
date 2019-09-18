@@ -33,6 +33,9 @@ DEFAULT_EXTENSION_SETTINGS = {
     tabsrunner: {
         enabled: true
     },
+    purpose: {
+        enabled: true
+    },
     breezeScrollBars: {
         // this breaks pages in interesting ways, disable by default
         enabled: false

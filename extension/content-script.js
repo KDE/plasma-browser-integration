@@ -18,6 +18,14 @@
 
 var callbacks = {};
 
+// from https://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript
+function generateGuid() {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+        const r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
+        return v.toString(16);
+    });
+}
+
 function addCallback(subsystem, action, callback)
 {
     if (!callbacks[subsystem]) {
@@ -61,6 +69,14 @@ storage.get(DEFAULT_EXTENSION_SETTINGS, function (items) {
         if (items.mprisMediaSessions.enabled) {
             loadMediaSessionsShim();
         }
+    }
+
+    if (items.purpose.enabled) {
+        sendMessage("settings", "getSubsystemStatus").then((status) => {
+            if (status && status.purpose) {
+                loadPurpose();
+            }
+        });
     }
 });
 
@@ -129,16 +145,9 @@ html::-webkit-scrollbar-corner {
 // ------------------------------------------------------------------------
 //
 
-// we give our transfer div a "random id" for privacy
-// from https://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript
-var mediaSessionsTransferDivId ='xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-    var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
-    return v.toString(16);
-});
-
 // also give the function a "random" name as we have to have it in global scope to be able
 // to invoke callbacks from outside, UUID might start with a number, so prepend something
-var mediaSessionsClassName = "f" + mediaSessionsTransferDivId.replace(/-/g, "");
+const mediaSessionsClassName = "f" + generateGuid().replace(/-/g, "");
 
 var activePlayer;
 // When a player has no duration yet, we'll wait for it becoming known
@@ -833,4 +842,124 @@ function loadMediaSessionsShim() {
             }`);
         }
     }
+}
+
+// PURPOSE / WEB SHARE API
+// ------------------------------------------------------------------------
+//
+const purposeTransferClassName = "p" + generateGuid().replace(/-/g, "");
+
+var purposeLoaded = false;
+function loadPurpose() {
+    if (purposeLoaded) {
+        return;
+    }
+
+    purposeLoaded = true;
+
+    // navigator.share must only be defined in secure (https) context
+    if (!window.isSecureContext) {
+        return;
+    }
+
+     window.addEventListener("pbiPurposeMessage", (e) => {
+        const data = e.detail || {};
+
+        const action = data.action;
+        const payload = data.payload;
+
+        if (action !== "share") {
+            return;
+        }
+
+        sendMessage("purpose", "share", payload).then((response) => {
+            executeScript(`
+                function() {
+                    ${purposeTransferClassName}.pendingResolve();
+                }
+            `);
+        }, (err) => {
+            // Deliberately not giving any more details about why it got rejected
+            executeScript(`
+                function() {
+                    ${purposeTransferClassName}.pendingReject(new DOMException("Share request aborted", "AbortError"));
+                }
+            `);
+        }).finally(() => {
+            executeScript(`
+                function() {
+                    ${purposeTransferClassName}.reset();
+                }
+            `);
+        });;
+    });
+
+    executeScript(`
+        function() {
+            ${purposeTransferClassName} = function() {};
+            let transfer = ${purposeTransferClassName};
+            transfer.reset = () => {
+                transfer.pendingResolve = null;
+                transfer.pendingReject = null;
+            };
+            transfer.reset();
+
+            if (!navigator.canShare) {
+                navigator.canShare = (data) => {
+                    if (!data) {
+                        return false;
+                    }
+
+                    if (data.title === undefined && data.text === undefined && data.url === undefined) {
+                        return false;
+                    }
+
+                    if (data.url) {
+                        // check if URL is valid
+                        try {
+                            new URL(data.url, document.location.href);
+                        } catch (e) {
+                            return false;
+                        }
+                    }
+
+                    return true;
+                }
+            }
+
+            if (!navigator.share) {
+                navigator.share = (data) => {
+                    return new Promise((resolve, reject) => {
+                        if (!navigator.canShare(data)) {
+                            return reject(new TypeError());
+                        }
+
+                        if (data.url) {
+                            // validity already checked in canShare, hence no catch
+                            data.url = new URL(data.url, document.location.href).toString();
+                        }
+
+                        if (!window.event || !window.event.isTrusted) {
+                            return reject(new DOMException("navigator.share can only be called in response to user interaction", "NotAllowedError"));
+                        }
+
+                        if (transfer.pendingResolve || transfer.pendingReject) {
+                            return reject(new DOMException("A share is already in progress", "AbortError"));
+                        }
+
+                        transfer.pendingResolve = resolve;
+                        transfer.pendingReject = reject;
+
+                        const event = new CustomEvent("pbiPurposeMessage", {
+                            detail: {
+                                action: "share",
+                                payload: data
+                            }
+                        });
+                        window.dispatchEvent(event);
+                    });
+                };
+            }
+        }
+    `);
 }
