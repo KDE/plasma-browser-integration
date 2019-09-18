@@ -28,7 +28,7 @@ function purposeShare(data) {
                         title: chrome.i18n.getMessage("purpose_share_failed_title"),
                         message: chrome.i18n.getMessage("purpose_share_failed_text",
                                                         reply.errorMessage || chrome.i18n.getMessage("general_error_unknown")),
-                        iconUrl: "icons/document-share-128.png" // add an "error" overlay?
+                        iconUrl: "icons/document-share-failed.png"
                     });
                 }
 
@@ -42,7 +42,7 @@ function purposeShare(data) {
                     type: "basic",
                     title: chrome.i18n.getMessage("purpose_share_finished_title"),
                     message: chrome.i18n.getMessage("purpose_share_finished_text", url),
-                    iconUrl: "icons/document-share-128.png", // add an "ok tick" overlay?
+                    iconUrl: "icons/document-share.png"
                 });
             }
 
