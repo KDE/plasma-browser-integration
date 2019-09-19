@@ -89,6 +89,12 @@
     "options_plugin_mpris_title": {
         "message": "Controls multimèdia"
     },
+    "options_plugin_purpose_description": {
+        "message": "Adds a \"Share...\" context menu entry and allows websites to open a dialog for sharing contents using the Web Share API."
+    },
+    "options_plugin_purpose_title": {
+        "message": "Content Sharing"
+    },
     "options_plugin_tabsrunner_description": {
         "message": "Assegureu-vos que el mòdul «Pestanyes del navegador» està activat a l'<a id=\"$1\" href=\"$2\">arranjament de la Cerca del Plasma</a>."
     },
@@ -109,6 +115,21 @@
     },
     "options_title": {
         "message": "Arranjament de la integració del Plasma"
+    },
+    "purpose_share": {
+        "message": "Share..."
+    },
+    "purpose_share_failed_text": {
+        "message": "Could not share this content: $1"
+    },
+    "purpose_share_failed_title": {
+        "message": "Sharing Failed"
+    },
+    "purpose_share_finished_text": {
+        "message": "The shared content link ($1) has been copied to the clipboard."
+    },
+    "purpose_share_finished_title": {
+        "message": "Content Shared"
     },
     "store_description": {
         "message": "Fa eficient la multitasca controlant les funcions del navegador des de l'escriptori, encara que el Chrome estigui en segon pla. Gestiona la reproducció de l'àudio i el vídeo, marca les baixades a l'àrea de notificacions, envia fitxers al telèfon usant el KDE Connect i encara més dins l'escriptori Plasma del KDE!\\nCal instal·lar el paquet «plasma-browser-integration» perquè funcioni aquesta extensió. Hauria d'estar disponible al gestor de paquets de la vostra distribució en executar el Plasma 5.13 o posterior.\\nNOTA: Aquesta extensió no està implementada al Debian."

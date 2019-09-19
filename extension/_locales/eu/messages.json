@@ -89,6 +89,12 @@
     "options_plugin_mpris_title": {
         "message": "Euskarri-kontrolak"
     },
+    "options_plugin_purpose_description": {
+        "message": "Adds a \"Share...\" context menu entry and allows websites to open a dialog for sharing contents using the Web Share API."
+    },
+    "options_plugin_purpose_title": {
+        "message": "Content Sharing"
+    },
     "options_plugin_tabsrunner_description": {
         "message": "Ziurtatu “Arakatzailearen fitxak” modulua gaitua dagoela <a id=\"$1\" href=\"$2\">Plasmaren bilaketa ezarpenetan</a>."
     },
@@ -109,6 +115,21 @@
     },
     "options_title": {
         "message": "Plama bateratze ezarpenak"
+    },
+    "purpose_share": {
+        "message": "Share..."
+    },
+    "purpose_share_failed_text": {
+        "message": "Could not share this content: $1"
+    },
+    "purpose_share_failed_title": {
+        "message": "Sharing Failed"
+    },
+    "purpose_share_finished_text": {
+        "message": "The shared content link ($1) has been copied to the clipboard."
+    },
+    "purpose_share_finished_title": {
+        "message": "Content Shared"
     },
     "store_description": {
         "message": "Ataza-anizkun eraginkorra arakatzailearen funtzioak mahaigainetik kontrolatuz, Chrome atzealdean dagoela ere. Kudeatu audio eta bideo atzera-jotzea, egiaztatu zama-jaisteak jakinarazpen eremuan, bidali fitxategiak zure telefonora KDE Connect erabiliz eta gehiago KDE Plasma mahaigain Hedapen hau ibil dadin «plasma-browser-integration» paketea instalatu behar da. Erabilgarri egon beharko litzateke zure banaketaren pakete kudeatzailean Plasma 5.13 edo berriagoa ibiltzean.\\nOHARRA: Debian-ek hedapen hau ez da onartzen."

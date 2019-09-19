@@ -89,6 +89,12 @@
     "options_plugin_mpris_title": {
         "message": "미디어 제어"
     },
+    "options_plugin_purpose_description": {
+        "message": "Adds a \"Share...\" context menu entry and allows websites to open a dialog for sharing contents using the Web Share API."
+    },
+    "options_plugin_purpose_title": {
+        "message": "Content Sharing"
+    },
     "options_plugin_tabsrunner_description": {
         "message": "<a id=\"$1\" href=\"$2\">Plasma 검색 설정</a>에서 \"브라우저 탭\" 모듈이 활성화되어 있는지 확인하십시오."
     },
@@ -109,6 +115,21 @@
     },
     "options_title": {
         "message": "Plasma 통합 설정"
+    },
+    "purpose_share": {
+        "message": "Share..."
+    },
+    "purpose_share_failed_text": {
+        "message": "Could not share this content: $1"
+    },
+    "purpose_share_failed_title": {
+        "message": "Sharing Failed"
+    },
+    "purpose_share_finished_text": {
+        "message": "The shared content link ($1) has been copied to the clipboard."
+    },
+    "purpose_share_finished_title": {
+        "message": "Content Shared"
     },
     "store_description": {
         "message": "Chrome이 백그라운드에서 실행 중이어도 데스크톱에서 브라우저 기능을 제어하여 효율적인 다중 작업을 할 수 있습니다. 오디오 및 비디오 재생, 알림 영역에서 다운로드 확인, KDE Connect로 휴대폰으로 파일 보내기 및 KDE Plasma 데스크톱과 더 깊게 통합됩니다!\\n확장 프로그램을 사용하려면 plasma-browser-integration 패키지를 설치해야 합니다. Plasma 5.13 이상을 실행 중이어야 하며 배포판의 패키지 관리자로 설치할 수 메모: 데비안에서는 이 확장 기능을 지원하지 않습니다."

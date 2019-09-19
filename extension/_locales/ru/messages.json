@@ -89,6 +89,12 @@
     "options_plugin_mpris_title": {
         "message": "Управление мультимедиа"
     },
+    "options_plugin_purpose_description": {
+        "message": "Adds a \"Share...\" context menu entry and allows websites to open a dialog for sharing contents using the Web Share API."
+    },
+    "options_plugin_purpose_title": {
+        "message": "Content Sharing"
+    },
     "options_plugin_tabsrunner_description": {
         "message": "Убедитесь, что модуль поиска «Вкладки браузера» включён в <a id=\"$1\" href=\"$2\">параметрах строки поиска и запуска</a>."
     },
@@ -109,6 +115,21 @@
     },
     "options_title": {
         "message": "Настройка интеграции браузера с Plasma"
+    },
+    "purpose_share": {
+        "message": "Share..."
+    },
+    "purpose_share_failed_text": {
+        "message": "Could not share this content: $1"
+    },
+    "purpose_share_failed_title": {
+        "message": "Sharing Failed"
+    },
+    "purpose_share_finished_text": {
+        "message": "The shared content link ($1) has been copied to the clipboard."
+    },
+    "purpose_share_finished_title": {
+        "message": "Content Shared"
     },
     "store_description": {
         "message": "Эффективное управление браузером, даже когда Chrome находится в фоновом режиме. Управление воспроизведением аудио и видео, отображение состояния загрузок в области уведомлений, передача файлов на телефон с помощью KDE Connect, а также другие функции, доступные в окружении рабочего стола KDE Plasma.Для работы этого расширения должен быть установлен пакет «plasma-browser-integration», который доступен в системе управления пакетами вашего дистрибутива начиная с Plasma 5.13.ПРИМЕЧАНИЕ. Это расширение не поддерживается в Debian."

@@ -89,6 +89,12 @@
     "options_plugin_mpris_title": {
         "message": "Sterowanie mediami"
     },
+    "options_plugin_purpose_description": {
+        "message": "Adds a \"Share...\" context menu entry and allows websites to open a dialog for sharing contents using the Web Share API."
+    },
+    "options_plugin_purpose_title": {
+        "message": "Content Sharing"
+    },
     "options_plugin_tabsrunner_description": {
         "message": "Upewnij się, że moduł “Karty przeglądarki” jest włączony w <a id=\"$1\" href=\"$2\">Ustawieniach wyszukiwarki Plazmy</a>."
     },
@@ -109,6 +115,21 @@
     },
     "options_title": {
         "message": "Ustawienia integracji Plazmy"
+    },
+    "purpose_share": {
+        "message": "Share..."
+    },
+    "purpose_share_failed_text": {
+        "message": "Could not share this content: $1"
+    },
+    "purpose_share_failed_title": {
+        "message": "Sharing Failed"
+    },
+    "purpose_share_finished_text": {
+        "message": "The shared content link ($1) has been copied to the clipboard."
+    },
+    "purpose_share_finished_title": {
+        "message": "Content Shared"
     },
     "store_description": {
         "message": "Rób wiele rzeczy na raz wydajnie poprzez sterowanie przeglądarką z pulpitu, nawet wtedy gdy chrom jest w tle. Zarządzaj odtwarzaniem obrazu i dźwięku, sprawdzaj pobieranie w obszarze powiadomień, wysyłaj pliki na telefon przy użyciu KDE Connect i wiele innych w Pulpicie Plazmy KDE!\\nAby to rozszerzenie zadziałało, trzeba mieć wgrany pakiet plasma-browser-integration. Powinien być dostępny w twojej dystrybucji, gdy masz Plazmę 5.13 lub późniejszą.\\nUWAGA: Rozszerzenie to nie jest obsługiwane na Debianie."

@@ -89,6 +89,12 @@
     "options_plugin_mpris_title": {
         "message": "Controis de reprodución"
     },
+    "options_plugin_purpose_description": {
+        "message": "Adds a \"Share...\" context menu entry and allows websites to open a dialog for sharing contents using the Web Share API."
+    },
+    "options_plugin_purpose_title": {
+        "message": "Content Sharing"
+    },
     "options_plugin_tabsrunner_description": {
         "message": "Asegúrese de que o módulo de «Lapelas de navegador» está activado na <a id=\"$1\" href=\"$2\">configuración de busca de Plasma</a>."
     },
@@ -109,6 +115,21 @@
     },
     "options_title": {
         "message": "Configuración de integración con Plasma"
+    },
+    "purpose_share": {
+        "message": "Share..."
+    },
+    "purpose_share_failed_text": {
+        "message": "Could not share this content: $1"
+    },
+    "purpose_share_failed_title": {
+        "message": "Sharing Failed"
+    },
+    "purpose_share_finished_text": {
+        "message": "The shared content link ($1) has been copied to the clipboard."
+    },
+    "purpose_share_finished_title": {
+        "message": "Content Shared"
     },
     "store_description": {
         "message": "Traballe en varias cousas á vez de maneira eficiente controlando funcións do navegador desde o escritorio, incluso mentres Chrome está en segundo plano. Xestione a reprodución de son e vídeo, comprobe as descargas na área de notificacións, envíe ficheiros ao teléfono mediante KDE Connect e máis dentro do escritorio Plasma de KDE!\\nDebe instalar o paquete plasma-browser-integration para que a extensión funcione. Debería estar dispoñíbel mediante o xestor de paquetes da súa distribución cando use Plasma 5.13 ou unha versión posterior.\\nNOTA: A extensión non é compatíbel con Debian."

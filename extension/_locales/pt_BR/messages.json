@@ -89,6 +89,12 @@
     "options_plugin_mpris_title": {
         "message": "Controles de mídia"
     },
+    "options_plugin_purpose_description": {
+        "message": "Adds a \"Share...\" context menu entry and allows websites to open a dialog for sharing contents using the Web Share API."
+    },
+    "options_plugin_purpose_title": {
+        "message": "Content Sharing"
+    },
     "options_plugin_tabsrunner_description": {
         "message": "Certifique-se de que o módulo “Abas do navegador” está habilitado nas <a id=\"$1\" href=\"$2\">Configurações de pesquisa do Plasma</a>."
     },
@@ -109,6 +115,21 @@
     },
     "options_title": {
         "message": "Configurações de integração do Plasma"
+    },
+    "purpose_share": {
+        "message": "Share..."
+    },
+    "purpose_share_failed_text": {
+        "message": "Could not share this content: $1"
+    },
+    "purpose_share_failed_title": {
+        "message": "Sharing Failed"
+    },
+    "purpose_share_finished_text": {
+        "message": "The shared content link ($1) has been copied to the clipboard."
+    },
+    "purpose_share_finished_title": {
+        "message": "Content Shared"
     },
     "store_description": {
         "message": "Crie várias tarefas de forma eficiente, controlando as funções do navegador a partir da área de trabalho, mesmo quando o Chrome está em segundo plano. Gerencie a reprodução de áudio e vídeo, verifique os downloads na área de notificações, envie arquivos para o seu telefone com o KDE Connect e muito mais a partir do Plasma Desktop!\\nO pacote 'plasma-browser-integration' precisa estar instalado para esta extensão funcionar. Deverá estar disponível no gerenciador de pacotes da sua distribuição quando executar o Plasma 5.13 ou posterior.\\nNOTA: Não há suporte para esta extensão no Debian."

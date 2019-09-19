@@ -89,6 +89,12 @@
     "options_plugin_mpris_title": {
         "message": "Medijos valdikliai"
     },
+    "options_plugin_purpose_description": {
+        "message": "Adds a \"Share...\" context menu entry and allows websites to open a dialog for sharing contents using the Web Share API."
+    },
+    "options_plugin_purpose_title": {
+        "message": "Content Sharing"
+    },
     "options_plugin_tabsrunner_description": {
         "message": "Įsitikinkite, kad <a id=\"$1\" href=\"$2\">Plasma paieškos nuostatose</a> yra įjungtas \"Naršyklės kortelių\" modulis."
     },
@@ -109,6 +115,21 @@
     },
     "options_title": {
         "message": "Plasma integracijos nuostatos"
+    },
+    "purpose_share": {
+        "message": "Share..."
+    },
+    "purpose_share_failed_text": {
+        "message": "Could not share this content: $1"
+    },
+    "purpose_share_failed_title": {
+        "message": "Sharing Failed"
+    },
+    "purpose_share_finished_text": {
+        "message": "The shared content link ($1) has been copied to the clipboard."
+    },
+    "purpose_share_finished_title": {
+        "message": "Content Shared"
     },
     "store_description": {
         "message": "Atlikite daugiaprogramį apdorojimą, valdydami naršyklės funkcijas tiesiai iš darbalaukio netgi tuomet, kai Chrome fone. Valdykite garso ir vaizdo atkūrimą, tikrinkite pranešimų srityje atsiuntimus, siųskite failus į savo telefoną naudodami KDE Connect ir atlikite dar daugiau KDE Plasma Tam, kad veiktų šis priedas, privalo būti įdiegtas paketas \"plasma-browser-integration\". Jis turėtų būti prieinamas iš jūsų platinimo paketų tvarkytuvės, naudojant Plasma 5.13 ar naujesnę versiją.\\nPASTABA: Šis priedas nėra prieinamas Debian sistemose."
