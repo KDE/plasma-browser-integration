@@ -90,10 +90,10 @@
         "message": "Besturing van media"
     },
     "options_plugin_purpose_description": {
-        "message": "Adds a \"Share...\" context menu entry and allows websites to open a dialog for sharing contents using the Web Share API."
+        "message": "Een contextmenu-item \"Delen...\" wordt toegevoegd en biedt websites om een dialoog te openen voor delen van inhoud met de Web Share API."
     },
     "options_plugin_purpose_title": {
-        "message": "Content Sharing"
+        "message": "Inhoud delen"
     },
     "options_plugin_tabsrunner_description": {
         "message": "Ga na dat de module “Browser Tabs” is ingeschakeld in <a id=\"$1\" href="
@@ -117,19 +117,19 @@
         "message": "Plasma-integratie-instellingen"
     },
     "purpose_share": {
-        "message": "Share..."
+        "message": "Delen..."
     },
     "purpose_share_failed_text": {
-        "message": "Could not share this content: $1"
+        "message": "Kon deze inhoud niet delen: $1"
     },
     "purpose_share_failed_title": {
-        "message": "Sharing Failed"
+        "message": "Delen is mislukt"
     },
     "purpose_share_finished_text": {
-        "message": "The shared content link ($1) has been copied to the clipboard."
+        "message": "De gedeelde koppeling naar inhoud ($1) is naar het klembord gekopieerd."
     },
     "purpose_share_finished_title": {
-        "message": "Content Shared"
+        "message": "Inhoud gedeeld"
     },
     "store_description": {
         "message": "Doe multitasking efficient door de browserfuncties te besturen vanaf het bureaublad, zelfs terwijl Chrome in de achtergrond zit. Afspelen van geluid en video besturen, downloads controleren in het meldingengebied, bestanden verzenden naar uw telefoon met KDE Connect en meer binnen het KDE Plasma Het plasma-browser-integratie pakket moet geïnstalleerd zijn voor deze extensie om te werken. Het zou beschikbaar moeten zijn via de pakketbeheerder van uw distributie bij gebruik van Plasma 5.13 of later.\\nNOTE: Deze extensie wordt niet ondersteund op Debian."
