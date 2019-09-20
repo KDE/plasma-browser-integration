@@ -63,7 +63,7 @@
         "message": "Usar barras de rolagem no estilo Breeze"
     },
     "options_plugin_downloads_saveOriginUrl": {
-        "message": "Save URL a file was downloaded from in the file's attributes"
+        "message": "Salva a URL um arquivo foi baixado dos atributos do arquivo"
     },
     "options_plugin_downloads_saveOriginUrl_description": {
         "message": "Detalhe: O URL pode conter informações delicadas que podem ser expostas quando o arquivo está acessível ou compartilhado com outras pessoas"
@@ -90,10 +90,10 @@
         "message": "Controles de mídia"
     },
     "options_plugin_purpose_description": {
-        "message": "Adds a \"Share...\" context menu entry and allows websites to open a dialog for sharing contents using the Web Share API."
+        "message": "Adiciona uma entrada no menu de contexto \"Compartilhar...\" e permite aos sites abrir uma janela para compartilhar conteúdos usando a API de compartilhamento da Web."
     },
     "options_plugin_purpose_title": {
-        "message": "Content Sharing"
+        "message": "Compartilhamento de conteúdo"
     },
     "options_plugin_tabsrunner_description": {
         "message": "Certifique-se de que o módulo “Abas do navegador” está habilitado nas <a id=\"$1\" href=\"$2\">Configurações de pesquisa do Plasma</a>."
@@ -117,19 +117,19 @@
         "message": "Configurações de integração do Plasma"
     },
     "purpose_share": {
-        "message": "Share..."
+        "message": "Compartilhar..."
     },
     "purpose_share_failed_text": {
-        "message": "Could not share this content: $1"
+        "message": "Não foi possível compartilhar este conteúdo: $1"
     },
     "purpose_share_failed_title": {
-        "message": "Sharing Failed"
+        "message": "Falha ao compartilhar"
     },
     "purpose_share_finished_text": {
-        "message": "The shared content link ($1) has been copied to the clipboard."
+        "message": "O link de conteúdo compartilhado ($1)  foi copiado para a área de transferência."
     },
     "purpose_share_finished_title": {
-        "message": "Content Shared"
+        "message": "Conteúdo compartilhado"
     },
     "store_description": {
         "message": "Crie várias tarefas de forma eficiente, controlando as funções do navegador a partir da área de trabalho, mesmo quando o Chrome está em segundo plano. Gerencie a reprodução de áudio e vídeo, verifique os downloads na área de notificações, envie arquivos para o seu telefone com o KDE Connect e muito mais a partir do Plasma Desktop!\\nO pacote 'plasma-browser-integration' precisa estar instalado para esta extensão funcionar. Deverá estar disponível no gerenciador de pacotes da sua distribuição quando executar o Plasma 5.13 ou posterior.\\nNOTA: Não há suporte para esta extensão no Debian."

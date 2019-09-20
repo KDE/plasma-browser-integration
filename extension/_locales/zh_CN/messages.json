@@ -123,7 +123,7 @@
         "message": "Could not share this content: $1"
     },
     "purpose_share_failed_title": {
-        "message": "Sharing Failed"
+        "message": "保存设置失败"
     },
     "purpose_share_finished_text": {
         "message": "The shared content link ($1) has been copied to the clipboard."

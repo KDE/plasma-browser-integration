@@ -90,10 +90,10 @@
         "message": "Керування відтворенням"
     },
     "options_plugin_purpose_description": {
-        "message": "Adds a \"Share...\" context menu entry and allows websites to open a dialog for sharing contents using the Web Share API."
+        "message": "Додає пункт контекстного меню «Оприлюднити…» і дозволяє сайтам відкривати діалогове вікно для оприлюднення даних за допомогою програмного інтерфейсу Web Share."
     },
     "options_plugin_purpose_title": {
-        "message": "Content Sharing"
+        "message": "Оприлюднення даних"
     },
     "options_plugin_tabsrunner_description": {
         "message": "Переконайтеся, що модуль «Вкладки навігатора» увімкнено у <a id=\"$1\" href=\"$2\">параметрах пошуку у Плазмі</a>."
@@ -117,19 +117,19 @@
         "message": "Параметри інтеграції Плазми"
     },
     "purpose_share": {
-        "message": "Share..."
+        "message": "Оприлюднити…"
     },
     "purpose_share_failed_text": {
-        "message": "Could not share this content: $1"
+        "message": "Не вдалося оприлюднити ці дані: $1"
     },
     "purpose_share_failed_title": {
-        "message": "Sharing Failed"
+        "message": "Не вдалося оприлюднити"
     },
     "purpose_share_finished_text": {
-        "message": "The shared content link ($1) has been copied to the clipboard."
+        "message": "Посилання на оприлюднені дані ($1) було скопійовано до буфера обміну даними."
     },
     "purpose_share_finished_title": {
-        "message": "Content Shared"
+        "message": "Дані оприлюднено"
     },
     "store_description": {
         "message": "Ефективно працюйте з декількома завданнями, керуючи функціональними можливостями браузера зі стільниці, навіть коли Chrome працює у фоновому режимі. Керуйте відтворення звуку і відео, перевіряйте, чи отримано дані, у області сповіщень, надсилайте файли на ваш телефон за допомогою KDE Connect і виконуйте багато інших завдань, не полишаючи стільниці Плазми KDE!\\nЩоб це розширення могло працювати, слід встановити пакунок plasma-browser-integration. Пакунок для вашого дистрибутива можна встанови зі сховища пакунків, якщо у ньому є пакунки Плазми 5.13 або новішої версії.\\nЗАУВАЖЕННЯ: у Debian не передбачено підтримки цього пакунка."
