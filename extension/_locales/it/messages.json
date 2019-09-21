@@ -90,10 +90,10 @@
         "message": "Controlli multimediali"
     },
     "options_plugin_purpose_description": {
-        "message": "Adds a \"Share...\" context menu entry and allows websites to open a dialog for sharing contents using the Web Share API."
+        "message": "Aggiunge un menu contestuale «Condividi...» e permette ai siti di web di aprire una finestra di dialogo per condividere contenuti tramite Web Share "
     },
     "options_plugin_purpose_title": {
-        "message": "Content Sharing"
+        "message": "Condivisione del contenuto"
     },
     "options_plugin_tabsrunner_description": {
         "message": "Assicurati che il modulo «Schede del browser» sia abilitato nelle <a id=\"$1\" href=\"$2\">impostazioni della ricerca di Plasma</a>."
@@ -117,19 +117,19 @@
         "message": "Impostazioni dell'integrazione con Plasma"
     },
     "purpose_share": {
-        "message": "Share..."
+        "message": "Condividi..."
     },
     "purpose_share_failed_text": {
-        "message": "Could not share this content: $1"
+        "message": "Impossibile condividere questo contenuto: $1"
     },
     "purpose_share_failed_title": {
-        "message": "Salvataggio delle impostazioni non riuscito"
+        "message": "Condivisione non riuscita"
     },
     "purpose_share_finished_text": {
-        "message": "The shared content link ($1) has been copied to the clipboard."
+        "message": "Il collegamento al contenuto condiviso ($1) è stato copiato negli appunti."
     },
     "purpose_share_finished_title": {
-        "message": "Content Shared"
+        "message": "Contenuto condiviso"
     },
     "store_description": {
         "message": "Gestisci diversi compiti contemporaneamente controllando le funzioni del browser dal desktop, anche quando Chrome non è in primo piano. Gestisci la riproduzione dell'audio e del video, verifica gli scaricamenti nell'area di notifica, invia file al tuo telefono usando KDE Connect e altro ancora all'intero del desktop KDE Plasma!\\nIl pacchetto plasma-browser-integration deve essere installato perché questa estensione possa funzionare. Dovrebbe essere disponibile tramite il gestore di pacchetti della tua distribuzione quando usi Plasma 5.13 o successivo.\\nNOTA: questa estensione non è supportata in Debian."

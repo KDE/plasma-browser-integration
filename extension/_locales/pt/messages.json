@@ -90,7 +90,7 @@
         "message": "Controlos Multimédia"
     },
     "options_plugin_purpose_description": {
-        "message": "Adiciona um item do menu de contexto \"Partilhar...\" e permite às páginas Web abrirem uma janela para partilhar o conteúdo com a API de Partilha na Web."
+        "message": "Adiciona um item do menu de contexto \"Partilhar...\" e permite às páginas Web abrirem uma janela para partilhar o conteúdo com a API de Partilha na "
     },
     "options_plugin_purpose_title": {
         "message": "Partilha de Conteúdos"
@@ -126,7 +126,7 @@
         "message": "Partilha sem Sucesso"
     },
     "purpose_share_finished_text": {
-        "message": "A ligação do conteúdo partilhado (%1) foi copiada para a área de transferência."
+        "message": "A ligação do conteúdo partilhado (%1) foi copiada para a área de "
     },
     "purpose_share_finished_title": {
         "message": "Conteúdo Partilhado"
