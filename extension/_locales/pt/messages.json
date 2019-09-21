@@ -90,10 +90,10 @@
         "message": "Controlos Multimédia"
     },
     "options_plugin_purpose_description": {
-        "message": "Adds a \"Share...\" context menu entry and allows websites to open a dialog for sharing contents using the Web Share API."
+        "message": "Adiciona um item do menu de contexto \"Partilhar...\" e permite às páginas Web abrirem uma janela para partilhar o conteúdo com a API de Partilha na "
     },
     "options_plugin_purpose_title": {
-        "message": "Content Sharing"
+        "message": "Partilha de Conteúdos"
     },
     "options_plugin_tabsrunner_description": {
         "message": "Certifique-se que o módulo de “Páginas do Navegador” está activo na <a id=\"$1\" href=\"$2\">configuração da Pesquisa do Plasma</a>."
@@ -117,19 +117,19 @@
         "message": "Configuração da Integração do Plasma"
     },
     "purpose_share": {
-        "message": "Share..."
+        "message": "Partilhar..."
     },
     "purpose_share_failed_text": {
-        "message": "Could not share this content: $1"
+        "message": "Não foi possível partilhar este conteúdo"
     },
     "purpose_share_failed_title": {
-        "message": "Não foi possível gravar a configuração"
+        "message": "Partilha sem Sucesso"
     },
     "purpose_share_finished_text": {
-        "message": "The shared content link ($1) has been copied to the clipboard."
+        "message": "A ligação do conteúdo partilhado (%1) foi copiada para a área de "
     },
     "purpose_share_finished_title": {
-        "message": "Content Shared"
+        "message": "Conteúdo Partilhado"
     },
     "store_description": {
         "message": "Multitask efficiently by controlling browser functions from the desktop, even while Chrome is in the background. Manage audio and video playback, check downloads in the notification area, send files to your phone using KDE Connect and more inside the KDE Plasma Desktop!\\n\\nThe plasma-browser-integration package must be installed for this extension to work. It should be available from your distribution's package manager when running Plasma 5.13 or later.\\n\\nNOTE: This extension is not supported on Debian."

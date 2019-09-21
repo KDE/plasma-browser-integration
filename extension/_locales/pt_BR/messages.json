@@ -126,7 +126,7 @@
         "message": "Falha ao compartilhar"
     },
     "purpose_share_finished_text": {
-        "message": "O link de conteúdo compartilhado ($1)  foi copiado para a área de transferência."
+        "message": "O link de conteúdo compartilhado ($1)  foi copiado para a área de "
     },
     "purpose_share_finished_title": {
         "message": "Conteúdo compartilhado"
