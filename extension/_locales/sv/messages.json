@@ -123,7 +123,7 @@
         "message": "Could not share this content: $1"
     },
     "purpose_share_failed_title": {
-        "message": "Misslyckades spara inställningar"
+        "message": "Delning misslyckades"
     },
     "purpose_share_finished_text": {
         "message": "The shared content link ($1) has been copied to the clipboard."
