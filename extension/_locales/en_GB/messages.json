@@ -1,15 +1,15 @@
 {
     "browseraction_title": {
-        "message": "Plasma Browser Integration Error"
+        "message": "Plasma Browser Integration"
     },
     "general_error_host_disconnected_title": {
-        "message": "The native host disconnected unexpectedly: $1"
+        "message": "The native host disconnected unexpectedly."
     },
     "general_error_not_supported_os": {
-        "message": "This extension is not supported on this operating system."
+        "message": "This extension is only supported on Linux and FreeBSD."
     },
     "general_error_not_supported_os_title": {
-        "message": "This extension is not supported on this operating system."
+        "message": "Unsupported operating system"
     },
     "general_error_startup_failed": {
         "message": "Make sure the 'plasma-browser-integration' package is installed correctly and that you are running Plasma 5.13 or later."
@@ -81,7 +81,7 @@
         "message": "Lets you control video and audio players in websites using the Media Controller plasmoid."
     },
     "options_plugin_mpris_media_sessions_description": {
-        "message": "Extract metadata and thumbnails of currently playing content. (Experimental)"
+        "message": "Extract metadata and thumbnails of currently playing content."
     },
     "options_plugin_mpris_media_sessions_title": {
         "message": "Enhanced Media Controls"
@@ -90,7 +90,7 @@
         "message": "Media Controls"
     },
     "options_plugin_purpose_description": {
-        "message": "Adds a \"Share...\" context menu entry and allows websites to open a dialog for sharing contents using the Web Share API."
+        "message": "Adds a \"Share...\" context menu entry and allows websites to open a dialogue for sharing contents using the Web Share API."
     },
     "options_plugin_purpose_title": {
         "message": "Content Sharing"
@@ -123,7 +123,7 @@
         "message": "Could not share this content: $1"
     },
     "purpose_share_failed_title": {
-        "message": "Saving settings failed"
+        "message": "Sharing Failed"
     },
     "purpose_share_finished_text": {
         "message": "The shared content link ($1) has been copied to the clipboard."

@@ -63,7 +63,7 @@
         "message": "Usar barras de rolagem no estilo Breeze"
     },
     "options_plugin_downloads_saveOriginUrl": {
-        "message": "Salva a URL um arquivo foi baixado dos atributos do arquivo"
+        "message": "Salva a URL de onde um arquivo foi baixado nos atributos do arquivo"
     },
     "options_plugin_downloads_saveOriginUrl_description": {
         "message": "Detalhe: O URL pode conter informações delicadas que podem ser expostas quando o arquivo está acessível ou compartilhado com outras pessoas"
@@ -126,7 +126,7 @@
         "message": "Falha ao compartilhar"
     },
     "purpose_share_finished_text": {
-        "message": "O link de conteúdo compartilhado ($1)  foi copiado para a área de "
+        "message": "O link de conteúdo compartilhado ($1) foi copiado para a área de "
     },
     "purpose_share_finished_title": {
         "message": "Conteúdo compartilhado"

@@ -1,24 +1,24 @@
 {
     "browseraction_title": {
-        "message": "Błąd integracji przeglądarki Plazmy"
+        "message": "Integracja przeglądarki Plazmy"
     },
     "general_error_host_disconnected_title": {
-        "message": "Natywny gospodarz nieoczekiwanie się rozłączył: $1"
+        "message": "Natywny gospodarz nieoczekiwanie się rozłączył."
     },
     "general_error_not_supported_os": {
-        "message": "To rozszerzenie nie jest obsługiwane na tym systemie operacyjnym."
+        "message": "To rozszerzenie jest obsługiwane tylko na Linuksie i FreeBSD."
     },
     "general_error_not_supported_os_title": {
-        "message": "To rozszerzenie nie jest obsługiwane na tym systemie operacyjnym."
+        "message": "Nieobsługiwany system operacyjny"
     },
     "general_error_startup_failed": {
-        "message": "Make sure the 'plasma-browser-integration' package is installed correctly and that you are running Plasma 5.13 or later."
+        "message": "Należy upewnić się, że wgrano pakiet 'plasma-browser-integration' oraz Plazmę 5.13 lub późniejszą."
     },
     "general_error_startup_failed_title": {
-        "message": "Failed to connect to the native host."
+        "message": "Nie udało się połączyć z natywnym gospodarzem."
     },
     "general_error_startup_failed_wiki_link": {
-        "message": "Visit project wiki page for more information"
+        "message": "Odwiedź stronę wiki po więcej danych"
     },
     "general_error_unknown": {
         "message": "Nieznany błąd"
@@ -63,10 +63,10 @@
         "message": "Użyj pasków przewijania z wyglądu Bryzy"
     },
     "options_plugin_downloads_saveOriginUrl": {
-        "message": "Save URL a file was downloaded from in the file's attributes"
+        "message": "Zachowaj adres URL pobranego pliku we właściwościach pliku"
     },
     "options_plugin_downloads_saveOriginUrl_description": {
-        "message": "Note: The URL may contain sensitive information that could be disclosed when the file is accessible by or shared with others"
+        "message": "Uwaga: Adres URL może zawierać dane poufne, które mogą stać się powszechnie dostępne, gdy plik jest dostępny lub współdzielony z innymi"
     },
     "options_plugin_downloads_title": {
         "message": "Pokaż pobierania w obszarze powiadomień"
@@ -81,7 +81,7 @@
         "message": "Umożliwia ci sterowanie odtwarzaczami obrazu i dźwięku przy użyciu plazmoida."
     },
     "options_plugin_mpris_media_sessions_description": {
-        "message": "Wydobywanie metadanych i miniatur dla obecnie odtwarzanej treści. "
+        "message": "Wydobywanie metadanych i miniatur dla obecnie odtwarzanej treści."
     },
     "options_plugin_mpris_media_sessions_title": {
         "message": "Ulepszone sterowanie mediami"
@@ -90,10 +90,10 @@
         "message": "Sterowanie mediami"
     },
     "options_plugin_purpose_description": {
-        "message": "Adds a \"Share...\" context menu entry and allows websites to open a dialog for sharing contents using the Web Share API."
+        "message": "Dodaje menu podręczne \"Udostępnij...\" i umożliwia stronom sieciowym otwarcie okna dialogowego do udostępniania treści przy użyciu Web Share API."
     },
     "options_plugin_purpose_title": {
-        "message": "Content Sharing"
+        "message": "Udostępnianie treści"
     },
     "options_plugin_tabsrunner_description": {
         "message": "Upewnij się, że moduł “Karty przeglądarki” jest włączony w <a id=\"$1\" href=\"$2\">Ustawieniach wyszukiwarki Plazmy</a>."
@@ -117,19 +117,19 @@
         "message": "Ustawienia integracji Plazmy"
     },
     "purpose_share": {
-        "message": "Share..."
+        "message": "Udostępnij..."
     },
     "purpose_share_failed_text": {
-        "message": "Could not share this content: $1"
+        "message": "Nie można udostępnić tej treści: $1"
     },
     "purpose_share_failed_title": {
-        "message": "Nie udało się zapisywanie ustawień"
+        "message": "Nie udało się udostępnić"
     },
     "purpose_share_finished_text": {
-        "message": "The shared content link ($1) has been copied to the clipboard."
+        "message": "Łącze udostępnianej treści ($1) zostało skopiowane do schowka."
     },
     "purpose_share_finished_title": {
-        "message": "Content Shared"
+        "message": "Udostępniono treść"
     },
     "store_description": {
         "message": "Rób wiele rzeczy na raz wydajnie poprzez sterowanie przeglądarką z pulpitu, nawet wtedy gdy chrom jest w tle. Zarządzaj odtwarzaniem obrazu i dźwięku, sprawdzaj pobieranie w obszarze powiadomień, wysyłaj pliki na telefon przy użyciu KDE Connect i wiele innych w Pulpicie Plazmy KDE!\\nAby to rozszerzenie zadziałało, trzeba mieć wgrany pakiet plasma-browser-integration. Powinien być dostępny w twojej dystrybucji, gdy masz Plazmę 5.13 lub późniejszą.\\nUWAGA: Rozszerzenie to nie jest obsługiwane na Debianie."
