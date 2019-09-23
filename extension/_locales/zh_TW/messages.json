@@ -90,10 +90,10 @@
         "message": "媒體控制"
     },
     "options_plugin_purpose_description": {
-        "message": "Adds a \"Share...\" context menu entry and allows websites to open a dialog for sharing contents using the Web Share API."
+        "message": "新增「分享…」選單列項目，並允許網站使用 Web Share API 開啟"
     },
     "options_plugin_purpose_title": {
-        "message": "Content Sharing"
+        "message": "內容分享"
     },
     "options_plugin_tabsrunner_description": {
         "message": "確保已在 <a id=\"$1\" href=\"$2\">Plasma 搜尋設定</a>中啟用「瀏覽器分頁」模"
@@ -117,19 +117,19 @@
         "message": "Plasma 整合設定"
     },
     "purpose_share": {
-        "message": "Share..."
+        "message": "分享…"
     },
     "purpose_share_failed_text": {
-        "message": "Could not share this content: $1"
+        "message": "無法分享此內容：$1"
     },
     "purpose_share_failed_title": {
         "message": "儲存設定失敗"
     },
     "purpose_share_finished_text": {
-        "message": "The shared content link ($1) has been copied to the clipboard."
+        "message": "分享的內容連結 ($1) 已複製至剪貼簿。"
     },
     "purpose_share_finished_title": {
-        "message": "Content Shared"
+        "message": "已分享內容"
     },
     "store_description": {
         "message": "Multitask efficiently by controlling browser functions from the desktop, even while Chrome is in the background. Manage audio and video playback, check downloads in the notification area, send files to your phone using KDE Connect and more inside the KDE Plasma Desktop!\\n\\nThe plasma-browser-integration package must be installed for this extension to work. It should be available from your distribution's package manager when running Plasma 5.13 or later.\\n\\nNOTE: This extension is not supported on Debian."
