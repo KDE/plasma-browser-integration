@@ -63,10 +63,10 @@
         "message": "Usar barras de desprazamento co estilo de Breeze."
     },
     "options_plugin_downloads_saveOriginUrl": {
-        "message": "Save URL a file was downloaded from in the file's attributes"
+        "message": "Gardar o URL de orixe dun ficheiro descargado nos atributos do ficheiro"
     },
     "options_plugin_downloads_saveOriginUrl_description": {
-        "message": "Note: The URL may contain sensitive information that could be disclosed when the file is accessible by or shared with others"
+        "message": "Nota: O URL pode conter información sensible que podería revelarse cando terceiros accedan ao ficheiro ou se comparta con eles"
     },
     "options_plugin_downloads_title": {
         "message": "Mostrar as descargas na área de notificación."
@@ -90,10 +90,10 @@
         "message": "Controis de reprodución"
     },
     "options_plugin_purpose_description": {
-        "message": "Adds a \"Share...\" context menu entry and allows websites to open a dialog for sharing contents using the Web Share API."
+        "message": "Engade unha entrada de menú contextual de «Compartir…» e permite aos sitios web abrir un diálogo para compartir contido usando a API de compartición web."
     },
     "options_plugin_purpose_title": {
-        "message": "Content Sharing"
+        "message": "Compartición de contido"
     },
     "options_plugin_tabsrunner_description": {
         "message": "Asegúrese de que o módulo de «Lapelas de navegador» está activado na <a id=\"$1\" href=\"$2\">configuración de busca de Plasma</a>."
@@ -117,19 +117,19 @@
         "message": "Configuración de integración con Plasma"
     },
     "purpose_share": {
-        "message": "Share..."
+        "message": "Compartir…"
     },
     "purpose_share_failed_text": {
-        "message": "Could not share this content: $1"
+        "message": "Non se puido compartir este contido: $1"
     },
     "purpose_share_failed_title": {
-        "message": "Gardar a configuración fallou."
+        "message": "A compartición fallou"
     },
     "purpose_share_finished_text": {
-        "message": "The shared content link ($1) has been copied to the clipboard."
+        "message": "A ligazón do contido compartido ($1) copiouse no portapapeis."
     },
     "purpose_share_finished_title": {
-        "message": "Content Shared"
+        "message": "Compartiuse o contido"
     },
     "store_description": {
         "message": "Traballe en varias cousas á vez de maneira eficiente controlando funcións do navegador desde o escritorio, incluso mentres Chrome está en segundo plano. Xestione a reprodución de son e vídeo, comprobe as descargas na área de notificacións, envíe ficheiros ao teléfono mediante KDE Connect e máis dentro do escritorio Plasma de KDE!\\nDebe instalar o paquete plasma-browser-integration para que a extensión funcione. Debería estar dispoñíbel mediante o xestor de paquetes da súa distribución cando use Plasma 5.13 ou unha versión posterior.\\nNOTA: A extensión non é compatíbel con Debian."
