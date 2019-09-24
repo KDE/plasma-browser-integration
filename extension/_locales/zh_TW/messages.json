@@ -90,7 +90,7 @@
         "message": "媒體控制"
     },
     "options_plugin_purpose_description": {
-        "message": "新增「分享…」選單列項目，並允許網站使用 Web Share API 開啟"
+        "message": "新增「分享…」選單列項目，並允許網站使用 Web Share API 開啟用來分享內容的對話"
     },
     "options_plugin_purpose_title": {
         "message": "內容分享"
