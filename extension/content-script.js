@@ -58,13 +58,13 @@ chrome.runtime.onMessage.addListener(function (message, sender) {
     }
 });
 
-var storage = (IS_FIREFOX ? chrome.storage.local : chrome.storage.sync);
-
-storage.get(DEFAULT_EXTENSION_SETTINGS, function (items) {
+SettingsUtils.get().then((items) => {
     if (items.breezeScrollBars.enabled) {
         loadBreezeScrollBars();
     }
-    if (items.mpris.enabled) {
+
+    const mpris = items.mpris;
+    if (mpris.enabled) {
         loadMpris();
         if (items.mprisMediaSessions.enabled) {
             loadMediaSessionsShim();

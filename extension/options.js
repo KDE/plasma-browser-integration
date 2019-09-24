@@ -16,8 +16,6 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-var storage = (IS_FIREFOX ? chrome.storage.local : chrome.storage.sync);
-
 function tabClicked(tabbar, tabbutton) {
     tabbar.buttons.forEach(function (button) {
         var tablink = button.dataset.tabLink
@@ -34,15 +32,8 @@ function tabClicked(tabbar, tabbutton) {
     });
 }
 
-function loadSettings(cb) {
-    storage.get(DEFAULT_EXTENSION_SETTINGS, function (items) {
-        if (chrome.runtime.lastError) {
-            if (typeof cb === "function") {
-                cb(false);
-            }
-            return;
-        }
-
+function loadSettings() {
+    SettingsUtils.get().then((items) => {
         for (let key in items) {
             if (!items.hasOwnProperty(key)) {
                 continue;
@@ -94,10 +85,6 @@ function loadSettings(cb) {
                 });
             }
         }
-
-        if (typeof cb === "function") {
-            cb(true);
-        }
     });
 }
 
@@ -141,14 +128,11 @@ function saveSettings(cb) {
         }
     }
 
-    try {
-        storage.set(settings, function () {
-            return cb(chrome.runtime.lastError);
-        });
-    // When the extension is reloaded, any call to extension APIs throws
-    } catch (e) {
-        cb(e);
-    }
+    SettingsUtils.set(settings).then(() => {
+        cb();
+    }, (err) => {
+        cb(err);
+    });
 }
 
 function updateDependencies(control, extension, settingsKey) {

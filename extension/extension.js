@@ -41,12 +41,7 @@ function sendEnvironment() {
 }
 
 function sendSettings() {
-    storage.get(DEFAULT_EXTENSION_SETTINGS, function (items) {
-        if (chrome.runtime.lastError) {
-            console.warn("Failed to load settings");
-            return;
-        }
-
+    SettingsUtils.get().then((items) => {
         sendPortMessage("settings", "changed", items);
     });
 }

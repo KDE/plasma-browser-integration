@@ -23,8 +23,6 @@ var runtimeCallbacks = {};
 let currentMessageSerial = 0;
 let pendingMessageReplyResolvers = {};
 
-var storage = (IS_FIREFOX ? chrome.storage.local : chrome.storage.sync);
-
 // Callback is called with following arguments (in that order);
 // - The actual message data/payload
 // - The name of the action triggered
