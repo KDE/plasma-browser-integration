@@ -39,6 +39,13 @@ public:
     // FIXME this should not be public but we need to change it from main.cpp
     void setLoaded(bool loaded);
 
+    /**
+     * Lets the plugin add additional status information to the getSubsystemStatus request
+     *
+     * E.g. whether a library dependency or external binary is present.
+     */
+    virtual QJsonObject status() const;
+
 protected:
     /*
      * @arg subsystemId

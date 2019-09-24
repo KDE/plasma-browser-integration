@@ -148,10 +148,10 @@ QJsonObject Settings::handleData(int serial, const QString &event, const QJsonOb
        const QStringList subsystems = PluginManager::self().knownPluginSubsystems();
        for (const QString &subsystem : subsystems) {
            const AbstractBrowserPlugin *plugin = PluginManager::self().pluginForSubsystem(subsystem);
-           QJsonObject details{
-               {QStringLiteral("version"), plugin->protocolVersion()},
-               {QStringLiteral("loaded"), plugin->isLoaded()}
-           };
+
+           QJsonObject details = plugin->status();
+           details.insert(QStringLiteral("version"), plugin->protocolVersion());
+           details.insert(QStringLiteral("loaded"), plugin->isLoaded());
            ret.insert(subsystem, details);
         }
     }

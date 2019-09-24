@@ -86,6 +86,11 @@ void AbstractBrowserPlugin::onSettingsChanged(const QJsonObject &newSettings)
     Q_UNUSED(newSettings);
 }
 
+QJsonObject AbstractBrowserPlugin::status() const
+{
+    return {};
+}
+
 QDebug AbstractBrowserPlugin::debug() const
 {
     auto d = qDebug();
