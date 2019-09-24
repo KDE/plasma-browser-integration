@@ -1,7 +1,6 @@
 body {
-    min-width: 600px;
-    /* prevent scroll bars*/
-    overflow: hidden;
+    width: 600px;
+    overflow-x: hidden;
 }
 
 .os-not-supported-info, .startup-failure-info {
