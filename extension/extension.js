@@ -203,9 +203,6 @@ function connectHost() {
 }
 
 addRuntimeCallback("settings", "changed", function () {
-    // we could also just reload our extension :)
-    // but this also causes the settings dialog to quit
-    //chrome.runtime.reload();
     sendSettings();
 });
 
