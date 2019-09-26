@@ -49,6 +49,8 @@ class SettingsUtils {
             }
         });
     }
+
+    static onChanged() {
+        return chrome.storage.onChanged;
+    }
 }
-
-

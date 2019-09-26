@@ -82,8 +82,6 @@ function loadSettings() {
                             }
                             return;
                         }
-
-                        sendMessage("settings", "changed");
                     });
                 });
             }

@@ -202,7 +202,7 @@ function connectHost() {
     sendDownloads();
 }
 
-addRuntimeCallback("settings", "changed", function () {
+SettingsUtils.onChanged().addListener(() => {
     sendSettings();
 });
 
