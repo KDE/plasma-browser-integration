@@ -64,18 +64,21 @@ function loadSettings() {
                 updateDependencies(control, key, settingsKey);
 
                 control.addEventListener("change", () => {
-                    let saveMessage = document.getElementById("save-message");
-                    saveMessage.innerText = "";
+                    let saveFailureInfoElement = document.getElementById("save-failure-info");
+                    saveFailureInfoElement.classList.add("hidden");
 
                     updateDependencies(control, key, settingsKey);
 
                     saveSettings((error) => {
                         if (error) {
+                            saveFailureInfoElement.classList.remove("hidden");
+
+                            let saveMessageElement = document.getElementById("save-message");
                             try {
-                                saveMessage.innerText = chrome.i18n.getMessage("options_save_failed");
+                                saveMessageElement.innerText = chrome.i18n.getMessage("options_save_failed");
                             } catch (e) {
                                 // When the extension is reloaded, any call to extension APIs throws, make sure we show at least some form of error
-                                saveMessage.innerText = "Saving settings failed (" + (error || e) + ")";
+                                saveMessageElement.innerText = "Saving settings failed (" + (error || e) + ")";
                             }
                             return;
                         }
