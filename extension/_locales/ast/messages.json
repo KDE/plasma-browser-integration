@@ -90,10 +90,10 @@
         "message": "Controles multimedia"
     },
     "options_plugin_purpose_description": {
-        "message": "Adds a \"Share...\" context menu entry and allows websites to open a dialog for sharing contents using the Web Share API."
+        "message": "Amiesta la entrada «Compartir...» nel menú contestual y permite a los sitios web abrir un diálogu pa compartir conteníu usando la API de Web Share"
     },
     "options_plugin_purpose_title": {
-        "message": "Content Sharing"
+        "message": "Compartición de conteníu"
     },
     "options_plugin_tabsrunner_description": {
         "message": "Make sure the “Browser Tabs” module is enabled in <a id=\"$1\" href=\"$2\">Plasma Search settings</a>."
@@ -120,13 +120,13 @@
         "message": "Share..."
     },
     "purpose_share_failed_text": {
-        "message": "Could not share this content: $1"
+        "message": "Nun pudo compartise esti conteníu: $1"
     },
     "purpose_share_failed_title": {
-        "message": "Falló'l guardáu de los axustes"
+        "message": "Sharing Failed"
     },
     "purpose_share_finished_text": {
-        "message": "The shared content link ($1) has been copied to the clipboard."
+        "message": "L'enllaz del conteníu compartíu ($1) copióse al cartafueyu."
     },
     "purpose_share_finished_title": {
         "message": "Content Shared"
