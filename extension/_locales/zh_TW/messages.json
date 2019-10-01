@@ -72,7 +72,7 @@
         "message": "在通知區域顯示下載項目"
     },
     "options_plugin_kdeconnect_description": {
-        "message": "新增連結的選單項目，以讓您可以將它們使用 <a href=\"$1\">KDE 連線</a> 傳送"
+        "message": "新增連結的選單項目，以讓您可以將它們使用 <a href=\"$1\">KDE 連線</a> 傳送到您"
     },
     "options_plugin_kdeconnect_title": {
         "message": "透過 KDE 連線傳送"
