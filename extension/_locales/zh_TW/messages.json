@@ -123,7 +123,7 @@
         "message": "無法分享此內容：$1"
     },
     "purpose_share_failed_title": {
-        "message": "儲存設定失敗"
+        "message": "分享失敗"
     },
     "purpose_share_finished_text": {
         "message": "分享的內容連結 ($1) 已複製至剪貼簿。"
