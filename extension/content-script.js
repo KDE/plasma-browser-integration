@@ -65,9 +65,23 @@ SettingsUtils.get().then((items) => {
 
     const mpris = items.mpris;
     if (mpris.enabled) {
-        loadMpris();
-        if (items.mprisMediaSessions.enabled) {
-            loadMediaSessionsShim();
+        const origin = window.location.origin;
+
+        const websiteSettings = mpris.websiteSettings || {};
+
+        let mprisAllowed = true;
+        if (typeof MPRIS_WEBSITE_SETTINGS[origin] === "boolean") {
+            mprisAllowed = MPRIS_WEBSITE_SETTINGS[origin];
+        }
+        if (typeof websiteSettings[origin] === "boolean") {
+            mprisAllowed = websiteSettings[origin];
+        }
+
+        if (mprisAllowed) {
+            loadMpris();
+            if (items.mprisMediaSessions.enabled) {
+                loadMediaSessionsShim();
+            }
         }
     }
 

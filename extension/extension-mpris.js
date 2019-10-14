@@ -195,3 +195,11 @@ addRuntimeCallback("mpris", ["metadata", "callbacks"], function (message, sender
         sendPortMessage("mpris", action, payload);
     }
 });
+
+addRuntimeCallback("mpris", "hasTabPlayer", (message) => {
+    const playersOnTab = playerIds.filter((playerId) => {
+        return playerId.startsWith(message.tabId + "-");
+    });
+
+    return Promise.resolve(playersOnTab);
+});

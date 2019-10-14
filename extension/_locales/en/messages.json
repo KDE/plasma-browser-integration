@@ -9,6 +9,15 @@
         "message": "Plasma Browser Integration"
     },
 
+    "browseraction_mpris_title": {
+        "description": "Title for Media controls in popup",
+        "message": "Media Controls"
+    },
+    "browseraction_mpris_enable_on": {
+        "description": "Heading for list of domains to enable media controls on",
+        "message": "Enable media controls on:"
+    },
+
     "options_title": {
         "description": "Title for settings page",
         "message": "Plasma Integration Settings"

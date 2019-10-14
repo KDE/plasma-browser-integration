@@ -7,6 +7,8 @@
     <title></title>
     <link rel="stylesheet" href="action_popup.css">
     <script src="i18n.js"></script>
+    <script src="constants.js"></script>
+    <script src="utils.js"></script>
     <script src="content-utils.js"></script>
     <script src="action_popup.js"></script>
 </head>
@@ -41,7 +43,15 @@
     </div>
 
     <div id="main" class="hidden">
-        <!-- Stuff like media controls settings, share functionalty, etc would eventually go here -->
+
+        <div id="dummy-main" class="message general with-icon"></div>
+
+        <section class="mpris-blacklist-info hidden">
+            <header data-i18n="browseraction_mpris_title">I18N</header>
+            <p data-i18n="browseraction_mpris_enable_on">I18N</p>
+            <ul class="mpris-blacklist-origins"></ul>
+        </section>
+
     </div>
 
 </main>

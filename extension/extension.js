@@ -86,7 +86,6 @@ var portStatus = "";
 var portLastErrorMessage = undefined;
 
 function updateBrowserAction() {
-    let enableAction = false;
     if (portStatus === "UNSUPPORTED_OS" || portStatus === "STARTUP_FAILED") {
         chrome.browserAction.setIcon({
             path: {
@@ -96,21 +95,13 @@ function updateBrowserAction() {
                 "128": "icons/plasma-disabled-128.png"
             }
         });
-        enableAction = true;
     }
 
     if (portLastErrorMessage) {
         chrome.browserAction.setBadgeText({ text: "!" });
         chrome.browserAction.setBadgeBackgroundColor({ color: "#da4453" }); // breeze "negative" color
-        enableAction = true;
     } else {
         chrome.browserAction.setBadgeText({ text: "" });
-    }
-
-    if (enableAction) {
-        chrome.browserAction.enable();
-    } else {
-        chrome.browserAction.disable();
     }
 }
 updateBrowserAction();
