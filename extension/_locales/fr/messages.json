@@ -1,9 +1,9 @@
 {
     "browseraction_mpris_enable_on": {
-        "message": "Enable media controls on:"
+        "message": "Contrôles multimédia améliorés"
     },
     "browseraction_mpris_title": {
-        "message": "Media Controls"
+        "message": "Contrôles multimédia"
     },
     "browseraction_title": {
         "message": "Erreur d'intégration au navigateur Plasma"

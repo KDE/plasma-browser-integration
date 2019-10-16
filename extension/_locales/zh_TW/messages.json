@@ -1,9 +1,9 @@
 {
     "browseraction_mpris_enable_on": {
-        "message": "Enable media controls on:"
+        "message": "強化的媒體控制"
     },
     "browseraction_mpris_title": {
-        "message": "Media Controls"
+        "message": "媒體控制"
     },
     "browseraction_title": {
         "message": "Plasma 瀏覽器整合"

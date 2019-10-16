@@ -1,9 +1,9 @@
 {
     "browseraction_mpris_enable_on": {
-        "message": "Enable media controls on:"
+        "message": "Kendali Media Yang Ditingkatkan"
     },
     "browseraction_mpris_title": {
-        "message": "Media Controls"
+        "message": "Kendali Media"
     },
     "browseraction_title": {
         "message": "Integrasi Browser Plasma"

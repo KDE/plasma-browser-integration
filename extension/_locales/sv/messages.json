@@ -1,9 +1,9 @@
 {
     "browseraction_mpris_enable_on": {
-        "message": "Enable media controls on:"
+        "message": "Utökade mediakontroller"
     },
     "browseraction_mpris_title": {
-        "message": "Media Controls"
+        "message": "Mediakontroller"
     },
     "browseraction_title": {
         "message": "Plasma webbläsarintegrering"

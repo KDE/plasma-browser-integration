@@ -1,9 +1,9 @@
 {
     "browseraction_mpris_enable_on": {
-        "message": "Enable media controls on:"
+        "message": "확장된 미디어 제어"
     },
     "browseraction_mpris_title": {
-        "message": "Media Controls"
+        "message": "미디어 제어"
     },
     "browseraction_title": {
         "message": "Plasma 브라우저 통합"

@@ -1,9 +1,9 @@
 {
     "browseraction_mpris_enable_on": {
-        "message": "Enable media controls on:"
+        "message": "Controis de reprodución mellorados"
     },
     "browseraction_mpris_title": {
-        "message": "Media Controls"
+        "message": "Controis de reprodución"
     },
     "browseraction_title": {
         "message": "Integración co navegador de Plasma"

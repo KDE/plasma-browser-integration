@@ -1,9 +1,9 @@
 {
     "browseraction_mpris_enable_on": {
-        "message": "Enable media controls on:"
+        "message": "Увімкнути засоби керування відтворенням для:"
     },
     "browseraction_mpris_title": {
-        "message": "Media Controls"
+        "message": "Керування відтворенням"
     },
     "browseraction_title": {
         "message": "Інтеграція браузера із Плазмою"

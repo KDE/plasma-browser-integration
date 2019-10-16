@@ -1,9 +1,9 @@
 {
     "browseraction_mpris_enable_on": {
-        "message": "Enable media controls on:"
+        "message": "Forbedrede mediestyringer"
     },
     "browseraction_mpris_title": {
-        "message": "Media Controls"
+        "message": "Mediestyringer"
     },
     "browseraction_title": {
         "message": "Fejl i Plasma browser-integration"

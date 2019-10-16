@@ -1,9 +1,9 @@
 {
     "browseraction_mpris_enable_on": {
-        "message": "Enable media controls on:"
+        "message": "Ulepszone sterowanie mediami"
     },
     "browseraction_mpris_title": {
-        "message": "Media Controls"
+        "message": "Sterowanie mediami"
     },
     "browseraction_title": {
         "message": "Integracja przeglądarki Plazmy"

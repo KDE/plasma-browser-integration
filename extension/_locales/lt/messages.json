@@ -1,9 +1,9 @@
 {
     "browseraction_mpris_enable_on": {
-        "message": "Enable media controls on:"
+        "message": "Įjungti medijos valdiklius ties:"
     },
     "browseraction_mpris_title": {
-        "message": "Media Controls"
+        "message": "Medijos valdikliai"
     },
     "browseraction_title": {
         "message": "Plasma naršyklės integracija"

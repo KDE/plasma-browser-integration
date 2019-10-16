@@ -1,9 +1,9 @@
 {
     "browseraction_mpris_enable_on": {
-        "message": "Enable media controls on:"
+        "message": "Activar os controlos multimédia em:"
     },
     "browseraction_mpris_title": {
-        "message": "Media Controls"
+        "message": "Controlos Multimédia"
     },
     "browseraction_title": {
         "message": "Integração do Navegador do Plasma"

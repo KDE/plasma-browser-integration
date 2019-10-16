@@ -1,9 +1,9 @@
 {
     "browseraction_mpris_enable_on": {
-        "message": "Enable media controls on:"
+        "message": "Euskarri-kontrol aurreratuak"
     },
     "browseraction_mpris_title": {
-        "message": "Media Controls"
+        "message": "Euskarri-kontrolak"
     },
     "browseraction_title": {
         "message": "Plasman arakatzailea bateratzea"
