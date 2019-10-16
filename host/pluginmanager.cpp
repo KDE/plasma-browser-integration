@@ -62,6 +62,10 @@ bool PluginManager::setPluginLoaded(AbstractBrowserPlugin *plugin, bool loaded)
         return false;
     }
 
+    if (plugin->isLoaded() == loaded) {
+        return true;
+    }
+
     bool ok = false;
     if (loaded && !plugin->isLoaded()) {
         ok = plugin->onLoad();
