@@ -129,7 +129,7 @@
         "message": "Nun pudo compartise esti conteníu: $1"
     },
     "purpose_share_failed_title": {
-        "message": "Sharing Failed"
+        "message": "Falló'l guardáu de los axustes"
     },
     "purpose_share_finished_text": {
         "message": "L'enllaz del conteníu compartíu ($1) copióse al cartafueyu."

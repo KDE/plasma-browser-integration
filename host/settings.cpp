@@ -30,6 +30,8 @@
 #include "pluginmanager.h"
 #include "settingsadaptor.h"
 
+#include <config-host.h>
+
 const QMap<Settings::Environment, QString> Settings::environmentNames = {
     {Settings::Environment::Chrome, QStringLiteral("chrome")},
     {Settings::Environment::Chromium, QStringLiteral("chromium")},
@@ -154,6 +156,8 @@ QJsonObject Settings::handleData(int serial, const QString &event, const QJsonOb
            details.insert(QStringLiteral("loaded"), plugin->isLoaded());
            ret.insert(subsystem, details);
         }
+    } else if (event == QLatin1String("getVersion")) {
+        ret.insert(QStringLiteral("host"), QStringLiteral(HOST_VERSION_STRING));
     }
 
     return ret;

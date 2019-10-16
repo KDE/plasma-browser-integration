@@ -107,6 +107,15 @@
         "message": "This may interfere with the appearance of websites that already apply a custom styling to their scroll bars."
     },
 
+    "options_about_host_version": {
+        "description": "Version of extension native host",
+        "message": "Host version: $1"
+    },
+    "options_about_extension_version": {
+        "description": "Version of browser extension",
+        "message": "Extension version: $1"
+    },
+
     "options_about_copyright": {
         "message": "© 2017-2019 Kai Uwe Broulik and David Edmundson"
     },
