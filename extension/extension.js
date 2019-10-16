@@ -222,6 +222,10 @@ addRuntimeCallback("settings", "getSubsystemStatus", (message, sender, action) =
     return sendPortMessageWithReply("settings", "getSubsystemStatus");
 });
 
+addRuntimeCallback("settings", "getVersion", () => {
+    return sendPortMessageWithReply("settings", "getVersion");
+});
+
 addRuntimeCallback("browserAction", "getStatus", (message) => {
     let info = {
         portStatus,

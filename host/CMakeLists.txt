@@ -1,5 +1,7 @@
 add_definitions(-DTRANSLATION_DOMAIN=\"plasma-browser-integration-host\")
 
+configure_file(config-host.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-host.h)
+
 set(HOST_SOURCES main.cpp
                 connection.cpp
                 pluginmanager.cpp

@@ -241,6 +241,20 @@ document.addEventListener("DOMContentLoaded", function () {
             console.warn("Failed to determine subsystem status", e);
             document.body.classList.add("startup-failure");
         });
+
+        Promise.all([
+            sendMessage("settings", "getVersion"),
+            chrome.runtime.getManifest()
+        ]).then((results) => {
+            const versionInfo = results[0];
+            const manifest = results[1];
+
+            document.getElementById("version-info-host").innerText = chrome.i18n.getMessage("options_about_host_version",
+versionInfo.host);
+            document.getElementById("version-info-extension").innerText = chrome.i18n.getMessage("options_about_extension_version", manifest.version);
+
+            document.getElementById("version-info").classList.remove("not-supported");
+        });
     });
 
     document.getElementById("open-krunner-settings").addEventListener("click", function (event) {
