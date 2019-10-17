@@ -41,6 +41,12 @@
     "options_about_donate": {
         "message": "Ak sa vám páči čo vidíte, prosím zvážte <a href=\"$1\">prispieť do KDE</a>, aby sme mohli robiť ten najlepší slobodný softvér ako je možné."
     },
+    "options_about_extension_version": {
+        "message": "Extension version: $1"
+    },
+    "options_about_host_version": {
+        "message": "Host version: $1"
+    },
     "options_about_kde": {
         "message": "KDE je celosvetová komunita softvérových inžinierov, umelcov, spisovateľov, prekladateľov a tvorcov, ktorí sa zaviazali k vývoju <a href=\"$1\">Slobodného softvéru</a>. KDE vytvára Plasma desktopové prostredie, stovky aplikácií a množstvo softvérových knižníc, ktoré ich podporujú. KDE je spolupracujúcim podnikom: žiaden jednotlivec nekontroluje jeho smerovanie alebo produkty.Namiesto toho spolupracujeme na dosiahnutí spoločného cieľa, ktorým je vybudovanie najlepšieho Slobodného softvéru na svete. Každý je vítaný <a href=\"$2\">pripojiť sa a prispievať</a> do KDE, vrátane vás. Viac informácií o komunite KDE a softvéri, ktorý vyrábame, nájdete na stránke <a "
     },

@@ -41,6 +41,12 @@
     "options_about_donate": {
         "message": "Si vous aimez ce que vous voyez, vous pouvez envisager <a href=\"$1\">de faire un don à KDE</a>, afin que nous puissions continuer à développer les meilleurs logiciels libres possibles."
     },
+    "options_about_extension_version": {
+        "message": "Extension version: $1"
+    },
+    "options_about_host_version": {
+        "message": "Host version: $1"
+    },
     "options_about_kde": {
         "message": "KDE est une communauté, à l'échelle mondiale, d'ingénieurs en logiciels, d'artistes, de traducteurs et de créateurs se consacrant au développement de <a href=\"$1\">logiciels libres</a>. KDE produit l'environnement de bureau Plasma, des centaines d'applications et de très nombreuses bibliothèques logicielles qui leur permettent de fonctionner. KDE est un mouvement coopératif : aucune entité unique ne contrôle sa direction ou ses produits. Nous travaillons ensemble dans l'optique de bâtir les meilleurs logiciels libres qui soient. Chacun est invité <a href=\"$2\">à nous rejoindre et à contribuer</a> à KDE, y compris vous. Visitez <a href=\"$3\">$3</a> pour plus d'informations sur le projet KDE et les logiciels que nous créons."
     },

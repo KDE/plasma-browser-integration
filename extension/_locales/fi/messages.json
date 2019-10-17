@@ -41,6 +41,12 @@
     "options_about_donate": {
         "message": "Jos pidät näkemästäsi, harkitse <a href=\"$1\">KDE:lle lahjoittamista</a>, jotta voimme jatkaa parhaiden vapaiden ohjelmistojen tekemistä."
     },
+    "options_about_extension_version": {
+        "message": "Extension version: $1"
+    },
+    "options_about_host_version": {
+        "message": "Host version: $1"
+    },
     "options_about_kde": {
         "message": "KDE on maailmanlaajuinen ohjelmoijien, taiteilijoiden, kirjoittajien, kääntäjien ja avustajien verkosto, joka on sitoutunut <a href=\"$1\">vapaiden ohjelmistojen</a> kehitykseen. KDE on luonut Plasma-työpöytäympäristön, satoja sovelluksia ja ohjelmakirjastot niitä tukemaan. KDE on yhteistoimintahanke, jota mikään yksittäinen taho ei yksin hallitse, vaan pyrimme yhdessä yhteiseen päämäärään: rakentamaan maailman parhaita vapaita ohjelmia. Kaikki ovat tervetulleita <a href=\"$2\">liittymään KDE:hen ja avustamaan sitä</a> – myös sinä. Saat lisätietoa KDE-yhteisöstä ja tuottamistamme ohjelmista sivulta <a href=\"$3\">$3</a>."
     },

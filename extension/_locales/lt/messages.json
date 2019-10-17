@@ -41,6 +41,12 @@
     "options_about_donate": {
         "message": "Jeigu jums patinka tai, ką matėte, tuomet apsvarstykite galimybę <a href=\"$1\">paremti KDE</a>, kad ir toliau galėtume kurti geriausią įmanomą laisvą programinę įrangą."
     },
+    "options_about_extension_version": {
+        "message": "Extension version: $1"
+    },
+    "options_about_host_version": {
+        "message": "Host version: $1"
+    },
     "options_about_kde": {
         "message": "KDE yra pasaulinio masto bendruomenė, kurią sudaro programinės įrangos inžinieriai, dailininkai, rašytojai, vertėjai bei kūrėjai, kurie yra pasišventę <a href=\"$1\">laisvosios programinės įrangos</a> plėtojimui. KDE kuria Plasma darbalaukio aplinką, šimtus programų ir daugybę jas palaikančių bibliotekų. KDE yra bendradarbiavimo organizacija: jokia esybė nevaldo jos krypties ar produktų. Vietoj to, mes kartu dirbame, kad pasiektume bendrą tikslą - sukurti geriausią pasaulyje laisvąją programinę įrangą. Visi, įskaitant ir jus, yra kviečiami <a href=\"$2\">prisijungti ir talkinti</a> KDE. Išsamesnei informacijai apie KDE bendruomenę ir mūsų kuriamą programinę įrangą, apsilankykite <a href=\"$3\">$3</a>."
     },

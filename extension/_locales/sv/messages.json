@@ -41,6 +41,12 @@
     "options_about_donate": {
         "message": "Om du tycker om vad du ser, fundera gärna på att <a href=\"$1\">bidra till KDE</a>, så att vi kan fortsätta att skapa den bästa möjliga fria "
     },
+    "options_about_extension_version": {
+        "message": "Extension version: $1"
+    },
+    "options_about_host_version": {
+        "message": "Host version: $1"
+    },
     "options_about_kde": {
         "message": "KDE är ett världsomspännande nätverk av programvaruingenjörer, grafiker, författare, översättare och kreatörer som är engagerade i utveckling av <a href=\"$1\">fri programvara</a>. KDE producerar skrivbordsmiljön Plasma, hundratals program, och de talrika programvarubibliotek som stöder dem. KDE är ett kooperativ, där ingen enskild person styr inriktningen eller produkterna. Istället arbetar vi tillsammans för att uppnå det gemensamma målet att skapa värdens finaste fria programvara. Alla är välkomna att <a href=\"$2\">gå med och bidra</a> till KDE, inklusive du själv. Besök <a href=\"$3\">$3</a> för ytterligare information om KDE-gemenskapen och programvaran vi skapar."
     },
