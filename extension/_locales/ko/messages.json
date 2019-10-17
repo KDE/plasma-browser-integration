@@ -47,6 +47,12 @@
     "options_about_donate": {
         "message": "사용하고 계신 확장 기능에 만족하신다면 <a href=\"$1\">KDE에 기부</a>하는 것을 생각해 보십시오. 자유 소프트웨어를 유지 관리하는 데 도움을 줄 수 있습니다."
     },
+    "options_about_extension_version": {
+        "message": "Extension version: $1"
+    },
+    "options_about_host_version": {
+        "message": "Host version: $1"
+    },
     "options_about_kde": {
         "message": "KDE는 <a href=\"$1\">자유 소프트웨어</a> 개발을 위해 모인 소프트웨어 개발자, 예술가, 집필가, 번역가 및 기타 인원의 모임입니다. KDE 커뮤니티에서는 Plasma 데스크톱 환경, 다양한 프로그램 및 지원 라이브러리를 개발합니다. KDE는 협동 조합입니다. 어떠한 단일 집단도 방향이나 제품을 결정하지 않습니다. 우리는 전 세계에서 가장 뛰어난 자유 소프트웨어 개발이라는 공통 목표를 위해서 함께 힘을 모으고 있습니다. KDE에는 이 글을 읽는 여러분을 포함한 누구나 <a href=\"$2\">참여하고 기여</a>할 수 있습니다. <a href=\"$3\">$3</a> 페이지를 방문하셔서 KDE 커뮤니티와 소프트웨어에 대해 알아 보십시오."
     },

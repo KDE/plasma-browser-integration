@@ -47,6 +47,12 @@
     "options_about_donate": {
         "message": "Viss du likar programmet, vurder å <a href=\"$1\">gje ei pengegåve til KDE</a>, slik at me kan halda fram med å laga den beste frie programvara."
     },
+    "options_about_extension_version": {
+        "message": "Extension version: $1"
+    },
+    "options_about_host_version": {
+        "message": "Host version: $1"
+    },
     "options_about_kde": {
         "message": "KDE er eit verdsfemnande fellesskap av eldsjeler som programmerar, teiknar, komponerer, dokumenterer, set om eller hjelper til på andre måtar med utvikling av <a href=\"$1\">fri programvare</a>. Me har laga brukarflata Plasma, hundrevis av program og dei mange programbiblioteka desse byggjer på. KDE er eit fellesskap der inga einskild gruppe, firma eller organisasjon har eigarskap til produkta eller styrer retninga den vidare utviklinga skal gå i. Derimot arbeider me saman å oppnå vårt felles mål om å laga fri programvare i verdsklasse. Alle er <a href=\"$2\">velkomne til å bidra</a> – du òg. Du finn meir informasjon om KDE og programma me utviklar på <a href="
     },

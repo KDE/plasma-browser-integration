@@ -47,6 +47,12 @@
     "options_about_donate": {
         "message": "Om du tycker om vad du ser, fundera gärna på att <a href=\"$1\">bidra till KDE</a>, så att vi kan fortsätta att skapa den bästa möjliga fria "
     },
+    "options_about_extension_version": {
+        "message": "Extension version: $1"
+    },
+    "options_about_host_version": {
+        "message": "Host version: $1"
+    },
     "options_about_kde": {
         "message": "KDE är ett världsomspännande nätverk av programvaruingenjörer, grafiker, författare, översättare och kreatörer som är engagerade i utveckling av <a href=\"$1\">fri programvara</a>. KDE producerar skrivbordsmiljön Plasma, hundratals program, och de talrika programvarubibliotek som stöder dem. KDE är ett kooperativ, där ingen enskild person styr inriktningen eller produkterna. Istället arbetar vi tillsammans för att uppnå det gemensamma målet att skapa värdens finaste fria programvara. Alla är välkomna att <a href=\"$2\">gå med och bidra</a> till KDE, inklusive du själv. Besök <a href=\"$3\">$3</a> för ytterligare information om KDE-gemenskapen och programvaran vi skapar."
     },
@@ -96,10 +102,10 @@
         "message": "Mediakontroller"
     },
     "options_plugin_purpose_description": {
-        "message": "Lägger till det sammanhangsberoende menyalternativet \"Dela...\" och tillåter att webbplatser öppnar en dialogruta för att dela innehåll med programmeringsgränssnittet Web Share."
+        "message": "Adds a \"Share...\" context menu entry and allows websites to open a dialog for sharing contents using the Web Share API."
     },
     "options_plugin_purpose_title": {
-        "message": "Dela innehåll"
+        "message": "Content Sharing"
     },
     "options_plugin_tabsrunner_description": {
         "message": "Försäkra dig om att modulen \"Webbläsarflikar\" är aktiverad i <a id=\"$1\" href=\"$2\">Plasma sökinställningar</a>."
@@ -123,19 +129,19 @@
         "message": "Plasma integreringsinställningar"
     },
     "purpose_share": {
-        "message": "Dela..."
+        "message": "Share..."
     },
     "purpose_share_failed_text": {
-        "message": "Kunde inte dela innehållet: $1"
+        "message": "Could not share this content: $1"
     },
     "purpose_share_failed_title": {
         "message": "Delning misslyckades"
     },
     "purpose_share_finished_text": {
-        "message": "Länken för det delade innehållet ($1) har kopierats till klippbordet."
+        "message": "The shared content link ($1) has been copied to the clipboard."
     },
     "purpose_share_finished_title": {
-        "message": "Innehåll delat"
+        "message": "Content Shared"
     },
     "store_description": {
         "message": "Arbeta effektivt med flera saker genom att styra webbläsarfunktionen från skrivbordet, till och med när Chrome inte finns i bakgrunden. Hantera ljud- och videouppspelning, kontrollera nerladdningar i underrättelseområdet, skicka filer till telefonen med KDE-anslut med mera på KDE Plasma-Paketet plasma-browser-integration måste vara installerat för att utökningen ska fungera. Det bör vara tillgängligt från distributionens pakethanterare när Plasma 5.13 eller senare används.\\nObservera: Utökningen stöds inte på Debian."

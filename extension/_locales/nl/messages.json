@@ -47,6 +47,12 @@
     "options_about_donate": {
         "message": "Als u wat u zag fijn vond, bekijk dan eens of <a href=\"$1\">doneren aan KDE</a> iets is, zodat we door kunnen gaan om de beste vrije software mogelijk te maken."
     },
+    "options_about_extension_version": {
+        "message": "Extension version: $1"
+    },
+    "options_about_host_version": {
+        "message": "Host version: $1"
+    },
     "options_about_kde": {
         "message": "KDE is een wereldwijde gemeenschap van software-ingenieurs, artiesten, schrijvers, vertalers en makers, die aan de ontwikkeling van <a href=\"$1\">Vrije Software</a> zijn toegewijd. KDE maakt de Plasma ontwikkelomgeving, honderden toepassingen en de vele softwarebibliotheken die ze ondersteunen. KDE is een samenwerkingsverband: geen enkele entiteit bestuurt zijn richting of producten. In plaats daarvan werken we samen om het gemeenschappelijke doel te bereiken van het bouwen van 's werelds beste Vrije Software. Iedereen is welkom bij <a href=\"$2\">doe mee en draag bij</a> aan KDE, ook u. Kijk voor meer informatie over de KDE-gemeenschap en over de software die we maken op <a href=\"$3\">$3</a>."
     },

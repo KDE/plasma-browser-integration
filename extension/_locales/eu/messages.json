@@ -47,6 +47,12 @@
     "options_about_donate": {
         "message": "Ikusitakoa gustuko baduzu, kontuan hartu <a href=\"$1\">KDEri dohaintza egitea</a>, guk ahalik eta software aske onena egiten jarraitzeko aukera izan dezagun."
     },
+    "options_about_extension_version": {
+        "message": "Extension version: $1"
+    },
+    "options_about_host_version": {
+        "message": "Host version: $1"
+    },
     "options_about_kde": {
         "message": "KDE <a href=\"$1\">Software Askearen</a> garapenarekin engaiatutako mundu osoko software ingeniari, artista, idazle, itzultzaile eta sortzaile elkarte bat da. KDEk ekoizten ditu Plasma mahaigain ingurunea, ehunka aplikazio, eta haiei sostengua ematen dieten liburutegi ugariak. KDE ekimen kooperatibo bat da: bere norabidea eta produktuak ez ditu erakunde bakar batek kontrolatzen. Aldiz, elkarrekin lan egiten dugu helburu bera lortzeko, munduko Software Aske bikainena eraikitzearena alegia. Jende oro ongi etorria da  KDErekin <a href=\"$2\">elkartu eta laguntza ematera</a>, zu barne. Bisitatu <a href=\"$3\">$3</a>, KDE elkartearen eta ekoizten dugun softwarearen gaineko informazio zabalagoa eskuratzeko."
     },
