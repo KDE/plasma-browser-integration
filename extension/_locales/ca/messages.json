@@ -48,10 +48,10 @@
         "message": "Si us agrada el que veieu, si us plau, considereu fer una <a href=\"$1\">donació a KDE</a>, per tal de continuar fent el millor programari lliure possible."
     },
     "options_about_extension_version": {
-        "message": "Extension version: $1"
+        "message": "Versió de l'extensió: $1"
     },
     "options_about_host_version": {
-        "message": "Host version: $1"
+        "message": "Versió del servidor: $1"
     },
     "options_about_kde": {
         "message": "KDE és una xarxa mundial d'enginyers informàtics, artistes, escriptors, traductors i creadors compromesos amb el desenvolupament de <a href=\"$1\">programari lliure</a> (Free Software). KDE ha creat l'entorn d'escriptori Plasma, centenars d'aplicacions, i moltes biblioteques de programari que les fan funcionar. KDE és una iniciativa cooperativa: cap entitat individual controla la seva direcció ni els seus productes. Altrament, treballem conjuntament per aconseguir l'objectiu comú de crear el programari lliure més refinat del món. Donem la benvinguda a tothom a <a href=\"$2\">afegir-se i col·laborar</a> amb el KDE, incloent-vos. Visiteu <a href=\"$3\">$3</a> per a més informació sobre la comunitat KDE i el programari que produïm."
