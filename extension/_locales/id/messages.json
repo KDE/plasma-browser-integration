@@ -102,10 +102,10 @@
         "message": "Kendali Media"
     },
     "options_plugin_purpose_description": {
-        "message": "Adds a \"Share...\" context menu entry and allows websites to open a dialog for sharing contents using the Web Share API."
+        "message": "Tambahkan sebuah entri menu konteks \"Bagikan...\" dan izinkan situs membuka dialog untuk membagikan konten menggunakan Web Share API."
     },
     "options_plugin_purpose_title": {
-        "message": "Content Sharing"
+        "message": "Membagikan Konten"
     },
     "options_plugin_tabsrunner_description": {
         "message": "Pastikan modul “Browser Tabs” telah difungsikan dalam <a id=\"$1\" href=\"$2\">pengaturan Plasma Search</a>."
@@ -129,19 +129,19 @@
         "message": "Pengaturan Plasma Integration"
     },
     "purpose_share": {
-        "message": "Share..."
+        "message": "Bagikan..."
     },
     "purpose_share_failed_text": {
-        "message": "Could not share this content: $1"
+        "message": "Tidak bisa membagikan konten ini: $1"
     },
     "purpose_share_failed_title": {
-        "message": "Penyimpanan pengaturan, gagal"
+        "message": "Gagal Membagikan"
     },
     "purpose_share_finished_text": {
-        "message": "The shared content link ($1) has been copied to the clipboard."
+        "message": "Tautan ($1) konten yang dibagikan telah disalin ke papan-klip."
     },
     "purpose_share_finished_title": {
-        "message": "Content Shared"
+        "message": "Konten Dibagikan"
     },
     "store_description": {
         "message": "Multitask efisien dengan mengendalikan fungsi browser dari desktop, bahkan ketika Chrome ada di latarbelakang. Kelola pemutaran audio dan video, periksa unduhan di area notifikasi, kirim file ke ponselmu menggunakan KDE Connect dan lainnya di dalam Desktop Plasma KDE!\\nPaket integrasi plasma browser harus diinstal agar ekstensi ini berfungsi. Itu harus tersedia dari pengelola paket distribusimu ketika menjalankan Plasma 5.13 atau lebih baru.\\nCATATAN: Ekstensi ini tidak didukung di Debian."
