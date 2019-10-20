@@ -42,10 +42,10 @@
         "message": "若您喜歡您看到的東西，請考慮<a href=\"$1\">捐款給 KDE</a>，這樣我們就可以繼續"
     },
     "options_about_extension_version": {
-        "message": "Extension version: $1"
+        "message": "擴充元件版本：$1"
     },
     "options_about_host_version": {
-        "message": "Host version: $1"
+        "message": "主機版本：$1"
     },
     "options_about_kde": {
         "message": "<html><b>KDE</b> 是一個接受全世界的軟體工程師、美工畫家、寫作者、翻譯者與創造者提交各種服務與貢獻的<a href=\"%1\">自由軟體</a>開發社群。KDE 做出了 Plasma 桌面環境、數百個應用程式和支援它們的軟體函式庫。<br /><br />KDE 是家合作企業：沒有任何人操控 KDE 的目標和產品，取而代之的是一起達到建立世界上最好自由軟體的共同目標。歡迎任何人 -- 包括您<a href=\"%2\">加入並貢獻 KDE</a>。<br /><br />前往<a href=\"%3\">%3</a> 取得關於 KDE 社群的更多資訊，和我們做出的軟"
