@@ -48,10 +48,10 @@
         "message": "Jeśli lubisz to co widzisz, to rozważ proszę <a href=\"$1\">datek na KDE</a>, tak abyśmy mogli kontynuować tworzenie najlepszego wolnego "
     },
     "options_about_extension_version": {
-        "message": "Extension version: $1"
+        "message": "Wersja rozszerzenia: $1"
     },
     "options_about_host_version": {
-        "message": "Host version: $1"
+        "message": "Wersja gospodarza: $1"
     },
     "options_about_kde": {
         "message": "KDE jest światową siecią inżynierów oprogramowania, artystów, pisarzy, tłumaczy oraz osób wspomagających, którzy poświęcają się rozwojowi <a href=\"$1\">Wolnego Oprogramowania</a>. Społeczność ta stworzyła setki programów Wolnego Oprogramowania będących częścią szkieletów KDE, przestrzeni roboczych i aplikacji. KDE jest współpracującym przedsiębiorstwem, w którym nie istnieje pojedynczy byt sterujący pracą lub produktami KDE przy wykluczeniu reszty. <a href=\"$2\">Uczestnictwo i współtworzenie</a> w KDE jest mile widziane w każdym przypadku, także w twoim. Odwiedź <a href=\"$3\">$3</a> po więcej informacji na temat społeczności KDE i oprogramowania, które tworzymy."
