@@ -42,10 +42,10 @@
         "message": "Jika kamu suka apa yang kamu lihat, silakan mempertimbangkan <a href=\"$1\">donasi ke KDE</a>, sehingga kami bisa terus membuat perangkat lunak bebas sebaik mungkin."
     },
     "options_about_extension_version": {
-        "message": "Extension version: $1"
+        "message": "Versi ekstensi: $1"
     },
     "options_about_host_version": {
-        "message": "Host version: $1"
+        "message": "Versi host: $1"
     },
     "options_about_kde": {
         "message": "KDE adalah komunitas seluruh dunia dari insinyur, seniman, penulis, penerjemah dan pemfasilitas perangkat lunak yang mana berkomitmen untuk developmen <a href=\"$1\">Free Software</a>. KDE memproduksi lingkungan desktop Plasma, ratusan aplikasi, dan banyak pustaka perangkat lunak yang mendukungnya. KDE adalah perusahaan koperasi: di mana tiada entitas satu pun yang mengendalikan arah atau usaha. Alih-alih, kami bekerja bersama-sama untuk mencapai tujuan umum pembangunan dalam dunia Free Software yang baik. Siapa pun disambut untuk <a href=\"$2\">bergabung dan berkontribusi</a> untuk KDE, termasuk kamu. Kunjungi <a href=\"$3\">$3</a> untuk informasi tentang komunitas KDE dan perangkat lunak yang kami produksi."
