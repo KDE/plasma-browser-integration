@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="5.8210001mm"
+   height="5.8210001mm"
+   viewBox="0 0 5.8210001 5.8210001"
+   version="1.1"
+   id="svg1593"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   sodipodi:docname="airplane.svg">
+  <defs
+     id="defs1587" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="2.8"
+     inkscape:cx="64.37956"
+     inkscape:cy="25.028242"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="2126"
+     inkscape:window-height="1018"
+     inkscape:window-x="527"
+     inkscape:window-y="257"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata1590">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-291.179)">
+    <g
+       transform="matrix(0.26458333,0,0,0.26458333,11.90625,291.17917)"
+       id="airplane"
+       inkscape:export-filename="/home/kaiuwe/airplane.png"
+       inkscape:export-xdpi="418.91"
+       inkscape:export-ydpi="418.91">
+      <rect
+         style="opacity:1;fill:none;fill-opacity:1;stroke:none"
+         id="rect4528"
+         width="22"
+         height="22"
+         x="-45"
+         y="-1.3322676e-15" />
+      <path
+         class="ColorScheme-Text"
+         id="path4467"
+         transform="translate(21)"
+         d="m -55,3 c 0,0 -1,0 -1,3 v 2.5 l -1.099609,0.5507812 V 9 h -0.800782 V 9.3007812 H -58 V 9.5 l -2,1 V 10 h -0.09961 V 9.6992188 h -0.800782 V 10 H -61 v 1 l -2,1 v 1 L -60.808594,12.726562 -60.699219,13 h 0.148438 l 0.392578,-0.355469 2.751953,-0.34375 h 0.105469 l 0.0059,-0.01367 L -56,12.125 V 15 c 0,0.487991 0.24052,0.971967 0.484375,1.34375 L -58,18 v 1 l 3,-1 3,1 v -1 l -2.484375,-1.65625 C -54.24052,15.971967 -54,15.487991 -54,15 v -2.875 l 1.294922,0.162109 0.0059,0.01367 h 0.105469 l 2.751953,0.34375 L -49.699219,13 h 0.398438 L -49.191406,12.726562 -47,13 v -1 l -2,-1 v -1 h -0.09961 V 9.6992188 h -0.800782 V 10 H -50 v 0.5 l -2,-1 V 9.3007812 h -0.09961 V 9 h -0.800782 V 9.050781 L -54,8.5 V 6 c 0,-3 -1,-3 -1,-3 z"
+         style="color:#31363b;fill:currentColor;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cscccccccccccccccccccccccccscccccccscccccccccccccccccccccccccsc" />
+    </g>
+  </g>
+</svg>

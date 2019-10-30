@@ -54,3 +54,64 @@ class SettingsUtils {
         return chrome.storage.onChanged;
     }
 }
+
+class BlobReader {
+    constructor(url) {
+        this._url = url;
+        this._timeout = -1;
+        this._type = BlobReader.READ_TYPE_TEXT;
+    }
+
+    // oof...
+    static get READ_TYPE_ARRAY_BUFFER() { return "ArrayBuffer"; }
+    static get READ_TYPE_BINARY_STRING() { return "BinaryString"; }
+    static get READ_TYPE_DATA_URL() { return "DataURL"; }
+    static get READ_TYPE_TEXT() { return "Text"; }
+
+    get timeout() {
+        return this._timeout;
+    }
+    set timeout(timeout) {
+        this._timeout = timeout;
+    }
+
+    get type() {
+        return this._type;
+    }
+    set type(type) {
+        this._type = type;
+    }
+
+    read() {
+        return new Promise((resolve, reject) => {
+            const xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = () => {
+                if (xhr.readyState != 4) {
+                    return;
+                }
+
+                if (!xhr.response) { // TODO check status code, too?
+                    return reject("NO_RESPONSE");
+                }
+
+                const reader = new FileReader();
+                reader.onloadend = () => {
+                    if (reader.error) {
+                        return reject(reader.error);
+                    }
+
+                    resolve(reader.result);
+                };
+
+                reader["readAs" + this._type](xhr.response);
+            };
+
+            xhr.open("GET", this._url);
+            xhr.responseType = "blob";
+            if (this._timeout > -1) {
+                xhr.timeout = this._timeout;
+            }
+            xhr.send();
+        });
+    }
+};

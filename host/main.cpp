@@ -37,6 +37,7 @@
 #include "tabsrunnerplugin.h"
 #include "mprisplugin.h"
 #include "purposeplugin.h"
+#include "itineraryplugin.h"
 
 void msgHandler(QtMsgType type, const QMessageLogContext &context, const QString &msg)
 {
@@ -83,6 +84,7 @@ int main(int argc, char *argv[])
     PluginManager::self().addPlugin(new TabsRunnerPlugin(&a));
     PluginManager::self().addPlugin(new MPrisPlugin(&a));
     PluginManager::self().addPlugin(new PurposePlugin(&a));
+    PluginManager::self().addPlugin(new ItineraryPlugin(&a));
 
     // TODO make this prettier, also prevent unloading them at any cost
     PluginManager::self().loadPlugin(&Settings::self());

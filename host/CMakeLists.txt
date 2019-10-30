@@ -13,6 +13,8 @@ set(HOST_SOURCES main.cpp
                 downloadjob.cpp
                 tabsrunnerplugin.cpp
                 purposeplugin.cpp
+                itineraryplugin.cpp
+                itineraryextractorjob.cpp
                 )
 
 qt5_add_dbus_adaptor(HOST_SOURCES ../dbus/org.kde.plasma.browser_integration.TabsRunner.xml tabsrunnerplugin.h TabsRunnerPlugin)
@@ -31,6 +33,7 @@ target_link_libraries(
     KF5::I18n
     KF5::KIOCore
     KF5::PurposeWidgets
+    KF5::Notifications
     KF5::FileMetaData
 )
 

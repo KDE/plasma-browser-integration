@@ -38,5 +38,7 @@ public:
     using AbstractBrowserPlugin::handleData;
     void handleData(const QString &event, const QJsonObject &data) override;
 private:
+    void extractItinerary(const QString &fileName);
+
     QHash<int, DownloadJob *> m_jobs;
 };

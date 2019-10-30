@@ -37,6 +37,9 @@ DEFAULT_EXTENSION_SETTINGS = {
     purpose: {
         enabled: true
     },
+    itinerary: {
+        enabled: true
+    },
     breezeScrollBars: {
         // this breaks pages in interesting ways, disable by default
         enabled: false
@@ -52,3 +55,7 @@ SUPPORTED_PLATFORMS = ["linux", "openbsd", "freebsd"];
 const MPRIS_WEBSITE_SETTINGS = {
     //"https://www.example.com": false
 };
+
+// Supported schema.org types for itinerary extraction, sorted by preferences
+const SUPPORTED_ITINERARY_TYPES = ["Event", "FoodEstablishment", "LodgingBusiness", "FlightReservation", "TrainReservation"];
+const MAXIMUM_ITINERARY_TYPE_OCCURRENCES = 15;

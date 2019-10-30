@@ -67,3 +67,97 @@ section > header {
     display: block;
     margin-bottom: 0.5em;
 }
+
+/* Itinerary */
+.itinerary-info {
+
+}
+.itinerary-info div.banner {
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+}
+.itinerary-info .banner > .blur {
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    /*transform: scale(2);*/
+    filter: blur(10px);
+    background-size: 100% 100%;
+    z-index: -1;
+}
+.itinerary-info .banner > .image {
+    width: 100%;
+    height: 100px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    overflow: auto;
+    position: relative;
+}
+
+.itinerary-info h2 {
+    padding: 0 0.5em;
+    text-align: center;
+}
+
+.itinerary-info p {
+    padding: 0 0.5em;
+    /* HACK this voodoo elides too long text */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  overflow: hidden;
+}
+
+ul.actions {
+    display: block;
+    padding: 0 0.5em;
+}
+ul.actions > li {
+    display: block;
+    margin-bottom: 0.5em;
+}
+/*ul.actions > li:not(:last-child) {
+    margin-bottom: 0;
+}*/
+
+ul.actions > li > a {
+    display: block;
+    background: #3daee9; /* Breeze highlight color */
+    color: #fcfcfc; /* Breeze highlight text color */
+    text-decoration: none;
+    padding: 0.5em;
+    border-radius: 0.2em;
+}
+
+ul.details {
+    list-style: none;
+    padding-left: 0.5em;
+}
+ul.details > li {
+    margin-bottom: 0.5em;
+}
+
+ul.details li.icon::before {
+    margin-right: 0.5em;
+}
+ul.details li.icon.dates::before {
+    content: "📅"; /* "Calendar" Emoji */
+}
+ul.details li.icon.location::before {
+    content: "📍" /* "Location pin" Emoji */
+}
+ul.details li.icon.email::before {
+    content: "📧" /* "EMail" Emoji */
+}
+ul.details li.icon.phone::before {
+    content: "☎️" /* "Phone" Emoji */
+}
+ul.details li.icon.ticket::before {
+    content: "🎫" /* "Ticket" Emoji */
+}
+ul.details li.icon.seat::before {
+    content: "💺" /* "Seat" Emoji */
+}

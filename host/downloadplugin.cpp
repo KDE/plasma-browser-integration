@@ -29,6 +29,13 @@
 #include <KIO/JobTracker>
 #include <KJobTrackerInterface>
 
+#include <KLocalizedString>
+#include <KNotification>
+
+#include <QProcess>
+
+#include "itineraryextractorjob.h"
+
 DownloadPlugin::DownloadPlugin(QObject* parent) :
     AbstractBrowserPlugin(QStringLiteral("downloads"), 2, parent)
 {
@@ -98,10 +105,18 @@ void DownloadPlugin::handleData(const QString& event, const QJsonObject& payload
             m_jobs.remove(id);
         });
 
-        job->start();
+        QObject::connect(job, &KJob::result, this, [this, job] {
+            if (job->error()) {
+                return;
+            }
 
-        QObject::connect(job, &KJob::finished, this, [this, job, id] {
+            // FIXME check if enabled in settings
+            if (job->mimeType() == QLatin1String("application/pdf")) {
+                extractItinerary(job->fileName());
+            }
         });
+
+        job->start();
 
     } else if (event == QLatin1String("update")) {
         auto *job = m_jobs.value(id);
@@ -114,3 +129,41 @@ void DownloadPlugin::handleData(const QString& event, const QJsonObject& payload
     }
 }
 
+void DownloadPlugin::extractItinerary(const QString &fileName)
+{
+    auto *job = new ItineraryExtractorJob(fileName);
+    job->setInputType(ItineraryExtractorJob::InputType::Pdf);
+    job->start();
+
+    connect(job, &KJob::result, /*this*/ [job, fileName] {
+        if (job->error()) {
+            return;
+        }
+
+        const QJsonArray data = job->extractedData();
+        if (data.isEmpty()) {
+            return;
+        }
+
+        // HACK some nicer notification
+        const QString type = data.first().toObject().value(QStringLiteral("@type")).toString();
+
+        QString message = i18n("Would you like to add this file to KDE Itinerary?");
+        QString iconName = QStringLiteral("map-globe");
+        if (type == QLatin1String("FlightReservation")) {
+            message = i18n("Would you like to add this boarding pass to KDE Itinerary?");
+            iconName = QStringLiteral("document-send");
+        }
+
+        KNotification *noti = KNotification::event(KNotification::Notification,
+                                                   i18n("Add to Itinerary"),
+                                                   message,
+                                                   iconName);
+        noti->setHint(QStringLiteral("desktop-entry"), QStringLiteral("org.kde.itinerary"));
+        noti->setActions({i18n("Add to Itinerary")});
+        connect(noti, &KNotification::action1Activated, [fileName] {
+            QProcess::startDetached(QStringLiteral("itinerary"), {fileName});
+        });
+        noti->sendEvent();
+    });
+}

@@ -1,6 +1,5 @@
 /*
-    Copyright (C) 2017 by Kai Uwe Broulik <kde@privat.broulik.de>
-    Copyright (C) 2017 by David Edmundson <davidedmundson@kde.org>
+    Copyright (C) 2019 by Kai Uwe Broulik <kde@privat.broulik.de>
 
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal
@@ -23,60 +22,25 @@
 
 #pragma once
 
-#include <KJob>
+#include "abstractbrowserplugin.h"
 
-#include <QUrl>
-
-class DownloadJob : public KJob
+class ItineraryPlugin : public AbstractBrowserPlugin
 {
     Q_OBJECT
 
 public:
-    DownloadJob(int id);
+    explicit ItineraryPlugin(QObject *parent);
+    ~ItineraryPlugin() override;
 
-    enum class State {
-        None,
-        InProgress,
-        Interrupted,
-        Complete
-    };
+    QJsonObject status() const override;
 
-    void start() override;
+    bool onLoad() override;
+    bool onUnload() override;
 
-    void update(const QJsonObject &payload);
-
-    QString fileName() const;
-    QString mimeType() const;
-
-Q_SIGNALS:
-    void killRequested();
-    void suspendRequested();
-    void resumeRequested();
-
-private Q_SLOTS:
-    void doStart();
-
-protected:
-    bool doKill() override;
-    bool doSuspend() override;
-    bool doResume() override;
+    using AbstractBrowserPlugin::handleData;
+    QJsonObject handleData(int serial, const QString &event, const QJsonObject &data) override;
 
 private:
-    void updateDescription();
-    void saveOriginUrl();
-
-    int m_id = -1;
-
-    QUrl m_url;
-    QUrl m_finalUrl;
-
-    QUrl m_destination;
-
-    QString m_fileName;
-
-    QString m_mimeType;
-
-    // In doubt, assume incognito
-    bool m_incognito = true;
+    bool m_supported = false;
 
 };

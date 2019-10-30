@@ -26,6 +26,7 @@
 
 #include <QDateTime>
 #include <QJsonObject>
+#include <QProcess>
 
 #include <KFileMetaData/UserMetaData>
 #include <KLocalizedString>
@@ -78,6 +79,16 @@ bool DownloadJob::doResume()
 {
     emit resumeRequested();
     return true;
+}
+
+QString DownloadJob::fileName() const
+{
+    return m_fileName;
+}
+
+QString DownloadJob::mimeType() const
+{
+    return m_mimeType;
 }
 
 void DownloadJob::update(const QJsonObject &payload)

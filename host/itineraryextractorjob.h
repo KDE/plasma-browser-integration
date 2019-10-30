@@ -1,6 +1,5 @@
 /*
-    Copyright (C) 2017 by Kai Uwe Broulik <kde@privat.broulik.de>
-    Copyright (C) 2017 by David Edmundson <davidedmundson@kde.org>
+    Copyright (C) 2019 by Kai Uwe Broulik <kde@privat.broulik.de>
 
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal
@@ -25,58 +24,47 @@
 
 #include <KJob>
 
-#include <QUrl>
+#include <QByteArray>
+#include <QJsonArray>
+#include <QString>
 
-class DownloadJob : public KJob
+class ItineraryExtractorJob : public KJob
 {
     Q_OBJECT
 
 public:
-    DownloadJob(int id);
+    ItineraryExtractorJob(const QByteArray &inputData, QObject *parent = nullptr);
+    ItineraryExtractorJob(const QString &fileName, QObject *parent = nullptr);
+    ~ItineraryExtractorJob() override;
 
-    enum class State {
-        None,
-        InProgress,
-        Interrupted,
-        Complete
+    enum class InputType {
+        Any,
+        Email,
+        Pdf,
+        PkPass,
+        ICal,
+        Html
     };
+    Q_ENUM(InputType)
+
+    static bool isSupported();
+
+    InputType inputType() const;
+    void setInputType(InputType inputType);
+
+    QJsonArray extractedData() const;
 
     void start() override;
-
-    void update(const QJsonObject &payload);
-
-    QString fileName() const;
-    QString mimeType() const;
-
-Q_SIGNALS:
-    void killRequested();
-    void suspendRequested();
-    void resumeRequested();
 
 private Q_SLOTS:
     void doStart();
 
-protected:
-    bool doKill() override;
-    bool doSuspend() override;
-    bool doResume() override;
-
 private:
-    void updateDescription();
-    void saveOriginUrl();
+    static QString extractorPath();
 
-    int m_id = -1;
-
-    QUrl m_url;
-    QUrl m_finalUrl;
-
-    QUrl m_destination;
-
+    InputType m_inputType = InputType::Any;
+    QByteArray m_inputData;
     QString m_fileName;
 
-    QString m_mimeType;
-
-    // In doubt, assume incognito
-    bool m_incognito = true;
-
+    QJsonArray m_extractedData;
 };

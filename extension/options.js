@@ -219,6 +219,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 item.classList.remove("not-supported", "by-host");
             });
+
+            // If itinerary is supported in the host but the extractor is not installed, show a hint
+            const itinerary = status.itinerary;
+            if (itinerary && !itinerary.extractorFound) {
+                console.log("Itinerary extractor not found");
+                document.getElementById("itinerary-not-installed-info").classList.remove("not-supported");
+            }
+
         }).catch((e) => {
             // The host is most likely not working correctly
             // If we run this against an older host which doesn't support message replies
