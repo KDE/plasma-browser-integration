@@ -1,9 +1,9 @@
 {
     "browseraction_mpris_enable_on": {
-        "message": "Ulepszone sterowanie mediami"
+        "message": "Włącz obsługę odtwarzacza na:"
     },
     "browseraction_mpris_title": {
-        "message": "Sterowanie mediami"
+        "message": "Obsługa odtwarzacza"
     },
     "browseraction_title": {
         "message": "Integracja przeglądarki Plazmy"
