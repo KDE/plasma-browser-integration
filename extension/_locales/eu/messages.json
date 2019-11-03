@@ -1,6 +1,6 @@
 {
     "browseraction_mpris_enable_on": {
-        "message": "Euskarri-kontrol aurreratuak"
+        "message": "Gaitu euskarrien kontrolak hemen:"
     },
     "browseraction_mpris_title": {
         "message": "Euskarri-kontrolak"
@@ -48,10 +48,10 @@
         "message": "Ikusitakoa gustuko baduzu, kontuan hartu <a href=\"$1\">KDEri dohaintza egitea</a>, guk ahalik eta software aske onena egiten jarraitzeko aukera izan dezagun."
     },
     "options_about_extension_version": {
-        "message": "Extension version: $1"
+        "message": "Hedapen bertsioa: $1"
     },
     "options_about_host_version": {
-        "message": "Host version: $1"
+        "message": "Ostalari bertsioa: $1"
     },
     "options_about_kde": {
         "message": "KDE <a href=\"$1\">Software Askearen</a> garapenarekin engaiatutako mundu osoko software ingeniari, artista, idazle, itzultzaile eta sortzaile elkarte bat da. KDEk ekoizten ditu Plasma mahaigain ingurunea, ehunka aplikazio, eta haiei sostengua ematen dieten liburutegi ugariak. KDE ekimen kooperatibo bat da: bere norabidea eta produktuak ez ditu erakunde bakar batek kontrolatzen. Aldiz, elkarrekin lan egiten dugu helburu bera lortzeko, munduko Software Aske bikainena eraikitzearena alegia. Jende oro ongi etorria da  KDErekin <a href=\"$2\">elkartu eta laguntza ematera</a>, zu barne. Bisitatu <a href=\"$3\">$3</a>, KDE elkartearen eta ekoizten dugun softwarearen gaineko informazio zabalagoa eskuratzeko."
@@ -102,10 +102,10 @@
         "message": "Euskarri-kontrolak"
     },
     "options_plugin_purpose_description": {
-        "message": "Adds a \"Share...\" context menu entry and allows websites to open a dialog for sharing contents using the Web Share API."
+        "message": "\"Partekatu...\" testuinguru menuko sarrera gehitu eta webguneei «Web Share» APIa erabiliz edukiak partekatzeko elkarrizketa-koadro bat irekitzeko baimena ematen die."
     },
     "options_plugin_purpose_title": {
-        "message": "Content Sharing"
+        "message": "Edukia partekatzea"
     },
     "options_plugin_tabsrunner_description": {
         "message": "Ziurtatu “Arakatzailearen fitxak” modulua gaitua dagoela <a id=\"$1\" href=\"$2\">Plasmaren bilaketa ezarpenetan</a>."
@@ -129,19 +129,19 @@
         "message": "Plama bateratze ezarpenak"
     },
     "purpose_share": {
-        "message": "Share..."
+        "message": "Partekatu..."
     },
     "purpose_share_failed_text": {
-        "message": "Could not share this content: $1"
+        "message": "Ezin izan da partekatu eduki hau: $1"
     },
     "purpose_share_failed_title": {
-        "message": "Ezarpenak gordetzea huts egin du"
+        "message": "Partekatzea huts egin du"
     },
     "purpose_share_finished_text": {
-        "message": "The shared content link ($1) has been copied to the clipboard."
+        "message": "Partekatutako edukiaren esteka ($1) arbelera kopiatu da."
     },
     "purpose_share_finished_title": {
-        "message": "Content Shared"
+        "message": "Edukia partekatu da"
     },
     "store_description": {
         "message": "Ataza-anizkun eraginkorra arakatzailearen funtzioak mahaigainetik kontrolatuz, Chrome atzealdean dagoela ere. Kudeatu audio eta bideo atzera-jotzea, egiaztatu zama-jaisteak jakinarazpen eremuan, bidali fitxategiak zure telefonora KDE Connect erabiliz eta gehiago KDE Plasma mahaigain Hedapen hau ibil dadin «plasma-browser-integration» paketea instalatu behar da. Erabilgarri egon beharko litzateke zure banaketaren pakete kudeatzailean Plasma 5.13 edo berriagoa ibiltzean.\\nOHARRA: Debian-ek hedapen hau ez da onartzen."
