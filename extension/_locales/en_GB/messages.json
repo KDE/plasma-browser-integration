@@ -1,6 +1,6 @@
 {
     "browseraction_mpris_enable_on": {
-        "message": "Enhanced Media Controls"
+        "message": "Enable media controls on:"
     },
     "browseraction_mpris_title": {
         "message": "Media Controls"
