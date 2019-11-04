@@ -48,7 +48,7 @@
         "message": "Versión da máquina: $1"
     },
     "options_about_kde": {
-        "message": "KDE é unha comunidade mundial de enxeñeiros de software, artistas, escritores, tradutores e creadores comprometidos co desenvolvemento do <a href=\"$1\">software libre</a>. KDE produce o ambiente de escritorio Plasma, centos de aplicacións, e as numerosas bibliotecas de software sobre as que están construídos. KDE é un proxecto cooperativo: non hai ningunha entidade que controle por si soa nin a dirección nin os produtos. O que facemos é traballar xuntos para acadar o obxectivo común de construír o mellor software libre do mundo. Todo o mundo é benvido a <a href=\"$2\">unirse e colaborar</a> con KDE, vostede incluído. Visite <a href=\"$3\">$3</a> para obter máis información sobre a comunidade KDE e do software que produce."
+        "message": "KDE é unha comunidade mundial de enxeñeiros de software, artistas, escritores, tradutores e creadores comprometidos co desenvolvemento do <a href=\"$1\">software libre</a>. KDE produce o contorno de escritorio Plasma, centos de aplicacións, e as numerosas bibliotecas de software sobre as que están construídos. KDE é un proxecto cooperativo: non hai ningunha entidade que controle por si soa nin a dirección nin os produtos. O que facemos é traballar xuntos para acadar o obxectivo común de construír o mellor software libre do mundo. Todo o mundo é benvido a <a href=\"$2\">unirse e colaborar</a> con KDE, vostede incluído. Visite <a href=\"$3\">$3</a> para obter máis información sobre a comunidade KDE e do software que produce."
     },
     "options_about_license": {
         "message": "Licenza: <a href=\"$1\">Licenza Pública Xeral de GNU, versión 3</a>"
