@@ -158,10 +158,14 @@ function connectHost() {
         }
     });
 
-    port.onDisconnect.addListener(function() {
+    port.onDisconnect.addListener(function(port) {
         var error = chrome.runtime.lastError;
+        // Firefox passes in the port which may then have an error set
+        if (port && port.error) {
+            error = port.error;
+        }
 
-        console.warn("Host disconnected", error);
+        console.warn("Host disconnected", error && error.message);
 
         // Remove all kde connect menu entries since they won't work without a host
         try {
