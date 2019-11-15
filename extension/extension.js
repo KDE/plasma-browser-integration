@@ -97,7 +97,7 @@ function updateBrowserAction() {
         });
     }
 
-    if (portLastErrorMessage) {
+    if (portLastErrorMessage && receivedMessageOnce) {
         chrome.browserAction.setBadgeText({ text: "!" });
         chrome.browserAction.setBadgeBackgroundColor({ color: "#da4453" }); // breeze "negative" color
     } else {
@@ -180,14 +180,13 @@ function connectHost() {
         }
         kdeConnectDevices = {};
 
+        portLastErrorMessage = error && error.message || "UNKNOWN";
         if (receivedMessageOnce) {
-            portLastErrorMessage = error && error.message || "UNKNOWN";
             portStatus = "DISCONNECTED";
 
             console.log("Auto-restarting it");
             connectHost();
         } else {
-            portLastErrorMessage = "";
             portStatus = "STARTUP_FAILED";
 
             console.warn("Not auto-restarting host as we haven't received any message from it before. Check that it's working/installed correctly");
@@ -242,7 +241,10 @@ addRuntimeCallback("browserAction", "ready", () => {
 
         // disabling the browser action immediately when opening it
         // causes opening to fail on Firefox, so clear the error only when it's being closed.
-        portLastErrorMessage = "";
-        updateBrowserAction();
+        // Only clear error when it was a transient error, not a startup failure
+        if (receivedMessageOnce) {
+            portLastErrorMessage = "";
+            updateBrowserAction();
+        }
     });
 });
