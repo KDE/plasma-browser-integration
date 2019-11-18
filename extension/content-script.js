@@ -791,8 +791,14 @@ function loadMediaSessionsShim() {
                 player.pausedBecauseOfDomRemoval = true;
                 player.removeEventListener("play", player.registerInDom);
 
-                (document.head || document.documentElement).appendChild(player);
-                player.parentNode.removeChild(player);
+                // If it is already in DOM by the time it starts playing, we don't need to do anything
+                if (document.body && document.body.contains(player)) {
+                    delete player.pausedBecauseOfDomRemoval;
+                    player.removeEventListener("pause", player.replayAfterRemoval);
+                } else {
+                    (document.head || document.documentElement).appendChild(player);
+                    player.parentNode.removeChild(player);
+                }
             };
 
             player.replayAfterRemoval = () => {
