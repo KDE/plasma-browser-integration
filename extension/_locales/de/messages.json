@@ -75,7 +75,7 @@
         "message": "Bildlaufleisten im Breeze-Stil verwenden"
     },
     "options_plugin_downloads_saveOriginUrl": {
-        "message": "Adresse, von der eine Datei heruntergeladen wurde, in deren Dateiattributen speichern"
+        "message": "Adresse, von der eine Datei heruntergeladen wurde, in deren Dateiattributen "
     },
     "options_plugin_downloads_saveOriginUrl_description": {
         "message": "Hinweis: Die Adresse enthält möglicherweise sensible Informationen, die anderen offengelegt werden könnten, wenn die Datei mit diesen geteilt oder zugänglich gemacht wird"
@@ -102,7 +102,7 @@
         "message": "Mediensteuerung"
     },
     "options_plugin_purpose_description": {
-        "message": "Fügt einen „Teilen ...“-Eintrag zum Kontextmenü hinzu und erlaubt es Webseiten mittels Web Share API einen Dialog zum Teilen von Inhalten zu öffnen."
+        "message": "Fügt einen „Teilen ...“-Eintrag zum Kontextmenü hinzu und erlaubt es Webseiten mittels Web Share API einen Dialog zum Teilen von Inhalten zu "
     },
     "options_plugin_purpose_title": {
         "message": "Inhalte teilen"
