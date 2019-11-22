@@ -27,6 +27,9 @@ DEFAULT_EXTENSION_SETTINGS = {
     kdeconnect: {
         enabled: true
     },
+    notificationfilter: {
+        enabled: true
+    },
     downloads: {
         enabled: true,
         saveOriginUrl: false

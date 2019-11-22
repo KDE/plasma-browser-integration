@@ -98,6 +98,15 @@
         "message": "Adds a \"Share...\" context menu entry and allows websites to open a dialog for sharing contents using the Web Share API."
     },
 
+    "options_plugin_notificationfilter_title": {
+        "description": "Title for KDE Connect notification filter plugin",
+        "message": "Filter duplicate notifications"
+    },
+    "options_plugin_notificationfilter_description": {
+        "description": "Description for KDE Connect notification filter plugin",
+        "message": "Lets KDE Connect filter out notifications synced from another device if the respective website is open in the browser on this device."
+    },
+
     "options_plugin_breezeScrollBars_title": {
         "description": "Title for Breeze style scroll bars plugin",
         "message": "Use Breeze-style scroll bars"

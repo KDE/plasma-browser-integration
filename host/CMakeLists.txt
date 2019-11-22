@@ -12,10 +12,12 @@ set(HOST_SOURCES main.cpp
                 downloadplugin.cpp
                 downloadjob.cpp
                 tabsrunnerplugin.cpp
+                notificationfilterplugin.cpp
                 purposeplugin.cpp
                 )
 
 qt5_add_dbus_adaptor(HOST_SOURCES ../dbus/org.kde.plasma.browser_integration.TabsRunner.xml tabsrunnerplugin.h TabsRunnerPlugin)
+qt5_add_dbus_adaptor(HOST_SOURCES ../dbus/org.kde.plasma.browser_integration.NotificationFilter.xml notificationfilterplugin.h NotificationFilterPlugin)
 qt5_add_dbus_adaptor(HOST_SOURCES ../dbus/org.kde.plasma.browser_integration.Settings.xml settings.h Settings)
 
 qt5_add_dbus_adaptor(HOST_SOURCES ../dbus/org.mpris.MediaPlayer2.xml mprisplugin.h MPrisPlugin mprisroot MPrisRoot)

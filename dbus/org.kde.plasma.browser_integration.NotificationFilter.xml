@@ -1,0 +1,18 @@
+<!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN" "http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
+<node>
+  <interface name="org.kde.plasma.browser_integration.NotificationFilter">
+    <method name="IsServiceRunning">
+        <arg name="Service" type="s" direction="in" />
+        <!-- Whether there is currently a tab with that given service open -->
+        <arg name="Running" type="b" direction="out" />
+        <!-- Whether the user has granted permissions for the website, cf. HTML Notification.permission
+             -2 = error:   Failed to determine permission
+             -1 = default: Preference unclear, probably never requested permission, assume no permission
+              0 = denied:  Permission denied
+              1 = granted: Permission granted
+              This argument has no meaning when Running is false.
+        -->
+        <arg name="NotificationsGranted" type="i" direction="out" />
+    </method>
+  </interface>
+</node>

@@ -30,6 +30,7 @@
         "extension-downloads.js",
         "extension-tabsrunner.js",
         "extension-purpose.js",
+        "extension-notificationfilter.js",
 
         "extension.js"
     ],
