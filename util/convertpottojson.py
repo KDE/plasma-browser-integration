@@ -31,13 +31,15 @@ with open(potFileName, 'r') as infile:
             currentId = ""
             currentMsg = ""
             continue
-        #split at first space
-        parts = line.split(' ', 1)
-        if len(parts) != 2:
-            continue
-        if parts[0] == "#:":
+        if line.startswith("#:"):
+            parts = line.split(' ', 1)
+            if len(parts) != 2:
+                continue
             currentId = parts[1].split(":")[0]
-        elif parts[0] == "msgstr":
+        elif line.startswith("msgstr"):
+            parts = line.split(' ', 1)
+            if len(parts) != 2:
+                continue
             msg = parts[1].strip('\"')
             msg = msg.replace('\\\"', '\"')
             currentMsg = msg
