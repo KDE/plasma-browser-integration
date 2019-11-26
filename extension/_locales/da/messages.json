@@ -90,7 +90,7 @@
         "message": "Send via KDE Connect"
     },
     "options_plugin_mpris_description": {
-        "message": "Lader dig kontrollere video- og lydafspillere på websider med mediestyrings-"
+        "message": "Lader dig kontrollere video- og lydafspillere på websider med mediestyrings-plasmoiden."
     },
     "options_plugin_mpris_media_sessions_description": {
         "message": "Udtræk metadata og miniaturer på det indhold som afspilles nu ."

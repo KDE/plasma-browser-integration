@@ -54,7 +54,7 @@
         "message": "Versión del servidor: $1"
     },
     "options_about_kde": {
-        "message": "KDE es una comunidad mundial de ingenieros de software, artistas, escritores, traductores y creadores comprometidos con el desarrollo de <a href=\"$1\">software libre</a>. KDE produce el entorno de escritorio Plasma y cientos de aplicaciones, así como las numerosas bibliotecas de software en las que se basan. KDE es una empresa cooperativa: ninguna entidad aislada controla su dirección ni sus productos. En lugar de ello, trabajamos conjuntamente para conseguir el objetivo común de crear el mejor software libre del mundo. Todo el mundo está invitado a <a href=\"$2\">unirse y colaborar</a> con KDE, incluido usted. Visite <a href=\"$3\">$3</a> para obtener más información sobre la comunidad de KDE y el software que "
+        "message": "KDE es una comunidad mundial de ingenieros de software, artistas, escritores, traductores y creadores comprometidos con el desarrollo de <a href=\"$1\">software libre</a>. KDE produce el entorno de escritorio Plasma y cientos de aplicaciones, así como las numerosas bibliotecas de software en las que se basan. KDE es una empresa cooperativa: ninguna entidad aislada controla su dirección ni sus productos. En lugar de ello, trabajamos conjuntamente para conseguir el objetivo común de crear el mejor software libre del mundo. Todo el mundo está invitado a <a href=\"$2\">unirse y colaborar</a> con KDE, incluido usted. Visite <a href=\"$3\">$3</a> para obtener más información sobre la comunidad de KDE y el software que producimos."
     },
     "options_about_license": {
         "message": "Licencia: <a href=\"$1\">Licencia Pública General de GNU versión 3</a>"
@@ -75,7 +75,7 @@
         "message": "Usar las barras de desplazamiento del estilo Brisa"
     },
     "options_plugin_downloads_saveOriginUrl": {
-        "message": "Guardar el URL de donde se ha descargado un archivo en los atributos del "
+        "message": "Guardar el URL de donde se ha descargado un archivo en los atributos del archivo"
     },
     "options_plugin_downloads_saveOriginUrl_description": {
         "message": "Nota: El URL puede contener información sensible que se puede descubrir al hacerlo accesible o al compartirlo con otros"
@@ -102,7 +102,7 @@
         "message": "Controles multimedia"
     },
     "options_plugin_purpose_description": {
-        "message": "Añade una entrada de menú de contexto «Compartir...» y permite que los sitios web abran un diálogo para compartir contenido usando la API de Web "
+        "message": "Añade una entrada de menú de contexto «Compartir...» y permite que los sitios web abran un diálogo para compartir contenido usando la API de Web Share."
     },
     "options_plugin_purpose_title": {
         "message": "Compartir contenido"
@@ -144,6 +144,6 @@
         "message": "Contenido compartido"
     },
     "store_description": {
-        "message": "Multitarea eficiente mediante el control de las funciones del navegador desde el escritorio, incluso cuando Chrome está en segundo plano. Gestión de la reproducción de sonido y de vídeo, comprobación de descargas en el área de notificaciones, envío de archivos al teléfono móvil mediante KDE Connect y mucho más desde el escritorio Plasma de KDE.\\nEl paquete «plasma-browser-integration» debe estar instalado para que esta extensión funcione. Debería estar disponible en el gestor de paquetes de su distribución al ejecutar Plasma 5.13 o posterior.\\nNOTA: Esta extensión no está disponible en Debian."
+        "message": "Multitarea eficiente mediante el control de las funciones del navegador desde el escritorio, incluso cuando Chrome está en segundo plano. Gestión de la reproducción de sonido y de vídeo, comprobación de descargas en el área de notificaciones, envío de archivos al teléfono móvil mediante KDE Connect y mucho más desde el escritorio Plasma de KDE.\\n\\nEl paquete «plasma-browser-integration» debe estar instalado para que esta extensión funcione. Debería estar disponible en el gestor de paquetes de su distribución al ejecutar Plasma 5.13 o posterior.\\n\\nNOTA: Esta extensión no está disponible en Debian."
     }
 }

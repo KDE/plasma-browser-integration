@@ -45,7 +45,7 @@
         "message": "Questa estensione per il browser è stata creata dalla <a href=\"$1\">comunità KDE</a>. Puoi trovare ulteriori informazioni sul progetto nel <a href=\"$2\">wiki Community di KDE</a>."
     },
     "options_about_donate": {
-        "message": "Se ti piace quello che vedi, valuta una <a href=\"$1\">donazione a KDE</a>, in modo che possiamo continuare a realizzare il miglior software libero "
+        "message": "Se ti piace quello che vedi, valuta una <a href=\"$1\">donazione a KDE</a>, in modo che possiamo continuare a realizzare il miglior software libero possibile."
     },
     "options_about_extension_version": {
         "message": "Versione estensione: $1"
@@ -102,7 +102,7 @@
         "message": "Controlli multimediali"
     },
     "options_plugin_purpose_description": {
-        "message": "Aggiunge un menu contestuale «Condividi...» e permette ai siti di web di aprire una finestra di dialogo per condividere contenuti tramite Web Share "
+        "message": "Aggiunge un menu contestuale «Condividi...» e permette ai siti di web di aprire una finestra di dialogo per condividere contenuti tramite Web Share API."
     },
     "options_plugin_purpose_title": {
         "message": "Condivisione del contenuto"
@@ -144,6 +144,6 @@
         "message": "Contenuto condiviso"
     },
     "store_description": {
-        "message": "Gestisci diversi compiti contemporaneamente controllando le funzioni del browser dal desktop, anche quando Chrome non è in primo piano. Gestisci la riproduzione dell'audio e del video, verifica gli scaricamenti nell'area di notifica, invia file al tuo telefono usando KDE Connect e altro ancora all'intero del desktop KDE Plasma!\\nIl pacchetto plasma-browser-integration deve essere installato perché questa estensione possa funzionare. Dovrebbe essere disponibile tramite il gestore di pacchetti della tua distribuzione quando usi Plasma 5.13 o successivo.\\nNOTA: questa estensione non è supportata in Debian."
+        "message": "Gestisci diversi compiti contemporaneamente controllando le funzioni del browser dal desktop, anche quando Chrome non è in primo piano. Gestisci la riproduzione dell'audio e del video, verifica gli scaricamenti nell'area di notifica, invia file al tuo telefono usando KDE Connect e altro ancora all'intero del desktop KDE Plasma!\\n\\nIl pacchetto plasma-browser-integration deve essere installato perché questa estensione possa funzionare. Dovrebbe essere disponibile tramite il gestore di pacchetti della tua distribuzione quando usi Plasma 5.13 o successivo.\\n\\nNOTA: questa estensione non è supportata in Debian."
     }
 }

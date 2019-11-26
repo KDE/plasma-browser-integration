@@ -84,7 +84,7 @@
         "message": "Exibir downloads na área de notificação"
     },
     "options_plugin_kdeconnect_description": {
-        "message": "Adiciona uma entrada no menu de contexto para links habilitando enviá-los para seu telefone ou outro dispositivo pareado usando o <a href=\"$1\">KDE "
+        "message": "Adiciona uma entrada no menu de contexto para links habilitando enviá-los para seu telefone ou outro dispositivo pareado usando o <a href=\"$1\">KDE Connect</a>."
     },
     "options_plugin_kdeconnect_title": {
         "message": "Enviar via KDE Connect"
@@ -138,7 +138,7 @@
         "message": "Falha ao compartilhar"
     },
     "purpose_share_finished_text": {
-        "message": "O link de conteúdo compartilhado ($1) foi copiado para a área de "
+        "message": "O link de conteúdo compartilhado ($1) foi copiado para a área de transferência."
     },
     "purpose_share_finished_title": {
         "message": "Conteúdo compartilhado"

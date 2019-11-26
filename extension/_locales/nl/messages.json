@@ -42,7 +42,7 @@
         "message": "© 2017-2019 Kai Uwe Broulik en David Edmundson"
     },
     "options_about_created_by_kde": {
-        "message": "Deze extensie van een browser is gemaakt door de <a href=\"$1\">KDE-gemeenschap</a>. U kunt meer informatie over dit project vinden op de <a "
+        "message": "Deze extensie van een browser is gemaakt door de <a href=\"$1\">KDE-gemeenschap</a>. U kunt meer informatie over dit project vinden op de <a href=\"$2\">KDE-gemeenschapswiki</a>."
     },
     "options_about_donate": {
         "message": "Als u wat u zag fijn vond, bekijk dan eens of <a href=\"$1\">doneren aan KDE</a> iets is, zodat we door kunnen gaan om de beste vrije software mogelijk te maken."
@@ -75,7 +75,7 @@
         "message": "Breeze-stijl schuifbalken gebruiken"
     },
     "options_plugin_downloads_saveOriginUrl": {
-        "message": "URL opslaan waar vanaf een bestand is gedownload in de attributen van het "
+        "message": "URL opslaan waar vanaf een bestand is gedownload in de attributen van het bestand"
     },
     "options_plugin_downloads_saveOriginUrl_description": {
         "message": "Opmerking: de URL kan gevoelige informatie bevatten die ontsloten kan worden wanneer het bestand toegankelijk is door of gedeeld wordt met anderen"
@@ -90,7 +90,7 @@
         "message": "Via KDE Connect verzenden"
     },
     "options_plugin_mpris_description": {
-        "message": "Laat u video- en audiospelers besturen in websites met de plasmoid "
+        "message": "Laat u video- en audiospelers besturen in websites met de plasmoid Mediabesturing."
     },
     "options_plugin_mpris_media_sessions_description": {
         "message": "Metagegevens en miniaturen van nu spelende inhoud extraheren."
@@ -108,7 +108,7 @@
         "message": "Inhoud delen"
     },
     "options_plugin_tabsrunner_description": {
-        "message": "Ga na dat de module “Browser Tabs” is ingeschakeld in <a id=\"$1\" href="
+        "message": "Ga na dat de module “Browser Tabs” is ingeschakeld in <a id=\"$1\" href=\"$2\">Plasma-zoekinstellingen</a>."
     },
     "options_plugin_tabsrunner_title": {
         "message": "Browsertabbladen in venster “Commando uitvoeren” zoeken"
@@ -144,6 +144,6 @@
         "message": "Inhoud gedeeld"
     },
     "store_description": {
-        "message": "Doe multitasking efficient door de browserfuncties te besturen vanaf het bureaublad, zelfs terwijl Chrome in de achtergrond zit. Afspelen van geluid en video besturen, downloads controleren in het meldingengebied, bestanden verzenden naar uw telefoon met KDE Connect en meer binnen het KDE Plasma Het plasma-browser-integratie pakket moet geïnstalleerd zijn voor deze extensie om te werken. Het zou beschikbaar moeten zijn via de pakketbeheerder van uw distributie bij gebruik van Plasma 5.13 of later.\\nNOTE: Deze extensie wordt niet ondersteund op Debian."
+        "message": "Doe multitasking efficient door de browserfuncties te besturen vanaf het bureaublad, zelfs terwijl Chrome in de achtergrond zit. Afspelen van geluid en video besturen, downloads controleren in het meldingengebied, bestanden verzenden naar uw telefoon met KDE Connect en meer binnen het KDE Plasma Bureaublad!\\n\\nHet plasma-browser-integratie pakket moet geïnstalleerd zijn voor deze extensie om te werken. Het zou beschikbaar moeten zijn via de pakketbeheerder van uw distributie bij gebruik van Plasma 5.13 of later.\\n\\nNOTE: Deze extensie wordt niet ondersteund op Debian."
     }
 }

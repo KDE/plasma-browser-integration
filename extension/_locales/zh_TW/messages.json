@@ -18,7 +18,7 @@
         "message": "不支援的作業系統"
     },
     "general_error_startup_failed": {
-        "message": "請確保已正確安裝 'plasma-browser-integration' 軟體包，且執行 Plasma 5.13 或更"
+        "message": "請確保已正確安裝 'plasma-browser-integration' 軟體包，且執行 Plasma 5.13 或更新版本。"
     },
     "general_error_startup_failed_title": {
         "message": "無法連線至原生主機。"
@@ -36,7 +36,7 @@
         "message": "透過 KDE 連線開啟"
     },
     "options_about_bugs": {
-        "message": "若您發現問題，請檢查<a href=\"$1\">開放臭蟲清單</a>並<a href=\"$2\">回報錯誤"
+        "message": "若您發現問題，請檢查<a href=\"$1\">開放臭蟲清單</a>並<a href=\"$2\">回報錯誤</a>。"
     },
     "options_about_copyright": {
         "message": "© 2017-2019 Kai Uwe Broulik 和 David Edmundson"
@@ -45,7 +45,7 @@
         "message": "這個瀏覽器擴充套件由 <a href=\"$1\">KDE 社群</a>建立。您可以在 <a href=\"$2\">KDE Community Wiki</a> 找到更多此專案的資訊。"
     },
     "options_about_donate": {
-        "message": "若您喜歡您看到的東西，請考慮<a href=\"$1\">捐款給 KDE</a>，這樣我們就可以繼續"
+        "message": "若您喜歡您看到的東西，請考慮<a href=\"$1\">捐款給 KDE</a>，這樣我們就可以繼續做出更好的自由軟體。"
     },
     "options_about_extension_version": {
         "message": "擴充元件版本：$1"
@@ -54,7 +54,7 @@
         "message": "主機版本：$1"
     },
     "options_about_kde": {
-        "message": "<html><b>KDE</b> 是一個接受全世界的軟體工程師、美工畫家、寫作者、翻譯者與創造者提交各種服務與貢獻的<a href=\"%1\">自由軟體</a>開發社群。KDE 做出了 Plasma 桌面環境、數百個應用程式和支援它們的軟體函式庫。<br /><br />KDE 是家合作企業：沒有任何人操控 KDE 的目標和產品，取而代之的是一起達到建立世界上最好自由軟體的共同目標。歡迎任何人 -- 包括您<a href=\"%2\">加入並貢獻 KDE</a>。<br /><br />前往<a href=\"%3\">%3</a> 取得關於 KDE 社群的更多資訊，和我們做出的軟"
+        "message": "<html><b>KDE</b> 是一個接受全世界的軟體工程師、美工畫家、寫作者、翻譯者與創造者提交各種服務與貢獻的<a href=\"%1\">自由軟體</a>開發社群。KDE 做出了 Plasma 桌面環境、數百個應用程式和支援它們的軟體函式庫。<br /><br />KDE 是家合作企業：沒有任何人操控 KDE 的目標和產品，取而代之的是一起達到建立世界上最好自由軟體的共同目標。歡迎任何人 -- 包括您<a href=\"%2\">加入並貢獻 KDE</a>。<br /><br />前往<a href=\"%3\">%3</a> 取得關於 KDE 社群的更多資訊，和我們做出的軟體。</html>"
     },
     "options_about_license": {
         "message": "授權條款：<a href=\"$1\">GNU 通用公共授權第三版</a>"
@@ -78,13 +78,13 @@
         "message": "在檔案屬性儲存檔案的下載網址"
     },
     "options_plugin_downloads_saveOriginUrl_description": {
-        "message": "註：網址可能會包含敏感資訊，可能會在檔案可供他人存取 (或與他人分享) 時遭洩"
+        "message": "註：網址可能會包含敏感資訊，可能會在檔案可供他人存取 (或與他人分享) 時遭洩漏。"
     },
     "options_plugin_downloads_title": {
         "message": "在通知區域顯示下載項目"
     },
     "options_plugin_kdeconnect_description": {
-        "message": "新增連結的選單項目，以讓您可以將它們使用 <a href=\"$1\">KDE 連線</a> 傳送到您"
+        "message": "新增連結的選單項目，以讓您可以將它們使用 <a href=\"$1\">KDE 連線</a> 傳送到您的手機或是其他已配對的裝置。"
     },
     "options_plugin_kdeconnect_title": {
         "message": "透過 KDE 連線傳送"
@@ -102,13 +102,13 @@
         "message": "媒體控制"
     },
     "options_plugin_purpose_description": {
-        "message": "新增「分享…」選單列項目，並允許網站使用 Web Share API 開啟用來分享內容的對話"
+        "message": "新增「分享…」選單列項目，並允許網站使用 Web Share API 開啟用來分享內容的對話框。"
     },
     "options_plugin_purpose_title": {
         "message": "內容分享"
     },
     "options_plugin_tabsrunner_description": {
-        "message": "確保已在 <a id=\"$1\" href=\"$2\">Plasma 搜尋設定</a>中啟用「瀏覽器分頁」模"
+        "message": "確保已在 <a id=\"$1\" href=\"$2\">Plasma 搜尋設定</a>中啟用「瀏覽器分頁」模組。"
     },
     "options_plugin_tabsrunner_title": {
         "message": "在「執行指令」視窗中尋找瀏覽器分頁"

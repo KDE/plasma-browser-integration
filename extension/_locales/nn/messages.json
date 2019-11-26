@@ -36,7 +36,7 @@
         "message": "Send via KDE Connect"
     },
     "options_about_bugs": {
-        "message": "Viss du finn ein feil, sjå først gjennom oversikta over <a href=\"$1\">opne feilrapportar</a> og meld så eventuelt inn <a href=\"$2\">ein ny "
+        "message": "Viss du finn ein feil, sjå først gjennom oversikta over <a href=\"$1\">opne feilrapportar</a> og meld så eventuelt inn <a href=\"$2\">ein ny feilrapport</a>."
     },
     "options_about_copyright": {
         "message": "© 2017–2019 Kai Uwe Broulik og David Edmundson"
@@ -54,7 +54,7 @@
         "message": "Vertsversjon: $1"
     },
     "options_about_kde": {
-        "message": "KDE er eit verdsfemnande fellesskap av eldsjeler som programmerar, teiknar, komponerer, dokumenterer, set om eller hjelper til på andre måtar med utvikling av <a href=\"$1\">fri programvare</a>. Me har laga brukarflata Plasma, hundrevis av program og dei mange programbiblioteka desse byggjer på. KDE er eit fellesskap der inga einskild gruppe, firma eller organisasjon har eigarskap til produkta eller styrer retninga den vidare utviklinga skal gå i. Derimot arbeider me saman å oppnå vårt felles mål om å laga fri programvare i verdsklasse. Alle er <a href=\"$2\">velkomne til å bidra</a> – du òg. Du finn meir informasjon om KDE og programma me utviklar på <a href="
+        "message": "KDE er eit verdsfemnande fellesskap av eldsjeler som programmerar, teiknar, komponerer, dokumenterer, set om eller hjelper til på andre måtar med utvikling av <a href=\"$1\">fri programvare</a>. Me har laga brukarflata Plasma, hundrevis av program og dei mange programbiblioteka desse byggjer på. KDE er eit fellesskap der inga einskild gruppe, firma eller organisasjon har eigarskap til produkta eller styrer retninga den vidare utviklinga skal gå i. Derimot arbeider me saman å oppnå vårt felles mål om å laga fri programvare i verdsklasse. Alle er <a href=\"$2\">velkomne til å bidra</a> – du òg. Du finn meir informasjon om KDE og programma me utviklar på <a href=\"$3\">$3</a>."
     },
     "options_about_license": {
         "message": "Lisens: <a href=\"$1\">GNU General Public License versjon 3</a>"
@@ -69,7 +69,7 @@
         "message": "Utvidinga er ikkje støtta på dette operativsystemet."
     },
     "options_plugin_breezeScrollBars_description": {
-        "message": "Dette kan påverka nettstadar som allereie brukar ein tilpassa stil på "
+        "message": "Dette kan påverka nettstadar som allereie brukar ein tilpassa stil på rullefelta."
     },
     "options_plugin_breezeScrollBars_title": {
         "message": "Bruk rullefelt med Breeze-stil"
@@ -90,7 +90,7 @@
         "message": "Send via KDE Connect"
     },
     "options_plugin_mpris_description": {
-        "message": "Lèt deg styra video- og lydavspelarar på nettstadar med skjermelementet for "
+        "message": "Lèt deg styra video- og lydavspelarar på nettstadar med skjermelementet for mediestyring."
     },
     "options_plugin_mpris_media_sessions_description": {
         "message": "Hent ut metadata og miniatyrbilete frå innhaldet som spelar."

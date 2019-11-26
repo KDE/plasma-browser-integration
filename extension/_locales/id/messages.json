@@ -144,6 +144,6 @@
         "message": "Konten Dibagikan"
     },
     "store_description": {
-        "message": "Multitask efisien dengan mengendalikan fungsi browser dari desktop, bahkan ketika Chrome ada di latarbelakang. Kelola pemutaran audio dan video, periksa unduhan di area notifikasi, kirim file ke ponselmu menggunakan KDE Connect dan lainnya di dalam Desktop Plasma KDE!\\nPaket integrasi plasma browser harus diinstal agar ekstensi ini berfungsi. Itu harus tersedia dari pengelola paket distribusimu ketika menjalankan Plasma 5.13 atau lebih baru.\\nCATATAN: Ekstensi ini tidak didukung di Debian."
+        "message": "Multitask efisien dengan mengendalikan fungsi browser dari desktop, bahkan ketika Chrome ada di latarbelakang. Kelola pemutaran audio dan video, periksa unduhan di area notifikasi, kirim file ke ponselmu menggunakan KDE Connect dan lainnya di dalam Desktop Plasma KDE!\\n\\nPaket integrasi plasma browser harus diinstal agar ekstensi ini berfungsi. Itu harus tersedia dari pengelola paket distribusimu ketika menjalankan Plasma 5.13 atau lebih baru.\\n\\nCATATAN: Ekstensi ini tidak didukung di Debian."
     }
 }

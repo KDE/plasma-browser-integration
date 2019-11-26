@@ -144,6 +144,6 @@
         "message": "Compartiuse o contido"
     },
     "store_description": {
-        "message": "Traballe en varias cousas á vez de maneira eficiente controlando funcións do navegador desde o escritorio, incluso mentres Chrome está en segundo plano. Xestione a reprodución de son e vídeo, comprobe as descargas na área de notificacións, envíe ficheiros ao teléfono mediante KDE Connect e máis dentro do escritorio Plasma de KDE!\\nDebe instalar o paquete plasma-browser-integration para que a extensión funcione. Debería estar dispoñíbel mediante o xestor de paquetes da súa distribución cando use Plasma 5.13 ou unha versión posterior.\\nNOTA: A extensión non é compatíbel con Debian."
+        "message": "Traballe en varias cousas á vez de maneira eficiente controlando funcións do navegador desde o escritorio, incluso mentres Chrome está en segundo plano. Xestione a reprodución de son e vídeo, comprobe as descargas na área de notificacións, envíe ficheiros ao teléfono mediante KDE Connect e máis dentro do escritorio Plasma de KDE!\\n\\nDebe instalar o paquete plasma-browser-integration para que a extensión funcione. Debería estar dispoñíbel mediante o xestor de paquetes da súa distribución cando use Plasma 5.13 ou unha versión posterior.\\n\\nNOTA: A extensión non é compatíbel con Debian."
     }
 }

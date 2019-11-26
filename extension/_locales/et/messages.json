@@ -45,7 +45,7 @@
         "message": "Selle brauseri laienduse lõi <a href=\"$1\">KDE kogukond</a>. Rohkem teavet projekti kohta leiab <a href=\"$2\">KDE kogukonna Wikist</a>."
     },
     "options_about_donate": {
-        "message": "Kui see, mida näed, sulle meeldib, võiksid kaaluda <a href=\"$1\">annetuse tegemist KDE-le</a>, et me saaksime ka edaspidi pakkuda parimat vaba "
+        "message": "Kui see, mida näed, sulle meeldib, võiksid kaaluda <a href=\"$1\">annetuse tegemist KDE-le</a>, et me saaksime ka edaspidi pakkuda parimat vaba tarkvara."
     },
     "options_about_extension_version": {
         "message": "Laienduse versioon: $1"
@@ -84,13 +84,13 @@
         "message": "Allalaadimiste näitamine märguannete alas"
     },
     "options_plugin_kdeconnect_description": {
-        "message": "Kontekstimenüüsse kirje lisamine linkidele, mis võimaldab neid saata telefonile ja teiste paaritatud seadmetele <a href=\"$1\">KDE Connecti</a> "
+        "message": "Kontekstimenüüsse kirje lisamine linkidele, mis võimaldab neid saata telefonile ja teiste paaritatud seadmetele <a href=\"$1\">KDE Connecti</a> abil."
     },
     "options_plugin_kdeconnect_title": {
         "message": "Saatmine KDE Connecti abil"
     },
     "options_plugin_mpris_description": {
-        "message": "Veebisaitide video- ja helirakenduste juhtimine meedia juhtimise plasmoidi "
+        "message": "Veebisaitide video- ja helirakenduste juhtimine meedia juhtimise plasmoidi abil."
     },
     "options_plugin_mpris_media_sessions_description": {
         "message": "Parajasti esitatava sisu metaandmete ja pisipiltide ekstraktimine."

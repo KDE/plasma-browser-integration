@@ -144,6 +144,6 @@
         "message": "Edukia partekatu da"
     },
     "store_description": {
-        "message": "Ataza-anizkun eraginkorra arakatzailearen funtzioak mahaigainetik kontrolatuz, Chrome atzealdean dagoela ere. Kudeatu audio eta bideo atzera-jotzea, egiaztatu zama-jaisteak jakinarazpen eremuan, bidali fitxategiak zure telefonora KDE Connect erabiliz eta gehiago KDE Plasma mahaigain Hedapen hau ibil dadin «plasma-browser-integration» paketea instalatu behar da. Erabilgarri egon beharko litzateke zure banaketaren pakete kudeatzailean Plasma 5.13 edo berriagoa ibiltzean.\\nOHARRA: Debian-ek hedapen hau ez da onartzen."
+        "message": "Ataza-anizkun eraginkorra arakatzailearen funtzioak mahaigainetik kontrolatuz, Chrome atzealdean dagoela ere. Kudeatu audio eta bideo atzera-jotzea, egiaztatu zama-jaisteak jakinarazpen eremuan, bidali fitxategiak zure telefonora KDE Connect erabiliz eta gehiago KDE Plasma mahaigain barrutik!\\n\\nHedapen hau ibil dadin «plasma-browser-integration» paketea instalatu behar da. Erabilgarri egon beharko litzateke zure banaketaren pakete kudeatzailean Plasma 5.13 edo berriagoa ibiltzean.\\n\\nOHARRA: Debian-ek hedapen hau ez da onartzen."
     }
 }

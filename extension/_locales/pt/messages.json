@@ -45,7 +45,7 @@
         "message": "Esta extensão do navegador foi criada pela <a href=\"$1\">Comunidade do KDE</a>. Poderá encontrar mais informações sobre este projecto na <a href=\"$2\">Wiki da Comunidade do KDE</a>."
     },
     "options_about_donate": {
-        "message": "Se gosta do que viu, por favor pense em <a href=\"$1\">fazer uma doação ao KDE</a>, para que possamos continuar a criar o melhor 'software' livre "
+        "message": "Se gosta do que viu, por favor pense em <a href=\"$1\">fazer uma doação ao KDE</a>, para que possamos continuar a criar o melhor 'software' livre possível."
     },
     "options_about_extension_version": {
         "message": "Versão da extensão: $1"
@@ -54,7 +54,7 @@
         "message": "Versão do sistema: $1"
     },
     "options_about_kde": {
-        "message": "O KDE é uma rede mundial de engenheiros de 'software', artistas, escritores, tradutores e colaboradores comprometidos com o desenvolvimento de <a href=\"$1\">'Software' Livre</a>. Esta comunidade criou centenas de aplicações de 'Software' Livre, fazendo parte das plataformas, ambientes de trabalho e aplicações do KDE. O KDE é uma empresa cooperativa na qual não existe nenhuma entidade única que controle os esforços ou produtos do KDE e excluindo outras. Todos são bem-vindos a <a href=\"$2\"juntarem-se e a contribuírem</a> para o KDE, incluindo você. Consulte <a href=\"$3\">$3</a> para mais informações sobre a comunidade do KDE e o 'software' que "
+        "message": "O KDE é uma rede mundial de engenheiros de 'software', artistas, escritores, tradutores e colaboradores comprometidos com o desenvolvimento de <a href=\"$1\">'Software' Livre</a>. Esta comunidade criou centenas de aplicações de 'Software' Livre, fazendo parte das plataformas, ambientes de trabalho e aplicações do KDE. O KDE é uma empresa cooperativa na qual não existe nenhuma entidade única que controle os esforços ou produtos do KDE e excluindo outras. Todos são bem-vindos a <a href=\"$2\"juntarem-se e a contribuírem</a> para o KDE, incluindo você. Consulte <a href=\"$3\">$3</a> para mais informações sobre a comunidade do KDE e o 'software' que produzimos."
     },
     "options_about_license": {
         "message": "Licença: <a href=\"$1\">Licença Pública Geral da GNU (GPL) Versão 3</a>"
@@ -102,7 +102,7 @@
         "message": "Controlos Multimédia"
     },
     "options_plugin_purpose_description": {
-        "message": "Adiciona um item do menu de contexto \"Partilhar...\" e permite às páginas Web abrirem uma janela para partilhar o conteúdo com a API de Partilha na "
+        "message": "Adiciona um item do menu de contexto \"Partilhar...\" e permite às páginas Web abrirem uma janela para partilhar o conteúdo com a API de Partilha na Web."
     },
     "options_plugin_purpose_title": {
         "message": "Partilha de Conteúdos"
@@ -138,7 +138,7 @@
         "message": "Partilha sem Sucesso"
     },
     "purpose_share_finished_text": {
-        "message": "A ligação do conteúdo partilhado (%1) foi copiada para a área de "
+        "message": "A ligação do conteúdo partilhado (%1) foi copiada para a área de transferência."
     },
     "purpose_share_finished_title": {
         "message": "Conteúdo Partilhado"
