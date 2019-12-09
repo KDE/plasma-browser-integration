@@ -139,6 +139,7 @@ QJsonObject PurposePlugin::handleData(int serial, const QString &event, const QJ
 
         // navigator.share({title: "foo"}) is valid but makes no sense
         // and we also cannot share via Purpose without "urls"
+        m_pendingReplySerial = -1;
         return {
             {QStringLiteral("success"), false},
             {QStringLiteral("errorCode"), QStringLiteral("INVALID_ARGUMENT")}
