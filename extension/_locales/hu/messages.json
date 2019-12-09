@@ -1,0 +1,149 @@
+{
+    "browseraction_mpris_enable_on": {
+        "message": "Médiavezérlők bekapcsolása itt:"
+    },
+    "browseraction_mpris_title": {
+        "message": "Médiavezérlők"
+    },
+    "browseraction_title": {
+        "message": "Plasma böngészőintegráció"
+    },
+    "general_error_host_disconnected_title": {
+        "message": "A natív host váratlanul bontotta a kapcsolatot."
+    },
+    "general_error_not_supported_os": {
+        "message": "Ez a kiterjesztés csak Linux és FreeBSD rendszereken támogatott."
+    },
+    "general_error_not_supported_os_title": {
+        "message": "Nem támogatott operációs rendszer"
+    },
+    "general_error_startup_failed": {
+        "message": "Ellenőrizze, hogy a „plasma-browser-integration” csomag megfelelően van-e telepítve, és a Plasma 5.13-as vagy újabb verzióját használja."
+    },
+    "general_error_startup_failed_title": {
+        "message": "Nem sikerült kapcsolódni a natív hosthoz."
+    },
+    "general_error_startup_failed_wiki_link": {
+        "message": "További információkért látogassa meg a projekt wiki oldalát"
+    },
+    "general_error_unknown": {
+        "message": "Ismeretlen hiba"
+    },
+    "kdeconnect_open_device": {
+        "message": "Megnyitás ezen: „$1”"
+    },
+    "kdeconnect_open_via": {
+        "message": "Megnyitás KDE Connecttel"
+    },
+    "options_about_bugs": {
+        "message": "Ha problémát észlel, ellenőrizze a <a href=\"$1\">nyitott hibák listáját</a>, majd <a href=\"$2\">küldjön hibajelentést</a>."
+    },
+    "options_about_copyright": {
+        "message": "© Kai Uwe Broulik és David Edmundson, 2017-2019."
+    },
+    "options_about_created_by_kde": {
+        "message": "Ezt a bőngészőkiegészítőt a <a href=\"$1\">KDE Community</a> készítette. További információkat a projektről a <a href=\"$2\">KDE Community Wikiben</a> találhat."
+    },
+    "options_about_donate": {
+        "message": "Ha tetszett, amit látott, fontolja meg a <a href=\"$1\">KDE támogatását</a>, hogy folytathassuk munkánkat, a lehető legjobb szabad szoftverek készítését."
+    },
+    "options_about_extension_version": {
+        "message": "Kiegészítő verziója: $1"
+    },
+    "options_about_host_version": {
+        "message": "Host verziója: $1"
+    },
+    "options_about_kde": {
+        "message": "A KDE olyan szoftvermérnökök, művészek, írók, fordítók és készítők globális közössége, akik elkötelezettek a <a href=\"$1\">szabad szoftverek</a> fejlesztése iránt. A KDE készíti a Plasma asztali környezetet, alkalmazások százait és az ezeket támogató számos szoftverkönyvtárat. A KDE egy együttműködésre épülő szervezet: nincs egyetlen legfelsőbb vezető vagy csoport, ami megszabja az irányt. Ehelyett együtt dolgozunk a közös célon, hogy létrehozzuk a világ legeslegjobb szabad szoftvereit. Mindenkit szívesen látunk, aki szeretne <a href=\"$2\">csatlakozni és hozzájárulni</a> a KDE-hez, köztük Önt is. Látogassa meg a(z) <a href=\"$3\"></a> honlapot további információkért a KDE közösségről és a szoftverekről, amiket fejlesztünk."
+    },
+    "options_about_license": {
+        "message": "Licenc: <a href=\"$1\">GNU GPL v3</a>"
+    },
+    "options_about_translated_by": {
+        "message": "Fordította: $1"
+    },
+    "options_about_translators": {
+        "message": "Kiszel Kristóf"
+    },
+    "options_not_supported_os": {
+        "message": "Ez a kiterjesztés nem támogatott ezen az operációs rendszeren."
+    },
+    "options_plugin_breezeScrollBars_description": {
+        "message": "This may interfere with the appearance of websites that already apply a custom styling to their scroll bars."
+    },
+    "options_plugin_breezeScrollBars_title": {
+        "message": "Use Breeze-style scroll bars"
+    },
+    "options_plugin_downloads_saveOriginUrl": {
+        "message": "Save URL a file was downloaded from in the file's attributes"
+    },
+    "options_plugin_downloads_saveOriginUrl_description": {
+        "message": "Note: The URL may contain sensitive information that could be disclosed when the file is accessible by or shared with others"
+    },
+    "options_plugin_downloads_title": {
+        "message": "Show downloads in notification area"
+    },
+    "options_plugin_kdeconnect_description": {
+        "message": "Adds a context menu entry to links enabling you to send them to your phone and other paired devices using <a href=\"$1\">KDE Connect</a>."
+    },
+    "options_plugin_kdeconnect_title": {
+        "message": "Send via KDE Connect"
+    },
+    "options_plugin_mpris_description": {
+        "message": "Lets you control video and audio players in websites using the Media Controller plasmoid."
+    },
+    "options_plugin_mpris_media_sessions_description": {
+        "message": "Extract metadata and thumbnails of currently playing content."
+    },
+    "options_plugin_mpris_media_sessions_title": {
+        "message": "Enhanced Media Controls"
+    },
+    "options_plugin_mpris_title": {
+        "message": "Media Controls"
+    },
+    "options_plugin_purpose_description": {
+        "message": "Adds a \"Share...\" context menu entry and allows websites to open a dialog for sharing contents using the Web Share API."
+    },
+    "options_plugin_purpose_title": {
+        "message": "Content Sharing"
+    },
+    "options_plugin_tabsrunner_description": {
+        "message": "Make sure the “Browser Tabs” module is enabled in <a id=\"$1\" href=\"$2\">Plasma Search settings</a>."
+    },
+    "options_plugin_tabsrunner_title": {
+        "message": "Find browser tabs in “Run Command” window"
+    },
+    "options_save_failed": {
+        "message": "Saving settings failed"
+    },
+    "options_save_success": {
+        "message": "Settings successfully saved"
+    },
+    "options_tab_about": {
+        "message": "About"
+    },
+    "options_tab_general": {
+        "message": "General"
+    },
+    "options_title": {
+        "message": "Plasma Integration Settings"
+    },
+    "purpose_share": {
+        "message": "Share..."
+    },
+    "purpose_share_failed_text": {
+        "message": "Could not share this content: $1"
+    },
+    "purpose_share_failed_title": {
+        "message": "Sharing Failed"
+    },
+    "purpose_share_finished_text": {
+        "message": "The shared content link ($1) has been copied to the clipboard."
+    },
+    "purpose_share_finished_title": {
+        "message": "Content Shared"
+    },
+    "store_description": {
+        "message": "Multitask efficiently by controlling browser functions from the desktop, even while Chrome is in the background. Manage audio and video playback, check downloads in the notification area, send files to your phone using KDE Connect and more inside the KDE Plasma Desktop!\\n\\nThe plasma-browser-integration package must be installed for this extension to work. It should be available from your distribution's package manager when running Plasma 5.13 or later.\\n\\nNOTE: This extension is not supported on Debian."
+    }
+}
