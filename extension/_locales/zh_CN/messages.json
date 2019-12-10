@@ -53,12 +53,6 @@
     "options_about_host_version": {
         "message": "主机版本：$1"
     },
-    "options_about_extension_version": {
-        "message": "扩展版本：$1"
-    },
-    "options_about_host_version": {
-        "message": "主机版本：$1"
-    },
     "options_about_kde": {
         "message": "KDE 是一个由众多软件工程师、艺术家、作家、翻译家和其他有志于<a href=\"$1\">自由软件</a>事业的人们组成的世界性社区。KDE 推出了 Plasma 桌面环境，数以百计的自由软件应用，以及许多支持它们的程序库。KDE 是一个合作事业：它的方向或产品不受任何单独的团体、公司或机构控制。欢迎每个人<a href=\"$2\">参与和贡献</a>，包括您。您可以访问 <a href=\"$3\">$3</a> 来了解有关 KDE 社区和我们开发的软件的更多信息。"
     },
