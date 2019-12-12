@@ -1,9 +1,9 @@
 {
     "browseraction_title": {
-        "message": "Erreur d'intégration au navigateur Plasma"
+        "message": "Intégration Plasma du navigateur"
     },
     "general_error_host_disconnected_title": {
-        "message": "L'hôte natif s'est brutalement déconnecté."
+        "message": "L'hôte natif s'est déconnecté inopinément."
     },
     "general_error_not_supported_os": {
         "message": "Cette extension est uniquement prise en charge sur Linux et FreeBSD."
