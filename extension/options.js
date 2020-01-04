@@ -162,6 +162,10 @@ document.addEventListener("DOMContentLoaded", function () {
             var tablink = button.dataset.tabLink
 
             var tabtarget = document.querySelector("[data-tab-id=" + tablink + "]");
+            if (!tabtarget) {
+                console.warn("Tab target", tablink, "does not exist!");
+                return;
+            }
 
             button.addEventListener("click", function (event) {
                 tabClicked(tabbar, button);
