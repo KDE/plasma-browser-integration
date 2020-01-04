@@ -29,6 +29,7 @@ DEFAULT_EXTENSION_SETTINGS = {
     },
     downloads: {
         enabled: true,
+        addToRecentDocuments: true,
         saveOriginUrl: false
     },
     tabsrunner: {
