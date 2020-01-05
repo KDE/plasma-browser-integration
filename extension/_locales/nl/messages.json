@@ -74,6 +74,9 @@
     "options_plugin_breezeScrollBars_title": {
         "message": "Breeze-stijl schuifbalken gebruiken"
     },
+    "options_plugin_downloads_addToRecentDocuments": {
+        "message": "Add downloaded files to recent documents"
+    },
     "options_plugin_downloads_saveOriginUrl": {
         "message": "URL opslaan waar vanaf een bestand is gedownload in de attributen van het bestand"
     },

@@ -74,6 +74,9 @@
     "options_plugin_breezeScrollBars_title": {
         "message": "使用 Breeze 樣式的滾動列"
     },
+    "options_plugin_downloads_addToRecentDocuments": {
+        "message": "Add downloaded files to recent documents"
+    },
     "options_plugin_downloads_saveOriginUrl": {
         "message": "在檔案屬性儲存檔案的下載網址"
     },

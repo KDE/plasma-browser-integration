@@ -74,6 +74,9 @@
     "options_plugin_breezeScrollBars_title": {
         "message": "Usar barras de desprazamento co estilo de Breeze."
     },
+    "options_plugin_downloads_addToRecentDocuments": {
+        "message": "Add downloaded files to recent documents"
+    },
     "options_plugin_downloads_saveOriginUrl": {
         "message": "Gardar o URL de orixe dun ficheiro descargado nos atributos do ficheiro"
     },

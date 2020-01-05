@@ -74,6 +74,9 @@
     "options_plugin_breezeScrollBars_title": {
         "message": "Brug rullebjælker med Breeze-stil"
     },
+    "options_plugin_downloads_addToRecentDocuments": {
+        "message": "Add downloaded files to recent documents"
+    },
     "options_plugin_downloads_saveOriginUrl": {
         "message": "Gem URL som en fil blev downloadet fra i filens attributter"
     },

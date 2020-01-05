@@ -74,6 +74,9 @@
     "options_plugin_breezeScrollBars_title": {
         "message": "Breeze 스타일 스크롤 바 사용"
     },
+    "options_plugin_downloads_addToRecentDocuments": {
+        "message": "Add downloaded files to recent documents"
+    },
     "options_plugin_downloads_saveOriginUrl": {
         "message": "파일 속성에 파일을 다운로드한 URL 저장"
     },

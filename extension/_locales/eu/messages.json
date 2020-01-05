@@ -74,6 +74,9 @@
     "options_plugin_breezeScrollBars_title": {
         "message": "Erabili Breeze estiloko labaintze-barrak"
     },
+    "options_plugin_downloads_addToRecentDocuments": {
+        "message": "Add downloaded files to recent documents"
+    },
     "options_plugin_downloads_saveOriginUrl": {
         "message": "Gorde fitxategi bat zama-jaitsi den URLa fitxategiaren atributuetan"
     },

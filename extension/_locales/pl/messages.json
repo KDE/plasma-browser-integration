@@ -74,6 +74,9 @@
     "options_plugin_breezeScrollBars_title": {
         "message": "Użyj pasków przewijania z wyglądu Bryzy"
     },
+    "options_plugin_downloads_addToRecentDocuments": {
+        "message": "Add downloaded files to recent documents"
+    },
     "options_plugin_downloads_saveOriginUrl": {
         "message": "Zachowaj adres URL pobranego pliku we właściwościach pliku"
     },

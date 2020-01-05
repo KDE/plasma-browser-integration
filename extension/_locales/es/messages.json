@@ -74,6 +74,9 @@
     "options_plugin_breezeScrollBars_title": {
         "message": "Usar las barras de desplazamiento del estilo Brisa"
     },
+    "options_plugin_downloads_addToRecentDocuments": {
+        "message": "Add downloaded files to recent documents"
+    },
     "options_plugin_downloads_saveOriginUrl": {
         "message": "Guardar el URL de donde se ha descargado un archivo en los atributos del archivo"
     },

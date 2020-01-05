@@ -74,6 +74,9 @@
     "options_plugin_breezeScrollBars_title": {
         "message": "Смужки гортання у стилі Breeze"
     },
+    "options_plugin_downloads_addToRecentDocuments": {
+        "message": "Add downloaded files to recent documents"
+    },
     "options_plugin_downloads_saveOriginUrl": {
         "message": "Зберегти адресу, звідки було завантажено файл, у атрибутах файла"
     },

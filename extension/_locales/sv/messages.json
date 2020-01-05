@@ -74,6 +74,9 @@
     "options_plugin_breezeScrollBars_title": {
         "message": "Använd Breeze-liknande rullningslister"
     },
+    "options_plugin_downloads_addToRecentDocuments": {
+        "message": "Add downloaded files to recent documents"
+    },
     "options_plugin_downloads_saveOriginUrl": {
         "message": "Spara webbadress som en fil laddades ner från i filens egenskaper"
     },

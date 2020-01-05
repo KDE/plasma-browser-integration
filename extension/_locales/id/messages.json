@@ -74,6 +74,9 @@
     "options_plugin_breezeScrollBars_title": {
         "message": "Gunakan bilah gulir gaya Breeze"
     },
+    "options_plugin_downloads_addToRecentDocuments": {
+        "message": "Add downloaded files to recent documents"
+    },
     "options_plugin_downloads_saveOriginUrl": {
         "message": "Simpan URL file yang diunduh dari atribut-atribut file"
     },

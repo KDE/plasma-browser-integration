@@ -74,6 +74,9 @@
     "options_plugin_breezeScrollBars_title": {
         "message": "Použít styl posuvníku Breeze"
     },
+    "options_plugin_downloads_addToRecentDocuments": {
+        "message": "Add downloaded files to recent documents"
+    },
     "options_plugin_downloads_saveOriginUrl": {
         "message": "Save URL a file was downloaded from in the file's attributes"
     },
