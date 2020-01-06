@@ -75,7 +75,7 @@
         "message": "Смужки гортання у стилі Breeze"
     },
     "options_plugin_downloads_addToRecentDocuments": {
-        "message": "Add downloaded files to recent documents"
+        "message": "Додавати отримані файли до списку нещодавніх документів"
     },
     "options_plugin_downloads_saveOriginUrl": {
         "message": "Зберегти адресу, звідки було завантажено файл, у атрибутах файла"

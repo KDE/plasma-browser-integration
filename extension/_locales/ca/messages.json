@@ -75,7 +75,7 @@
         "message": "Usa barres de desplaçament de l'estil Brisa"
     },
     "options_plugin_downloads_addToRecentDocuments": {
-        "message": "Add downloaded files to recent documents"
+        "message": "Afegeix els fitxers baixats als documents recents"
     },
     "options_plugin_downloads_saveOriginUrl": {
         "message": "Desa l'URL des del qual s'ha baixat un fitxer als atributs del fitxer"
