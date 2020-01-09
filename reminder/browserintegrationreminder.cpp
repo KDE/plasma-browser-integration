@@ -40,8 +40,6 @@
 #include <KSharedConfig>
 #include <KStatusNotifierItem>
 
-#include "browserintegrationreminder.h"
-
 K_PLUGIN_FACTORY_WITH_JSON(BrowserIntegrationReminderFactory,
                            "browserintegrationreminder.json",
                            registerPlugin<BrowserIntegrationReminder>();)
