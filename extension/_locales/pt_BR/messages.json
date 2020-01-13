@@ -75,7 +75,7 @@
         "message": "Usar barras de rolagem no estilo Breeze"
     },
     "options_plugin_downloads_addToRecentDocuments": {
-        "message": "Add downloaded files to recent documents"
+        "message": "Adicionar os arquivos baixados aos documentos recentes"
     },
     "options_plugin_downloads_saveOriginUrl": {
         "message": "Salva a URL de onde um arquivo foi baixado nos atributos do arquivo"
