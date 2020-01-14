@@ -81,7 +81,7 @@
         "message": "Salva a URL de onde um arquivo foi baixado nos atributos do arquivo"
     },
     "options_plugin_downloads_saveOriginUrl_description": {
-        "message": "Detalhe: O URL pode conter informações delicadas que podem ser expostas quando o arquivo está acessível ou compartilhado com outras pessoas"
+        "message": "Detalhe: A URL pode conter informações delicadas que podem ser expostas quando o arquivo está acessível ou compartilhado com outras pessoas"
     },
     "options_plugin_downloads_title": {
         "message": "Exibir downloads na área de notificação"
