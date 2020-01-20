@@ -1,6 +1,6 @@
 {
     "browseraction_mpris_enable_on": {
-        "message": "Расширенное управление мультимедиа"
+        "message": "Разрешить управление мультимедиа для следующих сайтов:"
     },
     "browseraction_mpris_title": {
         "message": "Управление мультимедиа"
@@ -75,7 +75,7 @@
         "message": "Использовать стиль полос прокрутки Breeze"
     },
     "options_plugin_downloads_addToRecentDocuments": {
-        "message": "Add downloaded files to recent documents"
+        "message": "Добавлять загруженные файлы в список последних открытых документов"
     },
     "options_plugin_downloads_saveOriginUrl": {
         "message": "Сохранять в аттрибутах адрес, откуда файл был загружен"
