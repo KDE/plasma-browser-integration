@@ -1,6 +1,6 @@
 {
     "browseraction_mpris_enable_on": {
-        "message": "Forbedrede mediestyringer"
+        "message": "Aktivér mediestyringer på:"
     },
     "browseraction_mpris_title": {
         "message": "Mediestyringer"
@@ -75,7 +75,7 @@
         "message": "Brug rullebjælker med Breeze-stil"
     },
     "options_plugin_downloads_addToRecentDocuments": {
-        "message": "Add downloaded files to recent documents"
+        "message": "Tilføj downloadede filer til nylige dokumenter"
     },
     "options_plugin_downloads_saveOriginUrl": {
         "message": "Gem URL som en fil blev downloadet fra i filens attributter"
@@ -147,6 +147,6 @@
         "message": "Indhold delt"
     },
     "store_description": {
-        "message": "Multitask efficiently by controlling browser functions from the desktop, even while Chrome is in the background. Manage audio and video playback, check downloads in the notification area, send files to your phone using KDE Connect and more inside the KDE Plasma Desktop!\\n\\nThe plasma-browser-integration package must be installed for this extension to work. It should be available from your distribution's package manager when running Plasma 5.13 or later.\\n\\nNOTE: This extension is not supported on Debian."
+        "message": "Effektiv multitasking ved at styre browserens funktioner fra skrivebordet, selv når Chrome er i baggrunden. Håndtér lyd- og videoafspilning, tjek downloads i bekendtgørelsesområdet, send filer til din telefon med KDE Connect og meget mere fra KDE Plasma-skrivebordet!\\n\\nPakken plasma-browser-integration skal være installeret for at denne tilføjelse virker. Den burde være tilgængelig i din distributions pakkehåndtering når du kører Plasma 5.13 eller nyere.\\n\\nBEMÆRK: Den tilføjelse er ikke understøttet på Debian."
     }
 }
