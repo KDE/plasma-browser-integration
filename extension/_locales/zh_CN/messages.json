@@ -75,7 +75,7 @@
         "message": "使用微风样式的滚动条"
     },
     "options_plugin_downloads_addToRecentDocuments": {
-        "message": "Add downloaded files to recent documents"
+        "message": "添加下载的文件到最近的文档"
     },
     "options_plugin_downloads_saveOriginUrl": {
         "message": "将下载文件的来源 URL 作为文件属性保存在文件中"
