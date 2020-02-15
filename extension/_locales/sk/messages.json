@@ -69,10 +69,10 @@
         "message": "Toto rozšírenie nie je podporované na tomto operačnom systéme."
     },
     "options_plugin_breezeScrollBars_description": {
-        "message": "Toto môže prekážať vo vzhľade stránok, ktoré už používajú vlastné štýlovanie pre pousúvače."
+        "message": "Toto môže prekážať vo vzhľade stránok, ktoré už používajú vlastné štýlovanie pre posúvače."
     },
     "options_plugin_breezeScrollBars_title": {
-        "message": "Pouužívať posúvače v štýle Vánok"
+        "message": "Používať posúvače v štýle Vánok"
     },
     "options_plugin_downloads_addToRecentDocuments": {
         "message": "Pridať stiahnuté súbory do nedávnych dokumentov"
