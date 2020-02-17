@@ -54,7 +54,7 @@
         "message": "Host version: $1"
     },
     "options_about_kde": {
-        "message": "KDE is a world-wide community of software engineers, artists, writers, translators and creators who are committed to <a href=\"$1\">Free Software</a> development. KDE produces the Plasma desktop environment, hundreds of applications, and the many software libraries that support them. KDE is a cooperative enterprise: no single entity controls its direction or products. Instead, we work together to achieve the common goal of building the world's finest Free Software. Everyone is welcome to <a href=\"$2\">join and contribute</a> to KDE, including you. Visit <a href=\"$3\">$3</a> for more information about the KDE community and the software we produce."
+        "message": "<html><b>KDE</b> es un rete mundial de ingenieros del software, artistas, scriptores, traductores e facilitatores  qui es devote al disveloppamento de <a href=\"%1\">Free Software (Software libere)</a>. Iste communitate ha create cento e cento de applicationes como parte de le Frameworks (structuras) de KDE, spatios de labor e applicationes.<br /><br /> KDE es un interprisa cooperative in le qual necun singule entitate controla le effortios o le producto de KDE per excluder alteres. Omne persona es benvenite per <a href=\"%2\"> affiliar se e contribuer</a> a KDE, includente te.<br /><br /> Tu visita <a href=\"%3\">%3</a> pro ulterior information super le communitate de KDE e le software que nos produce.</html>"
     },
     "options_about_license": {
         "message": "License: <a href=\"$1\">GNU General Public License Version 3</a>"
@@ -90,7 +90,7 @@
         "message": "Adds a context menu entry to links enabling you to send them to your phone and other paired devices using <a href=\"$1\">KDE Connect</a>."
     },
     "options_plugin_kdeconnect_title": {
-        "message": "Send via KDE Connect"
+        "message": "Invia via KDE Connect"
     },
     "options_plugin_mpris_description": {
         "message": "Lets you control video and audio players in websites using the Media Controller plasmoid."
@@ -102,7 +102,7 @@
         "message": "Enhanced Media Controls"
     },
     "options_plugin_mpris_title": {
-        "message": "Media Controls"
+        "message": "Controlos de Multimedia"
     },
     "options_plugin_purpose_description": {
         "message": "Adds a \"Share...\" context menu entry and allows websites to open a dialog for sharing contents using the Web Share API."
