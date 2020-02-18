@@ -63,6 +63,7 @@ protected:
 
 private:
     void updateDescription();
+    void addToRecentDocuments();
     void saveOriginUrl();
 
     int m_id = -1;

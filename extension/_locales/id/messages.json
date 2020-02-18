@@ -1,6 +1,6 @@
 {
     "browseraction_mpris_enable_on": {
-        "message": "Kendali Media Yang Ditingkatkan"
+        "message": "Fungsikan kendali media pada:"
     },
     "browseraction_mpris_title": {
         "message": "Kendali Media"
@@ -48,10 +48,10 @@
         "message": "Jika kamu suka apa yang kamu lihat, silakan mempertimbangkan <a href=\"$1\">donasi ke KDE</a>, sehingga kami bisa terus membuat perangkat lunak bebas sebaik mungkin."
     },
     "options_about_extension_version": {
-        "message": "Extension version: $1"
+        "message": "Versi ekstensi: $1"
     },
     "options_about_host_version": {
-        "message": "Host version: $1"
+        "message": "Versi host: $1"
     },
     "options_about_kde": {
         "message": "KDE adalah komunitas seluruh dunia dari insinyur, seniman, penulis, penerjemah dan pemfasilitas perangkat lunak yang mana berkomitmen untuk developmen <a href=\"$1\">Free Software</a>. KDE memproduksi lingkungan desktop Plasma, ratusan aplikasi, dan banyak pustaka perangkat lunak yang mendukungnya. KDE adalah perusahaan koperasi: di mana tiada entitas satu pun yang mengendalikan arah atau usaha. Alih-alih, kami bekerja bersama-sama untuk mencapai tujuan umum pembangunan dalam dunia Free Software yang baik. Siapa pun disambut untuk <a href=\"$2\">bergabung dan berkontribusi</a> untuk KDE, termasuk kamu. Kunjungi <a href=\"$3\">$3</a> untuk informasi tentang komunitas KDE dan perangkat lunak yang kami produksi."
@@ -73,6 +73,9 @@
     },
     "options_plugin_breezeScrollBars_title": {
         "message": "Gunakan bilah gulir gaya Breeze"
+    },
+    "options_plugin_downloads_addToRecentDocuments": {
+        "message": "Add downloaded files to recent documents"
     },
     "options_plugin_downloads_saveOriginUrl": {
         "message": "Simpan URL file yang diunduh dari atribut-atribut file"
@@ -144,6 +147,6 @@
         "message": "Konten Dibagikan"
     },
     "store_description": {
-        "message": "Multitask efisien dengan mengendalikan fungsi browser dari desktop, bahkan ketika Chrome ada di latarbelakang. Kelola pemutaran audio dan video, periksa unduhan di area notifikasi, kirim file ke ponselmu menggunakan KDE Connect dan lainnya di dalam Desktop Plasma KDE!\\nPaket integrasi plasma browser harus diinstal agar ekstensi ini berfungsi. Itu harus tersedia dari pengelola paket distribusimu ketika menjalankan Plasma 5.13 atau lebih baru.\\nCATATAN: Ekstensi ini tidak didukung di Debian."
+        "message": "Multitask efisien dengan mengendalikan fungsi browser dari desktop, bahkan ketika Chrome ada di latarbelakang. Kelola pemutaran audio dan video, periksa unduhan di area notifikasi, kirim file ke ponselmu menggunakan KDE Connect dan lainnya di dalam Desktop Plasma KDE!\\n\\nPaket integrasi plasma browser harus diinstal agar ekstensi ini berfungsi. Itu harus tersedia dari pengelola paket distribusimu ketika menjalankan Plasma 5.13 atau lebih baru.\\n\\nCATATAN: Ekstensi ini tidak didukung di Debian."
     }
 }

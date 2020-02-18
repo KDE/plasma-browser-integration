@@ -33,8 +33,6 @@
 #include "mprisroot.h"
 #include "mprisplayer.h"
 
-#include "settings.h"
-
 #include <unistd.h> // getppid
 
 static const QString s_serviceName = QStringLiteral("org.mpris.MediaPlayer2.plasma-browser-integration");
@@ -278,16 +276,7 @@ void MPrisPlugin::handleData(const QString &event, const QJsonObject &data)
 
 QString MPrisPlugin::identity() const
 {
-    switch (Settings::self().environment()) {
-    case Settings::Environment::Unknown: return QString();
-    case Settings::Environment::Chrome: return QStringLiteral("Google Chrome");
-    case Settings::Environment::Chromium: return QStringLiteral("Chromium");
-    case Settings::Environment::Firefox: return QStringLiteral("Firefox Web Browser");
-    case Settings::Environment::Opera: return QStringLiteral("Opera");
-    case Settings::Environment::Vivaldi: return QStringLiteral("Vivaldi");
-    }
-
-    return QString();
+    return QGuiApplication::applicationDisplayName();
 }
 
 QString MPrisPlugin::desktopEntry() const

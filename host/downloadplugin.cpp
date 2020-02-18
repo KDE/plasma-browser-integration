@@ -37,7 +37,7 @@
 #include "itineraryextractorjob.h"
 
 DownloadPlugin::DownloadPlugin(QObject* parent) :
-    AbstractBrowserPlugin(QStringLiteral("downloads"), 2, parent)
+    AbstractBrowserPlugin(QStringLiteral("downloads"), 3, parent)
 {
 }
 

@@ -1,6 +1,6 @@
 {
     "browseraction_mpris_enable_on": {
-        "message": "Enhanced Media Controls"
+        "message": "Enable media controls on:"
     },
     "browseraction_mpris_title": {
         "message": "Media Controls"
@@ -74,6 +74,9 @@
     "options_plugin_breezeScrollBars_title": {
         "message": "Use Breeze-style scroll bars"
     },
+    "options_plugin_downloads_addToRecentDocuments": {
+        "message": "Add downloaded files to recent documents"
+    },
     "options_plugin_downloads_saveOriginUrl": {
         "message": "Save URL a file was downloaded from in the file's attributes"
     },
@@ -144,6 +147,6 @@
         "message": "Content Shared"
     },
     "store_description": {
-        "message": "Multitask efficiently by controlling browser functions from the desktop, even while Chrome is in the background. Manage audio and video playback, check downloads in the notification area, send files to your phone using KDE Connect and more inside the KDE Plasma Desktop!\\nThe plasma-browser-integration package must be installed for this extension to work. It should be available from your distribution's package manager when running Plasma 5.13 or later.\\nNOTE: This extension is not supported on Debian."
+        "message": "Multitask efficiently by controlling browser functions from the desktop, even while Chrome is in the background. Manage audio and video playback, check downloads in the notification area, send files to your phone using KDE Connect and more inside the KDE Plasma Desktop!\\n\\nThe plasma-browser-integration package must be installed for this extension to work. It should be available from your distribution's package manager when running Plasma 5.13 or later.\\n\\nNOTE: This extension is not supported on Debian."
     }
 }

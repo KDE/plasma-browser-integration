@@ -72,6 +72,10 @@
         "description": "Title for Downloads plugin",
         "message": "Show downloads in notification area"
     },
+    "options_plugin_downloads_addToRecentDocuments": {
+        "description": "Option for adding downloaded files to recent documents",
+        "message": "Add downloaded files to recent documents"
+    },
     "options_plugin_downloads_saveOriginUrl": {
         "description": "Option for saving download source URL in file metadata",
         "message": "Save URL a file was downloaded from in the file's attributes"

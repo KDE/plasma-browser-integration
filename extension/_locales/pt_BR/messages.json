@@ -74,17 +74,20 @@
     "options_plugin_breezeScrollBars_title": {
         "message": "Usar barras de rolagem no estilo Breeze"
     },
+    "options_plugin_downloads_addToRecentDocuments": {
+        "message": "Adicionar os arquivos baixados aos documentos recentes"
+    },
     "options_plugin_downloads_saveOriginUrl": {
         "message": "Salva a URL de onde um arquivo foi baixado nos atributos do arquivo"
     },
     "options_plugin_downloads_saveOriginUrl_description": {
-        "message": "Detalhe: O URL pode conter informações delicadas que podem ser expostas quando o arquivo está acessível ou compartilhado com outras pessoas"
+        "message": "Detalhe: A URL pode conter informações delicadas que podem ser expostas quando o arquivo está acessível ou compartilhado com outras pessoas"
     },
     "options_plugin_downloads_title": {
         "message": "Exibir downloads na área de notificação"
     },
     "options_plugin_kdeconnect_description": {
-        "message": "Adiciona uma entrada no menu de contexto para links habilitando enviá-los para seu telefone ou outro dispositivo pareado usando o <a href=\"$1\">KDE "
+        "message": "Adiciona uma entrada no menu de contexto para links habilitando enviá-los para seu telefone ou outro dispositivo pareado usando o <a href=\"$1\">KDE Connect</a>."
     },
     "options_plugin_kdeconnect_title": {
         "message": "Enviar via KDE Connect"
@@ -138,7 +141,7 @@
         "message": "Falha ao compartilhar"
     },
     "purpose_share_finished_text": {
-        "message": "O link de conteúdo compartilhado ($1) foi copiado para a área de "
+        "message": "O link de conteúdo compartilhado ($1) foi copiado para a área de transferência."
     },
     "purpose_share_finished_title": {
         "message": "Conteúdo compartilhado"

@@ -1,9 +1,9 @@
 {
     "browseraction_mpris_enable_on": {
-        "message": "Enable media controls on:"
+        "message": "Vis mediestyring for:"
     },
     "browseraction_mpris_title": {
-        "message": "Media Controls"
+        "message": "Mediestyring"
     },
     "browseraction_title": {
         "message": "Nettlesarintegrering for Plasma"
@@ -36,7 +36,7 @@
         "message": "Send via KDE Connect"
     },
     "options_about_bugs": {
-        "message": "Viss du finn ein feil, sjå først gjennom oversikta over <a href=\"$1\">opne feilrapportar</a> og meld så eventuelt inn <a href=\"$2\">ein ny "
+        "message": "Viss du finn ein feil, sjå først gjennom oversikta over <a href=\"$1\">opne feilrapportar</a> og meld så eventuelt inn <a href=\"$2\">ein ny feilrapport</a>."
     },
     "options_about_copyright": {
         "message": "© 2017–2019 Kai Uwe Broulik og David Edmundson"
@@ -48,13 +48,13 @@
         "message": "Viss du likar programmet, vurder å <a href=\"$1\">gje ei pengegåve til KDE</a>, slik at me kan halda fram med å laga den beste frie programvara."
     },
     "options_about_extension_version": {
-        "message": "Extension version: $1"
+        "message": "Utvidingsversjon: $1"
     },
     "options_about_host_version": {
-        "message": "Host version: $1"
+        "message": "Vertsversjon: $1"
     },
     "options_about_kde": {
-        "message": "KDE er eit verdsfemnande fellesskap av eldsjeler som programmerar, teiknar, komponerer, dokumenterer, set om eller hjelper til på andre måtar med utvikling av <a href=\"$1\">fri programvare</a>. Me har laga brukarflata Plasma, hundrevis av program og dei mange programbiblioteka desse byggjer på. KDE er eit fellesskap der inga einskild gruppe, firma eller organisasjon har eigarskap til produkta eller styrer retninga den vidare utviklinga skal gå i. Derimot arbeider me saman å oppnå vårt felles mål om å laga fri programvare i verdsklasse. Alle er <a href=\"$2\">velkomne til å bidra</a> – du òg. Du finn meir informasjon om KDE og programma me utviklar på <a href="
+        "message": "KDE er eit verdsfemnande fellesskap av eldsjeler som programmerar, teiknar, komponerer, dokumenterer, set om eller hjelper til på andre måtar med utvikling av <a href=\"$1\">fri programvare</a>. Me har laga brukarflata Plasma, hundrevis av program og dei mange programbiblioteka desse byggjer på. KDE er eit fellesskap der inga einskild gruppe, firma eller organisasjon har eigarskap til produkta eller styrer retninga den vidare utviklinga skal gå i. Derimot arbeider me saman å oppnå vårt felles mål om å laga fri programvare i verdsklasse. Alle er <a href=\"$2\">velkomne til å bidra</a> – du òg. Du finn meir informasjon om KDE og programma me utviklar på <a href=\"$3\">$3</a>."
     },
     "options_about_license": {
         "message": "Lisens: <a href=\"$1\">GNU General Public License versjon 3</a>"
@@ -69,10 +69,13 @@
         "message": "Utvidinga er ikkje støtta på dette operativsystemet."
     },
     "options_plugin_breezeScrollBars_description": {
-        "message": "Dette kan påverka nettstadar som allereie brukar ein tilpassa stil på "
+        "message": "Dette kan påverka nettstadar som allereie brukar ein tilpassa stil på rullefelta."
     },
     "options_plugin_breezeScrollBars_title": {
         "message": "Bruk rullefelt med Breeze-stil"
+    },
+    "options_plugin_downloads_addToRecentDocuments": {
+        "message": "Legg nedlasta filer til nyleg brukte dokument"
     },
     "options_plugin_downloads_saveOriginUrl": {
         "message": "Lagra nettadressa som filer vert lasta ned frå i filattributta"
@@ -90,7 +93,7 @@
         "message": "Send via KDE Connect"
     },
     "options_plugin_mpris_description": {
-        "message": "Lèt deg styra video- og lydavspelarar på nettstadar med skjermelementet for "
+        "message": "Lèt deg styra video- og lydavspelarar på nettstadar med skjermelementet for mediestyring."
     },
     "options_plugin_mpris_media_sessions_description": {
         "message": "Hent ut metadata og miniatyrbilete frå innhaldet som spelar."
@@ -102,10 +105,10 @@
         "message": "Mediestyring"
     },
     "options_plugin_purpose_description": {
-        "message": "Adds a \"Share...\" context menu entry and allows websites to open a dialog for sharing contents using the Web Share API."
+        "message": "Legg til «Del …»-oppføring på kontekstmenyen og tillèt nettsider å opna eit vindauge for deling av innhald med Web Share-API-et."
     },
     "options_plugin_purpose_title": {
-        "message": "Content Sharing"
+        "message": "Innhaldsdeling"
     },
     "options_plugin_tabsrunner_description": {
         "message": "Sjå til at «nettlesarfaner»-modulen er slått på i <a id=\"$1\" href=\"$2\">søkjeinnstillingane for Plasma</a>."
@@ -129,19 +132,19 @@
         "message": "Innstillingar for Plasma-integrering"
     },
     "purpose_share": {
-        "message": "Share..."
+        "message": "Del …"
     },
     "purpose_share_failed_text": {
-        "message": "Could not share this content: $1"
+        "message": "Klarte ikkje dela dette innhaldet: $1"
     },
     "purpose_share_failed_title": {
-        "message": "Sharing Failed"
+        "message": "Feil ved deling"
     },
     "purpose_share_finished_text": {
-        "message": "The shared content link ($1) has been copied to the clipboard."
+        "message": "Lenkja for deling av innhald ($1) er no kopiert til utklippstavla."
     },
     "purpose_share_finished_title": {
-        "message": "Content Shared"
+        "message": "Innhald delt"
     },
     "store_description": {
         "message": "Multitask efficiently by controlling browser functions from the desktop, even while Chrome is in the background. Manage audio and video playback, check downloads in the notification area, send files to your phone using KDE Connect and more inside the KDE Plasma Desktop!\\n\\nThe plasma-browser-integration package must be installed for this extension to work. It should be available from your distribution's package manager when running Plasma 5.13 or later.\\n\\nNOTE: This extension is not supported on Debian."

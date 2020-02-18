@@ -1,12 +1,12 @@
 {
     "browseraction_mpris_enable_on": {
-        "message": "Povolit ovládání médií na:"
+        "message": "Habilita controlos de Multimedia sur:"
     },
     "browseraction_mpris_title": {
-        "message": "Ovládání médií"
+        "message": "Controlos de Multimedia"
     },
     "browseraction_title": {
-        "message": "Integrace prohlížeče do prostředí Plasma"
+        "message": "Plasma Browser Integration (Integration de Navigator de Plasma)"
     },
     "general_error_host_disconnected_title": {
         "message": "The native host disconnected unexpectedly."
@@ -27,19 +27,19 @@
         "message": "Visit project wiki page for more information"
     },
     "general_error_unknown": {
-        "message": "Neznámá chyba"
+        "message": "Error Incognite"
     },
     "kdeconnect_open_device": {
-        "message": "Otevřít pomocí '$1'"
+        "message": "Open on '$1'"
     },
     "kdeconnect_open_via": {
-        "message": "Otevřít přes KDE Connect"
+        "message": "Open via KDE Connect"
     },
     "options_about_bugs": {
         "message": "If you find an issue, please check the <a href=\"$1\">list of open bugs</a> and then <a href=\"$2\">file a bug report</a>."
     },
     "options_about_copyright": {
-        "message": "© 2017, 2019 Kai Uwe Broulik a David Edmundson"
+        "message": "© 2017-2019 Kai Uwe Broulik and David Edmundson"
     },
     "options_about_created_by_kde": {
         "message": "This browser extension was created by the <a href=\"$1\">KDE Community</a>. You can find more information about this project on the <a href=\"$2\">KDE Community Wiki</a>."
@@ -48,31 +48,31 @@
         "message": "If you like what you saw, please consider <a href=\"$1\">donating to KDE</a>, so we can continue to make the best free software possible."
     },
     "options_about_extension_version": {
-        "message": "Verze rozšíření:  $1"
+        "message": "Extension version: $1"
     },
     "options_about_host_version": {
-        "message": "Verze hostitele: $1"
+        "message": "Host version: $1"
     },
     "options_about_kde": {
-        "message": "KDE je celosvětová komunita softwarových inženýrů, výtvarníků, překladatelů a jiných přispěvatelů, kteří se odevzdali vývoji <a href=\"$1\">Svobodného Softwaru</a>. KDE vytvořilo pracovní prostředí Plasma, stovky aplikací a spousty knihoven, jenž je podporují. KDE je společné úsilí, kde žádná společnost neřídí jeho směr nebo produkty. Namísto toho spolupracujeme na společném cíli jímž je vytvoření nejlepšího Free Softwaru. Každý je vítán aby <a href=\"$2\">se zapojil a přispíval</a> do KDE, včetně vás. Více informací o komunitě KDE a softwaru, na kterém pracujeme najdete na <a href=\"$3\">$3</a>."
+        "message": "<html><b>KDE</b> es un rete mundial de ingenieros del software, artistas, scriptores, traductores e facilitatores  qui es devote al disveloppamento de <a href=\"%1\">Free Software (Software libere)</a>. Iste communitate ha create cento e cento de applicationes como parte de le Frameworks (structuras) de KDE, spatios de labor e applicationes.<br /><br /> KDE es un interprisa cooperative in le qual necun singule entitate controla le effortios o le producto de KDE per excluder alteres. Omne persona es benvenite per <a href=\"%2\"> affiliar se e contribuer</a> a KDE, includente te.<br /><br /> Tu visita <a href=\"%3\">%3</a> pro ulterior information super le communitate de KDE e le software que nos produce.</html>"
     },
     "options_about_license": {
-        "message": "Licence: <a href=\"$1\">GNU General Public License Version 3</a>"
+        "message": "License: <a href=\"$1\">GNU General Public License Version 3</a>"
     },
     "options_about_translated_by": {
-        "message": "Přeloženo: $1"
+        "message": "Translated by: $1"
     },
     "options_about_translators": {
-        "message": "Vít Pelčák"
+        "message": "Giovanni Sora"
     },
     "options_not_supported_os": {
-        "message": "Toto rozšíření není na tomto operačním systému podporováno."
+        "message": "This extension is not supported on this operating system."
     },
     "options_plugin_breezeScrollBars_description": {
         "message": "This may interfere with the appearance of websites that already apply a custom styling to their scroll bars."
     },
     "options_plugin_breezeScrollBars_title": {
-        "message": "Použít styl posuvníku Breeze"
+        "message": "Use Breeze-style scroll bars"
     },
     "options_plugin_downloads_addToRecentDocuments": {
         "message": "Add downloaded files to recent documents"
@@ -84,13 +84,13 @@
         "message": "Note: The URL may contain sensitive information that could be disclosed when the file is accessible by or shared with others"
     },
     "options_plugin_downloads_title": {
-        "message": "Zobrazit stahování v oblasti upozornění"
+        "message": "Show downloads in notification area"
     },
     "options_plugin_kdeconnect_description": {
         "message": "Adds a context menu entry to links enabling you to send them to your phone and other paired devices using <a href=\"$1\">KDE Connect</a>."
     },
     "options_plugin_kdeconnect_title": {
-        "message": "Poslat přes KDE Connect"
+        "message": "Invia via KDE Connect"
     },
     "options_plugin_mpris_description": {
         "message": "Lets you control video and audio players in websites using the Media Controller plasmoid."
@@ -99,16 +99,16 @@
         "message": "Extract metadata and thumbnails of currently playing content."
     },
     "options_plugin_mpris_media_sessions_title": {
-        "message": "Rozšířené Ovládání médií"
+        "message": "Enhanced Media Controls"
     },
     "options_plugin_mpris_title": {
-        "message": "Ovládání médií"
+        "message": "Controlos de Multimedia"
     },
     "options_plugin_purpose_description": {
         "message": "Adds a \"Share...\" context menu entry and allows websites to open a dialog for sharing contents using the Web Share API."
     },
     "options_plugin_purpose_title": {
-        "message": "Sdílení obsahu"
+        "message": "Content Sharing"
     },
     "options_plugin_tabsrunner_description": {
         "message": "Make sure the “Browser Tabs” module is enabled in <a id=\"$1\" href=\"$2\">Plasma Search settings</a>."
@@ -117,34 +117,34 @@
         "message": "Find browser tabs in “Run Command” window"
     },
     "options_save_failed": {
-        "message": "Uložení nastavení selhalo"
+        "message": "Saving settings failed"
     },
     "options_save_success": {
-        "message": "Nastavení úspěšně uloženo"
+        "message": "Settings successfully saved"
     },
     "options_tab_about": {
-        "message": "O aplikaci"
+        "message": "A proposito"
     },
     "options_tab_general": {
-        "message": "Obecné"
+        "message": "General"
     },
     "options_title": {
-        "message": "Nastavení integrace Plasma"
+        "message": "Plasma Integration Settings"
     },
     "purpose_share": {
-        "message": "Sdílet..."
+        "message": "Comparti..."
     },
     "purpose_share_failed_text": {
-        "message": "Tento obsah nelze sdílet: $1"
+        "message": "Could not share this content: $1"
     },
     "purpose_share_failed_title": {
-        "message": "Sdílení selhalo"
+        "message": "Sharing Failed"
     },
     "purpose_share_finished_text": {
         "message": "The shared content link ($1) has been copied to the clipboard."
     },
     "purpose_share_finished_title": {
-        "message": "Obsah byl sdílen"
+        "message": "Content Shared"
     },
     "store_description": {
         "message": "Multitask efficiently by controlling browser functions from the desktop, even while Chrome is in the background. Manage audio and video playback, check downloads in the notification area, send files to your phone using KDE Connect and more inside the KDE Plasma Desktop!\\n\\nThe plasma-browser-integration package must be installed for this extension to work. It should be available from your distribution's package manager when running Plasma 5.13 or later.\\n\\nNOTE: This extension is not supported on Debian."

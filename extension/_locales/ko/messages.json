@@ -1,6 +1,6 @@
 {
     "browseraction_mpris_enable_on": {
-        "message": "확장된 미디어 제어"
+        "message": "다음에서 미디어 제어 사용:"
     },
     "browseraction_mpris_title": {
         "message": "미디어 제어"
@@ -48,10 +48,10 @@
         "message": "사용하고 계신 확장 기능에 만족하신다면 <a href=\"$1\">KDE에 기부</a>하는 것을 생각해 보십시오. 자유 소프트웨어를 유지 관리하는 데 도움을 줄 수 있습니다."
     },
     "options_about_extension_version": {
-        "message": "Extension version: $1"
+        "message": "확장 기능 버전: $1"
     },
     "options_about_host_version": {
-        "message": "Host version: $1"
+        "message": "호스트 버전: $1"
     },
     "options_about_kde": {
         "message": "KDE는 <a href=\"$1\">자유 소프트웨어</a> 개발을 위해 모인 소프트웨어 개발자, 예술가, 집필가, 번역가 및 기타 인원의 모임입니다. KDE 커뮤니티에서는 Plasma 데스크톱 환경, 다양한 프로그램 및 지원 라이브러리를 개발합니다. KDE는 협동 조합입니다. 어떠한 단일 집단도 방향이나 제품을 결정하지 않습니다. 우리는 전 세계에서 가장 뛰어난 자유 소프트웨어 개발이라는 공통 목표를 위해서 함께 힘을 모으고 있습니다. KDE에는 이 글을 읽는 여러분을 포함한 누구나 <a href=\"$2\">참여하고 기여</a>할 수 있습니다. <a href=\"$3\">$3</a> 페이지를 방문하셔서 KDE 커뮤니티와 소프트웨어에 대해 알아 보십시오."
@@ -73,6 +73,9 @@
     },
     "options_plugin_breezeScrollBars_title": {
         "message": "Breeze 스타일 스크롤 바 사용"
+    },
+    "options_plugin_downloads_addToRecentDocuments": {
+        "message": "다운로드한 파일을 최근 문서에 추가"
     },
     "options_plugin_downloads_saveOriginUrl": {
         "message": "파일 속성에 파일을 다운로드한 URL 저장"
@@ -144,6 +147,6 @@
         "message": "콘텐츠 공유함"
     },
     "store_description": {
-        "message": "Chrome이 백그라운드에서 실행 중이어도 데스크톱에서 브라우저 기능을 제어하여 효율적인 다중 작업을 할 수 있습니다. 오디오 및 비디오 재생, 알림 영역에서 다운로드 확인, KDE Connect로 휴대폰으로 파일 보내기 및 KDE Plasma 데스크톱과 더 깊게 통합됩니다!\\n확장 프로그램을 사용하려면 plasma-browser-integration 패키지를 설치해야 합니다. Plasma 5.13 이상을 실행 중이어야 하며 배포판의 패키지 관리자로 설치할 수 메모: 데비안에서는 이 확장 기능을 지원하지 않습니다."
+        "message": "Chrome이 백그라운드에서 실행 중이어도 데스크톱에서 브라우저 기능을 제어하여 효율적인 다중 작업을 할 수 있습니다. 오디오 및 비디오 재생, 알림 영역에서 다운로드 확인, KDE Connect로 휴대폰으로 파일 보내기 및 KDE Plasma 데스크톱과 더 깊게 통합됩니다!\\n\\n확장 프로그램을 사용하려면 plasma-browser-integration 패키지를 설치해야 합니다. Plasma 5.13 이상을 실행 중이어야 하며 배포판의 패키지 관리자로 설치할 수 있습니다.\\n\\n메모: 데비안에서는 이 확장 기능을 지원하지 않습니다."
     }
 }

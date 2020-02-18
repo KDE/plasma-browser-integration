@@ -25,9 +25,11 @@
 #include "settings.h"
 
 #include <QDateTime>
+#include <QGuiApplication>
 #include <QJsonObject>
 #include <QProcess>
 
+#include <KActivities/ResourceInstance>
 #include <KFileMetaData/UserMetaData>
 #include <KLocalizedString>
 
@@ -248,6 +250,9 @@ void DownloadJob::update(const QJsonObject &payload)
             setError(KJob::NoError);
             setProcessedAmount(KJob::Files, 1);
 
+            // Add to recent document
+            addToRecentDocuments();
+
             // Write origin url into extended file attributes
             saveOriginUrl();
 
@@ -263,6 +268,22 @@ void DownloadJob::updateDescription()
         qMakePair<QString, QString>(i18nc("The URL being downloaded", "Source"), (m_finalUrl.isValid() ? m_finalUrl : m_url).toDisplayString()),
         qMakePair<QString, QString>(i18nc("The location being downloaded to", "Destination"), m_destination.toLocalFile())
     );
+}
+
+void DownloadJob::addToRecentDocuments()
+{
+    if (m_incognito || m_fileName.isEmpty()) {
+        return;
+    }
+
+    const QJsonObject settings = Settings::self().settingsForPlugin(QStringLiteral("downloads"));
+
+    const bool enabled = settings.value(QStringLiteral("addToRecentDocuments")).toBool();
+    if (!enabled) {
+        return;
+    }
+
+    KActivities::ResourceInstance::notifyAccessed(QUrl::fromLocalFile(m_fileName), qApp->desktopFileName());
 }
 
 void DownloadJob::saveOriginUrl()

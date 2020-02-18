@@ -4,7 +4,7 @@
   "name": "Plasma Integration",
   "short_name": "Plasma",
   "description": "Provides better integration with the KDE Plasma 5 desktop.",
-  "version": "1.6.1",
+  "version": "1.7.2",
 
   "default_locale": "en",
 
@@ -70,6 +70,5 @@
       "id": "plasma-browser-integration@kde.org",
       "strict_min_version": "50.0"
     }
-  },
-  "optional_permissions": [ "webRequest" ]
+  }
 }

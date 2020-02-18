@@ -453,11 +453,20 @@ document.addEventListener("DOMContentLoaded", () => {
             document.getElementById("unsupported_os_error").classList.remove("hidden");
             break;
 
-        case "STARTUP_FAILED":
+        case "STARTUP_FAILED": {
             document.getElementById("startup_error").classList.remove("hidden");
-            break;
 
-        default:
+            const errorText = status.portLastErrorMessage;
+            // Don't show generic error on startup failure. There's already an explanation.
+            if (errorText && errorText !== "UNKNOWN") {
+                const errorTextItem = document.getElementById("startup_error_text");
+                errorTextItem.innerText = errorText;
+                errorTextItem.classList.remove("hidden");
+            }
+            break;
+        }
+
+        default: {
             document.getElementById("main").classList.remove("hidden");
 
             let errorText = status.portLastErrorMessage;
@@ -474,6 +483,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             break;
+        }
         }
 
         // HACK so the extension can tell we closed, see "browserAction" "ready" callback in extension.js

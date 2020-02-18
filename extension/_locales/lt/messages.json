@@ -42,7 +42,7 @@
         "message": "© 2017-2019 Kai Uwe Broulik ir David Edmundson"
     },
     "options_about_created_by_kde": {
-        "message": "Šį naršyklės priedą sukūrė <a href=\"$1\">KDE bendruomenė</a>. Daugiau informacijos apie šį projektą galite rasti <a href=\"$2\">KDE bendruomenės "
+        "message": "Šį naršyklės priedą sukūrė <a href=\"$1\">KDE bendruomenė</a>. Daugiau informacijos apie šį projektą galite rasti <a href=\"$2\">KDE bendruomenės vikyje</a>."
     },
     "options_about_donate": {
         "message": "Jeigu jums patinka tai, ką matėte, tuomet apsvarstykite galimybę <a href=\"$1\">paremti KDE</a>, kad ir toliau galėtume kurti geriausią įmanomą laisvą programinę įrangą."
@@ -73,6 +73,9 @@
     },
     "options_plugin_breezeScrollBars_title": {
         "message": "Naudoti Breeze stiliaus slinkties juostas"
+    },
+    "options_plugin_downloads_addToRecentDocuments": {
+        "message": "Pridėti atsisiųstus failus į paskiausiai naudotus dokumentus"
     },
     "options_plugin_downloads_saveOriginUrl": {
         "message": "Įrašyti URL, iš kurio buvo atsisiųstas failas, į failo atributus"
@@ -144,6 +147,6 @@
         "message": "Turinys pradėtas bendrinti"
     },
     "store_description": {
-        "message": "Atlikite daugiaprogramį apdorojimą, valdydami naršyklės funkcijas tiesiai iš darbalaukio netgi tuomet, kai Chrome fone. Valdykite garso ir vaizdo atkūrimą, tikrinkite pranešimų srityje atsiuntimus, siųskite failus į savo telefoną naudodami KDE Connect ir atlikite dar daugiau KDE Plasma Tam, kad veiktų šis priedas, privalo būti įdiegtas paketas \"plasma-browser-integration\". Jis turėtų būti prieinamas iš jūsų platinimo paketų tvarkytuvės, naudojant Plasma 5.13 ar naujesnę versiją.\\nPASTABA: Šis priedas nėra prieinamas Debian sistemose."
+        "message": "Atlikite daugiaprogramį apdorojimą, valdydami naršyklės funkcijas tiesiai iš darbalaukio netgi tuomet, kai Chrome fone. Valdykite garso ir vaizdo atkūrimą, tikrinkite pranešimų srityje atsiuntimus, siųskite failus į savo telefoną naudodami KDE Connect ir atlikite dar daugiau KDE Plasma darbalaukyje!\\n\\nTam, kad veiktų šis priedas, privalo būti įdiegtas paketas \"plasma-browser-integration\". Jis turėtų būti prieinamas iš jūsų platinimo paketų tvarkytuvės, naudojant Plasma 5.13 ar naujesnę versiją.\\n\\nPASTABA: Šis priedas nėra prieinamas Debian sistemose."
     }
 }

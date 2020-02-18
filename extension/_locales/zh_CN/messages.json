@@ -1,6 +1,6 @@
 {
     "browseraction_mpris_enable_on": {
-        "message": "增强的媒体控件"
+        "message": "启用媒体控制的域名："
     },
     "browseraction_mpris_title": {
         "message": "媒体控制"
@@ -18,7 +18,7 @@
         "message": "不支持的操作系统"
     },
     "general_error_startup_failed": {
-        "message": "请确保软件包 plasma-browser-integration 已正确安装，且您运行 Plasma 5.13 以上"
+        "message": "请确保软件包 plasma-browser-integration 已正确安装，且您运行 Plasma 5.13 以上版本。"
     },
     "general_error_startup_failed_title": {
         "message": "连接到本地主机失败。"
@@ -36,7 +36,7 @@
         "message": "通过 KDE Connect 打开"
     },
     "options_about_bugs": {
-        "message": "如果发现问题，请检查 <a href=\"$1\">打开状态的错误</a>，然后<a href=\"$2\">提"
+        "message": "如果发现问题，请检查 <a href=\"$1\">打开状态的错误</a>，然后<a href=\"$2\">提交一个错误报告</a>。"
     },
     "options_about_copyright": {
         "message": "© 2017-2019 Kai Uwe Broulik 和 David Edmundson"
@@ -45,16 +45,16 @@
         "message": "此浏览器扩展是由 <a href=\"$1\">KDE 社区</a>创建的。您可以在 <a href=\"$2\">KDE 社区 Wiki</a> 中找到有关此项目的详细信息。"
     },
     "options_about_donate": {
-        "message": "如果您喜欢这个插件，请考虑<a href=\"$1\">捐赠给 KDE</a>，让我们可以让最好的免"
+        "message": "如果您喜欢这个插件，请考虑<a href=\"$1\">捐赠给 KDE</a>，让我们可以让最好的免费软件成为可能。"
     },
     "options_about_extension_version": {
-        "message": "Extension version: $1"
+        "message": "扩展版本：$1"
     },
     "options_about_host_version": {
-        "message": "Host version: $1"
+        "message": "主机版本：$1"
     },
     "options_about_kde": {
-        "message": "KDE 是一个由众多软件工程师、艺术家、作家、翻译家和其他有志于<a href=\"$1\">自由软件</a>事业的人们组成的世界性社区。KDE 推出了 Plasma 桌面环境，数以百计的自由软件应用，以及许多支持它们的程序库。KDE 是一个合作事业：它的方向或产品不受任何单独的团体、公司或机构控制。欢迎每个人<a href=\"$2\">参与和贡献</a>，包括您。您可以访问 <a href=\"$3\">$3</a> 来了解有关 KDE 社区和我们开发的软件的"
+        "message": "KDE 是一个由众多软件工程师、艺术家、作家、翻译家和其他有志于<a href=\"$1\">自由软件</a>事业的人们组成的世界性社区。KDE 推出了 Plasma 桌面环境，数以百计的自由软件应用，以及许多支持它们的程序库。KDE 是一个合作事业：它的方向或产品不受任何单独的团体、公司或机构控制。欢迎每个人<a href=\"$2\">参与和贡献</a>，包括您。您可以访问 <a href=\"$3\">$3</a> 来了解有关 KDE 社区和我们开发的软件的更多信息。"
     },
     "options_about_license": {
         "message": "许可证：<a href=\"$1\">GNU 通用公共许可证版本 3</a>"
@@ -74,6 +74,9 @@
     "options_plugin_breezeScrollBars_title": {
         "message": "使用微风样式的滚动条"
     },
+    "options_plugin_downloads_addToRecentDocuments": {
+        "message": "添加下载的文件到最近的文档"
+    },
     "options_plugin_downloads_saveOriginUrl": {
         "message": "将下载文件的来源 URL 作为文件属性保存在文件中"
     },
@@ -84,7 +87,7 @@
         "message": "在通知区域显示下载"
     },
     "options_plugin_kdeconnect_description": {
-        "message": "添加右键菜单项目来让您可以将它们通过<a href=\"$1\">KDE Connect</a>发送到您的"
+        "message": "添加右键菜单项目来让您可以将它们通过<a href=\"$1\">KDE Connect</a>发送到您的手机和其他配对的设备上。"
     },
     "options_plugin_kdeconnect_title": {
         "message": "通过 KDE Connect 发送"
@@ -108,7 +111,7 @@
         "message": "内容分享"
     },
     "options_plugin_tabsrunner_description": {
-        "message": "请确保在<a id=\"$1\" href=\"$2\">Plasma 搜索设置</a>中启用了“浏览器标签”模"
+        "message": "请确保在<a id=\"$1\" href=\"$2\">Plasma 搜索设置</a>中启用了“浏览器标签”模块。"
     },
     "options_plugin_tabsrunner_title": {
         "message": "在“运行命令”窗口中查找浏览器标签"

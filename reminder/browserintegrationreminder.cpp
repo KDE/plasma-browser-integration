@@ -40,8 +40,6 @@
 #include <KSharedConfig>
 #include <KStatusNotifierItem>
 
-#include "browserintegrationreminder.h"
-
 K_PLUGIN_FACTORY_WITH_JSON(BrowserIntegrationReminderFactory,
                            "browserintegrationreminder.json",
                            registerPlugin<BrowserIntegrationReminder>();)
@@ -166,7 +164,7 @@ void BrowserIntegrationReminder::onBrowserStarted(const QString &browser)
     });
 
     auto *menu = new QMenu;
-    auto *action = new QAction(i18n("Do not show again"));
+    auto *action = new QAction(QIcon::fromTheme(QStringLiteral("view-hidden")), i18n("Do not show again"));
     menu->addAction(action);
     connect(action, &QAction::triggered, this, [this]() {
         auto config = KSharedConfig::openConfig()->group("PlasmaBrowserIntegration");

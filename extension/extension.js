@@ -97,7 +97,7 @@ function updateBrowserAction() {
         });
     }
 
-    if (portLastErrorMessage) {
+    if (portLastErrorMessage && receivedMessageOnce) {
         chrome.browserAction.setBadgeText({ text: "!" });
         chrome.browserAction.setBadgeBackgroundColor({ color: "#da4453" }); // breeze "negative" color
     } else {
@@ -158,29 +158,35 @@ function connectHost() {
         }
     });
 
-    port.onDisconnect.addListener(function() {
+    port.onDisconnect.addListener(function(port) {
         var error = chrome.runtime.lastError;
+        // Firefox passes in the port which may then have an error set
+        if (port && port.error) {
+            error = port.error;
+        }
 
-        console.warn("Host disconnected", error);
+        console.warn("Host disconnected", error && error.message);
 
         // Remove all kde connect menu entries since they won't work without a host
         try {
-            for (let device of kdeConnectDevices) {
+            for (let device in kdeConnectDevices) {
+                if (!kdeConnectDevices.hasOwnProperty(device)) {
+                    continue;
+                }
                 chrome.contextMenus.remove(kdeConnectMenuIdPrefix + device);
             }
         } catch (e) {
             console.warn("Failed to cleanup after port disconnect", e);
         }
-        kdeConnectDevices = [];
+        kdeConnectDevices = {};
 
+        portLastErrorMessage = error && error.message || "UNKNOWN";
         if (receivedMessageOnce) {
-            portLastErrorMessage = error && error.message || "UNKNOWN";
             portStatus = "DISCONNECTED";
 
             console.log("Auto-restarting it");
             connectHost();
         } else {
-            portLastErrorMessage = "";
             portStatus = "STARTUP_FAILED";
 
             console.warn("Not auto-restarting host as we haven't received any message from it before. Check that it's working/installed correctly");
@@ -235,7 +241,10 @@ addRuntimeCallback("browserAction", "ready", () => {
 
         // disabling the browser action immediately when opening it
         // causes opening to fail on Firefox, so clear the error only when it's being closed.
-        portLastErrorMessage = "";
-        updateBrowserAction();
+        // Only clear error when it was a transient error, not a startup failure
+        if (receivedMessageOnce) {
+            portLastErrorMessage = "";
+            updateBrowserAction();
+        }
     });
 });

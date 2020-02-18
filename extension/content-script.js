@@ -781,6 +781,39 @@ function loadMediaSessionsShim() {
         // so we just blatantly insert the <audio> tag in the DOM and pick it up through our regular
         // mechanism. Let's see how this goes :D
 
+        // HACK When removing a media object from DOM it is paused, so what we do here is once the
+        // player loaded some data we add it (doesn't work earlier since it cannot pause when
+        // there's nothing loaded to pause) to the DOM and before we remove it, we note down that
+        // we will now get a paused event because of that. When we get it, we just play() the player
+        // so it continues playing :-)
+        const addPlayerToDomEvadingAutoPlayBlocking = `
+            player.registerInDom = () => {
+                player.pausedBecauseOfDomRemoval = true;
+                player.removeEventListener("play", player.registerInDom);
+
+                // If it is already in DOM by the time it starts playing, we don't need to do anything
+                if (document.body && document.body.contains(player)) {
+                    delete player.pausedBecauseOfDomRemoval;
+                    player.removeEventListener("pause", player.replayAfterRemoval);
+                } else {
+                    (document.head || document.documentElement).appendChild(player);
+                    player.parentNode.removeChild(player);
+                }
+            };
+
+            player.replayAfterRemoval = () => {
+                if (player.pausedBecauseOfDomRemoval === true) {
+                    delete player.pausedBecauseOfDomRemoval;
+                    player.removeEventListener("pause", player.replyAfterRemoval);
+
+                    player.play();
+                }
+            };
+
+            player.addEventListener("play", player.registerInDom);
+            player.addEventListener("pause", player.replayAfterRemoval);
+        `;
+
         executeScript(`function() {
                 var oldCreateElement = Document.prototype.createElement;
                 Document.prototype.createElement = function() {
@@ -789,7 +822,10 @@ function loadMediaSessionsShim() {
                     var tagName = arguments[0];
 
                     if (typeof tagName === "string") {
-                        if (tagName.toLowerCase() === "audio" || tagName.toLowerCase() === "video") {
+                        if (tagName.toLowerCase() === "audio") {
+                            const player = createdTag;
+                            ${addPlayerToDomEvadingAutoPlayBlocking}
+                        } else if (tagName.toLowerCase() === "video") {
                             (document.head || document.documentElement).appendChild(createdTag);
                             createdTag.parentNode.removeChild(createdTag);
                         }
@@ -803,11 +839,7 @@ function loadMediaSessionsShim() {
         // We also briefly add items created as new Audio() to the DOM so we can control it
         // similar to the document.createElement hack above since we cannot share variables
         // between the actual website and the background script despite them sharing the same DOM
-        // HACK When removing a media object from DOM it is paused, so what we do here is once the
-        // player loaded some data we add it (doesn't work earlier since it cannot pause when
-        // there's nothing loaded to pause) to the DOM and before we remove it, we note down that
-        // we will now get a paused event because of that. When we get it, we just play() the player
-        // so it continues playing :-)
+
         if (IS_FIREFOX) {
             // Firefox enforces Content-Security-Policy also for scripts injected by the content-script
             // This causes our executeScript calls to fail for pages like Nextcloud
@@ -815,43 +847,18 @@ function loadMediaSessionsShim() {
             // so the horrible replyAfterRemoval hack from above isn't copied into this
             // See Bug 411148: Music playing from the ownCloud Music app does not show up
             var oldAudio = window.Audio;
-            exportFunction(function() {
-                var createdAudio = new (Function.prototype.bind.apply(oldAudio, arguments));
-
-                (document.head || document.documentElement).appendChild(createdAudio);
-                createdAudio.parentNode.removeChild(createdAudio);
-
-                return createdAudio;
+            exportFunction(function(...args) {
+                const player = new oldAudio(...args);
+                eval(addPlayerToDomEvadingAutoPlayBlocking);
+                return player;
             }, window, {defineAs: "Audio"});
         } else {
             executeScript(`function() {
                 var oldAudio = window.Audio;
-                window.Audio = function () {
-                    var createdAudio = new (Function.prototype.bind.apply(oldAudio, arguments));
-
-                    createdAudio.registerInDom = function() {
-                        (document.head || document.documentElement).appendChild(createdAudio);
-                        createdAudio.pausedBecauseOfDomRemoval = true;
-                        createdAudio.parentNode.removeChild(createdAudio);
-
-                        createdAudio.removeEventListener("loadeddata", createdAudio.registerInDom);
-                    };
-
-                    createdAudio.replayAfterRemoval = function() {
-                        if (createdAudio.pausedBecauseOfDomRemoval) {
-                            if (createdAudio.paused) {
-                                createdAudio.play();
-                            }
-                            delete createdAudio.pausedBecauseOfDomRemoval;
-
-                            createdAudio.removeEventListener("pause", createdAudio.replayAfterRemoval);
-                        }
-                    };
-
-                    createdAudio.addEventListener("loadeddata", createdAudio.registerInDom);
-                    createdAudio.addEventListener("pause", createdAudio.replayAfterRemoval);
-
-                    return createdAudio;
+                window.Audio = function (...args) {
+                    const player = new oldAudio(...args);
+                    ${addPlayerToDomEvadingAutoPlayBlocking}
+                    return player;
                 };
             }`);
         }

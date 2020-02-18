@@ -94,11 +94,12 @@ chrome.contextMenus.onClicked.addListener((info) => {
     });
 });
 
-chrome.contextMenus.create({
+// FIXME only add context menu if purpose is enabled and supported
+/*chrome.contextMenus.create({
     id: purposeShareMenuId,
     contexts: ["link", "page", "image", "audio", "video", "selection"],
     title: chrome.i18n.getMessage("purpose_share")
-});
+});*/
 
 addRuntimeCallback("purpose", "share", (message, sender, action) => {
     return purposeShare(message);

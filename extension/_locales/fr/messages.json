@@ -1,15 +1,15 @@
 {
     "browseraction_mpris_enable_on": {
-        "message": "Contrôles multimédia améliorés"
+        "message": "Activer les contrôles multimédia sur :"
     },
     "browseraction_mpris_title": {
         "message": "Contrôles multimédia"
     },
     "browseraction_title": {
-        "message": "Erreur d'intégration au navigateur Plasma"
+        "message": "Intégration Plasma du navigateur"
     },
     "general_error_host_disconnected_title": {
-        "message": "L'hôte natif s'est brutalement déconnecté."
+        "message": "L'hôte natif s'est déconnecté inopinément."
     },
     "general_error_not_supported_os": {
         "message": "Cette extension est uniquement prise en charge sur Linux et FreeBSD."
@@ -48,10 +48,10 @@
         "message": "Si vous aimez ce que vous voyez, vous pouvez envisager <a href=\"$1\">de faire un don à KDE</a>, afin que nous puissions continuer à développer les meilleurs logiciels libres possibles."
     },
     "options_about_extension_version": {
-        "message": "Extension version: $1"
+        "message": "Version de l'extension : %1"
     },
     "options_about_host_version": {
-        "message": "Host version: $1"
+        "message": "Version de l'hôte : %1"
     },
     "options_about_kde": {
         "message": "KDE est une communauté, à l'échelle mondiale, d'ingénieurs en logiciels, d'artistes, de traducteurs et de créateurs se consacrant au développement de <a href=\"$1\">logiciels libres</a>. KDE produit l'environnement de bureau Plasma, des centaines d'applications et de très nombreuses bibliothèques logicielles qui leur permettent de fonctionner. KDE est un mouvement coopératif : aucune entité unique ne contrôle sa direction ou ses produits. Nous travaillons ensemble dans l'optique de bâtir les meilleurs logiciels libres qui soient. Chacun est invité <a href=\"$2\">à nous rejoindre et à contribuer</a> à KDE, y compris vous. Visitez <a href=\"$3\">$3</a> pour plus d'informations sur le projet KDE et les logiciels que nous créons."
@@ -73,6 +73,9 @@
     },
     "options_plugin_breezeScrollBars_title": {
         "message": "Utiliser les barres de défilement de type Breeze"
+    },
+    "options_plugin_downloads_addToRecentDocuments": {
+        "message": "Ajouter les fichiers téléchargés aux documents récents"
     },
     "options_plugin_downloads_saveOriginUrl": {
         "message": "Enregistrer l'URL depuis laquelle le fichier a été téléchargé dans les attributs du fichier."
@@ -102,10 +105,10 @@
         "message": "Contrôles multimédia"
     },
     "options_plugin_purpose_description": {
-        "message": "Adds a \"Share...\" context menu entry and allows websites to open a dialog for sharing contents using the Web Share API."
+        "message": "Ajoute une option « Partager... » au menu contextuel et permet aux sites Web d'ouvrir une boîte de dialogue pour partager des contenus à l'aide de l'API Web Share."
     },
     "options_plugin_purpose_title": {
-        "message": "Content Sharing"
+        "message": "Partage de contenus"
     },
     "options_plugin_tabsrunner_description": {
         "message": "Assurez-vous que le module « Onglets du navigateur » soit activé dans les <a id=\"$1\" href=\"$2\">Paramètres de recherche de Plasma</a>."
@@ -129,21 +132,21 @@
         "message": "Paramètres d'intégration à Plasma"
     },
     "purpose_share": {
-        "message": "Share..."
+        "message": "Partager…"
     },
     "purpose_share_failed_text": {
-        "message": "Could not share this content: $1"
+        "message": "Impossible de partager ce contenu : $1"
     },
     "purpose_share_failed_title": {
-        "message": "Échec de l'enregistrement des paramètres"
+        "message": "Échec du partage"
     },
     "purpose_share_finished_text": {
-        "message": "The shared content link ($1) has been copied to the clipboard."
+        "message": "Le lien du contenu partagé ($1) a été copié dans le presse-papiers."
     },
     "purpose_share_finished_title": {
-        "message": "Content Shared"
+        "message": "Contenu partagé"
     },
     "store_description": {
-        "message": "Effectuez plusieurs tâches à la fois efficacement en contrôlant les fonctionnalités du navigateur depuis votre bureau, même lorsque Chrome est en arrière-plan. Gérez la lecture audio et vidéo, consultez les téléchargements dans la zone de notification, envoyez des fichiers vers votre téléphone à l'aide de KDE Connect et bien plus encore au sein du bureau KDE Plasma !\\nLe paquet plasma-browser-integration doit être installé pour que cette extension puisse fonctionner. Il devrait être disponible dans le gestionnaire de paquets de votre distribution lorsque vous utilisez Plasma en version 5.13 ou ultérieure.\\nREMARQUE : Cette extension n'est pas prise en charge sur Debian."
+        "message": "Effectuez plusieurs tâches à la fois efficacement en contrôlant les fonctionnalités du navigateur depuis votre bureau, même lorsque Chrome est en arrière-plan. Gérez la lecture audio et vidéo, consultez les téléchargements dans la zone de notification, envoyez des fichiers vers votre téléphone à l'aide de KDE Connect et bien plus encore au sein du bureau KDE Plasma !\\n\\nLe paquet plasma-browser-integration doit être installé pour que cette extension puisse fonctionner. Il devrait être disponible dans le gestionnaire de paquets de votre distribution lorsque vous utilisez Plasma en version 5.13 ou ultérieure.\\n\\nREMARQUE : Cette extension n'est pas prise en charge sur Debian."
     }
 }

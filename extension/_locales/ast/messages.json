@@ -54,7 +54,7 @@
         "message": "Host version: $1"
     },
     "options_about_kde": {
-        "message": "KDE ye una comunidá global d'inxenieros de software, artistes, escritores, traductores, creadores que tán comprometíos col desendolcu de <a href=\"$1\">software llibre</a> y una empresa coperativa (denguna entidá contola la direición o productos de so). Somos los creadores del entornu d'escritoriu Plasma, cientos d'aplicaciones y munches biblioteques de software que les sofiten, amás preferimos trabayar xuntos p'algamar la meta común de facer el meyor software llibre del mundu. Dámos-yos l'acoyida a toles persones que quieran <a href=\"$2\">xunise y collaborar</a> en KDE incluyéndote a ti. Visita <a href=\"$3\">$3</a> pa más información tocante a la comunidá de KDE y el software que producimos."
+        "message": "KDE ye una comunidá global d'inxenieros de software, artistes, escritores, traductores, creadores que tán comprometíos col desendolcu de <a href=\"$1\">software llibre</a> y una empresa coperativa (nenguna entidá contola la direición o productos de so). Somos los creadores del entornu d'escritoriu Plasma, cientos d'aplicaciones y munches biblioteques de software que les sofiten, amás preferimos trabayar xuntos p'algamar la meta común de facer el meyor software llibre del mundu. Dámos-yos l'acoyida a toles persones que quieran <a href=\"$2\">xunise y collaborar</a> en KDE incluyéndote a ti. Visita <a href=\"$3\">$3</a> pa más información tocante a la comunidá de KDE y el software que producimos."
     },
     "options_about_license": {
         "message": "Llicencia: <a href=\"$1\">GNU General Public License Version 3</a>"
@@ -73,6 +73,9 @@
     },
     "options_plugin_breezeScrollBars_title": {
         "message": "Barres de desplazamientu col estilu Breeze"
+    },
+    "options_plugin_downloads_addToRecentDocuments": {
+        "message": "Add downloaded files to recent documents"
     },
     "options_plugin_downloads_saveOriginUrl": {
         "message": "Save URL a file was downloaded from in the file's attributes"
@@ -144,6 +147,6 @@
         "message": "Content Shared"
     },
     "store_description": {
-        "message": "Multixera eficiente controlando les funciones del restolador dende l'escritoriu magar que tea en segundu planu. Xestiona la reproducción d'audiu y videu, comprueba les descargues nel área d'avisos, unvia ficheros a otros preseos qu'usen KDE Connect y muncho más dientro de KDE Plasma.\\nEl paquete plasma-browser-integration ha tar instaláu pa qu'esta estensión funcione. Debería tar disponible nel xestor de paquetes de la to distribución al executar Plasma 5.13 o mayor.\\nNOTA: Esta estensión nun ta sofitada en Debian."
+        "message": "Multixera eficiente controlando les funciones del restolador dende l'escritoriu magar que tea en segundu planu. Xestiona la reproducción d'audiu y videu, comprueba les descargues nel área d'avisos, unvia ficheros a otros preseos qu'usen KDE Connect y muncho más dientro de KDE Plasma.\\n\\nEl paquete plasma-browser-integration ha tar instaláu pa qu'esta estensión funcione. Debería tar disponible nel xestor de paquetes de la to distribución al executar Plasma 5.13 o mayor.\\n\\nNOTA: Esta estensión nun ta sofitada en Debian."
     }
 }
