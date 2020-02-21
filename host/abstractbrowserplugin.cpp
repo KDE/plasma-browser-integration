@@ -99,6 +99,14 @@ QDebug AbstractBrowserPlugin::debug() const
     return d;
 }
 
+QDebug AbstractBrowserPlugin::warning() const
+{
+    auto d = qWarning();
+    QDebugStateSaver saver(d);
+    d.nospace().noquote() << m_subsystem << ":";
+    return d;
+}
+
 QString AbstractBrowserPlugin::subsystem() const
 {
     return m_subsystem;

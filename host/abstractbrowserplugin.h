@@ -70,6 +70,7 @@ protected:
     void sendReply(int requestSerial, const QJsonObject &payload = QJsonObject());
 
     QDebug debug() const;
+    QDebug warning() const;
 
     QJsonObject settings() const;
 
