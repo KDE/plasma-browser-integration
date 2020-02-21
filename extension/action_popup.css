@@ -5,6 +5,22 @@ body {
     margin: 0;
 }
 
+a {
+    color: #3b85b5;
+}
+a:visited {
+    color: #2980b9;
+}
+a:hover {
+    color: #3daefd;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #bcbebf;
+    margin: 0px -1em;
+}
+
 .hidden {
     display: none !important;
 }
@@ -24,6 +40,10 @@ section > header {
     background: #F0F0F0;
     color: #757777;
     margin: 0 -1em -0.5em -1em;
+}
+
+section.separated {
+    border-top: 1px solid #bcbebf;
 }
 
 .message {
@@ -50,6 +70,34 @@ section > header {
     .message.with-icon.error::before {
         filter: invert(1);
     }
+}
+
+.breeze-button {
+    display: inline-block;
+    color: #232627!important;
+    text-decoration: none;
+    background-color: #eff0f1;
+    background-image: linear-gradient(180deg,#f2f2f3,#e8e9ea);
+    box-shadow: 0.5px 0.5px 0.5px 0.5px rgba(35,38,39,.1);
+    border-color: #bcbebf!important;
+    border-radius: 3px;
+    border: 1px solid;
+    padding: 6px;
+    transition: all .1s linear;
+}
+.breeze-button:hover {
+    border-color: #93cee9!important;
+    background-color: #eff0f1!important;
+}
+.breeze-button:active {
+    background-image: linear-gradient(180deg,#96cfea,#8acae7);
+    box-shadow: .5px .5px .5px .5px rgba(35,38,39,.1);
+    transform: translate(1px,1px)
+}
+.breeze-button:focus:not(:active) {
+    color: #fcfcfc!important;
+    border-color: #3daee9!important;
+    background-image: linear-gradient(180deg,#40afe9,#35abe8)
 }
 
 /* Media controls blacklist */
@@ -98,8 +146,11 @@ section > header {
 }
 
 .itinerary-info h2 {
-    padding: 0 0.5em;
     text-align: center;
+}
+.itinerary-info h3 {
+    text-align: center;
+    margin-block-start: 0;
 }
 
 .itinerary-info p {
@@ -111,53 +162,91 @@ section > header {
   overflow: hidden;
 }
 
-ul.actions {
-    display: block;
+ul.itinerary-details {
+    list-style: none;
     padding: 0 0.5em;
 }
-ul.actions > li {
+ul.itinerary-details > li {
     display: block;
     margin-bottom: 0.5em;
+    /* so that it accomodates the right-floating contextual actions */
+    overflow-y: visible;
+    overflow-x: hidden;
 }
-/*ul.actions > li:not(:last-child) {
-    margin-bottom: 0;
+ul.itinerary-details > li > .contextual-actions {
+    display: block;
+    float: right;
+}
+ul.itinerary-details > li:not(.action) a.breeze-button {
+    padding: 0;
+}
+
+/*ul.itinerary-details > li:not(.action) :not(.contextual-actions) a.breeze-button {
+    padding-left: 0;
+    padding-right: 0;
 }*/
 
-ul.actions > li > a {
+li.icon {
+    /* account for absolutely positioned icon*/
+    padding-left: 2em;
+}
+li.icon::before {
+    position: absolute;
+    /* counteract padding of parent*/
+    margin-left: -2em;
+}
+li.action > a.breeze-button {
     display: block;
-    background: #3daee9; /* Breeze highlight color */
-    color: #fcfcfc; /* Breeze highlight text color */
-    text-decoration: none;
-    padding: 0.5em;
-    border-radius: 0.2em;
+}
+a.breeze-button.icon:not(:empty)::before {
+    margin-right: 6px;
+}
+a.breeze-button.icon::before {
+    display: inline-block;
+    content: "";
+    width: 16px;
+    height: 16px;
+
+    vertical-align: middle;
+    background-size: contain;
+}
+a.breeze-button.icon.marble::before {
+    content: "📍";
+}
+a.breeze-button.icon.kdeconnect::before {
+    background-image: url("icons/kdeconnect-16.svg");
+}
+a.breeze-button.icon.calendar::before {
+    background-image: url("icons/calendar-new-16.svg");
+}
+a.breeze-button.icon.itinerary::before {
+    background-image: url("icons/itinerary-app.svg");
+}
+a.breeze-button.icon.workbench::before {
+    background-image: url("icons/globe-16.svg");
 }
 
-ul.details {
-    list-style: none;
-    padding-left: 0.5em;
-}
-ul.details > li {
-    margin-bottom: 0.5em;
-}
-
-ul.details li.icon::before {
-    margin-right: 0.5em;
-}
-ul.details li.icon.dates::before {
+li.icon.dates::before {
     content: "📅"; /* "Calendar" Emoji */
 }
-ul.details li.icon.location::before {
+li.icon.location::before {
     content: "📍" /* "Location pin" Emoji */
 }
-ul.details li.icon.email::before {
+li.icon.arriving-plane::before {
+    content: "🛬" /* "Airplane Arriving" Emoji */
+}
+li.icon.departing-plane::before {
+    content: "🛫" /* "Airplane Departure" Emoji */
+}
+li.icon.email::before {
     content: "📧" /* "EMail" Emoji */
 }
-ul.details li.icon.phone::before {
+li.icon.phone::before {
     content: "☎️" /* "Phone" Emoji */
 }
-ul.details li.icon.ticket::before {
+li.icon.ticket::before {
     content: "🎫" /* "Ticket" Emoji */
 }
-ul.details li.icon.seat::before {
+li.icon.seat::before {
     content: "💺" /* "Seat" Emoji */
 }
