@@ -1,0 +1,548 @@
+<%
+// Formatting utilities
+// --------------------
+
+function tripDesignation(trip) {
+    if (!trip) {
+        return "";
+    }
+
+    const tripType = trip["@type"];
+    switch (trip["@type"]) {
+    case "Flight":
+        if (trip.airline && trip.flightNumber) {
+            return trip.airline.iataCode + " " + trip.flightNumber;
+        }
+        break;
+    case "TrainTrip":
+        if (trip.trainNumber) {
+            return trip.trainNumber;
+        }
+        break;
+    case "BusTrip":
+        if (trip.busNumber) {
+            return trip.busNumber;
+        }
+        break;
+    }
+    throw new TypeError();
+}
+
+function ticketedSeatDesignation(seat) {
+    if (!seat) {
+        return "";
+    }
+
+    let sections = [];
+    if (seat.seatingType) {
+        switch (seat.seatingType) {
+        case "1":
+            sections.push("1st Class");
+            break;
+        case "2":
+            sections.push("2nd Class");
+            break;
+        case "3":
+            sections.push("3rd Class");
+            break;
+        default:
+            sections.push("Class " + seat.seatingType);
+            break;
+        }
+    }
+    if (seat.seatSection) {
+        sections.push("Section " + seat.seatSection);
+    }
+    if (seat.seatNumber) {
+        sections.push("Seat " + seat.seatNumber);
+    }
+
+    return sections.join(", ");
+}
+
+function actionDesignation(action) {
+    const resultType = action.result && action.result["@type"];
+
+    const type = action["@type"];
+    switch (type) {
+    case "BuyAction":
+        return "Buy";
+    case "ReserveAction":
+        if (resultType === "FoodEstablishmentReservation") {
+            return "Reserve a Table";
+        } else if (resultType === "Reservation" && action.result.name) {
+            return "Reserve: " + action.result.name;
+        }
+        return "Reserve";
+    }
+    return type;
+}
+
+function formatPlace(place) {
+    if (!place) {
+        return "";
+    }
+
+    if (place.address) {
+        return formatAddress(place.address);
+    }
+
+    throw new TypeError();
+}
+
+function getTripLocations(trip) {
+    if (!trip) {
+        return null;
+    }
+
+    // TODO can there be trips with just departure?
+    if (trip.departureAirport && trip.arrivalAirport) {
+        return {departure: trip.departureAirport, arrival: trip.arrivalAirport};
+    } else if (trip.departureStation && trip.arrivalStation) {
+        return {departure: trip.departureStation, arrival: trip.arrivalStation};
+    } else if (trip.departureBusStop && trip.arrivalBusStop) {
+        return {departure: trip.departureBusStop, arrival: trip.arrivalBusStop};
+    }
+    return null;
+}
+
+function formatDateRange(fromDate, toDate) {
+    fromDate = jsDateFromSchemaDate(fromDate);
+    toDate = jsDateFromSchemaDate(toDate);
+
+    if (!fromDate || isNaN(fromDate.getTime())) {
+        throw new TypeError();
+    }
+
+    const formattingOptions = {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric"
+    };
+
+    // Not a range or same day, easy.
+    if ((!toDate || isNaN(toDate.getTime()))
+        || (fromDate.getDate() == toDate.getDate()
+            && fromDate.getMonth() === toDate.getMonth()
+            && fromDate.getFullYear() === toDate.getFullYear())) {
+        return fromDate.toLocaleDateString([], formattingOptions);
+    }
+
+    const formattedFrom = fromDate.toLocaleDateString([], formattingOptions);
+    const formattedTo = toDate.toLocaleDateString([], formattingOptions);
+
+    return formattedFrom + " – " + formattedTo;
+}
+
+function formatDateTimeRange(fromDate, toDate) {
+    fromDate = jsDateFromSchemaDate(fromDate);
+    toDate = jsDateFromSchemaDate(toDate);
+
+    if (!fromDate || isNaN(fromDate.getTime())) {
+        throw new TypeError();
+    }
+
+    let formattingOptions = {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+        hour: "numeric",
+        minute: "numeric"
+    };
+
+    // Not a range, easy.
+    if (!toDate || isNaN(toDate.getTime())) {
+        //const bool hasTime = fromDate.getHours() != 0 || fromDate.getMinute() != 0 || fromDate.getSeconds() != 0
+
+        return fromDate.toLocaleString([], formattingOptions);
+    }
+
+    // If both start and end are on midnight, consider it as a date
+    if (fromDate.getHours() == 0 && fromDate.getMinutes() == 0 && fromDate.getSeconds() == 0
+        && toDate.getHours() == 0 && toDate.getMinutes() == 0 && toDate.getSeconds() == 0) {
+        delete formattingOptions.hour;
+        delete formattingOptions.minute;
+    }
+
+    let fromFormattingOptions = {};
+    // Copy it...
+    Object.assign(fromFormattingOptions, formattingOptions);
+
+    let toFormattingOptions = {};
+    Object.assign(toFormattingOptions, formattingOptions);
+
+    // Now try to make the date less verbose
+    if (fromDate.getFullYear() == toDate.getFullYear()) {
+        delete fromFormattingOptions.year;
+    }
+    if (fromDate.getDate() == toDate.getDate()
+        && fromDate.getMonth() === toDate.getMonth()
+        && fromDate.getFullYear() === toDate.getFullYear()) {
+        delete toFormattingOptions.weekday;
+        delete toFormattingOptions.day;
+        delete toFormattingOptions.month;
+        delete toFormattingOptions.year;
+    }
+
+    const formattedFrom = fromDate.toLocaleString([], fromFormattingOptions);
+    const formattedTo = toDate.toLocaleString([], toFormattingOptions);
+
+    return formattedFrom + " – " + formattedTo;
+}
+
+function jsDateFromSchemaDate(date) {
+    if (typeof date === "string") {
+        return new Date(date);
+    } else if (typeof date === "object") {
+        if (date["@type"] === "QDateTime") {
+            return new Date(date["@value"]); // TODO timezone?
+        }
+    } else if (Object.prototype.toString.call(date) === '[object Date]') {
+        return date;
+    }
+    return null;
+}
+
+function formatAddress(address) {
+    if (!address) {
+        return "";
+    }
+
+    switch (address["@type"]) {
+    case "PostalAddress": {
+        let result = address.streetAddress || "";
+
+        // Some sites include the full address in streetAddress
+        if (result
+                && address.addressLocality && result.includes(address.addressLocality)
+                && address.postalCode && result.includes(address.postalCode)) {
+            return result;
+        }
+
+        if (result) {
+            result += ", ";
+        }
+
+        result += [
+            address.postalCode,
+            address.addressLocality
+        ].filter(item => !!item).join(" ");
+
+        if (address.addressRegion) {
+            result += ", " + address.addressRegion;
+        }
+
+        const country = address.addressCountry;
+        if (country) {
+            // Crude: don't show if it's the same country as the user
+            if (navigator.language.split("-")[1] !== country) {
+                result += " (" + address.addressCountry + ")";
+            }
+        }
+
+        return result;
+    }
+    }
+
+    throw new TypeError();
+}
+
+function sanitizeForTelLink(tel) {
+    tel.replace(/ /, "");
+    return tel;
+}
+
+// --------------------
+%>
+
+<%
+// Try to find most prevalent type for global icon
+let types = {};
+let preferredIcon = "";
+
+// Is there no JS algorithm like "max_element"? :/
+data.forEach((item) => {
+    if (item.image) {
+        return; // continue
+    }
+
+    const type = item["@type"];
+    types[type] = (types[type] || 0) + 1;
+});
+
+let mostCommonType = "";
+let highestCount = 0;
+Object.keys(types).forEach((type) => {
+    const count = types[type];
+    if (count > highestCount) {
+        highestCount = count;
+        mostCommonType = type;
+    }
+});
+
+switch (mostCommonType) {
+case "FlightReservation":
+    preferredIcon = "airplane";
+    break;
+case "TrainReservation":
+    preferredIcon = "train";
+    break;
+case "BusReservation":
+    preferredIcon = "bus";
+    break;
+}
+
+// If there are multiple reservations, see if the reservation number on all is the same
+// and then only show it once at the end
+let commonReservationNumber = "";
+if (data.length > 1) {
+    if (data.every((item) => {
+        return item.reservationNumber === data[0].reservationNumber;
+    })) {
+        commonReservationNumber = data[0].reservationNumber;
+    }
+}
+
+
+let iconShownOnce = false;
+data.forEach(function (item) {
+    const type = item["@type"];
+    const trip = item.reservationFor;
+
+    const icon = !iconShownOnce ? preferredIcon : "";
+    if (icon) {
+        iconShownOnce = true;
+    }
+%>
+
+<section class="itinerary-info">
+
+<% if (item.image) { %>
+<div class="banner">
+    <div class="blur" style="background-image: url('<%= item.image %>')"></div>
+    <div class="image" style="background-image: url('<%= item.image %>')"></div>
+</div>
+<% } else if (icon) { %>
+<div class="banner">
+    <div class="image" style="background-image: url('icons/<%= icon %>.svg'"></div>
+</div>
+<% } %>
+
+<% if (item.name) { %>
+    <h2><%= item.name %></h2>
+<% } else if (trip) { %>
+    <h2><%= tripDesignation(trip) %></h2>
+<% } %>
+
+<% if (item.description) { %>
+    <p><%= item.description %></p>
+<% } %>
+
+<ul class="itinerary-details">
+
+<% if (item.startDate) { %>
+    <li class="icon dates"><%= formatDateTimeRange(item.startDate, item.endDate) %></li>
+<% } else if (trip) { %>
+    <% if (trip.departureTime) { %>
+        <li class="icon dates"><%= formatDateTimeRange(trip.departureTime, trip.arrivalTime) %></li>
+    <% } else if (trip.departureDay) { %>
+        <li class="icon dates"><%= formatDateRange(trip.departureDay, trip.arrivalDay) %></li>
+    <% } %>
+<% } %>
+
+<% if (item.location || item.address) { %>
+    <li class="icon location">
+        <% if (item.location && item.location.name) { %>
+            <strong><%= item.location.name %></strong><br>
+        <% } %>
+
+        <% const formattedAddress = (item.location ? formatPlace(item.location) : formatAddress(item.address)); %>
+        <% const locationHasGeo = item.geo && item.geo["@type"] === "GeoCoordinates"; %>
+
+        <div class="contextual-actions">
+
+            <% if (status.geoHandlerName) { %>
+                <a href="#open-location" data-itinerary-action class="breeze-button icon marble"
+                    <% if (locationHasGeo) { %>data-geo-lat="<%= item.geo.latitude %>" data-geo-lon="<%= item.geo.longitude %>"<% } %>
+                    data-address="<%= formattedAddress %>"
+                    <%# FIXME i18n %>
+                    <% if (locationHasGeo) { %>
+                    title="Show location in <%= status.geoHandlerName %>"
+                    <% } else { %>
+                    title="Show address in <%= status.geoHandlerName %>"
+                    <% } %>
+                    ></a>
+            <% } %>
+
+            <% if (kdeConnectDevices.length > 0) { %>
+                <a href="#kdeconnect-location" data-itinerary-action class="breeze-button icon kdeconnect"
+                    data-device-id="<%= kdeConnectDevices.length === 1 ? kdeConnectDevices[0].id : "" %>"
+                    <% if (locationHasGeo) { %>data-geo-lat="<%= item.geo.latitude %>" data-geo-lon="<%= item.geo.longitude %>"<% } %>
+                    data-address="<%= formattedAddress %>"
+                    <%# FIXME i18n %>
+                    <% if (locationHasGeo) { %>
+                    title="Send location to <%= kdeConnectDevices.length === 1 ? kdeConnectDevices[0].name : "device..." %>"
+                    <% } else { %>
+                    title="Send address to <%= kdeConnectDevices.length === 1 ? kdeConnectDevices[0].name : "device..." %>"
+                    <% } %>
+                    ></a>
+
+            <% } %>
+
+        </div>
+
+        <%= formattedAddress %>
+    </li>
+
+<% } else if (trip) { %>
+
+    <% const locations = getTripLocations(trip); %>
+    <% if (locations) { %>
+
+        <li class="icon location">
+
+            <% for (const [index, location] of [locations.departure, locations.arrival].entries()) { %>
+                <%= location.name || location.iataCode %>
+
+                <% if (location.geo && (status.geoHandlerName || kdeConnectDevices.length > 0)) { %>
+                (
+                    <% if (status.geoHandlerName) { %>
+                    <a href="#open-location" data-itinerary-action class="breeze-button icon marble"
+                        data-geo-lat="<%= location.geo.latitude %>" data-geo-lon="<%= location.geo.longitude %>"
+                        title="Show location in <%= status.geoHandlerName %>"></a>
+                    <% } %>
+
+                    <% if (kdeConnectDevices.length > 0) { %>
+                    <a href="#kdeconnect-location" data-itinerary-action class="breeze-button icon kdeconnect"
+                        data-geo-lat="<%= location.geo.latitude %>" data-geo-lon="<%= location.geo.longitude %>"
+                        data-device-id="<%= kdeConnectDevices.length === 1 ? kdeConnectDevices[0].id : "" %>"
+                        title="Send location to <%= kdeConnectDevices.length === 1 ? kdeConnectDevices[0].name : "device..." %>"></a>
+                    <% } %>
+                )
+                <% } %>
+
+                <%= (index === 0 ? "→" : "") %>
+            <% } %>
+
+        </li>
+
+    <% } %>
+
+<% } %>
+
+<% if (item.email) { %>
+    <li class="icon email"><a href="mailto:<%= item.email %>" target="_blank"><%= item.email %></a></li>
+<% } %>
+
+<% if (item.telephone) { %>
+    <li class="icon phone">
+        <a href="tel:<%= sanitizeForTelLink(item.telephone) %>" target="_blank"><%= item.telephone %></a>
+
+        <% if (kdeConnectDevices.length > 0) { %>
+        <div class="contextual-actions">
+            <a href="#kdeconnect-call" data-itinerary-action class="breeze-button icon kdeconnect"
+            data-device-id="<%= kdeConnectDevices.length === 1 ? kdeConnectDevices[0].id : "" %>"
+            data-phone-number="<%= sanitizeForTelLink(item.telephone) %>"
+            <%# FIXME i18n %>
+            title="Call on <%= kdeConnectDevices.length === 1 ? kdeConnectDevices[0].name : "device..." %>"></a>
+        </div>
+        <% } %>
+    </li>
+<% } %>
+
+<%# TODO fax? :) %>
+
+<%# TODO should we show the URL here? Most likely the same as the website we're viewing.. but could still be nice as a "send to device" shortcut? %>
+
+<% if (item.airplaneSeat) { %>
+    <li class="icon seat">Seat <%= item.airplaneSeat %></li>
+<% } else if (item.reservedTicket) { %>
+    <% const seat = item.reservedTicket.ticketedSeat;
+    if (seat) { %>
+        <li class="icon seat"><%= ticketedSeatDesignation(seat) %></li>
+    <% } %>
+<% } %>
+
+<% if (!commonReservationNumber && item.reservationNumber) { %>
+    <li class="icon ticket">Booking reference: <%= item.reservationNumber %></li>
+<% } %>
+
+<%
+    data.forEach((item) => {
+        (item.potentialAction || []).forEach((action) => {
+        %>
+            <li class="action"><a href="<%= action.target %>" target="_blank" class="breeze-button"><%= action.name || actionDesignation(action) %></a></li>
+        <% });
+    });
+%>
+
+</ul>
+
+</section>
+
+<% }); %>
+
+<%# Global actions go here %>
+<%
+const canReserve = data.some((item) => {
+    if (item.startDate) {
+        return true;
+    }
+
+    const trip = item.reservationFor;
+    // TODO Is departureDay enough for a calendar entry?
+    if (trip && (trip.departureTime || trip.departureDay)) {
+        return true;
+    }
+
+    return false;
+});
+%>
+
+<% if (data.length > 0 && (canReserve || status.workbenchFound || commonReservationNumber)) { %>
+
+<section class="itinerary-info separated">
+<ul class="itinerary-details">
+
+<% if (commonReservationNumber) { %>
+    <li class="icon ticket">Booking reference: <%= commonReservationNumber %></li>
+<% } %>
+
+<% if (canReserve) { %>
+
+<% if (status.itineraryFound) { %>
+    <%# TODO Offer Restaurant and Hotel once we have "booking" or "reservation" UI in Itinerary %>
+    <li class="action"><a href="#itinerary" data-itinerary-action class="breeze-button icon itinerary">
+    <%# TODO show "Add trip to.." or something like that? %>
+    Add to KDE Itinerary
+    </a></li>
+<% } %>
+
+<% if (status.icalHandlerFound) { %>
+    <li class="action"><a href="#calendar" data-itinerary-action class="breeze-button icon calendar">Add to Calendar</a></li>
+<% } %>
+
+<% if (kdeConnectDevices.length > 0) { %>
+    <li class="action">
+        <% if (kdeConnectDevices.length === 1) { %>
+            <%# FIXME i18n %>
+            <%# TODO specify sending "what" (ticket, reservation, event info...? %>
+            <a href="#kdeconnect" data-itinerary-action class="breeze-button icon kdeconnect" data-device-id="<%= kdeConnectDevices[0].id %>">Send to <%= kdeConnectDevices[0].name %></a>
+        <% } else { %>
+            <a href="#kdeconnect" data-itinerary-action class="breeze-button icon kdeconnect">Send to device...</a>
+        <% } %>
+    </li>
+<% } %>
+
+<% } %><%# canReserve %>
+
+<% if (status.workbenchFound) { %>
+    <li class="action"><a href="#workbench" class="breeze-button icon workbench" data-itinerary-action>Open in Workbench</a></li>
+<% } %>
+
+</ul>
+</section>
+
+<% } %>
