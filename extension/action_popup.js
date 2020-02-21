@@ -237,7 +237,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
     sendMessage("settings", "getSubsystemStatus").then((status) => {
         if (status && status.itinerary && status.itinerary.loaded) {
-            new Itinerary().extract();
+
+            // This only gets the known device list from the extension, doesn't query the host
+            // i.e. this is safe to call (will return empty list) if kdeconnect plugin isn't enabled
+            sendMessage("kdeconnect", "getDevices").then((devices) => {
+
+                const itineraryScript = document.createElement("script");
+                itineraryScript.src = "action_popup-itinerary.js";
+                itineraryScript.onload = () => {
+                    const itinerary = new Itinerary({
+                        status: status.itinerary,
+                        // pass config, too, once we have some?
+                        kdeConnectDevices: devices
+                    });
+
+                    itinerary.extract();
+                };
+                document.head.appendChild(itineraryScript);
+
+            });
+
         }
     });
 });
