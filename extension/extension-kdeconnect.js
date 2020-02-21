@@ -68,3 +68,16 @@ addCallback("kdeconnect", "deviceRemoved", function(message) {
     delete kdeConnectDevices[deviceId];
     chrome.contextMenus.remove(kdeConnectMenuIdPrefix + deviceId);
 });
+
+addRuntimeCallback("kdeconnect", "getDevices", () => {
+    // We use the device id as key in the object but the caller should just get a nice Array
+    let devices = [];
+
+    Object.keys(kdeConnectDevices).forEach((deviceId) => {
+        let device = kdeConnectDevices[deviceId];
+        device.id = deviceId;
+        devices.push(device);
+    });
+
+    return Promise.resolve(devices);
+});
