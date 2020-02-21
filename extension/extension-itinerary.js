@@ -199,10 +199,15 @@ chrome.tabs.onUpdated.addListener((tabId, info, tab) => {
     }
 });
 
-addRuntimeCallback("itinerary", "extract", (message) => {
-    return new Promise((resolve, reject) => {
-        sendPortMessageWithReply("itinerary", "extract", message).then((reply) => {
-            resolve(reply);
-        });
-    });
+addRuntimeCallback("itinerary", [
+    "extract",
+    "openLocation",
+    "sendLocationToDevice",
+    "callOnDevice",
+    "addToCalendar",
+    "sendToDevice",
+    "openInItinerary",
+    "openInWorkbench"
+    ], (message, sender, action) => {
+    return sendPortMessageWithReply("itinerary", action, message);
 });
