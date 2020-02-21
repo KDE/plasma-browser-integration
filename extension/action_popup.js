@@ -15,50 +15,6 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-class TabUtils {
-    // Gets the currently viewed tab
-    static getCurrentTab() {
-        return new Promise((resolve, reject) => {
-            chrome.tabs.query({
-                active: true,
-                currentWindow: true
-            }, (tabs) => {
-                const error = chrome.runtime.lastError;
-                if (error) {
-                    return reject(error.message);
-                }
-
-                const tab = tabs[0];
-                if (!tab) {
-                    return reject("NO_TAB");
-                }
-
-                resolve(tab);
-            });
-        });
-    }
-
-    // Gets the URLs of the currently viewed tab including all of its iframes
-    static getCurrentTabFramesUrls() {
-        return new Promise((resolve, reject) => {
-            TabUtils.getCurrentTab().then((tab) => {
-                chrome.tabs.executeScript({
-                    allFrames: true, // so we also catch iframe videos
-                    code: `window.location.href`,
-                    runAt: "document_start"
-                }, (result) => {
-                    const error = chrome.runtime.lastError;
-                    if (error) {
-                        return reject(error.message);
-                    }
-
-                    resolve(result);
-                });
-            });
-        });
-    }
-};
-
 class MPrisBlocker {
     getAllowed() {
         return new Promise((resolve, reject) => {
