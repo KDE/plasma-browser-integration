@@ -48,69 +48,8 @@
 
         <div id="dummy-main" class="message general with-icon"></div>
 
-        <section class="itinerary-info hidden" data-itinerary-context="Event,LodgingBusiness,FoodEstablishment">
-            <div class="banner" data-prop="image" data-formatter="noop">
-                <div class="blur" data-prop="image" data-formatter="background-image"></div>
-                <div class="image" data-prop="image" data-formatter="background-image"></div>
-            </div>
-
-            <h2 data-prop="name">NAME</h2>
-
-            <p data-prop="description">DESCRIPTION</p>
-
-            <ul class="details">
-                <li class="icon dates" data-prop="startDate.@value,endDate.@value" data-formatter="daterange"></span></li>
-                <li class="icon location" data-prop="address" data-formatter="address"></li>
-                <li class="icon location" data-prop="location" data-formatter="place"></li>
-                <li class="icon email" data-prop="email" data-formatter="emaillink"></li>
-                <li class="icon phone" data-prop="telephone" data-formatter="phonelink"></li>
-            </ul>
-
-            <ul class="actions" id="itinerary-info-actions">
-                <li data-context="Event"><a href="#">Add to Calendar</a></li>
-                <li data-context="Event"><a href="#">Add to Itinerary</a></li>
-            </ul>
-        </section>
-
-        <section class="itinerary-info hidden" data-itinerary-context="FlightReservation">
-            <div class="banner">
-                <div class="image" style="background-image: url('icons/airplane.svg'"></div>
-            </div>
-
-            <h2><span data-prop="reservationFor.airline.iataCode"></span> <span data-prop="reservationFor.flightNumber"></h2>
-
-            <ul class="details">
-                <li class="icon dates"><span data-prop="reservationFor.departureDay"></span></li>
-                <li class="icon location">from <span data-prop="reservationFor.departureAirport.iataCode"></span> to <span data-prop="reservationFor.arrivalAirport.iataCode"></li>
-                <!--<li class="icon dates" data-prop="reservationFor.departureTime.@value" data-formatter="daterange"></span></li>-->
-                <li class="icon ticket" data-prop="reservationNumber" style="font-weight: bold"></li>
-                <li class="icon seat" data-prop="airplaneSeat"></li>
-            </ul>
-
-            <ul class="actions" id="itinerary-info-actions">
-                <li data-context="FlightReservation"><a href="#" data-action="add-to-itinerary">Add Boarding Pass to Itinerary</a></li>
-            </ul>
-        </section>
-
-        <section class="itinerary-info hidden" data-itinerary-context="TrainReservation">
-            <div class="banner">
-                <div class="image" style="background-image: url('icons/train.svg'"></div>
-            </div>
-
-            <h2><span data-prop="reservationFor.airline.iataCode"></span> <span data-prop="reservationFor.flightNumber"></h2>
-
-            <ul class="details">
-                <li class="icon dates"><span data-prop="reservationFor.departureDay"></span></li>
-                <li class="icon location">from <span data-prop="reservationFor.departureAirport.iataCode"></span> to <span data-prop="reservationFor.arrivalAirport.iataCode"></li>
-                <!--<li class="icon dates" data-prop="reservationFor.departureTime.@value" data-formatter="daterange"></span></li>-->
-                <li class="icon ticket" data-prop="reservationNumber" style="font-weight: bold"></li>
-                <li class="icon seat" data-prop="airplaneSeat"></li>
-            </ul>
-
-            <ul class="actions" id="itinerary-info-actions">
-                <li data-context="FlightReservation"><a href="#" data-action="add-to-itinerary">Add Boarding Pass to Itinerary</a></li>
-            </ul>
-        </section>
+        <div id="itinerary-container" class="hidden">
+        </div>
 
         <section class="mpris-blacklist-info hidden">
             <header data-i18n="browseraction_mpris_title">I18N</header>
