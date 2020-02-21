@@ -38,7 +38,7 @@ public:
     ~ItineraryExtractorJob() override;
 
     enum class InputType {
-        Any,
+        Any = 0,
         Email,
         Pdf,
         PkPass,
@@ -47,12 +47,22 @@ public:
     };
     Q_ENUM(InputType)
 
+    enum class OutputType {
+        Default = 0,
+        JsonLd,
+        ICal
+    };
+    Q_ENUM(OutputType)
+
     static bool isSupported();
 
     InputType inputType() const;
     void setInputType(InputType inputType);
 
-    QJsonArray extractedData() const;
+    OutputType outputType() const;
+    void setOutputType(OutputType outputType);
+
+    QByteArray extractedData() const;
 
     void start() override;
 
@@ -63,8 +73,9 @@ private:
     static QString extractorPath();
 
     InputType m_inputType = InputType::Any;
+    OutputType m_outputType = OutputType::Default;
     QByteArray m_inputData;
     QString m_fileName;
 
-    QJsonArray m_extractedData;
+    QByteArray m_extractedData;
 };

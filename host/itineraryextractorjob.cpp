@@ -71,7 +71,17 @@ void ItineraryExtractorJob::setInputType(ItineraryExtractorJob::InputType inputT
     m_inputType = inputType;
 }
 
-QJsonArray ItineraryExtractorJob::extractedData() const
+ItineraryExtractorJob::OutputType ItineraryExtractorJob::outputType() const
+{
+    return m_outputType;
+}
+
+void ItineraryExtractorJob::setOutputType(ItineraryExtractorJob::OutputType outputType)
+{
+    m_outputType = outputType;
+}
+
+QByteArray ItineraryExtractorJob::extractedData() const
 {
     return m_extractedData;
 }
@@ -113,7 +123,7 @@ void ItineraryExtractorJob::doStart()
         const QByteArray output = process->readAllStandardOutput();
         const QJsonArray itineraryInfo = QJsonDocument::fromJson(output).array();
 
-        m_extractedData = QJsonDocument::fromJson(output).array();
+        m_extractedData = output;
         emitResult();
     });
 
@@ -133,6 +143,19 @@ void ItineraryExtractorJob::doStart()
         }
 
         args << QLatin1String("-t") << key;
+    }
+
+    if (m_outputType != OutputType::Default) {
+        const QMetaEnum me = QMetaEnum::fromType<OutputType>();
+
+        const QString key = QString::fromUtf8(me.key(static_cast<int>(m_outputType)));
+        if (key.isEmpty()) {
+            setError(KIO::ERR_UNKNOWN); // TODO proper error
+            emitResult();
+            return;
+        }
+
+        args << QLatin1String("-o") << key;
     }
 
     process->start(extractorPath(), args);
