@@ -9,6 +9,7 @@ set(HOST_SOURCES main.cpp
                 mprisplugin.cpp
                 abstractbrowserplugin.cpp
                 kdeconnectplugin.cpp
+                kdeconnectjob.cpp
                 downloadplugin.cpp
                 downloadjob.cpp
                 tabsrunnerplugin.cpp
