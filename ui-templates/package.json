@@ -1,0 +1,15 @@
+{
+    "name": "itinerary-templates",
+    "description": "Pre-compile Itinerary UI templates for plasma-browser-integration",
+    "version": "0.0.1",
+    "author": {
+        "name": "Kai Uwe Broulik",
+        "email": "kde@broulik.de"
+    },
+    "dependencies": {
+        "ejs": "*"
+    },
+    "scripts": {
+        "generate": "node generate-templates.js"
+    }
+}
