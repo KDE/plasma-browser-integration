@@ -32,6 +32,8 @@
 #include <KLocalizedString>
 #include <KNotification>
 
+#include <QJsonArray>
+#include <QJsonDocument>
 #include <QProcess>
 
 #include "itineraryextractorjob.h"
@@ -140,7 +142,7 @@ void DownloadPlugin::extractItinerary(const QString &fileName)
             return;
         }
 
-        const QJsonArray data = job->extractedData();
+        const QJsonArray data = QJsonDocument::fromJson(job->extractedData()).array();
         if (data.isEmpty()) {
             return;
         }
