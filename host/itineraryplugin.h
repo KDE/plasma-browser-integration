@@ -41,6 +41,19 @@ public:
     QJsonObject handleData(int serial, const QString &event, const QJsonObject &data) override;
 
 private:
+    void extract(int serial, const QJsonObject &data);
+    void sendUrlToDevice(int serial, const QString &deviceId, const QUrl &url);
+
+    static QUrl geoUrlFromJson(const QJsonObject &json);
+
+    void checkSupported();
+
     bool m_supported = false;
+
+    bool m_itineraryFound = false;
+    bool m_icalHandlerFound = false;
+    bool m_workbenchFound = false;
+
+    QString m_geoHandlerName;
 
 };

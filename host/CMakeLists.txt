@@ -37,6 +37,7 @@ target_link_libraries(
     KF5::PurposeWidgets
     KF5::Notifications
     KF5::FileMetaData
+    KF5::Service
 )
 
 install(TARGETS plasma-browser-integration-host ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
