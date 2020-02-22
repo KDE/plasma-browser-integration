@@ -70,6 +70,7 @@ class Itinerary {
             }).then((result) => {
                 if (!result.success) {
                     // TODO print error?
+                    console.warn("Itinerary: extractor failed");
                     return;
                 }
 
@@ -81,6 +82,7 @@ class Itinerary {
 
     buildUi(result) {
         if (!result || result.length === 0) {
+            console.log("Itinerary: extractor found nothing");
             return;
         }
 
@@ -89,8 +91,8 @@ class Itinerary {
         });
 
         // is joined together as a string so I don't always have to expand the Array in the developer console
-        console.log("Itinerary extractor found types:", foundTypes.join(",").substr(0,100));
-        console.log("Itinerary backend status info", this._status);
+        console.log("Itinerary: extractor found types:", foundTypes.join(",").substr(0,100));
+        console.log("Itinerary: backend status info", this._status);
 
         const filteredResult = result.filter((item) => {
             return SUPPORTED_ITINERARY_TYPES.includes(item["@type"]);
@@ -98,6 +100,7 @@ class Itinerary {
 
         // Likely an overview page, not much practical use
         if (filteredResult.length > MAXIMUM_ITINERARY_TYPE_OCCURRENCES) {
+            console.log("Itinerary: There are", filteredResult.length, "items on this page. This is possibly an overview/list page, ignoring.");
             return;
         }
 
@@ -108,6 +111,7 @@ class Itinerary {
         });
 
         if (filteredResult.length === 0) {
+            console.log("Itinerary: None of the types found are supported by us");
             return;
         }
 
