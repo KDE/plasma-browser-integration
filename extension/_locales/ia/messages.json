@@ -12,10 +12,10 @@
         "message": "The native host disconnected unexpectedly."
     },
     "general_error_not_supported_os": {
-        "message": "This extension is only supported on Linux and FreeBSD."
+        "message": "Iste extension es solmente supportate sur Linux e FreeBSD."
     },
     "general_error_not_supported_os_title": {
-        "message": "Unsupported operating system"
+        "message": "Systema operative non supportate"
     },
     "general_error_startup_failed": {
         "message": "Make sure the 'plasma-browser-integration' package is installed correctly and that you are running Plasma 5.13 or later."
@@ -30,16 +30,16 @@
         "message": "Error Incognite"
     },
     "kdeconnect_open_device": {
-        "message": "Open on '$1'"
+        "message": "Aperi sur '$1'"
     },
     "kdeconnect_open_via": {
-        "message": "Open via KDE Connect"
+        "message": "Aperi via KDE Connect"
     },
     "options_about_bugs": {
         "message": "If you find an issue, please check the <a href=\"$1\">list of open bugs</a> and then <a href=\"$2\">file a bug report</a>."
     },
     "options_about_copyright": {
-        "message": "© 2017-2019 Kai Uwe Broulik and David Edmundson"
+        "message": "© 2017-2019 Kai Uwe Broulik e David Edmundson"
     },
     "options_about_created_by_kde": {
         "message": "This browser extension was created by the <a href=\"$1\">KDE Community</a>. You can find more information about this project on the <a href=\"$2\">KDE Community Wiki</a>."
@@ -51,16 +51,16 @@
         "message": "Extension version: $1"
     },
     "options_about_host_version": {
-        "message": "Host version: $1"
+        "message": "Version de hospite: $1"
     },
     "options_about_kde": {
-        "message": "<html><b>KDE</b> es un rete mundial de ingenieros del software, artistas, scriptores, traductores e facilitatores  qui es devote al disveloppamento de <a href=\"%1\">Free Software (Software libere)</a>. Iste communitate ha create cento e cento de applicationes como parte de le Frameworks (structuras) de KDE, spatios de labor e applicationes.<br /><br /> KDE es un interprisa cooperative in le qual necun singule entitate controla le effortios o le producto de KDE per excluder alteres. Omne persona es benvenite per <a href=\"%2\"> affiliar se e contribuer</a> a KDE, includente te.<br /><br /> Tu visita <a href=\"%3\">%3</a> pro ulterior information super le communitate de KDE e le software que nos produce.</html>"
+        "message": "KDE es un rete mundial de ingenieros del software, artistas, scriptores, traductores e facilitatores  qui es devote al disveloppamento de <a href=\"$1\">Free Software (Software libere)</a>. Iste communitate ha create cento e cento de applicationes como parte de le Frameworks (structuras) de KDE, spatios de labor e applicationes. KDE es un interprisa cooperative in le qual necun singule entitate controla le effortios o le producto de KDE per excluder alteres. Omne persona es benvenite per <a href=\"$2\"> affiliar se e contribuer</a> a KDE, includente te. Tu visita <a href=\"$3\">$3</a> pro ulterior information super le communitate de KDE e le software que nos produce."
     },
     "options_about_license": {
         "message": "License: <a href=\"$1\">GNU General Public License Version 3</a>"
     },
     "options_about_translated_by": {
-        "message": "Translated by: $1"
+        "message": "Traducite per: $1"
     },
     "options_about_translators": {
         "message": "Giovanni Sora"
