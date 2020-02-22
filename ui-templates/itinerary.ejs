@@ -78,18 +78,6 @@ function actionDesignation(action) {
     return type;
 }
 
-function formatPlace(place) {
-    if (!place) {
-        return "";
-    }
-
-    if (place.address) {
-        return formatAddress(place.address);
-    }
-
-    throw new TypeError();
-}
-
 function getTripLocations(trip) {
     if (!trip) {
         return null;
@@ -355,12 +343,14 @@ data.forEach(function (item) {
 <% if (item.location || item.address) { %>
     <li class="icon location">
         <% if (item.location && item.location.name) { %>
+            <%# TODO only bold when there's an address to go with it %>
             <strong><%= item.location.name %></strong><br>
         <% } %>
 
-        <% const formattedAddress = (item.location ? formatPlace(item.location) : formatAddress(item.address)); %>
+        <% const formattedAddress = (item.location && item.location.address ? formatAddress(item.location.address) : formatAddress(item.address)); %>
         <% const locationHasGeo = item.geo && item.geo["@type"] === "GeoCoordinates"; %>
 
+        <% if (formattedAddress) { %>
         <div class="contextual-actions">
 
             <% if (status.geoHandlerName) { %>
@@ -392,6 +382,7 @@ data.forEach(function (item) {
             <% } %>
 
         </div>
+        <% } %>
 
         <%= formattedAddress %>
     </li>
