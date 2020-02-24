@@ -45,12 +45,18 @@
                 }
 
                 json.forEach((item) => {
-                    const type = item["@type"];
-                    if (!type) {
+                    let types = item["@type"];
+                    if (!types) {
                         return; // continue
                     }
 
-                    foundTypes[type] = (foundTypes[type] || 0) + 1;
+                    if (!Array.isArray(types)) {
+                        types = [types];
+                    }
+
+                    types.forEach((type) => {
+                        foundTypes[type] = (foundTypes[type] || 0) + 1;
+                    });
                 });
             }
         } catch (e) {
