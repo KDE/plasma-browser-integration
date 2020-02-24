@@ -221,8 +221,11 @@ function formatAddress(address) {
             address.addressLocality
         ].filter(item => !!item).join(" ");
 
-        if (address.addressRegion) {
-            result += ", " + address.addressRegion;
+        if (address.addressRegion && !result.includes(address.addressRegion)) {
+            if (result) {
+                result += ", ";
+            }
+            result += address.addressRegion;
         }
 
         const country = address.addressCountry;
