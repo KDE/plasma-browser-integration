@@ -140,18 +140,21 @@ function formatDateTimeRange(fromDate, toDate) {
         minute: "numeric"
     };
 
-    // Not a range, easy.
     if (!toDate || isNaN(toDate.getTime())) {
-        //const bool hasTime = fromDate.getHours() != 0 || fromDate.getMinute() != 0 || fromDate.getSeconds() != 0
-
-        return fromDate.toLocaleString([], formattingOptions);
+        toDate = fromDate;
     }
 
     // If both start and end are on midnight, consider it as a date
+    // TODO when we have something like 15th 15:00 till 17th 00:00 we effectively want "15th 15:00 till 16th"?
     if (fromDate.getHours() == 0 && fromDate.getMinutes() == 0 && fromDate.getSeconds() == 0
         && toDate.getHours() == 0 && toDate.getMinutes() == 0 && toDate.getSeconds() == 0) {
         delete formattingOptions.hour;
         delete formattingOptions.minute;
+    }
+
+    // If start and end date are the same, it's not a range
+    if (fromDate.getTime() === toDate.getTime()) {
+        return fromDate.toLocaleString([], formattingOptions);
     }
 
     let fromFormattingOptions = {};
