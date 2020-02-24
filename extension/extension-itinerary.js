@@ -68,7 +68,9 @@ function generalizeType(type) {
     return type;
 }
 
-let itineraryTabCache = {};
+// Both caches are nuked when tab gets closed or navigated away
+let itineraryQuickExtractorCache = {};
+let itineraryDataCache = {};
 
 let itineraryEnabled = undefined;
 
@@ -117,7 +119,7 @@ function checkForStructuredData() {
             // We set the browser action specifically on the tab, so if we checked a tab once
             // we don't need to do it again. However, if the tab navigated to a different page,
             // we invalidated the cache and will check again.
-            if (itineraryTabCache[tab.id]) {
+            if (itineraryQuickExtractorCache[tab.id]) {
                 return;
             }
 
@@ -132,7 +134,7 @@ function checkForStructuredData() {
                 }
 
                 result = result[0] || {};
-                itineraryTabCache[tab.id] = result;
+                itineraryQuickExtractorCache[tab.id] = result;
 
                 // Generalize types and add specific occurrences to the general type
                 Object.keys(result).forEach((type) => {
@@ -189,19 +191,34 @@ chrome.tabs.onActivated.addListener(checkForStructuredData);
 chrome.windows.onFocusChanged.addListener(checkForStructuredData);
 
 chrome.tabs.onRemoved.addListener((tabId) => {
-    delete itineraryTabCache[tabId];
+    delete itineraryQuickExtractorCache[tabId];
+    delete itineraryDataCache[tabId];
 });
 
 chrome.tabs.onUpdated.addListener((tabId, info, tab) => {
     if (info.status === "complete") {
-        delete itineraryTabCache[tabId];
+        delete itineraryQuickExtractorCache[tabId];
+        delete itineraryDataCache[tabId];
 
         checkForStructuredData();
     }
 });
 
+addRuntimeCallback("itinerary", "extract", (message) => {
+    const tabId = message.tabId;
+    if (tabId && itineraryDataCache[tabId]) {
+        return Promise.resolve(itineraryDataCache[tabId]);
+    }
+
+    return sendPortMessageWithReply("itinerary", "extract", message).then((reply) => {
+        if (reply.success) {
+            itineraryDataCache[tabId] = reply;
+        }
+        return reply;
+    });
+});
+
 addRuntimeCallback("itinerary", [
-    "extract",
     "openLocation",
     "sendLocationToDevice",
     "callOnDevice",

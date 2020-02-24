@@ -35,7 +35,7 @@ class Itinerary {
                         return;
                     }
 
-                    this._doExtract("Pdf", result);
+                    this._doExtract("Pdf", tab.id, result);
                 });
                 return;
             }
@@ -55,17 +55,19 @@ class Itinerary {
                     return;
                 }
 
-                this._doExtract("Html", result);
+                this._doExtract("Html", tab.id, result);
             });
         });
     }
 
-    _doExtract(type, data) {
+    _doExtract(type, tabId, data) {
         this._data = undefined;
 
         return new Promise((resolve, reject) => {
             sendMessage("itinerary", "extract", {
                 type,
+                // since "sender" will be the action_popup but we want to know what browser tab this is for
+                tabId,
                 data
             }).then((result) => {
                 if (!result.success) {
