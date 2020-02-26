@@ -12,7 +12,7 @@
         "message": "L'agospiu nativu desconeutóse inesperadamente."
     },
     "general_error_not_supported_os": {
-        "message": "Esta estensión namái se sofita en GNU/Linux y FreeBSD."
+        "message": "Esta estensión namás se sofita en GNU/Linux y FreeBSD."
     },
     "general_error_not_supported_os_title": {
         "message": "Nun se sofita esti sistema operativu."
