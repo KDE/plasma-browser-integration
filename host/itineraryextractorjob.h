@@ -28,6 +28,9 @@
 #include <QJsonArray>
 #include <QString>
 
+class QProcess;
+class QTimer;
+
 class ItineraryExtractorJob : public KJob
 {
     Q_OBJECT
@@ -77,5 +80,8 @@ private:
     QByteArray m_inputData;
     QString m_fileName;
 
+    QProcess *m_process = nullptr;
+    QTimer *m_killTimer = nullptr;
     QByteArray m_extractedData;
+
 };

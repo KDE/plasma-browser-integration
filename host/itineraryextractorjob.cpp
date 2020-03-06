@@ -29,6 +29,7 @@
 #include <QMetaEnum>
 #include <QMetaObject>
 #include <QProcess>
+#include <QTimer>
 
 #include <KIO/Global>
 
@@ -99,38 +100,10 @@ void ItineraryExtractorJob::doStart()
         return;
     }
 
-    QProcess *process = new QProcess(this);
-
-    connect(process, &QProcess::started, this, [this, process] {
-        if (m_inputData.isEmpty()) {
-            return;
-        }
-
-        process->write(m_inputData);
-        process->closeWriteChannel();
-    });
-
-    connect(process, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished), this, [this, process](int exitCode, QProcess::ExitStatus exitStatus) {
-        process->deleteLater();
-
-        if (exitCode != 0 || exitStatus != QProcess::NormalExit) {
-            qWarning() << "Failed to extract itinerary information"; // TODO print error
-            setError(KIO::ERR_UNKNOWN); // TODO proper error code
-            emitResult();
-            return;
-        }
-
-        const QByteArray output = process->readAllStandardOutput();
-        const QJsonArray itineraryInfo = QJsonDocument::fromJson(output).array();
-
-        m_extractedData = output;
-        emitResult();
-    });
+    m_process = new QProcess(this);
+    m_process->setProgram(extractorPath());
 
     QStringList args;
-    if (!m_fileName.isEmpty()) {
-        args << m_fileName;
-    }
 
     if (m_inputType != InputType::Any) {
         const QMetaEnum me = QMetaEnum::fromType<InputType>();
@@ -154,9 +127,44 @@ void ItineraryExtractorJob::doStart()
             emitResult();
             return;
         }
-
-        args << QLatin1String("-o") << key;
     }
 
-    process->start(extractorPath(), args);
+    if (!m_fileName.isEmpty()) {
+        args << m_fileName;
+    }
+
+    m_process->setArguments(args);
+
+    connect(m_process, &QProcess::started, this, [this] {
+        m_process->write(m_inputData);
+        m_process->closeWriteChannel();
+
+        m_killTimer = new QTimer(this);
+        m_killTimer->setSingleShot(true);
+        m_killTimer->setInterval(10000);
+        connect(m_killTimer, &QTimer::timeout, this, [this] {
+            qWarning() << "Itinerary took too long, killing it";
+            m_process->kill();
+        });
+        m_killTimer->start();
+    });
+
+    connect(m_process, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished), this, [this](int exitCode, QProcess::ExitStatus exitStatus) {
+        if (m_killTimer) {
+            m_killTimer->stop();
+        }
+
+        if (exitCode != 0 || exitStatus != QProcess::NormalExit) {
+            qWarning() << "Failed to extract itinerary information" << exitCode << exitStatus << m_process->errorString();
+            setError(KIO::ERR_UNKNOWN); // TODO proper error code
+            setErrorText(m_process->errorString());
+            emitResult();
+            return;
+        }
+
+        m_extractedData = m_process->readAllStandardOutput();
+        emitResult();
+    });
+
+    m_process->start();
 }
