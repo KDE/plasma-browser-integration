@@ -38,7 +38,7 @@
     const jsonLdScriptTags = document.querySelectorAll("script[type='application/ld+json']");
     jsonLdScriptTags.forEach((tag) => {
         try {
-            let json = JSON.parse(tag.innerText.replace(/(\r\n|\n|\r)/gm, ""));
+            let json = JSON.parse(tag.innerText.replace(/(\r\n|\n|\r|\t)/gm, ""));
             if (json) {
                 if (!Array.isArray(json)) { // turn it into an array so we can use same codepath below
                     json = [json];
