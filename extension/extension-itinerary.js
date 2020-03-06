@@ -129,7 +129,7 @@ function checkForStructuredData() {
             }, (result) => {
                 const error = chrome.runtime.lastError;
                 if (error) {
-                    console.warn("Failed to run itinerary quick extractor", error.message);
+                    //console.warn("Failed to run itinerary quick extractor", error.message);
                     return;
                 }
 
