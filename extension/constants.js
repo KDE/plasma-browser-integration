@@ -58,5 +58,20 @@ const MPRIS_WEBSITE_SETTINGS = {
 };
 
 // Supported schema.org types for itinerary extraction, sorted by preferences
-const SUPPORTED_ITINERARY_TYPES = ["Event", "FoodEstablishment", "LodgingBusiness", "BusReservation", "FlightReservation", "TrainReservation"];
+const SUPPORTED_ITINERARY_TYPES = [
+    "Event",
+
+    "FoodEstablishment",
+    "LodgingBusiness",
+    "Store",
+    "EntertainmentBusiness",
+    "AutomotiveBusiness",
+    "LocalBusiness",
+
+    "FlightReservation",
+    "TrainReservation",
+    "BusReservation",
+
+    //"Product"
+];
 const MAXIMUM_ITINERARY_TYPE_OCCURRENCES = 15;

@@ -17,9 +17,19 @@
 
 const badgeIcons = {
     "Event": "📅", // "Calendar" Emoji
+
+    "LocalBusiness": "💼", // "Briefcase" Emoji
+    "AutomotiveBusiness": "🚗", // "Automobile" Emoji
+    "EntertainmentBusiness": "🎭", // "Performing Arts" Emoji (TODO should we have dedicated ones for movie theater etc?)
+    "FoodEstablishment": "🍽", // "Fork and Knive With Plate" Emoji
     "LodgingBusiness": "🏨", // "Hotel" Emoji, looks more like a hospital to me
-    "FoodEstablishment": "🍽" // "Fork and Knive With Plate" Emoji
-    // TODO FlightReservation
+    "Store": "🛒", // "Shopping trolley" Emoji
+
+    "BusReservation": "🚌", // "Bus" emoji
+    "FlightReservation": "✈️", // "Airplane" emoji
+    "TrainReservation": "🚆", // "Train" emoji
+
+    "Product": "📦", // "Package" emoji
 };
 
 const genericTypes = {
@@ -29,25 +39,40 @@ const genericTypes = {
         "EventSeries",
         "Festival"
     ],
-    "LodgingBusiness": [
-        "BedAndBreakfast",
-        "Campground",
-        "Hostel",
-        "Hotel",
-        "Motel",
-        "Resort"
+    "LocalBusiness": [
+        "HomeAndConstructionBusiness"
     ],
-    "FoodEstablishment": [
-        "Bakery",
-        "BarOrPub",
-        "Brewery",
-        "CafeOrCoffeeShop",
-        "Distillery",
-        "FastFoodRestaurant",
-        "IceCreamShop",
-        "Restaurant",
-        "Winery"
-    ]
+        "AutomotiveBusiness": [
+            "AutoDealer",
+            "AutoRepair"
+        ],
+        "EntertainmentBusiness": [
+            "MovieTheater",
+        ],
+        "FoodEstablishment": [
+            "Bakery",
+            "BarOrPub",
+            "Brewery",
+            "CafeOrCoffeeShop",
+            "Distillery",
+            "FastFoodRestaurant",
+            "IceCreamShop",
+            "Restaurant",
+            "Winery"
+        ],
+        "LodgingBusiness": [
+            "BedAndBreakfast",
+            "Campground",
+            "Hostel",
+            "Hotel",
+            "Motel",
+            "Resort"
+        ],
+        "Store": [
+            "ComputerStore",
+            "ElectronicsStore",
+            "HobbyShop"
+        ]
 };
 
 function generalizeType(type) {
