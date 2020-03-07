@@ -161,8 +161,10 @@ function checkForStructuredData() {
                 result = result[0] || {};
                 itineraryQuickExtractorCache[tab.id] = result;
 
+                const types = Object.keys(result);
+
                 // Generalize types and add specific occurrences to the general type
-                Object.keys(result).forEach((type) => {
+                types.forEach((type) => {
                     const genericType = generalizeType(type);
 
                     if (genericType !== type) {
@@ -170,6 +172,10 @@ function checkForStructuredData() {
                         delete result[type];
                     }
                 });
+
+                if (types.length > 0) {
+                    console.log(`Itinerary: Found the following types on tab ${tab.id}: ${types.join(", ")}`);
+                }
 
                 let possibleIcon = "";
                 // Should we have a priority order here?
