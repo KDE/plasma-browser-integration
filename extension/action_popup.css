@@ -121,23 +121,25 @@ section.separated {
 
 }
 .itinerary-info div.banner {
-    width: 100%;
-    height: 100px;
+    width: calc(100% + 1em);
+    height: 120px;
     overflow: hidden;
+    margin: 0 -0.5em;
+    position: relative; /* needed so overflow: hidden works for inner absolute positioned */
 }
-.itinerary-info .banner > .blur {
-    overflow: hidden;
+.itinerary-info div.banner > .blur {
     position: absolute;
-    width: 100%;
-    height: 100px;
-    /*transform: scale(2);*/
+    /* Counteract blur edge bleeding */
+    margin: -15px;
+    width: calc(100% + 2 * 15px);
+    height: calc(100% + 2 * 15px);
     filter: blur(10px);
     background-size: 100% 100%;
     z-index: -1;
 }
-.itinerary-info .banner > .image {
+.itinerary-info div.banner > .image {
     width: 100%;
-    height: 100px;
+    height: 100%;
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
