@@ -1,6 +1,6 @@
 {
     "browseraction_mpris_enable_on": {
-        "message": "Laajennetut mediasäätimet"
+        "message": "Käytä mediasäätimiä:"
     },
     "browseraction_mpris_title": {
         "message": "Mediasäätimet"
@@ -9,7 +9,7 @@
         "message": "Plasma-selainintegrointi"
     },
     "general_error_host_disconnected_title": {
-        "message": "Plasma-silta katkaisi odottamatta yhteyden: $1"
+        "message": "Natiivi-isäntä katkaisi odottamatta yhteyden."
     },
     "general_error_not_supported_os": {
         "message": "Tämä laajennus on tuettu vain Linuxissa ja FreeBSD:ssä."
@@ -18,10 +18,10 @@
         "message": "Ei-tuettu käyttöjärjestelmä"
     },
     "general_error_startup_failed": {
-        "message": "Varmista, että ”plasma-browser-integration”-paketti on asetettu oikein ja että käytössä on Plasma 5.13 tai uudempi."
+        "message": "Varmista, että ”plasma-browser-integration”-paketti on asetettu oikein ja että käytössä on Plasma 5.13 tai uudempi.Varmista, että ”plasma-browser-integration”-paketti on asetettu oikein ja että käytössä on Plasma 5.13 tai uudempi."
     },
     "general_error_startup_failed_title": {
-        "message": "Failed to connect to the native host."
+        "message": "Natiivi-isäntään yhdistäminen epäonnistui."
     },
     "general_error_startup_failed_wiki_link": {
         "message": "Projektin wiki-sivulta löytyy lisätietoa"
@@ -48,10 +48,10 @@
         "message": "Jos pidät näkemästäsi, harkitse <a href=\"$1\">KDE:lle lahjoittamista</a>, jotta voimme jatkaa parhaiden vapaiden ohjelmistojen tekemistä."
     },
     "options_about_extension_version": {
-        "message": "Extension version: $1"
+        "message": "Laajennusversio: $1"
     },
     "options_about_host_version": {
-        "message": "Host version: $1"
+        "message": "Isäntäversio: $1"
     },
     "options_about_kde": {
         "message": "KDE on maailmanlaajuinen ohjelmoijien, taiteilijoiden, kirjoittajien, kääntäjien ja avustajien verkosto, joka on sitoutunut <a href=\"$1\">vapaiden ohjelmistojen</a> kehitykseen. KDE on luonut Plasma-työpöytäympäristön, satoja sovelluksia ja ohjelmakirjastot niitä tukemaan. KDE on yhteistoimintahanke, jota mikään yksittäinen taho ei yksin hallitse, vaan pyrimme yhdessä yhteiseen päämäärään: rakentamaan maailman parhaita vapaita ohjelmia. Kaikki ovat tervetulleita <a href=\"$2\">liittymään KDE:hen ja avustamaan sitä</a> – myös sinä. Saat lisätietoa KDE-yhteisöstä ja tuottamistamme ohjelmista sivulta <a href=\"$3\">$3</a>."
@@ -75,13 +75,13 @@
         "message": "Käytä Breeze-tyylisiä vierityspalkkeja"
     },
     "options_plugin_downloads_addToRecentDocuments": {
-        "message": "Add downloaded files to recent documents"
+        "message": "Lisää ladatut tiedostot viimeaikaisiin tiedostoihin"
     },
     "options_plugin_downloads_saveOriginUrl": {
-        "message": "Save URL a file was downloaded from in the file's attributes"
+        "message": "Tallenna verkkolatausosoite tiedoston määritteisiin"
     },
     "options_plugin_downloads_saveOriginUrl_description": {
-        "message": "Huomaa: Verkko-osoite voi sisältää henkilökohtaista tietoa, jota ei tulisi paljastaa, kun tiedostoon pääsevät käsiksi muut"
+        "message": "Huomaa: Verkko-osoite voi sisältää henkilökohtaista tietoa, jota ei tulisi paljastaa, kun tiedostoon pääsevät käsiksi muutHuomaa: Verkko-osoite voi sisältää henkilökohtaista tietoa, jota ei tulisi paljastaa, kun tiedostoon pääsevät käsiksi muut"
     },
     "options_plugin_downloads_title": {
         "message": "Näytä lataukset ilmoitusalueella"
@@ -105,7 +105,7 @@
         "message": "Mediasäätimet"
     },
     "options_plugin_purpose_description": {
-        "message": "Lisää ”Jaa…”-kontekstivalikkokohdan ja sallii verkkosivujen avata ikkunan sisällön jakamiseksi Web Share -APIlla."
+        "message": "Lisää ”Jaa…”-kontekstivalikkokohdan ja sallii verkkosivujen avata ikkunan sisällön jakamiseksi Web Share -APIlla.Lisää ”Jaa…”-kontekstivalikkokohdan ja sallii verkkosivujen avata ikkunan sisällön jakamiseksi Web Share -APIlla."
     },
     "options_plugin_purpose_title": {
         "message": "Sisällön jakaminen"
