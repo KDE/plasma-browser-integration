@@ -75,7 +75,7 @@
         "message": "Použít styl posuvníku Breeze"
     },
     "options_plugin_downloads_addToRecentDocuments": {
-        "message": "Add downloaded files to recent documents"
+        "message": "Přidat stažené soubory mezi nedávné dokumenty"
     },
     "options_plugin_downloads_saveOriginUrl": {
         "message": "Save URL a file was downloaded from in the file's attributes"
