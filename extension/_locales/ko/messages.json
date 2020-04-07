@@ -141,7 +141,7 @@
         "message": "공유 실패"
     },
     "purpose_share_finished_text": {
-        "message": "공유한 콘텐츠 링크($1)를 클립보드로 복사했습니다."
+        "message": "공유한 콘텐츠 링크($1)를 클립보드에 복사했습니다."
     },
     "purpose_share_finished_title": {
         "message": "콘텐츠 공유함"
