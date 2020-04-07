@@ -51,6 +51,23 @@ function sendPlayerTabMessage(player, action, payload) {
 
     chrome.tabs.sendMessage(player.tabId, message, {
         frameId: player.frameId
+    }, (resp) => {
+        const error = chrome.runtime.lastError;
+        // When player tab crashed, we get this error message.
+        // There's unfortunately no proper signal for this so we can really only know when we try to send a command
+        if (error && error.message === "Could not establish connection. Receiving end does not exist.") {
+            console.warn("Failed to send player command to tab", player.tabId, ", signalling player gone");
+            playerTabGone(player.tabId);
+        }
+    });
+}
+
+function playerTabGone(tabId) {
+    let players = playerIds;
+    players.forEach((playerId) => {
+        if (playerId.startsWith(tabId + "-")) {
+            playerGone(playerId);
+        }
     });
 }
 
@@ -84,10 +101,26 @@ function playerGone(playerId) {
 // which is invoked in the onbeforeunload handler of the page
 chrome.tabs.onRemoved.addListener((tabId) => {
     // Since we only get the tab id, search for all players from this tab and signal a "gone"
-    let players = playerIds;
-    players.forEach((playerId) => {
-        if (playerId.startsWith(tabId + "-")) {
-            playerGone(playerId);
+    playerTabGone(tabId);
+});
+
+// There's no signal for when a tab process crashes (only in browser dev builds).
+// We watch for the tab becoming inaudible and check if it's still around.
+// With this heuristic we can at least mitigate MPRIS remaining stuck in a playing state.
+chrome.tabs.onUpdated.addListener((tabId, changes) => {
+    if (!changes.hasOwnProperty("audible") || changes.audible === true) {
+        return;
+    }
+
+    // Now check if the tab is actually gone
+    chrome.tabs.executeScript(tabId, {
+        code: `true`
+    }, (response) => {
+        const error = chrome.runtime.lastError;
+        // Chrome error in script_executor.cc "kRendererDestroyed"
+        if (error && error.message === "The tab was closed.") {
+            console.warn("Player tab", tabId, "became inaudible and was considered crashed, signalling player gone");
+            playerTabGone(tabId);
         }
     });
 });
