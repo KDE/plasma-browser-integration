@@ -90,6 +90,9 @@ SettingsUtils.get().then((items) => {
             if (status && status.purpose) {
                 loadPurpose();
             }
+        }, (err) => {
+            // No warning, can also happen when port isn't connected for unsupported OS
+            console.log("Failed to get subsystem status for purpose", err);
         });
     }
 });
