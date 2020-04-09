@@ -119,6 +119,10 @@
         "description": "Version of browser extension",
         "message": "Extension version: $1"
     },
+    "options_about_changelog_link": {
+        "description": "Link to view browser extension changelog",
+        "message": "View Changelog"
+    },
 
     "options_about_copyright": {
         "message": "© 2017-2019 Kai Uwe Broulik and David Edmundson"
