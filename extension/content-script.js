@@ -814,27 +814,39 @@ function loadMediaSessionsShim() {
             player.addEventListener("pause", player.replayAfterRemoval);
         `;
 
-        executeScript(`function() {
-                var oldCreateElement = Document.prototype.createElement;
-                Document.prototype.createElement = function() {
-                    var createdTag = oldCreateElement.apply(this, arguments);
+        const handleCreateElement = `
+            const tagName = arguments[0];
 
-                    var tagName = arguments[0];
-
-                    if (typeof tagName === "string") {
-                        if (tagName.toLowerCase() === "audio") {
-                            const player = createdTag;
-                            ${addPlayerToDomEvadingAutoPlayBlocking}
-                        } else if (tagName.toLowerCase() === "video") {
-                            (document.head || document.documentElement).appendChild(createdTag);
-                            createdTag.parentNode.removeChild(createdTag);
-                        }
-                    }
-
-                    return createdTag;
-                };
+            if (typeof tagName === "string") {
+                if (tagName.toLowerCase() === "audio") {
+                    const player = createdTag;
+                    ${addPlayerToDomEvadingAutoPlayBlocking}
+                } else if (tagName.toLowerCase() === "video") {
+                    (document.head || document.documentElement).appendChild(createdTag);
+                    createdTag.parentNode.removeChild(createdTag);
+                }
             }
-        `);
+        `;
+
+        if (IS_FIREFOX) {
+            const oldCreateElement = Document.prototype.createElement;
+            exportFunction(function() {
+                const createdTag = oldCreateElement.apply(this, arguments);
+                eval(handleCreateElement);
+                return createdTag;
+            }, Document.prototype, {defineAs: "createElement"});
+        } else {
+            executeScript(`
+                function() {
+                    const oldCreateElement = Document.prototype.createElement;
+                    Document.prototype.createElement = function() {
+                        const createdTag = oldCreateElement.apply(this, arguments);
+                        ${handleCreateElement}
+                        return createdTag;
+                    };
+                }
+            `);
+        }
 
         // We also briefly add items created as new Audio() to the DOM so we can control it
         // similar to the document.createElement hack above since we cannot share variables
