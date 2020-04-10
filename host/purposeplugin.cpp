@@ -73,12 +73,27 @@ QJsonObject PurposePlugin::handleData(int serial, const QString &event, const QJ
             m_menu.reset(new Purpose::Menu());
             m_menu->model()->setPluginType(QStringLiteral("Export"));
 
+            connect(m_menu.data(), &QMenu::aboutToShow, this, [this] {
+                m_menu->setProperty("actionInvoked", false);
+            });
+
             connect(m_menu.data(), &QMenu::aboutToHide, this, [this] {
-                if (!m_menu->activeAction()) {
-                    sendPendingReply(false, {
-                        {QStringLiteral("errorCode"), QStringLiteral("CANCELED")}
-                    });
-                }
+                // aboutToHide is emitted before an action is triggered and activeAction() is
+                // the action currently hovered. This means we can't properly tell that the prompt
+                // got canceled, when hovering an action and then hitting Escape to close the menu.
+                // Hence delaying this and checking if an action got invoked :(
+
+                QMetaObject::invokeMethod(this, [this] {
+                    if (!m_menu->property("actionInvoked").toBool()) {
+                        sendPendingReply(false, {
+                            {QStringLiteral("errorCode"), QStringLiteral("CANCELED")}
+                        });
+                    }
+                }, Qt::QueuedConnection);
+            });
+
+            connect(m_menu.data(), &QMenu::triggered, this, [this] {
+                m_menu->setProperty("actionInvoked", true);
             });
 
             connect(m_menu.data(), &Purpose::Menu::finished, this, [this](const QJsonObject &output, int errorCode, const QString &errorMessage) {
