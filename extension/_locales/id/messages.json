@@ -38,6 +38,9 @@
     "options_about_bugs": {
         "message": "Jika kamu menemukan masalah, silakan periksa <a href=\"$1\">daftar bug terbuka</a> dan kemudian <a href=\"$2\">ajukan sebuah laporan bug</a>."
     },
+    "options_about_changelog_link": {
+        "message": "View Changelog"
+    },
     "options_about_copyright": {
         "message": "© 2017-2019 Kai Uwe Broulik dan David Edmundson"
     },

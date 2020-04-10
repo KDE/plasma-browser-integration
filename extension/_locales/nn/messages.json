@@ -38,6 +38,9 @@
     "options_about_bugs": {
         "message": "Viss du finn ein feil, sjå først gjennom oversikta over <a href=\"$1\">opne feilrapportar</a> og meld så eventuelt inn <a href=\"$2\">ein ny feilrapport</a>."
     },
+    "options_about_changelog_link": {
+        "message": "View Changelog"
+    },
     "options_about_copyright": {
         "message": "© 2017–2019 Kai Uwe Broulik og David Edmundson"
     },

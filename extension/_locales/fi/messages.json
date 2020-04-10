@@ -38,6 +38,9 @@
     "options_about_bugs": {
         "message": "Jos havaitset ongelmia, tarkista <a href=\"$1\">tunnetut ohjelmavirheet</a> ja tee tarvittaessa <a href=\"$2\">vikailmoitus</a>."
     },
+    "options_about_changelog_link": {
+        "message": "View Changelog"
+    },
     "options_about_copyright": {
         "message": "© 2017–19 Kai Uwe Broulik ja David Edmundson"
     },

@@ -38,6 +38,9 @@
     "options_about_bugs": {
         "message": "Kui kohtad probleemi, uuri esmalt <a href=\"$1\">avatud veateadete nimekirja</a> ja seejärel <a href=\"$2\">tee veateade</a>."
     },
+    "options_about_changelog_link": {
+        "message": "View Changelog"
+    },
     "options_about_copyright": {
         "message": "© 2017-2019: Kai Uwe Broulik ja David Edmundson"
     },

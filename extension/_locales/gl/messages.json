@@ -38,6 +38,9 @@
     "options_about_bugs": {
         "message": "Se atopa un problema, revise a <a href=\"$1\">lista de fallos abertos</a> e se non o atopa <a href=\"$2\">informe do fallo</a>."
     },
+    "options_about_changelog_link": {
+        "message": "View Changelog"
+    },
     "options_about_copyright": {
         "message": "© 2017-2019 Kai Uwe Broulik e David Edmundson"
     },

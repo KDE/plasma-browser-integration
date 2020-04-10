@@ -38,6 +38,9 @@
     "options_about_bugs": {
         "message": "문제를 발견하셨으면 <a href=\"$1\">알려진 버그 목록</a>에서 검색해 본 다음 <a href=\"$2\">버그를 보고</a>해 주십시오."
     },
+    "options_about_changelog_link": {
+        "message": "View Changelog"
+    },
     "options_about_copyright": {
         "message": "© 2017-2019 Kai Uwe Broulik and David Edmundson"
     },

@@ -38,6 +38,9 @@
     "options_about_bugs": {
         "message": "Якщо вам вдасться знайти ваду, будь ласка, пошукайте її у <a href=\"$1\">списку відомих вад</a>. Якщо не знайдете, <a href=\"$2\">створіть новий звіт щодо вади</a>."
     },
+    "options_about_changelog_link": {
+        "message": "View Changelog"
+    },
     "options_about_copyright": {
         "message": "© Kai Uwe Broulik та David Edmundson, 2017–2019"
     },

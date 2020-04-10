@@ -38,6 +38,9 @@
     "options_about_bugs": {
         "message": "Если вы нашли ошибку, пожалуйста, посетите страницу с уже <a href=\"$1\">известными ошибками</a> , затем можете <a href=\"$2\">отправить отчёт об ошибке</a>."
     },
+    "options_about_changelog_link": {
+        "message": "View Changelog"
+    },
     "options_about_copyright": {
         "message": "© Kai Uwe Broulik и David Edmundson, 2017-2019"
     },

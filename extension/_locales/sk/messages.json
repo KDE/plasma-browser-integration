@@ -38,6 +38,9 @@
     "options_about_bugs": {
         "message": "Ak nájdete chybu, prosím skontrolujte <a href=\"$1\">zoznam otvorených chýb</a> a potom prípadne <a href=\"$2\">vyplnte hlásenie o chybe</a>."
     },
+    "options_about_changelog_link": {
+        "message": "View Changelog"
+    },
     "options_about_copyright": {
         "message": "© 2017, 2019 Kai Uwe Broulik and David Edmundson"
     },

@@ -38,6 +38,9 @@
     "options_about_bugs": {
         "message": "Als u een probleem vindt, controleer dan de <a href=\"$1\">lijst met open bugs</a> en daarna <a href=\"$2\">stuur een bugrapport</a>."
     },
+    "options_about_changelog_link": {
+        "message": "View Changelog"
+    },
     "options_about_copyright": {
         "message": "© 2017-2019 Kai Uwe Broulik en David Edmundson"
     },

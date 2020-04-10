@@ -38,6 +38,9 @@
     "options_about_bugs": {
         "message": "Jeigu susidursite su klaida, peržiūrėkite <a href=\"$1\">atvirų klaidų sąrašą</a>, o tuomet <a href=\"$2\">pateikite pranešimą apie klaidą</a>."
     },
+    "options_about_changelog_link": {
+        "message": "View Changelog"
+    },
     "options_about_copyright": {
         "message": "© 2017-2019 Kai Uwe Broulik ir David Edmundson"
     },

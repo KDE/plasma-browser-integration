@@ -38,6 +38,9 @@
     "options_about_bugs": {
         "message": "If you find an issue, please check the <a href=\"$1\">list of open bugs</a> and then <a href=\"$2\">file a bug report</a>."
     },
+    "options_about_changelog_link": {
+        "message": "View Changelog"
+    },
     "options_about_copyright": {
         "message": "© 2017, 2019 Kai Uwe Broulik a David Edmundson"
     },

@@ -38,6 +38,9 @@
     "options_about_bugs": {
         "message": "Ha problémát észlel, ellenőrizze a <a href=\"$1\">nyitott hibák listáját</a>, majd <a href=\"$2\">küldjön hibajelentést</a>."
     },
+    "options_about_changelog_link": {
+        "message": "View Changelog"
+    },
     "options_about_copyright": {
         "message": "© Kai Uwe Broulik és David Edmundson, 2017-2019."
     },

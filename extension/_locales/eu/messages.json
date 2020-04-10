@@ -38,6 +38,9 @@
     "options_about_bugs": {
         "message": "Arazo bat topatzen baduzu, egiaztatu  <a href=\"$1\">irekitako akatsen zerrenda</a> eta ondoren <a href=\"$2\">bete akats-txosten bat</a>."
     },
+    "options_about_changelog_link": {
+        "message": "View Changelog"
+    },
     "options_about_copyright": {
         "message": "© 2017-2018 Kai Uwe Broulik eta David Edmundson"
     },
