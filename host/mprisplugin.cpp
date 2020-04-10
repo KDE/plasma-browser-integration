@@ -481,12 +481,14 @@ void MPrisPlugin::setPlaybackStatus(const QString &playbackStatus)
 void MPrisPlugin::setLength(qlonglong length)
 {
     if (m_length != length) {
+        const bool oldCanSeek = canSeek();
+
         m_length = length;
-
-        //emit metadataChanged();
-
         emitPropertyChange(m_player, "Metadata");
-        emitPropertyChange(m_player, "CanSeek");
+
+        if (oldCanSeek != canSeek()) {
+            emitPropertyChange(m_player, "CanSeek");
+        }
     }
 }
 
