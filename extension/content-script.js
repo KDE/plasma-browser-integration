@@ -589,6 +589,11 @@ function loadMpris() {
                             return; // continue
                         }
 
+                        // If the player got temporarily added by us, don't consider it gone
+                        if (player.dataset.pbiPausedForDomRemoval === "true") {
+                            return;
+                        }
+
                         sendPlayerGone();
                         return;
                     }
@@ -791,12 +796,13 @@ function loadMediaSessionsShim() {
         // so it continues playing :-)
         const addPlayerToDomEvadingAutoPlayBlocking = `
             player.registerInDom = () => {
-                player.pausedBecauseOfDomRemoval = true;
+                // Needs to be dataset so it's accessible from mutation observer on webpage
+                player.dataset.pbiPausedForDomRemoval = "true";
                 player.removeEventListener("play", player.registerInDom);
 
                 // If it is already in DOM by the time it starts playing, we don't need to do anything
                 if (document.body && document.body.contains(player)) {
-                    delete player.pausedBecauseOfDomRemoval;
+                    delete player.dataset.pbiPausedForDomRemoval;
                     player.removeEventListener("pause", player.replayAfterRemoval);
                 } else {
                     (document.head || document.documentElement).appendChild(player);
@@ -805,8 +811,8 @@ function loadMediaSessionsShim() {
             };
 
             player.replayAfterRemoval = () => {
-                if (player.pausedBecauseOfDomRemoval === true) {
-                    delete player.pausedBecauseOfDomRemoval;
+                if (player.dataset.pbiPausedForDomRemoval === "true") {
+                    delete player.dataset.pbiPausedForDomRemoval;
                     player.removeEventListener("pause", player.replyAfterRemoval);
 
                     player.play();
