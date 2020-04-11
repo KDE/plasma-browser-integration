@@ -60,7 +60,7 @@ BrowserIntegrationReminder::BrowserIntegrationReminder(QObject *parent, const QL
         return;
     }
 
-    QUrl firefox(QStringLiteral("https://addons.mozilla.org/en-US/firefox/addon/plasma-integration/"));
+    QUrl firefox(QStringLiteral("https://addons.mozilla.org/firefox/addon/plasma-integration/"));
     m_browsers[QStringLiteral("firefox.desktop")] = firefox;
     m_browsers[QStringLiteral("nightly.desktop")] = firefox;
 
