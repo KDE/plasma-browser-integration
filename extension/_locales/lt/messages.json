@@ -39,10 +39,10 @@
         "message": "Jeigu susidursite su klaida, peržiūrėkite <a href=\"$1\">atvirų klaidų sąrašą</a>, o tuomet <a href=\"$2\">pateikite pranešimą apie klaidą</a>."
     },
     "options_about_changelog_link": {
-        "message": "View Changelog"
+        "message": "Rodyti keitinių žurnalą"
     },
     "options_about_copyright": {
-        "message": "© 2017-2019 Kai Uwe Broulik ir David Edmundson"
+        "message": "© 2017-2020 Kai Uwe Broulik ir David Edmundson"
     },
     "options_about_created_by_kde": {
         "message": "Šį naršyklės priedą sukūrė <a href=\"$1\">KDE bendruomenė</a>. Daugiau informacijos apie šį projektą galite rasti <a href=\"$2\">KDE bendruomenės vikyje</a>."

@@ -39,10 +39,10 @@
         "message": "Kui kohtad probleemi, uuri esmalt <a href=\"$1\">avatud veateadete nimekirja</a> ja seejärel <a href=\"$2\">tee veateade</a>."
     },
     "options_about_changelog_link": {
-        "message": "View Changelog"
+        "message": "Vaata muutuste logi"
     },
     "options_about_copyright": {
-        "message": "© 2017-2019: Kai Uwe Broulik ja David Edmundson"
+        "message": "© 2017-2020: Kai Uwe Broulik ja David Edmundson"
     },
     "options_about_created_by_kde": {
         "message": "Selle brauseri laienduse lõi <a href=\"$1\">KDE kogukond</a>. Rohkem teavet projekti kohta leiab <a href=\"$2\">KDE kogukonna Wikist</a>."

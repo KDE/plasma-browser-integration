@@ -39,10 +39,10 @@
         "message": "Om du hittar ett problem, kontrollera <a href=\"$1\">listan över befintliga fel</a> och skicka därefter gärna in <a href=\"$2\">en felrapport</a>."
     },
     "options_about_changelog_link": {
-        "message": "View Changelog"
+        "message": "Visa ändringslogg"
     },
     "options_about_copyright": {
-        "message": "© 2017, 2019 Kai Uwe Broulik och David Edmundson"
+        "message": "© 2017-2020 Kai Uwe Broulik och David Edmundson"
     },
     "options_about_created_by_kde": {
         "message": "Den här webbläsarutökningen skapades av <a href=\"$1\">KDE:s gemenskap</a>. Du hittar mer information om projektet på <a href=\"$2\">KDE Community Wiki</a>."
