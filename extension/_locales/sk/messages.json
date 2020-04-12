@@ -39,10 +39,10 @@
         "message": "Ak nájdete chybu, prosím skontrolujte <a href=\"$1\">zoznam otvorených chýb</a> a potom prípadne <a href=\"$2\">vyplnte hlásenie o chybe</a>."
     },
     "options_about_changelog_link": {
-        "message": "View Changelog"
+        "message": "Zobraziť zoznam zmien"
     },
     "options_about_copyright": {
-        "message": "© 2017, 2019 Kai Uwe Broulik and David Edmundson"
+        "message": "© 2017-2020 Kai Uwe Broulik a David Edmundson"
     },
     "options_about_created_by_kde": {
         "message": "Toto rozšírenie prehliadača bolo vytvorené členmi <a href=\"$1\">KDE Community</a>. Môžete nájsť viac informácií o tomto projekte na <a href=\"$2\">KDE Community Wiki</a>."

@@ -42,7 +42,7 @@
         "message": "View Changelog"
     },
     "options_about_copyright": {
-        "message": "© 2017-2019 Kai Uwe Broulik 和 David Edmundson"
+        "message": "© 2017-2020 Kai Uwe Broulik 和 David Edmundson"
     },
     "options_about_created_by_kde": {
         "message": "這個瀏覽器擴充套件由 <a href=\"$1\">KDE 社群</a>建立。您可以在 <a href=\"$2\">KDE Community Wiki</a> 找到更多此專案的資訊。"
