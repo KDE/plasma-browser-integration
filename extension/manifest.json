@@ -38,7 +38,24 @@
 
   "browser_action": {
     "browser_style": true,
-    "default_popup": "action_popup.html"
+    "default_popup": "action_popup.html",
+    "theme_icons": [{
+      "light": "icons/plasma-dark-16.png",
+      "dark": "icons/plasma-16.png",
+      "size": 16
+    }, {
+      "light": "icons/plasma-dark-32.png",
+      "dark": "icons/plasma-32.png",
+      "size": 32
+    }, {
+      "light": "icons/plasma-dark-48.png",
+      "dark": "icons/plasma-48.png",
+      "size": 48
+    }, {
+      "light": "icons/plasma-dark-128.png",
+      "dark": "icons/plasma-128.png",
+      "size": 128
+    }]
   },
 
   "content_scripts": [
