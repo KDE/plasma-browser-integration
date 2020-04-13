@@ -64,6 +64,8 @@ int main(int argc, char *argv[])
     // (it's a "regular X app" after all) and then the browser will complain
     qunsetenv("SESSION_MANAGER");
 
+    QCoreApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
+
     QApplication a(argc, argv);
     // otherwise will close when download job finishes
     a.setQuitOnLastWindowClosed(false);
