@@ -67,6 +67,9 @@ chrome.contextMenus.onClicked.addListener((info) => {
         shareData.text = selection;
     } else if (url) {
         shareData.url = url;
+        if (info.linkText) {
+            shareData.title = info.linkText;
+        }
     }
 
     // We probably shared the current page, add its title to shareData
