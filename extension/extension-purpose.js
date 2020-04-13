@@ -67,7 +67,7 @@ chrome.contextMenus.onClicked.addListener((info) => {
         shareData.text = selection;
     } else if (url) {
         shareData.url = url;
-        if (info.linkText) {
+        if (info.linkText && info.linkText != url) {
             shareData.title = info.linkText;
         }
     }
