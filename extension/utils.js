@@ -22,12 +22,29 @@ class SettingsUtils {
 
     static get() {
         return new Promise((resolve, reject) => {
-            SettingsUtils.storage().get(DEFAULT_EXTENSION_SETTINGS, (items) => {
+            SettingsUtils.storage().get(null /* get all */, (items) => {
                 const error = chrome.runtime.lastError;
                 if (error) {
                     return reject(error);
                 }
 
+                // Passing a default Object get() only returns defaults for the top level of the object,
+                // so we need to merge the level underneath manually.
+                const addObjectInto = (obj, add) => {
+                    if (typeof add !== "object" || Array.isArray(add)) {
+                        return;
+                    }
+
+                    Object.keys(add).forEach((key) => {
+                        if (obj.hasOwnProperty(key)) {
+                            addObjectInto(obj[key], add[key]);
+                        } else {
+                            obj[key] = add[key];
+                        }
+                    });
+                };
+
+                addObjectInto(items, DEFAULT_EXTENSION_SETTINGS);
                 resolve(items);
             });
         });
