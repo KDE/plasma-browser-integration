@@ -47,7 +47,7 @@ section > header {
         background-color: #232629;
         color: #eff0f1;
     }
-    .message.with-icon.error::before {
+    .message.with-icon.general::before, .message.with-icon.error::before {
         filter: invert(1);
     }
 }
