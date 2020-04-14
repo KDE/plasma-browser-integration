@@ -17,6 +17,10 @@
 
 let purposeShareMenuId = "purpose_share";
 
+// Stores <notification id, share url> so that when you click the finished
+// notification it will open the URL
+let purposeNotificationUrls = {};
+
 function purposeShare(data) {
     return new Promise((resolve, reject) => {
         sendPortMessageWithReply("purpose", "share", {data}).then((reply) => {
@@ -43,6 +47,12 @@ function purposeShare(data) {
                     title: chrome.i18n.getMessage("purpose_share_finished_title"),
                     message: chrome.i18n.getMessage("purpose_share_finished_text", url),
                     iconUrl: "icons/document-share.png"
+                }, (notificationId) => {
+                    if (chrome.runtime.lastError) {
+                        return;
+                    }
+
+                    purposeNotificationUrls[notificationId] = url;
                 });
             }
 
@@ -106,4 +116,15 @@ chrome.contextMenus.onClicked.addListener((info) => {
 
 addRuntimeCallback("purpose", "share", (message, sender, action) => {
     return purposeShare(message);
+});
+
+chrome.notifications.onClicked.addListener((notificationId) => {
+    const url = purposeNotificationUrls[notificationId];
+    if (url) {
+        chrome.tabs.create({url});
+    }
+});
+
+chrome.notifications.onClosed.addListener((notificationId) => {
+    delete purposeNotificationUrls[notificationId];
 });
