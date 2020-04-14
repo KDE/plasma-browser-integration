@@ -42,7 +42,7 @@
         "message": "View Changelog"
     },
     "options_about_copyright": {
-        "message": "© 2017–2019 Kai Uwe Broulik og David Edmundson"
+        "message": "© 2017-2020 Kai Uwe Broulik and David Edmundson"
     },
     "options_about_created_by_kde": {
         "message": "Denne nettlesarutvidinga var laga av <a href=\"$1\">KDE-fellesskapet</a>. Du kan lesa meir om prosjektet på <a href=\"$2\">wikien</a>."
