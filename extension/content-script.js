@@ -867,12 +867,22 @@ function loadMediaSessionsShim() {
             // It also doesn't seem to have the aggressive autoplay prevention Chrome has,
             // so the horrible replyAfterRemoval hack from above isn't copied into this
             // See Bug 411148: Music playing from the ownCloud Music app does not show up
-            var oldAudio = window.Audio;
-            exportFunction(function(...args) {
+
+            // A function exported with exportFunction loses its prototype, leading to Bug 414512
+
+            const oldAudio = window.Audio;
+            // It is important to use the prototype on wrappedJSObject as the prototype
+            // of the content script is restricted and not accessible by the website
+            const oldAudioPrototype = window.wrappedJSObject.Audio.prototype;
+
+            const audioConstructor = function(...args) {
                 const player = new oldAudio(...args);
                 eval(addPlayerToDomEvadingAutoPlayBlocking);
                 return player;
-            }, window, {defineAs: "Audio"});
+            };
+            exportFunction(audioConstructor, window.wrappedJSObject, {defineAs: "Audio"});
+
+            window.wrappedJSObject.Audio.prototype = oldAudioPrototype;
         } else {
             executeScript(`function() {
                 var oldAudio = window.Audio;
