@@ -67,3 +67,8 @@ section > header {
     display: block;
     margin-bottom: 0.5em;
 }
+.mpris-blacklist-info ul > li input[type=checkbox] {
+    position: relative;
+    vertical-align: middle;
+    bottom: 1px;
+}
