@@ -15,7 +15,8 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-let purposeShareMenuId = "purpose_share";
+const purposeShareMenuId = "purpose_share";
+let hasPurposeMenu = false;
 
 // Stores <notification id, share url> so that when you click the finished
 // notification it will open the URL
@@ -58,6 +59,54 @@ function purposeShare(data) {
 
             resolve();
         });
+    });
+}
+
+function checkPurposeEnabled() {
+    return Promise.all([
+        sendPortMessageWithReply("settings", "getSubsystemStatus"),
+        SettingsUtils.get()
+    ]).then((result) => {
+
+        const subsystemStatus = result[0];
+        const settings = result[1];
+
+        // HACK Unfortunately I removed the loaded/unloaded signals for plugins
+        // so we can't reliably know on settings change whether a module is enabled
+        // sending settings is also legacy done without a reply we could wait for.
+        // Instead, check whether the module is known and enabled in settings,
+        // which should be close enough, since purpose plugin also has no additional
+        // dependencies that could make it fail to load.
+        return subsystemStatus.hasOwnProperty("purpose")
+            && settings.purpose && settings.purpose.enabled;
+    });
+}
+
+function updatePurposeMenu() {
+    checkPurposeEnabled().then((enabled) => {
+        if (enabled && !hasPurposeMenu) {
+            chrome.contextMenus.create({
+                id: purposeShareMenuId,
+                contexts: ["link", "page", "image", "audio", "video", "selection"],
+                title: chrome.i18n.getMessage("purpose_share")
+            }, () => {
+                const error = chrome.runtime.lastError;
+                if (error) {
+                    console.warn("Error creating purpose context menu", error.message);
+                    return;
+                }
+                hasPurposeMenu = true;
+            });
+        } else if (!enabled && hasPurposeMenu) {
+            chrome.contextMenus.remove(purposeShareMenuId, () => {
+                const error = chrome.runtime.lastError;
+                if (error) {
+                    console.warn("Error removing purpose context menu", error.message);
+                    return;
+                }
+                hasPurposeMenu = false;
+            });
+        }
     });
 }
 
@@ -107,12 +156,11 @@ chrome.contextMenus.onClicked.addListener((info) => {
     });
 });
 
-// FIXME only add context menu if purpose is enabled and supported
-/*chrome.contextMenus.create({
-    id: purposeShareMenuId,
-    contexts: ["link", "page", "image", "audio", "video", "selection"],
-    title: chrome.i18n.getMessage("purpose_share")
-});*/
+SettingsUtils.onChanged().addListener((delta) => {
+    if (delta.purpose) {
+        updatePurposeMenu();
+    }
+});
 
 addRuntimeCallback("purpose", "share", (message, sender, action) => {
     return purposeShare(message);

@@ -197,6 +197,8 @@ function connectHost() {
     sendEnvironment();
     sendSettings();
     sendDownloads();
+
+    updatePurposeMenu();
 }
 
 SettingsUtils.onChanged().addListener(() => {
