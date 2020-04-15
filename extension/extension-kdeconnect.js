@@ -47,11 +47,39 @@ addCallback("kdeconnect", "deviceAdded", function(message) {
     let menuEntryTitle = chrome.i18n.getMessage("kdeconnect_open_device", name);
     let menuId = kdeConnectMenuIdPrefix + deviceId;
 
-    chrome.contextMenus.create({
+    let props = {
         id: menuId,
         contexts: ["link", "page", "image", "audio", "video"],
         title: menuEntryTitle,
-    });
+    };
+
+    if (IS_FIREFOX) {
+        let iconName = "";
+        switch (type) {
+            case "smartphone":
+            case "phone":
+                iconName = "smartphone-symbolic";
+                break;
+            case "tablet":
+                iconName = "tablet-symbolic";
+                break;
+            case "desktop":
+            case "tv": // at this size you can't really tell desktop monitor icon from a TV
+                iconName = "computer-symbolic";
+                break;
+            case "laptop":
+                iconName = "computer-laptop-symbolic";
+                break;
+        }
+
+        if (iconName) {
+            props.icons = {
+                "16": "icons/" + iconName + ".svg"
+            };
+        }
+    }
+
+    chrome.contextMenus.create(props);
 
     kdeConnectDevices[deviceId] = {
         name, type
