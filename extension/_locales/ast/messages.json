@@ -42,7 +42,7 @@
         "message": "View Changelog"
     },
     "options_about_copyright": {
-        "message": "© 2017-2019 Kai Uwe Broulik y David Edmundson"
+        "message": "© 2017-2020 Kai Uwe Broulik y David Edmundson"
     },
     "options_about_created_by_kde": {
         "message": "Esta estensión creóla la <a href=\"$1\">comunidá de KDE</a> y pues alcontrar más información tocante a esti proyeutu na <a href=\"$2\">wiki de so</a>."

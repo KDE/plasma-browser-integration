@@ -39,10 +39,10 @@
         "message": "Si encuentra un problema, compruebe la <a href=\"$1\">lista de errores abiertos</a> y, si procede, <a href=\"$2\">genere un informe de error</a>."
     },
     "options_about_changelog_link": {
-        "message": "View Changelog"
+        "message": "Ver el registro de cambios"
     },
     "options_about_copyright": {
-        "message": "© 2017-2019 Kai Uwe Broulik y David Edmundson"
+        "message": "© 2017-2020 Kai Uwe Broulik y David Edmundson"
     },
     "options_about_created_by_kde": {
         "message": "Esta extensión de navegador fue creada por la <a href=\"$1\">Comunidad KDE</a>. Puede encontrar más información sobre este proyecto en la <a href=\"$2\">Wiki de la Comunidad KDE</a>."
