@@ -85,11 +85,19 @@ function checkPurposeEnabled() {
 function updatePurposeMenu() {
     checkPurposeEnabled().then((enabled) => {
         if (enabled && !hasPurposeMenu) {
-            chrome.contextMenus.create({
+            let props = {
                 id: purposeShareMenuId,
                 contexts: ["link", "page", "image", "audio", "video", "selection"],
                 title: chrome.i18n.getMessage("purpose_share")
-            }, () => {
+            };
+
+            if (IS_FIREFOX) {
+                props.icons = {
+                    "16": "icons/document-share-symbolic.svg"
+                }
+            }
+
+            chrome.contextMenus.create(props, () => {
                 const error = chrome.runtime.lastError;
                 if (error) {
                     console.warn("Error creating purpose context menu", error.message);
