@@ -23,9 +23,13 @@
 
 #include "settings.h"
 
+#include <unistd.h> // getppid
+
 #include <QGuiApplication>
 #include <QDBusConnection>
 #include <QProcess>
+
+#include <KProcessList>
 
 #include "pluginmanager.h"
 #include "settingsadaptor.h"
@@ -127,6 +131,16 @@ void Settings::handleData(const QString &event, const QJsonObject &data)
         QProcess::startDetached(QStringLiteral("kcmshell5"), {QStringLiteral("kcm_plasmasearch")});
     } else if (event == QLatin1String("setEnvironment")) {
         QString name = data[QStringLiteral("browserName")].toString();
+
+        // Most chromium-based browsers just impersonate Chromium nowadays to keep websites from locking them out
+        // so we'll need to make an educated guess from our parent process
+        if (name == QLatin1String("chromium")) {
+            const auto processInfo = KProcessList::processInfo(getppid());
+            if (processInfo.name().contains(QLatin1String("vivaldi"))) {
+                name = QStringLiteral("vivaldi");
+            }
+        }
+
         m_environment = Settings::environmentNames.key(name, Settings::Environment::Unknown);
         m_currentEnvironment = Settings::environmentDescriptions.value(m_environment);
 
