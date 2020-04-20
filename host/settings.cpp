@@ -42,6 +42,7 @@ const QMap<Settings::Environment, QString> Settings::environmentNames = {
     {Settings::Environment::Firefox, QStringLiteral("firefox")},
     {Settings::Environment::Opera, QStringLiteral("opera")},
     {Settings::Environment::Vivaldi, QStringLiteral("vivaldi")},
+    {Settings::Environment::Brave, QStringLiteral("brave")}
 };
 
 const QMap<Settings::Environment, EnvironmentDescription> Settings::environmentDescriptions = {
@@ -80,6 +81,13 @@ const QMap<Settings::Environment, EnvironmentDescription> Settings::environmentD
         QStringLiteral("vivaldi-stable"),
         QStringLiteral("vivaldi.com"),
         QStringLiteral("Vivaldi")
+    } },
+    {Settings::Environment::Brave, {
+        QStringLiteral("Brave"),
+        QStringLiteral("Brave"),
+        QStringLiteral("brave-browser"),
+        QStringLiteral("brave.com"),
+        QStringLiteral("Brave")
     } }
 };
 
@@ -134,10 +142,12 @@ void Settings::handleData(const QString &event, const QJsonObject &data)
 
         // Most chromium-based browsers just impersonate Chromium nowadays to keep websites from locking them out
         // so we'll need to make an educated guess from our parent process
-        if (name == QLatin1String("chromium")) {
+        if (name == QLatin1String("chromium") || name == QLatin1String("chrome")) {
             const auto processInfo = KProcessList::processInfo(getppid());
             if (processInfo.name().contains(QLatin1String("vivaldi"))) {
                 name = QStringLiteral("vivaldi");
+            } else if (processInfo.name().contains(QLatin1String("brave"))) {
+                name = QStringLiteral("brave");
             }
         }
 

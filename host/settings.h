@@ -56,6 +56,7 @@ public:
         Firefox,
         Opera,
         Vivaldi,
+        Brave
     };
     Q_ENUM(Environment)
 
