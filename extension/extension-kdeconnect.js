@@ -51,6 +51,9 @@ addCallback("kdeconnect", "deviceAdded", function(message) {
         id: menuId,
         contexts: ["link", "page", "image", "audio", "video"],
         title: menuEntryTitle,
+        targetUrlPatterns: [
+            "http://*/*", "https://*/*"
+        ]
     };
 
     if (IS_FIREFOX) {
