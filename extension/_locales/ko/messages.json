@@ -39,10 +39,10 @@
         "message": "문제를 발견하셨으면 <a href=\"$1\">알려진 버그 목록</a>에서 검색해 본 다음 <a href=\"$2\">버그를 보고</a>해 주십시오."
     },
     "options_about_changelog_link": {
-        "message": "View Changelog"
+        "message": "변경 기록 보기"
     },
     "options_about_copyright": {
-        "message": "© 2017-2019 Kai Uwe Broulik and David Edmundson"
+        "message": "© 2017-2020 Kai Uwe Broulik and David Edmundson"
     },
     "options_about_created_by_kde": {
         "message": "이 브라우저 확장 기능은 <a href=\"$1\">KDE 커뮤니티</a>에서 개발했습니다. 더 많은 정보를 보려면 <a href=\"$2\">KDE 커뮤니티 위키</a>를 참조하십시오."
