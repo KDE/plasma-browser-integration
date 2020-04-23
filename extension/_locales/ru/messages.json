@@ -42,7 +42,7 @@
         "message": "Открыть журнал изменений"
     },
     "options_about_copyright": {
-        "message": "© Kai Uwe Broulik и David Edmundson, 2017-2020"
+        "message": "© Kai Uwe Broulik и David Edmundson, 2017–2020"
     },
     "options_about_created_by_kde": {
         "message": "Данное расширение создано <a href=\"$1\">сообществом KDE</a>. Больше информации о данном проекте вы можете получить на <a href=\"$2\">вики-странице</a>."
