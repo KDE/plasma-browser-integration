@@ -39,10 +39,10 @@
         "message": "Viss du finn ein feil, sjå først gjennom oversikta over <a href=\"$1\">opne feilrapportar</a> og meld så eventuelt inn <a href=\"$2\">ein ny feilrapport</a>."
     },
     "options_about_changelog_link": {
-        "message": "View Changelog"
+        "message": "Vis endringsoversikt"
     },
     "options_about_copyright": {
-        "message": "© 2017-2020 Kai Uwe Broulik and David Edmundson"
+        "message": "© 2017–2020 Kai Uwe Broulik og David Edmundson"
     },
     "options_about_created_by_kde": {
         "message": "Denne nettlesarutvidinga var laga av <a href=\"$1\">KDE-fellesskapet</a>. Du kan lesa meir om prosjektet på <a href=\"$2\">wikien</a>."
