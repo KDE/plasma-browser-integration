@@ -98,7 +98,7 @@ function playerGone(playerId) {
 
 // when tab is closed, tell the player is gone
 // below we also have a "gone" signal listener from the content script
-// which is invoked in the onbeforeunload handler of the page
+// which is invoked in the pagehide handler of the page
 chrome.tabs.onRemoved.addListener((tabId) => {
     // Since we only get the tab id, search for all players from this tab and signal a "gone"
     playerTabGone(tabId);
