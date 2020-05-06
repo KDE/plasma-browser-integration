@@ -90,7 +90,7 @@
         "message": "Adds a context menu entry to links enabling you to send them to your phone and other paired devices using <a href=\"$1\">KDE Connect</a>."
     },
     "options_plugin_kdeconnect_title": {
-        "message": "Send via KDE Connect"
+        "message": "Invia via KDE Connect"
     },
     "options_plugin_mpris_description": {
         "message": "Lets you control video and audio players in websites using the Media Controller plasmoid."
@@ -102,7 +102,7 @@
         "message": "Enhanced Media Controls"
     },
     "options_plugin_mpris_title": {
-        "message": "Media Controls"
+        "message": "Controlos de Multimedia"
     },
     "options_plugin_purpose_description": {
         "message": "Adds a \"Share...\" context menu entry and allows websites to open a dialog for sharing contents using the Web Share API."
