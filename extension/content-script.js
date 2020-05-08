@@ -343,6 +343,7 @@ function setPlayerActive(player) {
     sendMessage("mpris", "playing", {
         mediaSrc: player.currentSrc || player.src,
         pageTitle: document.title,
+        poster: player.poster,
         duration: player.duration,
         currentTime: player.currentTime,
         playbackRate: player.playbackRate,

@@ -176,6 +176,7 @@ private:
     QString m_title;
     QString m_artist;
     QString m_album;
+    QUrl m_posterUrl;
     QUrl m_artworkUrl;
 
     qreal m_volume = 1.0;

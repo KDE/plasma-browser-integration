@@ -170,6 +170,12 @@ void MPrisPlugin::handleData(const QString &event, const QJsonObject &data)
         m_url = QUrl(data.value(QStringLiteral("url")).toString());
         m_mediaSrc = QUrl(data.value(QStringLiteral("mediaSrc")).toString());
 
+        const QUrl posterUrl = QUrl(data.value(QStringLiteral("poster")).toString());
+        if (m_posterUrl != posterUrl) {
+            m_posterUrl = posterUrl;
+            emitPropertyChange(m_player, "Metadata");
+        }
+
         const qreal oldVolume = volume();
 
         m_volume = data.value(QStringLiteral("volume")).toDouble(1);
@@ -451,8 +457,13 @@ QVariantMap MPrisPlugin::metadata() const
     if (!m_artist.isEmpty()) {
         metadata.insert(QStringLiteral("xesam:artist"), m_artist);
     }
-    if (m_artworkUrl.isValid()) {
-        metadata.insert(QStringLiteral("mpris:artUrl"), m_artworkUrl.toDisplayString());
+
+    QUrl artUrl = m_artworkUrl;
+    if (!artUrl.isValid()) {
+        artUrl = m_posterUrl;
+    }
+    if (artUrl.isValid()) {
+        metadata.insert(QStringLiteral("mpris:artUrl"), artUrl.toDisplayString());
     }
 
     if (!m_album.isEmpty()) {
