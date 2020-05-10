@@ -39,10 +39,10 @@
         "message": "如果发现问题，请检查 <a href=\"$1\">打开状态的错误</a>，然后<a href=\"$2\">提交一个错误报告</a>。"
     },
     "options_about_changelog_link": {
-        "message": "View Changelog"
+        "message": "查看更新日志"
     },
     "options_about_copyright": {
-        "message": "© 2017-2019 Kai Uwe Broulik 和 David Edmundson"
+        "message": "© 2017-2020 Kai Uwe Broulik 和 David Edmundson"
     },
     "options_about_created_by_kde": {
         "message": "此浏览器扩展是由 <a href=\"$1\">KDE 社区</a>创建的。您可以在 <a href=\"$2\">KDE 社区 Wiki</a> 中找到有关此项目的详细信息。"
