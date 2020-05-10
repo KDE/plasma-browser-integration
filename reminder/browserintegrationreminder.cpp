@@ -33,9 +33,10 @@
 #include <KActivities/ResourceInstance>
 #include <KConfig>
 #include <KConfigGroup>
+#include <KIO/ApplicationLauncherJob>
 #include <KLocalizedString>
+#include <KNotificationJobUiDelegate>
 #include <kpluginfactory.h>
-#include <KRun>
 #include <KService>
 #include <KSharedConfig>
 #include <KStatusNotifierItem>
@@ -152,8 +153,10 @@ void BrowserIntegrationReminder::onBrowserStarted(const QString &browser)
             return;
         }
 
-        KRun::runApplication(*service, QList<QUrl>() << m_browsers[browser], nullptr, KRun::RunFlags(),
-            QString(), nullptr);
+        KIO::ApplicationLauncherJob *job = new KIO::ApplicationLauncherJob(service);
+        job->setUrls({m_browsers[browser]});
+        job->setUiDelegate(new KNotificationJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled));
+        job->start();
 
         KActivities::ResourceInstance::notifyAccessed(QUrl(QStringLiteral("applications:") + browser),
             QStringLiteral("org.kde.plasma.browserintegrationreminder"));
