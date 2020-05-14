@@ -70,6 +70,8 @@ BrowserIntegrationReminder::BrowserIntegrationReminder(QObject *parent, const QL
     m_browsers[QStringLiteral("google-chrome-beta.desktop")] = chrome;
     m_browsers[QStringLiteral("google-chrome-unstable.desktop")] = chrome;
     m_browsers[QStringLiteral("chromium-browser.desktop")] = chrome;
+    m_browsers[QStringLiteral("vivaldi-stable.desktop")] = chrome;
+    m_browsers[QStringLiteral("brave-browser.desktop")] = chrome;
 
     setModuleName(QStringLiteral("BrowserIntegrationReminder"));
     QDBusConnection dbus = QDBusConnection::sessionBus();
