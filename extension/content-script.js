@@ -603,11 +603,6 @@ function loadMpris() {
         });
     });
 
-    observer.observe(document, {
-        childList: true,
-        subtree: true
-    });
-
     window.addEventListener("pagehide", function () {
         // about to navigate to a different page, tell our extension that the player will be gone shortly
         // we listen for tab closed in the extension but we don't for navigating away as URL change doesn't
@@ -622,6 +617,11 @@ function loadMpris() {
 
     document.addEventListener("DOMContentLoaded", function() {
         registerAllPlayers();
+
+        observer.observe(document, {
+            childList: true,
+            subtree: true
+        });
     });
 
     document.addEventListener("fullscreenchange", () => {
