@@ -159,6 +159,10 @@
         "description": "Context menu, open link on device $1, similar to 'Open in New Tab'",
         "message": "Open on '$1'"
     },
+    "kdeconnect_call_device": {
+        "description": "Context menu, call phone number on device $1",
+        "message": "Call on '$1'"
+    },
 
     "purpose_share": {
         "description": "Context menu, share link or page via Purpose framework",

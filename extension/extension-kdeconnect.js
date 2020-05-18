@@ -23,7 +23,7 @@ chrome.contextMenus.onClicked.addListener(function (info) {
         return;
     }
 
-    var deviceId = info.menuItemId.substr(kdeConnectMenuIdPrefix.length);
+    const deviceId = info.menuItemId.substr(info.menuItemId.indexOf("@") + 1);
 
     var url = info.linkUrl || info.srcUrl || info.pageUrl;
     console.log("Send url", url, "to kdeconnect device", deviceId);
@@ -44,13 +44,10 @@ addCallback("kdeconnect", "deviceAdded", function(message) {
     let name = message.name;
     let type = message.type;
 
-    let menuEntryTitle = chrome.i18n.getMessage("kdeconnect_open_device", name);
-    let menuId = kdeConnectMenuIdPrefix + deviceId;
-
     let props = {
-        id: menuId,
+        id: kdeConnectMenuIdPrefix + "open@" + deviceId,
         contexts: ["link", "page", "image", "audio", "video"],
-        title: menuEntryTitle,
+        title: chrome.i18n.getMessage("kdeconnect_open_device", name),
         targetUrlPatterns: [
             "http://*/*", "https://*/*"
         ]
@@ -84,6 +81,23 @@ addCallback("kdeconnect", "deviceAdded", function(message) {
 
     chrome.contextMenus.create(props);
 
+    props = {
+        id: kdeConnectMenuIdPrefix + "call@" + deviceId,
+        contexts: ["link"],
+        title: chrome.i18n.getMessage("kdeconnect_call_device", name),
+        targetUrlPatterns: [
+            "tel:*"
+        ]
+    };
+
+    if (IS_FIREFOX) {
+        props.icons = {
+            "16": "icons/call-start-symbolic.svg"
+        };
+    }
+
+    chrome.contextMenus.create(props);
+
     kdeConnectDevices[deviceId] = {
         name, type
     };
@@ -97,5 +111,6 @@ addCallback("kdeconnect", "deviceRemoved", function(message) {
     }
 
     delete kdeConnectDevices[deviceId];
-    chrome.contextMenus.remove(kdeConnectMenuIdPrefix + deviceId);
+    chrome.contextMenus.remove(kdeConnectMenuIdPrefix + "open@" + deviceId);
+    chrome.contextMenus.remove(kdeConnectMenuIdPrefix + "call@" + deviceId);
 });
