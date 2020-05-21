@@ -60,11 +60,6 @@ function sendDownloadUpdates() {
     });
 }
 
-// only forward certain download properties back to our host
-var whitelistedDownloadProperties = [
-    "id", "url", "finalUrl", "filename", "mime", "startTime", "estimatedEndTime", "totalBytes", "bytesReceived", "state", "error", /*"canResume"*/, "paused", "incognito"
-];
-
 function createDownload(download) {
     // don't bother telling us about completed downloads...
     // otherwise on browser startup we'll spawn a gazillion download progress notification
@@ -72,12 +67,10 @@ function createDownload(download) {
         return;
     }
 
-    var filteredDownload = filterObject(download, whitelistedDownloadProperties);
-
     activeDownloads.push(download.id);
     startSendingDownloadUpdates();
 
-    port.postMessage({subsystem: "downloads", event: "created", download: filteredDownload});
+    port.postMessage({subsystem: "downloads", event: "created", download: download});
 }
 
 function sendDownloads() {
@@ -121,10 +114,8 @@ chrome.downloads.onChanged.addListener(function (delta) {
 
     var payload = {};
 
-    whitelistedDownloadProperties.forEach(function (item) {
-        if (delta[item]) {
-            payload[item] = delta[item].current;
-        }
+    Object.keys(delta).forEach((key) => {
+        payload[key] = delta[key].current;
     });
 
     payload.id = delta.id; // not a delta, ie. has no current and thus isn't added by the loop below
