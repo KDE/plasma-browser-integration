@@ -698,26 +698,99 @@ function loadMediaSessionsShim() {
 
         executeScript(`
             function() {
-                ${mediaSessionsClassName} = function() {};
-                ${mediaSessionsClassName}.callbacks = {};
-                ${mediaSessionsClassName}.metadata = null;
-                ${mediaSessionsClassName}.playbackState = "none";
-                ${mediaSessionsClassName}.sendMessage = function(action, payload) {
-                    let event = new CustomEvent("pbiMprisMessage", {
-                        detail: {
-                            action: action,
-                            payload: payload
-                        }
-                    });
-                    window.dispatchEvent(event);
-                };
-                ${mediaSessionsClassName}.executeCallback = function (action) {
-                    let details = {
-                        action: action
-                        // for seekforward, seekbackward, seekto there's additional information one would need to add
+                ${mediaSessionsClassName}_constructor = function() {
+                    this.callbacks = {};
+                    this.pendingCallbacksUpdate = 0;
+                    this.metadata = null;
+                    this.playbackState = "none";
+
+                    this.sendMessage = function (action, payload) {
+                        let event = new CustomEvent("pbiMprisMessage", {
+                            detail: {
+                                action: action,
+                                payload: payload
+                            }
+                        });
+                        window.dispatchEvent(event);
                     };
-                    this.callbacks[action](details);
+
+                    this.executeCallback = function (action) {
+                        let details = {
+                            action: action
+                            // for seekforward, seekbackward, seekto there's additional information one would need to add
+                        };
+                        this.callbacks[action](details);
+                    };
+
+                    this.setCallback = function (name, cb) {
+                        const oldCallbacks = Object.keys(this.callbacks).sort();
+
+                        if (cb) {
+                            this.callbacks[name] = cb;
+                        } else {
+                            delete this.callbacks[name];
+                        }
+
+                        const newCallbacks = Object.keys(this.callbacks).sort();
+
+                        if (oldCallbacks.toString() === newCallbacks.toString()) {
+                            return;
+                        }
+
+                        if (this.pendingCallbacksUpdate) {
+                            return;
+                        }
+
+                        this.pendingCallbacksUpdate = setTimeout(() => {
+                            this.pendingCallbacksUpdate = 0;
+
+                            // Make sure to send the current callbacks, not "newCallbacks" at the time of starting the timeout
+                            const callbacks = Object.keys(this.callbacks);
+                            this.sendMessage("callbacks", callbacks);
+                        }, 0);
+                    };
+
+                    this.setMetadata = function (metadata) {
+                        // MediaMetadata is not a regular Object so we cannot just JSON.stringify it
+                        let newMetadata = {};
+
+                        let dirty = (!metadata != !this.metadata);
+                        if (metadata) {
+                            const keys = Object.getOwnPropertyNames(Object.getPrototypeOf(metadata));
+
+                            const oldMetadata = this.metadata || {};
+
+                            keys.forEach((key) => {
+                                const value = metadata[key];
+                                if (!value || typeof value === "function") {
+                                    return; // continue
+                                }
+
+                                // We only have Strings or the "artwork" Array, so a toString() comparison should suffice...
+                                dirty |= (value.toString() !== (oldMetadata[key] || "").toString());
+
+                                newMetadata[key] = value;
+                            });
+                        }
+
+                        this.metadata = metadata;
+
+                        if (dirty) {
+                            this.sendMessage("metadata", newMetadata);
+                        }
+                    };
+
+                    this.setPlaybackState = function (playbackState) {
+                        if (this.playbackState === playbackState) {
+                            return;
+                        }
+
+                        this.playbackState = playbackState;
+                        this.sendMessage("playbackState", playbackState);
+                    };
                 };
+
+                ${mediaSessionsClassName} = new ${mediaSessionsClassName}_constructor();
 
                 if (!navigator.mediaSession) {
                     navigator.mediaSession = {};
@@ -727,12 +800,7 @@ function loadMediaSessionsShim() {
 
                 var oldSetActionHandler = navigator.mediaSession.setActionHandler || noop;
                 navigator.mediaSession.setActionHandler = function (name, cb) {
-                    if (cb) {
-                        ${mediaSessionsClassName}.callbacks[name] = cb;
-                    } else {
-                        delete ${mediaSessionsClassName}.callbacks[name];
-                    }
-                    ${mediaSessionsClassName}.sendMessage("callbacks", Object.keys(${mediaSessionsClassName}.callbacks));
+                    ${mediaSessionsClassName}.setCallback(name, cb);
 
                     // Call the original native implementation
                     // "call()" is needed as the real setActionHandler is a class member
@@ -743,32 +811,15 @@ function loadMediaSessionsShim() {
                 };
 
                 Object.defineProperty(navigator.mediaSession, "metadata", {
-                    get: function() { return ${mediaSessionsClassName}.metadata; },
-                    set: function(newValue) {
-                        ${mediaSessionsClassName}.metadata = newValue;
-
-                        // MediaMetadata is not a regular Object so we cannot just JSON.stringify it
-                        var newMetadata = {};
-                        if (newValue) {
-                            var keys = Object.getOwnPropertyNames(Object.getPrototypeOf(newValue));
-
-                            keys.forEach(function (key) {
-                                var value = newValue[key];
-                                if (typeof value === "function") {
-                                    return; // continue
-                                }
-                                newMetadata[key] = newValue[key];
-                            });
-                        }
-
-                        ${mediaSessionsClassName}.sendMessage("metadata", newMetadata);
+                    get: () => ${mediaSessionsClassName}.metadata,
+                    set: (newValue) => {
+                        ${mediaSessionsClassName}.setMetadata(newValue);
                     }
                 });
                 Object.defineProperty(navigator.mediaSession, "playbackState", {
-                    get: function() { return ${mediaSessionsClassName}.playbackState; },
-                    set: function(newValue) {
-                        ${mediaSessionsClassName}.playbackState = newValue;
-                        ${mediaSessionsClassName}.sendMessage("playbackState", newValue);
+                    get: () => ${mediaSessionsClassName}.playbackState,
+                    set: (newValue) => {
+                        ${mediaSessionsClassName}.setPlaybackState(newValue);
                     }
                 });
 
