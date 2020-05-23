@@ -169,16 +169,14 @@ function connectHost() {
 
         // Remove all kde connect menu entries since they won't work without a host
         try {
-            for (let device in kdeConnectDevices) {
-                if (!kdeConnectDevices.hasOwnProperty(device)) {
-                    continue;
-                }
-                chrome.contextMenus.remove(kdeConnectMenuIdPrefix + device);
-            }
+            Object.keys(kdeConnectDevices).forEach((deviceId) => {
+                callbacks.kdeconnect.deviceRemoved({
+                    id: deviceId
+                });
+            });
         } catch (e) {
             console.warn("Failed to cleanup after port disconnect", e);
         }
-        kdeConnectDevices = {};
 
         portLastErrorMessage = error && error.message || "UNKNOWN";
         if (receivedMessageOnce) {
