@@ -254,7 +254,16 @@ addCallback("mpris", "setFullscreen", (message) => {
 });
 
 addCallback("mpris", "setPosition", function (message) {
-    if (activePlayer) {
+
+    if (playerCallbacks.includes("seekto")) {
+        executePageAction({
+            action: "mpris",
+            mprisCallbackName: "seekto",
+            details: {
+                seekTime: message.position,
+            }
+        });
+    } else if (activePlayer) {
         activePlayer.currentTime = message.position;
     }
 });

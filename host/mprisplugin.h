@@ -156,6 +156,8 @@ private:
 
     bool m_canGoNext = false;
     bool m_canGoPrevious = false;
+    // just the callback, can always seek directly if we have a length
+    bool m_canSeekTo = false;
 
     QString m_pageTitle;
     QString m_tabTitle;

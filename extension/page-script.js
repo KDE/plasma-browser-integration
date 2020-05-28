@@ -24,12 +24,10 @@
                     window.dispatchEvent(event);
                 };
 
-                this.executeCallback = function(action) {
-                    let details = {
-                        action: action
-                        // for seekforward, seekbackward, seekto there's additional information one would need to add
-                    };
-                    this.callbacks[action](details);
+                this.executeCallback = function(action, details) {
+                    let args = details || {};
+                    args.action = action;
+                    this.callbacks[action](args);
                 };
 
                 this.setCallback = function(name, cb) {
@@ -212,7 +210,7 @@
             };
         } else if (args.action == "mpris") {
             try {
-                mprisTransferObject.executeCallback(args.mprisCallbackName);
+                mprisTransferObject.executeCallback(args.mprisCallbackName, args.details);
             } catch (e) {
                 console.warn("Exception executing '" + args.mprisCallbackName + "' media sessions callback", e);
             }
