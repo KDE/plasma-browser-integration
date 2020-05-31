@@ -29,6 +29,9 @@
     "general_error_unknown": {
         "message": "Nieznany błąd"
     },
+    "kdeconnect_call_device": {
+        "message": "Call on '$1'"
+    },
     "kdeconnect_open_device": {
         "message": "Otwórz na '$1'"
     },

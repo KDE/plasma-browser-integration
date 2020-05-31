@@ -29,6 +29,9 @@
     "general_error_unknown": {
         "message": "알 수 없는 오류"
     },
+    "kdeconnect_call_device": {
+        "message": "Call on '$1'"
+    },
     "kdeconnect_open_device": {
         "message": "'$1'에서 열기"
     },

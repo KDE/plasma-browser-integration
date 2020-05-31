@@ -29,6 +29,9 @@
     "general_error_unknown": {
         "message": "Tuntematon virhe"
     },
+    "kdeconnect_call_device": {
+        "message": "Call on '$1'"
+    },
     "kdeconnect_open_device": {
         "message": "Avaa sovellukseen ”$1”"
     },

@@ -29,6 +29,9 @@
     "general_error_unknown": {
         "message": "未知错误"
     },
+    "kdeconnect_call_device": {
+        "message": "Call on '$1'"
+    },
     "kdeconnect_open_device": {
         "message": "在“$1”上打开"
     },
