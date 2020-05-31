@@ -78,16 +78,16 @@
         "message": "Use Breeze-style scroll bars"
     },
     "options_plugin_downloads_addToRecentDocuments": {
-        "message": "Add downloaded files to recent documents"
+        "message": "Adde files discargate al documentos recente"
     },
     "options_plugin_downloads_saveOriginUrl": {
-        "message": "Save URL a file was downloaded from in the file's attributes"
+        "message": "Salveguarda URL unde un file esseva discargate in le attributos del file"
     },
     "options_plugin_downloads_saveOriginUrl_description": {
         "message": "Note: The URL may contain sensitive information that could be disclosed when the file is accessible by or shared with others"
     },
     "options_plugin_downloads_title": {
-        "message": "Show downloads in notification area"
+        "message": "Monstrar discargamentos in area de notification"
     },
     "options_plugin_kdeconnect_description": {
         "message": "Adds a context menu entry to links enabling you to send them to your phone and other paired devices using <a href=\"$1\">KDE Connect</a>."
@@ -102,7 +102,7 @@
         "message": "Extract metadata and thumbnails of currently playing content."
     },
     "options_plugin_mpris_media_sessions_title": {
-        "message": "Enhanced Media Controls"
+        "message": "Controlos de Multimedia intensificate"
     },
     "options_plugin_mpris_title": {
         "message": "Controlos de Multimedia"
@@ -111,7 +111,7 @@
         "message": "Adds a \"Share...\" context menu entry and allows websites to open a dialog for sharing contents using the Web Share API."
     },
     "options_plugin_purpose_title": {
-        "message": "Content Sharing"
+        "message": "Compartecipar de contento"
     },
     "options_plugin_tabsrunner_description": {
         "message": "Make sure the “Browser Tabs” module is enabled in <a id=\"$1\" href=\"$2\">Plasma Search settings</a>."
@@ -120,10 +120,10 @@
         "message": "Find browser tabs in “Run Command” window"
     },
     "options_save_failed": {
-        "message": "Saving settings failed"
+        "message": "Il falleva salveguardar preferentias"
     },
     "options_save_success": {
-        "message": "Settings successfully saved"
+        "message": "Preferentias salveguardate con successo"
     },
     "options_tab_about": {
         "message": "A proposito"
@@ -132,22 +132,22 @@
         "message": "General"
     },
     "options_title": {
-        "message": "Plasma Integration Settings"
+        "message": "Preferentias de integration de Plasma"
     },
     "purpose_share": {
         "message": "Comparti..."
     },
     "purpose_share_failed_text": {
-        "message": "Could not share this content: $1"
+        "message": "On non pote compartir iste contento: $1"
     },
     "purpose_share_failed_title": {
-        "message": "Sharing Failed"
+        "message": "Falleva compartir"
     },
     "purpose_share_finished_text": {
         "message": "The shared content link ($1) has been copied to the clipboard."
     },
     "purpose_share_finished_title": {
-        "message": "Content Shared"
+        "message": "Contento compartite"
     },
     "store_description": {
         "message": "Multitask efficiently by controlling browser functions from the desktop, even while Chrome is in the background. Manage audio and video playback, check downloads in the notification area, send files to your phone using KDE Connect and more inside the KDE Plasma Desktop!\\n\\nThe plasma-browser-integration package must be installed for this extension to work. It should be available from your distribution's package manager when running Plasma 5.13 or later.\\n\\nNOTE: This extension is not supported on Debian."
