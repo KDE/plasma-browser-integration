@@ -30,7 +30,7 @@
         "message": "Unbekannter Fehler"
     },
     "kdeconnect_call_device": {
-        "message": "Call on '$1'"
+        "message": "Auf „$1“ öffnen"
     },
     "kdeconnect_open_device": {
         "message": "Auf „$1“ öffnen"

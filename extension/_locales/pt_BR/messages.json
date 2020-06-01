@@ -30,7 +30,7 @@
         "message": "Erro desconhecido"
     },
     "kdeconnect_call_device": {
-        "message": "Call on '$1'"
+        "message": "Abrir em '$1'"
     },
     "kdeconnect_open_device": {
         "message": "Abrir em '$1'"

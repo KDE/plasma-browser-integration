@@ -30,7 +30,7 @@
         "message": "Neznámá chyba"
     },
     "kdeconnect_call_device": {
-        "message": "Call on '$1'"
+        "message": "Otevřít pomocí '$1'"
     },
     "kdeconnect_open_device": {
         "message": "Otevřít pomocí '$1'"

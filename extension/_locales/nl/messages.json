@@ -30,7 +30,7 @@
         "message": "Onbekende fout"
     },
     "kdeconnect_call_device": {
-        "message": "Call on '$1'"
+        "message": "Openen op '$1'"
     },
     "kdeconnect_open_device": {
         "message": "Openen op '$1'"

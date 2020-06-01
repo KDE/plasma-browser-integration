@@ -30,7 +30,7 @@
         "message": "未知錯誤"
     },
     "kdeconnect_call_device": {
-        "message": "Call on '$1'"
+        "message": "在「$1」上開啟"
     },
     "kdeconnect_open_device": {
         "message": "在「$1」上開啟"

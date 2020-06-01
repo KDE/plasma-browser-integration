@@ -30,7 +30,7 @@
         "message": "Nežinoma klaida"
     },
     "kdeconnect_call_device": {
-        "message": "Call on '$1'"
+        "message": "Atverti įrenginyje \"$1\\"
     },
     "kdeconnect_open_device": {
         "message": "Atverti įrenginyje \"$1\\"

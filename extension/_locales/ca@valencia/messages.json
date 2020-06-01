@@ -30,7 +30,7 @@
         "message": "S'ha produït un error desconegut"
     },
     "kdeconnect_call_device": {
-        "message": "Call on '$1'"
+        "message": "Obri en «$1»"
     },
     "kdeconnect_open_device": {
         "message": "Obri en «$1»"

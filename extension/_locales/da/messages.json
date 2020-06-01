@@ -30,7 +30,7 @@
         "message": "Ukendt fejl"
     },
     "kdeconnect_call_device": {
-        "message": "Call on '$1'"
+        "message": "Åbn på \"$1\\"
     },
     "kdeconnect_open_device": {
         "message": "Åbn på \"$1\\"
