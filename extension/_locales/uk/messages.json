@@ -30,7 +30,7 @@
         "message": "Невідома помилка"
     },
     "kdeconnect_call_device": {
-        "message": "Відкрити у «$1»"
+        "message": "Подзвонити на «$1»"
     },
     "kdeconnect_open_device": {
         "message": "Відкрити у «$1»"
