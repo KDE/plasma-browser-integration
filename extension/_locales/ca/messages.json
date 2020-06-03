@@ -30,7 +30,7 @@
         "message": "Error desconegut"
     },
     "kdeconnect_call_device": {
-        "message": "Obre a «$1»"
+        "message": "Truca amb «$1»"
     },
     "kdeconnect_open_device": {
         "message": "Obre a «$1»"
