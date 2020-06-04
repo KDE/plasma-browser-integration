@@ -30,7 +30,7 @@
         "message": "Erreur inconnue"
     },
     "kdeconnect_call_device": {
-        "message": "Ouvrir sur « $1 »"
+        "message": "Appeler « $1 »"
     },
     "kdeconnect_open_device": {
         "message": "Ouvrir sur « $1 »"
@@ -87,7 +87,7 @@
         "message": "Enregistrer l'URL depuis laquelle le fichier a été téléchargé dans les attributs du fichier."
     },
     "options_plugin_downloads_saveOriginUrl_description": {
-        "message": "Remarque : L'URL est susceptible de contenir des informations sensibles qui pourraient être divulguées si le fichier est accessible ou partagé auprès d'un tiers."
+        "message": "Remarque : l'URL est susceptible de contenir des informations sensibles qui pourraient être divulguées si le fichier est accessible ou partagé auprès d'un tiers."
     },
     "options_plugin_downloads_title": {
         "message": "Afficher les téléchargements dans la zone de notification"
@@ -153,6 +153,6 @@
         "message": "Contenu partagé"
     },
     "store_description": {
-        "message": "Effectuez plusieurs tâches à la fois efficacement en contrôlant les fonctionnalités du navigateur depuis votre bureau, même lorsque Chrome est en arrière-plan. Gérez la lecture audio et vidéo, consultez les téléchargements dans la zone de notification, envoyez des fichiers vers votre téléphone à l'aide de KDE Connect et bien plus encore au sein du bureau KDE Plasma !\\n\\nLe paquet plasma-browser-integration doit être installé pour que cette extension puisse fonctionner. Il devrait être disponible dans le gestionnaire de paquets de votre distribution lorsque vous utilisez Plasma en version 5.13 ou ultérieure.\\n\\nREMARQUE : Cette extension n'est pas prise en charge sur Debian."
+        "message": "Effectuez plusieurs tâches à la fois efficacement en contrôlant les fonctionnalités du navigateur depuis votre bureau, même lorsque Chrome est en arrière-plan. Gérez la lecture audio et vidéo, consultez les téléchargements dans la zone de notification, envoyez des fichiers vers votre téléphone à l'aide de KDE Connect et bien plus encore au sein du bureau KDE Plasma !\\n\\nLe paquet « plasma-browser-integration » doit être installé pour que cette extension puisse fonctionner. Il devrait être disponible dans le gestionnaire de paquets de votre distribution lorsque vous utilisez Plasma en version 5.13 ou ultérieure.\\n\\nREMARQUE : cette extension n'est pas prise en charge sur Debian."
     }
 }
