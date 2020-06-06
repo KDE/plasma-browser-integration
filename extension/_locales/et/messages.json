@@ -30,7 +30,7 @@
         "message": "Tundmatu tõrge"
     },
     "kdeconnect_call_device": {
-        "message": "Ava seadmes '$1'"
+        "message": "Kõne kontaktile '$1'"
     },
     "kdeconnect_open_device": {
         "message": "Ava seadmes '$1'"
