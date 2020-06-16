@@ -30,7 +30,7 @@
         "message": "알 수 없는 오류"
     },
     "kdeconnect_call_device": {
-        "message": "'$1'에서 열기"
+        "message": "'$1' 님과 통화"
     },
     "kdeconnect_open_device": {
         "message": "'$1'에서 열기"
