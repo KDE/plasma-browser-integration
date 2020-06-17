@@ -60,7 +60,7 @@
         "message": "Gostitelj verzija: $1"
     },
     "options_about_kde": {
-        "message": "KDE je svetovna skupnost programskih inženirjev, umetnikov, pisateljev, prevajalcev in ustvarjalcev, ki so zavezani k razvoju <a href=\"$1\">proste programske opreme</a>. KDE proizvaja namizje Plasma, na stotine aplikacij in številne knjižnice programske opreme, ki jih podpirajo. KDE je a zadružno podjetje: noben subjekt sam ne nadzoruje njegove usmeritve ali izdelkov.Namesto tega si prizadevamo za dosego skupnega cilja izgradnje sveta najboljše programske opreme. Vsakdo je dobrodošel, da se <a href=\"$2\\>pridruži in pridruži prispevati</a> za KDE, vključno z vami. Obiščite <a href=\"$3\">$3</a> za več informacij o skupnosti KDE in programski opremi, ki jo izdelujemo."
+        "message": "KDE je svetovna skupnost programskih inženirjev, umetnikov, pisateljev, prevajalcev in ustvarjalcev, ki so zavezani k razvoju <a href=\"$1\">proste programske opreme</a>. KDE proizvaja namizje Plasma, na stotine aplikacij in številne knjižnice programske opreme, ki jih podpirajo. KDE je a zadružno podjetje: noben subjekt sam ne nadzoruje njegove usmeritve ali izdelkov.Namesto tega si prizadevamo za dosego skupnega cilja izgradnje sveta najboljše programske opreme. Vsakdo je dobrodošel, da se <a href=\"$2\">pridruži in pridruži prispevati</a> za KDE, vključno z vami. Obiščite <a href=\"$3\">$3</a> za več informacij o skupnosti KDE in programski opremi, ki jo izdelujemo."
     },
     "options_about_license": {
         "message": "License: <a href=\"$1\">Splošno dovoljenje GNU verzija 3</a>"
@@ -117,7 +117,7 @@
         "message": "Deljenje vsebine"
     },
     "options_plugin_tabsrunner_description": {
-        "message": "Zagotovite, da je omogočen modul \"Zavihek brskalnika\" v <a id=\"$1\\ href=\"$2\">nastavitvah iskanja v Plasmi</a>."
+        "message": "Zagotovite, da je omogočen modul \"Zavihek brskalnika\" v <a id=\"$1\" href=\"$2\">nastavitvah iskanja v Plasmi</a>."
     },
     "options_plugin_tabsrunner_title": {
         "message": "Poiščite zavihke brskalnika v oknu \"Zaženi ukaz\\"
