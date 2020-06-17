@@ -33,7 +33,6 @@ Name[sl]=Opomnik za namestitev integracije brskalnika v Plasmi
 Name[sv]=Påminnelse om installation av Plasma webbläsarintegrering
 Name[tg]=Хотиррасонӣ барои насби ҳампайвандии намоишгари Плазма
 Name[uk]=Нагадування щодо встановлення інтеграції браузера із Плазмою
-Name[x-test]=xxPlasma Browser Integration Installation Reminderxx
 Name[zh_CN]=Plasma 浏览器集成安装提醒
 Name[zh_TW]=Plasma 瀏覽器整合安裝提醒
 Comment=Provides a link to the browser extension if the Plasma Browser Integration host is installed
@@ -67,7 +66,6 @@ Comment[sl]=Ponuja povezavo do razširitve brskalnika, če je nameščen gostite
 Comment[sv]=Tillhandahåller en länk till webbläsarutökningen om värden för Plasma webbläsarintegrering är installerad
 Comment[tg]=Агар мизбони ҳампайвандии намоишгари Плазма насб шуда бошад, пайванде ба васеъшавии намоишгари Плазма таъмин карда мешавад
 Comment[uk]=Надає посилання на розширення браузера, якщо встановлено основну частину засобу інтеграції браузера із Плазмою
-Comment[x-test]=xxProvides a link to the browser extension if the Plasma Browser Integration host is installedxx
 Comment[zh_CN]=如果 Plasma 浏览器集成主程序已安装，则提供下载浏览器扩展的链接
 Comment[zh_TW]=提供瀏覽器擴充套件連結，如果 Plasma 瀏覽器整合主機已經安裝。
 
