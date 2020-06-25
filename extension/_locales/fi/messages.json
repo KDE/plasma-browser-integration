@@ -39,10 +39,10 @@
         "message": "Jos havaitset ongelmia, tarkista <a href=\"$1\">tunnetut ohjelmavirheet</a> ja tee tarvittaessa <a href=\"$2\">vikailmoitus</a>."
     },
     "options_about_changelog_link": {
-        "message": "View Changelog"
+        "message": "Katso muutoslokia"
     },
     "options_about_copyright": {
-        "message": "© 2017–19 Kai Uwe Broulik ja David Edmundson"
+        "message": "© 2017–2020 Kai Uwe Broulik ja David Edmundson"
     },
     "options_about_created_by_kde": {
         "message": "Tämän selainlaajennuksen on kehittänyt <a href=\"$1\">KDE-yhteisö</a>. Löydät projektista lisätietoa <a href=\"$2\">KDE Community Wiki</a>stä."
