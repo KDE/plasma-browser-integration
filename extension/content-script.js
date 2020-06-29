@@ -319,14 +319,13 @@ function playerPaused(player) {
 }
 
 function setPlayerActive(player) {
+    pendingActivePlayer = player;
+
     if (isNaN(player.duration)) {
         // Ignore this player for now until we know a duration
         // In durationchange event handler we'll check for this and end up here again
-        pendingActivePlayer = player;
         return;
     }
-
-    pendingActivePlayer = undefined;
 
     // Ignore short sounds, they are most likely a chat notification sound
     // A stream has a duration of Infinity
@@ -335,6 +334,7 @@ function setPlayerActive(player) {
         return;
     }
 
+    pendingActivePlayer = undefined;
     activePlayer = player;
 
     // when playback starts, send along metadata
