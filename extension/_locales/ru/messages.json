@@ -30,7 +30,7 @@
         "message": "Неизвестная ошибка"
     },
     "kdeconnect_call_device": {
-        "message": "Открыть на устройстве «$1»"
+        "message": "Позвонить через «$1»"
     },
     "kdeconnect_open_device": {
         "message": "Открыть на устройстве «$1»"
