@@ -510,8 +510,17 @@ function registerPlayer(player) {
     players.push(player);
 }
 
+function findAllPlayersFromNode(node) {
+    if (typeof node.getElementsByTagName !== "function") {
+        return [];
+    }
+
+    return [...node.getElementsByTagName("video"), ...node.getElementsByTagName("audio")];
+}
+
+
 function registerAllPlayers() {
-    var players = document.querySelectorAll("video,audio");
+    var players = findAllPlayersFromNode(document);
     players.forEach(registerPlayer);
 }
 
@@ -557,12 +566,12 @@ function loadMpris() {
     var observer = new MutationObserver(function (mutations) {
         mutations.forEach(function (mutation) {
             mutation.addedNodes.forEach(function (node) {
-                if (typeof node.matches !== "function" || typeof node.querySelectorAll !== "function") {
+                if (typeof node.matches !== "function") {
                     return;
                 }
 
                 // Check whether the node itself or any of its children is a player
-                var players = Array.from(node.querySelectorAll("video,audio"));
+                var players = findAllPlayersFromNode(node);
                 if (node.matches("video,audio")) {
                     players.unshift(node);
                 }
@@ -573,12 +582,12 @@ function loadMpris() {
             });
 
             mutation.removedNodes.forEach(function (node) {
-                if (typeof node.matches !== "function" || typeof node.querySelectorAll !== "function") {
+                if (typeof node.matches !== "function") {
                     return;
                 }
 
                 // Check whether the node itself or any of its children is the current player
-                var players = Array.from(node.querySelectorAll("video,audio"));
+                var players = findAllPlayersFromNode(node);
                 if (node.matches("video,audio")) {
                     players.unshift(node);
                 }
