@@ -6,7 +6,7 @@
         "message": "Controls multimèdia"
     },
     "browseraction_title": {
-        "message": "Integració del navegador al Plasma"
+        "message": "Integració del navegador amb el Plasma"
     },
     "general_error_host_disconnected_title": {
         "message": "El servidor natiu s'ha desconnectat inesperadament."
@@ -24,7 +24,7 @@
         "message": "Ha fallat en connectar amb el servidor nadiu."
     },
     "general_error_startup_failed_wiki_link": {
-        "message": "Visiteu la pàgina wiki del projecte per obtenir més informació"
+        "message": "Visiteu la pàgina wiki del projecte per a obtenir més informació"
     },
     "general_error_unknown": {
         "message": "Error desconegut"
@@ -45,10 +45,10 @@
         "message": "© 2017-2020 Kai Uwe Broulik and David Edmundson"
     },
     "options_about_created_by_kde": {
-        "message": "Aquesta ampliació del navegador fou creada per la <a href=\"$1\">Comunitat KDE</a>. Podeu trobar més informació quant a aquest projecte al <a href=\"$2\">KDE Community Wiki</a>."
+        "message": "Aquesta ampliació del navegador fou creada per la <a href=\"$1\">Comunitat KDE</a>. Trobareu més informació quant a aquest projecte al <a href=\"$2\\>KDE Community Wiki</a>."
     },
     "options_about_donate": {
-        "message": "Si us agrada el que veieu, si us plau, considereu fer una <a href=\"$1\">donació a KDE</a>, per tal de continuar fent el millor programari lliure possible."
+        "message": "Si us agrada el que veieu, si us plau, considereu fer una <a href=\"$1\">donació al KDE</a>, per tal de continuar fent el millor programari lliure possible."
     },
     "options_about_extension_version": {
         "message": "Versió de l'extensió: $1"
@@ -57,7 +57,7 @@
         "message": "Versió del servidor: $1"
     },
     "options_about_kde": {
-        "message": "KDE és una xarxa mundial d'enginyers informàtics, artistes, escriptors, traductors i creadors compromesos amb el desenvolupament de <a href=\"$1\">programari lliure</a> (Free Software). KDE ha creat l'entorn d'escriptori Plasma, centenars d'aplicacions, i moltes biblioteques de programari que les fan funcionar. KDE és una iniciativa cooperativa: cap entitat individual controla la seva direcció ni els seus productes. Altrament, treballem conjuntament per aconseguir l'objectiu comú de crear el programari lliure més refinat del món. Donem la benvinguda a tothom a <a href=\"$2\">afegir-se i col·laborar</a> amb el KDE, incloent-vos. Visiteu <a href=\"$3\">$3</a> per a més informació sobre la comunitat KDE i el programari que produïm."
+        "message": "El KDE és una xarxa mundial d'enginyers informàtics, artistes, escriptors, traductors i creadors compromesos amb el desenvolupament de <a href=\"$1\">programari lliure</a> (Free Software). El KDE ha creat l'entorn d'escriptori Plasma, centenars d'aplicacions, i moltes biblioteques de programari que les fan funcionar. El KDE és una iniciativa cooperativa: cap entitat individual controla la seva direcció ni els seus productes. Altrament, treballem conjuntament per a aconseguir l'objectiu comú de crear el programari lliure més refinat del món. Donem la benvinguda a tothom a <a href=\"$2\">afegir-se i col·laborar</a> amb el KDE, incloent-vos. Visiteu <a href=\"$3\">$3</a> per a més informació sobre la comunitat KDE i el programari que produïm."
     },
     "options_about_license": {
         "message": "Llicència: <a href=\"$1\">Llicència pública general de GNU versió 3</a>"
@@ -90,7 +90,7 @@
         "message": "Mostra les baixades a l'àrea de notificacions"
     },
     "options_plugin_kdeconnect_description": {
-        "message": "Afegeix una entrada al menú contextual a enllaços que permeten enviar-los al telèfon i a altres dispositius aparellats usant el <a href=\"$1\">Connect del KDE</a>."
+        "message": "Afegeix una entrada al menú contextual amb enllaços que permeten enviar-los al telèfon i a altres dispositius aparellats usant el <a href=\"$1\">KDE Connect</a>."
     },
     "options_plugin_kdeconnect_title": {
         "message": "Envia a través del KDE Connect"
@@ -108,7 +108,7 @@
         "message": "Controls multimèdia"
     },
     "options_plugin_purpose_description": {
-        "message": "Afegeix una entrada «Comparteix...» al menú contextual i permet que els llocs web obrin un diàleg per compartir contingut usant l'API del Web Share."
+        "message": "Afegeix una entrada «Comparteix...» al menú contextual i permet que els llocs web obrin un diàleg per a compartir contingut usant l'API de la Web Share."
     },
     "options_plugin_purpose_title": {
         "message": "Compartició de contingut"
@@ -126,7 +126,7 @@
         "message": "L'arranjament s'ha desat amb èxit"
     },
     "options_tab_about": {
-        "message": "Quant a"
+        "message": "Quant al"
     },
     "options_tab_general": {
         "message": "General"
@@ -150,6 +150,6 @@
         "message": "Contingut compartit"
     },
     "store_description": {
-        "message": "Fa eficient la multitasca controlant les funcions del navegador des de l'escriptori, encara que el Chrome estigui en segon pla. Gestiona la reproducció de l'àudio i el vídeo, marca les baixades a l'àrea de notificacions, envia fitxers al telèfon usant el KDE Connect i encara més dins l'escriptori Plasma del KDE!\\n\\nCal instal·lar el paquet «plasma-browser-integration» perquè funcioni aquesta extensió. Hauria d'estar disponible al gestor de paquets de la vostra distribució en executar el Plasma 5.13 o posterior.\\n\\nNOTA: Aquesta extensió no està implementada al Debian."
+        "message": "Fa eficient la multitasca controlant les funcions del navegador des de l'escriptori, encara que el Chrome estigui en segon pla. Gestiona la reproducció de l'àudio i el vídeo, marca les baixades a l'àrea de notificacions, envia fitxers al telèfon usant el KDE Connect i encara més dins l'escriptori Plasma del KDE!\\n\\nCal instal·lar el paquet «plasma-browser-integration» perquè funcioni aquesta extensió. Hauria d'estar disponible al gestor de paquets de la vostra distribució en executar el Plasma 5.13 o posterior.\\n\\nNOTA: Aquesta extensió no està implementada a la Debian."
     }
 }
