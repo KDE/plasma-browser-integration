@@ -45,7 +45,7 @@
         "message": "© 2017-2020 Kai Uwe Broulik and David Edmundson"
     },
     "options_about_created_by_kde": {
-        "message": "Aquesta ampliació del navegador fou creada per la <a href=\"$1\">Comunitat KDE</a>. Trobareu més informació quant a aquest projecte al <a href=\"$2\\>KDE Community Wiki</a>."
+        "message": "Aquesta ampliació del navegador fou creada per la <a href=\"$1\">Comunitat KDE</a>. Trobareu més informació quant a aquest projecte al <a href=\"$2\">KDE Community Wiki</a>."
     },
     "options_about_donate": {
         "message": "Si us agrada el que veieu, si us plau, considereu fer una <a href=\"$1\">donació al KDE</a>, per tal de continuar fent el millor programari lliure possible."
