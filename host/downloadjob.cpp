@@ -130,9 +130,11 @@ void DownloadJob::update(const QJsonObject &payload)
         }
     }
 
+    const auto oldBytesReceived = m_bytesReceived;
     it = payload.constFind(QStringLiteral("bytesReceived"));
     if (it != end) {
-        setProcessedAmount(Bytes, it->toDouble());
+        m_bytesReceived = it->toDouble();
+        setProcessedAmount(Bytes, m_bytesReceived);
     }
 
     setTotalAmount(Files, 1);
@@ -148,10 +150,10 @@ void DownloadJob::update(const QJsonObject &payload)
         }
     }
 
+    bool speedValid = false;
+    qulonglong speed = 0;
     it = payload.constFind(QStringLiteral("estimatedEndTime"));
     if (it != end) {
-        qulonglong speed = 0;
-
         // now calculate the speed from estimated end time and total size
         // funny how chrome only gives us a time whereas KJob operates on speed
         // and calculates the time this way :)
@@ -165,9 +167,28 @@ void DownloadJob::update(const QJsonObject &payload)
 
             if (remainingTime > 0) {
                 speed = remainingBytes / remainingTime;
+                speedValid = true;
+                m_fallbackSpeedTimer.invalidate();
             }
         }
+    }
 
+    if (!speedValid) {
+        if (!m_fallbackSpeedTimer.isValid()) {
+            m_fallbackSpeedTimer.start();
+        }
+
+        // When download size isn't known, we don't get estimatedEndTime but there's
+        // also no dedicated speed field, so we'll have to calculate that ourself now
+        if (m_fallbackSpeedTimer.hasExpired(990)) { // not exactly 1000ms to account for some fuzziness
+            const auto deltaBytes = m_bytesReceived - oldBytesReceived;
+            speed = (deltaBytes * 1000) / m_fallbackSpeedTimer.elapsed();
+            speedValid = true;
+            m_fallbackSpeedTimer.start();
+        }
+    }
+
+    if (speedValid) {
         emitSpeed(speed);
     }
 

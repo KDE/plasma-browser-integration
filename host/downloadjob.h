@@ -25,6 +25,7 @@
 
 #include <KJob>
 
+#include <QElapsedTimer>
 #include <QUrl>
 
 class DownloadJob : public KJob
@@ -73,6 +74,9 @@ private:
     QString m_fileName;
 
     QString m_mimeType;
+
+    qulonglong m_bytesReceived = 0;
+    QElapsedTimer m_fallbackSpeedTimer;
 
     // In doubt, assume incognito
     bool m_incognito = true;
