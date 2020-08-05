@@ -93,6 +93,16 @@ addCallback("kdeconnect", "deviceAdded", function(message) {
             ]
         };
         chrome.contextMenus.create(props);
+    } else {
+        props = {
+            id: kdeConnectMenuIdPrefix + "tab@" + deviceId,
+            contexts: ["tab"],
+            title: chrome.i18n.getMessage("kdeconnect_open_device", name),
+            documentUrlPatterns: [
+                "http://*/*", "https://*/*"
+            ]
+        };
+        chrome.contextMenus.create(props);
     }
 
     kdeConnectDevices[deviceId] = {
@@ -111,5 +121,7 @@ addCallback("kdeconnect", "deviceRemoved", function(message) {
     chrome.contextMenus.remove(kdeConnectMenuIdPrefix + "open@" + deviceId);
     if (!IS_FIREFOX) {
         chrome.contextMenus.remove(kdeConnectMenuIdPrefix + "call@" + deviceId);
+    } else {
+        chrome.contextMenus.remove(kdeConnectMenuIdPrefix + "tab@" + deviceId);
     }
 });
