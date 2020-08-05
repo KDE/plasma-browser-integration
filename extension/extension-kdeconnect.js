@@ -47,10 +47,7 @@ addCallback("kdeconnect", "deviceAdded", function(message) {
     let props = {
         id: kdeConnectMenuIdPrefix + "open@" + deviceId,
         contexts: ["link", "page", "image", "audio", "video"],
-        title: chrome.i18n.getMessage("kdeconnect_open_device", name),
-        targetUrlPatterns: [
-            "http://*/*", "https://*/*"
-        ]
+        title: chrome.i18n.getMessage("kdeconnect_open_device", name)
     };
 
     if (IS_FIREFOX) {
@@ -77,26 +74,26 @@ addCallback("kdeconnect", "deviceAdded", function(message) {
                 "16": "icons/" + iconName + ".svg"
             };
         }
+    } else {
+        // Firefox doesn't show entries on the page itself when this is set
+        props.targetUrlPatterns = [
+            "http://*/*", "https://*/*"
+        ];
     }
-
     chrome.contextMenus.create(props);
 
-    props = {
-        id: kdeConnectMenuIdPrefix + "call@" + deviceId,
-        contexts: ["link"],
-        title: chrome.i18n.getMessage("kdeconnect_call_device", name),
-        targetUrlPatterns: [
-            "tel:*"
-        ]
-    };
-
-    if (IS_FIREFOX) {
-        props.icons = {
-            "16": "icons/call-start-symbolic.svg"
+    // Since we don't differentiate URL patterns on Firefox, don't show the dedicated call entry there
+    if (!IS_FIREFOX) {
+        props = {
+            id: kdeConnectMenuIdPrefix + "call@" + deviceId,
+            contexts: ["link"],
+            title: chrome.i18n.getMessage("kdeconnect_call_device", name),
+            targetUrlPatterns: [
+                "tel:*"
+            ]
         };
+        chrome.contextMenus.create(props);
     }
-
-    chrome.contextMenus.create(props);
 
     kdeConnectDevices[deviceId] = {
         name, type
@@ -112,5 +109,7 @@ addCallback("kdeconnect", "deviceRemoved", function(message) {
 
     delete kdeConnectDevices[deviceId];
     chrome.contextMenus.remove(kdeConnectMenuIdPrefix + "open@" + deviceId);
-    chrome.contextMenus.remove(kdeConnectMenuIdPrefix + "call@" + deviceId);
+    if (!IS_FIREFOX) {
+        chrome.contextMenus.remove(kdeConnectMenuIdPrefix + "call@" + deviceId);
+    }
 });
