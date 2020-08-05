@@ -39,64 +39,108 @@ chrome.contextMenus.onClicked.addListener(function (info) {
     });
 });
 
-addCallback("kdeconnect", "deviceAdded", function(message) {
-    let deviceId = message.id;
-    let name = message.name;
-    let type = message.type;
+let knownKdeConnectMenuEntryIds = new Set();
+const createKdeConnectMenuEntry = (args) => {
+    const id = kdeConnectMenuIdPrefix + args.key + "@" + args.deviceId;
 
     let props = {
-        id: kdeConnectMenuIdPrefix + "open@" + deviceId,
-        contexts: ["link", "page", "image", "audio", "video"],
-        title: chrome.i18n.getMessage("kdeconnect_open_device", name),
-        targetUrlPatterns: [
-            "http://*/*", "https://*/*"
-        ]
+        id,
+        contexts: args.contexts,
+        title: args.title
     };
 
-    if (IS_FIREFOX) {
-        let iconName = "";
-        switch (type) {
-            case "smartphone":
-            case "phone":
-                iconName = "smartphone-symbolic";
-                break;
-            case "tablet":
-                iconName = "tablet-symbolic";
-                break;
-            case "desktop":
-            case "tv": // at this size you can't really tell desktop monitor icon from a TV
-                iconName = "computer-symbolic";
-                break;
-            case "laptop":
-                iconName = "computer-laptop-symbolic";
-                break;
-        }
-
-        if (iconName) {
-            props.icons = {
-                "16": "icons/" + iconName + ".svg"
-            };
-        }
-    }
-
-    chrome.contextMenus.create(props);
-
-    props = {
-        id: kdeConnectMenuIdPrefix + "call@" + deviceId,
-        contexts: ["link"],
-        title: chrome.i18n.getMessage("kdeconnect_call_device", name),
-        targetUrlPatterns: [
-            "tel:*"
-        ]
-    };
-
-    if (IS_FIREFOX) {
+    if (IS_FIREFOX && args.iconName) {
         props.icons = {
-            "16": "icons/call-start-symbolic.svg"
+            "16": "icons/" + args.iconName + ".svg"
         };
     }
 
+    if (args.args) {
+        Object.keys(args.args).forEach((key) => {
+            props[key] = args.args[key];
+        });
+    }
+
     chrome.contextMenus.create(props);
+    knownKdeConnectMenuEntryIds.add(id);
+};
+
+addCallback("kdeconnect", "deviceAdded", function(message) {
+    const deviceId = message.id;
+    const name = message.name;
+    const type = message.type;
+
+    let iconName = "";
+    switch (type) {
+    case "smartphone":
+    case "phone":
+        iconName = "smartphone-symbolic";
+        break;
+    case "tablet":
+        iconName = "tablet-symbolic";
+        break;
+    case "desktop":
+    case "tv": // at this size you can't really tell desktop monitor icon from a TV
+        iconName = "computer-symbolic";
+        break;
+    case "laptop":
+        iconName = "computer-laptop-symbolic";
+        break;
+    }
+
+    const httpPatterns = ["http://*/*", "https://*/*"];
+
+    createKdeConnectMenuEntry({
+        deviceId,
+        iconName,
+        key: "open_link",
+        contexts: ["link", "image", "audio", "video"],
+        title: chrome.i18n.getMessage("kdeconnect_open_device", name),
+        args: {
+            targetUrlPatterns: httpPatterns
+        }
+    });
+
+    createKdeConnectMenuEntry({
+        deviceId,
+        iconName,
+        key: "open_page",
+        contexts: ["page"],
+        title: chrome.i18n.getMessage("kdeconnect_open_device", name),
+        args: {
+            documentUrlPatterns: httpPatterns
+        }
+    });
+
+    // Entry on tel: phone links
+    createKdeConnectMenuEntry({
+        deviceId,
+        iconName: "call-start-symbolic",
+        key: "call",
+        contexts: ["link"],
+        title: chrome.i18n.getMessage("kdeconnect_call_device", name),
+        args: {
+            targetUrlPatterns: [
+                "tel:*"
+            ]
+        }
+    });
+
+    try {
+        // Entry on a tab in the tab bar (Firefox)
+        createKdeConnectMenuEntry({
+            deviceId,
+            iconName,
+            key: "open_tab",
+            contexts: ["tab"],
+            title: chrome.i18n.getMessage("kdeconnect_open_device", name),
+            args: {
+                documentUrlPatterns: httpPatterns
+            }
+        });
+    } catch (e) {
+        console.warn("Failed to create 'tab' context menu", e);
+    }
 
     kdeConnectDevices[deviceId] = {
         name, type
@@ -111,6 +155,9 @@ addCallback("kdeconnect", "deviceRemoved", function(message) {
     }
 
     delete kdeConnectDevices[deviceId];
-    chrome.contextMenus.remove(kdeConnectMenuIdPrefix + "open@" + deviceId);
-    chrome.contextMenus.remove(kdeConnectMenuIdPrefix + "call@" + deviceId);
+
+    for (let id of knownKdeConnectMenuEntryIds) {
+        chrome.contextMenus.remove(id);
+    }
+    knownKdeConnectMenuEntryIds.clear();
 });
