@@ -277,9 +277,11 @@ void DownloadJob::addToRecentDocuments()
 
 void DownloadJob::saveOriginUrl()
 {
+    QUrl url = m_finalUrl.isValid() ? m_finalUrl : m_url;
+
     if (m_incognito
         // Blob URLs are dynamically created through JavaScript and cannot be accessed from the outside
-        || m_finalUrl.scheme() == QLatin1String("blob")) {
+        || url.scheme() == QLatin1String("blob")) {
         return;
     }
 
@@ -292,7 +294,6 @@ void DownloadJob::saveOriginUrl()
 
     KFileMetaData::UserMetaData md(m_fileName);
 
-    QUrl url = m_finalUrl;
     url.setPassword(QString());
 
     md.setOriginUrl(url);
