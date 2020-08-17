@@ -35,8 +35,12 @@ function addCallback(subsystem, action, callback)
 }
 
 function executeScript(script) {
-    var element = document.createElement('script');
-    element.innerHTML = '('+ script +')();';
+    let element = document.createElement("script");
+    const blob = new Blob(["(", script, ")()"], {
+        type: "application/javascript"
+    });
+    // Use a blob URL instead of inline JS to circumvent unsafe inline content security policy
+    element.src = URL.createObjectURL(blob);
     (document.body || document.head || document.documentElement).appendChild(element);
     // We need to remove the script tag after inserting or else websites relying on the order of items in
     // document.getElementsByTagName("script") will break (looking at you, Google Hangouts)
