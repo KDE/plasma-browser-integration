@@ -149,7 +149,8 @@ void TabsRunner::match(Plasma::RunnerContext &context)
                 {QStringLiteral("service"), service},
                 {QStringLiteral("tabId"), tabId},
                 {QStringLiteral("audible"), audible},
-                {QStringLiteral("muted"), muted}
+                {QStringLiteral("muted"), muted},
+                {QStringLiteral("url"), url}
             };
 
             Plasma::QueryMatch match(this);
@@ -278,9 +279,12 @@ QDBusMessage TabsRunner::createMessage(const QString &service, const QString &me
 
 QMimeData *TabsRunner::mimeDataForMatch(const Plasma::QueryMatch &match)
 {
-    Q_UNUSED(match);
-    // TODO return tab url or maybe for firefox a magic "dragging tab off a window" mime?
-    return nullptr;
+    const QVariantHash tabData = match.data().toHash();
+    const QUrl url = tabData.value(QStringLiteral("url")).toUrl();
+
+    auto *data = new QMimeData();
+    data->setUrls({url});
+    return data;
 }
 
 QList<QAction *> TabsRunner::actionsForMatch(const Plasma::QueryMatch &match)
