@@ -34,13 +34,29 @@ function addCallback(subsystem, action, callback)
     callbacks[subsystem][action] = callback;
 }
 
-function executeScript(script) {
+function initPageScript(cb) {
+    // On reloads, unload the previous page-script.
+    executePageAction({"action": "unload"});
+
+    // The script is only run later, wait for that before sending events.
+    window.addEventListener("pbiInited", cb, {"once": true});
+
     var element = document.createElement('script');
-    element.innerHTML = '('+ script +')();';
-    (document.body || document.head || document.documentElement).appendChild(element);
+    element.src = chrome.runtime.getURL("page-script.js");
+    (document.body || document.head || document.documentElement).prepend(element);
     // We need to remove the script tag after inserting or else websites relying on the order of items in
     // document.getElementsByTagName("script") will break (looking at you, Google Hangouts)
     element.parentNode.removeChild(element);
+}
+
+function executePageAction(args) {
+    // The page script injection and communication mechanism
+    // was inspired by https://github.com/x0a/uBO-YouTube
+    if (IS_FIREFOX) {
+        args = cloneInto(args, window);
+    }
+
+    window.dispatchEvent(new CustomEvent('pbiEvent', {detail: args}));
 }
 
 chrome.runtime.onMessage.addListener(function (message, sender) {
@@ -58,43 +74,45 @@ chrome.runtime.onMessage.addListener(function (message, sender) {
     }
 });
 
-SettingsUtils.get().then((items) => {
-    if (items.breezeScrollBars.enabled) {
-        loadBreezeScrollBars();
-    }
-
-    const mpris = items.mpris;
-    if (mpris.enabled) {
-        const origin = window.location.origin;
-
-        const websiteSettings = mpris.websiteSettings || {};
-
-        let mprisAllowed = true;
-        if (typeof MPRIS_WEBSITE_SETTINGS[origin] === "boolean") {
-            mprisAllowed = MPRIS_WEBSITE_SETTINGS[origin];
-        }
-        if (typeof websiteSettings[origin] === "boolean") {
-            mprisAllowed = websiteSettings[origin];
+initPageScript(() => {
+    SettingsUtils.get().then((items) => {
+        if (items.breezeScrollBars.enabled) {
+            loadBreezeScrollBars();
         }
 
-        if (mprisAllowed) {
-            loadMpris();
-            if (items.mprisMediaSessions.enabled) {
-                loadMediaSessionsShim();
+        const mpris = items.mpris;
+        if (mpris.enabled) {
+            const origin = window.location.origin;
+
+            const websiteSettings = mpris.websiteSettings || {};
+
+            let mprisAllowed = true;
+            if (typeof MPRIS_WEBSITE_SETTINGS[origin] === "boolean") {
+                mprisAllowed = MPRIS_WEBSITE_SETTINGS[origin];
+            }
+            if (typeof websiteSettings[origin] === "boolean") {
+                mprisAllowed = websiteSettings[origin];
+            }
+
+            if (mprisAllowed) {
+                loadMpris();
+                if (items.mprisMediaSessions.enabled) {
+                    loadMediaSessionsShim();
+                }
             }
         }
-    }
 
-    if (items.purpose.enabled) {
-        sendMessage("settings", "getSubsystemStatus").then((status) => {
-            if (status && status.purpose) {
-                loadPurpose();
-            }
-        }, (err) => {
-            // No warning, can also happen when port isn't connected for unsupported OS
-            console.log("Failed to get subsystem status for purpose", err);
-        });
-    }
+        if (items.purpose.enabled) {
+            sendMessage("settings", "getSubsystemStatus").then((status) => {
+                if (status && status.purpose) {
+                    loadPurpose();
+                }
+            }, (err) => {
+                // No warning, can also happen when port isn't connected for unsupported OS
+                console.log("Failed to get subsystem status for purpose", err);
+            });
+        }
+    });
 });
 
 // BREEZE SCROLL BARS
@@ -162,10 +180,6 @@ html::-webkit-scrollbar-corner {
 // ------------------------------------------------------------------------
 //
 
-// also give the function a "random" name as we have to have it in global scope to be able
-// to invoke callbacks from outside, UUID might start with a number, so prepend something
-const mediaSessionsClassName = "f" + generateGuid().replace(/-/g, "");
-
 var activePlayer;
 // When a player has no duration yet, we'll wait for it becoming known
 // to determine whether to ignore it (short sound) or make it active
@@ -204,15 +218,7 @@ addCallback("mpris", "playPause", function () {
 addCallback("mpris", "stop", function () {
     // When available, use the "stop" media sessions action
     if (playerCallbacks.indexOf("stop") > -1) {
-        executeScript(`
-            function() {
-                try {
-                    ${mediaSessionsClassName}.executeCallback("stop");
-                } catch (e) {
-                    console.warn("Exception executing 'stop' media sessions callback", e);
-                }
-            }
-        `);
+        executePageAction({"action": "mpris", "mprisCallbackName": "stop"});
         return;
     }
 
@@ -235,29 +241,13 @@ addCallback("mpris", "stop", function () {
 
 addCallback("mpris", "next", function () {
     if (playerCallbacks.indexOf("nexttrack") > -1) {
-        executeScript(`
-            function() {
-                try {
-                    ${mediaSessionsClassName}.executeCallback("nexttrack");
-                } catch (e) {
-                    console.warn("Exception executing 'nexttrack' media sessions callback", e);
-                }
-            }
-        `);
+        executePageAction({"action": "mpris", "mprisCallbackName": "nexttrack"});
     }
 });
 
 addCallback("mpris", "previous", function () {
     if (playerCallbacks.indexOf("previoustrack") > -1) {
-        executeScript(`
-            function() {
-                try {
-                    ${mediaSessionsClassName}.executeCallback("previoustrack");
-                } catch (e) {
-                    console.warn("Exception executing 'previoustrack' media sessions callback", e);
-                }
-            }
-        `);
+        executePageAction({"action": "mpris", "mprisCallbackName": "previoustrack"});
     }
 });
 
@@ -522,15 +512,7 @@ function registerAllPlayers() {
 function playerPlay() {
     // if a media sessions callback is registered, it takes precedence over us manually messing with the player
     if (playerCallbacks.indexOf("play") > -1) {
-        executeScript(`
-            function() {
-                try {
-                    ${mediaSessionsClassName}.executeCallback("play");
-                } catch (e) {
-                    console.warn("Exception executing 'play' media sessions callback", e);
-                }
-            }
-        `);
+        executePageAction({"action": "mpris", "mprisCallbackName": "play"});
     } else if (activePlayer) {
         activePlayer.play();
     }
@@ -538,15 +520,7 @@ function playerPlay() {
 
 function playerPause() {
     if (playerCallbacks.indexOf("pause") > -1) {
-        executeScript(`
-            function() {
-                try {
-                    ${mediaSessionsClassName}.executeCallback("pause");
-                } catch (e) {
-                    console.warn("Exception executing 'pause' media sessions callback", e);
-                }
-            }
-        `);
+        executePageAction({"action": "mpris", "mprisCallbackName": "pause"});
     } else if (activePlayer) {
         activePlayer.pause();
     }
@@ -703,263 +677,13 @@ function loadMediaSessionsShim() {
             }
         });
 
-        executeScript(`
-            function() {
-                ${mediaSessionsClassName}_constructor = function() {
-                    this.callbacks = {};
-                    this.pendingCallbacksUpdate = 0;
-                    this.metadata = null;
-                    this.playbackState = "none";
-
-                    this.sendMessage = function (action, payload) {
-                        let event = new CustomEvent("pbiMprisMessage", {
-                            detail: {
-                                action: action,
-                                payload: payload
-                            }
-                        });
-                        window.dispatchEvent(event);
-                    };
-
-                    this.executeCallback = function (action) {
-                        let details = {
-                            action: action
-                            // for seekforward, seekbackward, seekto there's additional information one would need to add
-                        };
-                        this.callbacks[action](details);
-                    };
-
-                    this.setCallback = function (name, cb) {
-                        const oldCallbacks = Object.keys(this.callbacks).sort();
-
-                        if (cb) {
-                            this.callbacks[name] = cb;
-                        } else {
-                            delete this.callbacks[name];
-                        }
-
-                        const newCallbacks = Object.keys(this.callbacks).sort();
-
-                        if (oldCallbacks.toString() === newCallbacks.toString()) {
-                            return;
-                        }
-
-                        if (this.pendingCallbacksUpdate) {
-                            return;
-                        }
-
-                        this.pendingCallbacksUpdate = setTimeout(() => {
-                            this.pendingCallbacksUpdate = 0;
-
-                            // Make sure to send the current callbacks, not "newCallbacks" at the time of starting the timeout
-                            const callbacks = Object.keys(this.callbacks);
-                            this.sendMessage("callbacks", callbacks);
-                        }, 0);
-                    };
-
-                    this.setMetadata = function (metadata) {
-                        // MediaMetadata is not a regular Object so we cannot just JSON.stringify it
-                        let newMetadata = {};
-
-                        let dirty = (!metadata != !this.metadata);
-                        if (metadata) {
-                            const keys = Object.getOwnPropertyNames(Object.getPrototypeOf(metadata));
-
-                            const oldMetadata = this.metadata || {};
-
-                            keys.forEach((key) => {
-                                const value = metadata[key];
-                                if (!value || typeof value === "function") {
-                                    return; // continue
-                                }
-
-                                // We only have Strings or the "artwork" Array, so a toString() comparison should suffice...
-                                dirty |= (value.toString() !== (oldMetadata[key] || "").toString());
-
-                                newMetadata[key] = value;
-                            });
-                        }
-
-                        this.metadata = metadata;
-
-                        if (dirty) {
-                            this.sendMessage("metadata", newMetadata);
-                        }
-                    };
-
-                    this.setPlaybackState = function (playbackState) {
-                        if (this.playbackState === playbackState) {
-                            return;
-                        }
-
-                        this.playbackState = playbackState;
-                        this.sendMessage("playbackState", playbackState);
-                    };
-                };
-
-                ${mediaSessionsClassName} = new ${mediaSessionsClassName}_constructor();
-
-                if (!navigator.mediaSession) {
-                    navigator.mediaSession = {};
-                }
-
-                var noop = function() { };
-
-                var oldSetActionHandler = navigator.mediaSession.setActionHandler || noop;
-                navigator.mediaSession.setActionHandler = function (name, cb) {
-                    ${mediaSessionsClassName}.setCallback(name, cb);
-
-                    // Call the original native implementation
-                    // "call()" is needed as the real setActionHandler is a class member
-                    // and calling it directly is illegal as it lacks the context
-                    // This may throw for unsupported actions but we registered the callback
-                    // ourselves before
-                    return oldSetActionHandler.call(navigator.mediaSession, name, cb);
-                };
-
-                Object.defineProperty(navigator.mediaSession, "metadata", {
-                    get: () => ${mediaSessionsClassName}.metadata,
-                    set: (newValue) => {
-                        ${mediaSessionsClassName}.setMetadata(newValue);
-                    }
-                });
-                Object.defineProperty(navigator.mediaSession, "playbackState", {
-                    get: () => ${mediaSessionsClassName}.playbackState,
-                    set: (newValue) => {
-                        ${mediaSessionsClassName}.setPlaybackState(newValue);
-                    }
-                });
-
-                if (!window.MediaMetadata) {
-                    window.MediaMetadata = function (data) {
-                        Object.assign(this, data);
-                    };
-                    window.MediaMetadata.prototype.title = "";
-                    window.MediaMetadata.prototype.artist = "";
-                    window.MediaMetadata.prototype.album = "";
-                    window.MediaMetadata.prototype.artwork = [];
-                }
-            }
-        `);
-
-        // here we replace the document.createElement function with our own so we can detect
-        // when an <audio> tag is created that is not added to the DOM which most pages do
-        // while a <video> tag typically ends up being displayed to the user, audio is not.
-        // HACK We cannot really pass variables from the page's scope to our content-script's scope
-        // so we just blatantly insert the <audio> tag in the DOM and pick it up through our regular
-        // mechanism. Let's see how this goes :D
-
-        // HACK When removing a media object from DOM it is paused, so what we do here is once the
-        // player loaded some data we add it (doesn't work earlier since it cannot pause when
-        // there's nothing loaded to pause) to the DOM and before we remove it, we note down that
-        // we will now get a paused event because of that. When we get it, we just play() the player
-        // so it continues playing :-)
-        function addPlayerToDomEvadingAutoPlayBlocking(player) {
-            player.registerInDom = () => {
-                // Needs to be dataset so it's accessible from mutation observer on webpage
-                player.dataset.pbiPausedForDomRemoval = "true";
-                player.removeEventListener("play", player.registerInDom);
-
-                // If it is already in DOM by the time it starts playing, we don't need to do anything
-                // Also, if the page already parented it around, don't mess with it
-                if (document.documentElement.contains(player)
-                    || player.parentNode) {
-                    delete player.dataset.pbiPausedForDomRemoval;
-                    player.removeEventListener("pause", player.replayAfterRemoval);
-                } else {
-                    (document.head || document.documentElement).appendChild(player);
-                    player.parentNode.removeChild(player);
-                }
-            };
-
-            player.replayAfterRemoval = () => {
-                if (player.dataset.pbiPausedForDomRemoval === "true") {
-                    delete player.dataset.pbiPausedForDomRemoval;
-                    player.removeEventListener("pause", player.replyAfterRemoval);
-
-                    player.play();
-                }
-            };
-
-            player.addEventListener("play", player.registerInDom);
-            player.addEventListener("pause", player.replayAfterRemoval);
-		}
-
-        function handleCreateElement(tagName, createdTag) {
-            if (typeof tagName === "string") {
-                if (tagName.toLowerCase() === "audio" || tagName.toLowerCase() === "video") {
-                    addPlayerToDomEvadingAutoPlayBlocking(createdTag);
-                }
-            }
-        }
-
-        if (IS_FIREFOX) {
-            const oldCreateElement = Document.prototype.createElement;
-            exportFunction(function() {
-                const createdTag = oldCreateElement.apply(this, arguments);
-                handleCreateElement(arguments[0], createdTag);
-                return createdTag;
-            }, Document.prototype, {defineAs: "createElement"});
-        } else {
-            executeScript(`
-                function() {
-                    ` + addPlayerToDomEvadingAutoPlayBlocking.toString() + `
-                    ` + handleCreateElement.toString() +`
-                    const oldCreateElement = Document.prototype.createElement;
-                    Document.prototype.createElement = function() {
-                        const createdTag = oldCreateElement.apply(this, arguments);
-                        handleCreateElement(arguments[0], createdTag);
-                        return createdTag;
-                    };
-                }
-            `);
-        }
-
-        // We also briefly add items created as new Audio() to the DOM so we can control it
-        // similar to the document.createElement hack above since we cannot share variables
-        // between the actual website and the background script despite them sharing the same DOM
-
-        if (IS_FIREFOX) {
-            // Firefox enforces Content-Security-Policy also for scripts injected by the content-script
-            // This causes our executeScript calls to fail for pages like Nextcloud
-            // It also doesn't seem to have the aggressive autoplay prevention Chrome has,
-            // so the horrible replyAfterRemoval hack from above isn't copied into this
-            // See Bug 411148: Music playing from the ownCloud Music app does not show up
-
-            // A function exported with exportFunction loses its prototype, leading to Bug 414512
-
-            const oldAudio = window.Audio;
-            // It is important to use the prototype on wrappedJSObject as the prototype
-            // of the content script is restricted and not accessible by the website
-            const oldAudioPrototype = window.wrappedJSObject.Audio.prototype;
-
-            const audioConstructor = function(...args) {
-                const player = new oldAudio(...args);
-                addPlayerToDomEvadingAutoPlayBlocking(player);
-                return player;
-            };
-            exportFunction(audioConstructor, window.wrappedJSObject, {defineAs: "Audio"});
-
-            window.wrappedJSObject.Audio.prototype = oldAudioPrototype;
-        } else {
-            executeScript(`function() {
-                var oldAudio = window.Audio;
-                window.Audio = function (...args) {
-                    ` + addPlayerToDomEvadingAutoPlayBlocking.toString() + `
-                    const player = new oldAudio(...args);
-                    addPlayerToDomEvadingAutoPlayBlocking(player);
-                    return player;
-                };
-            }`);
-        }
+        executePageAction({"action": "mediaSessionsRegister"});
     }
 }
 
 // PURPOSE / WEB SHARE API
 // ------------------------------------------------------------------------
 //
-const purposeTransferClassName = "p" + generateGuid().replace(/-/g, "");
-
 var purposeLoaded = false;
 function loadPurpose() {
     if (purposeLoaded) {
@@ -984,93 +708,14 @@ function loadPurpose() {
         }
 
         sendMessage("purpose", "share", payload).then((response) => {
-            executeScript(`
-                function() {
-                    ${purposeTransferClassName}.pendingResolve();
-                }
-            `);
+            executePageAction({"action": "purposeShare"});
         }, (err) => {
             // Deliberately not giving any more details about why it got rejected
-            executeScript(`
-                function() {
-                    ${purposeTransferClassName}.pendingReject(new DOMException("Share request aborted", "AbortError"));
-                }
-            `);
+            executePageAction({"action": "purposeReject"});
         }).finally(() => {
-            executeScript(`
-                function() {
-                    ${purposeTransferClassName}.reset();
-                }
-            `);
+            executePageAction({"action": "purposeReset"});
         });;
     });
 
-    executeScript(`
-        function() {
-            ${purposeTransferClassName} = function() {};
-            let transfer = ${purposeTransferClassName};
-            transfer.reset = () => {
-                transfer.pendingResolve = null;
-                transfer.pendingReject = null;
-            };
-            transfer.reset();
-
-            if (!navigator.canShare) {
-                navigator.canShare = (data) => {
-                    if (!data) {
-                        return false;
-                    }
-
-                    if (data.title === undefined && data.text === undefined && data.url === undefined) {
-                        return false;
-                    }
-
-                    if (data.url) {
-                        // check if URL is valid
-                        try {
-                            new URL(data.url, document.location.href);
-                        } catch (e) {
-                            return false;
-                        }
-                    }
-
-                    return true;
-                }
-            }
-
-            if (!navigator.share) {
-                navigator.share = (data) => {
-                    return new Promise((resolve, reject) => {
-                        if (!navigator.canShare(data)) {
-                            return reject(new TypeError());
-                        }
-
-                        if (data.url) {
-                            // validity already checked in canShare, hence no catch
-                            data.url = new URL(data.url, document.location.href).toString();
-                        }
-
-                        if (!window.event || !window.event.isTrusted) {
-                            return reject(new DOMException("navigator.share can only be called in response to user interaction", "NotAllowedError"));
-                        }
-
-                        if (transfer.pendingResolve || transfer.pendingReject) {
-                            return reject(new DOMException("A share is already in progress", "AbortError"));
-                        }
-
-                        transfer.pendingResolve = resolve;
-                        transfer.pendingReject = reject;
-
-                        const event = new CustomEvent("pbiPurposeMessage", {
-                            detail: {
-                                action: "share",
-                                payload: data
-                            }
-                        });
-                        window.dispatchEvent(event);
-                    });
-                };
-            }
-        }
-    `);
+    executePageAction({"action": "purposeRegister"});
 }
