@@ -31,6 +31,8 @@
 static const QString s_muteTab = QStringLiteral("mute");
 static const QString s_unmuteTab = QStringLiteral("unmute");
 
+K_EXPORT_PLASMA_RUNNER_WITH_JSON(TabsRunner, "plasma-runner-browsertabs.json")
+
 TabsRunner::TabsRunner(QObject *parent, const QVariantList &args)
     : Plasma::AbstractRunner(parent, args)
 {
@@ -300,7 +302,5 @@ QList<QAction *> TabsRunner::actionsForMatch(const Plasma::QueryMatch &match)
 
     return actions;
 }
-
-K_EXPORT_PLASMA_RUNNER(browsertabs, TabsRunner)
 
 #include "tabsrunner.moc"

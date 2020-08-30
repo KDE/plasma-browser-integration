@@ -88,7 +88,6 @@ Comment[zh_TW]=尋找並開啟瀏覽器分頁
 X-KDE-ServiceTypes=Plasma/Runner
 Type=Service
 Icon=internet-web-browser
-X-KDE-Library=krunner_browsertabs
 X-KDE-PluginInfo-Author=Kai Uwe Broulik
 X-KDE-PluginInfo-Email=kde@privat.broulik.de
 X-KDE-PluginInfo-Name=browsertabs

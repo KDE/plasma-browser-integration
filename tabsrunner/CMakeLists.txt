@@ -11,7 +11,6 @@ target_link_libraries(krunner_browsertabs
     KF5::Runner
 )
 
-install(TARGETS krunner_browsertabs DESTINATION ${KDE_INSTALL_PLUGINDIR} )
+kcoreaddons_desktop_to_json(krunner_browsertabs plasma-runner-browsertabs.desktop)
 
-install(FILES plasma-runner-browsertabs.desktop DESTINATION ${KDE_INSTALL_KSERVICES5DIR})
-
+install(TARGETS krunner_browsertabs DESTINATION "${KDE_INSTALL_PLUGINDIR}/kf5/krunner")
