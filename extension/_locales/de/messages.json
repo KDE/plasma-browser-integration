@@ -75,7 +75,7 @@
         "message": "Bildlaufleisten im Breeze-Stil verwenden"
     },
     "options_plugin_downloads_addToRecentDocuments": {
-        "message": "Add downloaded files to recent documents"
+        "message": "Heruntergeladene Dateien zu zuletzt geöffnete Dokumenten"
     },
     "options_plugin_downloads_saveOriginUrl": {
         "message": "Adresse, von der eine Datei heruntergeladen wurde, in deren Dateiattributen speichern"
