@@ -42,10 +42,10 @@
         "message": "Bei Problemen überprüfen Sie bitte die <a href=\"$1\">Liste der offenen Fehler</a> und schreiben Sie dann einen <a href=\"$2\">Fehlerbericht</a>."
     },
     "options_about_changelog_link": {
-        "message": "View Changelog"
+        "message": "Änderungsprotokoll ansehen"
     },
     "options_about_copyright": {
-        "message": "© 2017 -2019 Kai Uwe Broulik und David Edmundson"
+        "message": "© 2017 -2020 Kai Uwe Broulik und David Edmundson"
     },
     "options_about_created_by_kde": {
         "message": "Diese Browser-Erweiterung wurde von der <a href=\"$1\">KDE-Gemeinschaft</a> erstellt. Weitere Informationen über dieses Projekt finden Sie im <a href=\"$2\">Wiki der KDE-Gemeinschaft</a>."
