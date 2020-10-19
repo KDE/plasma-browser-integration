@@ -15,6 +15,11 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+// URL - data URL
+let favIconDataForUrl = {};
+let clearFavIconDataTimeoutId = 0;
+let runningGetTabsQueries = 0;
+
 addCallback("tabsrunner", "activate", function (message) {
     var tabId = message.tabId;
 
@@ -46,9 +51,16 @@ var whitelistedTabProperties = [
 // FIXME We really should enforce some kind of security policy, so only e.g. plasmashell and krunner
 // may access your tabs
 addCallback("tabsrunner", "getTabs", function (message) {
+    ++runningGetTabsQueries;
+
     chrome.tabs.query({}, function (tabs) {
+        if (clearFavIconDataTimeoutId) {
+            clearTimeout(clearFavIconDataTimeoutId);
+            clearFavIconDataTimeoutId = 0;
+        }
+
         // remove incognito tabs and properties not in whitelist
-        var filteredTabs = tabs;
+        let filteredTabs = tabs;
 
         // Firefox before 67 runs extensions in incognito by default
         // but we keep running after an update, so exclude those tabs for it
@@ -58,14 +70,90 @@ addCallback("tabsrunner", "getTabs", function (message) {
             });
         }
 
-        var filteredTabs = filterArrayObjects(filteredTabs, whitelistedTabProperties);
+        filteredTabs = filterArrayObjects(filteredTabs, whitelistedTabProperties);
 
-        // Shared between the callbacks
-        var total = filteredTabs.length;
+        let favIconUrlsToFetch = new Set();
 
-        var sendTabsIfComplete = function() {
-            if (--total > 0) {
+        // Collect a set of fav icons to be requested
+        filteredTabs.forEach((tab) => {
+            const url = tab.favIconUrl;
+            if (!url) {
                 return;
+            }
+
+            // Already a data URL
+            if (url.match(/^data:image/)) {
+                return;
+            }
+
+            // Already in cache
+            if (favIconDataForUrl[url]) {
+                return;
+            }
+
+            favIconUrlsToFetch.add(url);
+        });
+
+        // Prepare the download requests for all fav icons
+        let requests = [];
+        favIconUrlsToFetch.forEach((url) => {
+            requests.push(new Promise((resolve) => {
+                // Send a request to fill the cache (=no timeout)
+                let xhrForCache = new XMLHttpRequest();
+                xhrForCache.open("GET", url);
+                xhrForCache.send();
+
+                // Try to fetch from (hopefully) the cache (100ms timeout)
+                let xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState !== XMLHttpRequest.DONE) {
+                        return;
+                    }
+
+                    if (!xhr.response) {
+                        return resolve();
+                    }
+
+                    var reader = new FileReader();
+                    reader.onloadend = function() {
+                        favIconDataForUrl[url] = reader.result;
+                        return resolve();
+                    }
+                    reader.readAsDataURL(xhr.response);
+                };
+                xhr.open('GET', url);
+                xhr.responseType = 'blob';
+                xhr.timeout = 100;
+                xhr.send();
+            }));
+        });
+
+        // Download all favicons and send them out
+        Promise.all(requests).then(() => {
+            filteredTabs = filteredTabs.map((tab) => {
+                const favIconUrl = tab.favIconUrl;
+                if (!favIconUrl) {
+                    return tab;
+                }
+
+                if (favIconUrl.match(/^data:image/)) {
+                    tab.favIconData = favIconUrl;
+                    return tab
+                }
+
+                const data = favIconDataForUrl[favIconUrl];
+                if (data) {
+                    tab.favIconData = data;
+                }
+                return tab;
+            });
+
+            --runningGetTabsQueries;
+            if (runningGetTabsQueries === 0) {
+                clearFavIconDataTimeoutId = setTimeout(() => {
+                    favIconDataForUrl = {};
+                    clearFavIconDataTimeoutId = 0;
+                }, 60000);
             }
 
             port.postMessage({
@@ -73,50 +161,6 @@ addCallback("tabsrunner", "getTabs", function (message) {
                 event: "gotTabs",
                 tabs: filteredTabs
             });
-        };
-
-        for (let tabIndex in filteredTabs) {
-            let currentIndex = tabIndex; // Not shared
-            var favIconUrl = filteredTabs[tabIndex].favIconUrl;
-
-            if (!favIconUrl) {
-                sendTabsIfComplete();
-            } else if (favIconUrl.match(/^data:image/)) {
-                // Already a data URL
-                filteredTabs[currentIndex].favIconData = favIconUrl;
-                filteredTabs[currentIndex].favIconUrl = "";
-                sendTabsIfComplete();
-            } else {
-                // Send a request to fill the cache (=no timeout)
-                let xhrForCache = new XMLHttpRequest();
-                xhrForCache.open("GET", favIconUrl);
-                xhrForCache.send();
-
-                // Try to fetch from (hopefully) the cache (100ms timeout)
-                let xhr = new XMLHttpRequest();
-                xhr.onreadystatechange = function() {
-                    if (xhr.readyState != 4) {
-                        return;
-                    }
-
-                    if (!xhr.response) {
-                        filteredTabs[currentIndex].favIconData = "";
-                        sendTabsIfComplete();
-                        return;
-                    }
-
-                    var reader = new FileReader();
-                    reader.onloadend = function() {
-                        filteredTabs[currentIndex].favIconData = reader.result;
-                        sendTabsIfComplete();
-                    }
-                    reader.readAsDataURL(xhr.response);
-                };
-                xhr.open('GET', favIconUrl);
-                xhr.responseType = 'blob';
-                xhr.timeout = 100;
-                xhr.send();
-            }
-        }
+        });
     });
 });
