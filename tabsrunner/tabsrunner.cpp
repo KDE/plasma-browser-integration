@@ -70,6 +70,7 @@ void TabsRunner::match(Plasma::RunnerContext &context)
             continue;
         }
 
+        // FIXME use new desktop entry property
         QString browser = m_serviceToBrowser.value(service);
         if (browser.isEmpty()) { // now ask what browser we're dealing with
             // FIXME can we use our dbus xml for this?

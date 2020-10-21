@@ -27,9 +27,11 @@
 
 #include <QGuiApplication>
 #include <QDBusConnection>
+#include <QFile>
 #include <QProcess>
 
 #include <KProcessList>
+#include <KService>
 
 #include "pluginmanager.h"
 #include "settingsadaptor.h"
@@ -97,6 +99,22 @@ Settings::Settings()
     new SettingsAdaptor(this);
     QDBusConnection::sessionBus().registerObject(QStringLiteral("/Settings"), this);
 
+    const QString desktopName = desktopNameFromCGroup();
+    if (!desktopName.isEmpty()) {
+        KService::Ptr service = KService::serviceByDesktopName(desktopName);
+        if (service) {
+            // Possibly launched from terminal
+            if (!service->categories().contains(QLatin1String("WebBrowser"))) {
+                qDebug() << "The desktop entry associated with our cgroup" << desktopName << "does not have the 'WebBrowser' category";
+                return;
+            }
+
+            qApp->setApplicationName(service->menuId());
+            qApp->setApplicationDisplayName(service->name());
+            qApp->setDesktopFileName(desktopName);
+            // FIXME what about organization domain and name, do we even need this?
+        }
+    }
 }
 
 Settings &Settings::self()
@@ -138,6 +156,8 @@ void Settings::handleData(const QString &event, const QJsonObject &data)
     } else if (event == QLatin1String("openKRunnerSettings")) {
         QProcess::startDetached(QStringLiteral("kcmshell5"), {QStringLiteral("kcm_plasmasearch")});
     } else if (event == QLatin1String("setEnvironment")) {
+        // FIXME prefer cgroup but keep this for compatibility
+        return;
         QString name = data[QStringLiteral("browserName")].toString();
 
         // Most chromium-based browsers just impersonate Chromium nowadays to keep websites from locking them out
@@ -205,4 +225,53 @@ bool Settings::pluginEnabled(const QString &subsystem) const
 QJsonObject Settings::settingsForPlugin(const QString &subsystem) const
 {
     return m_settings.value(subsystem).toObject();
+}
+
+QString Settings::desktopNameFromCGroup()
+{
+    QFile cgroupFile(QStringLiteral("/proc/self/cgroup"));
+    if (!cgroupFile.open(QIODevice::ReadOnly)) {
+        return {};
+    }
+
+    QRegularExpression regExp(QStringLiteral(R"(^\d+\:.*?\:\/user\.slice\/.*?app\.slice\/app\-(.*?)\-.*?\.scope$)"));
+    regExp.setPatternOptions(QRegularExpression::MultilineOption);
+
+    // Can't do incremental read (readLine() while !atEnd()) with /proc
+    const auto contentString = QString::fromUtf8(cgroupFile.readAll());
+
+    const auto matches = regExp.match(contentString);
+
+    if (!matches.hasMatch()) {
+        return {};
+    }
+
+    QString desktopName = matches.captured(1);
+
+    // Unescape special characters, e.g. turn \x2d back into a dash
+    const QRegularExpression unescapeRegExp(QStringLiteral(R"(\\x([0-9a-fA-F]{1,2}))"));
+
+    int offset = 0;
+    auto escapedMatches = unescapeRegExp.globalMatch(desktopName);
+    while (escapedMatches.hasNext()) {
+        const QRegularExpressionMatch match = escapedMatches.next();
+
+        bool ok = false;
+        const QString charCode = match.captured(1);
+        QLatin1Char c(charCode.toUInt(&ok, 16));
+        if (!ok) {
+            qWarning() << "failed to convert" << match.captured(0) << "to char in" << desktopName;
+            continue;
+        }
+
+        // TODO can all of this be done more cleverly?
+        // For example, JS has a replace(regexp, function substition)
+        // which is super handy for this kind of stuff
+        desktopName.replace(match.capturedStart(0) - offset, match.capturedLength(0), c);
+
+        // As we replace characters we need to take into account the shifting of subsequent items
+        offset += (match.capturedLength(0) - 1);
+    }
+
+    return desktopName;
 }

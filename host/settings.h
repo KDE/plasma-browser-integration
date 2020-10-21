@@ -44,6 +44,7 @@ class Settings : public AbstractBrowserPlugin
 {
     Q_OBJECT
 
+    // TODO rename "Identity" to match mpris and return desktop name?
     Q_PROPERTY(QString Environment READ environmentString)
 
 public:
@@ -76,6 +77,8 @@ Q_SIGNALS:
 private:
     Settings();
     ~Settings() override = default;
+
+    static QString desktopNameFromCGroup();
 
     static const QMap<Environment, QString> environmentNames;
     static const QMap<Environment, EnvironmentDescription> environmentDescriptions;
