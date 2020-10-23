@@ -28,7 +28,6 @@
 #include <QDBusObjectPath>
 #include <QGuiApplication>
 #include <QImageReader>
-#include <QTimer>
 
 #include "mprisroot.h"
 #include "mprisplayer.h"

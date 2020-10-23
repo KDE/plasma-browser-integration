@@ -24,7 +24,6 @@
 #include <QDBusArgument>
 #include <QDBusConnection>
 #include <QDBusConnectionInterface>
-#include <QDBusMessage>
 
 #include <KLocalizedString>
 

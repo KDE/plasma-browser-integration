@@ -24,7 +24,6 @@
 #include "downloadplugin.h"
 
 #include "connection.h"
-#include "downloadjob.h"
 
 #include <KIO/JobTracker>
 #include <KJobTrackerInterface>

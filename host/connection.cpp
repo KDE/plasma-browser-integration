@@ -24,7 +24,6 @@
 #include "connection.h"
 #include <QCoreApplication>
 #include <QJsonDocument>
-#include <QJsonObject>
 #include <QSocketNotifier>
 
 #include <QDebug>
