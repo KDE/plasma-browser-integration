@@ -9,7 +9,7 @@
         "message": "Integración del restolador con Plasma"
     },
     "general_error_host_disconnected_title": {
-        "message": "L'agospiu nativu desconeutóse inesperadamente."
+        "message": "L'agospiu nativu desconectóse inesperadamente."
     },
     "general_error_not_supported_os": {
         "message": "Esta estensión namás se sofita en GNU/Linux y FreeBSD."
@@ -30,7 +30,7 @@
         "message": "Unknown Error"
     },
     "kdeconnect_call_device": {
-        "message": "Abrir en «$1»"
+        "message": "Llamar per «$1»"
     },
     "kdeconnect_open_device": {
         "message": "Abrir en «$1»"
