@@ -144,7 +144,7 @@
         "message": "Nun pudo compartise esti conteníu: $1"
     },
     "purpose_share_failed_title": {
-        "message": "Falló la compartición"
+        "message": "La compartición falló"
     },
     "purpose_share_finished_text": {
         "message": "L'enllaz del conteníu compartíu ($1) copióse al cartafueyu."
