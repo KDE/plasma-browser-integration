@@ -60,7 +60,7 @@
         "message": "Versión del agospiu: $1"
     },
     "options_about_kde": {
-        "message": "KDE ye una comunidá global d'inxenieros de software, artistes, escritores, traductores, creadores que tán comprometíos col desendolcu de <a href=\"$1\">software llibre</a> y una empresa coperativa (nenguna entidá contola la direición o productos de so). Somos los creadores del entornu d'escritoriu Plasma, cientos d'aplicaciones y munches biblioteques de software que les sofiten, amás preferimos trabayar xuntos p'algamar la meta común de facer el meyor software llibre del mundu. Dámos-yos l'acoyida a toles persones que quieran <a href=\"$2\">xunise y collaborar</a> en KDE incluyéndote a ti. Visita <a href=\"$3\">$3</a> pa más información tocante a la comunidá de KDE y el software que producimos."
+        "message": "KDE ye una comunidá global d'inxenieros de software, artistes, escritores, traductores, creadores que tán comprometíos col desendolcu de <a href=\"$1\">software llibre</a> y una empresa cooperativa (nenguna entidá controla la direición o productos de so). Somos los creadores del entornu d'escritoriu Plasma, cientos d'aplicaciones y munches biblioteques de software que les sofiten, amás preferimos trabayar xuntos p'algamar la meta común de facer el meyor software llibre del mundu. Dámos-yos l'acoyida a toles persones que quieran <a href=\"$2\">xunise y collaborar</a> en KDE incluyéndote a ti. Visita <a href=\"$3\">$3</a> pa más información tocante a la comunidá de KDE y el software que producimos."
     },
     "options_about_license": {
         "message": "Llicencia: <a href=\"$1\">Llicencia pública y xeneral de GNU versión 3</a>"
@@ -81,7 +81,7 @@
         "message": "Barres de desplazamientu col estilu Breeze"
     },
     "options_plugin_downloads_addToRecentDocuments": {
-        "message": "Amestar los ficheros baxaos a los documentos de recién"
+        "message": "Amestar los ficheros baxaos a los documentos d'apocayá"
     },
     "options_plugin_downloads_saveOriginUrl": {
         "message": "Guardar la URL dende la que se baxen los ficheros nos sos atributos"
