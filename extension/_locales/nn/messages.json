@@ -54,7 +54,7 @@
         "message": "Vertsversjon: $1"
     },
     "options_about_kde": {
-        "message": "KDE er eit verdsfemnande fellesskap av eldsjeler som programmerar, teiknar, komponerer, dokumenterer, set om eller hjelper til på andre måtar med utvikling av <a href=\"$1\">fri programvare</a>. Me har laga brukarflata Plasma, hundrevis av program og dei mange programbiblioteka desse byggjer på. KDE er eit fellesskap der inga einskild gruppe, firma eller organisasjon har eigarskap til produkta eller styrer retninga den vidare utviklinga skal gå i. Derimot arbeider me saman å oppnå vårt felles mål om å laga fri programvare i verdsklasse. Alle er <a href=\"$2\">velkomne til å bidra</a> – du òg. Du finn meir informasjon om KDE og programma me utviklar på <a href=\"$3\">$3</a>."
+        "message": "KDE er eit verdsfemnande fellesskap av eldsjeler som programmerar, teiknar, komponerer, dokumenterer, set om eller hjelper til på andre måtar med utvikling av <a href=\"$1\">fri programvare</a>. Me har laga brukarflata Plasma, hundrevis av program og dei mange programbiblioteka desse byggjer på. KDE er eit fellesskap der inga einskild gruppe, firma eller organisasjon har eigarskap til produkta eller styrer retninga den vidare utviklinga skal gå i. Derimot arbeider me saman om å oppnå vårt felles mål om å laga fri programvare i verdsklasse. Alle er <a href=\"$2\">velkomne til å bidra</a> – du òg. Du finn meir informasjon om KDE og programma me utviklar på <a href=\"$3\">$3</a>."
     },
     "options_about_license": {
         "message": "Lisens: <a href=\"$1\">GNU General Public License versjon 3</a>"
