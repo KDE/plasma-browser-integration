@@ -9,7 +9,7 @@
         "message": "Integración del restolador con Plasma"
     },
     "general_error_host_disconnected_title": {
-        "message": "L'agospiu nativu desconectóse inesperadamente."
+        "message": "L'agospiu nativu desconeutóse inesperadamente."
     },
     "general_error_not_supported_os": {
         "message": "Esta estensión namás se sofita en GNU/Linux y FreeBSD."
@@ -21,7 +21,7 @@
         "message": "Asegúrate de que'l paquete «plasma-browser-integration» ta instaláu correutamente y tas executando Plasma 5.13 o mayor."
     },
     "general_error_startup_failed_title": {
-        "message": "Fallu al conectar col agospiu nativu."
+        "message": "Fallu al coneutar col agospiu nativu."
     },
     "general_error_startup_failed_wiki_link": {
         "message": "Visita la páxina wiki del proyeutu pa más información"
