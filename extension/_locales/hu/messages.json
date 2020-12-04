@@ -30,7 +30,7 @@
         "message": "Ismeretlen hiba"
     },
     "kdeconnect_call_device": {
-        "message": "Megnyitás ezen: „$1”"
+        "message": "Hívás ezen: „$1”"
     },
     "kdeconnect_open_device": {
         "message": "Megnyitás ezen: „$1”"
@@ -45,7 +45,7 @@
         "message": "View Changelog"
     },
     "options_about_copyright": {
-        "message": "© Kai Uwe Broulik és David Edmundson, 2017-2019."
+        "message": "© Kai Uwe Broulik és David Edmundson, 2017-2020."
     },
     "options_about_created_by_kde": {
         "message": "Ezt a bőngészőkiegészítőt a <a href=\"$1\">KDE Community</a> készítette. További információkat a projektről a <a href=\"$2\">KDE Community Wikiben</a> találhat."
