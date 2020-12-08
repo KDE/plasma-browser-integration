@@ -30,7 +30,7 @@
         "message": "Ismeretlen hiba"
     },
     "kdeconnect_call_device": {
-        "message": "Megnyitás ezen: „$1”"
+        "message": "Hívás ezen: „$1”"
     },
     "kdeconnect_open_device": {
         "message": "Megnyitás ezen: „$1”"
@@ -42,10 +42,10 @@
         "message": "Ha problémát észlel, ellenőrizze a <a href=\"$1\">nyitott hibák listáját</a>, majd <a href=\"$2\">küldjön hibajelentést</a>."
     },
     "options_about_changelog_link": {
-        "message": "View Changelog"
+        "message": "Váltózásnapló megjelenítése"
     },
     "options_about_copyright": {
-        "message": "© Kai Uwe Broulik és David Edmundson, 2017-2019."
+        "message": "© Kai Uwe Broulik és David Edmundson, 2017-2020."
     },
     "options_about_created_by_kde": {
         "message": "Ezt a bőngészőkiegészítőt a <a href=\"$1\">KDE Community</a> készítette. További információkat a projektről a <a href=\"$2\">KDE Community Wikiben</a> találhat."
@@ -75,82 +75,82 @@
         "message": "Ez a kiterjesztés nem támogatott ezen az operációs rendszeren."
     },
     "options_plugin_breezeScrollBars_description": {
-        "message": "This may interfere with the appearance of websites that already apply a custom styling to their scroll bars."
+        "message": "Ez ütközhet olyan weboldalak megjelenésével, amik egyéni stílust alkalmaznak a görgetősávjaikra."
     },
     "options_plugin_breezeScrollBars_title": {
-        "message": "Use Breeze-style scroll bars"
+        "message": "Breeze stílusú görgetősávok használata"
     },
     "options_plugin_downloads_addToRecentDocuments": {
-        "message": "Add downloaded files to recent documents"
+        "message": "Letöltött fájlok hozzáadása a legutóbbi dokumentumokhoz"
     },
     "options_plugin_downloads_saveOriginUrl": {
-        "message": "Save URL a file was downloaded from in the file's attributes"
+        "message": "A fájl letöltési helye URL-címének mentése a fájl attribútumai közé"
     },
     "options_plugin_downloads_saveOriginUrl_description": {
-        "message": "Note: The URL may contain sensitive information that could be disclosed when the file is accessible by or shared with others"
+        "message": "Megjegyzés: az URL-cím bizalmas adatokat tartalmazhat, amik nyilvánossá válhatnak, ha a fájlhoz mások is hozzáférnek, vagy meg van osztva másokkal"
     },
     "options_plugin_downloads_title": {
-        "message": "Show downloads in notification area"
+        "message": "Letöltések megjelenítése az értesítési területen"
     },
     "options_plugin_kdeconnect_description": {
-        "message": "Adds a context menu entry to links enabling you to send them to your phone and other paired devices using <a href=\"$1\">KDE Connect</a>."
+        "message": "Hozzáad egy bejegyzést a linkekhez a helyi menüben, amely lehetővé teszi azok küldését a telefonjára vagy más, a <a href=\"$1\">KDE Connecttel</a> párosított eszközre."
     },
     "options_plugin_kdeconnect_title": {
-        "message": "Send via KDE Connect"
+        "message": "Küldés a KDE Connecttel"
     },
     "options_plugin_mpris_description": {
-        "message": "Lets you control video and audio players in websites using the Media Controller plasmoid."
+        "message": "Lehetővé teszi a weboldalak video- és hanglejátszóinak irányításár a Médiavezérlő plasmoiddal."
     },
     "options_plugin_mpris_media_sessions_description": {
-        "message": "Extract metadata and thumbnails of currently playing content."
+        "message": "Kigyűjti az éppen lejátszott tartalom metaadatait és bélyegképeit."
     },
     "options_plugin_mpris_media_sessions_title": {
-        "message": "Enhanced Media Controls"
+        "message": "Speciális médiavezérlők"
     },
     "options_plugin_mpris_title": {
-        "message": "Media Controls"
+        "message": "Médiavezérlők"
     },
     "options_plugin_purpose_description": {
-        "message": "Adds a \"Share...\" context menu entry and allows websites to open a dialog for sharing contents using the Web Share API."
+        "message": "Hozzáad egy „Megosztás…” gombot a helyi menühöz, amely lehetővé teszi a weboldalaknak egy párbeszédablak megnyitását tartalmak megosztásához a Web Share API-val."
     },
     "options_plugin_purpose_title": {
-        "message": "Content Sharing"
+        "message": "Tartalommegosztás"
     },
     "options_plugin_tabsrunner_description": {
-        "message": "Make sure the “Browser Tabs” module is enabled in <a id=\"$1\" href=\"$2\">Plasma Search settings</a>."
+        "message": "Ellenőrizze, hogy a „Böngészőfülek” modul be van kapcsolva a <a id=\"$1\\ href=\"$2\">Plasma Search beállításaiban</a>."
     },
     "options_plugin_tabsrunner_title": {
-        "message": "Find browser tabs in “Run Command” window"
+        "message": "Böngészőfülek keresése a „Parancsindító” ablakban"
     },
     "options_save_failed": {
-        "message": "Saving settings failed"
+        "message": "A beállítások mentése meghiúsult"
     },
     "options_save_success": {
-        "message": "Settings successfully saved"
+        "message": "A beállítások sikeresen mentve"
     },
     "options_tab_about": {
-        "message": "About"
+        "message": "Névjegy"
     },
     "options_tab_general": {
-        "message": "General"
+        "message": "Általános"
     },
     "options_title": {
-        "message": "Plasma Integration Settings"
+        "message": "Plasma-integrációs beállítások"
     },
     "purpose_share": {
-        "message": "Share..."
+        "message": "Megosztás…"
     },
     "purpose_share_failed_text": {
-        "message": "Could not share this content: $1"
+        "message": "Nem lehet megosztani ezt a tartalmat: $1"
     },
     "purpose_share_failed_title": {
-        "message": "Sharing Failed"
+        "message": "Sikertelen megosztás"
     },
     "purpose_share_finished_text": {
-        "message": "The shared content link ($1) has been copied to the clipboard."
+        "message": "A megosztott tartalomhivatkozás ($1) a vágólapra került."
     },
     "purpose_share_finished_title": {
-        "message": "Content Shared"
+        "message": "Tartalom megosztva"
     },
     "store_description": {
         "message": "Multitask efficiently by controlling browser functions from the desktop, even while Chrome is in the background. Manage audio and video playback, check downloads in the notification area, send files to your phone using KDE Connect and more inside the KDE Plasma Desktop!\\n\\nThe plasma-browser-integration package must be installed for this extension to work. It should be available from your distribution's package manager when running Plasma 5.13 or later.\\n\\nNOTE: This extension is not supported on Debian."
