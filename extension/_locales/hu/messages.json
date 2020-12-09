@@ -117,7 +117,7 @@
         "message": "Tartalommegosztás"
     },
     "options_plugin_tabsrunner_description": {
-        "message": "Ellenőrizze, hogy a „Böngészőfülek” modul be van kapcsolva a <a id=\"$1\\ href=\"$2\">Plasma Search beállításaiban</a>."
+        "message": "Ellenőrizze, hogy a „Böngészőfülek” modul be van kapcsolva a <a id=\"$1\" href=\"$2\">Plasma Search beállításaiban</a>."
     },
     "options_plugin_tabsrunner_title": {
         "message": "Böngészőfülek keresése a „Parancsindító” ablakban"
