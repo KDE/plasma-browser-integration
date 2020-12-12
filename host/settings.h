@@ -33,6 +33,7 @@ struct EnvironmentDescription {
     QString desktopFileName;
     QString organizationDomain;
     QString organizationName;
+    QString iconName;
 };
 
 /*
@@ -65,7 +66,7 @@ public:
 
     Environment environment() const;
     QString environmentString() const; // dbus
-    // TODO should we have additional getters like browserName(), browserDesktopEntry(), etc?
+    EnvironmentDescription environmentDescription() const;
 
     bool pluginEnabled(const QString &subsystem) const;
     QJsonObject settingsForPlugin(const QString &subsystem) const;

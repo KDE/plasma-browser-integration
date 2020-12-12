@@ -51,28 +51,32 @@ const QMap<Settings::Environment, EnvironmentDescription> Settings::environmentD
         QStringLiteral("Google Chrome"),
         QStringLiteral("google-chrome"),
         QStringLiteral("google.com"),
-        QStringLiteral("Google")
+        QStringLiteral("Google"),
+        QStringLiteral("google-chrome")
     } },
     {Settings::Environment::Chromium, {
         QStringLiteral("chromium-browser"),
         QStringLiteral("Chromium"),
         QStringLiteral("chromium-browser"),
         QStringLiteral("google.com"),
-        QStringLiteral("Google")
+        QStringLiteral("Google"),
+        QStringLiteral("chromium-browser")
     } },
     {Settings::Environment::Firefox, {
         QStringLiteral("firefox"),
         QStringLiteral("Mozilla Firefox"),
         QStringLiteral("firefox"),
         QStringLiteral("mozilla.org"),
-        QStringLiteral("Mozilla")
+        QStringLiteral("Mozilla"),
+        QStringLiteral("firefox")
     } },
     {Settings::Environment::Opera, {
         QStringLiteral("opera"),
         QStringLiteral("Opera"),
         QStringLiteral("opera"),
         QStringLiteral("opera.com"),
-        QStringLiteral("Opera")
+        QStringLiteral("Opera"),
+        QStringLiteral("opera")
     } },
     {Settings::Environment::Vivaldi, {
         QStringLiteral("vivaldi"),
@@ -80,14 +84,16 @@ const QMap<Settings::Environment, EnvironmentDescription> Settings::environmentD
         // This is what the official package on their website uses
         QStringLiteral("vivaldi-stable"),
         QStringLiteral("vivaldi.com"),
-        QStringLiteral("Vivaldi")
+        QStringLiteral("Vivaldi"),
+        QStringLiteral("vivaldi")
     } },
     {Settings::Environment::Brave, {
         QStringLiteral("Brave"),
         QStringLiteral("Brave"),
         QStringLiteral("brave-browser"),
         QStringLiteral("brave.com"),
-        QStringLiteral("Brave")
+        QStringLiteral("Brave"),
+        QStringLiteral("brave")
     } }
 };
 
@@ -195,6 +201,11 @@ Settings::Environment Settings::environment() const
 QString Settings::environmentString() const
 {
     return Settings::environmentNames.value(m_environment);
+}
+
+EnvironmentDescription Settings::environmentDescription() const
+{
+    return m_currentEnvironment;
 }
 
 bool Settings::pluginEnabled(const QString &subsystem) const
