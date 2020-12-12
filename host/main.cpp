@@ -35,6 +35,7 @@
 #include "kdeconnectplugin.h"
 #include "downloadplugin.h"
 #include "tabsrunnerplugin.h"
+#include "historyrunnerplugin.h"
 #include "mprisplugin.h"
 #include "purposeplugin.h"
 
@@ -83,6 +84,7 @@ int main(int argc, char *argv[])
     PluginManager::self().addPlugin(new KDEConnectPlugin(&a));
     PluginManager::self().addPlugin(new DownloadPlugin(&a));
     PluginManager::self().addPlugin(new TabsRunnerPlugin(&a));
+    PluginManager::self().addPlugin(new HistoryRunnerPlugin(&a));
     PluginManager::self().addPlugin(new MPrisPlugin(&a));
     PluginManager::self().addPlugin(new PurposePlugin(&a));
 

@@ -30,6 +30,7 @@
         "extension-downloads.js",
         "extension-tabsrunner.js",
         "extension-purpose.js",
+        "extension-historyrunner.js",
 
         "extension.js"
     ],
@@ -81,6 +82,11 @@
     "<all_urls>",
     "contextMenus"
   ],
+
+  "optional_permissions": [
+    "history"
+  ],
+
     "applications": {
     "gecko": {
       "id": "plasma-browser-integration@kde.org",

@@ -78,10 +78,19 @@
             <p data-i18n="options_plugin_downloads_saveOriginUrl_description" data-i18n-html="true">I18N</p>
         </li>
         <li>
+            <label data-i18n="options_heading_krunner">I18N</label>
+        </li>
+        <li class="dependent">
             <label>
                 <input type="checkbox" data-extension="tabsrunner" data-settings-key="enabled"> <span data-i18n="options_plugin_tabsrunner_title">I18N</span>
             </label>
             <p data-i18n="options_plugin_tabsrunner_description, open-krunner-settings, #" data-i18n-html="true">I18N</p>
+        </li>
+        <li class="dependent" data-requires-extension="historyrunner">
+            <label>
+                <input type="checkbox" data-extension="historyrunner" data-settings-key="enabled"> <span data-i18n="options_plugin_historyrunner_title">I18N</span>
+            </label>
+            <p data-i18n="options_plugin_historyrunner_description, request-permission-history, #" data-i18n-html="true">I18N</p>
         </li>
         <li data-requires-extension="purpose">
             <label>

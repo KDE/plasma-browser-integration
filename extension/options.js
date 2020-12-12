@@ -151,6 +151,16 @@ function updateDependencies(control, extension, settingsKey) {
     }
 }
 
+function askPermission(permission) {
+    return new Promise((resolve, reject) => {
+        chrome.permissions.request({
+            permissions: [permission]
+        }, (result) => {
+            resolve(result);
+        });
+    });
+}
+
 document.addEventListener("DOMContentLoaded", function () {
 
     // poor man's tab widget :)
@@ -249,6 +259,21 @@ versionInfo.host);
     document.getElementById("open-krunner-settings").addEventListener("click", function (event) {
         sendMessage("settings", "openKRunnerSettings");
         event.preventDefault();
+    });
+
+    document.getElementById("request-permission-history").addEventListener("click", (e) => {
+        askPermission("history");
+        e.preventDefault();
+    });
+
+    // When trying to enable historyrunner check if user accepted the permission
+    const historyRunnerCheckBox = document.querySelector("[data-extension=historyrunner][data-settings-key=enabled]");
+    historyRunnerCheckBox.addEventListener("click", (e) => {
+        if (historyRunnerCheckBox.checked) {
+            askPermission("history").then((granted) => {
+                historyRunnerCheckBox.checked = granted;
+            });
+        }
     });
 
     // Make translators credit behave like the one in KAboutData

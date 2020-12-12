@@ -1,0 +1,22 @@
+[Desktop Entry]
+# ctxt: plasma runner
+Name=Browser History
+Comment=Search the browser history for visited websites
+X-KDE-ServiceTypes=Plasma/Runner
+Type=Service
+# TODO better icon
+Icon=preferences-web-browser-cookies
+X-KDE-PluginInfo-Author=Kai Uwe Broulik
+X-KDE-PluginInfo-Email=kde@broulik.de
+X-KDE-PluginInfo-Name=browserhistory
+X-KDE-PluginInfo-Version=1.0
+X-KDE-PluginInfo-License=GPL
+X-KDE-PluginInfo-EnabledByDefault=true
+X-Plasma-AdvertiseSingleRunnerQueryMode=true
+X-Plasma-API=DBus
+X-Plasma-DBusRunner-Service=org.kde.plasma.browser_integration*
+X-Plasma-DBusRunner-Path=/HistoryRunner
+X-Plasma-Request-Actions-Once=true
+X-Plasma-Runner-Min-Letter-Count=3
+X-Plasma-Runner-Syntaxes=:q:,
+X-Plasma-Runner-Syntax-Descriptions=Finds websites in the browser history whose title or URL match :q:
