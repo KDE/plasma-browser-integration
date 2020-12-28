@@ -84,6 +84,11 @@
         "message": "Note: The URL may contain sensitive information that could be disclosed when the file is accessible by or shared with others"
     },
 
+    "options_heading_krunner": {
+        "description": "Title for settings about KRunner plugins",
+        "message": "Plasma Search"
+    },
+
     "options_plugin_tabsrunner_title": {
         "description": "Title for Browser Tabs KRunner plugin",
         "message": "Find browser tabs in “Run Command” window"
@@ -91,6 +96,15 @@
     "options_plugin_tabsrunner_description": {
         "description": "Description for Browser Tabs KRunner plugin",
         "message": "Make sure the “Browser Tabs” module is enabled in <a id=\"$1\" href=\"$2\">Plasma Search settings</a>."
+    },
+
+    "options_plugin_historyrunner_title": {
+        "description": "Title for Browser History KRunner plugin",
+        "message": "Search through browser history"
+    },
+    "options_plugin_historyrunner_description": {
+        "description": "Description for Browser History KRunner plugin",
+        "message": "This feature might need <a id=\"$1\" href=\"$2\">additional permissions</a> to be used."
     },
 
     "options_plugin_purpose_title": {
@@ -183,6 +197,30 @@
     "purpose_share_failed_text": {
         "description": "Text of share failed notification",
         "message": "Could not share this content: $1"
+    },
+
+    "permission_request_title": {
+        "description": "Title for page about requesting additional permissions",
+        "message": "Additional permissions required"
+    },
+    "permission_request_historyrunner_1": {
+        "description": "Explanation for why additional permissions are needed",
+        "message": "In order to provide search results for your browser history, additional permissions are required."
+    },
+    "permission_request_historyrunner_2": {
+        "description": "Explanation about disabling history runner",
+        "message": "You can disable this feature in <a id=\"$1\" href=\"$2\">Plasma search settings</a>."
+    },
+    "permission_request_already": {
+        "message": "You have already granted this permission."
+    },
+    "permission_request_button_request": {
+        "description": "@action:button",
+        "message": "Request Permission"
+    },
+    "permission_request_button_revoke": {
+        "description": "@action:button",
+        "message": "Revoke Permission"
     },
 
     "general_error_unknown": {

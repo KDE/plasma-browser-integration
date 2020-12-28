@@ -12,6 +12,7 @@ set(HOST_SOURCES main.cpp
                 kdeconnectplugin.cpp
                 downloadplugin.cpp
                 downloadjob.cpp
+                historyrunnerplugin.cpp
                 tabsrunnerplugin.cpp
                 purposeplugin.cpp
                 )
@@ -41,3 +42,5 @@ target_link_libraries(
 )
 
 install(TARGETS plasma-browser-integration-host ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
+
+install(FILES plasma-runner-browserhistory.desktop DESTINATION ${KDE_INSTALL_DATAROOTDIR}/krunner/dbusplugins)

@@ -35,6 +35,9 @@ DEFAULT_EXTENSION_SETTINGS = {
     tabsrunner: {
         enabled: true
     },
+    historyrunner: {
+        enabled: true
+    },
     purpose: {
         enabled: true
     },
