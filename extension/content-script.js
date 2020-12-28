@@ -337,6 +337,24 @@ function setPlayerActive(player) {
     pendingActivePlayer = undefined;
     activePlayer = player;
 
+    // Try if the browser mirrored its Media Session into the content script context.
+    // Our custom implementation added below will not be but the browser's built-in one
+    // might if adding ours failed.
+    let metadata = playerMetadata;
+    const mediaSessionMetadata = navigator.mediaSession && navigator.mediaSession.metadata;
+    if (mediaSessionMetadata) {
+        // MediaMetadata isn't a regular Object
+        const keys = Object.getOwnPropertyNames(Object.getPrototypeOf(mediaSessionMetadata));
+
+        keys.forEach((key) => {
+            const value = mediaSessionMetadata[key];
+            if (!value || typeof value === "function") {
+                return; // continue
+            }
+            metadata[key] = value;
+        });
+    }
+
     // when playback starts, send along metadata
     // a website might have set Media Sessions metadata prior to playing
     // and then we would have ignored the metadata signal because there was no player
@@ -350,7 +368,7 @@ function setPlayerActive(player) {
         volume: player.volume,
         muted: player.muted,
         loop: player.loop,
-        metadata: playerMetadata,
+        metadata: metadata,
         callbacks: playerCallbacks,
         fullscreen: document.fullscreenElement !== null,
         canSetFullscreen: player.tagName.toLowerCase() === "video"
