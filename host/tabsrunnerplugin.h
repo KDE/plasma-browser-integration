@@ -23,29 +23,27 @@
 
 #pragma once
 
-#include "abstractbrowserplugin.h"
+#include "abstractkrunnerplugin.h"
 
-#include <QDBusContext>
 #include <QDBusMessage>
+#include <QMultiHash>
 
-class TabsRunnerPlugin : public AbstractBrowserPlugin, protected QDBusContext
+class TabsRunnerPlugin : public AbstractKRunnerPlugin
 {
     Q_OBJECT
 
 public:
     explicit TabsRunnerPlugin(QObject *parent);
-    bool onLoad() override;
-    bool onUnload() override;
 
     using AbstractBrowserPlugin::handleData;
     void handleData(const QString &event, const QJsonObject &data) override;
 
-    // dbus-exported
-    QList<QHash<QString, QVariant>> GetTabs();
-    void Activate(int tabId);
-    void SetMuted(int tabId, bool muted);
+    // DBus API
+    RemoteActions Actions() override;
+    RemoteMatches Match(const QString &searchTerm) override;
+    void Run(const QString &id, const QString &actionId) override;
 
 private:
-    QVector<QDBusMessage> m_tabRequestMessages;
+    QMultiHash<QString, QDBusMessage> m_requests;
 
 };

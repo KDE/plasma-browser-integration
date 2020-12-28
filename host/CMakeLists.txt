@@ -17,7 +17,6 @@ set(HOST_SOURCES main.cpp
                 purposeplugin.cpp
                 )
 
-qt5_add_dbus_adaptor(HOST_SOURCES ../dbus/org.kde.plasma.browser_integration.TabsRunner.xml tabsrunnerplugin.h TabsRunnerPlugin)
 qt5_add_dbus_adaptor(HOST_SOURCES ../dbus/org.kde.plasma.browser_integration.Settings.xml settings.h Settings)
 
 qt5_add_dbus_adaptor(HOST_SOURCES ../dbus/org.mpris.MediaPlayer2.xml mprisplugin.h MPrisPlugin mprisroot MPrisRoot)
@@ -43,4 +42,5 @@ target_link_libraries(
 
 install(TARGETS plasma-browser-integration-host ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
+install(FILES plasma-runner-browsertabs.desktop DESTINATION ${KDE_INSTALL_DATAROOTDIR}/krunner/dbusplugins)
 install(FILES plasma-runner-browserhistory.desktop DESTINATION ${KDE_INSTALL_DATAROOTDIR}/krunner/dbusplugins)

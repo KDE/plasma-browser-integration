@@ -56,7 +56,6 @@ set(MOZILLA_DIR "${CMAKE_INSTALL_PREFIX}/lib/mozilla" CACHE STRING "Mozilla dire
 add_feature_info(MOZILLA_DIR On "Mozilla directory is '${MOZILLA_DIR}'")
 
 add_subdirectory(host)
-add_subdirectory(tabsrunner)
 add_subdirectory(reminder)
 
 if(NOT DEFINED CHROME_EXTENSION_ID)
