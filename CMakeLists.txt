@@ -64,6 +64,10 @@ if(NOT DEFINED CHROME_EXTENSION_ID)
     set(CHROME_EXTENSION_ID "cimiefiiaegbelhefglklhhakcgmhkai")
 endif()
 
+if(NOT DEFINED EDGE_EXTENSION_ID)
+    set(EDGE_EXTENSION_ID "dnnckbejblnejeabhcmhklcaljjpdjeh")
+endif()
+
 # TODO configure manifest.json
 
 configure_file(org.kde.plasma.chrome_integration.json.in org.kde.plasma.chrome_integration.json @ONLY)
