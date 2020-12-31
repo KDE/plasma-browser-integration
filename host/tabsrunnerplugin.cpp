@@ -32,6 +32,7 @@
 #include <QJsonObject>
 #include <QVariant>
 
+#include <KApplicationTrader>
 #include <KLocalizedString>
 
 #include "settings.h"
@@ -143,7 +144,7 @@ void TabsRunnerPlugin::handleData(const QString& event, const QJsonObject& json)
                 } else {
                     match.type = Plasma::QueryMatch::PossibleMatch;
 
-                    if (text.contains(query, Qt::CaseInsensitive)) {
+                    if (KApplicationTrader::isSubsequence(query, text, Qt::CaseInsensitive)) {
                         relevance = 0.9;
                         if (text.startsWith(query, Qt::CaseInsensitive)) {
                             relevance += 0.1;
