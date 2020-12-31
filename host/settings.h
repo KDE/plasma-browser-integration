@@ -36,6 +36,11 @@ struct EnvironmentDescription {
     QString iconName;
 };
 
+namespace TaskManager
+{
+class WindowTasksModel;
+}
+
 /*
  * This class manages the extension's settings (so that settings in the browser
  * propagate to our extension) and also detects the environment the host is run
@@ -44,8 +49,6 @@ struct EnvironmentDescription {
 class Settings : public AbstractBrowserPlugin
 {
     Q_OBJECT
-
-    Q_PROPERTY(QString Environment READ environmentString)
 
 public:
     static Settings &self();
@@ -65,7 +68,7 @@ public:
     QJsonObject handleData(int serial, const QString &event, const QJsonObject &data) override;
 
     Environment environment() const;
-    QString environmentString() const; // dbus
+    // TODO remove and migrate runners to use qApp->windowIcon().name()
     EnvironmentDescription environmentDescription() const;
 
     bool pluginEnabled(const QString &subsystem) const;
@@ -78,6 +81,9 @@ private:
     Settings();
     ~Settings() override = default;
 
+    bool setEnvironmentFromTasksModelIndex(const QModelIndex &idx);
+    void setEnvironmentFromExtensionMessage(const QJsonObject &data);
+
     static const QMap<Environment, QString> environmentNames;
     static const QMap<Environment, EnvironmentDescription> environmentDescriptions;
 
@@ -85,5 +91,7 @@ private:
     EnvironmentDescription m_currentEnvironment;
 
     QJsonObject m_settings;
+
+    TaskManager::WindowTasksModel *m_tasksModel;
 
 };

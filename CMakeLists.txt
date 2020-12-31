@@ -36,6 +36,8 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
     FileMetaData
 )
 
+find_package(LibTaskManager ${PROJECT_VERSION} CONFIG REQUIRED)
+
 add_definitions(-DQT_NO_NARROWING_CONVERSIONS_IN_CONNECT)
 #add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x060000)
 

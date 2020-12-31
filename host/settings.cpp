@@ -25,14 +25,19 @@
 
 #include <unistd.h> // getppid
 
-#include <QGuiApplication>
 #include <QDBusConnection>
+#include <QGuiApplication>
+#include <QIcon>
 #include <QProcess>
 
+#include <KDesktopFile>
 #include <KProcessList>
+#include <KService>
+
+#include <taskmanager/abstracttasksmodel.h>
+#include <taskmanager/windowtasksmodel.h>
 
 #include "pluginmanager.h"
-#include "settingsadaptor.h"
 
 #include <config-host.h>
 
@@ -99,10 +104,48 @@ const QMap<Settings::Environment, EnvironmentDescription> Settings::environmentD
 
 Settings::Settings()
     : AbstractBrowserPlugin(QStringLiteral("settings"), 1, nullptr)
+    , m_tasksModel(new TaskManager::WindowTasksModel(this))
 {
-    new SettingsAdaptor(this);
-    QDBusConnection::sessionBus().registerObject(QStringLiteral("/Settings"), this);
 
+    for (int i = 0; i < m_tasksModel->rowCount(); ++i) {
+        if (setEnvironmentFromTasksModelIndex(m_tasksModel->index(i, 0))) {
+            break;
+        }
+    }
+
+    // If we didn't find the browser window yet, monitor the model for changes
+    if (qApp->desktopFileName().isEmpty()) {
+        connect(m_tasksModel, &TaskManager::WindowTasksModel::rowsInserted, this, [this](const QModelIndex &parent, int first, int last) {
+            if (parent.isValid()) {
+                return;
+            }
+
+            for (int i = first; i <= last; ++i) {
+                if (setEnvironmentFromTasksModelIndex(m_tasksModel->index(i, 0))) {
+                    break;
+                }
+            }
+        });
+        connect(m_tasksModel, &TaskManager::WindowTasksModel::dataChanged, this, [this](const QModelIndex &topLeft, const QModelIndex &bottomRight, const QVector<int> &roles) {
+            // TODO should we bother checking this, even?
+            if (topLeft.parent().isValid() || bottomRight.parent().isValid()
+                    || topLeft.column() != 0 || bottomRight.column() != 0) {
+                return;
+            }
+
+            if (!roles.isEmpty()
+                    && !roles.contains(TaskManager::AbstractTasksModel::LauncherUrlWithoutIcon)
+                    && !roles.contains(TaskManager::AbstractTasksModel::AppId)) {
+                return;
+            }
+
+            for (int i = topLeft.row(); i <= bottomRight.row(); ++i) {
+                if (setEnvironmentFromTasksModelIndex(m_tasksModel->index(i, 0))) {
+                    break;
+                }
+            }
+        });
+    }
 }
 
 Settings &Settings::self()
@@ -144,25 +187,76 @@ void Settings::handleData(const QString &event, const QJsonObject &data)
     } else if (event == QLatin1String("openKRunnerSettings")) {
         QProcess::startDetached(QStringLiteral("kcmshell5"), {QStringLiteral("kcm_plasmasearch")});
     } else if (event == QLatin1String("setEnvironment")) {
-        QString name = data[QStringLiteral("browserName")].toString();
+        setEnvironmentFromExtensionMessage(data);
+    }
+}
 
-        // Most chromium-based browsers just impersonate Chromium nowadays to keep websites from locking them out
-        // so we'll need to make an educated guess from our parent process
-        if (name == QLatin1String("chromium") || name == QLatin1String("chrome")) {
-            const auto processInfo = KProcessList::processInfo(getppid());
-            if (processInfo.name().contains(QLatin1String("vivaldi"))) {
-                name = QStringLiteral("vivaldi");
-            } else if (processInfo.name().contains(QLatin1String("brave"))) {
-                name = QStringLiteral("brave");
-            }
+bool Settings::setEnvironmentFromTasksModelIndex(const QModelIndex &idx)
+{
+    bool ok = false;
+    const auto pid = idx.data(TaskManager::AbstractTasksModel::AppPid).toLongLong(&ok);
+    if (!ok || pid != getppid()) {
+        return false;
+    }
+
+    const QUrl launcherUrl = idx.data(TaskManager::AbstractTasksModel::LauncherUrlWithoutIcon).toUrl();
+    if (!launcherUrl.isValid()) {
+        return false;
+    }
+
+    KService::Ptr service;
+    if (launcherUrl.scheme() == QLatin1String("applications")) {
+        service = KService::serviceByMenuId(launcherUrl.path());
+    } else if (launcherUrl.isLocalFile()) {
+        const QString launcherPath = launcherUrl.toLocalFile();
+        if (KDesktopFile::isDesktopFile(launcherPath)) {
+            service = KService::serviceByDesktopPath(launcherUrl.toLocalFile());
         }
+    } else {
+        qWarning() << "Got unrecognized launcher URL" << launcherUrl;
+        return false;
+    }
 
-        m_environment = Settings::environmentNames.key(name, Settings::Environment::Unknown);
-        m_currentEnvironment = Settings::environmentDescriptions.value(m_environment);
+    if (!service) {
+        qWarning() << "Failed to get service from launcher URL" << launcherUrl;
+        return false;
+    }
 
+    qApp->setApplicationName(service->menuId());
+    qApp->setApplicationDisplayName(service->name());
+    qApp->setDesktopFileName(service->desktopEntryName());
+    qApp->setWindowIcon(QIcon::fromTheme(service->icon()));
+
+    disconnect(m_tasksModel, nullptr, this, nullptr);
+
+    return true;
+
+}
+
+void Settings::setEnvironmentFromExtensionMessage(const QJsonObject &data)
+{
+    QString name = data.value(QStringLiteral("browserName")).toString();
+
+    // Most chromium-based browsers just impersonate Chromium nowadays to keep websites from locking them out
+    // so we'll need to make an educated guess from our parent process
+    if (name == QLatin1String("chromium") || name == QLatin1String("chrome")) {
+        const auto processInfo = KProcessList::processInfo(getppid());
+        if (processInfo.name().contains(QLatin1String("vivaldi"))) {
+            name = QStringLiteral("vivaldi");
+        } else if (processInfo.name().contains(QLatin1String("brave"))) {
+            name = QStringLiteral("brave");
+        }
+    }
+
+    m_environment = Settings::environmentNames.key(name, Settings::Environment::Unknown);
+    m_currentEnvironment = Settings::environmentDescriptions.value(m_environment);
+
+    if (qApp->desktopFileName().isEmpty()) {
         qApp->setApplicationName(m_currentEnvironment.applicationName);
         qApp->setApplicationDisplayName(m_currentEnvironment.applicationDisplayName);
         qApp->setDesktopFileName(m_currentEnvironment.desktopFileName);
+        qApp->setWindowIcon(QIcon::fromTheme(m_currentEnvironment.iconName));
+        // TODO remove?
         qApp->setOrganizationDomain(m_currentEnvironment.organizationDomain);
         qApp->setOrganizationName(m_currentEnvironment.organizationName);
     }
@@ -196,11 +290,6 @@ QJsonObject Settings::handleData(int serial, const QString &event, const QJsonOb
 Settings::Environment Settings::environment() const
 {
     return m_environment;
-}
-
-QString Settings::environmentString() const
-{
-    return Settings::environmentNames.value(m_environment);
 }
 
 EnvironmentDescription Settings::environmentDescription() const

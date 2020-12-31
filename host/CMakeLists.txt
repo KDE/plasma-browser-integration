@@ -17,8 +17,6 @@ set(HOST_SOURCES main.cpp
                 purposeplugin.cpp
                 )
 
-qt5_add_dbus_adaptor(HOST_SOURCES ../dbus/org.kde.plasma.browser_integration.Settings.xml settings.h Settings)
-
 qt5_add_dbus_adaptor(HOST_SOURCES ../dbus/org.mpris.MediaPlayer2.xml mprisplugin.h MPrisPlugin mprisroot MPrisRoot)
 qt5_add_dbus_adaptor(HOST_SOURCES ../dbus/org.mpris.MediaPlayer2.Player.xml mprisplugin.h MPrisPlugin mprisplayer MPrisPlayer)
 
@@ -38,6 +36,7 @@ target_link_libraries(
     KF5::PurposeWidgets
     KF5::Runner
     KF5::FileMetaData
+    PW::LibTaskManager
 )
 
 install(TARGETS plasma-browser-integration-host ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
