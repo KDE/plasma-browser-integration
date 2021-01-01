@@ -290,4 +290,12 @@ versionInfo.host);
     } else {
         translatorsAboutDataItem.style.display = "none";
     }
+
+    // Chrome at some point started not properly opening links on the options page
+    // Force external links to open in a new tab
+    document.querySelectorAll("a[href^=http]").forEach((link) => {
+        if (!link.target) {
+            link.target = "_blank";
+        }
+    });
 });
