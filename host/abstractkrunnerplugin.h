@@ -34,6 +34,7 @@ protected:
                           int protocolVersion,
                           QObject *parent);
 
+    static QImage imageFromDataUrl(const QString &dataUrl);
     static RemoteImage serializeImage(const QImage &image);
 
 public:

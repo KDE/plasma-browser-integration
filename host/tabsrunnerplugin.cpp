@@ -187,20 +187,10 @@ void TabsRunnerPlugin::handleData(const QString& event, const QJsonObject& json)
                 } else {
                     match.iconName = Settings::self().environmentDescription().iconName;
 
-                    const QString favIconData = tab.value(QStringLiteral("favIconData")).toString();
-                    if (favIconData.startsWith(QLatin1String("data:"))) {
-                        const int b64start = favIconData.indexOf(QLatin1Char(','));
-                        if (b64start != -1) {
-                            QByteArray b64 = favIconData.rightRef(favIconData.count() - b64start - 1).toLatin1();
-                            QByteArray data = QByteArray::fromBase64(b64);
-                            QImage image;
-                            if (image.loadFromData(data)) {
-                                const RemoteImage remoteImage = serializeImage(image);
-                                match.properties.insert(QStringLiteral("icon-data"), QVariant::fromValue(remoteImage));
-                            } else {
-                                qWarning() << "Failed to load favicon image for" << match.id << match.text;
-                            }
-                        }
+                    const QImage favIcon = imageFromDataUrl(tab.value(QStringLiteral("favIconData")).toString());
+                    if (!favIcon.isNull()) {
+                        const RemoteImage remoteImage = serializeImage(favIcon);
+                        match.properties.insert(QStringLiteral("icon-data"), QVariant::fromValue(remoteImage));
                     }
                 }
 

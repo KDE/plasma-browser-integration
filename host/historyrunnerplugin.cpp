@@ -165,19 +165,10 @@ void HistoryRunnerPlugin::handleData(const QString& event, const QJsonObject& js
                 urlWithoutPassword.setPassword({});
                 match.properties.insert(QStringLiteral("urls"), QUrl::toStringList(QList<QUrl>{urlWithoutPassword}));
 
-                if (favIconUrl.startsWith(QLatin1String("data:"))) {
-                    const int b64start = favIconUrl.indexOf(QLatin1Char(','));
-                    if (b64start != -1) {
-                        QByteArray b64 = favIconUrl.rightRef(favIconUrl.count() - b64start - 1).toLatin1();
-                        QByteArray data = QByteArray::fromBase64(b64);
-                        QImage image;
-                        if (image.loadFromData(data)) {
-                            const RemoteImage remoteImage = serializeImage(image);
-                            match.properties.insert(QStringLiteral("icon-data"), QVariant::fromValue(remoteImage));
-                        } else {
-                            qWarning() << "Failed to load favicon image for" << match.id << match.text;
-                        }
-                    }
+                const QImage favIcon = imageFromDataUrl(favIconUrl);
+                if (!favIcon.isNull()) {
+                    const RemoteImage remoteImage = serializeImage(favIcon);
+                    match.properties.insert(QStringLiteral("icon-data"), QVariant::fromValue(remoteImage));
                 }
 
                 qreal relevance = 0;
