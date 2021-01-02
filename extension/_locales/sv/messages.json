@@ -71,6 +71,9 @@
     "options_about_translators": {
         "message": "Stefan Asserhäll"
     },
+    "options_heading_krunner": {
+        "message": "Plasma Search"
+    },
     "options_not_supported_os": {
         "message": "Utökningen stöds inte på det här operativsystemet."
     },
@@ -91,6 +94,12 @@
     },
     "options_plugin_downloads_title": {
         "message": "Visa nerladdningar i underrättelseområdet"
+    },
+    "options_plugin_historyrunner_description": {
+        "message": "This feature might need <a id=\"$1\" href=\"$2\">additional permissions</a> to be used."
+    },
+    "options_plugin_historyrunner_title": {
+        "message": "Search through browser history"
     },
     "options_plugin_kdeconnect_description": {
         "message": "Lägger till ett sammanhangsberoende menyalternativ till länkar, vilket gör det möjligt att skicka dem till en telefon eller andra ihopparade enheter genom att använda <a href=\"$1\">KDE:s anslutningstjänst</a>."
@@ -136,6 +145,24 @@
     },
     "options_title": {
         "message": "Plasma integreringsinställningar"
+    },
+    "permission_request_already": {
+        "message": "You have already granted this permission."
+    },
+    "permission_request_button_request": {
+        "message": "Request Permission"
+    },
+    "permission_request_button_revoke": {
+        "message": "Revoke Permission"
+    },
+    "permission_request_historyrunner_1": {
+        "message": "In order to provide search results for your browser history, additional permissions are required."
+    },
+    "permission_request_historyrunner_2": {
+        "message": "You can disable this feature in <a id=\"$1\" href=\"$2\">Plasma search settings</a>."
+    },
+    "permission_request_title": {
+        "message": "Additional permissions required"
     },
     "purpose_share": {
         "message": "Dela..."

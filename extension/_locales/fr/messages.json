@@ -71,6 +71,9 @@
     "options_about_translators": {
         "message": "Simon Depiets"
     },
+    "options_heading_krunner": {
+        "message": "Plasma Search"
+    },
     "options_not_supported_os": {
         "message": "Cette extension n'est pas prise en charge sur ce système d'exploitation."
     },
@@ -91,6 +94,12 @@
     },
     "options_plugin_downloads_title": {
         "message": "Afficher les téléchargements dans la zone de notification"
+    },
+    "options_plugin_historyrunner_description": {
+        "message": "This feature might need <a id=\"$1\" href=\"$2\">additional permissions</a> to be used."
+    },
+    "options_plugin_historyrunner_title": {
+        "message": "Search through browser history"
     },
     "options_plugin_kdeconnect_description": {
         "message": "Ajoute un élément aux menus contextuels des liens vous permettant de les envoyer vers votre téléphone ou autre appareil associé utilisant <a href=\"$1\">KDE Connect</a>."
@@ -136,6 +145,24 @@
     },
     "options_title": {
         "message": "Paramètres d'intégration à Plasma"
+    },
+    "permission_request_already": {
+        "message": "You have already granted this permission."
+    },
+    "permission_request_button_request": {
+        "message": "Request Permission"
+    },
+    "permission_request_button_revoke": {
+        "message": "Revoke Permission"
+    },
+    "permission_request_historyrunner_1": {
+        "message": "In order to provide search results for your browser history, additional permissions are required."
+    },
+    "permission_request_historyrunner_2": {
+        "message": "You can disable this feature in <a id=\"$1\" href=\"$2\">Plasma search settings</a>."
+    },
+    "permission_request_title": {
+        "message": "Additional permissions required"
     },
     "purpose_share": {
         "message": "Partager…"
