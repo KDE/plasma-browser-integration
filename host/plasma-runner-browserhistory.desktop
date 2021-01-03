@@ -1,7 +1,23 @@
 [Desktop Entry]
 # ctxt: plasma runner
 Name=Browser History
+Name[ca]=Historial del navegador
+Name[es]=Historial del navegador
+Name[hu]=Böngészési előzmények
+Name[nl]=Browsergeschiedenis
+Name[pt]=Histórico do Navegador
+Name[sv]=Webbläsarhistorik
+Name[uk]=Журнал навігатора
+Name[x-test]=xxBrowser Historyxx
 Comment=Search the browser history for visited websites
+Comment[ca]=Cerca llocs web visitats a l'historial del navegador
+Comment[es]=Buscar sitios web visitados en el historial del navegador
+Comment[hu]=Meglátogatott weboldalak keresése a böngészési előzményekben
+Comment[nl]=De browsergeschiedenis doorzoeken naar bezochte websites
+Comment[pt]=Pesquisar no histórico do navegador pelas páginas Web visitadas
+Comment[sv]=Sök igenom webbläsarhistoriken efter besökta webbplatser
+Comment[uk]=Пошук у журналі перегляду інтернету щодо відвіданих сайтів
+Comment[x-test]=xxSearch the browser history for visited websitesxx
 X-KDE-ServiceTypes=Plasma/Runner
 Type=Service
 # TODO better icon
