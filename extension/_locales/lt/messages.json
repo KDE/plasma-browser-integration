@@ -159,7 +159,7 @@
         "message": "In order to provide search results for your browser history, additional permissions are required."
     },
     "permission_request_historyrunner_2": {
-        "message": "You can disable this feature in <a id=\"$1\" href=\"$2\">Plasma search settings</a>."
+        "message": "Įsitikinkite, kad <a id=\"$1\" href=\"$2\">Plasma paieškos nuostatose</a> yra įjungtas \"Naršyklės kortelių\" modulis."
     },
     "permission_request_title": {
         "message": "Additional permissions required"

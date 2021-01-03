@@ -72,7 +72,7 @@
         "message": "Юрій Чорноіван"
     },
     "options_heading_krunner": {
-        "message": "Plasma Search"
+        "message": "Пошук у Плазмі"
     },
     "options_not_supported_os": {
         "message": "Підтримки цього розширення у цій операційній системі не передбачено."
@@ -96,10 +96,10 @@
         "message": "Показувати отримання даних у області сповіщення"
     },
     "options_plugin_historyrunner_description": {
-        "message": "This feature might need <a id=\"$1\" href=\"$2\">additional permissions</a> to be used."
+        "message": "Для користування цією можливістю можуть знадобитися <a id=\"$1\" href=\"$2\\>додаткові права доступу</a>."
     },
     "options_plugin_historyrunner_title": {
-        "message": "Search through browser history"
+        "message": "Пошук у журналі переглядача Тенет"
     },
     "options_plugin_kdeconnect_description": {
         "message": "Додати до контекстного меню пункт для посилань, який уможливить надсилання посилань на телефон або інший з'єднаний пристрій за допомогою <a href=\"$1\">KDE Connect</a>."
@@ -147,22 +147,22 @@
         "message": "Параметри інтеграції Плазми"
     },
     "permission_request_already": {
-        "message": "You have already granted this permission."
+        "message": "Вами вже надано такі права доступу."
     },
     "permission_request_button_request": {
-        "message": "Request Permission"
+        "message": "Надіслати запит щодо прав доступу"
     },
     "permission_request_button_revoke": {
-        "message": "Revoke Permission"
+        "message": "Відкликати права доступу"
     },
     "permission_request_historyrunner_1": {
-        "message": "In order to provide search results for your browser history, additional permissions are required."
+        "message": "Для надання результатів пошуку з журналу вашої програми для перегляду інтернету потрібні додаткові права доступу."
     },
     "permission_request_historyrunner_2": {
-        "message": "You can disable this feature in <a id=\"$1\" href=\"$2\">Plasma search settings</a>."
+        "message": "Ви можете вимкнути цю можливість у <a id=\"$1\" href=\"$2\">параметрах пошуку Плазми</a>."
     },
     "permission_request_title": {
-        "message": "Additional permissions required"
+        "message": "Потрібні додаткові права доступу"
     },
     "purpose_share": {
         "message": "Оприлюднити…"

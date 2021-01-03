@@ -72,7 +72,7 @@
         "message": "Freek de Kruijf"
     },
     "options_heading_krunner": {
-        "message": "Plasma Search"
+        "message": "Plasma zoeken"
     },
     "options_not_supported_os": {
         "message": "Deze extensie wordt niet ondersteund op dit besturingssysteem."
@@ -96,10 +96,10 @@
         "message": "Downloads tonen in gebied voor meldingen"
     },
     "options_plugin_historyrunner_description": {
-        "message": "This feature might need <a id=\"$1\" href=\"$2\">additional permissions</a> to be used."
+        "message": "Deze functie heeft misschien <a id=\"$1\" href=\"$2\">extra rechten</a> nodig om gebruikt te worden."
     },
     "options_plugin_historyrunner_title": {
-        "message": "Search through browser history"
+        "message": "In browsergeschiedenis zoeken"
     },
     "options_plugin_kdeconnect_description": {
         "message": "Voegt een item contextmenu toe aan koppelingen waarmee u ze kunt verzenden naar uw telefoon en andere gepaarde apparaten met gebruik van <a href=\"$1\">KDE Connect</a>."
@@ -147,22 +147,22 @@
         "message": "Plasma-integratie-instellingen"
     },
     "permission_request_already": {
-        "message": "You have already granted this permission."
+        "message": "U hebt dit recht al toegekend."
     },
     "permission_request_button_request": {
-        "message": "Request Permission"
+        "message": "Om toegangsrecht vragen"
     },
     "permission_request_button_revoke": {
-        "message": "Revoke Permission"
+        "message": "Toegangsrecht ingetrokken"
     },
     "permission_request_historyrunner_1": {
-        "message": "In order to provide search results for your browser history, additional permissions are required."
+        "message": "Om zoekresultaten voor uw browsergeschiedenis te leveren zijn extra toegestaan vereist."
     },
     "permission_request_historyrunner_2": {
-        "message": "You can disable this feature in <a id=\"$1\" href=\"$2\">Plasma search settings</a>."
+        "message": "U kunt deze functie in <a id=\"$1\" href=\"$2\">Plasma-zoekinstellingen</a> uitschakelen."
     },
     "permission_request_title": {
-        "message": "Additional permissions required"
+        "message": "Extra toegangsrechten vereist"
     },
     "purpose_share": {
         "message": "Delen..."
