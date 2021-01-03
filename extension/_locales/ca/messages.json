@@ -159,7 +159,7 @@
         "message": "Per tal de proporcionar els resultats de la cerca per a l'historial del navegador, es requereixen permisos addicionals."
     },
     "permission_request_historyrunner_2": {
-        "message": "Podeu inhabilitar aquesta funcionalitat a l'<a id=\"$1\" href=\"$2\\>arranjament de la Cerca del Plasma</a>."
+        "message": "Podeu inhabilitar aquesta funcionalitat a l'<a id=\"$1\" href=\"$2\">arranjament de la Cerca del Plasma</a>."
     },
     "permission_request_title": {
         "message": "Es requereixen permisos addicionals"
@@ -180,6 +180,6 @@
         "message": "Contingut compartit"
     },
     "store_description": {
-        "message": "Fa eficient la multitasca controlant les funcions del navegador des de l'escriptori, encara que el Chrome estigui en segon pla. Gestiona la reproducció de l'àudio i el vídeo, marca les baixades a l'àrea de notificacions, envia fitxers al telèfon usant el KDE Connect i encara més dins l'escriptori Plasma del KDE!\\n\\nCal instal·lar el paquet «plasma-browser-integration» perquè funcioni aquesta extensió. Hauria d'estar disponible al gestor de paquets de la vostra distribució en executar el Plasma 5.13 o posterior.\\n\\nNOTA: Aquesta extensió no està implementada a la Debian."
+        "message": "Multitask efficiently by controlling browser functions from the desktop, even while Chrome is in the background. Manage audio and video playback, check downloads in the notification area, send files to your phone using KDE Connect and more inside the KDE Plasma Desktop!\\n\\nThe plasma-browser-integration package must be installed for this extension to work. It should be available from your distribution's package manager when running Plasma 5.13 or later.\\n\\nNOTE: This extension is not supported on Debian."
     }
 }

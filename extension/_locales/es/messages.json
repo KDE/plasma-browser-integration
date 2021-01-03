@@ -159,7 +159,7 @@
         "message": "Se necesitan permisos adicionales para proporcionar resultados de búsqueda del historial del navegador."
     },
     "permission_request_historyrunner_2": {
-        "message": "Puede desactivar esta funcionalidad en las <a id=\"$1\" href=\"$2\\>preferencias de la búsqueda de Plasma</a>."
+        "message": "Puede desactivar esta funcionalidad en las <a id=\"$1\" href=\"$2\">preferencias de la búsqueda de Plasma</a>."
     },
     "permission_request_title": {
         "message": "Se necesitan permisos adicionales"

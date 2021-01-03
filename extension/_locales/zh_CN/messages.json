@@ -159,7 +159,7 @@
         "message": "In order to provide search results for your browser history, additional permissions are required."
     },
     "permission_request_historyrunner_2": {
-        "message": "请确保在<a id=\"$1\" href=\"$2\">Plasma 搜索设置</a>中启用了“浏览器标签”模块。"
+        "message": "You can disable this feature in <a id=\"$1\" href=\"$2\">Plasma search settings</a>."
     },
     "permission_request_title": {
         "message": "Additional permissions required"

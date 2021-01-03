@@ -72,7 +72,7 @@
         "message": "Matjaž Jeran"
     },
     "options_heading_krunner": {
-        "message": "Plasma Search"
+        "message": "Plasma iskanje"
     },
     "options_not_supported_os": {
         "message": "Ta razširitev ni podprta na tem operacijskem sistemu."
@@ -96,10 +96,10 @@
         "message": "Pokaži prenose v področju z obvestili"
     },
     "options_plugin_historyrunner_description": {
-        "message": "This feature might need <a id=\"$1\" href=\"$2\">additional permissions</a> to be used."
+        "message": "Ta možnost morda potrebuje uporabo <a id=\"$1\" href=\"$2\"> dodatnih pravic."
     },
     "options_plugin_historyrunner_title": {
-        "message": "Search through browser history"
+        "message": "Iskanje prek zgodovine brskanja"
     },
     "options_plugin_kdeconnect_description": {
         "message": "Doda povezavo v kontekstni meni povezavam, ki vam omogočajo, da jih pošljete v telefon in druge seznanjene naprave z uporabo <a href=\"$1\">KDE Connect</a>."
@@ -147,22 +147,22 @@
         "message": "Nastavitve integracije s Plasmo"
     },
     "permission_request_already": {
-        "message": "You have already granted this permission."
+        "message": "To dovoljenje ste že podelili."
     },
     "permission_request_button_request": {
-        "message": "Request Permission"
+        "message": "Zahtevaj dovoljenje"
     },
     "permission_request_button_revoke": {
-        "message": "Revoke Permission"
+        "message": "Prekliči dovoljenje"
     },
     "permission_request_historyrunner_1": {
-        "message": "In order to provide search results for your browser history, additional permissions are required."
+        "message": "Da bi lahko dobavili rezultate iskanja vaše zgodovine brskanja so potrebna dodatna dovoljenja."
     },
     "permission_request_historyrunner_2": {
-        "message": "Zagotovite, da je omogočen modul \"Zavihek brskalnika\" v <a id=\"$1\" href=\"$2\">nastavitvah iskanja v Plasmi</a>."
+        "message": "To možnost lahko onemogočite v <a id=\"$1\" href=\"$2\">Plasma nastavitvah iskanja</a>."
     },
     "permission_request_title": {
-        "message": "Additional permissions required"
+        "message": "Zahtevana do dodatna dovoljenja"
     },
     "purpose_share": {
         "message": "Deli..."

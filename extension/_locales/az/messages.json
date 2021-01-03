@@ -72,7 +72,7 @@
         "message": "Xəyyam Qocayev"
     },
     "options_heading_krunner": {
-        "message": "Plasma Search"
+        "message": "Plasma axtarışı"
     },
     "options_not_supported_os": {
         "message": "Bu genişlənmə bu əməliyyat sistemində dəstəklənmir."
@@ -96,10 +96,10 @@
         "message": "Yükləmələrə bildiriş sahəsində baxmaq"
     },
     "options_plugin_historyrunner_description": {
-        "message": "This feature might need <a id=\"$1\" href=\"$2\">additional permissions</a> to be used."
+        "message": "Bu imkanı istifadə etmək üçün <a id=\"$1\" href=\"$2\">əlavə icazələrə</a>ehtiyac ola bilər."
     },
     "options_plugin_historyrunner_title": {
-        "message": "Search through browser history"
+        "message": "Veb bələdçi tarixçəsində axtarmaq"
     },
     "options_plugin_kdeconnect_description": {
         "message": "Kontekst menyuya, keçidləri <a href=\"$1\">KDE Connect</a> vasitəsi ilə smartfona və ya digər qoşulmuş cihazlara göndərməyə imkan verən sətir əlavə etmək."
@@ -147,22 +147,22 @@
         "message": "Plasma İnteqrasiyası Ayarları"
     },
     "permission_request_already": {
-        "message": "You have already granted this permission."
+        "message": "Siz artıq bu icazəni vermisiniz"
     },
     "permission_request_button_request": {
-        "message": "Request Permission"
+        "message": "İcazə tələb etmək"
     },
     "permission_request_button_revoke": {
-        "message": "Revoke Permission"
+        "message": "İcazəni ləğv etmək"
     },
     "permission_request_historyrunner_1": {
-        "message": "In order to provide search results for your browser history, additional permissions are required."
+        "message": "Veb bələdçi tarixçəsi üçün axtarış vasitələrini təmin etmək üçün əlavə icazələr tələb olunur."
     },
     "permission_request_historyrunner_2": {
-        "message": "\"Bələdçi Vərəqləri\" modulunun <a id=\"$1\" href=\"$2\">Plasma Axtarış ayarları</a>nda aktiv olduğuna əmin olun."
+        "message": "Bu imkanı <a id=\"$1\" href=\"$2\"> Plasma axtarış ayarları</a>nda söndürə bilərsiniz."
     },
     "permission_request_title": {
-        "message": "Additional permissions required"
+        "message": "Əlavə icazələr tələb etmək"
     },
     "purpose_share": {
         "message": "Paylaşmaq..."
