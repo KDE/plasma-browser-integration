@@ -145,9 +145,12 @@ void TabsRunnerPlugin::handleData(const QString& event, const QJsonObject& json)
                     match.type = Plasma::QueryMatch::PossibleMatch;
 
                     if (KApplicationTrader::isSubsequence(query, text, Qt::CaseInsensitive)) {
-                        relevance = 0.9;
-                        if (text.startsWith(query, Qt::CaseInsensitive)) {
-                            relevance += 0.1;
+                        relevance = 0.85;
+                        if (text.contains(query, Qt::CaseInsensitive)) {
+                            relevance += 0.05;
+                            if (text.startsWith(query, Qt::CaseInsensitive)) {
+                                relevance += 0.05;
+                            }
                         }
                     } else if (url.host().contains(query, Qt::CaseInsensitive)) {
                         relevance = 0.7;
