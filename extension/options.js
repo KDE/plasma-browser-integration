@@ -151,6 +151,16 @@ function updateDependencies(control, extension, settingsKey) {
     }
 }
 
+function hasPermission(permission) {
+    return new Promise((resolve, reject) => {
+        chrome.permissions.contains({
+            permissions: [permission]
+        }, (result) => {
+            resolve(result);
+        });
+    });
+}
+
 function askPermission(permission) {
     return new Promise((resolve, reject) => {
         chrome.permissions.request({
@@ -262,7 +272,15 @@ versionInfo.host);
     });
 
     document.getElementById("request-permission-history").addEventListener("click", (e) => {
-        askPermission("history");
+        hasPermission("history").then((granted) => {
+            if (granted) {
+                document.getElementById("historyrunner-description").innerText = chrome.i18n.getMessage("permission_request_already");
+                return;
+            }
+
+            return askPermission("history");
+        });
+
         e.preventDefault();
     });
 
