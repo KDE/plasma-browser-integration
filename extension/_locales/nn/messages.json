@@ -87,7 +87,7 @@
         "message": "Vis nedlastingar i varslingsområde"
     },
     "options_plugin_kdeconnect_description": {
-        "message": "Legg til ein høgreklikksmeny for lenkjer som gjer det mogleg å senda dei til telefonen din og andre einingar som brukar <a href=\"$1\">KDE Connect</a>."
+        "message": "Legg til ein høgreklikks­meny for lenkjer som gjer det mogleg å senda dei til telefonen din og andre einingar som brukar <a href=\"$1\">KDE Connect</a>."
     },
     "options_plugin_kdeconnect_title": {
         "message": "Send via KDE Connect"
