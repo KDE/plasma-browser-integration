@@ -21,6 +21,13 @@ currentGroup = {}
 currentId = ""
 currentMsg = ""
 
+def cleanupMessage(msg):
+    # strip wrapping "'s
+    msg = msg[1:-1]
+    # unescape quotes in the pot file
+    msg = msg.replace('\\\"', '\"')
+    return msg
+
 with open(potFileName, 'r') as infile:
     for line in infile.readlines():
         line = line.strip()
@@ -40,13 +47,9 @@ with open(potFileName, 'r') as infile:
             parts = line.split(' ', 1)
             if len(parts) != 2:
                 continue
-            msg = parts[1].strip('\"')
-            msg = msg.replace('\\\"', '\"')
-            currentMsg = msg
+            currentMsg = cleanupMessage(parts[1])
         else:
-            msg = line.strip('\"')
-            msg = msg.replace('\\\"', '\"')
-            currentMsg += msg
+            currentMsg += cleanupMessage(line)
 
 
 outTranslations = {}
