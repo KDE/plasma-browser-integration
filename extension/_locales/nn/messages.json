@@ -72,7 +72,7 @@
         "message": "Karl Ove Hufthammer"
     },
     "options_heading_krunner": {
-        "message": "Plasma Search"
+        "message": "Plasma-søk"
     },
     "options_not_supported_os": {
         "message": "Utvidinga er ikkje støtta på dette operativsystemet."
@@ -96,13 +96,13 @@
         "message": "Vis nedlastingar i varslingsområde"
     },
     "options_plugin_historyrunner_description": {
-        "message": "This feature might need <a id=\"$1\" href=\"$2\">additional permissions</a> to be used."
+        "message": "Denne funksjonen treng kanskje <a id=\"$1\" href=\"$2\">utvida løyve</a>."
     },
     "options_plugin_historyrunner_title": {
-        "message": "Search through browser history"
+        "message": "Søk i nettlesarloggen"
     },
     "options_plugin_kdeconnect_description": {
-        "message": "Legg til ein høgreklikksmeny for lenkjer som gjer det mogleg å senda dei til telefonen din og andre einingar som brukar <a href=\"$1\">KDE Connect</a>."
+        "message": "Legg til ein høgreklikks­meny for lenkjer som gjer det mogleg å senda dei til telefonen din og andre einingar som brukar <a href=\"$1\">KDE Connect</a>."
     },
     "options_plugin_kdeconnect_title": {
         "message": "Send via KDE Connect"
@@ -147,22 +147,22 @@
         "message": "Innstillingar for Plasma-integrering"
     },
     "permission_request_already": {
-        "message": "You have already granted this permission."
+        "message": "Du har alt gjeve dette løyvet."
     },
     "permission_request_button_request": {
-        "message": "Request Permission"
+        "message": "Be om løyve"
     },
     "permission_request_button_revoke": {
-        "message": "Revoke Permission"
+        "message": "Trekk tilbake løyve"
     },
     "permission_request_historyrunner_1": {
-        "message": "In order to provide search results for your browser history, additional permissions are required."
+        "message": "For å kunna gje søkjeresultat frå nettlesar­loggen treng programmet utvida løyve."
     },
     "permission_request_historyrunner_2": {
-        "message": "You can disable this feature in <a id=\"$1\" href=\"$2\">Plasma search settings</a>."
+        "message": "Du kan slå av denne funksjonen i <a id=\"$1\" href=\"$2\">søkje­innstillingane for Plasma</a>."
     },
     "permission_request_title": {
-        "message": "Additional permissions required"
+        "message": "Krev utvida løyve"
     },
     "purpose_share": {
         "message": "Del …"

@@ -30,7 +30,7 @@
         "message": "Unbekannter Fehler"
     },
     "kdeconnect_call_device": {
-        "message": "Anruf auf „$1“"
+        "message": "Anrufen auf „$1“"
     },
     "kdeconnect_open_device": {
         "message": "Auf „$1“ öffnen"
@@ -72,7 +72,7 @@
         "message": "Your names"
     },
     "options_heading_krunner": {
-        "message": "Plasma Search"
+        "message": "Plasma-Suche"
     },
     "options_not_supported_os": {
         "message": "Diese Erweiterung wird auf diesem Betriebssystem nicht unterstützt."
@@ -96,10 +96,10 @@
         "message": "Herunterladevorgänge im Benachrichtigungsbereich anzeigen"
     },
     "options_plugin_historyrunner_description": {
-        "message": "This feature might need <a id=\"$1\" href=\"$2\">additional permissions</a> to be used."
+        "message": "Diese Funktion benötigt möglicherweise <a id=\"$1\" href=\"$2\">zusätzliche Berechtigungen</a>, um verwendet werden zu können."
     },
     "options_plugin_historyrunner_title": {
-        "message": "Search through browser history"
+        "message": "Browserverlauf durchsuchen"
     },
     "options_plugin_kdeconnect_description": {
         "message": "Fügt einen Eintrag zu Verknüpfungen zum Kontextmenü hinzu, mit dem Sie die Verknüpfung zu Ihrem Smartphone oder zu anderen angeschlossenen Geräten mit <a href=\"$1\">KDE Connect</a> senden können."
@@ -147,22 +147,22 @@
         "message": "Einstellungen für Plasma-Integration"
     },
     "permission_request_already": {
-        "message": "You have already granted this permission."
+        "message": "Sie haben diese Berechtigung bereits erteilt."
     },
     "permission_request_button_request": {
-        "message": "Request Permission"
+        "message": "Berechtigung anfordern"
     },
     "permission_request_button_revoke": {
-        "message": "Revoke Permission"
+        "message": "Berechtigung widerrufen"
     },
     "permission_request_historyrunner_1": {
-        "message": "In order to provide search results for your browser history, additional permissions are required."
+        "message": "Um Suchergebnisse für Ihren Browserverlauf anzubieten, sind zusätzliche Berechtigungen erforderlich."
     },
     "permission_request_historyrunner_2": {
-        "message": "Überprüfen Sie ob das Modul „Browser-Unterfenster“ in den <a id=\"$1\" href=\"$2\">Plasma-Sucheinstellungen</a> aktiviert ist."
+        "message": "Sie können diese Funktion in den <a id=\"$1\" href=\"$2\\>Plasma-Sucheinstellungen</a> deaktivieren."
     },
     "permission_request_title": {
-        "message": "Additional permissions required"
+        "message": "Zusätzliche Berechtigungen erforderlich"
     },
     "purpose_share": {
         "message": "Teilen ..."
