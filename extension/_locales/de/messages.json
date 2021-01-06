@@ -159,7 +159,7 @@
         "message": "Um Suchergebnisse für Ihren Browserverlauf anzubieten, sind zusätzliche Berechtigungen erforderlich."
     },
     "permission_request_historyrunner_2": {
-        "message": "Sie können diese Funktion in den <a id=\"$1\" href=\"$2\\>Plasma-Sucheinstellungen</a> deaktivieren."
+        "message": "Sie können diese Funktion in den <a id=\"$1\" href=\"$2\">Plasma-Sucheinstellungen</a> deaktivieren."
     },
     "permission_request_title": {
         "message": "Zusätzliche Berechtigungen erforderlich"

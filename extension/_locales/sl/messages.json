@@ -129,7 +129,7 @@
         "message": "Zagotovite, da je omogočen modul \"Zavihek brskalnika\" v <a id=\"$1\" href=\"$2\">nastavitvah iskanja v Plasmi</a>."
     },
     "options_plugin_tabsrunner_title": {
-        "message": "Poiščite zavihke brskalnika v oknu \"Zaženi ukaz\\"
+        "message": "Poiščite zavihke brskalnika v oknu \"Zaženi ukaz\""
     },
     "options_save_failed": {
         "message": "Shranjevanje nastavitev ni uspelo"

@@ -129,7 +129,7 @@
         "message": "Certifique-se de que o módulo “Abas do navegador” está habilitado nas <a id=\"$1\" href=\"$2\">Configurações de pesquisa do Plasma</a>."
     },
     "options_plugin_tabsrunner_title": {
-        "message": "Encontrar abas do navegador na janela \"Executar comando\\"
+        "message": "Encontrar abas do navegador na janela \"Executar comando\""
     },
     "options_save_failed": {
         "message": "Falha ao salvar as configurações"

@@ -129,7 +129,7 @@
         "message": "Försäkra dig om att modulen \"Webbläsarflikar\" är aktiverad i <a id=\"$1\" href=\"$2\">Plasma sökinställningar</a>."
     },
     "options_plugin_tabsrunner_title": {
-        "message": "Sök efter webbläsarflikar i fönstret \"Kör kommando\\"
+        "message": "Sök efter webbläsarflikar i fönstret \"Kör kommando\""
     },
     "options_save_failed": {
         "message": "Misslyckades spara inställningar"

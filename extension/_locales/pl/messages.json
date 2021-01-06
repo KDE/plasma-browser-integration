@@ -129,7 +129,7 @@
         "message": "Upewnij się, że moduł “Karty przeglądarki” jest włączony w <a id=\"$1\" href=\"$2\">Ustawieniach wyszukiwarki Plazmy</a>."
     },
     "options_plugin_tabsrunner_title": {
-        "message": "Znajduj karty przeglądarki w oknie \"Wykonaj polecenie\\"
+        "message": "Znajduj karty przeglądarki w oknie \"Wykonaj polecenie\""
     },
     "options_save_failed": {
         "message": "Nie udało się zapisywanie ustawień"

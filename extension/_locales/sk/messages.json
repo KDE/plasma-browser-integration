@@ -129,7 +129,7 @@
         "message": "Uistite sa že \"Karty prehliadača\" sú povolené v <a id=\"$1\" href=\"$2\">Plasma nastavenia vyhľadávania</a>."
     },
     "options_plugin_tabsrunner_title": {
-        "message": "Nájsť karty prehliadača v okne \"Spustiť príkaz\\"
+        "message": "Nájsť karty prehliadača v okne \"Spustiť príkaz\""
     },
     "options_save_failed": {
         "message": "Ukladanie nastavení zlyhalo"
