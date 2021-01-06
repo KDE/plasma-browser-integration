@@ -77,14 +77,16 @@ configure_file(org.kde.plasma.firefox_integration.json.in org.kde.plasma.firefox
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.plasma.chrome_integration.json DESTINATION ${KDE_INSTALL_FULL_SYSCONFDIR}/chromium/native-messaging-hosts/ RENAME org.kde.plasma.browser_integration.json)
 # #google-chrome
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.plasma.chrome_integration.json DESTINATION ${KDE_INSTALL_FULL_SYSCONFDIR}/opt/chrome/native-messaging-hosts/ RENAME org.kde.plasma.browser_integration.json)
+# Microsoft Edge
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.plasma.chrome_integration.json DESTINATION ${KDE_INSTALL_FULL_SYSCONFDIR}/opt/edge/native-messaging-hosts/ RENAME org.kde.plasma.browser_integration.json)
 # firefox
-
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.plasma.firefox_integration.json DESTINATION ${MOZILLA_DIR}/native-messaging-hosts/ RENAME org.kde.plasma.browser_integration.json)
 
 if (COPY_MESSAGING_HOST_FILE_HOME)
     install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.plasma.firefox_integration.json DESTINATION $ENV{HOME}/.mozilla/native-messaging-hosts/ RENAME org.kde.plasma.browser_integration.json)
     install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.plasma.chrome_integration.json DESTINATION $ENV{HOME}/.config/chromium/NativeMessagingHosts/ RENAME org.kde.plasma.browser_integration.json)
     install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.plasma.chrome_integration.json DESTINATION $ENV{HOME}/.config/google-chrome/NativeMessagingHosts/ RENAME org.kde.plasma.browser_integration.json)
+    install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.plasma.chrome_integration.json DESTINATION $ENV{HOME}/.config/microsoft-edge/NativeMessagingHosts/ RENAME org.kde.plasma.browser_integration.json)
 endif()
 
 if (INSTALL_CHROME_MANIFEST) # Install a policy to have browsers automatically add the extension
