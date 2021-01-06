@@ -73,6 +73,11 @@ BrowserIntegrationReminder::BrowserIntegrationReminder(QObject *parent, const QL
     m_browsers[QStringLiteral("vivaldi-stable.desktop")] = chrome;
     m_browsers[QStringLiteral("brave-browser.desktop")] = chrome;
 
+    QUrl edge(QStringLiteral("https://microsoftedge.microsoft.com/addons/detail/plasma-integration/dnnckbejblnejeabhcmhklcaljjpdjeh"));
+    m_browsers[QStringLiteral("microsoft-edge.desktop")] = edge;
+    m_browsers[QStringLiteral("microsoft-edge-beta.desktop")] = edge;
+    m_browsers[QStringLiteral("microsoft-edge-dev.desktop")] = edge;
+
     setModuleName(QStringLiteral("BrowserIntegrationReminder"));
     QDBusConnection dbus = QDBusConnection::sessionBus();
     dbus.connect(QStringLiteral("org.kde.ActivityManager"),
