@@ -72,7 +72,7 @@
         "message": "Iñigo Salvador Azurmendi"
     },
     "options_heading_krunner": {
-        "message": "Plasma Search"
+        "message": "Plasma bilaketa"
     },
     "options_not_supported_os": {
         "message": "Hedapen hau ez da onartzen sistema eragile honetan."
@@ -96,10 +96,10 @@
         "message": "Erakutsi jaitsierak jakinarazpen eremuan"
     },
     "options_plugin_historyrunner_description": {
-        "message": "This feature might need <a id=\"$1\" href=\"$2\">additional permissions</a> to be used."
+        "message": "Ezaugarri hau erabiltzeko <a id=\"$1\" href=\"$2\">baimen osagarrien</a> beharra izan dezakezu."
     },
     "options_plugin_historyrunner_title": {
-        "message": "Search through browser history"
+        "message": "Bilatu arakatzailearen historian zehar"
     },
     "options_plugin_kdeconnect_description": {
         "message": "Testuinguru-menu sarrera bat gehitzen du, haiek zure telefonora eta parekatutako beste gailuetara bidaltzea gaitzen duten esteketara,  <a href=\"$1\">KDE Connect</a> erabiliz."
@@ -147,22 +147,22 @@
         "message": "Plama bateratze ezarpenak"
     },
     "permission_request_already": {
-        "message": "You have already granted this permission."
+        "message": "Baimen hau dagoeneko eman duzu."
     },
     "permission_request_button_request": {
-        "message": "Request Permission"
+        "message": "Eskatu baimena"
     },
     "permission_request_button_revoke": {
-        "message": "Revoke Permission"
+        "message": "Indargabetu baimena"
     },
     "permission_request_historyrunner_1": {
-        "message": "In order to provide search results for your browser history, additional permissions are required."
+        "message": "Zure arakatzailearen historiako bilaketa-emaitzak emateko, baimen osagarriak behar dira."
     },
     "permission_request_historyrunner_2": {
-        "message": "Ziurtatu “Arakatzailearen fitxak” modulua gaitua dagoela <a id=\"$1\" href=\"$2\">Plasmaren bilaketa ezarpenetan</a>."
+        "message": "Ezaugarri hau <a id=\"$1\" href=\"$2\">Plasmaren bilaketa ezarpenetan</a> desgaitu dezakezu."
     },
     "permission_request_title": {
-        "message": "Additional permissions required"
+        "message": "Baimen osagarriak behar dira"
     },
     "purpose_share": {
         "message": "Partekatu..."
