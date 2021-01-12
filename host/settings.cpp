@@ -47,7 +47,8 @@ const QMap<Settings::Environment, QString> Settings::environmentNames = {
     {Settings::Environment::Firefox, QStringLiteral("firefox")},
     {Settings::Environment::Opera, QStringLiteral("opera")},
     {Settings::Environment::Vivaldi, QStringLiteral("vivaldi")},
-    {Settings::Environment::Brave, QStringLiteral("brave")}
+    {Settings::Environment::Brave, QStringLiteral("brave")},
+    {Settings::Environment::Edge, QStringLiteral("edge")}
 };
 
 const QMap<Settings::Environment, EnvironmentDescription> Settings::environmentDescriptions = {
@@ -99,6 +100,14 @@ const QMap<Settings::Environment, EnvironmentDescription> Settings::environmentD
         QStringLiteral("brave.com"),
         QStringLiteral("Brave"),
         QStringLiteral("brave")
+    } },
+    {Settings::Environment::Edge, {
+        QStringLiteral("Edge"),
+        QStringLiteral("Microsoft Edge"),
+        QStringLiteral("microsoft-edge"),
+        QStringLiteral("microsoft.com"),
+        QStringLiteral("Microsoft"),
+        QStringLiteral("microsoft-edge")
     } }
 };
 
@@ -245,6 +254,8 @@ void Settings::setEnvironmentFromExtensionMessage(const QJsonObject &data)
             name = QStringLiteral("vivaldi");
         } else if (processInfo.name().contains(QLatin1String("brave"))) {
             name = QStringLiteral("brave");
+        } else if (processInfo.name().contains(QLatin1String("edge"))) {
+            name = QStringLiteral("edge");
         }
     }
 
