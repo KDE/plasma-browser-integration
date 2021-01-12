@@ -26,7 +26,9 @@
 #include "connection.h"
 
 #include <QDBusConnection>
+#include <QGuiApplication>
 #include <QHash>
+#include <QIcon>
 #include <QImage>
 #include <QJsonArray>
 #include <QJsonObject>
@@ -188,7 +190,7 @@ void TabsRunnerPlugin::handleData(const QString& event, const QJsonObject& json)
                         actions.append(s_actionIdMute);
                     }
                 } else {
-                    match.iconName = Settings::self().environmentDescription().iconName;
+                    match.iconName = qApp->windowIcon().name();
 
                     const QImage favIcon = imageFromDataUrl(tab.value(QStringLiteral("favIconData")).toString());
                     if (!favIcon.isNull()) {

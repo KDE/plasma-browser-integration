@@ -68,8 +68,6 @@ public:
     QJsonObject handleData(int serial, const QString &event, const QJsonObject &data) override;
 
     Environment environment() const;
-    // TODO remove and migrate runners to use qApp->windowIcon().name()
-    EnvironmentDescription environmentDescription() const;
 
     bool pluginEnabled(const QString &subsystem) const;
     QJsonObject settingsForPlugin(const QString &subsystem) const;

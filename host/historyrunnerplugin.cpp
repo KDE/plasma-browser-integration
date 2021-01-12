@@ -21,7 +21,9 @@
 #include "settings.h"
 
 #include <QDBusConnection>
+#include <QGuiApplication>
 #include <QJsonArray>
+#include <QIcon>
 #include <QImage>
 #include <QSet>
 #include <QUrl>
@@ -117,7 +119,7 @@ void HistoryRunnerPlugin::handleData(const QString& event, const QJsonObject& js
             match.type = Plasma::QueryMatch::NoMatch;
             match.relevance = 0;
             match.text = i18nc("Dummy search result", "Additional permissions are required");
-            match.iconName = Settings::self().environmentDescription().iconName;
+            match.iconName = qApp->windowIcon().name();
             matches.append(match);
         } else {
             const QJsonArray results = json.value(QStringLiteral("results")).toArray();
@@ -159,7 +161,7 @@ void HistoryRunnerPlugin::handleData(const QString& event, const QJsonObject& js
                 } else {
                     match.text = url.toDisplayString();
                 }
-                match.iconName = Settings::self().environmentDescription().iconName;
+                match.iconName = qApp->windowIcon().name();
 
                 QUrl urlWithoutPassword = url;
                 urlWithoutPassword.setPassword({});

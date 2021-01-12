@@ -292,11 +292,6 @@ Settings::Environment Settings::environment() const
     return m_environment;
 }
 
-EnvironmentDescription Settings::environmentDescription() const
-{
-    return m_currentEnvironment;
-}
-
 bool Settings::pluginEnabled(const QString &subsystem) const
 {
     return settingsForPlugin(subsystem).value(QStringLiteral("enabled")).toBool();
