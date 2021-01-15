@@ -113,7 +113,10 @@ const QMap<Settings::Environment, EnvironmentDescription> Settings::environmentD
 
 Settings::Settings()
     : AbstractBrowserPlugin(QStringLiteral("settings"), 1, nullptr)
-    , m_tasksModel(new TaskManager::WindowTasksModel(this))
+    // Settings is a singleton and cleaned up only in exit_handlers
+    // at which point the QPA will already have cleaned up
+    // leading to a crash on Wayland
+    , m_tasksModel(new TaskManager::WindowTasksModel(qGuiApp))
 {
 
     for (int i = 0; i < m_tasksModel->rowCount(); ++i) {
@@ -236,7 +239,8 @@ bool Settings::setEnvironmentFromTasksModelIndex(const QModelIndex &idx)
     qApp->setDesktopFileName(service->desktopEntryName());
     qApp->setWindowIcon(QIcon::fromTheme(service->icon()));
 
-    disconnect(m_tasksModel, nullptr, this, nullptr);
+    m_tasksModel->deleteLater();
+    m_tasksModel = nullptr;
 
     return true;
 
