@@ -39,7 +39,7 @@
         "message": "Abrir per KDE Connect"
     },
     "options_about_bugs": {
-        "message": "Si alcuentres un fallu, comprueba la <a href=\"$1\">llista de fallos abiertos</a> y <a href=\"$2\">rellena un informe</a> darréu."
+        "message": "Si atopes un fallu, comprueba la <a href=\"$1\">llista de fallos abiertos</a> y <a href=\"$2\">rellena un informe</a> darréu."
     },
     "options_about_changelog_link": {
         "message": "Ver el rexistru de cambeos"
@@ -48,7 +48,7 @@
         "message": "© 2017-2020 Kai Uwe Broulik y David Edmundson"
     },
     "options_about_created_by_kde": {
-        "message": "Esta estensión creóla la <a href=\"$1\">comunidá de KDE</a> y pues alcontrar más información tocante a esti proyeutu na <a href=\"$2\">wiki de so</a>."
+        "message": "Esta estensión creóla la <a href=\"$1\">comunidá de KDE</a> y pues atopar más información tocante a esti proyeutu na <a href=\"$2\">wiki de so</a>."
     },
     "options_about_donate": {
         "message": "Si te presta lo que ves, considera <a href=\"$1\">donar a KDE</a> pa que podamos siguir faciendo'l meyor software llibre posible."
