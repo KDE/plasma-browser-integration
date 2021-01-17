@@ -64,10 +64,13 @@ private:
     void addToRecentDocuments();
     void saveOriginUrl();
 
+    QUrl originUrl() const;
+
     int m_id = -1;
 
     QUrl m_url;
     QUrl m_finalUrl;
+    QUrl m_referrer;
 
     QUrl m_destination;
 

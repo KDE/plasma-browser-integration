@@ -82,23 +82,43 @@ bool DownloadJob::doResume()
     return true;
 }
 
+QUrl DownloadJob::originUrl() const
+{
+    QUrl url = (m_finalUrl.isValid() ? m_finalUrl : m_url);
+
+    if (m_referrer.isValid()
+            && (url.scheme() == QLatin1String("blob")
+                || url.scheme() == QLatin1String("data"))) {
+        url = m_referrer;
+    }
+
+    return url;
+}
+
 void DownloadJob::update(const QJsonObject &payload)
 {
     auto end = payload.constEnd();
 
     bool descriptionDirty = false;
 
+    const QUrl oldOriginUrl = originUrl();
+
     auto it = payload.constFind(QStringLiteral("url"));
     if (it != end) {
         m_url = QUrl(it->toString());
-        descriptionDirty = true; // TODO only if actually changed
     }
 
     it = payload.constFind(QStringLiteral("finalUrl"));
     if (it != end) {
         m_finalUrl = QUrl(it->toString());
-        descriptionDirty = true;
     }
+
+    it = payload.constFind(QStringLiteral("referrer"));
+    if (it != end) {
+        m_referrer = QUrl(it->toString());
+    }
+
+    descriptionDirty = (originUrl() != oldOriginUrl);
 
     it = payload.constFind(QStringLiteral("filename"));
     if (it != end) {
@@ -108,8 +128,10 @@ void DownloadJob::update(const QJsonObject &payload)
 
         setProperty("destUrl", destination.toString(QUrl::RemoveFilename | QUrl::StripTrailingSlash));
 
-        m_destination = destination;
-        descriptionDirty = true;
+        if (m_destination != destination) {
+            m_destination = destination;
+            descriptionDirty = true;
+        }
     }
 
     it = payload.constFind(QStringLiteral("mime"));
@@ -275,7 +297,7 @@ void DownloadJob::update(const QJsonObject &payload)
 void DownloadJob::updateDescription()
 {
     description(this, i18nc("Job heading, like 'Copying'", "Downloading"),
-        qMakePair<QString, QString>(i18nc("The URL being downloaded", "Source"), (m_finalUrl.isValid() ? m_finalUrl : m_url).toDisplayString()),
+        qMakePair<QString, QString>(i18nc("The URL being downloaded", "Source"), originUrl().toDisplayString()),
         qMakePair<QString, QString>(i18nc("The location being downloaded to", "Destination"), m_destination.toLocalFile())
     );
 }
@@ -298,11 +320,14 @@ void DownloadJob::addToRecentDocuments()
 
 void DownloadJob::saveOriginUrl()
 {
-    QUrl url = m_finalUrl.isValid() ? m_finalUrl : m_url;
+    QUrl url = originUrl();
 
     if (m_incognito
+        || !url.isValid()
         // Blob URLs are dynamically created through JavaScript and cannot be accessed from the outside
-        || url.scheme() == QLatin1String("blob")) {
+        || url.scheme() == QLatin1String("blob")
+        // Data URLs contain the actual data of the file we just downloaded anyway
+        || url.scheme() == QLatin1String("data")) {
         return;
     }
 
