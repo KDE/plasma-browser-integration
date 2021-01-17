@@ -194,7 +194,7 @@ void Settings::handleData(const QString &event, const QJsonObject &data)
 
         emit changed(data);
     } else if (event == QLatin1String("openKRunnerSettings")) {
-        QProcess::startDetached(QStringLiteral("kcmshell5"), {QStringLiteral("kcm_plasmasearch")});
+        QProcess::startDetached(QStringLiteral("systemsettings5"), {QStringLiteral("kcm_plasmasearch")});
     } else if (event == QLatin1String("setEnvironment")) {
         setEnvironmentFromExtensionMessage(data);
     }
