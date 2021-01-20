@@ -18,7 +18,7 @@
         "message": "Systema operative non supportate"
     },
     "general_error_startup_failed": {
-        "message": "Make sure the 'plasma-browser-integration' package is installed correctly and that you are running Plasma 5.13 or later."
+        "message": "Assecura te que le pachetto 'plasma-browser-integration'  es installate correctemente e que tu es executante Plasma 5.13 o plus recente."
     },
     "general_error_startup_failed_title": {
         "message": "Il falleva a connecter al hospite native."
@@ -39,19 +39,19 @@
         "message": "Aperi via KDE Connect"
     },
     "options_about_bugs": {
-        "message": "If you find an issue, please check the <a href=\"$1\">list of open bugs</a> and then <a href=\"$2\">file a bug report</a>."
+        "message": "Si tu ha un problema. pro favor verifica le lista <a href=\"$1\"> dd bugs aperite</a> e postea invia un reporto de bug <a href=\"$2\"></a>."
     },
     "options_about_changelog_link": {
-        "message": "View Changelog"
+        "message": "Vide Changelog (i.e. le registro de cambiamentos)"
     },
     "options_about_copyright": {
         "message": "© 2017-2020 Kai Uwe Broulik e David Edmundson"
     },
     "options_about_created_by_kde": {
-        "message": "This browser extension was created by the <a href=\"$1\">KDE Community</a>. You can find more information about this project on the <a href=\"$2\">KDE Community Wiki</a>."
+        "message": "Iste extension  denavigator esseva create per le  <a href=\"$1\">Communitate de KDE (KDE Community)</a>. Tu pote trovar altere information re iste projecto sur le <a href=\"$2\">KDE Community Wiki</a>."
     },
     "options_about_donate": {
-        "message": "If you like what you saw, please consider <a href=\"$1\">donating to KDE</a>, so we can continue to make the best free software possible."
+        "message": "Si a te place lo que tu vide, pro favor considera <a href=\"$1\">donar a KDE</a>, assi que nos pote cntinuar a facer le melior software libere possibile."
     },
     "options_about_extension_version": {
         "message": "Extension version: $1"
@@ -63,7 +63,7 @@
         "message": "KDE es un rete mundial de ingenieros del software, artistas, scriptores, traductores e facilitatores  qui es devote al disveloppamento de <a href=\"$1\">Free Software (Software libere)</a>. Iste communitate ha create cento e cento de applicationes como parte de le Frameworks (structuras) de KDE, spatios de labor e applicationes. KDE es un interprisa cooperative in le qual necun singule entitate controla le effortios o le producto de KDE per excluder alteres. Omne persona es benvenite per <a href=\"$2\"> affiliar se e contribuer</a> a KDE, includente te. Tu visita <a href=\"$3\">$3</a> pro ulterior information super le communitate de KDE e le software que nos produce."
     },
     "options_about_license": {
-        "message": "License: <a href=\"$1\">GNU General Public License Version 3</a>"
+        "message": "Licentia: <a href=\"$1\">GNU General Public License Version 3</a>"
     },
     "options_about_translated_by": {
         "message": "Traducite per: $1"
@@ -72,13 +72,13 @@
         "message": "Giovanni Sora"
     },
     "options_not_supported_os": {
-        "message": "This extension is not supported on this operating system."
+        "message": "Iste extension non es supportate sur iste systema operative. "
     },
     "options_plugin_breezeScrollBars_description": {
-        "message": "This may interfere with the appearance of websites that already apply a custom styling to their scroll bars."
+        "message": "Iste pote interfere con le apparentia de sitos web que ja applica un styling personalisate a lo barra de rolar."
     },
     "options_plugin_breezeScrollBars_title": {
-        "message": "Use Breeze-style scroll bars"
+        "message": "Usa barras de rolar de stilo Breeze"
     },
     "options_plugin_downloads_addToRecentDocuments": {
         "message": "Adde files discargate al documentos recente"
@@ -87,22 +87,22 @@
         "message": "Salveguarda URL unde un file esseva discargate in le attributos del file"
     },
     "options_plugin_downloads_saveOriginUrl_description": {
-        "message": "Note: The URL may contain sensitive information that could be disclosed when the file is accessible by or shared with others"
+        "message": "Nota: le URL pote continer information sensibile que poterea esser revelate quando le file es accessite per o compartite con alteres."
     },
     "options_plugin_downloads_title": {
         "message": "Monstrar discargamentos in area de notification"
     },
     "options_plugin_kdeconnect_description": {
-        "message": "Adds a context menu entry to links enabling you to send them to your phone and other paired devices using <a href=\"$1\">KDE Connect</a>."
+        "message": "Adde un entrata de menu de contexto a ligamines habilitante te a inviar los a tu telephono e altere dispositivos associate usante <a  href=\"$1\">KDE Connect</a>."
     },
     "options_plugin_kdeconnect_title": {
         "message": "Invia via KDE Connect"
     },
     "options_plugin_mpris_description": {
-        "message": "Lets you control video and audio players in websites using the Media Controller plasmoid."
+        "message": "Te permitte controlar reproductores video e audio in sitos web que usa le plasmoid Media Controller (Controlator de multimedia)."
     },
     "options_plugin_mpris_media_sessions_description": {
-        "message": "Extract metadata and thumbnails of currently playing content."
+        "message": "Extrahe metadatos e miniaturas del contento currentemente reproducente."
     },
     "options_plugin_mpris_media_sessions_title": {
         "message": "Controlos de Multimedia intensificate"
@@ -111,16 +111,16 @@
         "message": "Controlos de Multimedia"
     },
     "options_plugin_purpose_description": {
-        "message": "Adds a \"Share...\" context menu entry and allows websites to open a dialog for sharing contents using the Web Share API."
+        "message": "Adde un entrata de menu de contexto \"Compartir..\" e permitte que sitos web aperi un dialogo per compartir contentos usante le Web Share API."
     },
     "options_plugin_purpose_title": {
         "message": "Compartecipar de contento"
     },
     "options_plugin_tabsrunner_description": {
-        "message": "Make sure the “Browser Tabs” module is enabled in <a id=\"$1\" href=\"$2\">Plasma Search settings</a>."
+        "message": "Assecura te que le modulo “Browser Tabs” (Schedas de Navigator) es activate in <a id=\"$1\" href=\"$2\">Preferentias de cerca de Plasma</a>."
     },
     "options_plugin_tabsrunner_title": {
-        "message": "Find browser tabs in “Run Command” window"
+        "message": "Trova schedas de navigator in fenestra de \"Executa commando\\"
     },
     "options_save_failed": {
         "message": "Il falleva salveguardar preferentias"
@@ -147,7 +147,7 @@
         "message": "Falleva compartir"
     },
     "purpose_share_finished_text": {
-        "message": "The shared content link ($1) has been copied to the clipboard."
+        "message": "Le ligamine de contento compartite ($1) ha essite copiate in le area de transferentia."
     },
     "purpose_share_finished_title": {
         "message": "Contento compartite"
