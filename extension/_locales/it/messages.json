@@ -72,7 +72,7 @@
         "message": "Luigi Toscano"
     },
     "options_heading_krunner": {
-        "message": "Plasma Search"
+        "message": "Ricerca di Plasma"
     },
     "options_not_supported_os": {
         "message": "L'estensione non è supportata su questo sistema operativo."
@@ -96,10 +96,10 @@
         "message": "Mostra gli scaricamenti nell'area di notifica"
     },
     "options_plugin_historyrunner_description": {
-        "message": "This feature might need <a id=\"$1\" href=\"$2\">additional permissions</a> to be used."
+        "message": "Questa funzione potrebbe richiedere dei <a id=\"$1\" href=\"$2\">permessi aggiuntivi</a> per essere usata."
     },
     "options_plugin_historyrunner_title": {
-        "message": "Search through browser history"
+        "message": "Cerca nella cronologia del browser"
     },
     "options_plugin_kdeconnect_description": {
         "message": "Aggiunge una voce al menu contestuale dei collegamenti che permette di inviarli al telefono o ad altri dispositivi associati tramite <a href=\"$1\">KDE Connect</a>."
@@ -147,22 +147,22 @@
         "message": "Impostazioni dell'integrazione con Plasma"
     },
     "permission_request_already": {
-        "message": "You have already granted this permission."
+        "message": "Ti è già stato accordato questo permesso."
     },
     "permission_request_button_request": {
-        "message": "Request Permission"
+        "message": "Richiedi permesso"
     },
     "permission_request_button_revoke": {
-        "message": "Revoke Permission"
+        "message": "Revoca permesso"
     },
     "permission_request_historyrunner_1": {
-        "message": "In order to provide search results for your browser history, additional permissions are required."
+        "message": "Per poter fornire dei risultati di ricerca nella cronologia del browser sono richiesti dei permessi aggiuntivi."
     },
     "permission_request_historyrunner_2": {
-        "message": "Assicurati che il modulo «Schede del browser» sia abilitato nelle <a id=\"$1\" href=\"$2\">impostazioni della ricerca di Plasma</a>."
+        "message": "Puoi disabilitare questa funzione in tramite le <a id=\"$1\" href=\"$2\">impostazioni della ricerca di Plasma</a>."
     },
     "permission_request_title": {
-        "message": "Additional permissions required"
+        "message": "Permessi aggiuntivi richiesti"
     },
     "purpose_share": {
         "message": "Condividi..."
