@@ -72,7 +72,7 @@
         "message": "Giovanni Sora"
     },
     "options_heading_krunner": {
-        "message": "Plasma Search"
+        "message": "Cerca de Plasma"
     },
     "options_not_supported_os": {
         "message": "Iste extension non es supportate sur iste systema operative. "
@@ -96,10 +96,10 @@
         "message": "Monstrar discargamentos in area de notification"
     },
     "options_plugin_historyrunner_description": {
-        "message": "This feature might need <a id=\"$1\" href=\"$2\">additional permissions</a> to be used."
+        "message": "Iste characteristica poterea necessitar <a id=\"$1\" href=\"$2\">permissiones additional </a> per esser usate."
     },
     "options_plugin_historyrunner_title": {
-        "message": "Search through browser history"
+        "message": "Cerca per chronologia de navigator"
     },
     "options_plugin_kdeconnect_description": {
         "message": "Adde un entrata de menu de contexto a ligamines habilitante te a inviar los a tu telephono e altere dispositivos associate usante <a  href=\"$1\">KDE Connect</a>."
@@ -147,22 +147,22 @@
         "message": "Preferentias de integration de Plasma"
     },
     "permission_request_already": {
-        "message": "You have already granted this permission."
+        "message": "Tu ja ha accordate iste permission."
     },
     "permission_request_button_request": {
-        "message": "Request Permission"
+        "message": "Demanda Permission"
     },
     "permission_request_button_revoke": {
-        "message": "Revoke Permission"
+        "message": "Revoca Permission"
     },
     "permission_request_historyrunner_1": {
-        "message": "In order to provide search results for your browser history, additional permissions are required."
+        "message": "Per fornir exitos de cerca per tu chronologia de navigator, permissiones additional es requirite."
     },
     "permission_request_historyrunner_2": {
-        "message": "You can disable this feature in <a id=\"$1\" href=\"$2\">Plasma search settings</a>."
+        "message": "Tu pote dishabilitar iste haracteristica in <a id=\"$1\" href=\"$2\">preferentias de cerca de Plasma</a>."
     },
     "permission_request_title": {
-        "message": "Additional permissions required"
+        "message": "Permissiones additional requirite"
     },
     "purpose_share": {
         "message": "Comparti..."
@@ -180,6 +180,6 @@
         "message": "Contento compartite"
     },
     "store_description": {
-        "message": "Multitask efficiently by controlling browser functions from the desktop, even while Chrome is in the background. Manage audio and video playback, check downloads in the notification area, send files to your phone using KDE Connect and more inside the KDE Plasma Desktop!\\n\\nThe plasma-browser-integration package must be installed for this extension to work. It should be available from your distribution's package manager when running Plasma 5.13 or later.\\n\\nNOTE: This extension is not supported on Debian."
+        "message": "Facer multitask efficientemente per controlar functiones de navigator ab le scriptorio, anque qundo Chrome es in secunde plano. Gere reproductiones de audio e video, verifica discargamentos in le area de notification, invia files a tu telephono usante KDE Connect e ulterior intra Scriptorio de Plasma de KDE!\\n\\nLe pacchetto de integration de navigator de plasma debe esser installate per afcer functionar iste extension. Illo deberea esser disponibile ex le gerente de pacchetto de tu distribution quando exeque Plasma 5.13 o plus recente.\\n\\nNOTA: iste extension non es supportate sur Debian."
     }
 }

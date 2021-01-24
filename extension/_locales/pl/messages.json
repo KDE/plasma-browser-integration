@@ -72,7 +72,7 @@
         "message": "Twoje nazwisko"
     },
     "options_heading_krunner": {
-        "message": "Plasma Search"
+        "message": "Wyszukiwarka Plazmy"
     },
     "options_not_supported_os": {
         "message": "To rozszerzenie nie jest obsługiwane na tym systemie operacyjnym."
@@ -96,10 +96,10 @@
         "message": "Pokaż pobierania w obszarze powiadomień"
     },
     "options_plugin_historyrunner_description": {
-        "message": "This feature might need <a id=\"$1\" href=\"$2\">additional permissions</a> to be used."
+        "message": "Ta funkcja może wymagać <a id=\"$1\" href=\"$2\">dodatkowych uprawnień</a> przed jej użyciem."
     },
     "options_plugin_historyrunner_title": {
-        "message": "Search through browser history"
+        "message": "Szukaj w historii przeglądarki"
     },
     "options_plugin_kdeconnect_description": {
         "message": "Dodaje menu podręczne do łączy, umożliwiając wysłanie ich na twój telefon lub inne urządzenia sparowane przez <a href=\"$1\">KDE Connect</a>."
@@ -147,22 +147,22 @@
         "message": "Ustawienia integracji Plazmy"
     },
     "permission_request_already": {
-        "message": "You have already granted this permission."
+        "message": "Już przyznałeś to uprawnienie."
     },
     "permission_request_button_request": {
-        "message": "Request Permission"
+        "message": "Żądaj uprawnienia"
     },
     "permission_request_button_revoke": {
-        "message": "Revoke Permission"
+        "message": "Odwołaj uprawnienie"
     },
     "permission_request_historyrunner_1": {
-        "message": "In order to provide search results for your browser history, additional permissions are required."
+        "message": "Aby dostarczyć wyników wyszukiwania dla historii twojej przeglądarki, wymagane są dodatkowe uprawnienia."
     },
     "permission_request_historyrunner_2": {
-        "message": "Upewnij się, że moduł “Karty przeglądarki” jest włączony w <a id=\"$1\" href=\"$2\">Ustawieniach wyszukiwarki Plazmy</a>."
+        "message": "Możesz wyłączyć tę funkcję w <a id=\"$1\" href=\"$2\">Ustawieniach wyszukiwarki Plazmy</a>."
     },
     "permission_request_title": {
-        "message": "Additional permissions required"
+        "message": "Wymagane dodatkowe uprawnienia"
     },
     "purpose_share": {
         "message": "Udostępnij..."
