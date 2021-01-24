@@ -863,7 +863,9 @@ function loadMediaSessionsShim() {
                 player.removeEventListener("play", player.registerInDom);
 
                 // If it is already in DOM by the time it starts playing, we don't need to do anything
-                if (document.body && document.body.contains(player)) {
+                // Also, if the page already parented it around, don't mess with it
+                if (document.documentElement.contains(player)
+                    || player.parentNode) {
                     delete player.dataset.pbiPausedForDomRemoval;
                     player.removeEventListener("pause", player.replayAfterRemoval);
                 } else {
