@@ -180,6 +180,6 @@
         "message": "Contento compartite"
     },
     "store_description": {
-        "message": "Facer multitask efficientemente per controlar functiones de navigator ab le scriptorio, anque qundo Chrome es in secunde plano. Gere reproductiones de audio e video, verifica discargamentos in le area de notification, invia files a tu telephono usante KDE Connect e ulterior intra Scriptorio de Plasma de KDE!\\n\\nLe pacchetto de integration de navigator de plasma debe esser installate per afcer functionar iste extension. Illo deberea esser disponibile ex le gerente de pacchetto de tu distribution quando exeque Plasma 5.13 o plus recente.\\n\\nNOTA: iste extension non es supportate sur Debian."
+        "message": "Multitask efficiently by controlling browser functions from the desktop, even while Chrome is in the background. Manage audio and video playback, check downloads in the notification area, send files to your phone using KDE Connect and more inside the KDE Plasma Desktop!\\n\\nThe plasma-browser-integration package must be installed for this extension to work. It should be available from your distribution's package manager when running Plasma 5.13 or later.\\n\\nNOTE: This extension is not supported on Debian."
     }
 }
