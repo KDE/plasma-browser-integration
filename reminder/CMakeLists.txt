@@ -9,8 +9,8 @@ kcoreaddons_desktop_to_json(browserintegrationreminder browserintegrationreminde
 
 
 target_link_libraries(browserintegrationreminder
-    Qt5::DBus
-    Qt5::Widgets
+    Qt::DBus
+    Qt::Widgets
     KF5::CoreAddons
     KF5::DBusAddons # for KDEDModule
     KF5::I18n

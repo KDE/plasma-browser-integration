@@ -25,9 +25,9 @@ qt5_add_dbus_adaptor(HOST_SOURCES ../dbus/org.kde.krunner1.xml abstractkrunnerpl
 add_executable(plasma-browser-integration-host ${HOST_SOURCES})
 target_link_libraries(
     plasma-browser-integration-host
-    Qt5::DBus
-    Qt5::Gui
-    Qt5::Widgets
+    Qt::DBus
+    Qt::Gui
+    Qt::Widgets
     KF5::Activities
     KF5::CoreAddons
     KF5::Crash
