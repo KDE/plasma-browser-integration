@@ -30,7 +30,7 @@
         "message": "Nežinoma klaida"
     },
     "kdeconnect_call_device": {
-        "message": "Atverti įrenginyje \"$1\""
+        "message": "Skambinti įrenginiu „$1“"
     },
     "kdeconnect_open_device": {
         "message": "Atverti įrenginyje \"$1\""
@@ -72,7 +72,7 @@
         "message": "Moo"
     },
     "options_heading_krunner": {
-        "message": "Plasma Search"
+        "message": "Plasma paieška"
     },
     "options_not_supported_os": {
         "message": "Ši operacinė sistema nepalaiko šio priedo."
@@ -96,10 +96,10 @@
         "message": "Rodyti atsiuntimus pranešimų srityje"
     },
     "options_plugin_historyrunner_description": {
-        "message": "This feature might need <a id=\"$1\" href=\"$2\">additional permissions</a> to be used."
+        "message": "Norint naudoti šią ypatybę, gali prireikti <a id=\"$1\" href=\"$2\">papildomų leidimų</a>."
     },
     "options_plugin_historyrunner_title": {
-        "message": "Search through browser history"
+        "message": "Ieškoti naršyklės istorijoje"
     },
     "options_plugin_kdeconnect_description": {
         "message": "Prideda į nuorodas kontekstinio meniu įrašą, taip leisdamas jums, naudojant <a href=\"$1\">KDE Connect</a>, siųsti nuorodas į savo telefoną ar kitus suporuotus įrenginius."
@@ -147,22 +147,22 @@
         "message": "Plasma integracijos nuostatos"
     },
     "permission_request_already": {
-        "message": "You have already granted this permission."
+        "message": "Jūs jau esate suteikę šį leidimą."
     },
     "permission_request_button_request": {
-        "message": "Request Permission"
+        "message": "Prašyti leidimo"
     },
     "permission_request_button_revoke": {
-        "message": "Revoke Permission"
+        "message": "Panaikinti leidimą"
     },
     "permission_request_historyrunner_1": {
-        "message": "In order to provide search results for your browser history, additional permissions are required."
+        "message": "Norint pateikti paieškos jūsų naršyklės istorijoje rezultatus, reikia papildomų leidimų."
     },
     "permission_request_historyrunner_2": {
-        "message": "Įsitikinkite, kad <a id=\"$1\" href=\"$2\">Plasma paieškos nuostatose</a> yra įjungtas \"Naršyklės kortelių\" modulis."
+        "message": "Šią ypatybę galite išjungti <a id=\"$1\" href=\"$2\">Plasma paieškos nuostatose</a>."
     },
     "permission_request_title": {
-        "message": "Additional permissions required"
+        "message": "Reikia papildomų leidimų"
     },
     "purpose_share": {
         "message": "Bendrinti..."
