@@ -72,7 +72,7 @@
         "message": "Tommi Nieminen"
     },
     "options_heading_krunner": {
-        "message": "Plasma Search"
+        "message": "Plasma-haku"
     },
     "options_not_supported_os": {
         "message": "Tämä käyttöjärjestelmä ei tue tätä laajennusta."
@@ -96,10 +96,10 @@
         "message": "Näytä lataukset ilmoitusalueella"
     },
     "options_plugin_historyrunner_description": {
-        "message": "This feature might need <a id=\"$1\" href=\"$2\">additional permissions</a> to be used."
+        "message": "Tämä ominaisuus saattaa vaatia käyttöön <a id=\"$1\" href=\"$2\">lisäkäyttöoikeuksia</a>."
     },
     "options_plugin_historyrunner_title": {
-        "message": "Search through browser history"
+        "message": "Etsi selainhistoriasta"
     },
     "options_plugin_kdeconnect_description": {
         "message": "Lisää kontekstivalikkoon kohdan, jolla voit lähettää kohteet puhelimeesi tai muuhun <a href=\"$1\">KDE Connect</a> -laitteeseen."
@@ -147,22 +147,22 @@
         "message": "Plasma-integrointiasetukset"
     },
     "permission_request_already": {
-        "message": "You have already granted this permission."
+        "message": "Olet jo myöntänyt tämän käyttöoikeuden."
     },
     "permission_request_button_request": {
-        "message": "Request Permission"
+        "message": "Pyydä käyttöoikeutta"
     },
     "permission_request_button_revoke": {
-        "message": "Revoke Permission"
+        "message": "Peru käyttöoikeus"
     },
     "permission_request_historyrunner_1": {
-        "message": "In order to provide search results for your browser history, additional permissions are required."
+        "message": "Lisäkäyttöoikeuksia vaaditaan hakutulosten tarjoamiseksi selainhistoriasta."
     },
     "permission_request_historyrunner_2": {
-        "message": "Varmista, että ”Selainvälilehdet”-moduuli on käytössä <a id=\"$1\" href=\"$2\">Plasman hakuasetuksissa</a>."
+        "message": "Ominaisuuden voi poistaa käytöstä <a id=\"$1\" href=\"$2\">Plasman hakuasetuksista</a>."
     },
     "permission_request_title": {
-        "message": "Additional permissions required"
+        "message": "Lisäkäyttöoikeuksia vaaditaan"
     },
     "purpose_share": {
         "message": "Jaa…"
