@@ -102,7 +102,7 @@
         "message": "Pesquisar no histórico do navegador"
     },
     "options_plugin_kdeconnect_description": {
-        "message": "Adiciona uma entrada no menu de contexto para links habilitando enviá-los para seu telefone ou outro dispositivo pareado usando o <a href=\"$1\">KDE Connect</a>."
+        "message": "Adiciona uma entrada no menu de contexto para links habilitando enviá-los para seu celular ou outro dispositivo pareado usando o <a href=\"$1\">KDE Connect</a>."
     },
     "options_plugin_kdeconnect_title": {
         "message": "Enviar via KDE Connect"
