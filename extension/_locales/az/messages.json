@@ -36,7 +36,7 @@
         "message": "'$1'-də açmaq"
     },
     "kdeconnect_open_via": {
-        "message": "KDE Connect vasitəsi ilə açın"
+        "message": "KDE Connect ilə açın"
     },
     "options_about_bugs": {
         "message": "Əgər xəta aşkar etmisinizsə lütfən, <a href=\"$1\">açıq xətalar siyahısı</a>nı yoxlayın və sonra <a href=\"$2\">xəta hesabatı göndərin</a>."
