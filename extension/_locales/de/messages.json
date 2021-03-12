@@ -60,7 +60,7 @@
         "message": "Version des Hosts: $1"
     },
     "options_about_kde": {
-        "message": "KDE ist ein weltweite Gemeinschaft von Programmierern, Künstlern, Autoren, Übersetzern und Unterstützern, die sich der Entwicklung von <a href=\"$1\">Freier Software</a> verschrieben haben. KDE veröffentlicht die Plasma-Arbeitsumgebung, hunderte von Anwendungen und viele Bibliotheken als Grundlage. KDE ist ein Gemeinschaftsprojekt und wird nicht von einer einzelnen Gruppe, Firma oder Organisation kontrolliert. Statt dessen wirdzusammen die beste freie Software erstellt. Jeder ist eingeladen, bei <a href=\"$2\">KDE mit zu machen</a>. Besuchen Sie <a href=\"$3\">$3</a>, um mehr Informationen über das KDE-Projekt zu erhalten."
+        "message": "KDE ist ein weltweite Gemeinschaft von Programmierern, Künstlern, Autoren, Übersetzern und Unterstützern, die sich der Entwicklung von <a href=\"$1\">Freier Software</a> verschrieben haben. KDE veröffentlicht die Plasma-Arbeitsumgebung, hunderte von Anwendungen und viele Bibliotheken als Grundlage. KDE ist ein Gemeinschaftsprojekt und wird nicht von einer einzelnen Gruppe, Firma oder Organisation kontrolliert. Statt dessen wird zusammen die beste freie Software erstellt. Jeder ist eingeladen, bei <a href=\"$2\">KDE mit zu machen</a>. Besuchen Sie <a href=\"$3\">$3</a>, um mehr Informationen über das KDE-Projekt zu erhalten."
     },
     "options_about_license": {
         "message": "Lizenz: <a href=\"$1\">GNU General Public License Version 3</a>"
@@ -69,7 +69,7 @@
         "message": "Übersetzt von: $1"
     },
     "options_about_translators": {
-        "message": "Your names"
+        "message": "Deutsches KDE-Übersetzerteam"
     },
     "options_heading_krunner": {
         "message": "Plasma-Suche"
