@@ -11,7 +11,7 @@
 #include <QJsonArray>
 #include <QJsonObject>
 
-#include <KIO/MimetypeJob>
+#include <KIO/MimeTypeFinderJob>
 
 #include <Purpose/AlternativesModel>
 #include <PurposeWidgets/Menu>
@@ -129,10 +129,12 @@ QJsonObject PurposePlugin::handleData(int serial, const QString &event, const QJ
         }
 
         if (!urls.isEmpty()) {
-            auto *mimeJob = KIO::mimetype(QUrl(urlString), KIO::HideProgressInfo);
-            connect(mimeJob, &KJob::finished, this, [this, mimeJob, shareJson] {
-                showShareMenu(shareJson, mimeJob->mimetype());
+            auto *mimeJob = new KIO::MimeTypeFinderJob(QUrl(urlString));
+            mimeJob->setAuthenticationPromptEnabled(false);
+            connect(mimeJob, &KIO::MimeTypeFinderJob::result, this, [this, mimeJob, shareJson] {
+                showShareMenu(shareJson, mimeJob->mimeType());
             });
+            mimeJob->start();
             return {};
         }
 
