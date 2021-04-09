@@ -12,6 +12,8 @@
 #include <QHash>
 #include "downloadjob.h"
 
+class KUiServerV2JobTracker;
+
 class DownloadPlugin : public AbstractBrowserPlugin
 {
     Q_OBJECT
@@ -22,5 +24,6 @@ public:
     using AbstractBrowserPlugin::handleData;
     void handleData(const QString &event, const QJsonObject &data) override;
 private:
+    KUiServerV2JobTracker *m_tracker;
     QHash<int, DownloadJob *> m_jobs;
 };

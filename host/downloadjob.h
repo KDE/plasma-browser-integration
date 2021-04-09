@@ -17,7 +17,7 @@ class DownloadJob : public KJob
     Q_OBJECT
 
 public:
-    DownloadJob(int id);
+    DownloadJob();
 
     enum class State {
         None,
@@ -49,8 +49,6 @@ private:
     void saveOriginUrl();
 
     QUrl originUrl() const;
-
-    int m_id = -1;
 
     QUrl m_url;
     QUrl m_finalUrl;

@@ -9,11 +9,11 @@
 
 #include "connection.h"
 
-#include <KIO/JobTracker>
-#include <KJobTrackerInterface>
+#include <KUiServerV2JobTracker>
 
 DownloadPlugin::DownloadPlugin(QObject* parent) :
-    AbstractBrowserPlugin(QStringLiteral("downloads"), 3, parent)
+    AbstractBrowserPlugin(QStringLiteral("downloads"), 3, parent),
+    m_tracker(new KUiServerV2JobTracker(this))
 {
 }
 
@@ -50,10 +50,10 @@ void DownloadPlugin::handleData(const QString& event, const QJsonObject& payload
             return;
         }
 
-        job = new DownloadJob(id);
+        job = new DownloadJob();
 
-        // first register and then update, otherwise we miss the initial population..
-        KIO::getJobTracker()->registerJob(job);
+        // first register and then update, otherwise it will miss the initial description() emission
+        m_tracker->registerJob(job);
 
         job->update(download);
 

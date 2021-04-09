@@ -32,6 +32,7 @@ target_link_libraries(
     KF5::CoreAddons
     KF5::Crash
     KF5::I18n
+    KF5::JobWidgets
     KF5::KIOCore
     KF5::PurposeWidgets
     KF5::Runner

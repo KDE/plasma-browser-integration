@@ -15,13 +15,17 @@
 #include <KActivities/ResourceInstance>
 #include <KFileMetaData/UserMetaData>
 #include <KLocalizedString>
+#include <KUiServerV2JobTracker>
 
 #include <KIO/Global>
 
-DownloadJob::DownloadJob(int id)
+DownloadJob::DownloadJob()
     : KJob()
-    , m_id(id)
 {
+    // Tell KJobTracker to show the job right away so that we get a "finished"
+    // notification even for tiny downloads
+    setProperty("immediateProgressReporting", true);
+
     // the thing with "canResume" in chrome downloads is that it just means
     // "this download can be resumed right now because it is paused",
     // it's not a general thing. I think we can always pause/resume downloads
