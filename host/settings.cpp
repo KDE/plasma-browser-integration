@@ -32,7 +32,7 @@ const QMap<Settings::Environment, QString> Settings::environmentNames = {
     {Settings::Environment::Opera, QStringLiteral("opera")},
     {Settings::Environment::Vivaldi, QStringLiteral("vivaldi")},
     {Settings::Environment::Brave, QStringLiteral("brave")},
-    {Settings::Environment::Edge, QStringLiteral("edge")}
+    {Settings::Environment::Edge, QStringLiteral("edge")},
 };
 
 const QMap<Settings::Environment, EnvironmentDescription> Settings::environmentDescriptions = {
@@ -42,7 +42,7 @@ const QMap<Settings::Environment, EnvironmentDescription> Settings::environmentD
         QStringLiteral("google-chrome"),
         QStringLiteral("google.com"),
         QStringLiteral("Google"),
-        QStringLiteral("google-chrome")
+        QStringLiteral("google-chrome"),
     } },
     {Settings::Environment::Chromium, {
         QStringLiteral("chromium-browser"),
@@ -50,7 +50,7 @@ const QMap<Settings::Environment, EnvironmentDescription> Settings::environmentD
         QStringLiteral("chromium-browser"),
         QStringLiteral("google.com"),
         QStringLiteral("Google"),
-        QStringLiteral("chromium-browser")
+        QStringLiteral("chromium-browser"),
     } },
     {Settings::Environment::Firefox, {
         QStringLiteral("firefox"),
@@ -58,7 +58,7 @@ const QMap<Settings::Environment, EnvironmentDescription> Settings::environmentD
         QStringLiteral("firefox"),
         QStringLiteral("mozilla.org"),
         QStringLiteral("Mozilla"),
-        QStringLiteral("firefox")
+        QStringLiteral("firefox"),
     } },
     {Settings::Environment::Opera, {
         QStringLiteral("opera"),
@@ -66,7 +66,7 @@ const QMap<Settings::Environment, EnvironmentDescription> Settings::environmentD
         QStringLiteral("opera"),
         QStringLiteral("opera.com"),
         QStringLiteral("Opera"),
-        QStringLiteral("opera")
+        QStringLiteral("opera"),
     } },
     {Settings::Environment::Vivaldi, {
         QStringLiteral("vivaldi"),
@@ -75,7 +75,7 @@ const QMap<Settings::Environment, EnvironmentDescription> Settings::environmentD
         QStringLiteral("vivaldi-stable"),
         QStringLiteral("vivaldi.com"),
         QStringLiteral("Vivaldi"),
-        QStringLiteral("vivaldi")
+        QStringLiteral("vivaldi"),
     } },
     {Settings::Environment::Brave, {
         QStringLiteral("Brave"),
@@ -83,7 +83,7 @@ const QMap<Settings::Environment, EnvironmentDescription> Settings::environmentD
         QStringLiteral("brave-browser"),
         QStringLiteral("brave.com"),
         QStringLiteral("Brave"),
-        QStringLiteral("brave")
+        QStringLiteral("brave"),
     } },
     {Settings::Environment::Edge, {
         QStringLiteral("Edge"),
@@ -91,8 +91,8 @@ const QMap<Settings::Environment, EnvironmentDescription> Settings::environmentD
         QStringLiteral("microsoft-edge"),
         QStringLiteral("microsoft.com"),
         QStringLiteral("Microsoft"),
-        QStringLiteral("microsoft-edge")
-    } }
+        QStringLiteral("microsoft-edge"),
+    } },
 };
 
 Settings::Settings()

@@ -45,7 +45,7 @@ public:
         Opera,
         Vivaldi,
         Brave,
-        Edge
+        Edge,
     };
     Q_ENUM(Environment)
 

@@ -40,7 +40,7 @@ MPrisPlugin::MPrisPlugin(QObject *parent)
     m_possibleLoopStatus = {
         {QStringLiteral("None"), false},
         {QStringLiteral("Track"), true},
-        {QStringLiteral("Playlist"), true}
+        {QStringLiteral("Playlist"), true},
     };
 }
 
@@ -88,7 +88,7 @@ void MPrisPlugin::sendPropertyChanges()
         signal.setArguments({
             interfaceName,
             changes,
-            QStringList() // invalidated
+            QStringList(), // invalidated
         });
 
         QDBusConnection::sessionBus().send(signal);

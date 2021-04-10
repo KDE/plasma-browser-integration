@@ -23,7 +23,7 @@ public:
         None,
         InProgress,
         Interrupted,
-        Complete
+        Complete,
     };
 
     void start() override;
