@@ -17,7 +17,7 @@ target_link_libraries(browserintegrationreminder
     KF5::Notifications # for KStatusNotifierItem
     KF5::ConfigCore
     KF5::Activities # for KActivities::ResourceInstance
-    KF5::KIOWidgets # for KRun
+    KF5::KIOGui # for KIO::ApplicationLauncherJob
 )
 
 install(TARGETS browserintegrationreminder  DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf5/kded)
