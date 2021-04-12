@@ -127,6 +127,17 @@ void DownloadJob::update(const QJsonObject &payload)
         m_mimeType = it->toString();
     }
 
+    it = payload.constFind(QStringLiteral("danger"));
+    if (it != end) {
+        const QString danger = it->toString();
+        if (danger == QLatin1String("accepted")) {
+            // Clears previous danger message
+            infoMessage(this, QString());
+        } else if (danger != QLatin1String("safe")) {
+            infoMessage(this, i18n("This type of file can harm your computer. If you want to keep it, accept this download from the browser window."));
+        }
+    }
+
     it = payload.constFind(QStringLiteral("incognito"));
     if (it != end) {
         m_incognito = it->toBool();
