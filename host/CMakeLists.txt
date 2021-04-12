@@ -39,7 +39,10 @@ target_link_libraries(
     PW::LibTaskManager
 )
 
+configure_file(org.kde.plasma.browser_integration.host.desktop.in ${CMAKE_CURRENT_BINARY_DIR}/org.kde.plasma.browser_integration.host.desktop @ONLY)
+
 install(TARGETS plasma-browser-integration-host ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.plasma.browser_integration.host.desktop DESTINATION ${KDE_INSTALL_APPDIR})
 
 install(FILES plasma-runner-browsertabs.desktop DESTINATION ${KDE_INSTALL_DATAROOTDIR}/krunner/dbusplugins)
 install(FILES plasma-runner-browserhistory.desktop DESTINATION ${KDE_INSTALL_DATAROOTDIR}/krunner/dbusplugins)

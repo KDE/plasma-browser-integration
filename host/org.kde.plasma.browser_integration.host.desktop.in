@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Plasma Browser Integration Host
+Icon=plasma-browser-integration
+Exec=@CMAKE_INSTALL_PREFIX@/bin/plasma-browser-integration-host
+NoDisplay=true
+#X-systemd-skip=true
+X-KDE-Wayland-Interfaces=org_kde_plasma_window_management
