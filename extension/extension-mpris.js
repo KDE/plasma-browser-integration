@@ -36,6 +36,12 @@ function playerIdFromSender(sender) {
     return sender.tab.id + "-" + (sender.frameId || 0);
 }
 
+function playersOnTab(tabId) {
+    return playerIds.filter((playerId) => {
+        return playerId.startsWith(tabId + "-");
+    });
+}
+
 function sendPlayerTabMessage(player, action, payload) {
     if (!player) {
         return;
@@ -77,6 +83,20 @@ function playerGone(playerId) {
     var removedPlayerIdx = playerIds.indexOf(playerId);
     if (removedPlayerIdx > -1) {
         playerIds.splice(removedPlayerIdx, 1); // remove that player from the array
+    }
+
+    // If there is no more player on this tab, remove badge
+    const gonePlayerTabId = Number(playerId.split("-")[0]);
+    if (playersOnTab(gonePlayerTabId).length === 0) {
+        chrome.browserAction.setBadgeText({
+            text: null, // null resets tab-specific badge
+            tabId: gonePlayerTabId // important to pass it as number!
+        });
+        // Important to clear the color, too, so it reverts back to global badge setting
+        chrome.browserAction.setBadgeBackgroundColor({
+            color: null,
+            tabId: gonePlayerTabId
+        });
     }
 
     let newPlayer = currentPlayer();
@@ -192,6 +212,16 @@ addRuntimeCallback("mpris", "playing", function (message, sender) {
     payload.url = sender.tab.url;
 
     sendPortMessage("mpris", "playing", payload);
+
+    // Add toolbar icon to make it obvious you now have controls to disable the player
+    chrome.browserAction.setBadgeText({
+        text: "♪",
+        tabId: sender.tab.id
+    });
+    chrome.browserAction.setBadgeBackgroundColor({
+        color: "#1d99f3", // Breeze "highlight" color
+        tabId: sender.tab.id
+    });
 });
 
 addRuntimeCallback("mpris", "gone", function (message, sender) {
@@ -230,9 +260,5 @@ addRuntimeCallback("mpris", ["metadata", "callbacks"], function (message, sender
 });
 
 addRuntimeCallback("mpris", "hasTabPlayer", (message) => {
-    const playersOnTab = playerIds.filter((playerId) => {
-        return playerId.startsWith(message.tabId + "-");
-    });
-
-    return Promise.resolve(playersOnTab);
+    return Promise.resolve(playersOnTab(message.tabId));
 });
