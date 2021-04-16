@@ -1,6 +1,13 @@
 [Desktop Entry]
 Type=Application
 Name=Plasma Browser Integration Host
+Name[ca]=Servidor de la integració del navegador amb el Plasma
+Name[de]=Plasma-Integration für Browser
+Name[es]=Anfitrión de integración del navegador con Plasma
+Name[nl]=Host voor Plasma-browserintegratie
+Name[sv]=Värddator för Plasma webbläsarintegrering
+Name[uk]=Вузол інтеграції браузера із Плазмою
+Name[x-test]=xxPlasma Browser Integration Hostxx
 Icon=plasma-browser-integration
 Exec=@CMAKE_INSTALL_PREFIX@/bin/plasma-browser-integration-host
 NoDisplay=true
