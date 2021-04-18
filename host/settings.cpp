@@ -179,7 +179,7 @@ void Settings::handleData(const QString &event, const QJsonObject &data)
             PluginManager::self().settingsChanged(plugin, settingsObject);
         }
 
-        emit changed(data);
+        Q_EMIT changed(data);
     } else if (event == QLatin1String("openKRunnerSettings")) {
         QProcess::startDetached(QStringLiteral("systemsettings5"), {QStringLiteral("kcm_plasmasearch")});
     } else if (event == QLatin1String("setEnvironment")) {

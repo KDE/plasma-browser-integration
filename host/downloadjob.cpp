@@ -52,7 +52,7 @@ void DownloadJob::doStart()
 
 bool DownloadJob::doKill()
 {
-    emit killRequested();
+    Q_EMIT killRequested();
     // TODO what if the user kills us from notification area while the
     // "Save As" prompt is still open?
     return true;
@@ -60,13 +60,13 @@ bool DownloadJob::doKill()
 
 bool DownloadJob::doSuspend()
 {
-    emit suspendRequested();
+    Q_EMIT suspendRequested();
     return true;
 }
 
 bool DownloadJob::doResume()
 {
-    emit resumeRequested();
+    Q_EMIT resumeRequested();
     return true;
 }
 

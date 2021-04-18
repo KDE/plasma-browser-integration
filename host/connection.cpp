@@ -88,5 +88,5 @@ void Connection::readData()
 
     m_stdIn.commitTransaction();
     const QJsonObject json = QJsonDocument::fromJson(data).object();
-    emit dataReceived(json);
+    Q_EMIT dataReceived(json);
 }

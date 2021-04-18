@@ -70,9 +70,9 @@ bool PluginManager::setPluginLoaded(AbstractBrowserPlugin *plugin, bool loaded)
     plugin->setLoaded(loaded);
 
     if (loaded) {
-        emit pluginLoaded(plugin);
+        Q_EMIT pluginLoaded(plugin);
     } else {
-        emit pluginUnloaded(plugin);
+        Q_EMIT pluginUnloaded(plugin);
     }
 
     return true;
