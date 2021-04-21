@@ -60,7 +60,7 @@
         "message": "Host version: $1"
     },
     "options_about_kde": {
-        "message": "KDE is a world-wide community of software engineers, artists, writers, translators and creators who are committed to <a href=\"$1\">Free Software</a> development. KDE produces the Plasma desktop environment, hundreds of applications, and the many software libraries that support them. KDE is a cooperative enterprise: no single entity controls its direction or products. Instead, we work together to achieve the common goal of building the world's finest Free Software. Everyone is welcome to <a href=\"$2\">join and contribute</a> to KDE, including you. Visit <a href=\"$3\">$3</a> for more information about the KDE community and the software we produce."
+        "message": "<html><b>KDE</b> dünyanın dört bir yanında bulunan ve <a href=\"$1\">Özgür Yazılım</a> geliştirme felsefesini benimsemiş olan yazılım mühendislerinin, sanatçıların, yazarların ve çevirmenlerin katılımı ile geliştirilen bir topluluktur. KDE, Plasma masaüstü ortamını, yüzlerce uygulama ve bu uygulamaları destekleyen çok sayıda yazılım kütüphanesi üretiyor.<br /><br />KDE, katılımcı bir girişimdir ve KDE ürünlerini ya da çalışmalarını kontrol eden tekil bir kişilik yoktur. Bunun yerine, birlikte çalışarak dünyanın en iyi Özgür Yazılımları'nı geliştirmek olan ortak amacı paylaşarak çalışıyoruz. KDE Projesine siz de dahil herkes <a href=\"$2\">katılıp katkıda bulunabilir</a>.<br /><br />KDE topluluğu ve ürettiği yazılımlar hakkında daha fazla bilgi almak için <a href=\"$3\">$3</a> adresini ziyaret edin.</html>"
     },
     "options_about_license": {
         "message": "License: <a href=\"$1\">GNU General Public License Version 3</a>"
