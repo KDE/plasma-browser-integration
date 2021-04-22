@@ -3,6 +3,7 @@ Type=Application
 Name=Plasma Browser Integration Host
 Name[az]=Plazma Brauzer ilə inteqrasiya host'u
 Name[ca]=Servidor de la integració del navegador amb el Plasma
+Name[cs]=Integrace prohlížeče do prostředí Plasma
 Name[de]=Plasma-Integration für Browser
 Name[es]=Anfitrión de integración del navegador con Plasma
 Name[fr]=Hôte pour l'intégration du navigateur dans Plasma
