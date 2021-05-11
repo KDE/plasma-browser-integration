@@ -1,6 +1,7 @@
 /*
     SPDX-FileCopyrightText: 2017 Kai Uwe Broulik <kde@privat.broulik.de>
     SPDX-FileCopyrightText: 2017 David Edmundson <davidedmundson@kde.org>
+    SPDX-FileCopyrightText: 2021 Harald Sitter <sitter@kde.org>
 
     SPDX-License-Identifier: MIT
 */
@@ -223,6 +224,7 @@ bool Settings::setEnvironmentFromTasksModelIndex(const QModelIndex &idx)
     qApp->setDesktopFileName(service->desktopEntryName());
     qApp->setWindowIcon(QIcon::fromTheme(service->icon()));
 
+    m_tasksModel->disconnect(this); // prevent further signal emission to not deref a nullptr https://bugs.kde.org/show_bug.cgi?id=435811
     m_tasksModel->deleteLater();
     m_tasksModel = nullptr;
 
