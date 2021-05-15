@@ -80,7 +80,6 @@ X-KDE-PluginInfo-Name=browsertabs
 X-KDE-PluginInfo-Version=1.0
 X-KDE-PluginInfo-License=LGPL
 X-KDE-PluginInfo-EnabledByDefault=true
-X-Plasma-AdvertiseSingleRunnerQueryMode=true
 X-Plasma-API=DBus
 X-Plasma-DBusRunner-Service=org.kde.plasma.browser_integration*
 X-Plasma-DBusRunner-Path=/TabsRunner
