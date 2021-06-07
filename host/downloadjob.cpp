@@ -194,7 +194,7 @@ void DownloadJob::update(const QJsonObject &payload)
         }
     }
 
-    if (!speedValid) {
+    if (!speedValid && m_bytesReceived > oldBytesReceived) {
         if (!m_fallbackSpeedTimer.isValid()) {
             m_fallbackSpeedTimer.start();
         }
