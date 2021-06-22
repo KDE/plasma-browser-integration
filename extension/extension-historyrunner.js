@@ -35,7 +35,8 @@ function getFavicon(url) {
             }
             reader.readAsDataURL(xhr.response);
         }
-        xhr.open("GET", "chrome://favicon/" + url);
+        const favIconUrl = "chrome://favicon/size/16@" + window.devicePixelRatio + "x/" + url;
+        xhr.open("GET", favIconUrl);
         xhr.responseType = "blob";
         xhr.send();
     });
