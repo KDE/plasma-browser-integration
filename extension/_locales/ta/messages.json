@@ -1,18 +1,18 @@
 {
     "browseraction_mpris_enable_on": {
-        "message": "Enable media controls on:"
+        "message": "இங்கு ஊடக கட்டுப்படுத்திகளை இயக்கு:"
     },
     "browseraction_mpris_title": {
         "message": "ஊடக கட்டுப்பாடு"
     },
     "browseraction_title": {
-        "message": "Plasma Browser Integration"
+        "message": "பிளாஸ்மா உலாவி ஒருங்கிணைப்பு"
     },
     "general_error_host_disconnected_title": {
-        "message": "The native host disconnected unexpectedly."
+        "message": "உள்ளமை புரவன் எதிர்பாராத விதமாக தொடர்பிழந்தது."
     },
     "general_error_not_supported_os": {
-        "message": "This extension is only supported on Linux and FreeBSD."
+        "message": "இந்த துணை நிரல், லினக்ஸிலும் FreeBSD-யிலும் மட்டும்தான் ஆதரிக்கப்படுகிறது."
     },
     "general_error_not_supported_os_title": {
         "message": "ஆதரிக்கப்படாத இயக்குதளம்"
