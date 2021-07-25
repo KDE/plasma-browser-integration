@@ -55,7 +55,7 @@ QJsonObject PurposePlugin::handleData(int serial, const QString &event, const QJ
 
         if (!m_menu) {
             m_menu.reset(new Purpose::Menu());
-            m_menu->model()->setPluginType(QStringLiteral("Export"));
+            m_menu->model()->setPluginType(QStringLiteral("ShareUrl"));
 
             connect(m_menu.data(), &QMenu::aboutToShow, this, [this] {
                 m_menu->setProperty("actionInvoked", false);
