@@ -1,6 +1,6 @@
 {
     "browseraction_mpris_enable_on": {
-        "message": "Enable media controls on:"
+        "message": "Activează controalele multimedia pe:"
     },
     "browseraction_mpris_title": {
         "message": "Controale multimedia"
@@ -9,22 +9,22 @@
         "message": "Integrare Plasma cu navigatorul"
     },
     "general_error_host_disconnected_title": {
-        "message": "The native host disconnected unexpectedly."
+        "message": "Gazda nativă s-a deconectat pe neașteptate."
     },
     "general_error_not_supported_os": {
-        "message": "This extension is only supported on Linux and FreeBSD."
+        "message": "Această extensie e susținută doar pe Linux și FreeBSD."
     },
     "general_error_not_supported_os_title": {
         "message": "Sistem de operare nesusținut"
     },
     "general_error_startup_failed": {
-        "message": "Make sure the 'plasma-browser-integration' package is installed correctly and that you are running Plasma 5.13 or later."
+        "message": "Asigurați-vă că pachetul „plasma-browser-integration” e instalat corect și că rulați Plasma 5.13 sau mai recentă."
     },
     "general_error_startup_failed_title": {
-        "message": "Failed to connect to the native host."
+        "message": "Conectarea la gazda nativă a eșuat."
     },
     "general_error_startup_failed_wiki_link": {
-        "message": "Visit project wiki page for more information"
+        "message": "Vizitați pagina wiki a proiectului pentru informații suplimentare"
     },
     "general_error_unknown": {
         "message": "Eroare necunoscută"
@@ -39,7 +39,7 @@
         "message": "Deschide prin KDE Connect"
     },
     "options_about_bugs": {
-        "message": "If you find an issue, please check the <a href=\"$1\">list of open bugs</a> and then <a href=\"$2\">file a bug report</a>."
+        "message": "Dacă găsiți un defect, verificați <a href=\"$1\">lista de defecte deschise</a> și apoi <a href=\"$2\">raportați un defect</a>."
     },
     "options_about_changelog_link": {
         "message": "Vezi jurnalul modificărilor"
@@ -60,7 +60,7 @@
         "message": "Versiune gazdă: $1"
     },
     "options_about_kde": {
-        "message": "KDE is a world-wide community of software engineers, artists, writers, translators and creators who are committed to <a href=\"$1\">Free Software</a> development. KDE produces the Plasma desktop environment, hundreds of applications, and the many software libraries that support them. KDE is a cooperative enterprise: no single entity controls its direction or products. Instead, we work together to achieve the common goal of building the world's finest Free Software. Everyone is welcome to <a href=\"$2\">join and contribute</a> to KDE, including you. Visit <a href=\"$3\">$3</a> for more information about the KDE community and the software we produce."
+        "message": "KDE este o comunitate mondială de programatori, artiști, scriitori, traducători și creatori dedicați dezvoltării <a href=\"$1\">programelor libere</a>. KDE produce mediul de birou Plasma, sute de aplicații și multe biblioteci software ce le susțin. KDE este o întreprindere bazată pe cooperare: nicio entitate nu-i controlează direcția sau produsele. Dimpotrivă, colaborăm pentru a atinge scopul comun de a construi cele mai bune programe libere din lume. Toți sunt bineveniți să <a href=\"$2\">se alăture și să contribuie</a> la KDE, inclusiv dumneavoastră. Vizitați <a href=\"$3\">$3</a> pentru informații suplimentare despre comunitatea KDE și programele pe care le producem."
     },
     "options_about_license": {
         "message": "Licență: <a href=\"$1\">GNU General Public License Version 3</a>"
@@ -72,46 +72,46 @@
         "message": "Sergiu Bivol"
     },
     "options_heading_krunner": {
-        "message": "Plasma Search"
+        "message": "Căutare Plasma"
     },
     "options_not_supported_os": {
         "message": "Această extensie nu e susținută pe acest sistem de operare."
     },
     "options_plugin_breezeScrollBars_description": {
-        "message": "This may interfere with the appearance of websites that already apply a custom styling to their scroll bars."
+        "message": "Aceasta poate să interfereze cu aspectul saiturilor ce aplică deja un stil personalizat barelor de derulare."
     },
     "options_plugin_breezeScrollBars_title": {
         "message": "Folosește bare de derulare în stilul Briză"
     },
     "options_plugin_downloads_addToRecentDocuments": {
-        "message": "Add downloaded files to recent documents"
+        "message": "Adaugă fișierele descărcate la documentele recente"
     },
     "options_plugin_downloads_saveOriginUrl": {
-        "message": "Save URL a file was downloaded from in the file's attributes"
+        "message": "Salvează URL-ul de la care a fost descărcat un fișier în atributele acestuia"
     },
     "options_plugin_downloads_saveOriginUrl_description": {
-        "message": "Note: The URL may contain sensitive information that could be disclosed when the file is accessible by or shared with others"
+        "message": "Notă: URL-ul poate să conțină informații sensibile ce pot fi dezvăluite când fișierul e accesibil sau partajat cu alții"
     },
     "options_plugin_downloads_title": {
         "message": "Arată descărcările în zona de notificare"
     },
     "options_plugin_historyrunner_description": {
-        "message": "This feature might need <a id=\"$1\" href=\"$2\">additional permissions</a> to be used."
+        "message": "Această funcționalitate poate necesita <a id=\"$1\" href=\"$2\">permisiuni suplimentare</a> pentru a fi folosită."
     },
     "options_plugin_historyrunner_title": {
-        "message": "Search through browser history"
+        "message": "Caută prin istoricul navigatorului"
     },
     "options_plugin_kdeconnect_description": {
-        "message": "Adds a context menu entry to links enabling you to send them to your phone and other paired devices using <a href=\"$1\">KDE Connect</a>."
+        "message": "Adaugă o înregistrare în meniul contextual pentru legături ce activează trimiterea acestora pe telefon și alte dispozitive conectate prin <a href=\"$1\">KDE Connect</a>."
     },
     "options_plugin_kdeconnect_title": {
         "message": "Trimite prin KDE Connect"
     },
     "options_plugin_mpris_description": {
-        "message": "Lets you control video and audio players in websites using the Media Controller plasmoid."
+        "message": "Permite controlul lectorilor video și audio din saituri folosind plasmoidul Controlor Multimedia"
     },
     "options_plugin_mpris_media_sessions_description": {
-        "message": "Extract metadata and thumbnails of currently playing content."
+        "message": "Extrage metadate și miniaturi din conținutul redat acum."
     },
     "options_plugin_mpris_media_sessions_title": {
         "message": "Controale multimedia avansate"
@@ -120,16 +120,16 @@
         "message": "Controale multimedia"
     },
     "options_plugin_purpose_description": {
-        "message": "Adds a \"Share...\" context menu entry and allows websites to open a dialog for sharing contents using the Web Share API."
+        "message": "Adaugă o înregistrare de meniu contextual „Partajează…” și permite saiturilor să deschidă un dialog pentru partajarea conținutului folosind Web Share API."
     },
     "options_plugin_purpose_title": {
         "message": "Partajare conținut"
     },
     "options_plugin_tabsrunner_description": {
-        "message": "Make sure the “Browser Tabs” module is enabled in <a id=\"$1\" href=\"$2\">Plasma Search settings</a>."
+        "message": "Asigurați-vă că modulul „File de navigator” e activat în <a id=\"$1\" href=\"$2\">configurările de căutare Plasma</a>."
     },
     "options_plugin_tabsrunner_title": {
-        "message": "Find browser tabs in “Run Command” window"
+        "message": "Găsește file de navigator în fereastra „Rulează comandă”"
     },
     "options_save_failed": {
         "message": "Salvarea configurărilor a eșuat"
@@ -147,25 +147,25 @@
         "message": "Configurări Integrare Plasma"
     },
     "permission_request_already": {
-        "message": "You have already granted this permission."
+        "message": "Ați acordat această permisiune deja."
     },
     "permission_request_button_request": {
-        "message": "Request Permission"
+        "message": "Cere permisiunea"
     },
     "permission_request_button_revoke": {
-        "message": "Revoke Permission"
+        "message": "Revocă permisiunea"
     },
     "permission_request_historyrunner_1": {
-        "message": "In order to provide search results for your browser history, additional permissions are required."
+        "message": "Pentru a oferi rezultate de căutare pentru istoricul navigatorului, sunt necesare permisiuni suplimentare."
     },
     "permission_request_historyrunner_2": {
-        "message": "You can disable this feature in <a id=\"$1\" href=\"$2\">Plasma search settings</a>."
+        "message": "Puteți dezactiva această funcționalitate în <a id=\"$1\" href=\"$2\">configurările de căutare Plasma</a>."
     },
     "permission_request_title": {
-        "message": "Additional permissions required"
+        "message": "Sunt necesare permisiuni suplimentare"
     },
     "purpose_share": {
-        "message": "Partajare..."
+        "message": "Partajează…"
     },
     "purpose_share_failed_text": {
         "message": "Conținutul nu a putut fi partajat: $1"
@@ -174,7 +174,7 @@
         "message": "Partajarea a eșuat"
     },
     "purpose_share_finished_text": {
-        "message": "The shared content link ($1) has been copied to the clipboard."
+        "message": "Legătura spre conținutul partajat ($1) a fost copiată în clipboard."
     },
     "purpose_share_finished_title": {
         "message": "Conținut partajat"
