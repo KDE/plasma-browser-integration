@@ -251,7 +251,7 @@ void DownloadJob::update(const QJsonObject &payload)
             // SERVER_PRECONDITION
             {QStringLiteral("SERVER_BAD_CONTENT"), i18n("The server does not have the requested data.")},
 
-            {QStringLiteral("CRASH"), i18n("The browser application closed unexpectedly.")}
+            {QStringLiteral("CRASH"), i18n("The browser application closed unexpectedly.")},
         };
 
 

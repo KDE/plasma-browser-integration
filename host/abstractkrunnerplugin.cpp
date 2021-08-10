@@ -71,7 +71,7 @@ RemoteImage AbstractKRunnerPlugin::serializeImage(const QImage &image)
         8, // bitsPerSample
         4, // channels
         QByteArray(reinterpret_cast<const char *>(convertedImage.constBits()),
-                   convertedImage.sizeInBytes())
+                   convertedImage.sizeInBytes()),
     };
     return remoteImage;
 }

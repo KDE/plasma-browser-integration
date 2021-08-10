@@ -40,7 +40,7 @@ QJsonObject PurposePlugin::handleData(int serial, const QString &event, const QJ
         if (m_pendingReplySerial != -1 || (m_menu && m_menu->isVisible())) {
             return {
                 {QStringLiteral("success"), false},
-                {QStringLiteral("errorCode"), QStringLiteral("BUSY")}
+                {QStringLiteral("errorCode"), QStringLiteral("BUSY")},
             };
         }
 
@@ -70,7 +70,7 @@ QJsonObject PurposePlugin::handleData(int serial, const QString &event, const QJ
                 QMetaObject::invokeMethod(this, [this] {
                     if (!m_menu->property("actionInvoked").toBool()) {
                         sendPendingReply(false, {
-                            {QStringLiteral("errorCode"), QStringLiteral("CANCELED")}
+                            {QStringLiteral("errorCode"), QStringLiteral("CANCELED")},
                         });
                     }
                 }, Qt::QueuedConnection);
@@ -86,7 +86,7 @@ QJsonObject PurposePlugin::handleData(int serial, const QString &event, const QJ
 
                     sendPendingReply(false, {
                         {QStringLiteral("errorCode"), errorCode},
-                        {QStringLiteral("errorMessage"), errorMessage}
+                        {QStringLiteral("errorMessage"), errorMessage},
                     });
                     return;
                 }
@@ -143,7 +143,7 @@ QJsonObject PurposePlugin::handleData(int serial, const QString &event, const QJ
         m_pendingReplySerial = -1;
         return {
             {QStringLiteral("success"), false},
-            {QStringLiteral("errorCode"), QStringLiteral("INVALID_ARGUMENT")}
+            {QStringLiteral("errorCode"), QStringLiteral("INVALID_ARGUMENT")},
         };
     }
 

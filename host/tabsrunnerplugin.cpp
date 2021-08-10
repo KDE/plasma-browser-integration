@@ -40,12 +40,12 @@ RemoteActions TabsRunnerPlugin::Actions()
     RemoteAction muteAction{
         s_actionIdMute,
         i18n("Mute Tab"),
-        QStringLiteral("audio-volume-muted")
+        QStringLiteral("audio-volume-muted"),
     };
     RemoteAction unmuteAction{
         s_actionIdUnmute,
         i18n("Unmute Tab"),
-        QStringLiteral("audio-volume-high")
+        QStringLiteral("audio-volume-high"),
     };
 
     return {muteAction, unmuteAction};
@@ -82,7 +82,7 @@ void TabsRunnerPlugin::Run(const QString &id, const QString &actionId)
 
     if (actionId.isEmpty()) {
         sendData(QStringLiteral("activate"), {
-            {QStringLiteral("tabId"), tabId}
+            {QStringLiteral("tabId"), tabId},
         });
         return;
     }
@@ -90,7 +90,7 @@ void TabsRunnerPlugin::Run(const QString &id, const QString &actionId)
     if (actionId == s_actionIdMute || actionId == s_actionIdUnmute) {
         sendData(QStringLiteral("setMuted"), {
             {QStringLiteral("tabId"), tabId},
-            {QStringLiteral("muted"), actionId == s_actionIdMute}
+            {QStringLiteral("muted"), actionId == s_actionIdMute},
         });
         return;
     }

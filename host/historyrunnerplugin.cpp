@@ -58,7 +58,7 @@ RemoteMatches HistoryRunnerPlugin::Match(const QString &searchTerm)
 
     if (runQuery) {
         sendData(QStringLiteral("find"), {
-            {QStringLiteral("query"), searchTerm}
+            {QStringLiteral("query"), searchTerm},
         });
     }
 
@@ -90,7 +90,7 @@ void HistoryRunnerPlugin::Run(const QString &id, const QString &actionId)
     sendData(QStringLiteral("run"), {
         // NOTE Chromium uses ints but Firefox returns ID strings, so don't toInt() this!
         {QStringLiteral("id"), historyId},
-        {QStringLiteral("url"), urlString}
+        {QStringLiteral("url"), urlString},
     });
 }
 
