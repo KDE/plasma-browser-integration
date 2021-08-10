@@ -11,17 +11,17 @@
 
 #include <KCrash>
 
+#include "abstractbrowserplugin.h"
 #include "connection.h"
 #include "pluginmanager.h"
-#include "abstractbrowserplugin.h"
 
-#include "settings.h"
-#include "kdeconnectplugin.h"
 #include "downloadplugin.h"
-#include "tabsrunnerplugin.h"
 #include "historyrunnerplugin.h"
+#include "kdeconnectplugin.h"
 #include "mprisplugin.h"
 #include "purposeplugin.h"
+#include "settings.h"
+#include "tabsrunnerplugin.h"
 
 void msgHandler(QtMsgType type, const QMessageLogContext &context, const QString &msg)
 {
@@ -30,13 +30,13 @@ void msgHandler(QtMsgType type, const QMessageLogContext &context, const QString
 
     QJsonObject data;
     data[QStringLiteral("subsystem")] = QStringLiteral("debug");
-    switch(type) {
-        case QtDebugMsg:
-        case QtInfoMsg:
-            data[QStringLiteral("action")] = QStringLiteral("debug");
-            break;
-        default:
-            data[QStringLiteral("action")] = QStringLiteral("warning");
+    switch (type) {
+    case QtDebugMsg:
+    case QtInfoMsg:
+        data[QStringLiteral("action")] = QStringLiteral("debug");
+        break;
+    default:
+        data[QStringLiteral("action")] = QStringLiteral("warning");
     }
     data[QStringLiteral("payload")] = QJsonObject({{QStringLiteral("message"), msg}});
 

@@ -9,8 +9,8 @@
 
 #include "abstractbrowserplugin.h"
 
-#include <QHash>
 #include "downloadjob.h"
+#include <QHash>
 
 class KUiServerV2JobTracker;
 
@@ -23,6 +23,7 @@ public:
     bool onUnload() override;
     using AbstractBrowserPlugin::handleData;
     void handleData(const QString &event, const QJsonObject &data) override;
+
 private:
     KUiServerV2JobTracker *m_tracker;
     QHash<int, DownloadJob *> m_jobs;

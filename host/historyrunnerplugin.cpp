@@ -11,9 +11,9 @@
 
 #include <QDBusConnection>
 #include <QGuiApplication>
-#include <QJsonArray>
 #include <QIcon>
 #include <QImage>
+#include <QJsonArray>
 #include <QSet>
 #include <QUrl>
 #include <QVariant>
@@ -28,12 +28,8 @@ static const auto s_errorNoPermission = QLatin1String("NO_PERMISSION");
 static const auto s_idRequestPermission = QLatin1String("REQUEST_PERMISSION");
 
 HistoryRunnerPlugin::HistoryRunnerPlugin(QObject *parent)
-    : AbstractKRunnerPlugin(QStringLiteral("/HistoryRunner"),
-                            QStringLiteral("historyrunner"),
-                            1,
-                            parent)
+    : AbstractKRunnerPlugin(QStringLiteral("/HistoryRunner"), QStringLiteral("historyrunner"), 1, parent)
 {
-
 }
 
 RemoteActions HistoryRunnerPlugin::Actions()
@@ -57,9 +53,10 @@ RemoteMatches HistoryRunnerPlugin::Match(const QString &searchTerm)
     m_requests.insert(searchTerm, message());
 
     if (runQuery) {
-        sendData(QStringLiteral("find"), {
-            {QStringLiteral("query"), searchTerm},
-        });
+        sendData(QStringLiteral("find"),
+                 {
+                     {QStringLiteral("query"), searchTerm},
+                 });
     }
 
     return {};
@@ -87,14 +84,15 @@ void HistoryRunnerPlugin::Run(const QString &id, const QString &actionId)
 
     // Ideally we'd run the "id" but there's no API to query a history item by id.
     // To be future proof, we'll send both, just in case there's an "id" API at some point
-    sendData(QStringLiteral("run"), {
-        // NOTE Chromium uses ints but Firefox returns ID strings, so don't toInt() this!
-        {QStringLiteral("id"), historyId},
-        {QStringLiteral("url"), urlString},
-    });
+    sendData(QStringLiteral("run"),
+             {
+                 // NOTE Chromium uses ints but Firefox returns ID strings, so don't toInt() this!
+                 {QStringLiteral("id"), historyId},
+                 {QStringLiteral("url"), urlString},
+             });
 }
 
-void HistoryRunnerPlugin::handleData(const QString& event, const QJsonObject& json)
+void HistoryRunnerPlugin::handleData(const QString &event, const QJsonObject &json)
 {
     if (event == QLatin1String("found")) {
         const QString query = json.value(QStringLiteral("query")).toString();
@@ -164,8 +162,7 @@ void HistoryRunnerPlugin::handleData(const QString& event, const QJsonObject& js
 
                 qreal relevance = 0;
 
-                if (text.compare(query, Qt::CaseInsensitive) == 0
-                        || urlString.compare(query, Qt::CaseInsensitive) == 0) {
+                if (text.compare(query, Qt::CaseInsensitive) == 0 || urlString.compare(query, Qt::CaseInsensitive) == 0) {
                     match.type = Plasma::QueryMatch::ExactMatch;
                     relevance = 1;
                 } else {
@@ -218,10 +215,7 @@ void HistoryRunnerPlugin::handleData(const QString& event, const QJsonObject& js
         const auto requests = m_requests.values(query);
         m_requests.remove(query); // is there a takeAll?
         for (const QDBusMessage &request : requests) {
-            QDBusConnection::sessionBus().send(
-                request.createReply(QVariant::fromValue(matches))
-            );
+            QDBusConnection::sessionBus().send(request.createReply(QVariant::fromValue(matches)));
         }
     }
 }
-

@@ -26,13 +26,9 @@
 static const auto s_actionIdMute = QLatin1String("MUTE");
 static const auto s_actionIdUnmute = QLatin1String("UNMUTE");
 
-TabsRunnerPlugin::TabsRunnerPlugin(QObject* parent) :
-    AbstractKRunnerPlugin(QStringLiteral("/TabsRunner"),
-                          QStringLiteral("tabsrunner"),
-                          1,
-                          parent)
+TabsRunnerPlugin::TabsRunnerPlugin(QObject *parent)
+    : AbstractKRunnerPlugin(QStringLiteral("/TabsRunner"), QStringLiteral("tabsrunner"), 1, parent)
 {
-
 }
 
 RemoteActions TabsRunnerPlugin::Actions()
@@ -81,27 +77,28 @@ void TabsRunnerPlugin::Run(const QString &id, const QString &actionId)
     }
 
     if (actionId.isEmpty()) {
-        sendData(QStringLiteral("activate"), {
-            {QStringLiteral("tabId"), tabId},
-        });
+        sendData(QStringLiteral("activate"),
+                 {
+                     {QStringLiteral("tabId"), tabId},
+                 });
         return;
     }
 
     if (actionId == s_actionIdMute || actionId == s_actionIdUnmute) {
-        sendData(QStringLiteral("setMuted"), {
-            {QStringLiteral("tabId"), tabId},
-            {QStringLiteral("muted"), actionId == s_actionIdMute},
-        });
+        sendData(QStringLiteral("setMuted"),
+                 {
+                     {QStringLiteral("tabId"), tabId},
+                     {QStringLiteral("muted"), actionId == s_actionIdMute},
+                 });
         return;
     }
 
     sendErrorReply(QDBusError::InvalidArgs, QStringLiteral("Unknown action ID"));
 }
 
-void TabsRunnerPlugin::handleData(const QString& event, const QJsonObject& json)
+void TabsRunnerPlugin::handleData(const QString &event, const QJsonObject &json)
 {
     if (event == QLatin1String("gotTabs")) {
-
         const QJsonArray &tabs = json.value(QStringLiteral("tabs")).toArray();
 
         for (auto it = m_requests.constBegin(), end = m_requests.constEnd(); it != end; ++it) {
@@ -123,8 +120,7 @@ void TabsRunnerPlugin::handleData(const QString& event, const QJsonObject& json)
 
                 qreal relevance = 0;
                 // someone was really busy here, typing the *exact* title or url :D
-                if (text.compare(query, Qt::CaseInsensitive) == 0
-                        || url.toString().compare(query, Qt::CaseInsensitive) == 0) {
+                if (text.compare(query, Qt::CaseInsensitive) == 0 || url.toString().compare(query, Qt::CaseInsensitive) == 0) {
                     match.type = Plasma::QueryMatch::ExactMatch;
                     relevance = 1;
                 } else {
@@ -189,9 +185,7 @@ void TabsRunnerPlugin::handleData(const QString& event, const QJsonObject& json)
                 matches.append(match);
             }
 
-            QDBusConnection::sessionBus().send(
-                request.createReply(QVariant::fromValue(matches))
-            );
+            QDBusConnection::sessionBus().send(request.createReply(QVariant::fromValue(matches)));
         }
 
         m_requests.clear();

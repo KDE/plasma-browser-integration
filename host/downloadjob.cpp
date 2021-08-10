@@ -47,7 +47,6 @@ void DownloadJob::start()
 
 void DownloadJob::doStart()
 {
-
 }
 
 bool DownloadJob::doKill()
@@ -74,9 +73,7 @@ QUrl DownloadJob::originUrl() const
 {
     QUrl url = (m_finalUrl.isValid() ? m_finalUrl : m_url);
 
-    if (m_referrer.isValid()
-            && (url.scheme() == QLatin1String("blob")
-                || url.scheme() == QLatin1String("data"))) {
+    if (m_referrer.isValid() && (url.scheme() == QLatin1String("blob") || url.scheme() == QLatin1String("data"))) {
         url = m_referrer;
     }
 
@@ -219,8 +216,7 @@ void DownloadJob::update(const QJsonObject &payload)
 
     const QString error = payload.value(QStringLiteral("error")).toString();
     if (!error.isEmpty()) {
-        if (error == QLatin1String("USER_CANCELED")
-            || error == QLatin1String("USER_SHUTDOWN")) {
+        if (error == QLatin1String("USER_CANCELED") || error == QLatin1String("USER_SHUTDOWN")) {
             setError(KIO::ERR_USER_CANCELED); // will keep Notification applet from showing a "finished"/error message
             emitResult();
             return;
@@ -229,7 +225,7 @@ void DownloadJob::update(const QJsonObject &payload)
         // value is a QVariant so we can be lazy and support both KIO errors and custom test
         // if QVariant is an int: use that as KIO error
         // if QVariant is a QString: set UserError and message
-        static const QHash<QString, QString> errors {
+        static const QHash<QString, QString> errors{
             // for a list of these error codes *and their meaning* instead of looking at browser
             // extension docs, check out Chromium's source code: download_interrupt_reason_values.h
             {QStringLiteral("FILE_ACCESS_DENIED"), i18n("Access denied.")}, // KIO::ERR_ACCESS_DENIED
@@ -253,7 +249,6 @@ void DownloadJob::update(const QJsonObject &payload)
 
             {QStringLiteral("CRASH"), i18n("The browser application closed unexpectedly.")},
         };
-
 
         const QString &errorValue = errors.value(error);
         if (errorValue.isEmpty()) { // unknown error
@@ -295,10 +290,10 @@ void DownloadJob::update(const QJsonObject &payload)
 
 void DownloadJob::updateDescription()
 {
-    description(this, i18nc("Job heading, like 'Copying'", "Downloading"),
-        qMakePair<QString, QString>(i18nc("The URL being downloaded", "Source"), originUrl().toDisplayString()),
-        qMakePair<QString, QString>(i18nc("The location being downloaded to", "Destination"), m_destination.toLocalFile())
-    );
+    description(this,
+                i18nc("Job heading, like 'Copying'", "Downloading"),
+                qMakePair<QString, QString>(i18nc("The URL being downloaded", "Source"), originUrl().toDisplayString()),
+                qMakePair<QString, QString>(i18nc("The location being downloaded to", "Destination"), m_destination.toLocalFile()));
 }
 
 void DownloadJob::addToRecentDocuments()

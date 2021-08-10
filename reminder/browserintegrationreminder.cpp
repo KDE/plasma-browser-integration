@@ -7,15 +7,15 @@
 
 #include "browserintegrationreminder.h"
 
+#include <QAction>
 #include <QDBusConnection>
+#include <QDBusConnectionInterface>
+#include <QDBusMessage>
 #include <QDBusServiceWatcher>
 #include <QDebug>
-#include <QDBusMessage>
 #include <QDesktopServices>
-#include <QTimer>
-#include <QDBusConnectionInterface>
 #include <QMenu>
-#include <QAction>
+#include <QTimer>
 
 #include <KActivities/ResourceInstance>
 #include <KConfig>
@@ -23,28 +23,26 @@
 #include <KIO/ApplicationLauncherJob>
 #include <KLocalizedString>
 #include <KNotificationJobUiDelegate>
-#include <kpluginfactory.h>
 #include <KService>
 #include <KSharedConfig>
 #include <KStatusNotifierItem>
+#include <kpluginfactory.h>
 
-K_PLUGIN_FACTORY_WITH_JSON(BrowserIntegrationReminderFactory,
-                           "browserintegrationreminder.json",
-                           registerPlugin<BrowserIntegrationReminder>();)
+K_PLUGIN_FACTORY_WITH_JSON(BrowserIntegrationReminderFactory, "browserintegrationreminder.json", registerPlugin<BrowserIntegrationReminder>();)
 
 static const QString s_dbusServiceName = QStringLiteral("org.kde.plasma.browser_integration");
 
 #define MAX_SHOW_COUNT 3
 
-BrowserIntegrationReminder::BrowserIntegrationReminder(QObject *parent, const QList<QVariant>&)
-      : KDEDModule(parent)
+BrowserIntegrationReminder::BrowserIntegrationReminder(QObject *parent, const QList<QVariant> &)
+    : KDEDModule(parent)
 {
     m_debug = qEnvironmentVariableIsSet("PLASMA_BROWSE_REMIND_FORCE");
     auto config = KSharedConfig::openConfig()->group("PlasmaBrowserIntegration");
     m_shownCount = config.readEntry("shownCount", 0);
 
     if (m_shownCount > MAX_SHOW_COUNT && !m_debug) {
-        disableAutoload(); //safer than it looks it won't be processed till we hit the event loop
+        disableAutoload(); // safer than it looks it won't be processed till we hit the event loop
         return;
     }
 
@@ -68,18 +66,23 @@ BrowserIntegrationReminder::BrowserIntegrationReminder(QObject *parent, const QL
     setModuleName(QStringLiteral("BrowserIntegrationReminder"));
     QDBusConnection dbus = QDBusConnection::sessionBus();
     dbus.connect(QStringLiteral("org.kde.ActivityManager"),
-                QStringLiteral("/ActivityManager/Resources/Scoring"),
-                QStringLiteral("org.kde.ActivityManager.ResourcesScoring"),
-                QStringLiteral("ResourceScoreUpdated"),
-                this,
-                SLOT(onResourceScoresChanged(QString,QString,QString,double,unsigned int,unsigned int)));
+                 QStringLiteral("/ActivityManager/Resources/Scoring"),
+                 QStringLiteral("org.kde.ActivityManager.ResourcesScoring"),
+                 QStringLiteral("ResourceScoreUpdated"),
+                 this,
+                 SLOT(onResourceScoresChanged(QString, QString, QString, double, unsigned int, unsigned int)));
 }
 
 BrowserIntegrationReminder::~BrowserIntegrationReminder()
 {
 }
 
-void BrowserIntegrationReminder::onResourceScoresChanged(const QString &activity, const QString &client, const QString &resource, double score, unsigned int lastUpdate, unsigned int firstUpdate)
+void BrowserIntegrationReminder::onResourceScoresChanged(const QString &activity,
+                                                         const QString &client,
+                                                         const QString &resource,
+                                                         double score,
+                                                         unsigned int lastUpdate,
+                                                         unsigned int firstUpdate)
 {
     Q_UNUSED(activity);
     Q_UNUSED(score);
@@ -94,7 +97,7 @@ void BrowserIntegrationReminder::onResourceScoresChanged(const QString &activity
     if (!m_browsers.contains(desktopFile)) {
         return;
     }
-    //wait a few seconds and then query if the extension is active
+    // wait a few seconds and then query if the extension is active
     QTimer::singleShot(10 * 1000, this, [this, desktopFile]() {
         onBrowserStarted(desktopFile);
     });
@@ -123,8 +126,8 @@ void BrowserIntegrationReminder::onBrowserStarted(const QString &browser)
     }
 
     if (!m_debug && bus.interface()->isServiceRegistered(s_dbusServiceName)) {
-        //the user has the extension installed, we don't need to keep checking
-        //env var exists for easier testing
+        // the user has the extension installed, we don't need to keep checking
+        // env var exists for easier testing
         disableAutoload();
         return;
     }
@@ -153,10 +156,10 @@ void BrowserIntegrationReminder::onBrowserStarted(const QString &browser)
         job->start();
 
         KActivities::ResourceInstance::notifyAccessed(QUrl(QStringLiteral("applications:") + browser),
-            QStringLiteral("org.kde.plasma.browserintegrationreminder"));
-        //remove for this session.
-        //If the user installed it successfully we won't show anything next session
-        //If they didn't they'll get the link next login
+                                                      QStringLiteral("org.kde.plasma.browserintegrationreminder"));
+        // remove for this session.
+        // If the user installed it successfully we won't show anything next session
+        // If they didn't they'll get the link next login
         unload();
     });
 

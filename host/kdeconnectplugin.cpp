@@ -8,48 +8,34 @@
 #include "kdeconnectplugin.h"
 
 #include "connection.h"
+#include <QDBusConnection>
 #include <QDBusMessage>
 #include <QDBusPendingReply>
-#include <QDBusConnection>
 
 static const QString s_kdeConnectServiceName = QStringLiteral("org.kde.kdeconnect");
 static const QString s_kdeConnectObjectPath = QStringLiteral("/modules/kdeconnect");
 
 static const QString s_kdeConnectDaemon = QStringLiteral("org.kde.kdeconnect.daemon");
 
-KDEConnectPlugin::KDEConnectPlugin(QObject* parent) :
-    AbstractBrowserPlugin(QStringLiteral("kdeconnect"), 1, parent)
+KDEConnectPlugin::KDEConnectPlugin(QObject *parent)
+    : AbstractBrowserPlugin(QStringLiteral("kdeconnect"), 1, parent)
 {
-
 }
 
 bool KDEConnectPlugin::onLoad()
 {
     QDBusConnection bus = QDBusConnection::sessionBus();
 
+    bus.connect(s_kdeConnectServiceName, s_kdeConnectObjectPath, s_kdeConnectDaemon, QStringLiteral("deviceAdded"), this, SLOT(onDeviceAdded(QString)));
+    bus.connect(s_kdeConnectServiceName, s_kdeConnectObjectPath, s_kdeConnectDaemon, QStringLiteral("deviceRemoved"), this, SLOT(onDeviceRemoved(QString)));
     bus.connect(s_kdeConnectServiceName,
                 s_kdeConnectObjectPath,
                 s_kdeConnectDaemon,
-                QStringLiteral("deviceAdded"),
+                QStringLiteral("deviceVisibilityChanged"),
                 this,
-                SLOT(onDeviceAdded(QString)));
-    bus.connect(s_kdeConnectServiceName,
-                s_kdeConnectObjectPath,
-                s_kdeConnectDaemon,
-                QStringLiteral("deviceRemoved"),
-                this,
-                SLOT(onDeviceRemoved(QString)));
-    bus.connect(s_kdeConnectServiceName,
-                   s_kdeConnectObjectPath,
-                   s_kdeConnectDaemon,
-                   QStringLiteral("deviceVisibilityChanged"),
-                   this,
-                   SLOT(onDeviceVisibilityChanged(QString,bool)));
+                SLOT(onDeviceVisibilityChanged(QString, bool)));
 
-    QDBusMessage msg = QDBusMessage::createMethodCall(s_kdeConnectServiceName,
-                                                      s_kdeConnectObjectPath,
-                                                      s_kdeConnectDaemon,
-                                                      QStringLiteral("devices"));
+    QDBusMessage msg = QDBusMessage::createMethodCall(s_kdeConnectServiceName, s_kdeConnectObjectPath, s_kdeConnectDaemon, QStringLiteral("devices"));
     msg.setArguments({true /* only reachable */, true /* only paired */});
     QDBusPendingReply<QStringList> reply = bus.asyncCall(msg);
     QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
@@ -73,24 +59,14 @@ bool KDEConnectPlugin::onUnload()
 {
     QDBusConnection bus = QDBusConnection::sessionBus();
 
-    bus.disconnect(s_kdeConnectServiceName,
-                   s_kdeConnectObjectPath,
-                   s_kdeConnectDaemon,
-                   QStringLiteral("deviceAdded"),
-                   this,
-                   SLOT(onDeviceAdded(QString)));
-    bus.disconnect(s_kdeConnectServiceName,
-                   s_kdeConnectObjectPath,
-                   s_kdeConnectDaemon,
-                   QStringLiteral("deviceRemoved"),
-                   this,
-                   SLOT(onDeviceRemoved(QString)));
+    bus.disconnect(s_kdeConnectServiceName, s_kdeConnectObjectPath, s_kdeConnectDaemon, QStringLiteral("deviceAdded"), this, SLOT(onDeviceAdded(QString)));
+    bus.disconnect(s_kdeConnectServiceName, s_kdeConnectObjectPath, s_kdeConnectDaemon, QStringLiteral("deviceRemoved"), this, SLOT(onDeviceRemoved(QString)));
     bus.disconnect(s_kdeConnectServiceName,
                    s_kdeConnectObjectPath,
                    s_kdeConnectDaemon,
                    QStringLiteral("deviceVisibilityChanged"),
                    this,
-                   SLOT(onDeviceVisibilityChanged(QString,bool)));
+                   SLOT(onDeviceVisibilityChanged(QString, bool)));
 
     const QStringList devices = m_devices;
     for (const QString &deviceId : devices) {
@@ -129,8 +105,7 @@ void KDEConnectPlugin::onDeviceAdded(const QString &deviceId)
 
         QVariantMap props = reply.value();
 
-        if (!props.value(QStringLiteral("isReachable")).toBool()
-                || !props.value(QStringLiteral("isTrusted")).toBool()) {
+        if (!props.value(QStringLiteral("isReachable")).toBool() || !props.value(QStringLiteral("isTrusted")).toBool()) {
             return;
         }
 
@@ -157,7 +132,7 @@ void KDEConnectPlugin::onDeviceVisibilityChanged(const QString &deviceId, bool v
     }
 }
 
-void KDEConnectPlugin::handleData(const QString& event, const QJsonObject& json)
+void KDEConnectPlugin::handleData(const QString &event, const QJsonObject &json)
 {
     if (event == QLatin1String("shareUrl")) {
         const QString deviceId = json.value(QStringLiteral("deviceId")).toString();
@@ -166,11 +141,10 @@ void KDEConnectPlugin::handleData(const QString& event, const QJsonObject& json)
         debug() << "sending kde connect url" << url << "to device" << deviceId;
 
         QDBusMessage msg = QDBusMessage::createMethodCall(QStringLiteral("org.kde.kdeconnect"),
-                                                            QStringLiteral("/modules/kdeconnect/devices/") + deviceId + QStringLiteral("/share"),
-                                                            QStringLiteral("org.kde.kdeconnect.device.share"),
-                                                            QStringLiteral("shareUrl"));
+                                                          QStringLiteral("/modules/kdeconnect/devices/") + deviceId + QStringLiteral("/share"),
+                                                          QStringLiteral("org.kde.kdeconnect.device.share"),
+                                                          QStringLiteral("shareUrl"));
         msg.setArguments({url});
         QDBusConnection::sessionBus().call(msg, QDBus::NoBlock);
     }
 }
-

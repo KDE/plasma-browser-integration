@@ -37,63 +37,70 @@ const QMap<Settings::Environment, QString> Settings::environmentNames = {
 };
 
 const QMap<Settings::Environment, EnvironmentDescription> Settings::environmentDescriptions = {
-    {Settings::Environment::Chrome, {
-        QStringLiteral("google-chrome"),
-        QStringLiteral("Google Chrome"),
-        QStringLiteral("google-chrome"),
-        QStringLiteral("google.com"),
-        QStringLiteral("Google"),
-        QStringLiteral("google-chrome"),
-    } },
-    {Settings::Environment::Chromium, {
-        QStringLiteral("chromium-browser"),
-        QStringLiteral("Chromium"),
-        QStringLiteral("chromium-browser"),
-        QStringLiteral("google.com"),
-        QStringLiteral("Google"),
-        QStringLiteral("chromium-browser"),
-    } },
-    {Settings::Environment::Firefox, {
-        QStringLiteral("firefox"),
-        QStringLiteral("Mozilla Firefox"),
-        QStringLiteral("firefox"),
-        QStringLiteral("mozilla.org"),
-        QStringLiteral("Mozilla"),
-        QStringLiteral("firefox"),
-    } },
-    {Settings::Environment::Opera, {
-        QStringLiteral("opera"),
-        QStringLiteral("Opera"),
-        QStringLiteral("opera"),
-        QStringLiteral("opera.com"),
-        QStringLiteral("Opera"),
-        QStringLiteral("opera"),
-    } },
-    {Settings::Environment::Vivaldi, {
-        QStringLiteral("vivaldi"),
-        QStringLiteral("Vivaldi"),
-        // This is what the official package on their website uses
-        QStringLiteral("vivaldi-stable"),
-        QStringLiteral("vivaldi.com"),
-        QStringLiteral("Vivaldi"),
-        QStringLiteral("vivaldi"),
-    } },
-    {Settings::Environment::Brave, {
-        QStringLiteral("Brave"),
-        QStringLiteral("Brave"),
-        QStringLiteral("brave-browser"),
-        QStringLiteral("brave.com"),
-        QStringLiteral("Brave"),
-        QStringLiteral("brave"),
-    } },
-    {Settings::Environment::Edge, {
-        QStringLiteral("Edge"),
-        QStringLiteral("Microsoft Edge"),
-        QStringLiteral("microsoft-edge"),
-        QStringLiteral("microsoft.com"),
-        QStringLiteral("Microsoft"),
-        QStringLiteral("microsoft-edge"),
-    } },
+    {Settings::Environment::Chrome,
+     {
+         QStringLiteral("google-chrome"),
+         QStringLiteral("Google Chrome"),
+         QStringLiteral("google-chrome"),
+         QStringLiteral("google.com"),
+         QStringLiteral("Google"),
+         QStringLiteral("google-chrome"),
+     }},
+    {Settings::Environment::Chromium,
+     {
+         QStringLiteral("chromium-browser"),
+         QStringLiteral("Chromium"),
+         QStringLiteral("chromium-browser"),
+         QStringLiteral("google.com"),
+         QStringLiteral("Google"),
+         QStringLiteral("chromium-browser"),
+     }},
+    {Settings::Environment::Firefox,
+     {
+         QStringLiteral("firefox"),
+         QStringLiteral("Mozilla Firefox"),
+         QStringLiteral("firefox"),
+         QStringLiteral("mozilla.org"),
+         QStringLiteral("Mozilla"),
+         QStringLiteral("firefox"),
+     }},
+    {Settings::Environment::Opera,
+     {
+         QStringLiteral("opera"),
+         QStringLiteral("Opera"),
+         QStringLiteral("opera"),
+         QStringLiteral("opera.com"),
+         QStringLiteral("Opera"),
+         QStringLiteral("opera"),
+     }},
+    {Settings::Environment::Vivaldi,
+     {
+         QStringLiteral("vivaldi"),
+         QStringLiteral("Vivaldi"),
+         // This is what the official package on their website uses
+         QStringLiteral("vivaldi-stable"),
+         QStringLiteral("vivaldi.com"),
+         QStringLiteral("Vivaldi"),
+         QStringLiteral("vivaldi"),
+     }},
+    {Settings::Environment::Brave,
+     {
+         QStringLiteral("Brave"),
+         QStringLiteral("Brave"),
+         QStringLiteral("brave-browser"),
+         QStringLiteral("brave.com"),
+         QStringLiteral("Brave"),
+         QStringLiteral("brave"),
+     }},
+    {Settings::Environment::Edge,
+     {
+         QStringLiteral("Edge"),
+         QStringLiteral("Microsoft Edge"),
+         QStringLiteral("microsoft-edge"),
+         QStringLiteral("microsoft.com"),
+         QStringLiteral("Microsoft"),
+         QStringLiteral("microsoft-edge"),
+     }},
 };
 
 Settings::Settings()
@@ -103,7 +110,6 @@ Settings::Settings()
     // leading to a crash on Wayland
     , m_tasksModel(new TaskManager::WindowTasksModel(qGuiApp))
 {
-
     for (int i = 0; i < m_tasksModel->rowCount(); ++i) {
         if (setEnvironmentFromTasksModelIndex(m_tasksModel->index(i, 0))) {
             break;
@@ -123,25 +129,26 @@ Settings::Settings()
                 }
             }
         });
-        connect(m_tasksModel, &TaskManager::WindowTasksModel::dataChanged, this, [this](const QModelIndex &topLeft, const QModelIndex &bottomRight, const QVector<int> &roles) {
-            // TODO should we bother checking this, even?
-            if (topLeft.parent().isValid() || bottomRight.parent().isValid()
-                    || topLeft.column() != 0 || bottomRight.column() != 0) {
-                return;
-            }
+        connect(m_tasksModel,
+                &TaskManager::WindowTasksModel::dataChanged,
+                this,
+                [this](const QModelIndex &topLeft, const QModelIndex &bottomRight, const QVector<int> &roles) {
+                    // TODO should we bother checking this, even?
+                    if (topLeft.parent().isValid() || bottomRight.parent().isValid() || topLeft.column() != 0 || bottomRight.column() != 0) {
+                        return;
+                    }
 
-            if (!roles.isEmpty()
-                    && !roles.contains(TaskManager::AbstractTasksModel::LauncherUrlWithoutIcon)
-                    && !roles.contains(TaskManager::AbstractTasksModel::AppId)) {
-                return;
-            }
+                    if (!roles.isEmpty() && !roles.contains(TaskManager::AbstractTasksModel::LauncherUrlWithoutIcon)
+                        && !roles.contains(TaskManager::AbstractTasksModel::AppId)) {
+                        return;
+                    }
 
-            for (int i = topLeft.row(); i <= bottomRight.row(); ++i) {
-                if (setEnvironmentFromTasksModelIndex(m_tasksModel->index(i, 0))) {
-                    break;
-                }
-            }
-        });
+                    for (int i = topLeft.row(); i <= bottomRight.row(); ++i) {
+                        if (setEnvironmentFromTasksModelIndex(m_tasksModel->index(i, 0))) {
+                            break;
+                        }
+                    }
+                });
     }
 }
 
@@ -229,7 +236,6 @@ bool Settings::setEnvironmentFromTasksModelIndex(const QModelIndex &idx)
     m_tasksModel = nullptr;
 
     return true;
-
 }
 
 void Settings::setEnvironmentFromExtensionMessage(const QJsonObject &data)
@@ -271,15 +277,15 @@ QJsonObject Settings::handleData(int serial, const QString &event, const QJsonOb
     QJsonObject ret;
 
     if (event == QLatin1String("getSubsystemStatus")) {
-       // should we add a PluginManager::knownSubsystems() that returns a QList<AbstractBrowserPlugin*>?
-       const QStringList subsystems = PluginManager::self().knownPluginSubsystems();
-       for (const QString &subsystem : subsystems) {
-           const AbstractBrowserPlugin *plugin = PluginManager::self().pluginForSubsystem(subsystem);
+        // should we add a PluginManager::knownSubsystems() that returns a QList<AbstractBrowserPlugin*>?
+        const QStringList subsystems = PluginManager::self().knownPluginSubsystems();
+        for (const QString &subsystem : subsystems) {
+            const AbstractBrowserPlugin *plugin = PluginManager::self().pluginForSubsystem(subsystem);
 
-           QJsonObject details = plugin->status();
-           details.insert(QStringLiteral("version"), plugin->protocolVersion());
-           details.insert(QStringLiteral("loaded"), plugin->isLoaded());
-           ret.insert(subsystem, details);
+            QJsonObject details = plugin->status();
+            details.insert(QStringLiteral("version"), plugin->protocolVersion());
+            details.insert(QStringLiteral("loaded"), plugin->isLoaded());
+            ret.insert(subsystem, details);
         }
     } else if (event == QLatin1String("getVersion")) {
         ret.insert(QStringLiteral("host"), QStringLiteral(HOST_VERSION_STRING));

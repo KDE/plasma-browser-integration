@@ -65,5 +65,4 @@ private:
 
     // In doubt, assume incognito
     bool m_incognito = true;
-
 };

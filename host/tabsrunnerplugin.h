@@ -29,5 +29,4 @@ public:
 
 private:
     QMultiHash<QString, QDBusMessage> m_requests;
-
 };

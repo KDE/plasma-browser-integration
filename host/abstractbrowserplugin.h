@@ -7,9 +7,9 @@
 
 #pragma once
 
-#include <QObject>
-#include <QJsonObject>
 #include <QDebug>
+#include <QJsonObject>
+#include <QObject>
 
 class AbstractBrowserPlugin : public QObject
 {
@@ -63,5 +63,4 @@ private:
     QString m_subsystem;
     int m_protocolVersion;
     bool m_loaded = false;
-
 };

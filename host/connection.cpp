@@ -11,11 +11,11 @@
 #include <QSocketNotifier>
 
 #include <QDebug>
-#include <unistd.h>
 #include <poll.h>
+#include <unistd.h>
 
-Connection::Connection() :
-    QObject()
+Connection::Connection()
+    : QObject()
 {
     // Make really sure no one but us, who uses the correct format, prints to stdout
     int newStdout = dup(STDOUT_FILENO);
@@ -32,14 +32,14 @@ Connection::Connection() :
 void Connection::sendData(const QJsonObject &data)
 {
     const QByteArray rawData = QJsonDocument(data).toJson(QJsonDocument::Compact);
-    //note, don't use QDataStream as we need to control the binary format used
+    // note, don't use QDataStream as we need to control the binary format used
     quint32 len = rawData.count();
-    m_stdOut.write((char*)&len, sizeof(len));
+    m_stdOut.write((char *)&len, sizeof(len));
     m_stdOut.write(rawData);
     m_stdOut.flush();
 }
 
-Connection* Connection::self()
+Connection *Connection::self()
 {
     static Connection *s = nullptr;
     if (!s) {
@@ -61,7 +61,7 @@ void Connection::readData()
     poll_stdin.events = POLLHUP;
     poll_stdin.revents = 0;
 
-    if (poll (&poll_stdin, 1, 0) != 0) {
+    if (poll(&poll_stdin, 1, 0) != 0) {
         // STDIN has HUP/ERR/NVAL condition
         qApp->exit(0);
         return;
@@ -69,7 +69,7 @@ void Connection::readData()
 
     m_stdIn.startTransaction();
     quint32 length = 0;
-    auto rc = m_stdIn.read((char*)(&length), sizeof(quint32));
+    auto rc = m_stdIn.read((char *)(&length), sizeof(quint32));
     if (rc == -1) {
         m_stdIn.rollbackTransaction();
         return;

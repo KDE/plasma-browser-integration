@@ -169,5 +169,4 @@ private:
     qlonglong m_length = 0;
     qlonglong m_position = 0;
     qreal m_playbackRate = 1.0;
-
 };

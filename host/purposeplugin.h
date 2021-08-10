@@ -13,7 +13,8 @@
 #include <QString>
 #include <QUrl>
 
-namespace Purpose {
+namespace Purpose
+{
 class Menu;
 }
 

@@ -11,10 +11,7 @@
 
 #include "krunner1adaptor.h"
 
-AbstractKRunnerPlugin::AbstractKRunnerPlugin(const QString &objectPath,
-                                             const QString &subsystemId,
-                                             int protocolVersion,
-                                             QObject *parent)
+AbstractKRunnerPlugin::AbstractKRunnerPlugin(const QString &objectPath, const QString &subsystemId, int protocolVersion, QObject *parent)
     : AbstractBrowserPlugin(subsystemId, protocolVersion, parent)
     , m_objectPath(objectPath)
 {
@@ -70,8 +67,7 @@ RemoteImage AbstractKRunnerPlugin::serializeImage(const QImage &image)
         true, // hasAlpha
         8, // bitsPerSample
         4, // channels
-        QByteArray(reinterpret_cast<const char *>(convertedImage.constBits()),
-                   convertedImage.sizeInBytes()),
+        QByteArray(reinterpret_cast<const char *>(convertedImage.constBits()), convertedImage.sizeInBytes()),
     };
     return remoteImage;
 }

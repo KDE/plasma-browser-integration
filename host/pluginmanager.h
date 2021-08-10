@@ -46,5 +46,4 @@ private:
     bool setPluginLoaded(AbstractBrowserPlugin *plugin, bool loaded);
 
     QHash<QString, AbstractBrowserPlugin *> m_plugins;
-
 };

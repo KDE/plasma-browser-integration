@@ -76,5 +76,4 @@ private:
     QJsonObject m_settings;
 
     TaskManager::WindowTasksModel *m_tasksModel;
-
 };

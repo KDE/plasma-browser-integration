@@ -9,15 +9,14 @@
 #include "connection.h"
 #include "settings.h"
 
-AbstractBrowserPlugin::AbstractBrowserPlugin::AbstractBrowserPlugin(const QString& subsystemId, int protocolVersion, QObject* parent):
-    QObject(parent),
-    m_subsystem(subsystemId),
-    m_protocolVersion(protocolVersion)
+AbstractBrowserPlugin::AbstractBrowserPlugin::AbstractBrowserPlugin(const QString &subsystemId, int protocolVersion, QObject *parent)
+    : QObject(parent)
+    , m_subsystem(subsystemId)
+    , m_protocolVersion(protocolVersion)
 {
-
 }
 
-void AbstractBrowserPlugin::handleData(const QString& event, const QJsonObject& data)
+void AbstractBrowserPlugin::handleData(const QString &event, const QJsonObject &data)
 {
     Q_UNUSED(event);
     Q_UNUSED(data);

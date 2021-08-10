@@ -19,7 +19,6 @@
 PurposePlugin::PurposePlugin(QObject *parent)
     : AbstractBrowserPlugin(QStringLiteral("purpose"), 1, parent)
 {
-
 }
 
 PurposePlugin::~PurposePlugin()
@@ -36,7 +35,6 @@ bool PurposePlugin::onUnload()
 QJsonObject PurposePlugin::handleData(int serial, const QString &event, const QJsonObject &data)
 {
     if (event == QLatin1String("share")) {
-
         if (m_pendingReplySerial != -1 || (m_menu && m_menu->isVisible())) {
             return {
                 {QStringLiteral("success"), false},
@@ -67,13 +65,17 @@ QJsonObject PurposePlugin::handleData(int serial, const QString &event, const QJ
                 // got canceled, when hovering an action and then hitting Escape to close the menu.
                 // Hence delaying this and checking if an action got invoked :(
 
-                QMetaObject::invokeMethod(this, [this] {
-                    if (!m_menu->property("actionInvoked").toBool()) {
-                        sendPendingReply(false, {
-                            {QStringLiteral("errorCode"), QStringLiteral("CANCELED")},
-                        });
-                    }
-                }, Qt::QueuedConnection);
+                QMetaObject::invokeMethod(
+                    this,
+                    [this] {
+                        if (!m_menu->property("actionInvoked").toBool()) {
+                            sendPendingReply(false,
+                                             {
+                                                 {QStringLiteral("errorCode"), QStringLiteral("CANCELED")},
+                                             });
+                        }
+                    },
+                    Qt::QueuedConnection);
             });
 
             connect(m_menu.data(), &QMenu::triggered, this, [this] {
@@ -84,10 +86,11 @@ QJsonObject PurposePlugin::handleData(int serial, const QString &event, const QJ
                 if (errorCode) {
                     debug() << "Error:" << errorCode << errorMessage;
 
-                    sendPendingReply(false, {
-                        {QStringLiteral("errorCode"), errorCode},
-                        {QStringLiteral("errorMessage"), errorMessage},
-                    });
+                    sendPendingReply(false,
+                                     {
+                                         {QStringLiteral("errorCode"), errorCode},
+                                         {QStringLiteral("errorMessage"), errorMessage},
+                                     });
                     return;
                 }
 
@@ -98,9 +101,7 @@ QJsonObject PurposePlugin::handleData(int serial, const QString &event, const QJ
                 }
 
                 debug() << "Finished:" << output;
-                sendPendingReply(true, {
-                    {QStringLiteral("response"), output}
-                });
+                sendPendingReply(true, {{QStringLiteral("response"), output}});
             });
         }
 

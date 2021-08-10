@@ -11,9 +11,9 @@
 
 #include <KUiServerV2JobTracker>
 
-DownloadPlugin::DownloadPlugin(QObject* parent) :
-    AbstractBrowserPlugin(QStringLiteral("downloads"), 3, parent),
-    m_tracker(new KUiServerV2JobTracker(this))
+DownloadPlugin::DownloadPlugin(QObject *parent)
+    : AbstractBrowserPlugin(QStringLiteral("downloads"), 3, parent)
+    , m_tracker(new KUiServerV2JobTracker(this))
 {
 }
 
@@ -32,7 +32,7 @@ bool DownloadPlugin::onUnload()
     return true;
 }
 
-void DownloadPlugin::handleData(const QString& event, const QJsonObject& payload)
+void DownloadPlugin::handleData(const QString &event, const QJsonObject &payload)
 {
     const QJsonObject &download = payload.value(QStringLiteral("download")).toObject();
 
@@ -60,21 +60,24 @@ void DownloadPlugin::handleData(const QString& event, const QJsonObject& payload
         m_jobs.insert(id, job);
 
         connect(job, &DownloadJob::killRequested, this, [this, id] {
-            sendData(QStringLiteral("cancel"), {
-                {QStringLiteral("downloadId"), id},
-            });
+            sendData(QStringLiteral("cancel"),
+                     {
+                         {QStringLiteral("downloadId"), id},
+                     });
         });
 
         connect(job, &DownloadJob::suspendRequested, this, [this, id] {
-            sendData(QStringLiteral("suspend"), {
-                {QStringLiteral("downloadId"), id},
-            });
+            sendData(QStringLiteral("suspend"),
+                     {
+                         {QStringLiteral("downloadId"), id},
+                     });
         });
 
         connect(job, &DownloadJob::resumeRequested, this, [this, id] {
-            sendData(QStringLiteral("resume"), {
-                {QStringLiteral("downloadId"), id},
-            });
+            sendData(QStringLiteral("resume"),
+                     {
+                         {QStringLiteral("downloadId"), id},
+                     });
         });
 
         QObject::connect(job, &QObject::destroyed, this, [this, id] {
@@ -83,8 +86,7 @@ void DownloadPlugin::handleData(const QString& event, const QJsonObject& payload
 
         job->start();
 
-        QObject::connect(job, &KJob::finished, this, [this, job, id] {
-        });
+        QObject::connect(job, &KJob::finished, this, [this, job, id] {});
 
     } else if (event == QLatin1String("update")) {
         auto *job = m_jobs.value(id);
@@ -96,4 +98,3 @@ void DownloadPlugin::handleData(const QString& event, const QJsonObject& payload
         job->update(download);
     }
 }
-

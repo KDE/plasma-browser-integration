@@ -13,8 +13,8 @@
 #include <QGuiApplication>
 #include <QImageReader>
 
-#include "mprisroot.h"
 #include "mprisplayer.h"
+#include "mprisroot.h"
 
 #include <unistd.h> // getppid
 
@@ -27,7 +27,6 @@ MPrisPlugin::MPrisPlugin(QObject *parent)
     , m_playbackStatus(QStringLiteral("Stopped"))
     , m_loopStatus(QStringLiteral("None"))
 {
-
     if (!QDBusConnection::sessionBus().registerObject(QStringLiteral("/org/mpris/MediaPlayer2"), this)) {
         qWarning() << "Failed to register MPris object";
         return;
@@ -79,11 +78,9 @@ void MPrisPlugin::sendPropertyChanges()
             continue;
         }
 
-        QDBusMessage signal = QDBusMessage::createSignal(
-            QStringLiteral("/org/mpris/MediaPlayer2"),
-            QStringLiteral("org.freedesktop.DBus.Properties"),
-            QStringLiteral("PropertiesChanged")
-        );
+        QDBusMessage signal = QDBusMessage::createSignal(QStringLiteral("/org/mpris/MediaPlayer2"),
+                                                         QStringLiteral("org.freedesktop.DBus.Properties"),
+                                                         QStringLiteral("PropertiesChanged"));
 
         signal.setArguments({
             interfaceName,
@@ -285,9 +282,10 @@ bool MPrisPlugin::fullscreen() const
 
 void MPrisPlugin::setFullscreen(bool fullscreen)
 {
-    sendData(QStringLiteral("setFullscreen"), {
-        {QStringLiteral("fullscreen"), fullscreen}
-    });
+    sendData(QStringLiteral("setFullscreen"),
+             {
+                 {QStringLiteral("fullscreen"), fullscreen},
+             });
 }
 
 bool MPrisPlugin::canSetFullscreen() const
@@ -340,9 +338,10 @@ void MPrisPlugin::setVolume(qreal volume)
         volume = 0.0;
     }
 
-    sendData(QStringLiteral("setVolume"), {
-        {QStringLiteral("volume"), volume}
-    });
+    sendData(QStringLiteral("setVolume"),
+             {
+                 {QStringLiteral("volume"), volume},
+             });
 }
 
 qlonglong MPrisPlugin::position() const
@@ -361,9 +360,10 @@ void MPrisPlugin::setPlaybackRate(double playbackRate)
         return;
     }
 
-    sendData(QStringLiteral("setPlaybackRate"), {
-        {QStringLiteral("playbackRate"), playbackRate}
-    });
+    sendData(QStringLiteral("setPlaybackRate"),
+             {
+                 {QStringLiteral("playbackRate"), playbackRate},
+             });
 }
 
 double MPrisPlugin::minimumRate() const
@@ -392,9 +392,10 @@ void MPrisPlugin::setLoopStatus(const QString &loopStatus)
         return;
     }
 
-    sendData(QStringLiteral("setLoop"), {
-        {QStringLiteral("loop"), m_possibleLoopStatus.value(loopStatus)}
-    });
+    sendData(QStringLiteral("setLoop"),
+             {
+                 {QStringLiteral("loop"), m_possibleLoopStatus.value(loopStatus)},
+             });
 
     m_loopStatus = loopStatus;
     emitPropertyChange(m_player, "LoopStatus");
@@ -451,7 +452,7 @@ QVariantMap MPrisPlugin::metadata() const
 
     if (!m_album.isEmpty()) {
         metadata.insert(QStringLiteral("xesam:album"), m_album);
-    // when we don't have artist information use the scheme+domain as "album" (that's what Chrome on Android does)
+        // when we don't have artist information use the scheme+domain as "album" (that's what Chrome on Android does)
     } else if (m_artist.isEmpty() && m_url.isValid()) {
         metadata.insert(QStringLiteral("xesam:album"), m_url.toDisplayString(QUrl::RemovePath | QUrl::RemoveQuery | QUrl::RemoveFragment));
     }
@@ -463,7 +464,7 @@ void MPrisPlugin::setPlaybackStatus(const QString &playbackStatus)
 {
     if (m_playbackStatus != playbackStatus) {
         m_playbackStatus = playbackStatus;
-        //emit playbackStatusChanged();
+        // emit playbackStatusChanged();
 
         emitPropertyChange(m_player, "PlaybackStatus");
         // these depend on playback status, so signal a change for these, too
@@ -573,7 +574,6 @@ void MPrisPlugin::Raise()
 
 void MPrisPlugin::Quit()
 {
-
 }
 
 void MPrisPlugin::Next()
@@ -634,9 +634,7 @@ void MPrisPlugin::SetPosition(const QDBusObjectPath &path, qlonglong position)
         return;
     }
 
-    sendData(QStringLiteral("setPosition"), {
-        {QStringLiteral("position"), position / 1000.0 / 1000.0
-    } });
+    sendData(QStringLiteral("setPosition"), {{QStringLiteral("position"), position / 1000.0 / 1000.0}});
 }
 
 void MPrisPlugin::OpenUri(const QString &uri)

@@ -7,9 +7,9 @@
 
 #pragma once
 
-#include <QObject>
 #include <QFile>
 #include <QJsonObject>
+#include <QObject>
 
 /*
  * This class is responsible for managing all stdout/stdin connections emitting JSON
@@ -18,7 +18,7 @@ class Connection : public QObject
 {
     Q_OBJECT
 public:
-    static Connection* self();
+    static Connection *self();
     void sendData(const QJsonObject &data);
 
 Q_SIGNALS:

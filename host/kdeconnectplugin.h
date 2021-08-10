@@ -26,4 +26,3 @@ private Q_SLOTS:
 private:
     QStringList m_devices;
 };
-

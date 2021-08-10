@@ -126,7 +126,7 @@ void PluginManager::onDataReceived(const QJsonObject &json)
             plugin->sendReply(requestSerial, reply);
         }
     } else {
-        //design question, should we have a JSON of subsystem, event, payload, or have all data at the root level?
+        // design question, should we have a JSON of subsystem, event, payload, or have all data at the root level?
         plugin->handleData(event, json);
     }
 }

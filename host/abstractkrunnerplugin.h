@@ -18,10 +18,7 @@ class AbstractKRunnerPlugin : public AbstractBrowserPlugin, protected QDBusConte
     Q_OBJECT
 
 protected:
-    AbstractKRunnerPlugin(const QString &objectPath,
-                          const QString &subsystemId,
-                          int protocolVersion,
-                          QObject *parent);
+    AbstractKRunnerPlugin(const QString &objectPath, const QString &subsystemId, int protocolVersion, QObject *parent);
 
     static QImage imageFromDataUrl(const QString &dataUrl);
     static RemoteImage serializeImage(const QImage &image);
@@ -37,5 +34,4 @@ public:
 
 private:
     QString m_objectPath;
-
 };

@@ -10,12 +10,12 @@
 
 #include <kdedmodule.h>
 
-#include <QObject>
-#include <QStringList>
-#include <QSet>
-#include <QUrl>
 #include <QHash>
+#include <QObject>
 #include <QPointer>
+#include <QSet>
+#include <QStringList>
+#include <QUrl>
 
 class KStatusNotifierItem;
 class QDBusServiceWatcher;
@@ -33,16 +33,16 @@ class BrowserIntegrationReminder : public KDEDModule
     Q_OBJECT
 
 public:
-    BrowserIntegrationReminder(QObject *parent, const QList<QVariant>&);
+    BrowserIntegrationReminder(QObject *parent, const QList<QVariant> &);
     ~BrowserIntegrationReminder() override;
 
 private Q_SLOTS:
     void onResourceScoresChanged(const QString &activity,
-                            const QString &client,
-                            const QString &resource,
-                            double score,
-                            unsigned int lastUpdate,
-                            unsigned int firstUpdate);
+                                 const QString &client,
+                                 const QString &resource,
+                                 double score,
+                                 unsigned int lastUpdate,
+                                 unsigned int firstUpdate);
 
     void onBrowserStarted(const QString &browserName);
 

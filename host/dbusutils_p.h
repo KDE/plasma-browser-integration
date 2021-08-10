@@ -1,14 +1,13 @@
 #pragma once
 
+#include <KRunner/QueryMatch>
+#include <QDBusArgument>
 #include <QList>
 #include <QString>
-#include <QDBusArgument>
 #include <QVariantMap>
-#include <KRunner/QueryMatch>
 
-struct RemoteMatch
-{
-    //sssuda{sv}
+struct RemoteMatch {
+    // sssuda{sv}
     QString id;
     QString text;
     QString iconName;
@@ -19,8 +18,7 @@ struct RemoteMatch
 
 typedef QList<RemoteMatch> RemoteMatches;
 
-struct RemoteAction
-{
+struct RemoteAction {
     QString id;
     QString text;
     QString iconName;
@@ -28,9 +26,8 @@ struct RemoteAction
 
 typedef QList<RemoteAction> RemoteActions;
 
-struct RemoteImage
-{
-    //iiibiiay (matching notification spec image-data attribute)
+struct RemoteImage {
+    // iiibiiay (matching notification spec image-data attribute)
     int width;
     int height;
     int rowStride;
@@ -40,7 +37,8 @@ struct RemoteImage
     QByteArray data;
 };
 
-inline QDBusArgument &operator<< (QDBusArgument &argument, const RemoteMatch &match) {
+inline QDBusArgument &operator<<(QDBusArgument &argument, const RemoteMatch &match)
+{
     argument.beginStructure();
     argument << match.id;
     argument << match.text;
@@ -52,7 +50,8 @@ inline QDBusArgument &operator<< (QDBusArgument &argument, const RemoteMatch &ma
     return argument;
 }
 
-inline const QDBusArgument &operator>>(const QDBusArgument &argument, RemoteMatch &match) {
+inline const QDBusArgument &operator>>(const QDBusArgument &argument, RemoteMatch &match)
+{
     argument.beginStructure();
     argument >> match.id;
     argument >> match.text;
@@ -67,7 +66,7 @@ inline const QDBusArgument &operator>>(const QDBusArgument &argument, RemoteMatc
     return argument;
 }
 
-inline QDBusArgument &operator<< (QDBusArgument &argument, const RemoteAction &action)
+inline QDBusArgument &operator<<(QDBusArgument &argument, const RemoteAction &action)
 {
     argument.beginStructure();
     argument << action.id;
@@ -77,7 +76,8 @@ inline QDBusArgument &operator<< (QDBusArgument &argument, const RemoteAction &a
     return argument;
 }
 
-inline const QDBusArgument &operator>>(const QDBusArgument &argument, RemoteAction &action) {
+inline const QDBusArgument &operator>>(const QDBusArgument &argument, RemoteAction &action)
+{
     argument.beginStructure();
     argument >> action.id;
     argument >> action.text;
@@ -86,7 +86,8 @@ inline const QDBusArgument &operator>>(const QDBusArgument &argument, RemoteActi
     return argument;
 }
 
-inline QDBusArgument &operator<< (QDBusArgument &argument, const RemoteImage &image) {
+inline QDBusArgument &operator<<(QDBusArgument &argument, const RemoteImage &image)
+{
     argument.beginStructure();
     argument << image.width;
     argument << image.height;
@@ -99,7 +100,8 @@ inline QDBusArgument &operator<< (QDBusArgument &argument, const RemoteImage &im
     return argument;
 }
 
-inline const QDBusArgument &operator>>(const QDBusArgument &argument, RemoteImage &image) {
+inline const QDBusArgument &operator>>(const QDBusArgument &argument, RemoteImage &image)
+{
     argument.beginStructure();
     argument >> image.width;
     argument >> image.height;
