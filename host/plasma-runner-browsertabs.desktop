@@ -1,6 +1,7 @@
 [Desktop Entry]
 # ctxt: plasma runner
 Name=Browser Tabs
+Name[ar]=ألسنة المتصفّح
 Name[ast]=Llingüetes del restolador
 Name[az]=Veb bələdçi Vərəqləri
 Name[ca]=Pestanyes del navegador
@@ -31,7 +32,7 @@ Name[uk]=Вкладки навігатора
 Name[x-test]=xxBrowser Tabsxx
 Name[zh_CN]=浏览器标签页
 Comment=Find and activate browser tabs
-Comment[ar]=جِد ألسنة المتصفّح ونشّطها
+Comment[ar]=ابحث في ألسنة المتصفّح وفعّلها
 Comment[ast]=Alcuentra y activa llingüetes del restolador
 Comment[az]=Bələdçi vərəqləri siyahısı və onlar arasında keçid
 Comment[ca]=Cerca i activa les pestanyes del navegador

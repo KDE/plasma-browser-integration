@@ -1,6 +1,7 @@
 [Desktop Entry]
 # ctxt: plasma runner
 Name=Browser History
+Name[ar]=تأريخ المتصفّح
 Name[ast]=Historial del restolador
 Name[az]=Veb bələdçi tarixçəsi
 Name[ca]=Historial del navegador
@@ -31,6 +32,7 @@ Name[uk]=Журнал навігатора
 Name[x-test]=xxBrowser Historyxx
 Name[zh_CN]=浏览器历史记录
 Comment=Search the browser history for visited websites
+Comment[ar]=ابحث في تأريخ المتصفّح عن المواقع التي زُرتها
 Comment[az]=Veb bələdçi tarixçəsini baxılan veb səhifələr üzrə axtarmaq
 Comment[ca]=Cerca llocs web visitats a l'historial del navegador
 Comment[cs]=Prohledávejte historii navštívených webových stránek
