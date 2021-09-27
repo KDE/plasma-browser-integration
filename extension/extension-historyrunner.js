@@ -146,6 +146,6 @@ addCallback("historyrunner", "run", (message) => {
 
 addCallback("historyrunner", "requestPermission", () => {
     chrome.tabs.create({
-        url: chrome.extension.getURL("permission_request.html") + "?permission=history"
+        url: chrome.runtime.getURL("permission_request.html") + "?permission=history"
     });
 });

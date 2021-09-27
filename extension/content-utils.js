@@ -23,9 +23,9 @@ function sendMessage(subsystem, action, payload) {
         payload: payload
     };
 
-    if (chrome.extension && chrome.extension.sendMessage) {
+    if (chrome.runtime && chrome.runtime.sendMessage) {
         return new Promise((resolve, reject) => {
-            chrome.extension.sendMessage(data, (reply) => {
+            chrome.runtime.sendMessage(data, (reply) => {
                 if (chrome.runtime.lastError) {
                     if (chrome.runtime.lastError.message === "The message port closed before a response was received.") {
                         resolve();
