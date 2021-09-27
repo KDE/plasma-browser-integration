@@ -98,33 +98,28 @@ addCallback("tabsrunner", "getTabs", function (message) {
         let requests = [];
         favIconUrlsToFetch.forEach((url) => {
             requests.push(new Promise((resolve) => {
-                // Send a request to fill the cache (=no timeout)
-                let xhrForCache = new XMLHttpRequest();
-                xhrForCache.open("GET", url);
-                xhrForCache.send();
-
-                // Try to fetch from (hopefully) the cache (100ms timeout)
-                let xhr = new XMLHttpRequest();
-                xhr.onreadystatechange = function() {
-                    if (xhr.readyState !== XMLHttpRequest.DONE) {
-                        return;
-                    }
-
-                    if (!xhr.response) {
+                fetch(url, {
+                    cache: "force-cache"
+                }).then((response) => {
+                    if (!response.ok) {
                         return resolve();
                     }
 
-                    var reader = new FileReader();
-                    reader.onloadend = function() {
-                        favIconDataForUrl[url] = reader.result;
-                        return resolve();
-                    }
-                    reader.readAsDataURL(xhr.response);
-                };
-                xhr.open('GET', url);
-                xhr.responseType = 'blob';
-                xhr.timeout = 100;
-                xhr.send();
+                    response.blob().then((blob) => {
+                        let reader = new FileReader();
+                        reader.onloadend = function() {
+                            favIconDataForUrl[url] = reader.result;
+                            return resolve();
+                        }
+                        reader.readAsDataURL(blob);
+                    }, (err) => {
+                        console.warn("Failed to read response of", url, "as blob", err);
+                        resolve();
+                    });
+                }, (err) => {
+                    console.warn("Failed to get favicon from", url, err);
+                    resolve();
+                });
             }));
         });
 
