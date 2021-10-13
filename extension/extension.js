@@ -64,13 +64,49 @@ function raiseTab(tabId) {
 // Debug
 // ------------------------------------------------------------------------
 //
+
+function printDebug(payload, fn) {
+    let hostLabel = "Host";
+    if (payload.category && payload.category !== "default") {
+        hostLabel += " [" + payload.category + "]";
+    }
+
+    const hostLabelColor = "#3daee9"; // Breeze highlight color
+
+    if (payload.line && payload.file) {
+        const fileName = payload.file.split("/").pop();
+        fn("%c%s: %c%s %c[%s:%i]",
+           "color: " + hostLabelColor,
+           hostLabel,
+           "", // reset CSS
+           payload.message,
+           "color: #999",
+           fileName,
+           payload.line);
+    } else {
+        fn("%c%s: %c%s",
+           "color: " + hostLabelColor,
+           hostLabel,
+           "", // reset CSS
+           payload.message);
+    }
+}
+
 addCallback("debug", "debug", function(payload) {
-    console.log("From host:", payload.message);
+    if (payload.severity === "info") {
+        printDebug(payload, console.info);
+    } else {
+        printDebug(payload, console.log);
+    }
 }
 )
 
 addCallback("debug", "warning", function(payload) {
-    console.warn("From host:", payload.message);
+    if (payload.severity === "critical" || payload.severity === "fatal") {
+        printDebug(payload, console.error);
+    } else {
+        printDebug(payload, console.warn);
+    }
 }
 )
 

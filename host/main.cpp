@@ -25,9 +25,6 @@
 
 void msgHandler(QtMsgType type, const QMessageLogContext &context, const QString &msg)
 {
-    Q_UNUSED(type);
-    Q_UNUSED(context);
-
     QJsonObject data;
     data[QStringLiteral("subsystem")] = QStringLiteral("debug");
     switch (type) {
@@ -38,7 +35,38 @@ void msgHandler(QtMsgType type, const QMessageLogContext &context, const QString
     default:
         data[QStringLiteral("action")] = QStringLiteral("warning");
     }
-    data[QStringLiteral("payload")] = QJsonObject({{QStringLiteral("message"), msg}});
+
+    QJsonObject payload{{QStringLiteral("message"), msg}};
+
+    // NOTE For compatibility they are still action debug/warning
+    switch (type) {
+    case QtInfoMsg:
+        payload.insert(QStringLiteral("severity"), QStringLiteral("info"));
+        break;
+    case QtCriticalMsg:
+        payload.insert(QStringLiteral("severity"), QStringLiteral("critical"));
+        break;
+    case QtFatalMsg:
+        payload.insert(QStringLiteral("severity"), QStringLiteral("fatal"));
+        break;
+    default:
+        break;
+    }
+
+    if (context.file) {
+        payload.insert(QStringLiteral("file"), QString::fromUtf8(context.file));
+    }
+    if (context.line) {
+        payload.insert(QStringLiteral("line"), context.line);
+    }
+    if (context.function) {
+        payload.insert(QStringLiteral("function"), QString::fromUtf8(context.function));
+    }
+    if (context.category) {
+        payload.insert(QStringLiteral("category"), QString::fromUtf8(context.category));
+    }
+
+    data[QStringLiteral("payload")] = payload;
 
     Connection::self()->sendData(data);
 }
