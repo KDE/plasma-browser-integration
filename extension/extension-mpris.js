@@ -88,14 +88,21 @@ function playerGone(playerId) {
     // If there is no more player on this tab, remove badge
     const gonePlayerTabId = Number(playerId.split("-")[0]);
     if (playersOnTab(gonePlayerTabId).length === 0) {
-        chrome.browserAction.setBadgeText({
-            text: null, // null resets tab-specific badge
-            tabId: gonePlayerTabId // important to pass it as number!
-        });
-        // Important to clear the color, too, so it reverts back to global badge setting
-        chrome.browserAction.setBadgeBackgroundColor({
-            color: null,
-            tabId: gonePlayerTabId
+        // Check whether that tab still exists before trying to clear the badge
+        chrome.tabs.get(gonePlayerTabId, (tab) => {
+            if (chrome.runtime.lastError /*silence error*/ || !tab) {
+                return;
+            }
+
+            chrome.browserAction.setBadgeText({
+                text: null, // null resets tab-specific badge
+                tabId: gonePlayerTabId // important to pass it as number!
+            });
+            // Important to clear the color, too, so it reverts back to global badge setting
+            chrome.browserAction.setBadgeBackgroundColor({
+                color: null,
+                tabId: gonePlayerTabId
+            });
         });
     }
 
