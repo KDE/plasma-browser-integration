@@ -86,16 +86,16 @@
 
     "options_heading_krunner": {
         "description": "Title for settings about KRunner plugins",
-        "message": "Plasma Search"
+        "message": "KRunner"
     },
 
     "options_plugin_tabsrunner_title": {
         "description": "Title for Browser Tabs KRunner plugin",
-        "message": "Find browser tabs in “Run Command” window"
+        "message": "Find browser tabs in KRunner"
     },
     "options_plugin_tabsrunner_description": {
         "description": "Description for Browser Tabs KRunner plugin",
-        "message": "Make sure the “Browser Tabs” module is enabled in <a id=\"$1\" href=\"$2\">Plasma Search settings</a>."
+        "message": "Make sure the “Browser Tabs” module is enabled in <a id=\"$1\" href=\"$2\">KRunner settings</a>."
     },
 
     "options_plugin_historyrunner_title": {
@@ -209,7 +209,7 @@
     },
     "permission_request_historyrunner_2": {
         "description": "Explanation about disabling history runner",
-        "message": "You can disable this feature in <a id=\"$1\" href=\"$2\">Plasma search settings</a>."
+        "message": "You can disable this feature in <a id=\"$1\" href=\"$2\">KRunner settings</a>."
     },
     "permission_request_already": {
         "message": "You have already granted this permission."
