@@ -898,62 +898,29 @@ function loadMediaSessionsShim() {
             }
         `;
 
-        if (IS_FIREFOX) {
-            const oldCreateElement = Document.prototype.createElement;
-            exportFunction(function() {
-                const createdTag = oldCreateElement.apply(this, arguments);
-                eval(handleCreateElement);
-                return createdTag;
-            }, Document.prototype, {defineAs: "createElement"});
-        } else {
-            executeScript(`
-                function() {
-                    const oldCreateElement = Document.prototype.createElement;
-                    Document.prototype.createElement = function() {
-                        const createdTag = oldCreateElement.apply(this, arguments);
-                        ${handleCreateElement}
-                        return createdTag;
-                    };
-                }
-            `);
-        }
+        executeScript(`
+            function() {
+                const oldCreateElement = Document.prototype.createElement;
+                Document.prototype.createElement = function() {
+                    const createdTag = oldCreateElement.apply(this, arguments);
+                    ${handleCreateElement}
+                    return createdTag;
+                };
+            }
+        `);
 
         // We also briefly add items created as new Audio() to the DOM so we can control it
         // similar to the document.createElement hack above since we cannot share variables
         // between the actual website and the background script despite them sharing the same DOM
 
-        if (IS_FIREFOX) {
-            // Firefox enforces Content-Security-Policy also for scripts injected by the content-script
-            // This causes our executeScript calls to fail for pages like Nextcloud
-            // It also doesn't seem to have the aggressive autoplay prevention Chrome has,
-            // so the horrible replyAfterRemoval hack from above isn't copied into this
-            // See Bug 411148: Music playing from the ownCloud Music app does not show up
-
-            // A function exported with exportFunction loses its prototype, leading to Bug 414512
-
-            const oldAudio = window.Audio;
-            // It is important to use the prototype on wrappedJSObject as the prototype
-            // of the content script is restricted and not accessible by the website
-            const oldAudioPrototype = window.wrappedJSObject.Audio.prototype;
-
-            const audioConstructor = function(...args) {
+        executeScript(`function() {
+            var oldAudio = window.Audio;
+            window.Audio = function (...args) {
                 const player = new oldAudio(...args);
-                eval(addPlayerToDomEvadingAutoPlayBlocking);
+                ${addPlayerToDomEvadingAutoPlayBlocking}
                 return player;
             };
-            exportFunction(audioConstructor, window.wrappedJSObject, {defineAs: "Audio"});
-
-            window.wrappedJSObject.Audio.prototype = oldAudioPrototype;
-        } else {
-            executeScript(`function() {
-                var oldAudio = window.Audio;
-                window.Audio = function (...args) {
-                    const player = new oldAudio(...args);
-                    ${addPlayerToDomEvadingAutoPlayBlocking}
-                    return player;
-                };
-            }`);
-        }
+        }`);
     }
 }
 
