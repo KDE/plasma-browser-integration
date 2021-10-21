@@ -856,7 +856,7 @@ function loadMediaSessionsShim() {
         // there's nothing loaded to pause) to the DOM and before we remove it, we note down that
         // we will now get a paused event because of that. When we get it, we just play() the player
         // so it continues playing :-)
-        const addPlayerToDomEvadingAutoPlayBlocking = `
+        function addPlayerToDomEvadingAutoPlayBlocking(player) {
             player.registerInDom = () => {
                 // Needs to be dataset so it's accessible from mutation observer on webpage
                 player.dataset.pbiPausedForDomRemoval = "true";
@@ -885,33 +885,32 @@ function loadMediaSessionsShim() {
 
             player.addEventListener("play", player.registerInDom);
             player.addEventListener("pause", player.replayAfterRemoval);
-        `;
+		}
 
-        const handleCreateElement = `
-            const tagName = arguments[0];
-
+        function handleCreateElement(tagName, createdTag) {
             if (typeof tagName === "string") {
                 if (tagName.toLowerCase() === "audio" || tagName.toLowerCase() === "video") {
-                    const player = createdTag;
-                    ${addPlayerToDomEvadingAutoPlayBlocking}
+                    addPlayerToDomEvadingAutoPlayBlocking(createdTag);
                 }
             }
-        `;
+        }
 
         if (IS_FIREFOX) {
             const oldCreateElement = Document.prototype.createElement;
             exportFunction(function() {
                 const createdTag = oldCreateElement.apply(this, arguments);
-                eval(handleCreateElement);
+                handleCreateElement(arguments[0], createdTag);
                 return createdTag;
             }, Document.prototype, {defineAs: "createElement"});
         } else {
             executeScript(`
                 function() {
+                    ` + addPlayerToDomEvadingAutoPlayBlocking.toString() + `
+                    ` + handleCreateElement.toString() +`
                     const oldCreateElement = Document.prototype.createElement;
                     Document.prototype.createElement = function() {
                         const createdTag = oldCreateElement.apply(this, arguments);
-                        ${handleCreateElement}
+                        handleCreateElement(arguments[0], createdTag);
                         return createdTag;
                     };
                 }
@@ -938,7 +937,7 @@ function loadMediaSessionsShim() {
 
             const audioConstructor = function(...args) {
                 const player = new oldAudio(...args);
-                eval(addPlayerToDomEvadingAutoPlayBlocking);
+                addPlayerToDomEvadingAutoPlayBlocking(player);
                 return player;
             };
             exportFunction(audioConstructor, window.wrappedJSObject, {defineAs: "Audio"});
@@ -948,8 +947,9 @@ function loadMediaSessionsShim() {
             executeScript(`function() {
                 var oldAudio = window.Audio;
                 window.Audio = function (...args) {
+                    ` + addPlayerToDomEvadingAutoPlayBlocking.toString() + `
                     const player = new oldAudio(...args);
-                    ${addPlayerToDomEvadingAutoPlayBlocking}
+                    addPlayerToDomEvadingAutoPlayBlocking(player);
                     return player;
                 };
             }`);
