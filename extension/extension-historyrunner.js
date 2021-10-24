@@ -70,7 +70,7 @@ addCallback("historyrunner", "find", (message) => {
                     chrome.tabs.query({
                         url: result.url
                     }, (tabs) => {
-                        if (!tabs || chrome.runtime.lastError) {
+                        if (chrome.runtime.lastError || !tabs) {
                             return resolve([]);
                         }
 
