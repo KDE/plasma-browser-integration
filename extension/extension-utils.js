@@ -48,12 +48,18 @@ function sendPortMessage(subsystem, event, payload)
     message.subsystem = subsystem;
     message.event = event;
 
-    port.postMessage(message);
+    if (port) {
+        port.postMessage(message);
+    }
 }
 
 function sendPortMessageWithReply(subsystem, event, payload)
 {
     return new Promise((resolve, reject) => {
+        if (!port) {
+            return reject("UNSUPPORTED_OS");
+        }
+
         let message = payload || {};
         message.subsystem = subsystem;
         message.event = event;
