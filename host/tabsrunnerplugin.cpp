@@ -156,6 +156,10 @@ void TabsRunnerPlugin::handleData(const QString &event, const QJsonObject &json)
                 match.properties.insert(QStringLiteral("subtext"), url.toDisplayString());
                 match.relevance = relevance;
 
+                QUrl urlWithoutPassword = url;
+                urlWithoutPassword.setPassword({});
+                match.properties.insert(QStringLiteral("urls"), QUrl::toStringList(QList<QUrl>{urlWithoutPassword}));
+
                 const bool audible = tab.value(QStringLiteral("audible")).toBool();
 
                 const QJsonObject mutedInfo = tab.value(QStringLiteral("mutedInfo")).toObject();
