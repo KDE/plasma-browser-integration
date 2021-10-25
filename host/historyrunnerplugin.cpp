@@ -126,6 +126,10 @@ void HistoryRunnerPlugin::handleData(const QString &event, const QJsonObject &js
                     url.setFragment(QString());
                 }
 
+                if (url.scheme() == QLatin1String("blob")) {
+                    continue;
+                }
+
                 if (seenUrls.contains(url)) {
                     continue;
                 }
