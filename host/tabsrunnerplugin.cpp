@@ -161,14 +161,12 @@ void TabsRunnerPlugin::handleData(const QString &event, const QJsonObject &json)
                 const QJsonObject mutedInfo = tab.value(QStringLiteral("mutedInfo")).toObject();
                 const bool muted = mutedInfo.value(QStringLiteral("muted")).toBool();
 
-                if (audible) {
-                    if (muted) {
-                        match.iconName = QStringLiteral("audio-volume-muted");
-                        actions.append(s_actionIdUnmute);
-                    } else {
-                        match.iconName = QStringLiteral("audio-volume-high");
-                        actions.append(s_actionIdMute);
-                    }
+                if (muted) {
+                    match.iconName = QStringLiteral("audio-volume-muted");
+                    actions.append(s_actionIdUnmute);
+                } else if (audible) {
+                    match.iconName = QStringLiteral("audio-volume-high");
+                    actions.append(s_actionIdMute);
                 } else {
                     match.iconName = qApp->windowIcon().name();
 
