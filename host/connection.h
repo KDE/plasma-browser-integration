@@ -26,7 +26,7 @@ Q_SIGNALS:
 
 private:
     Connection();
-    ~Connection() = default;
+    ~Connection() override = default;
     void readData();
     QFile m_stdOut;
     QFile m_stdIn;

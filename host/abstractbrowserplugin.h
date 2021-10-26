@@ -15,7 +15,7 @@ class AbstractBrowserPlugin : public QObject
 {
     Q_OBJECT
 public:
-    ~AbstractBrowserPlugin() = default;
+    ~AbstractBrowserPlugin() override = default;
     QString subsystem() const;
     int protocolVersion() const;
 
