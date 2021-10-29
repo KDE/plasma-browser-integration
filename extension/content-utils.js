@@ -46,3 +46,19 @@ function sendMessage(subsystem, action, payload) {
 
     return browser.runtime.sendMessage(data);
 }
+
+function wildcardDomainToRegExp(pattern) {
+    return new RegExp("^" + pattern.split(/\*+/).map((section) => {
+        return section.replace(/[|\\{}()[\]^$+*?.]/g, "\\$&");
+    // This allows *.example.com to also match example.com itself.
+    }).join("\.{0,1}.*\.{0,1}") + "$");
+}
+
+function originMatches(origin, pattern) {
+    if (!pattern.includes("*")) {
+        return pattern === origin;
+    }
+
+    const regExp = wildcardDomainToRegExp(pattern);
+    return regExp.test(origin);
+}

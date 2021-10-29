@@ -105,12 +105,20 @@ class MPrisBlocker {
 
                 for (const origin of uniqueOrigins) {
                     let allowed = true;
-                    if (typeof MPRIS_WEBSITE_SETTINGS[origin] === "boolean") {
-                        allowed = MPRIS_WEBSITE_SETTINGS[origin];
-                    }
-                    if (typeof websiteSettings[origin] === "boolean") {
-                        allowed = websiteSettings[origin];
-                    }
+
+                    // Here we are only about displaying the options,
+                    // so exact match overrules wildcard isn't needed here.
+                    Object.keys(MPRIS_WEBSITE_SETTINGS).forEach((pattern) => {
+                        if (originMatches(origin, pattern)) {
+                            allowed = MPRIS_WEBSITE_SETTINGS[pattern];
+                        }
+                    });
+
+                    Object.keys(websiteSettings).forEach((pattern) => {
+                        if (originMatches(origin, pattern)) {
+                            allowed = websiteSettings[pattern];
+                        }
+                    });
 
                     response.origins[origin] = allowed;
                 }
@@ -131,9 +139,28 @@ class MPrisBlocker {
             let websiteSettings = mprisSettings.websiteSettings || {};
 
             let implicitAllowed = true;
+
+            // Built-in settings
+            Object.keys(MPRIS_WEBSITE_SETTINGS).forEach((pattern) => {
+                if (originMatches(origin, pattern)) {
+                    implicitAllowed = MPRIS_WEBSITE_SETTINGS[pattern];
+                }
+            });
+            // Exact match overrules wildcard
             if (typeof MPRIS_WEBSITE_SETTINGS[origin] === "boolean") {
                 implicitAllowed = MPRIS_WEBSITE_SETTINGS[origin];
             }
+
+            // User might have a wildcard configured themselves
+            Object.keys(websiteSettings).forEach((pattern) => {
+                // Ignore exact matches here!
+                if (origin !== pattern && originMatches(origin, pattern)) {
+                    implicitAllowed = websiteSettings[pattern];
+                }
+            });
+
+            // Through popup just allow creating an exact match rule
+            // We'll leave anything more sophisticated to a future settings UI
 
             if (allowed !== implicitAllowed) {
                 websiteSettings[origin] = allowed;
@@ -222,6 +249,9 @@ document.addEventListener("DOMContentLoaded", () => {
                     return resolve("HAS_BLOCKED");
                 }
             }
+
+            // TODO also show if exact match overwrote wildcard
+            // e.g. user forced on for specific domain but wildcard is disabled
 
             TabUtils.getCurrentTab().then((tab) => {
                 return sendMessage("mpris", "hasTabPlayer", {
