@@ -176,7 +176,7 @@ var playerCallbacks = [];
 // Playback state communicated via media sessions api
 var playerPlaybackState = "";
 
-var players = [];
+var players = new WeakSet();
 
 var pendingSeekingUpdate = 0;
 
@@ -385,11 +385,6 @@ function setPlayerActive(player) {
 }
 
 function sendPlayerGone() {
-    var playerIdx = players.indexOf(activePlayer);
-    if (playerIdx > -1) {
-        players.splice(playerIdx, 1);
-    }
-
     activePlayer = undefined;
     pendingActivePlayer = undefined;
     playerMetadata = {};
@@ -411,7 +406,7 @@ function sendPlayerInfo(player, event, payload) {
 }
 
 function registerPlayer(player) {
-    if (players.indexOf(player) > -1) {
+    if (players.has(player)) {
         //console.log("Already know", player);
         return;
     }
@@ -507,7 +502,7 @@ function registerPlayer(player) {
         });
     });
 
-    players.push(player);
+    players.add(player);
 }
 
 function findAllPlayersFromNode(node) {
@@ -564,6 +559,7 @@ function loadMpris() {
     // cf. "checkPlayer" event above
 
     var observer = new MutationObserver(function (mutations) {
+        let nodesRemoved = false;
         mutations.forEach(function (mutation) {
             mutation.addedNodes.forEach(function (node) {
                 if (typeof node.matches !== "function") {
@@ -581,35 +577,23 @@ function loadMpris() {
                 });
             });
 
-            mutation.removedNodes.forEach(function (node) {
-                if (typeof node.matches !== "function") {
-                    return;
-                }
-
-                // Check whether the node itself or any of its children is the current player
-                var players = findAllPlayersFromNode(node);
-                if (node.matches("video,audio")) {
-                    players.unshift(node);
-                }
-
-                players.forEach(function (player) {
-                    if (player == activePlayer) {
-                        // If the player is still in the visible DOM, don't consider it gone
-                        if (document.body.contains(player)) {
-                            return; // continue
-                        }
-
-                        // If the player got temporarily added by us, don't consider it gone
-                        if (player.dataset.pbiPausedForDomRemoval === "true") {
-                            return;
-                        }
-
-                        sendPlayerGone();
-                        return;
-                    }
-                });
-            });
+            nodesRemoved = nodesRemoved || mutation.removedNodes.length > 0;
         });
+
+        if (activePlayer && nodesRemoved) {
+            // One of the removed nodes could be activePlayer
+            // If it is still in the visible DOM, don't consider it gone
+            if (document.body.contains(activePlayer)) {
+                return;
+            }
+
+            // If the player got temporarily added by us, don't consider it gone
+            if (activePlayer.dataset.pbiPausedForDomRemoval === "true") {
+                return;
+            }
+
+            sendPlayerGone();
+        }
     });
 
     window.addEventListener("pagehide", function () {
