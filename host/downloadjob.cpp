@@ -129,9 +129,9 @@ void DownloadJob::update(const QJsonObject &payload)
         const QString danger = it->toString();
         if (danger == QLatin1String("accepted")) {
             // Clears previous danger message
-            infoMessage(this, QString());
+            Q_EMIT infoMessage(this, QString());
         } else if (danger != QLatin1String("safe")) {
-            infoMessage(this, i18n("This type of file can harm your computer. If you want to keep it, accept this download from the browser window."));
+            Q_EMIT infoMessage(this, i18n("This type of file can harm your computer. If you want to keep it, accept this download from the browser window."));
         }
     }
 
@@ -290,10 +290,10 @@ void DownloadJob::update(const QJsonObject &payload)
 
 void DownloadJob::updateDescription()
 {
-    description(this,
-                i18nc("Job heading, like 'Copying'", "Downloading"),
-                qMakePair<QString, QString>(i18nc("The URL being downloaded", "Source"), originUrl().toDisplayString()),
-                qMakePair<QString, QString>(i18nc("The location being downloaded to", "Destination"), m_destination.toLocalFile()));
+    Q_EMIT description(this,
+                       i18nc("Job heading, like 'Copying'", "Downloading"),
+                       qMakePair<QString, QString>(i18nc("The URL being downloaded", "Source"), originUrl().toDisplayString()),
+                       qMakePair<QString, QString>(i18nc("The location being downloaded to", "Destination"), m_destination.toLocalFile()));
 }
 
 void DownloadJob::addToRecentDocuments()

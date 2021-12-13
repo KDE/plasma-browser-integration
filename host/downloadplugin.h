@@ -25,6 +25,6 @@ public:
     void handleData(const QString &event, const QJsonObject &data) override;
 
 private:
-    KUiServerV2JobTracker *m_tracker;
+    KUiServerV2JobTracker *const m_tracker;
     QHash<int, DownloadJob *> m_jobs;
 };
