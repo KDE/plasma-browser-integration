@@ -90,7 +90,7 @@
         "message": "Desa l'URL des del qual s'ha baixat un fitxer en els atributs del fitxer"
     },
     "options_plugin_downloads_saveOriginUrl_description": {
-        "message": "Nota: L'URL pot contenir informació sensible que es podria divulgar si el fitxer és accessible o compartit amb tercers"
+        "message": "Nota: L'URL pot contenir informació confidencial que es podria divulgar si el fitxer és accessible o compartit amb tercers"
     },
     "options_plugin_downloads_title": {
         "message": "Mostra les baixades a l'àrea de notificacions"
