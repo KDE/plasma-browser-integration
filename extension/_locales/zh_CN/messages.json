@@ -45,7 +45,7 @@
         "message": "查看更新日志"
     },
     "options_about_copyright": {
-        "message": "© 2017-2020 Kai Uwe Broulik 和 David Edmundson"
+        "message": "© 2017-2020 Kai Uwe Broulik and David Edmundson"
     },
     "options_about_created_by_kde": {
         "message": "本浏览器扩展程序由 <a href=\"$1\">KDE 社区</a>制作。您可以在 <a href=\"$2\">KDE 社区 Wiki</a> 中找到有关此项目的详细信息。"
