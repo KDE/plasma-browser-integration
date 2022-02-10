@@ -53,7 +53,9 @@ var whitelistedTabProperties = [
 addCallback("tabsrunner", "getTabs", function (message) {
     ++runningGetTabsQueries;
 
-    chrome.tabs.query({}, function (tabs) {
+    chrome.tabs.query({
+        windowType: "normal"
+    }, (tabs) => {
         if (clearFavIconDataTimeoutId) {
             clearTimeout(clearFavIconDataTimeoutId);
             clearFavIconDataTimeoutId = 0;
