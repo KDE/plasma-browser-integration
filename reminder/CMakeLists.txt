@@ -2,7 +2,7 @@ add_definitions(-DTRANSLATION_DOMAIN=\"plasma-browser-integration-reminder\")
 
 add_definitions(-DQT_NO_URL_CAST_FROM_STRING)
 
-set(kded_browserintegrationreminder browserintegrationreminder.cpp )
+set(kded_browserintegrationreminder browserintegrationreminder.cpp browserintegrationreminder.h)
 
 add_library(browserintegrationreminder MODULE ${kded_browserintegrationreminder})
 kcoreaddons_desktop_to_json(browserintegrationreminder browserintegrationreminder.desktop)

@@ -15,6 +15,18 @@ set(HOST_SOURCES main.cpp
                 historyrunnerplugin.cpp
                 tabsrunnerplugin.cpp
                 purposeplugin.cpp
+                connection.h
+                pluginmanager.h
+                settings.h
+                mprisplugin.h
+                abstractbrowserplugin.h
+                abstractkrunnerplugin.h
+                kdeconnectplugin.h
+                downloadplugin.h
+                downloadjob.h
+                historyrunnerplugin.h
+                tabsrunnerplugin.h
+                purposeplugin.h
                 )
 
 qt_add_dbus_adaptor(HOST_SOURCES ../dbus/org.mpris.MediaPlayer2.xml mprisplugin.h MPrisPlugin mprisroot MPrisRoot)
