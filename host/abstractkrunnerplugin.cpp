@@ -48,7 +48,7 @@ QImage AbstractKRunnerPlugin::imageFromDataUrl(const QString &dataUrl)
         return image;
     }
 
-    const QByteArray b64 = dataUrl.rightRef(dataUrl.count() - b64start - 1).toLatin1();
+    const QByteArray b64 = QStringView(dataUrl).right(dataUrl.count() - b64start - 1).toLatin1();
     const QByteArray data = QByteArray::fromBase64(b64);
 
     if (!image.loadFromData(data)) {

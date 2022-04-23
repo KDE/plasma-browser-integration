@@ -525,7 +525,11 @@ void MPrisPlugin::processMetadata(const QJsonObject &data)
         QSize actualSize;
 
         // now parse the size...
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
         const auto &sizeParts = sizeString.splitRef(QLatin1Char('x'));
+#else
+        const auto &sizeParts = QStringView(sizeString).split(QLatin1Char('x'));
+#endif
         if (sizeParts.count() == 2) {
             const int width = sizeParts.first().toInt();
             const int height = sizeParts.last().toInt();
