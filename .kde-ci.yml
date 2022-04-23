@@ -1,0 +1,20 @@
+# SPDX-FileCopyrightText: None
+# SPDX-License-Identifier: CC0-1.0
+
+Dependencies:
+- 'on': ['@all']
+  'require':
+    'frameworks/extra-cmake-modules': '@latest'
+    'frameworks/kio': '@latest'
+    'frameworks/ki18n': '@latest'
+    'frameworks/kcoreaddons': '@latest'
+    'frameworks/kconfig': '@latest'
+    'frameworks/kcrash': '@latest'
+    'frameworks/kdbusaddons': '@latest'
+    'frameworks/knotifications': '@latest'
+    'frameworks/krunner': '@latest'
+    'frameworks/kactivities': '@latest'
+    'frameworks/purpose': '@latest'
+    'frameworks/kfilemetadata': '@latest'
+    'frameworks/kjobwidgets': '@latest'
+    'plasma/plasma-workspace': '@same'
