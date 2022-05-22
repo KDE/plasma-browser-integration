@@ -41,6 +41,7 @@ target_link_libraries(
     Qt::Gui
     Qt::Widgets
     KF5::Activities
+    KF5::ConfigCore
     KF5::CoreAddons
     KF5::Crash
     KF5::I18n
