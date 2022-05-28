@@ -1,66 +1,66 @@
 {
     "browseraction_mpris_enable_on": {
-        "message": "Controls multimèdia millorats"
+        "message": "Activa els controls multimèdia a:"
     },
     "browseraction_mpris_title": {
         "message": "Controls multimèdia"
     },
     "browseraction_title": {
-        "message": "Error d'integració del navegador a Plasma"
+        "message": "Integració del navegador amb Plasma"
     },
     "general_error_host_disconnected_title": {
-        "message": "El servidor natiu s'ha desconnectat inesperadament: $1"
+        "message": "El servidor natiu s'ha desconnectat inesperadament."
     },
     "general_error_not_supported_os": {
-        "message": "Aquesta extensió no s'admet en aquest sistema operatiu."
+        "message": "Esta extensió només s'admet a Linux i FreeBSD."
     },
     "general_error_not_supported_os_title": {
-        "message": "Aquesta extensió no s'admet en aquest sistema operatiu."
+        "message": "Sistema operatiu no admés"
     },
     "general_error_startup_failed": {
-        "message": "Make sure the 'plasma-browser-integration' package is installed correctly and that you are running Plasma 5.13 or later."
+        "message": "Assegureu-vos que el paquet «plasma-browser-integration» estiga instalat correctament i que s'estiga executant Plasma 5.13 o posterior."
     },
     "general_error_startup_failed_title": {
-        "message": "Failed to connect to the native host."
+        "message": "No s'ha pogut connectar amb el servidor nadiu."
     },
     "general_error_startup_failed_wiki_link": {
-        "message": "Visit project wiki page for more information"
+        "message": "Visiteu la pàgina wiki del projecte per a obtindre més informació"
     },
     "general_error_unknown": {
         "message": "S'ha produït un error desconegut"
     },
     "kdeconnect_call_device": {
-        "message": "Obri en «$1»"
+        "message": "Toca amb «$1»"
     },
     "kdeconnect_open_device": {
-        "message": "Obri en «$1»"
+        "message": "Obri a «$1»"
     },
     "kdeconnect_open_via": {
-        "message": "Obri mitjançant KDE Connect"
+        "message": "Obri via KDE Connect"
     },
     "options_about_bugs": {
         "message": "Si trobeu un problema, comproveu la <a href=\"$1\">llista d'errors oberts</a> i després <a href=\"$2\">ompliu un informe d'error</a>."
     },
     "options_about_changelog_link": {
-        "message": "View Changelog"
+        "message": "Mostra el registre de canvis"
     },
     "options_about_copyright": {
-        "message": "© 2017-2019 Kai Uwe Broulik and David Edmundson"
+        "message": "© 2017-2020 Kai Uwe Broulik i David Edmundson"
     },
     "options_about_created_by_kde": {
-        "message": "Aquesta ampliació del navegador fou creada per la <a href=\"$1\">Comunitat KDE</a>. Podeu trobar més informació quant a aquest projecte a <a href=\"$2\">KDE Community Wiki</a>."
+        "message": "Esta ampliació del navegador fou creada per la <a href=\"$1\">Comunitat KDE</a>. Trobareu més informació quant a este projecte al <a href=\"$2\">Comunitat KDE Wiki</a>."
     },
     "options_about_donate": {
-        "message": "Si us agrada el que veieu, considereu fer una <a href=\"$1\">donació a KDE</a>, per tal de continuar fent el millor programari lliure possible."
+        "message": "Si vos agrada lo que veeu, per favor, considereu fer una <a href=\"$1\">donació a KDE</a>, per tal de continuar fent el millor programari lliure possible."
     },
     "options_about_extension_version": {
-        "message": "Extension version: $1"
+        "message": "Versió de l'extensió: $1"
     },
     "options_about_host_version": {
-        "message": "Host version: $1"
+        "message": "Versió del servidor: $1"
     },
     "options_about_kde": {
-        "message": "KDE és una xarxa mundial d'enginyers informàtics, artistes, escriptors, traductors i creadors compromesos amb el desenvolupament de <a href=\"$1\">programari lliure</a> (Free Software). KDE ha creat l'entorn d'escriptori Plasma, centenars d'aplicacions, i moltes biblioteques de programari que les fan funcionar. KDE és una iniciativa cooperativa: cap entitat individual controla la seua direcció ni els seus productes. Altrament, treballem conjuntament per aconseguir l'objectiu comú de crear el programari lliure millor del món. Invitem a tothom a <a href=\"$2\">afegir-se i col·laborar</a> amb KDE, incloent-vos. Visiteu <a href=\"$3\">$3</a> per a més informació sobre la comunitat KDE i el programari que produïm."
+        "message": "KDE és una ret mundial d'enginyers informàtics, artistes, escriptors, traductors i creadors compromesos amb el desenvolupament de <a href=\"$1\">programari lliure</a> (Free Software). KDE ha creat l'entorn d'escriptori Plasma, centenars d'aplicacions, i moltes biblioteques de programari que les fan funcionar. KDE és una iniciativa cooperativa: cap entitat individual controla la seua direcció ni els seus productes. D'atra manera, treballem conjuntament per a aconseguir l'objectiu comú de crear el programari lliure més refinat del món. Donem la benvinguda a tothom a <a href=\"$2\">afegir-se i colaborar</a> amb KDE, incloent-vos-hi. Visiteu <a href=\"$3\">$3</a> per a més informació sobre la comunitat KDE i el programari que produïm."
     },
     "options_about_license": {
         "message": "Llicència: <a href=\"$1\">Llicència pública general de GNU versió 3</a>"
@@ -72,46 +72,46 @@
         "message": "Josep M. Ferrer"
     },
     "options_heading_krunner": {
-        "message": "Plasma Search"
+        "message": "Busca de Plasma"
     },
     "options_not_supported_os": {
-        "message": "Aquesta extensió no s'admet en aquest sistema operatiu."
+        "message": "Esta extensió no s'admet en este sistema operatiu."
     },
     "options_plugin_breezeScrollBars_description": {
-        "message": "Això pot interferir amb l'aparença de llocs web que ja apliquen un estil personalitzat en les barres de desplaçament."
+        "message": "Açò pot interferir amb l'aparença de llocs web que ya apliquen un estil personalitzat a les barres de desplaçament."
     },
     "options_plugin_breezeScrollBars_title": {
-        "message": "Usa barres de desplaçament de l'estil Brisa"
+        "message": "Utilisa barres de desplaçament de l'estil Brisa"
     },
     "options_plugin_downloads_addToRecentDocuments": {
-        "message": "Add downloaded files to recent documents"
+        "message": "Afig els fitxers baixats als documents recents"
     },
     "options_plugin_downloads_saveOriginUrl": {
-        "message": "Save URL a file was downloaded from in the file's attributes"
+        "message": "Guarda l'URL des del qual s'ha baixat un fitxer en els atributs del fitxer"
     },
     "options_plugin_downloads_saveOriginUrl_description": {
-        "message": "Note: The URL may contain sensitive information that could be disclosed when the file is accessible by or shared with others"
+        "message": "Nota: L'URL pot contindre informació confidencial que es podria divulgar si el fitxer és accessible o compartit amb tercers"
     },
     "options_plugin_downloads_title": {
-        "message": "Mostra les baixades en l'àrea de notificacions"
+        "message": "Mostra les baixades a l'àrea de notificacions"
     },
     "options_plugin_historyrunner_description": {
-        "message": "This feature might need <a id=\"$1\" href=\"$2\">additional permissions</a> to be used."
+        "message": "Esta funcionalitat pot necessitar <a id=\"$1\" href=\"$2\">permisos addicionals</a> per a utilisar-se."
     },
     "options_plugin_historyrunner_title": {
-        "message": "Search through browser history"
+        "message": "Busca per l'historial del navegador"
     },
     "options_plugin_kdeconnect_description": {
-        "message": "Afig una entrada al menú contextual dels enllaços que us permeten enviar-los al telèfon i a altres dispositius aparellats usant el <a href=\"$1\">Connect del KDE</a>."
+        "message": "Afig una entrada al menú contextual amb enllaços que permeten enviar-los al telèfon i a atres dispositius aparellats utilisant <a href=\"$1\">KDE Connect</a>."
     },
     "options_plugin_kdeconnect_title": {
         "message": "Envia a través de KDE Connect"
     },
     "options_plugin_mpris_description": {
-        "message": "Permet controlar els reproductors de vídeo i àudio en llocs web usant el plasmoide Media Controller."
+        "message": "Permet controlar els reproductors de vídeo i àudio a llocs web utilisant el plasmoide Media Controller."
     },
     "options_plugin_mpris_media_sessions_description": {
-        "message": "Extrau les metadades i les miniatures del contingut actualment en reproducció. (Experimental)"
+        "message": "Extreu les metadades i les miniatures del contingut actualment en reproducció."
     },
     "options_plugin_mpris_media_sessions_title": {
         "message": "Controls multimèdia millorats"
@@ -120,16 +120,16 @@
         "message": "Controls multimèdia"
     },
     "options_plugin_purpose_description": {
-        "message": "Adds a \"Share...\" context menu entry and allows websites to open a dialog for sharing contents using the Web Share API."
+        "message": "Afig una entrada «Comparteix...» al menú contextual i permet que els llocs web òbriguen un diàleg per a compartir contingut utilisant la API de la Web Share."
     },
     "options_plugin_purpose_title": {
-        "message": "Content Sharing"
+        "message": "Comparteix el contingut"
     },
     "options_plugin_tabsrunner_description": {
-        "message": "Assegureu-vos que el mòdul «Pestanyes del navegador» està activat a la<a id=\"$1\" href=\"$2\">configuració de la Cerca del Plasma</a>."
+        "message": "Assegureu-vos que el mòdul «Pestanyes del navegador» està activat a la <a id=\"$1\" href=\"$2\">configuració de la Busca de Plasma</a>."
     },
     "options_plugin_tabsrunner_title": {
-        "message": "Busca les pestanyes del navegador en la finestra «Executa una ordre»"
+        "message": "Busca les pestanyes del navegador a la finestra «Executa una ordre»"
     },
     "options_save_failed": {
         "message": "No s'ha pogut guardar la configuració"
@@ -144,40 +144,40 @@
         "message": "General"
     },
     "options_title": {
-        "message": "Configuració de la integració del Plasma"
+        "message": "Configuració de la integració amb Plasma"
     },
     "permission_request_already": {
-        "message": "You have already granted this permission."
+        "message": "Ya se vos ha concedit este permís."
     },
     "permission_request_button_request": {
-        "message": "Request Permission"
+        "message": "Solicita el permís"
     },
     "permission_request_button_revoke": {
-        "message": "Revoke Permission"
+        "message": "Revoca el permís"
     },
     "permission_request_historyrunner_1": {
-        "message": "In order to provide search results for your browser history, additional permissions are required."
+        "message": "Per tal de proporcionar els resultats de la busca per a l'historial del navegador, es requereixen permisos addicionals."
     },
     "permission_request_historyrunner_2": {
-        "message": "Assegureu-vos que el mòdul «Pestanyes del navegador» està activat a la<a id=\"$1\" href=\"$2\">configuració de la Cerca del Plasma</a>."
+        "message": "Podeu inhabilitar esta funcionalitat a la <a id=\"$1\" href=\"$2\">configuració de la Busca de Plasma</a>."
     },
     "permission_request_title": {
-        "message": "Additional permissions required"
+        "message": "Es requereixen permisos addicionals"
     },
     "purpose_share": {
-        "message": "Share..."
+        "message": "Comparteix..."
     },
     "purpose_share_failed_text": {
-        "message": "Could not share this content: $1"
+        "message": "No s'ha pogut compartir este contingut: $1"
     },
     "purpose_share_failed_title": {
-        "message": "No s'ha pogut guardar la configuració"
+        "message": "Ha fallat la compartició"
     },
     "purpose_share_finished_text": {
-        "message": "The shared content link ($1) has been copied to the clipboard."
+        "message": "L'enllaç del contingut compartit ($1) s'ha copiat al porta-retalls."
     },
     "purpose_share_finished_title": {
-        "message": "Content Shared"
+        "message": "Contingut compartit"
     },
     "store_description": {
         "message": "Multitask efficiently by controlling browser functions from the desktop, even while Chrome is in the background. Manage audio and video playback, check downloads in the notification area, send files to your phone using KDE Connect and more inside the KDE Plasma Desktop!\\n\\nThe plasma-browser-integration package must be installed for this extension to work. It should be available from your distribution's package manager when running Plasma 5.13 or later.\\n\\nNOTE: This extension is not supported on Debian."
