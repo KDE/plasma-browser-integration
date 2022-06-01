@@ -102,7 +102,7 @@
         "message": "Busca per l'historial del navegador"
     },
     "options_plugin_kdeconnect_description": {
-        "message": "Afig una entrada al menú contextual amb enllaços que permeten enviar-los al telèfon i a atres dispositius aparellats utilisant <a href=\"$1\">KDE Connect</a>."
+        "message": "Afig una entrada al menú contextual amb enllaços que permeten enviar-los al teléfon i a atres dispositius aparellats utilisant <a href=\"$1\">KDE Connect</a>."
     },
     "options_plugin_kdeconnect_title": {
         "message": "Envia a través de KDE Connect"
