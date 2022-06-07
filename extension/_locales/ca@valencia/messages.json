@@ -51,7 +51,7 @@
         "message": "Esta ampliació del navegador fou creada per la <a href=\"$1\">Comunitat KDE</a>. Trobareu més informació quant a este projecte al <a href=\"$2\">Comunitat KDE Wiki</a>."
     },
     "options_about_donate": {
-        "message": "Si vos agrada lo que veeu, per favor, considereu fer una <a href=\"$1\">donació a KDE</a>, per tal de continuar fent el millor programari lliure possible."
+        "message": "Si vos agrada el que veeu, per favor, considereu fer una <a href=\"$1\">donació a KDE</a>, per tal de continuar fent el millor programari lliure possible."
     },
     "options_about_extension_version": {
         "message": "Versió de l'extensió: $1"
@@ -84,13 +84,13 @@
         "message": "Utilisa barres de desplaçament de l'estil Brisa"
     },
     "options_plugin_downloads_addToRecentDocuments": {
-        "message": "Afig els fitxers baixats als documents recents"
+        "message": "Afig els fichers baixats als documents recents"
     },
     "options_plugin_downloads_saveOriginUrl": {
-        "message": "Guarda l'URL des del qual s'ha baixat un fitxer en els atributs del fitxer"
+        "message": "Guarda l'URL des del qual s'ha baixat un ficher en els atributs del ficher"
     },
     "options_plugin_downloads_saveOriginUrl_description": {
-        "message": "Nota: L'URL pot contindre informació confidencial que es podria divulgar si el fitxer és accessible o compartit amb tercers"
+        "message": "Nota: L'URL pot contindre informació confidencial que es podria divulgar si el ficher és accessible o compartit amb tercers"
     },
     "options_plugin_downloads_title": {
         "message": "Mostra les baixades a l'àrea de notificacions"
@@ -120,10 +120,10 @@
         "message": "Controls multimèdia"
     },
     "options_plugin_purpose_description": {
-        "message": "Afig una entrada «Comparteix...» al menú contextual i permet que els llocs web òbriguen un diàleg per a compartir contingut utilisant la API de la Web Share."
+        "message": "Afig una entrada «Compartix...» al menú contextual i permet que els llocs web òbriguen un diàlec per a compartir contingut utilisant la API de la Web Share."
     },
     "options_plugin_purpose_title": {
-        "message": "Comparteix el contingut"
+        "message": "Compartix el contingut"
     },
     "options_plugin_tabsrunner_description": {
         "message": "Assegureu-vos que el mòdul «Pestanyes del navegador» està activat a la <a id=\"$1\" href=\"$2\">configuració de la Busca de Plasma</a>."
@@ -165,7 +165,7 @@
         "message": "Es requereixen permisos addicionals"
     },
     "purpose_share": {
-        "message": "Comparteix..."
+        "message": "Compartix..."
     },
     "purpose_share_failed_text": {
         "message": "No s'ha pogut compartir este contingut: $1"
