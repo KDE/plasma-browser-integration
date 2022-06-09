@@ -84,19 +84,19 @@
         "message": "Utilisa barres de desplaçament de l'estil Brisa"
     },
     "options_plugin_downloads_addToRecentDocuments": {
-        "message": "Afig els fichers baixats als documents recents"
+        "message": "Afig els fitxers baixats als documents recents"
     },
     "options_plugin_downloads_saveOriginUrl": {
-        "message": "Guarda l'URL des del qual s'ha baixat un ficher en els atributs del ficher"
+        "message": "Guarda l'URL des del qual s'ha baixat un fitxer en els atributs del fitxer"
     },
     "options_plugin_downloads_saveOriginUrl_description": {
-        "message": "Nota: L'URL pot contindre informació confidencial que es podria divulgar si el ficher és accessible o compartit amb tercers"
+        "message": "Nota: L'URL pot contindre informació confidencial que es podria divulgar si el fitxer és accessible o compartit amb tercers"
     },
     "options_plugin_downloads_title": {
         "message": "Mostra les baixades a l'àrea de notificacions"
     },
     "options_plugin_historyrunner_description": {
-        "message": "Esta funcionalitat pot necessitar <a id=\"$1\" href=\"$2\">permisos addicionals</a> per a utilisar-se."
+        "message": "Esta funcionalitat pot necessitar <a id=\"$1\" href=\"$2\">permisos adicionals</a> per a utilisar-se."
     },
     "options_plugin_historyrunner_title": {
         "message": "Busca per l'historial del navegador"
@@ -156,13 +156,13 @@
         "message": "Revoca el permís"
     },
     "permission_request_historyrunner_1": {
-        "message": "Per tal de proporcionar els resultats de la busca per a l'historial del navegador, es requereixen permisos addicionals."
+        "message": "Per tal de proporcionar els resultats de la busca per a l'historial del navegador, es requerixen permisos adicionals."
     },
     "permission_request_historyrunner_2": {
         "message": "Podeu inhabilitar esta funcionalitat a la <a id=\"$1\" href=\"$2\">configuració de la Busca de Plasma</a>."
     },
     "permission_request_title": {
-        "message": "Es requereixen permisos addicionals"
+        "message": "Es requerixen permisos adicionals"
     },
     "purpose_share": {
         "message": "Compartix..."
