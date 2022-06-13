@@ -18,7 +18,7 @@
         "message": "Sistema operatiu no admés"
     },
     "general_error_startup_failed": {
-        "message": "Assegureu-vos que el paquet «plasma-browser-integration» estiga instalat correctament i que s'estiga executant Plasma 5.13 o posterior."
+        "message": "Assegureu-vos que el paquet «plasma-browser-integration» estiga instal·lat correctament i que s'estiga executant Plasma 5.13 o posterior."
     },
     "general_error_startup_failed_title": {
         "message": "No s'ha pogut connectar amb el servidor nadiu."
@@ -60,7 +60,7 @@
         "message": "Versió del servidor: $1"
     },
     "options_about_kde": {
-        "message": "KDE és una ret mundial d'enginyers informàtics, artistes, escriptors, traductors i creadors compromesos amb el desenvolupament de <a href=\"$1\">programari lliure</a> (Free Software). KDE ha creat l'entorn d'escriptori Plasma, centenars d'aplicacions, i moltes biblioteques de programari que les fan funcionar. KDE és una iniciativa cooperativa: cap entitat individual controla la seua direcció ni els seus productes. D'atra manera, treballem conjuntament per a aconseguir l'objectiu comú de crear el programari lliure més refinat del món. Donem la benvinguda a tothom a <a href=\"$2\">afegir-se i colaborar</a> amb KDE, incloent-vos-hi. Visiteu <a href=\"$3\">$3</a> per a més informació sobre la comunitat KDE i el programari que produïm."
+        "message": "KDE és una ret mundial d'enginyers informàtics, artistes, escriptors, traductors i creadors compromesos amb el desenvolupament de <a href=\"$1\">programari lliure</a> (Free Software). KDE ha creat l'entorn d'escriptori Plasma, centenars d'aplicacions, i moltes biblioteques de programari que les fan funcionar. KDE és una iniciativa cooperativa: cap entitat individual controla la seua direcció ni els seus productes. Altrament, treballem conjuntament per a aconseguir l'objectiu comú de crear el programari lliure més refinat del món. Donem la benvinguda a tothom a <a href=\"$2\">afegir-se i col·laborar</a> amb KDE, incloent-vos-hi. Visiteu <a href=\"$3\">$3</a> per a més informació sobre la comunitat KDE i el programari que produïm."
     },
     "options_about_license": {
         "message": "Llicència: <a href=\"$1\">Llicència pública general de GNU versió 3</a>"
@@ -78,10 +78,10 @@
         "message": "Esta extensió no s'admet en este sistema operatiu."
     },
     "options_plugin_breezeScrollBars_description": {
-        "message": "Açò pot interferir amb l'aparença de llocs web que ya apliquen un estil personalisat a les barres de desplaçament."
+        "message": "Això pot interferir amb l'aparença de llocs web que ja apliquen un estil personalitzat a les barres de desplaçament."
     },
     "options_plugin_breezeScrollBars_title": {
-        "message": "Utilisa barres de desplaçament de l'estil Brisa"
+        "message": "Utilitza barres de desplaçament de l'estil Brisa"
     },
     "options_plugin_downloads_addToRecentDocuments": {
         "message": "Afig els fitxers baixats als documents recents"
@@ -96,19 +96,19 @@
         "message": "Mostra les baixades a l'àrea de notificacions"
     },
     "options_plugin_historyrunner_description": {
-        "message": "Esta funcionalitat pot necessitar <a id=\"$1\" href=\"$2\">permisos adicionals</a> per a utilisar-se."
+        "message": "Esta funcionalitat pot necessitar <a id=\"$1\" href=\"$2\">permisos addicionals</a> per a utilitzar-se."
     },
     "options_plugin_historyrunner_title": {
         "message": "Busca per l'historial del navegador"
     },
     "options_plugin_kdeconnect_description": {
-        "message": "Afig una entrada al menú contextual amb enllaços que permeten enviar-los al teléfon i a atres dispositius aparellats utilisant <a href=\"$1\">KDE Connect</a>."
+        "message": "Afig una entrada al menú contextual amb enllaços que permeten enviar-los al teléfon i a altres dispositius aparellats utilitzant <a href=\"$1\">KDE Connect</a>."
     },
     "options_plugin_kdeconnect_title": {
         "message": "Envia a través de KDE Connect"
     },
     "options_plugin_mpris_description": {
-        "message": "Permet controlar els reproductors de vídeo i àudio a llocs web utilisant el plasmoide Media Controller."
+        "message": "Permet controlar els reproductors de vídeo i àudio a llocs web utilitzant el plasmoide Media Controller."
     },
     "options_plugin_mpris_media_sessions_description": {
         "message": "Extreu les metadades i les miniatures del contingut actualment en reproducció."
@@ -120,7 +120,7 @@
         "message": "Controls multimèdia"
     },
     "options_plugin_purpose_description": {
-        "message": "Afig una entrada «Compartix...» al menú contextual i permet que els llocs web òbriguen un diàlec per a compartir contingut utilisant la API de la Web Share."
+        "message": "Afig una entrada «Compartix...» al menú contextual i permet que els llocs web òbriguen un diàleg per a compartir contingut utilitzant la API de la Web Share."
     },
     "options_plugin_purpose_title": {
         "message": "Compartix el contingut"
@@ -147,22 +147,22 @@
         "message": "Configuració de la integració amb Plasma"
     },
     "permission_request_already": {
-        "message": "Ya se vos ha concedit este permís."
+        "message": "Ja se vos ha concedit este permís."
     },
     "permission_request_button_request": {
-        "message": "Solicita el permís"
+        "message": "Sol·licita el permís"
     },
     "permission_request_button_revoke": {
         "message": "Revoca el permís"
     },
     "permission_request_historyrunner_1": {
-        "message": "Per tal de proporcionar els resultats de la busca per a l'historial del navegador, es requerixen permisos adicionals."
+        "message": "Per tal de proporcionar els resultats de la busca per a l'historial del navegador, es requerixen permisos addicionals."
     },
     "permission_request_historyrunner_2": {
         "message": "Podeu inhabilitar esta funcionalitat a la <a id=\"$1\" href=\"$2\">configuració de la Busca de Plasma</a>."
     },
     "permission_request_title": {
-        "message": "Es requerixen permisos adicionals"
+        "message": "Es requerixen permisos addicionals"
     },
     "purpose_share": {
         "message": "Compartix..."
