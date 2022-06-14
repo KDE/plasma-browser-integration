@@ -120,7 +120,7 @@
         "message": "Controls multimèdia"
     },
     "options_plugin_purpose_description": {
-        "message": "Afig una entrada «Compartix...» al menú contextual i permet que els llocs web òbriguen un diàlec per a compartir contingut utilitzant la API de la Web Share."
+        "message": "Afig una entrada «Compartix...» al menú contextual i permet que els llocs web òbriguen un diàleg per a compartir contingut utilitzant la API de la Web Share."
     },
     "options_plugin_purpose_title": {
         "message": "Compartix el contingut"
