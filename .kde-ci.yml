@@ -18,3 +18,5 @@ Dependencies:
     'frameworks/kfilemetadata': '@latest'
     'frameworks/kjobwidgets': '@latest'
     'plasma/plasma-workspace': '@same'
+Options:
+  require-passing-tests-on: [ 'Linux', 'FreeBSD']
