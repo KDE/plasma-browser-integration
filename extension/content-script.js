@@ -577,23 +577,37 @@ function loadMpris() {
                 });
             });
 
-            nodesRemoved = nodesRemoved || mutation.removedNodes.length > 0;
+            mutation.removedNodes.forEach((node) => {
+                if (typeof node.matches !== "function") {
+                    return;
+                }
+
+                // Check whether the node itself or any of its children is the current player
+                const players = findAllPlayersFromNode(node);
+                if (node.matches("video,audio")) {
+                    players.unshift(node);
+                }
+
+                for (let player of players) {
+                    if (player !== activePlayer) {
+                        continue;
+                    }
+
+                    // If the player is still in the visible DOM, don't consider it gone
+                    if (document.body.contains(player)) {
+                        continue;
+                    }
+
+                    // If the player got temporarily added by us, don't consider it gone
+                    if (player.dataset.pbiPausedForDomRemoval === "true") {
+                        continue;
+                    }
+
+                    sendPlayerGone();
+                    break;
+                }
+            });
         });
-
-        if (activePlayer && nodesRemoved) {
-            // One of the removed nodes could be activePlayer
-            // If it is still in the visible DOM, don't consider it gone
-            if (document.body.contains(activePlayer)) {
-                return;
-            }
-
-            // If the player got temporarily added by us, don't consider it gone
-            if (activePlayer.dataset.pbiPausedForDomRemoval === "true") {
-                return;
-            }
-
-            sendPlayerGone();
-        }
     });
 
     window.addEventListener("pagehide", function () {
