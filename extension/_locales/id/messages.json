@@ -30,7 +30,7 @@
         "message": "Error Takdiketahui"
     },
     "kdeconnect_call_device": {
-        "message": "Buka pada '$1'"
+        "message": "Panggil pada '$1'"
     },
     "kdeconnect_open_device": {
         "message": "Buka pada '$1'"
@@ -72,7 +72,7 @@
         "message": "Wantoyo"
     },
     "options_heading_krunner": {
-        "message": "Plasma Search"
+        "message": "Pencarian Plasma"
     },
     "options_not_supported_os": {
         "message": "Ekstensi ini tidaklah didukung pada operasi sitem ini."
@@ -96,10 +96,10 @@
         "message": "Tampilkan unduh-an dalam area notifikasi"
     },
     "options_plugin_historyrunner_description": {
-        "message": "This feature might need <a id=\"$1\" href=\"$2\">additional permissions</a> to be used."
+        "message": "Fitur ini mungkin memerlukan <a id=\"$1\" href=\"$2\">perizinan tambahan</a> untuk bisa digunakan."
     },
     "options_plugin_historyrunner_title": {
-        "message": "Search through browser history"
+        "message": "Cari melalui riwayat browser"
     },
     "options_plugin_kdeconnect_description": {
         "message": "Menambahkan sebuah entri menu konteks untuk tautan memungkinkanmu untuk mengirimnya ke teleponmu dan perangkat yang di-paire menggunakan <a href=\"$1\">KDE Connect</a>."
@@ -147,22 +147,22 @@
         "message": "Pengaturan Plasma Integration"
     },
     "permission_request_already": {
-        "message": "You have already granted this permission."
+        "message": "Anda telah memberikan izin ini."
     },
     "permission_request_button_request": {
-        "message": "Request Permission"
+        "message": "Minta Perizinan"
     },
     "permission_request_button_revoke": {
-        "message": "Revoke Permission"
+        "message": "Cabut Perizinan"
     },
     "permission_request_historyrunner_1": {
-        "message": "In order to provide search results for your browser history, additional permissions are required."
+        "message": "Untuk memberikan hasil pencarian untuk riwayat browser Anda, perizinan tambahan diperlukan."
     },
     "permission_request_historyrunner_2": {
-        "message": "Pastikan modul “Browser Tabs” telah difungsikan dalam <a id=\"$1\" href=\"$2\">pengaturan Plasma Search</a>."
+        "message": "Anda dapat menonfungsikan fitur ini di <a id=\"$1\" href=\"$2\">Setelan penelusuran plasma</a>."
     },
     "permission_request_title": {
-        "message": "Additional permissions required"
+        "message": "Perizinan tambahan diperlukan"
     },
     "purpose_share": {
         "message": "Bagikan..."
