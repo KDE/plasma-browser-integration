@@ -111,7 +111,7 @@
         "message": "Permet controlar els reproductors de vídeo i àudio a llocs web utilitzant el plasmoide Media Controller."
     },
     "options_plugin_mpris_media_sessions_description": {
-        "message": "Extreu les metadades i les miniatures del contingut actualment en reproducció."
+        "message": "Extrau les metadades i les miniatures del contingut actualment en reproducció."
     },
     "options_plugin_mpris_media_sessions_title": {
         "message": "Controls multimèdia millorats"
