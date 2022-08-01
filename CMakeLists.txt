@@ -4,7 +4,7 @@ project(plasma-browser-integration)
 set(PROJECT_VERSION "5.25.80")
 set(PROJECT_VERSION_MAJOR 5)
 
-set(QT_MIN_VERSION "5.15.0")
+set(QT_MIN_VERSION "5.15.2")
 set(KF5_MIN_VERSION "5.90.0")
 
 find_package(ECM ${KF5_MIN_VERSION} REQUIRED NO_MODULE)
