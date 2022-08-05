@@ -60,13 +60,13 @@
         "message": "Makine sürümü: $1"
     },
     "options_about_kde": {
-        "message": "KDE</b> dünyanın dört bir yanında bulunan ve <a href=\"$1\">Özgür Yazılım</a> geliştirme felsefesini benimsemiş olan yazılım mühendislerinin, sanatçıların, yazarların ve çevirmenlerin katılımı ile geliştirilen bir topluluktur. KDE, Plasma masaüstü ortamını, yüzlerce uygulama ve bu uygulamaları destekleyen çok sayıda yazılım kütüphanesi üretiyor.<br /><br />KDE, katılımcı bir girişimdir ve KDE ürünlerini ya da çalışmalarını kontrol eden tekil bir kişilik yoktur. Bunun yerine, birlikte çalışarak dünyanın en iyi Özgür Yazılımları'nı geliştirmek olan ortak amacı paylaşarak çalışıyoruz. KDE Projesine siz de dahil herkes <a href=\"$2\">katılıp katkıda bulunabilir</a>.<br /><br />KDE topluluğu ve ürettiği yazılımlar hakkında daha fazla bilgi almak için <a href=\"$3\">$3</a> adresini ziyaret edin."
+        "message": "KDE, dünyanın dört bir yanında bulunan ve <a href=\"$1\">Özgür Yazılım</a> geliştirme felsefesini benimsemiş olan yazılım mühendislerinin, sanatçıların, yazarların ve çevirmenlerin katılımı ile oluşmuş bir topluluktur. KDE; Plasma masaüstü ortamını, yüzlerce uygulama ve bu uygulamaları destekleyen çok sayıda yazılım kütüphanesini geliştirir.<br /><br />KDE, katılımcı bir girişimdir ve KDE ürünlerini veya çalışmalarını denetleyen tekil bir kişilik yoktur. Bunun yerine; birlikte çalışarak dünyanın en iyi Özgür Yazılımları'nı geliştirmek olan ortak amacı paylaşarak çalışıyoruz. KDE Projesine siz de dahil herkes <a href=\"$2\">katılıp katkıda bulunabilir</a>.<br /><br />KDE topluluğu ve ürettiği yazılımlar hakkında daha fazla bilgi almak için <a href=\"$3\">$3</a> adresini ziyaret edin."
     },
     "options_about_license": {
         "message": "Lisans: <a href=\"$1\">GNU Genel Kamu Lisansı Sürüm 3</a>"
     },
     "options_about_translated_by": {
-        "message": "$1 tarafından çevrildi"
+        "message": "Çeviri: $1"
     },
     "options_about_translators": {
         "message": "Emir SARI"
@@ -108,10 +108,10 @@
         "message": "KDE Connect ile gönder"
     },
     "options_plugin_mpris_description": {
-        "message": "Web sitelerindeki video ve ses oynatıcılarını Ortam Denetleyici plasmoid'ini kullanarak denetlemenize izin verir."
+        "message": "Web sitelerindeki video ve ses oynatıcılarını Ortam Denetleyici Plasmoid'ini kullanarak denetlemenize izin verir."
     },
     "options_plugin_mpris_media_sessions_description": {
-        "message": "Şu anda oynatılan içeriğin üstverisini ve küçük resimlerini çıkar."
+        "message": "Şu anda oynatılan içeriğin üstverisini ve küçük görsellerini çıkar."
     },
     "options_plugin_mpris_media_sessions_title": {
         "message": "Geliştirilmiş Ortam Denetimleri"
@@ -144,7 +144,7 @@
         "message": "Genel"
     },
     "options_title": {
-        "message": "Plasma Entegrasyon Ayarları"
+        "message": "Plasma Tümleştirme Ayarları"
     },
     "permission_request_already": {
         "message": "Bu izni halihazırda verdiniz."
@@ -159,7 +159,7 @@
         "message": "Tarama geçmişinizde arama işlevi sağlayabilmemiz için ek izinler gerekiyor."
     },
     "permission_request_historyrunner_2": {
-        "message": "Bu özelliği <a id=\"$1\" href=\"$2\">Plasma Arama Ayarları</a>nda devre dışı bırakabilirsiniz."
+        "message": "Bu özelliği <a id=\"$1\" href=\"$2\">Plasma Arama Ayarları</a>'nda devre dışı bırakabilirsiniz."
     },
     "permission_request_title": {
         "message": "Ek izinler gerekiyor"
@@ -180,6 +180,6 @@
         "message": "Paylaşılan İçerik"
     },
     "store_description": {
-        "message": "Tarayıcı işlevlerini masaüstünden denetleyerek efektif bir biçimde birden çok işle uğraşın, Chrome arka planda olsu bile. Ses çalmayı ve video oynatmayı denetleyin, bildirim alanında indirmeleri izleyin, KDE Connect ile telefonunuza dosyalar gönderin ve KDE Plasma Masaüstü içinde çok daha fazlasını yapın!\\n\\nBu uzantının çalışması için plasma-browser-integration-package kurulu olmalıdır. Plasma 5.13 ve sonrası sürümlerde dağıtımınızın paket yöneticisinden olması gerekir.\\n\\nNOT: Bu uzantı Debian üzerinde desteklenmemektedir."
+        "message": "Multitask efficiently by controlling browser functions from the desktop, even while Chrome is in the background. Manage audio and video playback, check downloads in the notification area, send files to your phone using KDE Connect and more inside the KDE Plasma Desktop!\\n\\nThe plasma-browser-integration package must be installed for this extension to work. It should be available from your distribution's package manager when running Plasma 5.13 or later.\\n\\nNOTE: This extension is not supported on Debian."
     }
 }
