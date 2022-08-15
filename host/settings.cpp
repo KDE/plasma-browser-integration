@@ -226,6 +226,12 @@ bool Settings::setEnvironmentFromTasksModelIndex(const QModelIndex &idx)
         return false;
     }
 
+    // Ignore any browser-hosted app windows.
+    if (!service->categories().contains(QLatin1String("WebBrowser"))) {
+        qInfo() << "Ignoring launcher URL" << launcherUrl << "which doesn't have \"WebBrowser\" category";
+        return false;
+    }
+
     qApp->setApplicationName(service->menuId());
     qApp->setApplicationDisplayName(service->name());
     qApp->setDesktopFileName(service->desktopEntryName());
