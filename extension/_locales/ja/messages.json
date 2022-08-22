@@ -60,7 +60,7 @@
         "message": "ホストのバージョン: $1"
     },
     "options_about_kde": {
-        "message": "KDE is a world-wide community of software engineers, artists, writers, translators and creators who are committed to <a href=\"$1\">Free Software</a> development. KDE produces the Plasma desktop environment, hundreds of applications, and the many software libraries that support them. KDE is a cooperative enterprise: no single entity controls its direction or products. Instead, we work together to achieve the common goal of building the world's finest Free Software. Everyone is welcome to <a href=\"$2\">join and contribute</a> to KDE, including you. Visit <a href=\"$3\">$3</a> for more information about the KDE community and the software we produce."
+        "message": "KDE はソフトウェアエンジニア、アーティスト、作家、翻訳者、<a href=\"%1\">フリーソフトウェア</a>の開発に協力する人々による世界的なコミュニティです。KDE は Plasma デスクトップ環境や、数百ものアプリケーション、それらをサポートするたくさんのライブラリを作り出しています。KDE は協力事業です: 一つの企業が方向性や製品をコントロールすることはありません。代わりに、私達は世界最高級のフリーソフトウェアを作成するという共通のゴールを達成するために共に働いています。あなたを含む誰もが KDE に<a href=\"%2\">参加して貢献</a>することが歓迎されています。<a href=\"%3\">%3</a>を訪れて KDE Community と私達が作り出したソフトウェアの詳細情報をご覧ください。"
     },
     "options_about_license": {
         "message": "ライセンス: <a href=\"$1\">GNU General Public License Version 3</a>"
@@ -141,7 +141,7 @@
         "message": "情報"
     },
     "options_tab_general": {
-        "message": "全体"
+        "message": "全般"
     },
     "options_title": {
         "message": "Plasma Integration 設定"
