@@ -102,7 +102,7 @@
         "message": "Cari melalui riwayat browser"
     },
     "options_plugin_kdeconnect_description": {
-        "message": "Menambahkan sebuah entri menu konteks untuk tautan memungkinkanmu untuk mengirimnya ke teleponmu dan perangkat yang di-paire menggunakan <a href=\"$1\">KDE Connect</a>."
+        "message": "Menambahkan sebuah entri menu konteks untuk tautan memungkinkanmu untuk mengirimnya ke teleponmu dan peranti yang di-paire menggunakan <a href=\"$1\">KDE Connect</a>."
     },
     "options_plugin_kdeconnect_title": {
         "message": "Kirim via KDE Connect"
