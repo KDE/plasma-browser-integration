@@ -93,7 +93,7 @@
         "message": "Nota: L'URL pot contindre informació confidencial que es podria divulgar si el fitxer és accessible o compartit amb tercers"
     },
     "options_plugin_downloads_title": {
-        "message": "Mostra les baixades a l'àrea de notificacions"
+        "message": "Mostra les baixades en l'àrea de notificacions"
     },
     "options_plugin_historyrunner_description": {
         "message": "Esta funcionalitat pot necessitar <a id=\"$1\" href=\"$2\">permisos addicionals</a> per a utilitzar-se."
