@@ -129,7 +129,7 @@
         "message": "Pastikan modul “Browser Tabs” telah difungsikan dalam <a id=\"$1\" href=\"$2\">pengaturan Plasma Search</a>."
     },
     "options_plugin_tabsrunner_title": {
-        "message": "Temukan tab-tab browser dalam window “Run Command”"
+        "message": "Temukan tab-tab browser dalam jendela “Run Command”"
     },
     "options_save_failed": {
         "message": "Penyimpanan pengaturan, gagal"
