@@ -1,0 +1,133 @@
+# William Oprandi <william.oprandi@gmail.com>, 2019.
+# Xavier Besnard <xavier.besnard@neuf.fr>, 2021.
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-browser-integration\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-08-29 00:19+0000\n"
+"PO-Revision-Date: 2021-04-20 08:51+0200\n"
+"Last-Translator: Xavier Besnard <xavier.besnard@neuf.fr>\n"
+"Language-Team: French <kde-francophone@kde.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Lokalize 20.12.3\n"
+"X-Environment: kde\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+#: downloadjob.cpp:134
+#, kde-format
+msgid ""
+"This type of file can harm your computer. If you want to keep it, accept "
+"this download from the browser window."
+msgstr ""
+"Ce type de fichier peut endommager votre ordinateur. Si vous voulez le "
+"conserver, veuillez accepter ce téléchargement à partir de la fenêtre de "
+"votre navigateur."
+
+#: downloadjob.cpp:231
+#, kde-format
+msgid "Access denied."
+msgstr "Accès refusé."
+
+#: downloadjob.cpp:232
+#, kde-format
+msgid "Insufficient free space."
+msgstr "Espace libre insuffisant."
+
+#: downloadjob.cpp:233
+#, kde-format
+msgid "The file name you have chosen is too long."
+msgstr "Le nom de fichier choisi est trop long."
+
+#: downloadjob.cpp:234
+#, kde-format
+msgid "The file is too large to be downloaded."
+msgstr "Ce fichier est trop gros pour être téléchargé."
+
+#: downloadjob.cpp:236
+#, kde-format
+msgid "The file possibly contains malicious contents."
+msgstr "Le fichier contient peut-être du contenus malicieux."
+
+#: downloadjob.cpp:237
+#, kde-format
+msgid "A temporary error has occurred. Please try again later."
+msgstr "Une erreur temporaire s'est produite. Veuillez ré-essayer plus tard."
+
+#: downloadjob.cpp:239
+#, kde-format
+msgid "A network error has occurred."
+msgstr "Une erreur réseau est survenue."
+
+#: downloadjob.cpp:240
+#, kde-format
+msgid "The network operation timed out."
+msgstr "Délai de l'opération réseau dépassé."
+
+#: downloadjob.cpp:241
+#, kde-format
+msgid "The network connection has been lost."
+msgstr "La connexion réseau a été perdue."
+
+#: downloadjob.cpp:242
+#, kde-format
+msgid "The server is no longer reachable."
+msgstr "Le serveur n'est plus accessible."
+
+#: downloadjob.cpp:244
+#, kde-format
+msgid "A server error has occurred."
+msgstr "Une erreur serveur est survenue."
+
+#: downloadjob.cpp:248
+#, kde-format
+msgid "The server does not have the requested data."
+msgstr "Le serveur n'a pas les données demandées."
+
+#: downloadjob.cpp:250
+#, kde-format
+msgid "The browser application closed unexpectedly."
+msgstr "L'application de navigateur s'est terminé de façon inattendue."
+
+#: downloadjob.cpp:256
+#, kde-format
+msgid "An unknown error occurred while downloading."
+msgstr "Une erreur inconnue est survenue lors du téléchargement."
+
+#: downloadjob.cpp:294
+#, kde-format
+msgctxt "Job heading, like 'Copying'"
+msgid "Downloading"
+msgstr "Téléchargement en cours"
+
+#: downloadjob.cpp:295
+#, kde-format
+msgctxt "The URL being downloaded"
+msgid "Source"
+msgstr "Source"
+
+#: downloadjob.cpp:296
+#, kde-format
+msgctxt "The location being downloaded to"
+msgid "Destination"
+msgstr "Destination"
+
+#: historyrunnerplugin.cpp:108
+#, kde-format
+msgctxt "Dummy search result"
+msgid "Additional permissions are required"
+msgstr "Des permissions supplémentaires sont nécessaires."
+
+#: tabsrunnerplugin.cpp:38
+#, kde-format
+msgid "Mute Tab"
+msgstr "Mettre l'onglet en sourdine"
+
+#: tabsrunnerplugin.cpp:43
+#, kde-format
+msgid "Unmute Tab"
+msgstr "Remettre le son pour l'onglet"

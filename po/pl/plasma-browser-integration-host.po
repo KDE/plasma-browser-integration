@@ -1,0 +1,132 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the plasma-browser-integration package.
+#
+# Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>, 2019, 2021.
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-browser-integration\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-08-29 00:19+0000\n"
+"PO-Revision-Date: 2021-05-03 06:13+0200\n"
+"Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
+"Language-Team: Polish <kde-i18n-doc@kde.org>\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 20.12.1\n"
+
+#: downloadjob.cpp:134
+#, kde-format
+msgid ""
+"This type of file can harm your computer. If you want to keep it, accept "
+"this download from the browser window."
+msgstr ""
+"Ten rodzaj pliku może zaszkodzić twojemu komputerowi. Jeśli chcesz go "
+"zachować, to potwierdź pobieranie z okna przeglądarki."
+
+#: downloadjob.cpp:231
+#, kde-format
+msgid "Access denied."
+msgstr "Odmówiono dostępu."
+
+#: downloadjob.cpp:232
+#, kde-format
+msgid "Insufficient free space."
+msgstr "Brak wystarczającej przestrzeni na dysku."
+
+#: downloadjob.cpp:233
+#, kde-format
+msgid "The file name you have chosen is too long."
+msgstr "Nadana nazwa pliku jest zbyt długa."
+
+#: downloadjob.cpp:234
+#, kde-format
+msgid "The file is too large to be downloaded."
+msgstr "Plik jest zbyt duży, aby go pobrać."
+
+#: downloadjob.cpp:236
+#, kde-format
+msgid "The file possibly contains malicious contents."
+msgstr "Plik prawdopodobnie zawiera szkodliwą treść."
+
+#: downloadjob.cpp:237
+#, kde-format
+msgid "A temporary error has occurred. Please try again later."
+msgstr "Wystąpił tymczasowy błąd. Spróbuj ponownie."
+
+#: downloadjob.cpp:239
+#, kde-format
+msgid "A network error has occurred."
+msgstr "Wystąpił błąd sieci."
+
+#: downloadjob.cpp:240
+#, kde-format
+msgid "The network operation timed out."
+msgstr "Upłynął czas oczekiwania na sieć."
+
+#: downloadjob.cpp:241
+#, kde-format
+msgid "The network connection has been lost."
+msgstr "Połączenie sieciowe zostało utracone."
+
+#: downloadjob.cpp:242
+#, kde-format
+msgid "The server is no longer reachable."
+msgstr "Serwer nie jest już osiągalny."
+
+#: downloadjob.cpp:244
+#, kde-format
+msgid "A server error has occurred."
+msgstr "Wystąpił błąd serwera."
+
+#: downloadjob.cpp:248
+#, kde-format
+msgid "The server does not have the requested data."
+msgstr "Serwer nie ma żądanych danych."
+
+#: downloadjob.cpp:250
+#, kde-format
+msgid "The browser application closed unexpectedly."
+msgstr "Aplikacja przeglądarki została nieoczekiwanie zamknięta."
+
+#: downloadjob.cpp:256
+#, kde-format
+msgid "An unknown error occurred while downloading."
+msgstr "Nieznany błąd podczas pobierania."
+
+#: downloadjob.cpp:294
+#, kde-format
+msgctxt "Job heading, like 'Copying'"
+msgid "Downloading"
+msgstr "Pobieranie"
+
+#: downloadjob.cpp:295
+#, kde-format
+msgctxt "The URL being downloaded"
+msgid "Source"
+msgstr "Miejsce źródłowe"
+
+#: downloadjob.cpp:296
+#, kde-format
+msgctxt "The location being downloaded to"
+msgid "Destination"
+msgstr "Miejsce docelowe"
+
+#: historyrunnerplugin.cpp:108
+#, kde-format
+msgctxt "Dummy search result"
+msgid "Additional permissions are required"
+msgstr "Wymagane dodatkowe uprawnienia"
+
+#: tabsrunnerplugin.cpp:38
+#, kde-format
+msgid "Mute Tab"
+msgstr "Wycisz kartę"
+
+#: tabsrunnerplugin.cpp:43
+#, kde-format
+msgid "Unmute Tab"
+msgstr "Włącz dźwięk karty"

@@ -1,0 +1,129 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the plasma-browser-integration package.
+#
+# Marek Laane <qiilaq69@gmail.com>, 2019.
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-browser-integration\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-08-29 00:19+0000\n"
+"PO-Revision-Date: 2019-11-08 23:45+0200\n"
+"Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
+"Language-Team: Estonian <kde-et@lists.linux.ee>\n"
+"Language: et\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 19.08.1\n"
+
+#: downloadjob.cpp:134
+#, kde-format
+msgid ""
+"This type of file can harm your computer. If you want to keep it, accept "
+"this download from the browser window."
+msgstr ""
+
+#: downloadjob.cpp:231
+#, kde-format
+msgid "Access denied."
+msgstr "Juurdepääs keelatud."
+
+#: downloadjob.cpp:232
+#, kde-format
+msgid "Insufficient free space."
+msgstr "Vaba ruumi napib."
+
+#: downloadjob.cpp:233
+#, kde-format
+msgid "The file name you have chosen is too long."
+msgstr "Valitud failinimi on liiga pikk."
+
+#: downloadjob.cpp:234
+#, kde-format
+msgid "The file is too large to be downloaded."
+msgstr "Fail on allalaadimiseks liiga suur."
+
+#: downloadjob.cpp:236
+#, kde-format
+msgid "The file possibly contains malicious contents."
+msgstr "Fail võib sisaldada ohtlikku sisu."
+
+#: downloadjob.cpp:237
+#, kde-format
+msgid "A temporary error has occurred. Please try again later."
+msgstr "Tekki ajutine tõrge. Palun proovi hiljem uuesti."
+
+#: downloadjob.cpp:239
+#, kde-format
+msgid "A network error has occurred."
+msgstr "Tekkis võrgutõrge."
+
+#: downloadjob.cpp:240
+#, kde-format
+msgid "The network operation timed out."
+msgstr "Võrgutoiming läks üle aja."
+
+#: downloadjob.cpp:241
+#, kde-format
+msgid "The network connection has been lost."
+msgstr "Võrguühendus kadus."
+
+#: downloadjob.cpp:242
+#, kde-format
+msgid "The server is no longer reachable."
+msgstr "Server ei ole enam kättesaadav."
+
+#: downloadjob.cpp:244
+#, kde-format
+msgid "A server error has occurred."
+msgstr "Tekkis serveri tõrge."
+
+#: downloadjob.cpp:248
+#, kde-format
+msgid "The server does not have the requested data."
+msgstr "Serveris ei ole nõutud andmeid."
+
+#: downloadjob.cpp:250
+#, kde-format
+msgid "The browser application closed unexpectedly."
+msgstr "Brauseri rakendus sulgus ootamatult."
+
+#: downloadjob.cpp:256
+#, kde-format
+msgid "An unknown error occurred while downloading."
+msgstr "Allalaadimisel tekkis tundmatu tõrge."
+
+#: downloadjob.cpp:294
+#, kde-format
+msgctxt "Job heading, like 'Copying'"
+msgid "Downloading"
+msgstr "Allalaadimine"
+
+#: downloadjob.cpp:295
+#, kde-format
+msgctxt "The URL being downloaded"
+msgid "Source"
+msgstr "Lähtekoht"
+
+#: downloadjob.cpp:296
+#, kde-format
+msgctxt "The location being downloaded to"
+msgid "Destination"
+msgstr "Sihtkoht"
+
+#: historyrunnerplugin.cpp:108
+#, kde-format
+msgctxt "Dummy search result"
+msgid "Additional permissions are required"
+msgstr ""
+
+#: tabsrunnerplugin.cpp:38
+#, kde-format
+msgid "Mute Tab"
+msgstr ""
+
+#: tabsrunnerplugin.cpp:43
+#, kde-format
+msgid "Unmute Tab"
+msgstr ""

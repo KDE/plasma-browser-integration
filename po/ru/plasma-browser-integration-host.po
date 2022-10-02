@@ -1,0 +1,132 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the plasma-browser-integration package.
+#
+# Alexander Yavorsky <kekcuha@gmail.com>, 2019, 2021.
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-browser-integration\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-08-29 00:19+0000\n"
+"PO-Revision-Date: 2021-05-07 14:11+0300\n"
+"Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
+"Language-Team: Russian <kde-russian@lists.kde.ru>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Lokalize 21.04.0\n"
+
+#: downloadjob.cpp:134
+#, kde-format
+msgid ""
+"This type of file can harm your computer. If you want to keep it, accept "
+"this download from the browser window."
+msgstr ""
+"Файлы такого типа могут быть опасны. Чтобы сохранить его, согласитесь с "
+"загрузкой этого файла в окне браузера."
+
+#: downloadjob.cpp:231
+#, kde-format
+msgid "Access denied."
+msgstr "Доступ запрещён."
+
+#: downloadjob.cpp:232
+#, kde-format
+msgid "Insufficient free space."
+msgstr "Недостаточно места на диске."
+
+#: downloadjob.cpp:233
+#, kde-format
+msgid "The file name you have chosen is too long."
+msgstr "Выбрано слишком длинное имя файла."
+
+#: downloadjob.cpp:234
+#, kde-format
+msgid "The file is too large to be downloaded."
+msgstr "Файл слишком большой и не может быть загружен."
+
+#: downloadjob.cpp:236
+#, kde-format
+msgid "The file possibly contains malicious contents."
+msgstr "В файле может быть вредоносное содержимое."
+
+#: downloadjob.cpp:237
+#, kde-format
+msgid "A temporary error has occurred. Please try again later."
+msgstr "Произошла временная ошибка. Попробуйте позже."
+
+#: downloadjob.cpp:239
+#, kde-format
+msgid "A network error has occurred."
+msgstr "Произошла ошибка сети."
+
+#: downloadjob.cpp:240
+#, kde-format
+msgid "The network operation timed out."
+msgstr "Истекло время выполнения сетевой операции."
+
+#: downloadjob.cpp:241
+#, kde-format
+msgid "The network connection has been lost."
+msgstr "Соединение было разорвано."
+
+#: downloadjob.cpp:242
+#, kde-format
+msgid "The server is no longer reachable."
+msgstr "Сервер более не доступен."
+
+#: downloadjob.cpp:244
+#, kde-format
+msgid "A server error has occurred."
+msgstr "Произошла внутренняя ошибка сервера."
+
+#: downloadjob.cpp:248
+#, kde-format
+msgid "The server does not have the requested data."
+msgstr "Запрошенные данные отсутствуют на сервере."
+
+#: downloadjob.cpp:250
+#, kde-format
+msgid "The browser application closed unexpectedly."
+msgstr "Браузер неожиданно завершил работу."
+
+#: downloadjob.cpp:256
+#, kde-format
+msgid "An unknown error occurred while downloading."
+msgstr "При загрузке произошла неизвестная ошибка."
+
+#: downloadjob.cpp:294
+#, kde-format
+msgctxt "Job heading, like 'Copying'"
+msgid "Downloading"
+msgstr "Загрузка"
+
+#: downloadjob.cpp:295
+#, kde-format
+msgctxt "The URL being downloaded"
+msgid "Source"
+msgstr "Источник"
+
+#: downloadjob.cpp:296
+#, kde-format
+msgctxt "The location being downloaded to"
+msgid "Destination"
+msgstr "Назначение"
+
+#: historyrunnerplugin.cpp:108
+#, kde-format
+msgctxt "Dummy search result"
+msgid "Additional permissions are required"
+msgstr "Требуются дополнительные права доступа"
+
+#: tabsrunnerplugin.cpp:38
+#, kde-format
+msgid "Mute Tab"
+msgstr "Отключить звук во вкладке"
+
+#: tabsrunnerplugin.cpp:43
+#, kde-format
+msgid "Unmute Tab"
+msgstr "Включить звук во вкладке"

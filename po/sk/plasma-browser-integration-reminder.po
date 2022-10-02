@@ -1,0 +1,26 @@
+# translation of plasma-browser-integration-reminder.po to Slovak
+# Roman Paholik <wizzardsk@gmail.com>, 2018.
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-browser-integration-reminder\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-08-29 00:19+0000\n"
+"PO-Revision-Date: 2018-09-22 20:32+0100\n"
+"Last-Translator: Roman Paholík <wizzardsk@gmail.com>\n"
+"Language-Team: Slovak <kde-sk@linux.sk>\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 2.0\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+#: browserintegrationreminder.cpp:140
+#, kde-format
+msgid "Get Plasma Browser Integration"
+msgstr "Získať integráciu prehliadača Plasma"
+
+#: browserintegrationreminder.cpp:167
+#, kde-format
+msgid "Do not show again"
+msgstr "Znovu nezobrazovať"

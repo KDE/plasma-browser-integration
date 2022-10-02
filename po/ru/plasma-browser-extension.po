@@ -1,0 +1,424 @@
+# Sheykhnur <sheykhnur@gmail.com>, 2018.
+# Alexander Potashev <aspotashev@gmail.com>, 2017, 2018, 2019.
+# Alexander Yavorsky <kekcuha@gmail.com>, 2019, 2020, 2021.
+msgid ""
+msgstr ""
+"Project-Id-Version: i18next-conv\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-01-02 02:39:09.793433\n"
+"PO-Revision-Date: 2021-01-14 09:22+0300\n"
+"Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
+"Language-Team: Russian <kde-russian@lists.kde.ru>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Lokalize 20.12.1\n"
+
+#: browseraction_mpris_enable_on:0
+msgctxt "Heading for list of domains to enable media controls on"
+msgid "Enable media controls on:"
+msgstr "Разрешить управление мультимедиа для следующих сайтов:"
+
+#: browseraction_mpris_title:0
+msgctxt "Title for Media controls in popup"
+msgid "Media Controls"
+msgstr "Управление мультимедиа"
+
+#: browseraction_title:0
+msgctxt "Title for toolbar popup"
+msgid "Plasma Browser Integration"
+msgstr "Интеграция браузера с Plasma"
+
+#: general_error_host_disconnected_title:0
+msgctxt ""
+"Title for plasma-browser-integration-host binary unexpectedly closing/"
+"crashing"
+msgid "The native host disconnected unexpectedly."
+msgstr "Неожиданное завершение главного процесса."
+
+#: general_error_not_supported_os:0
+msgid "This extension is only supported on Linux and FreeBSD."
+msgstr "Данное расширение поддерживается только в ОС Linux и FreeBSD."
+
+#: general_error_not_supported_os_title:0
+msgid "Unsupported operating system"
+msgstr "Неподдерживаемая операционная система"
+
+#: general_error_startup_failed:0
+msgctxt ""
+"Description for failure to start plasma-browser-integration-host binary"
+msgid ""
+"Make sure the 'plasma-browser-integration' package is installed correctly "
+"and that you are running Plasma 5.13 or later."
+msgstr ""
+"Проверьте правильность установки пакета «plasma-browser-integration». "
+"Выполняемая среда окружения рабочего стола Plasma должна быть не младше "
+"версии 5.13."
+
+#: general_error_startup_failed_title:0
+msgctxt "Title for failure to start plasma-browser-integration-host binary"
+msgid "Failed to connect to the native host."
+msgstr "Не удалось подключиться к главному процессу."
+
+#: general_error_startup_failed_wiki_link:0
+msgid "Visit project wiki page for more information"
+msgstr "Дополнительная информация доступна на вики-сайте проекта"
+
+#: general_error_unknown:0
+msgctxt ""
+"An unknown error occurred, usually used when an error message by the system "
+"is not provided"
+msgid "Unknown Error"
+msgstr "Неизвестная ошибка"
+
+#: kdeconnect_call_device:0
+msgctxt "Context menu, call phone number on device $1"
+msgid "Call on '$1'"
+msgstr "Позвонить через «$1»"
+
+#: kdeconnect_open_device:0
+msgctxt "Context menu, open link on device $1, similar to 'Open in New Tab'"
+msgid "Open on '$1'"
+msgstr "Открыть на устройстве «$1»"
+
+#: kdeconnect_open_via:0
+msgctxt "Context menu, open link on device whose name we don't (yet) know"
+msgid "Open via KDE Connect"
+msgstr "Открыть через KDE Connect"
+
+#: options_about_bugs:0
+msgid ""
+"If you find an issue, please check the <a href=\"$1\">list of open bugs</a> "
+"and then <a href=\"$2\">file a bug report</a>."
+msgstr ""
+"Если вы нашли ошибку, пожалуйста, посетите страницу с уже <a href="
+"\"$1\">известными ошибками</a> , затем можете <a href=\"$2\">отправить отчёт "
+"об ошибке</a>."
+
+#: options_about_changelog_link:0
+msgctxt "Link to view browser extension changelog"
+msgid "View Changelog"
+msgstr "Открыть журнал изменений"
+
+#: options_about_copyright:0
+msgid "© 2017-2020 Kai Uwe Broulik and David Edmundson"
+msgstr "© Kai Uwe Broulik и David Edmundson, 2017–2020"
+
+#: options_about_created_by_kde:0
+msgid ""
+"This browser extension was created by the <a href=\"$1\">KDE Community</a>. "
+"You can find more information about this project on the <a href=\"$2\">KDE "
+"Community Wiki</a>."
+msgstr ""
+"Данное расширение создано <a href=\"$1\">сообществом KDE</a>. Больше "
+"информации о данном проекте вы можете получить на <a href=\"$2\">вики-"
+"странице</a>."
+
+#: options_about_donate:0
+msgid ""
+"If you like what you saw, please consider <a href=\"$1\">donating to KDE</"
+"a>, so we can continue to make the best free software possible."
+msgstr ""
+"Если вам нравится наше творение, но не знаете, как отблагодарить, то вы "
+"можете внести свою лепту, сделав <a href=\"$1\">денежное пожертвование "
+"команде KDE</a> для того, чтобы мы могли продолжать делать лучшее свободное "
+"ПО ещё лучше."
+
+#: options_about_extension_version:0
+msgctxt "Version of browser extension"
+msgid "Extension version: $1"
+msgstr "Версия расширения: $1"
+
+#: options_about_host_version:0
+msgctxt "Version of extension native host"
+msgid "Host version: $1"
+msgstr "Версия службы интеграции браузера: $1"
+
+#: options_about_kde:0
+msgctxt "KDE description taken from kaboutkdedialog_p.h in kmxlgui"
+msgid ""
+"KDE is a world-wide community of software engineers, artists, writers, "
+"translators and creators who are committed to <a href=\"$1\">Free Software</"
+"a> development. KDE produces the Plasma desktop environment, hundreds of "
+"applications, and the many software libraries that support them. KDE is a "
+"cooperative enterprise: no single entity controls its direction or products. "
+"Instead, we work together to achieve the common goal of building the world's "
+"finest Free Software. Everyone is welcome to <a href=\"$2\">join and "
+"contribute</a> to KDE, including you. Visit <a href=\"$3\">$3</a> for more "
+"information about the KDE community and the software we produce."
+msgstr ""
+"KDE — международное сообщество программистов, дизайнеров, переводчиков и "
+"других людей, так или иначе посвящающих себя разработке <a href="
+"\"$1\">свободного программного обеспечения</a>. KDE выпускает рабочую среду "
+"Plasma, сотни прикладных программ, а также множество необходимых для них "
+"программных библиотек. Не существует группы или организации, держащей под "
+"исключительным контролем действия или направления развития продуктов KDE. "
+"Вместо централизованного подхода мы стремимся к общей цели — созданию "
+"лучшего в мире свободного ПО. Мы будем рады каждому, кто захочет <a href="
+"\"$2\">внести свой вклад</a> в развитие KDE. Для того чтобы больше узнать о "
+"проекте, зайдите на сайт <a href=\"$3\">$3</a>."
+
+#: options_about_license:0
+msgid "License: <a href=\"$1\">GNU General Public License Version 3</a>"
+msgstr ""
+"Лицензия: <a href=\"$1\">Универсальная общественная лицензия GNU (GNU "
+"General Public License) версии 3</a>"
+
+#: options_about_translated_by:0
+msgid "Translated by: $1"
+msgstr "Перевод: $1"
+
+#: options_about_translators:0
+msgctxt "Name of translators"
+msgid "Your names"
+msgstr "Шейхнур Латипов"
+
+#: options_heading_krunner:0
+msgctxt "Title for settings about KRunner plugins"
+msgid "Plasma Search"
+msgstr "Поиск Plasma"
+
+#: options_not_supported_os:0
+msgid "This extension is not supported on this operating system."
+msgstr "Данное расширение не поддерживается на вашей операционной системе."
+
+#: options_plugin_breezeScrollBars_description:0
+msgctxt "Description for Breeze style scroll bars plugin"
+msgid ""
+"This may interfere with the appearance of websites that already apply a "
+"custom styling to their scroll bars."
+msgstr ""
+"Данная функция может мешать работе сайтов, имеющих собственный стиль полос "
+"прокрутки."
+
+#: options_plugin_breezeScrollBars_title:0
+msgctxt "Title for Breeze style scroll bars plugin"
+msgid "Use Breeze-style scroll bars"
+msgstr "Использовать стиль полос прокрутки Breeze"
+
+#: options_plugin_downloads_addToRecentDocuments:0
+msgctxt "Option for adding downloaded files to recent documents"
+msgid "Add downloaded files to recent documents"
+msgstr "Добавлять загруженные файлы в список последних открытых документов"
+
+#: options_plugin_downloads_saveOriginUrl:0
+msgctxt "Option for saving download source URL in file metadata"
+msgid "Save URL a file was downloaded from in the file's attributes"
+msgstr "Сохранять в аттрибутах адрес, откуда файл был загружен"
+
+#: options_plugin_downloads_saveOriginUrl_description:0
+msgid ""
+"Note: The URL may contain sensitive information that could be disclosed when "
+"the file is accessible by or shared with others"
+msgstr ""
+"Внимание: ссылка может содержать чувствительную информацию, которая не "
+"сможет быть скрыта после публикации файла."
+
+#: options_plugin_downloads_title:0
+msgctxt "Title for Downloads plugin"
+msgid "Show downloads in notification area"
+msgstr "Показ загрузок в области уведомлений"
+
+#: options_plugin_historyrunner_description:0
+msgctxt "Description for Browser History KRunner plugin"
+msgid ""
+"This feature might need <a id=\"$1\" href=\"$2\">additional permissions</a> "
+"to be used."
+msgstr ""
+"Для использования этой функции могут потребоваться <a id=\"$1\" href="
+"\"$2\">дополнительные права доступа</a>."
+
+#: options_plugin_historyrunner_title:0
+msgctxt "Title for Browser History KRunner plugin"
+msgid "Search through browser history"
+msgstr "Поиск в журнале браузера"
+
+#: options_plugin_kdeconnect_description:0
+msgctxt "Description for KDE Connect plugin"
+msgid ""
+"Adds a context menu entry to links enabling you to send them to your phone "
+"and other paired devices using <a href=\"$1\">KDE Connect</a>."
+msgstr ""
+"Добавляет в контекстное меню пункт, позволяющий отправить ссылку на смартфон "
+"и другие сопряжённые устройства через <a href=\"$1\">KDE Connect</a>."
+
+#: options_plugin_kdeconnect_title:0
+msgctxt "Title for KDE Connect plugin"
+msgid "Send via KDE Connect"
+msgstr "Отправка через KDE Connect"
+
+#: options_plugin_mpris_description:0
+msgctxt "Description for Media Controls plugin"
+msgid ""
+"Lets you control video and audio players in websites using the Media "
+"Controller plasmoid."
+msgstr ""
+"Позволяет управлять воспроизведением аудио и видео на сайтах, используя "
+"виджет «Управление медиапроигрывателем»."
+
+#: options_plugin_mpris_media_sessions_description:0
+msgctxt "Description for MediaSessions API Control plugin"
+msgid "Extract metadata and thumbnails of currently playing content."
+msgstr "Извлекать метаданные и миниатюры из проигрываемого содержимого."
+
+#: options_plugin_mpris_media_sessions_title:0
+msgctxt "Title for MediaSessions API Control plugin"
+msgid "Enhanced Media Controls"
+msgstr "Расширенное управление мультимедиа"
+
+#: options_plugin_mpris_title:0
+msgctxt "Title for Media Controls plugin"
+msgid "Media Controls"
+msgstr "Управление мультимедиа"
+
+#: options_plugin_purpose_description:0
+msgctxt "Description for Purpose / Web Share plugin"
+msgid ""
+"Adds a \"Share...\" context menu entry and allows websites to open a dialog "
+"for sharing contents using the Web Share API."
+msgstr ""
+"Этот модуль позволяет предоставить общий доступ к содержимому из пункта "
+"контекстного меню «Поделиться», а также позволяет веб-сайтам открывать "
+"диалог открытия общего доступа с использованием Web Share API"
+
+#: options_plugin_purpose_title:0
+msgctxt "Title for Purpose / Web Share plugin"
+msgid "Content Sharing"
+msgstr "Доступ к содержимому"
+
+#: options_plugin_tabsrunner_description:0
+msgctxt "Description for Browser Tabs KRunner plugin"
+msgid ""
+"Make sure the “Browser Tabs” module is enabled in <a id=\"$1\" href="
+"\"$2\">Plasma Search settings</a>."
+msgstr ""
+"Убедитесь, что модуль поиска «Вкладки браузера» включён в <a id=\"$1\" href="
+"\"$2\">параметрах строки поиска и запуска</a>."
+
+#: options_plugin_tabsrunner_title:0
+msgctxt "Title for Browser Tabs KRunner plugin"
+msgid "Find browser tabs in “Run Command” window"
+msgstr "Поиск вкладок браузера в строке поиска и запуска Plasma"
+
+#: options_save_failed:0
+msgid "Saving settings failed"
+msgstr "Не удалось сохранить параметры"
+
+#: options_save_success:0
+msgid "Settings successfully saved"
+msgstr "Параметры успешно сохранены"
+
+#: options_tab_about:0
+msgctxt "The 'About this plugin' tab in settings"
+msgid "About"
+msgstr "О расширении"
+
+#: options_tab_general:0
+msgctxt "The 'General settings' tab in settings"
+msgid "General"
+msgstr "Общие параметры"
+
+#: options_title:0
+msgctxt "Title for settings page"
+msgid "Plasma Integration Settings"
+msgstr "Настройка интеграции браузера с Plasma"
+
+#: permission_request_already:0
+msgid "You have already granted this permission."
+msgstr "Это разрешение уже предоставлено."
+
+#: permission_request_button_request:0
+msgctxt "@action:button"
+msgid "Request Permission"
+msgstr "Запросить разрешение"
+
+#: permission_request_button_revoke:0
+msgctxt "@action:button"
+msgid "Revoke Permission"
+msgstr "Отозвать разрешение"
+
+#: permission_request_historyrunner_1:0
+msgctxt "Explanation for why additional permissions are needed"
+msgid ""
+"In order to provide search results for your browser history, additional "
+"permissions are required."
+msgstr ""
+"Для выполнения поиска в журнале браузера требуются дополнительные разрешения."
+
+#: permission_request_historyrunner_2:0
+msgctxt "Explanation about disabling history runner"
+msgid ""
+"You can disable this feature in <a id=\"$1\" href=\"$2\">Plasma search "
+"settings</a>."
+msgstr ""
+"Эта функция может быть отключена в <a id=\"$1\" href=\"$2\">Настройках "
+"поиска Plasma</a>."
+
+#: permission_request_title:0
+msgctxt "Title for page about requesting additional permissions"
+msgid "Additional permissions required"
+msgstr "Запрос дополнительных разрешений"
+
+#: purpose_share:0
+msgctxt "Context menu, share link or page via Purpose framework"
+msgid "Share..."
+msgstr "Опубликовать..."
+
+#: purpose_share_failed_text:0
+msgctxt "Text of share failed notification"
+msgid "Could not share this content: $1"
+msgstr "Не удалось опубликовать: $1 "
+
+#: purpose_share_failed_title:0
+msgctxt "Title of share failed notification"
+msgid "Sharing Failed"
+msgstr "Ошибка публикации"
+
+#: purpose_share_finished_text:0
+msgctxt "Text of the share finished notification"
+msgid "The shared content link ($1) has been copied to the clipboard."
+msgstr "Ссылка на опубликованный файл ($1) скопирована в буфер обмена."
+
+#: purpose_share_finished_title:0
+msgctxt "Title of share finished notification"
+msgid "Content Shared"
+msgstr "Успешная публикация"
+
+#: store_description:0
+msgctxt "The extension description on the extension store"
+msgid ""
+"Multitask efficiently by controlling browser functions from the desktop, "
+"even while Chrome is in the background. Manage audio and video playback, "
+"check downloads in the notification area, send files to your phone using KDE "
+"Connect and more inside the KDE Plasma Desktop!\n"
+"\n"
+"The plasma-browser-integration package must be installed for this extension "
+"to work. It should be available from your distribution's package manager "
+"when running Plasma 5.13 or later.\n"
+"\n"
+"NOTE: This extension is not supported on Debian."
+msgstr ""
+"Эффективное управление браузером, даже когда Chrome находится в фоновом "
+"режиме. Управление воспроизведением аудио и видео, отображение состояния "
+"загрузок в области уведомлений, передача файлов на телефон с помощью KDE "
+"Connect, а также другие функции, доступные в окружении рабочего стола KDE "
+"Plasma.Для работы этого расширения должен быть установлен пакет «plasma-"
+"browser-integration», который доступен в системе управления пакетами вашего "
+"дистрибутива начиная с Plasma 5.13.ПРИМЕЧАНИЕ. Это расширение не "
+"поддерживается в Debian."
+
+#~ msgctxt ""
+#~ "When the binary bridge between browser and Plasma failed to start (e.g. "
+#~ "not installed)"
+#~ msgid ""
+#~ "Failed to connect to the native host. Make sure the 'plasma-browser-"
+#~ "integration' package is installed."
+#~ msgstr ""
+#~ "Не удалось подключиться к главному процессу. Возможно, не установлен "
+#~ "пакет «plasma-browser-integration»."
+
+#~ msgid "options##message"
+#~ msgstr "Сохранить"

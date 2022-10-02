@@ -1,0 +1,27 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the plasma-browser-integration package.
+#
+# Burkhard Lück <lueck@hube-lueck.de>, 2018, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-browser-integration\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-08-29 00:19+0000\n"
+"PO-Revision-Date: 2020-11-26 07:16+0100\n"
+"Last-Translator: Burkhard Lück <lueck@hube-lueck.de>\n"
+"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: browserintegrationreminder.cpp:140
+#, kde-format
+msgid "Get Plasma Browser Integration"
+msgstr "Plasma-Integration für Browser holen"
+
+#: browserintegrationreminder.cpp:167
+#, kde-format
+msgid "Do not show again"
+msgstr "Nicht wieder anzeigen"

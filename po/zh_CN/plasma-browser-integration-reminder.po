@@ -1,0 +1,29 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: kdeorg\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-08-29 00:19+0000\n"
+"PO-Revision-Date: 2022-09-20 01:56\n"
+"Last-Translator: \n"
+"Language-Team: Chinese Simplified\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: kdeorg\n"
+"X-Crowdin-Project-ID: 269464\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /kf5-trunk/messages/plasma-browser-integration/plasma-"
+"browser-integration-reminder.pot\n"
+"X-Crowdin-File-ID: 7994\n"
+
+#: browserintegrationreminder.cpp:140
+#, kde-format
+msgid "Get Plasma Browser Integration"
+msgstr "获取 Plasma 浏览器集成程序"
+
+#: browserintegrationreminder.cpp:167
+#, kde-format
+msgid "Do not show again"
+msgstr "不再显示"

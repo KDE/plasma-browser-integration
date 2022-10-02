@@ -1,0 +1,420 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: trunk-kf 5\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-01-02 02:39:09.793433\n"
+"PO-Revision-Date: 2021-02-01 00:38+0200\n"
+"Last-Translator: Moo\n"
+"Language-Team: lt\n"
+"Language: lt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
+"%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
+"X-Generator: Poedit 2.4.1\n"
+
+#: browseraction_mpris_enable_on:0
+msgctxt "Heading for list of domains to enable media controls on"
+msgid "Enable media controls on:"
+msgstr "Įjungti medijos valdiklius ties:"
+
+#: browseraction_mpris_title:0
+msgctxt "Title for Media controls in popup"
+msgid "Media Controls"
+msgstr "Medijos valdikliai"
+
+#: browseraction_title:0
+msgctxt "Title for toolbar popup"
+msgid "Plasma Browser Integration"
+msgstr "Plasma naršyklės integracija"
+
+#: general_error_host_disconnected_title:0
+msgctxt ""
+"Title for plasma-browser-integration-host binary unexpectedly closing/"
+"crashing"
+msgid "The native host disconnected unexpectedly."
+msgstr "Savas mazgas netikėtai atsijungė."
+
+#: general_error_not_supported_os:0
+msgid "This extension is only supported on Linux and FreeBSD."
+msgstr "Šis priedas yra palaikomas tik Linux ir FreeBSD sistemose."
+
+#: general_error_not_supported_os_title:0
+msgid "Unsupported operating system"
+msgstr "Nepalaikoma operacinė sistema"
+
+#: general_error_startup_failed:0
+msgctxt ""
+"Description for failure to start plasma-browser-integration-host binary"
+msgid ""
+"Make sure the 'plasma-browser-integration' package is installed correctly "
+"and that you are running Plasma 5.13 or later."
+msgstr ""
+"Įsitikinkite, kad paketas \"plasma-browser-integration\" yra teisingai "
+"įdiegtas ir, kad naudojate Plasma 5.13 ar naujesnę versiją."
+
+#: general_error_startup_failed_title:0
+msgctxt "Title for failure to start plasma-browser-integration-host binary"
+msgid "Failed to connect to the native host."
+msgstr "Nepavyko prisijungti prie savo mazgo."
+
+#: general_error_startup_failed_wiki_link:0
+msgid "Visit project wiki page for more information"
+msgstr "Išsamesnei informacijai, apsilankykite projekto vikio puslapyje"
+
+#: general_error_unknown:0
+msgctxt ""
+"An unknown error occurred, usually used when an error message by the system "
+"is not provided"
+msgid "Unknown Error"
+msgstr "Nežinoma klaida"
+
+#: kdeconnect_call_device:0
+msgctxt "Context menu, call phone number on device $1"
+msgid "Call on '$1'"
+msgstr "Skambinti įrenginiu „$1“"
+
+#: kdeconnect_open_device:0
+msgctxt "Context menu, open link on device $1, similar to 'Open in New Tab'"
+msgid "Open on '$1'"
+msgstr "Atverti įrenginyje \"$1\""
+
+#: kdeconnect_open_via:0
+msgctxt "Context menu, open link on device whose name we don't (yet) know"
+msgid "Open via KDE Connect"
+msgstr "Atverti per KDE Connect"
+
+#: options_about_bugs:0
+msgid ""
+"If you find an issue, please check the <a href=\"$1\">list of open bugs</a> "
+"and then <a href=\"$2\">file a bug report</a>."
+msgstr ""
+"Jeigu susidursite su klaida, peržiūrėkite <a href=\"$1\">atvirų klaidų "
+"sąrašą</a>, o tuomet <a href=\"$2\">pateikite pranešimą apie klaidą</a>."
+
+#: options_about_changelog_link:0
+msgctxt "Link to view browser extension changelog"
+msgid "View Changelog"
+msgstr "Rodyti keitinių žurnalą"
+
+#: options_about_copyright:0
+msgid "© 2017-2020 Kai Uwe Broulik and David Edmundson"
+msgstr "© 2017-2020 Kai Uwe Broulik ir David Edmundson"
+
+#: options_about_created_by_kde:0
+msgid ""
+"This browser extension was created by the <a href=\"$1\">KDE Community</a>. "
+"You can find more information about this project on the <a href=\"$2\">KDE "
+"Community Wiki</a>."
+msgstr ""
+"Šį naršyklės priedą sukūrė <a href=\"$1\">KDE bendruomenė</a>. Daugiau "
+"informacijos apie šį projektą galite rasti <a href=\"$2\">KDE bendruomenės "
+"vikyje</a>."
+
+#: options_about_donate:0
+msgid ""
+"If you like what you saw, please consider <a href=\"$1\">donating to KDE</"
+"a>, so we can continue to make the best free software possible."
+msgstr ""
+"Jeigu jums patinka tai, ką matėte, tuomet apsvarstykite galimybę <a href="
+"\"$1\">paremti KDE</a>, kad ir toliau galėtume kurti geriausią įmanomą "
+"laisvą programinę įrangą."
+
+#: options_about_extension_version:0
+msgctxt "Version of browser extension"
+msgid "Extension version: $1"
+msgstr "Priedo versija: $1"
+
+#: options_about_host_version:0
+msgctxt "Version of extension native host"
+msgid "Host version: $1"
+msgstr "Mazgo versija: $1"
+
+#: options_about_kde:0
+msgctxt "KDE description taken from kaboutkdedialog_p.h in kmxlgui"
+msgid ""
+"KDE is a world-wide community of software engineers, artists, writers, "
+"translators and creators who are committed to <a href=\"$1\">Free Software</"
+"a> development. KDE produces the Plasma desktop environment, hundreds of "
+"applications, and the many software libraries that support them. KDE is a "
+"cooperative enterprise: no single entity controls its direction or products. "
+"Instead, we work together to achieve the common goal of building the world's "
+"finest Free Software. Everyone is welcome to <a href=\"$2\">join and "
+"contribute</a> to KDE, including you. Visit <a href=\"$3\">$3</a> for more "
+"information about the KDE community and the software we produce."
+msgstr ""
+"KDE yra pasaulinio masto bendruomenė, kurią sudaro programinės įrangos "
+"inžinieriai, dailininkai, rašytojai, vertėjai bei kūrėjai, kurie yra "
+"pasišventę <a href=\"$1\">laisvosios programinės įrangos</a> plėtojimui. KDE "
+"kuria Plasma darbalaukio aplinką, šimtus programų ir daugybę jas palaikančių "
+"bibliotekų. KDE yra bendradarbiavimo organizacija: jokia esybė nevaldo jos "
+"krypties ar produktų. Vietoj to, mes kartu dirbame, kad pasiektume bendrą "
+"tikslą - sukurti geriausią pasaulyje laisvąją programinę įrangą. Visi, "
+"įskaitant ir jus, yra kviečiami <a href=\"$2\">prisijungti ir talkinti</a> "
+"KDE. Išsamesnei informacijai apie KDE bendruomenę ir mūsų kuriamą programinę "
+"įrangą, apsilankykite <a href=\"$3\">$3</a>."
+
+#: options_about_license:0
+msgid "License: <a href=\"$1\">GNU General Public License Version 3</a>"
+msgstr ""
+"Licencija: <a href=\"$1\">GNU Bendroji Viešoji Licencija, versija 3</a>"
+
+#: options_about_translated_by:0
+msgid "Translated by: $1"
+msgstr "Išvertė: $1"
+
+#: options_about_translators:0
+msgctxt "Name of translators"
+msgid "Your names"
+msgstr "Moo"
+
+#: options_heading_krunner:0
+msgctxt "Title for settings about KRunner plugins"
+msgid "Plasma Search"
+msgstr "Plasma paieška"
+
+#: options_not_supported_os:0
+msgid "This extension is not supported on this operating system."
+msgstr "Ši operacinė sistema nepalaiko šio priedo."
+
+#: options_plugin_breezeScrollBars_description:0
+msgctxt "Description for Breeze style scroll bars plugin"
+msgid ""
+"This may interfere with the appearance of websites that already apply a "
+"custom styling to their scroll bars."
+msgstr ""
+"Tai gali trukdyti svetainių, kurios savo slinkties juostoms jau taiko "
+"tinkintą stilių, išvaizdai."
+
+#: options_plugin_breezeScrollBars_title:0
+msgctxt "Title for Breeze style scroll bars plugin"
+msgid "Use Breeze-style scroll bars"
+msgstr "Naudoti Breeze stiliaus slinkties juostas"
+
+#: options_plugin_downloads_addToRecentDocuments:0
+msgctxt "Option for adding downloaded files to recent documents"
+msgid "Add downloaded files to recent documents"
+msgstr "Pridėti atsisiųstus failus į paskiausiai naudotus dokumentus"
+
+#: options_plugin_downloads_saveOriginUrl:0
+msgctxt "Option for saving download source URL in file metadata"
+msgid "Save URL a file was downloaded from in the file's attributes"
+msgstr "Įrašyti URL, iš kurio buvo atsisiųstas failas, į failo atributus"
+
+#: options_plugin_downloads_saveOriginUrl_description:0
+msgid ""
+"Note: The URL may contain sensitive information that could be disclosed when "
+"the file is accessible by or shared with others"
+msgstr ""
+"Pastaba: Šiame URL adrese gali būti slaptos informacijos, kuri gali būti "
+"atskleista tais atvejais, kai failas yra prieinamas kitiems asmenims ar "
+"bendrinamas su jais"
+
+#: options_plugin_downloads_title:0
+msgctxt "Title for Downloads plugin"
+msgid "Show downloads in notification area"
+msgstr "Rodyti atsiuntimus pranešimų srityje"
+
+#: options_plugin_historyrunner_description:0
+msgctxt "Description for Browser History KRunner plugin"
+msgid ""
+"This feature might need <a id=\"$1\" href=\"$2\">additional permissions</a> "
+"to be used."
+msgstr ""
+"Norint naudoti šią ypatybę, gali prireikti <a id=\"$1\" href="
+"\"$2\">papildomų leidimų</a>."
+
+#: options_plugin_historyrunner_title:0
+msgctxt "Title for Browser History KRunner plugin"
+msgid "Search through browser history"
+msgstr "Ieškoti naršyklės istorijoje"
+
+#: options_plugin_kdeconnect_description:0
+msgctxt "Description for KDE Connect plugin"
+msgid ""
+"Adds a context menu entry to links enabling you to send them to your phone "
+"and other paired devices using <a href=\"$1\">KDE Connect</a>."
+msgstr ""
+"Prideda į nuorodas kontekstinio meniu įrašą, taip leisdamas jums, naudojant "
+"<a href=\"$1\">KDE Connect</a>, siųsti nuorodas į savo telefoną ar kitus "
+"suporuotus įrenginius."
+
+#: options_plugin_kdeconnect_title:0
+msgctxt "Title for KDE Connect plugin"
+msgid "Send via KDE Connect"
+msgstr "Siųsti per KDE Connect"
+
+#: options_plugin_mpris_description:0
+msgctxt "Description for Media Controls plugin"
+msgid ""
+"Lets you control video and audio players in websites using the Media "
+"Controller plasmoid."
+msgstr ""
+"Leidžia jums internetinėse svetainėse valdyti vaizdo bei garso leistuves, "
+"naudojant Medijos valdiklio Plasma įskiepį."
+
+#: options_plugin_mpris_media_sessions_description:0
+msgctxt "Description for MediaSessions API Control plugin"
+msgid "Extract metadata and thumbnails of currently playing content."
+msgstr "Išskleisti šiuo metu atkuriamo turinio metaduomenis ir miniatiūras."
+
+#: options_plugin_mpris_media_sessions_title:0
+msgctxt "Title for MediaSessions API Control plugin"
+msgid "Enhanced Media Controls"
+msgstr "Išplėstiniai medijos valdikliai"
+
+#: options_plugin_mpris_title:0
+msgctxt "Title for Media Controls plugin"
+msgid "Media Controls"
+msgstr "Medijos valdikliai"
+
+#: options_plugin_purpose_description:0
+msgctxt "Description for Purpose / Web Share plugin"
+msgid ""
+"Adds a \"Share...\" context menu entry and allows websites to open a dialog "
+"for sharing contents using the Web Share API."
+msgstr ""
+"Prideda kontekstinio meniu punktą \"Bendrinti...\" ir leidžia internetinėms "
+"svetainėms atverti dialogą, skirtą turinio bendrinimui naudojant saityno "
+"bendrinimo API."
+
+#: options_plugin_purpose_title:0
+msgctxt "Title for Purpose / Web Share plugin"
+msgid "Content Sharing"
+msgstr "Turinio bendrinimas"
+
+#: options_plugin_tabsrunner_description:0
+msgctxt "Description for Browser Tabs KRunner plugin"
+msgid ""
+"Make sure the “Browser Tabs” module is enabled in <a id=\"$1\" href="
+"\"$2\">Plasma Search settings</a>."
+msgstr ""
+"Įsitikinkite, kad <a id=\"$1\" href=\"$2\">Plasma paieškos nuostatose</a> "
+"yra įjungtas \"Naršyklės kortelių\" modulis."
+
+#: options_plugin_tabsrunner_title:0
+msgctxt "Title for Browser Tabs KRunner plugin"
+msgid "Find browser tabs in “Run Command” window"
+msgstr "Rasti naršyklės korteles \"Paleisti komandą\" lange"
+
+#: options_save_failed:0
+msgid "Saving settings failed"
+msgstr "Nepavyko įrašyti nuostatų"
+
+#: options_save_success:0
+msgid "Settings successfully saved"
+msgstr "Nuostatos sėkmingai įrašytos"
+
+#: options_tab_about:0
+msgctxt "The 'About this plugin' tab in settings"
+msgid "About"
+msgstr "Apie"
+
+#: options_tab_general:0
+msgctxt "The 'General settings' tab in settings"
+msgid "General"
+msgstr "Bendri"
+
+#: options_title:0
+msgctxt "Title for settings page"
+msgid "Plasma Integration Settings"
+msgstr "Plasma integracijos nuostatos"
+
+#: permission_request_already:0
+msgid "You have already granted this permission."
+msgstr "Jūs jau esate suteikę šį leidimą."
+
+#: permission_request_button_request:0
+msgctxt "@action:button"
+msgid "Request Permission"
+msgstr "Prašyti leidimo"
+
+#: permission_request_button_revoke:0
+msgctxt "@action:button"
+msgid "Revoke Permission"
+msgstr "Panaikinti leidimą"
+
+#: permission_request_historyrunner_1:0
+msgctxt "Explanation for why additional permissions are needed"
+msgid ""
+"In order to provide search results for your browser history, additional "
+"permissions are required."
+msgstr ""
+"Norint pateikti paieškos jūsų naršyklės istorijoje rezultatus, reikia "
+"papildomų leidimų."
+
+#: permission_request_historyrunner_2:0
+msgctxt "Explanation about disabling history runner"
+msgid ""
+"You can disable this feature in <a id=\"$1\" href=\"$2\">Plasma search "
+"settings</a>."
+msgstr ""
+"Šią ypatybę galite išjungti <a id=\"$1\" href=\"$2\">Plasma paieškos "
+"nuostatose</a>."
+
+#: permission_request_title:0
+msgctxt "Title for page about requesting additional permissions"
+msgid "Additional permissions required"
+msgstr "Reikia papildomų leidimų"
+
+#: purpose_share:0
+msgctxt "Context menu, share link or page via Purpose framework"
+msgid "Share..."
+msgstr "Bendrinti..."
+
+#: purpose_share_failed_text:0
+msgctxt "Text of share failed notification"
+msgid "Could not share this content: $1"
+msgstr "Nepavyko bendrinti šio turinio: $1"
+
+#: purpose_share_failed_title:0
+msgctxt "Title of share failed notification"
+msgid "Sharing Failed"
+msgstr "Bendrinimas nepavyko"
+
+#: purpose_share_finished_text:0
+msgctxt "Text of the share finished notification"
+msgid "The shared content link ($1) has been copied to the clipboard."
+msgstr "Bendrinamo turinio nuoroda ($1) nukopijuota į iškarpinę."
+
+#: purpose_share_finished_title:0
+msgctxt "Title of share finished notification"
+msgid "Content Shared"
+msgstr "Turinys pradėtas bendrinti"
+
+#: store_description:0
+msgctxt "The extension description on the extension store"
+msgid ""
+"Multitask efficiently by controlling browser functions from the desktop, "
+"even while Chrome is in the background. Manage audio and video playback, "
+"check downloads in the notification area, send files to your phone using KDE "
+"Connect and more inside the KDE Plasma Desktop!\n"
+"\n"
+"The plasma-browser-integration package must be installed for this extension "
+"to work. It should be available from your distribution's package manager "
+"when running Plasma 5.13 or later.\n"
+"\n"
+"NOTE: This extension is not supported on Debian."
+msgstr ""
+"Atlikite daugiaprogramį apdorojimą, valdydami naršyklės funkcijas tiesiai iš "
+"darbalaukio netgi tuomet, kai Chrome fone. Valdykite garso ir vaizdo "
+"atkūrimą, tikrinkite pranešimų srityje atsiuntimus, siųskite failus į savo "
+"telefoną naudodami KDE Connect ir atlikite dar daugiau KDE Plasma "
+"darbalaukyje!\n"
+"\n"
+"Tam, kad veiktų šis priedas, privalo būti įdiegtas paketas \"plasma-browser-"
+"integration\". Jis turėtų būti prieinamas iš jūsų platinimo paketų "
+"tvarkytuvės, naudojant Plasma 5.13 ar naujesnę versiją.\n"
+"\n"
+"PASTABA: Šis priedas nėra prieinamas Debian sistemose."
+
+#~ msgctxt ""
+#~ "When the binary bridge between browser and Plasma failed to start (e.g. "
+#~ "not installed)"
+#~ msgid ""
+#~ "Failed to connect to the native host. Make sure the 'plasma-browser-"
+#~ "integration' package is installed."
+#~ msgstr ""
+#~ "Nepavyko prisijungti prie savo mazgo. Įsitikinkite, kad yra įdiegtas "
+#~ "paketas \"plasma-browser-integration\"."

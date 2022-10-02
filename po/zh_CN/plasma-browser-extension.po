@@ -1,0 +1,390 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: kdeorg\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-01-02 02:39:09.793433\n"
+"PO-Revision-Date: 2022-09-20 01:56\n"
+"Last-Translator: \n"
+"Language-Team: Chinese Simplified\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: kdeorg\n"
+"X-Crowdin-Project-ID: 269464\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /kf5-trunk/messages/plasma-browser-integration/plasma-"
+"browser-extension.pot\n"
+"X-Crowdin-File-ID: 6243\n"
+
+#: browseraction_mpris_enable_on:0
+msgctxt "Heading for list of domains to enable media controls on"
+msgid "Enable media controls on:"
+msgstr "启用媒体控制的域名："
+
+#: browseraction_mpris_title:0
+msgctxt "Title for Media controls in popup"
+msgid "Media Controls"
+msgstr "媒体控制"
+
+#: browseraction_title:0
+msgctxt "Title for toolbar popup"
+msgid "Plasma Browser Integration"
+msgstr "Plasma 浏览器集成"
+
+#: general_error_host_disconnected_title:0
+msgctxt ""
+"Title for plasma-browser-integration-host binary unexpectedly closing/"
+"crashing"
+msgid "The native host disconnected unexpectedly."
+msgstr "本地主机意外断开连接。"
+
+#: general_error_not_supported_os:0
+msgid "This extension is only supported on Linux and FreeBSD."
+msgstr "此扩展仅支持 Linux 和 FreeBSD。"
+
+#: general_error_not_supported_os_title:0
+msgid "Unsupported operating system"
+msgstr "不支持的操作系统"
+
+#: general_error_startup_failed:0
+msgctxt ""
+"Description for failure to start plasma-browser-integration-host binary"
+msgid ""
+"Make sure the 'plasma-browser-integration' package is installed correctly "
+"and that you are running Plasma 5.13 or later."
+msgstr ""
+"请确保软件包 plasma-browser-integration 已正确安装，且您运行的是 Plasma 5.13 "
+"以上版本。"
+
+#: general_error_startup_failed_title:0
+msgctxt "Title for failure to start plasma-browser-integration-host binary"
+msgid "Failed to connect to the native host."
+msgstr "连接到本地主机失败。"
+
+#: general_error_startup_failed_wiki_link:0
+msgid "Visit project wiki page for more information"
+msgstr "访问本项目的 Wiki 页面以获取更多信息"
+
+#: general_error_unknown:0
+msgctxt ""
+"An unknown error occurred, usually used when an error message by the system "
+"is not provided"
+msgid "Unknown Error"
+msgstr "未知错误"
+
+#: kdeconnect_call_device:0
+msgctxt "Context menu, call phone number on device $1"
+msgid "Call on '$1'"
+msgstr "在“$1”上调用"
+
+#: kdeconnect_open_device:0
+msgctxt "Context menu, open link on device $1, similar to 'Open in New Tab'"
+msgid "Open on '$1'"
+msgstr "在“$1”上打开"
+
+#: kdeconnect_open_via:0
+msgctxt "Context menu, open link on device whose name we don't (yet) know"
+msgid "Open via KDE Connect"
+msgstr "通过 KDE Connect 打开"
+
+#: options_about_bugs:0
+msgid ""
+"If you find an issue, please check the <a href=\"$1\">list of open bugs</a> "
+"and then <a href=\"$2\">file a bug report</a>."
+msgstr ""
+"如果发现问题，请检查 <a href=\"$1\">打开状态的错误</a>，然后<a href=\"$2\">提"
+"交一个错误报告</a>。"
+
+#: options_about_changelog_link:0
+msgctxt "Link to view browser extension changelog"
+msgid "View Changelog"
+msgstr "查看更新日志"
+
+#: options_about_copyright:0
+msgid "© 2017-2020 Kai Uwe Broulik and David Edmundson"
+msgstr "© 2017-2020 Kai Uwe Broulik and David Edmundson"
+
+#: options_about_created_by_kde:0
+msgid ""
+"This browser extension was created by the <a href=\"$1\">KDE Community</a>. "
+"You can find more information about this project on the <a href=\"$2\">KDE "
+"Community Wiki</a>."
+msgstr ""
+"本浏览器扩展程序由 <a href=\"$1\">KDE 社区</a>制作。您可以在 <a href="
+"\"$2\">KDE 社区 Wiki</a> 中找到有关此项目的详细信息。"
+
+#: options_about_donate:0
+msgid ""
+"If you like what you saw, please consider <a href=\"$1\">donating to KDE</"
+"a>, so we can continue to make the best free software possible."
+msgstr ""
+"如果您喜欢这个扩展程序，请考虑<a href=\"$1\">捐款给 KDE</a>，让我们可以继续开"
+"发好用的自由软件。"
+
+#: options_about_extension_version:0
+msgctxt "Version of browser extension"
+msgid "Extension version: $1"
+msgstr "扩展版本：$1"
+
+#: options_about_host_version:0
+msgctxt "Version of extension native host"
+msgid "Host version: $1"
+msgstr "主机版本：$1"
+
+#: options_about_kde:0
+msgctxt "KDE description taken from kaboutkdedialog_p.h in kmxlgui"
+msgid ""
+"KDE is a world-wide community of software engineers, artists, writers, "
+"translators and creators who are committed to <a href=\"$1\">Free Software</"
+"a> development. KDE produces the Plasma desktop environment, hundreds of "
+"applications, and the many software libraries that support them. KDE is a "
+"cooperative enterprise: no single entity controls its direction or products. "
+"Instead, we work together to achieve the common goal of building the world's "
+"finest Free Software. Everyone is welcome to <a href=\"$2\">join and "
+"contribute</a> to KDE, including you. Visit <a href=\"$3\">$3</a> for more "
+"information about the KDE community and the software we produce."
+msgstr ""
+"KDE 是由一群致力于<a href=\"$1\">自由软件</a>事业的人们所组成的全球性协作社"
+"区。它的成员包括了来自世界各地的软件工程师、艺术工作者、文字工作者、翻译人员"
+"和其他创意人员。KDE 社区开发了 Plasma 桌面环境、数百款功能各异的应用软件、以"
+"及用于支持它们的大量程序库。KDE 是一项立足于协作精神的事业，它的运作和产出不"
+"受任何单一个人或者机构的控制。我们的共同目标是为全世界带来高品质的自由软件。"
+"不管您来自何方，我们都欢迎您加入 KDE 并做出<a href=\"$2\">贡献</a>。请访问 "
+"<a href=\"$3\">$3</a> 来了解 KDE 社区和软件的更多信息。"
+
+#: options_about_license:0
+msgid "License: <a href=\"$1\">GNU General Public License Version 3</a>"
+msgstr "许可证：<a href=\"$1\">GNU 通用公共许可证第 3 版</a>"
+
+#: options_about_translated_by:0
+msgid "Translated by: $1"
+msgstr "翻译人员：$1"
+
+#: options_about_translators:0
+msgctxt "Name of translators"
+msgid "Your names"
+msgstr "KDE 中国, csslayer, Guo Yunhe, Tyson Tan"
+
+#: options_heading_krunner:0
+msgctxt "Title for settings about KRunner plugins"
+msgid "Plasma Search"
+msgstr "Plasma 搜索"
+
+#: options_not_supported_os:0
+msgid "This extension is not supported on this operating system."
+msgstr "此操作系统不支持此扩展程序。"
+
+#: options_plugin_breezeScrollBars_description:0
+msgctxt "Description for Breeze style scroll bars plugin"
+msgid ""
+"This may interfere with the appearance of websites that already apply a "
+"custom styling to their scroll bars."
+msgstr "这可能会影响本身对滚动条应用了自定义视觉风格的网站的外观。"
+
+#: options_plugin_breezeScrollBars_title:0
+msgctxt "Title for Breeze style scroll bars plugin"
+msgid "Use Breeze-style scroll bars"
+msgstr "使用 Breeze 微风视觉风格的滚动条"
+
+#: options_plugin_downloads_addToRecentDocuments:0
+msgctxt "Option for adding downloaded files to recent documents"
+msgid "Add downloaded files to recent documents"
+msgstr "添加下载的文件到最近文档"
+
+#: options_plugin_downloads_saveOriginUrl:0
+msgctxt "Option for saving download source URL in file metadata"
+msgid "Save URL a file was downloaded from in the file's attributes"
+msgstr "将下载文件的来源 URL 保存到文件属性"
+
+#: options_plugin_downloads_saveOriginUrl_description:0
+msgid ""
+"Note: The URL may contain sensitive information that could be disclosed when "
+"the file is accessible by or shared with others"
+msgstr ""
+"注意：URL 可能包含敏感信息，当文件可被他人访问或者分享后可能会泄露信息。"
+
+#: options_plugin_downloads_title:0
+msgctxt "Title for Downloads plugin"
+msgid "Show downloads in notification area"
+msgstr "在通知区域显示下载"
+
+#: options_plugin_historyrunner_description:0
+msgctxt "Description for Browser History KRunner plugin"
+msgid ""
+"This feature might need <a id=\"$1\" href=\"$2\">additional permissions</a> "
+"to be used."
+msgstr "此功能可能需要<a id=\"$1\" href=\"$2\">额外的权限</a>才能正常使用。"
+
+#: options_plugin_historyrunner_title:0
+msgctxt "Title for Browser History KRunner plugin"
+msgid "Search through browser history"
+msgstr "搜索浏览器历史记录"
+
+#: options_plugin_kdeconnect_description:0
+msgctxt "Description for KDE Connect plugin"
+msgid ""
+"Adds a context menu entry to links enabling you to send them to your phone "
+"and other paired devices using <a href=\"$1\">KDE Connect</a>."
+msgstr ""
+"为链接添加右键菜单项，以便通过 <a href=\"$1\">KDE Connect</a> 发送到您的手机"
+"以及其他配对的设备上。"
+
+#: options_plugin_kdeconnect_title:0
+msgctxt "Title for KDE Connect plugin"
+msgid "Send via KDE Connect"
+msgstr "通过 KDE Connect 发送"
+
+#: options_plugin_mpris_description:0
+msgctxt "Description for Media Controls plugin"
+msgid ""
+"Lets you control video and audio players in websites using the Media "
+"Controller plasmoid."
+msgstr "允许您使用媒体控制器 Plasma 小程序控制网站中的视频和音频播放器。"
+
+#: options_plugin_mpris_media_sessions_description:0
+msgctxt "Description for MediaSessions API Control plugin"
+msgid "Extract metadata and thumbnails of currently playing content."
+msgstr "提取当前播放内容的元数据和缩略图。"
+
+#: options_plugin_mpris_media_sessions_title:0
+msgctxt "Title for MediaSessions API Control plugin"
+msgid "Enhanced Media Controls"
+msgstr "增强的媒体控制"
+
+#: options_plugin_mpris_title:0
+msgctxt "Title for Media Controls plugin"
+msgid "Media Controls"
+msgstr "媒体控制"
+
+#: options_plugin_purpose_description:0
+msgctxt "Description for Purpose / Web Share plugin"
+msgid ""
+"Adds a \"Share...\" context menu entry and allows websites to open a dialog "
+"for sharing contents using the Web Share API."
+msgstr ""
+"添加“分享...”右键菜单项，让网站可以打开网络分享 API 的对话框来分享内容。"
+
+#: options_plugin_purpose_title:0
+msgctxt "Title for Purpose / Web Share plugin"
+msgid "Content Sharing"
+msgstr "内容分享"
+
+#: options_plugin_tabsrunner_description:0
+msgctxt "Description for Browser Tabs KRunner plugin"
+msgid ""
+"Make sure the “Browser Tabs” module is enabled in <a id=\"$1\" href="
+"\"$2\">Plasma Search settings</a>."
+msgstr ""
+"请确保在 <a id=\"$1\" href=\"$2\">Plasma 搜索设置</a>中启用了“浏览器标签”模"
+"块。"
+
+#: options_plugin_tabsrunner_title:0
+msgctxt "Title for Browser Tabs KRunner plugin"
+msgid "Find browser tabs in “Run Command” window"
+msgstr "在“运行命令”窗口中查找浏览器标签"
+
+#: options_save_failed:0
+msgid "Saving settings failed"
+msgstr "保存设置失败"
+
+#: options_save_success:0
+msgid "Settings successfully saved"
+msgstr "成功保存设置"
+
+#: options_tab_about:0
+msgctxt "The 'About this plugin' tab in settings"
+msgid "About"
+msgstr "关于"
+
+#: options_tab_general:0
+msgctxt "The 'General settings' tab in settings"
+msgid "General"
+msgstr "常规"
+
+#: options_title:0
+msgctxt "Title for settings page"
+msgid "Plasma Integration Settings"
+msgstr "Plasma 集成功能设置"
+
+#: permission_request_already:0
+msgid "You have already granted this permission."
+msgstr "您已经授予了此权限。"
+
+#: permission_request_button_request:0
+msgctxt "@action:button"
+msgid "Request Permission"
+msgstr "请求权限"
+
+#: permission_request_button_revoke:0
+msgctxt "@action:button"
+msgid "Revoke Permission"
+msgstr "撤回权限"
+
+#: permission_request_historyrunner_1:0
+msgctxt "Explanation for why additional permissions are needed"
+msgid ""
+"In order to provide search results for your browser history, additional "
+"permissions are required."
+msgstr "为了提供浏览器历史记录的搜索结果，需要额外的权限。"
+
+#: permission_request_historyrunner_2:0
+msgctxt "Explanation about disabling history runner"
+msgid ""
+"You can disable this feature in <a id=\"$1\" href=\"$2\">Plasma search "
+"settings</a>."
+msgstr "您可以在 <a id=\"$1\" href=\"$2\">Plasma 搜索设置</a>中禁用此功能。"
+
+#: permission_request_title:0
+msgctxt "Title for page about requesting additional permissions"
+msgid "Additional permissions required"
+msgstr "需要额外权限"
+
+#: purpose_share:0
+msgctxt "Context menu, share link or page via Purpose framework"
+msgid "Share..."
+msgstr "分享..."
+
+#: purpose_share_failed_text:0
+msgctxt "Text of share failed notification"
+msgid "Could not share this content: $1"
+msgstr "无法分享此内容：$1"
+
+#: purpose_share_failed_title:0
+msgctxt "Title of share failed notification"
+msgid "Sharing Failed"
+msgstr "分享失败"
+
+#: purpose_share_finished_text:0
+msgctxt "Text of the share finished notification"
+msgid "The shared content link ($1) has been copied to the clipboard."
+msgstr "已分享内容链接 ($1) 已被复制到剪贴板。"
+
+#: purpose_share_finished_title:0
+msgctxt "Title of share finished notification"
+msgid "Content Shared"
+msgstr "内容已分享"
+
+#: store_description:0
+msgctxt "The extension description on the extension store"
+msgid ""
+"Multitask efficiently by controlling browser functions from the desktop, "
+"even while Chrome is in the background. Manage audio and video playback, "
+"check downloads in the notification area, send files to your phone using KDE "
+"Connect and more inside the KDE Plasma Desktop!\n"
+"\n"
+"The plasma-browser-integration package must be installed for this extension "
+"to work. It should be available from your distribution's package manager "
+"when running Plasma 5.13 or later.\n"
+"\n"
+"NOTE: This extension is not supported on Debian."
+msgstr ""
+"即使 Chrome 处于后台时，也能通过桌面控制浏览器功能，有效地实现多任务。管理音"
+"频与视频播放、检查通知区域中的下载任务、通过 KDE Connect 发送文件到手机，更多"
+"功能尽在 KDE Plasma 桌面中！\n"
+"\n"
+"必须安装 plasma-browser-integration 软件包才能使用该插件。当您使用 Plasma "
+"5.13 以及更新版本时，您应该可以用过您的发行版的软件包管理器安装它。\n"
+"\n"
+"注意：Debian 不支持此扩展。"

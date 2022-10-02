@@ -1,0 +1,28 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the plasma-browser-integration package.
+# Shinjo Park <kde@peremen.name>, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-browser-integration\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-08-29 00:19+0000\n"
+"PO-Revision-Date: 2019-04-12 01:07+0100\n"
+"Last-Translator: Shinjo Park <kde@peremen.name>\n"
+"Language-Team: Korean <kde-kr@kde.org>\n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 2.0\n"
+
+#: browserintegrationreminder.cpp:140
+#, kde-format
+msgid "Get Plasma Browser Integration"
+msgstr "Plasma 브라우저 통합 다운로드"
+
+#: browserintegrationreminder.cpp:167
+#, kde-format
+msgid "Do not show again"
+msgstr "다시 보지 않기"

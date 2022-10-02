@@ -1,0 +1,31 @@
+# Translation of plasma-browser-integration-reminder.po to Euskara/Basque (eu).
+# Copyright (C) 2019, This file is copyright:
+# This file is distributed under the same license as the kde-workspace package.
+# KDE Euskaratzeko proiektuaren arduraduna <xalba@euskalnet.net>.
+#
+# Translators:
+# Iñigo Salvador Azurmendi <xalba@euskalnet.net>, 2019.
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-browser-integration\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-08-29 00:19+0000\n"
+"PO-Revision-Date: 2019-04-25 00:13+0100\n"
+"Last-Translator: Iñigo Salvador Azurmendi <xalba@euskalnet.net>\n"
+"Language-Team: Basque <kde-i18n-eu@kde.org>\n"
+"Language: eu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 2.0\n"
+
+#: browserintegrationreminder.cpp:140
+#, kde-format
+msgid "Get Plasma Browser Integration"
+msgstr "Lortu Plasman arakatzailea bateratzea"
+
+#: browserintegrationreminder.cpp:167
+#, kde-format
+msgid "Do not show again"
+msgstr "Ez erakutsi berriz"
