@@ -28,7 +28,7 @@ msgstr "Ortam Denetimleri"
 #: browseraction_title:0
 msgctxt "Title for toolbar popup"
 msgid "Plasma Browser Integration"
-msgstr "Plasma Tarayıcı Entegrasyonu"
+msgstr "Plasma Tarayıcı Tümleştirmesi"
 
 #: general_error_host_disconnected_title:0
 msgctxt ""
@@ -52,8 +52,8 @@ msgid ""
 "Make sure the 'plasma-browser-integration' package is installed correctly "
 "and that you are running Plasma 5.13 or later."
 msgstr ""
-"'plasma-browser-integration' paketinin düzgünce yüklü olduğundan ve Plasma "
-"5.13 veya daha sonrası bir sürümün yüklü olduğundan emin olun."
+"'plasma-browser-integration' paketinin düzgünce kurulu olduğundan ve Plasma "
+"5.13 veya daha güncel bir sürümün kurulu olduğundan emin olun."
 
 #: general_error_startup_failed_title:0
 msgctxt "Title for failure to start plasma-browser-integration-host binary"
@@ -178,7 +178,7 @@ msgstr "Plasma Arama"
 
 #: options_not_supported_os:0
 msgid "This extension is not supported on this operating system."
-msgstr "Bu işletim sisteminde bu uzantı desteklenmiyor."
+msgstr "Bu uzantı, bu işletim sisteminde desteklenmiyor."
 
 #: options_plugin_breezeScrollBars_description:0
 msgctxt "Description for Breeze style scroll bars plugin"

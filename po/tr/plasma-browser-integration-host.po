@@ -84,7 +84,7 @@ msgstr "Bir sunucu hatası oluştu."
 #: downloadjob.cpp:248
 #, kde-format
 msgid "The server does not have the requested data."
-msgstr "Sunucuda istenen veri mevcut değil."
+msgstr "Sunucuda istenen veri yok."
 
 #: downloadjob.cpp:250
 #, kde-format
@@ -128,4 +128,4 @@ msgstr "Sekmeyi Sessize Al"
 #: tabsrunnerplugin.cpp:43
 #, kde-format
 msgid "Unmute Tab"
-msgstr "Sekme Sesini Aç"
+msgstr "Sekmenin Sesini Aç"

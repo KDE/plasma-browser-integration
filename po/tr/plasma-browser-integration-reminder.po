@@ -21,9 +21,9 @@ msgstr ""
 #: browserintegrationreminder.cpp:140
 #, kde-format
 msgid "Get Plasma Browser Integration"
-msgstr "Plasma Tarayıcı Bütünleştirmesini Edin"
+msgstr "Plasma Tarayıcı Tümleştirmesini Al"
 
 #: browserintegrationreminder.cpp:167
 #, kde-format
 msgid "Do not show again"
-msgstr "Yeniden gösterme"
+msgstr "Bir daha gösterme"
