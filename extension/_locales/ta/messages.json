@@ -18,166 +18,166 @@
         "message": "ஆதரிக்கப்படாத இயக்குதளம்"
     },
     "general_error_startup_failed": {
-        "message": "Make sure the 'plasma-browser-integration' package is installed correctly and that you are running Plasma 5.13 or later."
+        "message": "'plasma-browser-integration' எனும் நிரல்தொகுப்பு நிறுவப்பட்டுள்ளதா என்றும், உங்கள் பிளாஸ்மா பதிப்பு 5.13-ஐ விட அதிகமானதா என்றும் உறுதி செய்யுங்கள்."
     },
     "general_error_startup_failed_title": {
-        "message": "Failed to connect to the native host."
+        "message": "பின்னணி நிரலை தொடர்புகொள்ள முடியவில்லை."
     },
     "general_error_startup_failed_wiki_link": {
-        "message": "Visit project wiki page for more information"
+        "message": "மேலும் விவரங்களுக்கு இந்நிரலின் விக்கி பக்கத்தை அணுகுங்கள்"
     },
     "general_error_unknown": {
         "message": "தெரியாத சிக்கல்"
     },
     "kdeconnect_call_device": {
-        "message": "Call on '$1'"
+        "message": "'$1' தனிலிருந்து கூப்பிடு"
     },
     "kdeconnect_open_device": {
-        "message": "Open on '$1'"
+        "message": "'$1' தனில் திற"
     },
     "kdeconnect_open_via": {
-        "message": "Open via KDE Connect"
+        "message": "கே.டீ.யீ. கனெக்ட் மூலமாக திற"
     },
     "options_about_bugs": {
-        "message": "If you find an issue, please check the <a href=\"$1\">list of open bugs</a> and then <a href=\"$2\">file a bug report</a>."
+        "message": "ஏதாவது நிரலாக்கப் பிழையை நீங்கள் கண்டறிந்தால், ஏற்கனவே தெரிவிக்கப்பட்டுள்ள <a href=\"$1\">பிழைகளின் பட்டியலில்</a> அது இல்லாத பட்சத்தில் <a href=\"$2\">ஓர் பிழையறிக்கையை பதிவிடுங்கள்</a>."
     },
     "options_about_changelog_link": {
-        "message": "View Changelog"
+        "message": "மாற்றப்பட்டியலைக் காட்டு"
     },
     "options_about_copyright": {
-        "message": "© 2017-2020 Kai Uwe Broulik and David Edmundson"
+        "message": "© 2017-2020 காய் உவே புரோலிக் மற்றும் டேவிட் எட்மண்டுஸன்"
     },
     "options_about_created_by_kde": {
-        "message": "This browser extension was created by the <a href=\"$1\">KDE Community</a>. You can find more information about this project on the <a href=\"$2\">KDE Community Wiki</a>."
+        "message": "இந்த உலாவி துணை நிரல், <a href=\"$1\">கே.டீ.யீ. சமூகம்</a> உருவாக்கியது. <a href=\"$2\">கே.டீ.யீ. சமூகத்தின் விக்கியில்</a> இந்நிரலைப் பற்றிய விவரங்களை நீங்கள் படிக்கலாம்."
     },
     "options_about_donate": {
-        "message": "If you like what you saw, please consider <a href=\"$1\">donating to KDE</a>, so we can continue to make the best free software possible."
+        "message": "உங்களுக்குப் பிடித்த‍தாக இந்நிரல் இருந்தால், தயவுசெய்து <a href=\"$1\">கே.டீ.யீ.க்கு நன்கொடை அளியுங்கள்</a>. இலவச மற்றும் சுதந்திர நிரல்களை நாங்கள் தொடர்ந்து வழங்க இது உதவும்."
     },
     "options_about_extension_version": {
-        "message": "Extension version: $1"
+        "message": "துணை நிரலின் பதிப்பு: $1"
     },
     "options_about_host_version": {
-        "message": "Host version: $1"
+        "message": "பின்னணி நிரலின் பதிப்பு: $1"
     },
     "options_about_kde": {
-        "message": "KDE is a world-wide community of software engineers, artists, writers, translators and creators who are committed to <a href=\"$1\">Free Software</a> development. KDE produces the Plasma desktop environment, hundreds of applications, and the many software libraries that support them. KDE is a cooperative enterprise: no single entity controls its direction or products. Instead, we work together to achieve the common goal of building the world's finest Free Software. Everyone is welcome to <a href=\"$2\">join and contribute</a> to KDE, including you. Visit <a href=\"$3\">$3</a> for more information about the KDE community and the software we produce."
+        "message": "கே.டீ.யீ. என்பது, <a href=\"$1\">கட்டற்ற மென்பொருள்</a> உருவாக்கத்திற்கு அர்பணிப்புக் கொண்ட மென்பொருள் பொறிஞர்கள், கலைஞர்கள், எழுத்தாளர்கள், மொழிபெயர்ப்பாளர்கள் மற்றும் படைப்பாலிகளைக் கொண்ட உலகளாவிய குழு ஆகும். பிளாஸ்மா பணிமேடை சூழல், நூற்றுக்கணக்கானசெயலிகள், மற்றும் அவற்றை ஆதரிக்கும் பல நிரலகங்களை கே.டீ.யீ. உருவாக்குகிறது.  கே.டீ.யீ. ஒரு கூட்டுறவு அமைப்பாகும்: எந்தவொரு தனிப்பட்ட நிறுவனமோ நபரோ அதன் நோக்கத்தையோ படைப்புக்களையோ கட்டுப்படுத்துவதில்லை. கே.டீ.யீ.-யில் நீங்கள் உட்பட எவரேனும் <a href=\"$2\">இணைந்து பங்களிக்கலாம்</a>.  கே.டீ.யீ. சமூகத்தை பற்றியும் நாங்கள் உருவாக்கும் மென்பொருட்களை பற்றியும் அறிய <a href=\"$3\">$3</a> என்ற பக்கத்தை அணுகுங்கள்."
     },
     "options_about_license": {
-        "message": "License: <a href=\"$1\">GNU General Public License Version 3</a>"
+        "message": "உரிமம்: <a href=\"$1\">குனு பொதுமக்கள் உரிமம் பதிப்பு 3</a>"
     },
     "options_about_translated_by": {
-        "message": "Translated by: $1"
+        "message": "மொழிபெயர்த்தவர்: $1"
     },
     "options_about_translators": {
-        "message": "Your names"
+        "message": "கோ. கிஷோர்"
     },
     "options_heading_krunner": {
-        "message": "Plasma Search"
+        "message": "பிளாஸ்மா தேடல்"
     },
     "options_not_supported_os": {
-        "message": "This extension is not supported on this operating system."
+        "message": "உங்கள் இயக்குதளத்தில் இந்த அம்சம் ஆதரிக்கப்படாத‍து."
     },
     "options_plugin_breezeScrollBars_description": {
-        "message": "This may interfere with the appearance of websites that already apply a custom styling to their scroll bars."
+        "message": "உருள்பட்டைகளை வேறுபட்ட பாங்கில் காட்ட முயற்சிக்கும் வலைதளங்களின் தோற்றத்தை இது பாதிக்கலாம்."
     },
     "options_plugin_breezeScrollBars_title": {
-        "message": "Use Breeze-style scroll bars"
+        "message": "பிரீஸ் பாங்கிலான உருள்பட்டைகளைப் பயன்படுத்து"
     },
     "options_plugin_downloads_addToRecentDocuments": {
-        "message": "Add downloaded files to recent documents"
+        "message": "பதிவிறக்கப்பட்டுள்ள கோப்புகளை சமீப ஆவணங்களின் பட்டியலில் சேர்"
     },
     "options_plugin_downloads_saveOriginUrl": {
-        "message": "Save URL a file was downloaded from in the file's attributes"
+        "message": "கோப்பின் பண்புகளில் அதை வழங்கிய முகவரியைச் சேமி"
     },
     "options_plugin_downloads_saveOriginUrl_description": {
-        "message": "Note: The URL may contain sensitive information that could be disclosed when the file is accessible by or shared with others"
+        "message": "குறிப்பு: சில முகவரிகளில் மறைக்கத்தக்க விவரங்கள் இருக்கலாம். கோப்பை மற்றவர்களுடன் பகிரும்போது அதன் பண்பாக சேமிக்கப்படும் முகவரியையும் அவர்கள் காணுமாறு நேரிடலாம்."
     },
     "options_plugin_downloads_title": {
-        "message": "Show downloads in notification area"
+        "message": "அறிவிப்புகளில் பதிவிறக்கங்களைக் காட்டுவது"
     },
     "options_plugin_historyrunner_description": {
-        "message": "This feature might need <a id=\"$1\" href=\"$2\">additional permissions</a> to be used."
+        "message": "இந்த அம்சத்தைப் பயன்படுத்த <a id=\"$1\" href=\"$2\">கூடுதலான அனுமதிகள்</a> தேவைப்படலாம்."
     },
     "options_plugin_historyrunner_title": {
-        "message": "Search through browser history"
+        "message": "உலாவி வரலாற்றில் தேடு"
     },
     "options_plugin_kdeconnect_description": {
-        "message": "Adds a context menu entry to links enabling you to send them to your phone and other paired devices using <a href=\"$1\">KDE Connect</a>."
+        "message": "<a href=\"$1\">கே.டீ.யீ. கனெக்ட்</a> மூலமாக இணைந்துள்ள சாதனங்களுக்கு இணைப்புகளை அனுப்ப உதவும் வகையில் வலது-க்ளிக் பட்டியில் ஓர் பதிவைச் சேர்க்கும்."
     },
     "options_plugin_kdeconnect_title": {
-        "message": "Send via KDE Connect"
+        "message": "கே.டீ.யீ. கனெக்ட் மூலமாக அனுப்பு"
     },
     "options_plugin_mpris_description": {
-        "message": "Lets you control video and audio players in websites using the Media Controller plasmoid."
+        "message": "ஊடக இயக்கி பிளாஸ்மாய்டின் மூலம் வலைதளங்களிலுள்ள நிகழ்பட மற்றும் பாடல் இயக்கிகளைக் கட்டுப்படுத்த உதவும்."
     },
     "options_plugin_mpris_media_sessions_description": {
-        "message": "Extract metadata and thumbnails of currently playing content."
+        "message": "ஓடிக்கொண்டிருக்கும் பாடல்களின் விவரங்களையும் சிறுபடங்களையும் கண்டறியும்."
     },
     "options_plugin_mpris_media_sessions_title": {
-        "message": "Enhanced Media Controls"
+        "message": "மேம்பட்ட ஊடகக் கட்டுப்படுத்தி"
     },
     "options_plugin_mpris_title": {
-        "message": "Media Controls"
+        "message": "ஊடக கட்டுப்படுத்தி"
     },
     "options_plugin_purpose_description": {
-        "message": "Adds a \"Share...\" context menu entry and allows websites to open a dialog for sharing contents using the Web Share API."
+        "message": "வலது-க்ளிக் பட்டியில் \"பகிர்...\" எனும் பதிவை சேர்ப்பதுடன், Web Share API மூலமாக விருப்பமானவற்றைப் பகிருமாறு கோரும் சாளரத்தை வலைதளங்கள் திறக்க இது விடும்."
     },
     "options_plugin_purpose_title": {
-        "message": "Content Sharing"
+        "message": "தரவுப் பகிர்வு"
     },
     "options_plugin_tabsrunner_description": {
-        "message": "Make sure the “Browser Tabs” module is enabled in <a id=\"$1\" href=\"$2\">Plasma Search settings</a>."
+        "message": "<a id=\"$1\" href=\"$2\">பிளாஸ்மா தேடல்</a> அமைப்புகளில் \"உலாவி கீற்றுகள்\" எனும் கூறு இயக்கப்பட்டுள்ளதா என பாருங்கள்."
     },
     "options_plugin_tabsrunner_title": {
-        "message": "Find browser tabs in “Run Command” window"
+        "message": "\"கட்டளையை இயக்கு\" சாளரத்தில் உலாவி கீற்றுகளைத் தேட உதவும்"
     },
     "options_save_failed": {
-        "message": "Saving settings failed"
+        "message": "அமைப்புகளை சேமிப்பது தோல்வியடைந்தது"
     },
     "options_save_success": {
-        "message": "Settings successfully saved"
+        "message": "அமைப்புகள் வெற்றிகரமாக சேமிக்கப்பட்டுள்ளன"
     },
     "options_tab_about": {
-        "message": "About"
+        "message": "இதுபற்றி"
     },
     "options_tab_general": {
-        "message": "General"
+        "message": "பொதுவானவை"
     },
     "options_title": {
-        "message": "Plasma Integration Settings"
+        "message": "பிளாஸ்மா ஒருங்கிணைப்பு அமைப்புகள்"
     },
     "permission_request_already": {
-        "message": "You have already granted this permission."
+        "message": "இந்த அனுமதியை ஏற்கனவே வழங்களியுள்ளீர்கள்."
     },
     "permission_request_button_request": {
-        "message": "Request Permission"
+        "message": "அனுமதி கோரு"
     },
     "permission_request_button_revoke": {
-        "message": "Revoke Permission"
+        "message": "அனுமதியை திரும்பப்பெறு"
     },
     "permission_request_historyrunner_1": {
-        "message": "In order to provide search results for your browser history, additional permissions are required."
+        "message": "உங்கள் உலாவல் வரலாற்றில் தேட மேம்பட்ட அனுமதி தேவை."
     },
     "permission_request_historyrunner_2": {
-        "message": "You can disable this feature in <a id=\"$1\" href=\"$2\">Plasma search settings</a>."
+        "message": "<a id=\"$1\" href=\"$2\">பிளாஸ்மா தேடல்</a> அமைப்புகளுக்கு சென்று இந்த அம்சத்தை நீங்கள் முடக்கலாம்."
     },
     "permission_request_title": {
-        "message": "Additional permissions required"
+        "message": "கூடுதல் அனுமதிகள் தேவை"
     },
     "purpose_share": {
-        "message": "Share..."
+        "message": "பகிர்…"
     },
     "purpose_share_failed_text": {
-        "message": "Could not share this content: $1"
+        "message": "இதைப் பகிர முடியவில்லை: $1"
     },
     "purpose_share_failed_title": {
-        "message": "Sharing Failed"
+        "message": "பகிர்வது தோல்வியடைந்தது"
     },
     "purpose_share_finished_text": {
-        "message": "The shared content link ($1) has been copied to the clipboard."
+        "message": "பகிர்வுக்கான இணைப்பு ($1) பிடிப்புப்பலகைக்கு நகலெடுக்கப்பட்டுள்ளது."
     },
     "purpose_share_finished_title": {
-        "message": "Content Shared"
+        "message": "தரவு பகிரப்பட்டது"
     },
     "store_description": {
         "message": "Multitask efficiently by controlling browser functions from the desktop, even while Chrome is in the background. Manage audio and video playback, check downloads in the notification area, send files to your phone using KDE Connect and more inside the KDE Plasma Desktop!\\n\\nThe plasma-browser-integration package must be installed for this extension to work. It should be available from your distribution's package manager when running Plasma 5.13 or later.\\n\\nNOTE: This extension is not supported on Debian."
