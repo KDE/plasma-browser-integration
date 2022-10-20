@@ -2,7 +2,6 @@
 Type=Service
 Name=Plasma Browser Integration Installation Reminder
 Name[ar]=تذكير تثبيت تكامل بلازما مع المتصفّح
-Name[ast]=Recordatoriu de la instalación de la integración de restoladores con Plasma
 Name[az]=Plazma Brauzer İnteqrasiyası Quraşdırma Xatırladıcısı
 Name[bg]=Подсещане за инсталация на браузър интеграция в Plasma
 Name[ca]=Recordatori d'instal·lació de la Integració del navegador amb el Plasma
@@ -46,7 +45,6 @@ Name[zh_CN]=Plasma 浏览器集成程序安装提醒
 Name[zh_TW]=Plasma 瀏覽器整合安裝提醒
 Comment=Provides a link to the browser extension if the Plasma Browser Integration host is installed
 Comment[ar]=يقدّم رابطًا إلى امتداد المتصفّح إن ثُبّت مضيف تكامل بلازما مع المتصفّح
-Comment[ast]=Apurre un enllaz a la estensión pal restolador si la integración de restoladores con Plasma ta instalada nel ordenador
 Comment[az]=Əgər bələdçi inteqrasiya xidməti Plasma mühitində quraşdırılıbsa, lakin, veb bələdçi üçün uyğun genişlənmə quraşdırılmayıbsa, bu genişlınmənin quraşdırılması üçün keçid ünvanını təqdim edir
 Comment[bg]=Предоставя връзка към разширението на браузъра, ако е инсталиран хост за браузър интеграция в Plasma
 Comment[ca]=Proporciona un enllaç a l'extensió del navegador si està instal·lat el servidor de la Integració del navegador amb el Plasma
