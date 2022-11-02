@@ -96,7 +96,7 @@
         "message": "Mostra les baixades en l'àrea de notificacions"
     },
     "options_plugin_historyrunner_description": {
-        "message": "Esta funcionalitat pot necessitar <a id=\"$1\" href=\"$2\">permisos addicionals</a> per a utilitzar-se."
+        "message": "Esta característica pot necessitar <a id=\"$1\" href=\"$2\">permisos addicionals</a> per a utilitzar-se."
     },
     "options_plugin_historyrunner_title": {
         "message": "Busca per l'historial del navegador"
@@ -159,7 +159,7 @@
         "message": "Per tal de proporcionar els resultats de la busca per a l'historial del navegador, es requerixen permisos addicionals."
     },
     "permission_request_historyrunner_2": {
-        "message": "Podeu inhabilitar esta funcionalitat a la <a id=\"$1\" href=\"$2\">configuració de la Busca de Plasma</a>."
+        "message": "Podeu inhabilitar esta característica en la <a id=\"$1\" href=\"$2\">configuració de la Busca de Plasma</a>."
     },
     "permission_request_title": {
         "message": "Es requerixen permisos addicionals"
