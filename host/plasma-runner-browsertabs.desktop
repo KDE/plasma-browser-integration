@@ -96,6 +96,7 @@ X-Plasma-Request-Actions-Once=true
 X-Plasma-Runner-Min-Letter-Count=3
 X-Plasma-Runner-Syntaxes=:q:,
 X-Plasma-Runner-Syntax-Descriptions=Finds open browser tabs whose title or URL match :q:
+X-Plasma-Runner-Syntax-Descriptions[bg]=Намира уебсайтове в историята на браузъра, чието заглавие или URL съвпада с :q:
 X-Plasma-Runner-Syntax-Descriptions[ca]=Cerca pestanyes obertes del navegador el títol o l'URL de les quals coincideixi amb :q:
 X-Plasma-Runner-Syntax-Descriptions[es]=Encuentra pestañas abiertas en el navegador cuyo título o URL coincidan con :q:
 X-Plasma-Runner-Syntax-Descriptions[fr]=Trouve des onglets ouverts du navigateur dont le titre ou l'URL correspondent :q:
