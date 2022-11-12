@@ -98,6 +98,7 @@ X-Plasma-Runner-Min-Letter-Count=3
 X-Plasma-Runner-Syntaxes=:q:
 X-Plasma-Runner-Syntax-Descriptions=Finds open browser tabs whose title or URL match :q:
 X-Plasma-Runner-Syntax-Descriptions[ar]=يعثر على ألسنة المتصفح المفتوحة التي يتطابق عنوانها أو رابطها مع :q:
+X-Plasma-Runner-Syntax-Descriptions[az]=Başlığı və URL ünvanı :q: ilə oxşar açıq veb-bələdçi vərəqlərini tapır
 X-Plasma-Runner-Syntax-Descriptions[bg]=Намира отворени раздели на браузъра, чието заглавие или URL съвпада с :q:
 X-Plasma-Runner-Syntax-Descriptions[ca]=Cerca pestanyes obertes del navegador el títol o l'URL de les quals coincideixi amb :q:
 X-Plasma-Runner-Syntax-Descriptions[ca@valencia]=Busca pestanyes obertes del navegador el títol o l'URL de les quals coincidisca amb :q:
