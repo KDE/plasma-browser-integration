@@ -78,10 +78,10 @@
         "message": "Bu işletim sisteminde bu uzantı desteklenmiyor."
     },
     "options_plugin_breezeScrollBars_description": {
-        "message": "Bu seçenek halihazırda kaydırma çubuklarına özel biçem uygulayan web siteleri ile karışıklığa neden olabilir."
+        "message": "Bu seçenek, halihazırda sarma çubuklarına özel biçem uygulayan web siteleri ile karışıklığa neden olabilir."
     },
     "options_plugin_breezeScrollBars_title": {
-        "message": "Breeze tarzı kaydırma çubukları kullan"
+        "message": "Breeze tarzı sarma çubukları kullan"
     },
     "options_plugin_downloads_addToRecentDocuments": {
         "message": "İndirilen dosyaları son kullanılan belgelere ekle"
