@@ -107,6 +107,7 @@ X-Plasma-Runner-Syntax-Descriptions[ca@valencia]=Busca pestanyes obertes del nav
 X-Plasma-Runner-Syntax-Descriptions[es]=Encuentra pestañas abiertas en el navegador cuyo título o URL coincidan con :q:
 X-Plasma-Runner-Syntax-Descriptions[eu]=Irekita dauden arakatzaileko fitxen artean haien titulua edo URLa :q:(e)kin bat datozenak aurkitzen ditu
 X-Plasma-Runner-Syntax-Descriptions[fr]=Trouve des onglets ouverts du navigateur dont le titre ou l'URL correspondent :q:
+X-Plasma-Runner-Syntax-Descriptions[it]=Trova le schede del browser aperte il cui titolo o URL corrisponde a :q:
 X-Plasma-Runner-Syntax-Descriptions[nl]=Zoek open tabbladen van browser waarvan de titel of URL overeenkomt met :q:
 X-Plasma-Runner-Syntax-Descriptions[ru]=Поиск открытых вкладок браузера, заголовки или URL-адреса которых соответствуют :q:
 X-Plasma-Runner-Syntax-Descriptions[sl]=Najdi odprte zavihke brskalnika, katerih naslov ali URL ustreza :q:

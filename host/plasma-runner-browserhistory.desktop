@@ -97,6 +97,7 @@ X-Plasma-Runner-Syntax-Descriptions[ca@valencia]=Busca llocs web en l'historial 
 X-Plasma-Runner-Syntax-Descriptions[es]=Encuentra sitios web en el historial del navegador cuyo título o URL coincidan con :q:
 X-Plasma-Runner-Syntax-Descriptions[eu]=Arakatzailearen historian haien titulua edo URLa :q:(e)kin bat datozen webguneak aurkitzen ditu
 X-Plasma-Runner-Syntax-Descriptions[fr]=Trouve les sites Internet dans l'historique du navigateur dont le titre ou l'URL correspondent :q:
+X-Plasma-Runner-Syntax-Descriptions[it]=Trova i siti web nella cronologia del browser il cui titolo o URL corrisponde a :q:
 X-Plasma-Runner-Syntax-Descriptions[nl]=Zoek websites in de geschiedenis van de browser waarvan de titel of URL overeenkomt met :q:
 X-Plasma-Runner-Syntax-Descriptions[ru]=Поиск в журнале браузера веб-сайтов, заголовки или URL-адреса которых соответствуют :q:
 X-Plasma-Runner-Syntax-Descriptions[sl]=Najdi spletišča v zgodovini brskalnika, katerih naslov ali URL ustreza :q:
