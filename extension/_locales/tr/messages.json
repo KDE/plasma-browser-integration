@@ -6,7 +6,7 @@
         "message": "Ortam Denetimleri"
     },
     "browseraction_title": {
-        "message": "Plasma Tarayıcı Entegrasyonu"
+        "message": "Plasma Tarayıcı Tümleştirmesi"
     },
     "general_error_host_disconnected_title": {
         "message": "Yerel makine bağlantısı beklenmedik bir biçimde kesildi."
@@ -18,7 +18,7 @@
         "message": "Desteklenmeyen işletim sistemi"
     },
     "general_error_startup_failed": {
-        "message": "'plasma-browser-integration' paketinin düzgünce yüklü olduğundan ve Plasma 5.13 veya daha sonrası bir sürümün yüklü olduğundan emin olun."
+        "message": "'plasma-browser-integration' paketinin düzgünce kurulu olduğundan ve Plasma 5.13 veya daha güncel bir sürümün kurulu olduğundan emin olun."
     },
     "general_error_startup_failed_title": {
         "message": "Yerel makineye bağlanamadı."
@@ -75,7 +75,7 @@
         "message": "Plasma Arama"
     },
     "options_not_supported_os": {
-        "message": "Bu işletim sisteminde bu uzantı desteklenmiyor."
+        "message": "Bu uzantı, bu işletim sisteminde desteklenmiyor."
     },
     "options_plugin_breezeScrollBars_description": {
         "message": "Bu seçenek, halihazırda sarma çubuklarına özel biçem uygulayan web siteleri ile karışıklığa neden olabilir."
