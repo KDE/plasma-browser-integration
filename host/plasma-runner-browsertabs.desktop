@@ -107,6 +107,7 @@ X-Plasma-Runner-Syntax-Descriptions[eu]=Irekita dauden arakatzaileko fitxen arte
 X-Plasma-Runner-Syntax-Descriptions[fr]=Trouve des onglets ouverts du navigateur dont le titre ou l'URL correspondent :q:
 X-Plasma-Runner-Syntax-Descriptions[it]=Trova le schede del browser aperte il cui titolo o URL corrisponde a :q:
 X-Plasma-Runner-Syntax-Descriptions[nl]=Zoek open tabbladen van browser waarvan de titel of URL overeenkomt met :q:
+X-Plasma-Runner-Syntax-Descriptions[pl]=Znajduje otwarte karty przeglądarki, których nazwa lub adres URL odpowiada :q:
 X-Plasma-Runner-Syntax-Descriptions[pt]=Procura nas páginas abertas no navegador por um título ou URL correspondente a :q:
 X-Plasma-Runner-Syntax-Descriptions[ru]=Поиск открытых вкладок браузера, заголовки или URL-адреса которых соответствуют :q:
 X-Plasma-Runner-Syntax-Descriptions[sl]=Najdi odprte zavihke brskalnika, katerih naslov ali URL ustreza :q:
