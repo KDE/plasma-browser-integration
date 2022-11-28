@@ -102,4 +102,5 @@ X-Plasma-Runner-Syntax-Descriptions[en_GB]=Finds open browser tabs whose title o
 X-Plasma-Runner-Syntax-Descriptions[es]=Encuentra pestañas abiertas en el navegador cuyo título o URL coincidan con :q:
 X-Plasma-Runner-Syntax-Descriptions[fr]=Trouve des onglets ouverts du navigateur dont le titre ou l'URL correspondent :q:
 X-Plasma-Runner-Syntax-Descriptions[it]=Trova le schede del browser aperte il cui titolo o URL corrisponde a :q:
+X-Plasma-Runner-Syntax-Descriptions[sv]=Söker efter öppna webbläsarflikar vars rubrik eller webbadress motsvarar :q:
 X-Plasma-Runner-Syntax-Descriptions[x-test]=xxFinds open browser tabs whose title or URL match :q:xx
