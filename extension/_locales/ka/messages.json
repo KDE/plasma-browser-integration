@@ -18,7 +18,7 @@
         "message": "მხარდაუჭერელი ოპერაციული სისტემა"
     },
     "general_error_startup_failed": {
-        "message": "Make sure the 'plasma-browser-integration' package is installed correctly and that you are running Plasma 5.13 or later."
+        "message": "დარწმუნდით, რომ 'plasma-browser-integration' პაკეტი სწორადაა დაყენებული და რომ Plasma-ის ვერსია 5.13 ან უფრო ახალია."
     },
     "general_error_startup_failed_title": {
         "message": "ადგილობრივ ჰოსტთან მიერთების შეცდომა."
@@ -78,7 +78,7 @@
         "message": "გაფართოება ამ ოპერაციულ სისტემაზე მხარდაჭერილი არაა."
     },
     "options_plugin_breezeScrollBars_description": {
-        "message": "This may interfere with the appearance of websites that already apply a custom styling to their scroll bars."
+        "message": "შეუძლია გავლენა იქონიოს ვებგვერდებზე, რომლებიც ჩოჩიებზე თავიანთ საკუთარ სტილებს უკვე იყენებენ."
     },
     "options_plugin_breezeScrollBars_title": {
         "message": "ქარის მსგავსი ჩოჩიები"
@@ -108,10 +108,10 @@
         "message": "KDE Connect-ით გაგზავნა"
     },
     "options_plugin_mpris_description": {
-        "message": "Lets you control video and audio players in websites using the Media Controller plasmoid."
+        "message": "საშუალებას გაძლევთ, ვებგვერდებიდან აკონტროლოთ ვიდეო და აუდიო დამკვრელები, მედია კონტროლერის პლაზმოიდით."
     },
     "options_plugin_mpris_media_sessions_description": {
-        "message": "Extract metadata and thumbnails of currently playing content."
+        "message": "მიმდინარედ დაკრული შემცველობიდან მეტამონაცემებისა და მინიატურების გამოღება."
     },
     "options_plugin_mpris_media_sessions_title": {
         "message": "მედიის დამკვრელის კონტროლი"
