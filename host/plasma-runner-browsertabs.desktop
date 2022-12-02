@@ -116,3 +116,4 @@ X-Plasma-Runner-Syntax-Descriptions[ta]=:q: என்பதற்குப் �
 X-Plasma-Runner-Syntax-Descriptions[tr]=Başlığı veya URL'si :q: ile eşleşen açık tarayıcı sekmelerini bulur
 X-Plasma-Runner-Syntax-Descriptions[uk]=Пошук відкритих вкладок навігатора, які мають заголовок або адресу, що відповідає запиту :q:
 X-Plasma-Runner-Syntax-Descriptions[x-test]=xxFinds open browser tabs whose title or URL match :q:xx
+X-Plasma-Runner-Syntax-Descriptions[zh_CN]=查找标题或链接匹配 :q: 的浏览器标签页
