@@ -123,7 +123,7 @@ var portLastErrorMessage = undefined;
 
 function updateBrowserAction() {
     if (portStatus === "UNSUPPORTED_OS" || portStatus === "STARTUP_FAILED") {
-        chrome.browserAction.setIcon({
+        chrome.action.setIcon({
             path: {
                 "16": "icons/plasma-disabled-16.png",
                 "32": "icons/plasma-disabled-32.png",
@@ -134,10 +134,10 @@ function updateBrowserAction() {
     }
 
     if (portLastErrorMessage && receivedMessageOnce) {
-        chrome.browserAction.setBadgeText({ text: "!" });
-        chrome.browserAction.setBadgeBackgroundColor({ color: "#da4453" }); // breeze "negative" color
+        chrome.action.setBadgeText({ text: "!" });
+        chrome.action.setBadgeBackgroundColor({ color: "#da4453" }); // breeze "negative" color
     } else {
-        chrome.browserAction.setBadgeText({ text: "" });
+        chrome.action.setBadgeText({ text: "" });
     }
 }
 updateBrowserAction();
