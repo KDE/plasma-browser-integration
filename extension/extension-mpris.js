@@ -140,14 +140,23 @@ chrome.tabs.onUpdated.addListener((tabId, changes) => {
     }
 
     // Now check if the tab is actually gone
-    chrome.tabs.executeScript(tabId, {
-        code: `true`
-    }, (response) => {
+    chrome.scripting.executeScript({
+        target: {
+            tabId: tabId
+        },
+        func: () => {
+            return true;
+        }
+    }, (result) => {
         const error = chrome.runtime.lastError;
-        // Chrome error in script_executor.cc "kRendererDestroyed"
-        if (error && error.message === "The tab was closed.") {
-            console.warn("Player tab", tabId, "became inaudible and was considered crashed, signalling player gone");
-            playerTabGone(tabId);
+        if (error) {
+            // Chrome error in script_executor.cc "kRendererDestroyed"
+            if (error.message === "The tab was closed."
+                // chrome.scripting API with Manifest v3 gives this non-descript error.
+                || error.message === "Cannot access contents of the page. Extension manifest must request permission to access the respective host.") {
+                console.warn("Player tab", tabId, "became inaudible and was considered crashed, signalling player gone");
+                playerTabGone(tabId);
+            }
         }
     });
 });
