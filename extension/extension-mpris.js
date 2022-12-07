@@ -94,15 +94,20 @@ function playerGone(playerId) {
                 return;
             }
 
-            chrome.browserAction.setBadgeText({
-                text: null, // null resets tab-specific badge
+            chrome.action.setBadgeText({
+                text: "",
                 tabId: gonePlayerTabId // important to pass it as number!
             });
-            // Important to clear the color, too, so it reverts back to global badge setting
-            chrome.browserAction.setBadgeBackgroundColor({
-                color: null,
-                tabId: gonePlayerTabId
-            });
+
+            try {
+                // Important to clear the color, too, so it reverts back to global badge setting
+                chrome.action.setBadgeBackgroundColor({
+                    color: null,
+                    tabId: gonePlayerTabId
+                });
+            } catch (e) {
+                // Silence warning about missing 'text' and 'color' in Chrome
+            }
         });
     }
 
@@ -230,11 +235,11 @@ addRuntimeCallback("mpris", "playing", function (message, sender) {
     sendPortMessage("mpris", "playing", payload);
 
     // Add toolbar icon to make it obvious you now have controls to disable the player
-    chrome.browserAction.setBadgeText({
+    chrome.action.setBadgeText({
         text: "♪",
         tabId: sender.tab.id
     });
-    chrome.browserAction.setBadgeBackgroundColor({
+    chrome.action.setBadgeBackgroundColor({
         color: "#1d99f3", // Breeze "highlight" color
         tabId: sender.tab.id
     });
