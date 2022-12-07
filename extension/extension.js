@@ -26,11 +26,10 @@ function sendEnvironment() {
         browser = "opera";
     } else if(ua.match(/chrome/i)) {
         browser = "chromium";
-        // Apparently there is no better way to distinuish chromium from chrome
-        for (i in window.navigator.plugins) {
-            if (window.navigator.plugins[i].name === "Chrome PDF Viewer") {
+        const uaData = self.navigator.userAgentData;
+        if (uaData && uaData.brands) {
+            if (uaData.brands.find(item=>item.brand === "Google Chrome")) {
                 browser = "chrome";
-                break;
             }
         }
     } else if(ua.match(/firefox/i)) {
