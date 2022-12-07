@@ -71,10 +71,7 @@
     "tabs",
     "scripting",
     "contextMenus",
-    "favicon"
-  ],
-
-  "optional_permissions": [
+    "favicon",
     "history"
   ],
 
