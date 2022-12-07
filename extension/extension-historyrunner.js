@@ -15,30 +15,37 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-let defaultFaviconData = "";
-
 function getFavicon(url) {
     return new Promise((resolve) => {
-        let xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState !== XMLHttpRequest.DONE) {
-                return;
-            }
+        // Specal favicon URL, needs "favicon" permission
+        // see https://bugs.chromium.org/p/chromium/issues/detail?id=104102
+        let faviconUrl = new URL(chrome.runtime.getURL("_favicon"));
+        faviconUrl.searchParams.append("pageUrl", url);
+        // TODO devicePixelRatio
+        faviconUrl.searchParams.append("size", 32);
 
-            if (!xhr.response) {
+        fetch(faviconUrl.href, {
+            // Unfortunately "only-if-cached" is only possible with "same-origin" mode
+            cache: "force-cache"
+        }).then((response) => {
+            if (!response.ok) {
                 return resolve();
             }
 
-            let reader = new FileReader();
-            reader.onloadend = () => {
-                resolve(reader.result);
-            }
-            reader.readAsDataURL(xhr.response);
-        }
-        const favIconUrl = "chrome://favicon/size/16@" + window.devicePixelRatio + "x/" + url;
-        xhr.open("GET", favIconUrl);
-        xhr.responseType = "blob";
-        xhr.send();
+            response.blob().then((blob) => {
+                let reader = new FileReader();
+                reader.onloadend = function() {
+                    resolve(reader.result);
+                }
+                reader.readAsDataURL(blob);
+            }, (err) => {
+                console.warn("Failed to read response of", faviconUrl.href, "as blob", err);
+                resolve();
+            });
+        }, (err) => {
+            console.warn("Failed to get favicon from", faviconUrl.href, err);
+            resolve();
+        });
     });
 }
 
@@ -106,26 +113,8 @@ addCallback("historyrunner", "find", (message) => {
                             results[index].favIconUrl = favicon;
                         }
                     });
-
-                    // Now get the default favicon if we don't have it already...
-                    if (!defaultFaviconData) {
-                        return getFavicon("");
-                    }
                 }
             }).then((faviconData) => {
-                if (faviconData) {
-                    defaultFaviconData = faviconData;
-                }
-
-                if (defaultFaviconData) {
-                    // ...and remove icon from all results that have the default one
-                    results.forEach((result) => {
-                        if (result.favIconUrl === defaultFaviconData) {
-                            result.favIconUrl = "";
-                        }
-                    });
-                }
-
                 sendPortMessage("historyrunner", "found", {
                     query,
                     results
