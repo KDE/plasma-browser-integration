@@ -126,7 +126,7 @@
         "message": "Compartix el contingut"
     },
     "options_plugin_tabsrunner_description": {
-        "message": "Assegureu-vos que el mòdul «Pestanyes del navegador» està activat a la <a id=\"$1\" href=\"$2\">configuració de la Busca de Plasma</a>."
+        "message": "Assegureu-vos que el mòdul «Pestanyes del navegador» està activat en la <a id=\"$1\" href=\"$2\">configuració de la Busca de Plasma</a>."
     },
     "options_plugin_tabsrunner_title": {
         "message": "Busca les pestanyes del navegador en la finestra «Executa una ordre»"
