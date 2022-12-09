@@ -438,8 +438,12 @@ QVariantMap MPrisPlugin::metadata() const
     if (m_length > 0) {
         metadata.insert(QStringLiteral("mpris:length"), m_length);
     }
+    // See https://searchfox.org/mozilla-central/rev/a3c18883ef9875ba4bb0cc2e7d6ba5a198aaf9bd/dom/media/mediasession/MediaMetadata.h#34
+    // and
+    // https://source.chromium.org/chromium/chromium/src/+/main:services/media_session/public/cpp/media_metadata.h;l=46;drc=098756533733ea50b2dcb1c40d9a9e18d49febbe
+    // MediaMetadata.artist is of string type, but "xesam:artist" is of stringlist type
     if (!m_artist.isEmpty()) {
-        metadata.insert(QStringLiteral("xesam:artist"), m_artist);
+        metadata.insert(QStringLiteral("xesam:artist"), QStringList{m_artist});
     }
 
     QUrl artUrl = m_artworkUrl;
