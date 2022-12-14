@@ -19,6 +19,13 @@ var activeDownloads = []
 var downloadUpdateInterval = 0;
 
 function startSendingDownloadUpdates() {
+    if (!chrome.downloads.onChanged.hasListener(onDownloadChanged)) {
+        // Register this listener only when needed. If it's active during
+        // browser startup, it can be triggered for existing downloads (also
+        // no longer existing files!) and freeze the UI for >1min!
+        chrome.downloads.onChanged.addListener(onDownloadChanged);
+    }
+
     if (!downloadUpdateInterval) {
         downloadUpdateInterval = setInterval(sendDownloadUpdates, 1000);
     }
@@ -84,7 +91,7 @@ function sendDownloads() {
 
 chrome.downloads.onCreated.addListener(createDownload);
 
-chrome.downloads.onChanged.addListener(function (delta) {
+function onDownloadChanged(delta) {
     if (activeDownloads.indexOf(delta.id) === -1) {
         return;
     }
@@ -121,7 +128,7 @@ chrome.downloads.onChanged.addListener(function (delta) {
     payload.id = delta.id; // not a delta, ie. has no current and thus isn't added by the loop below
 
     port.postMessage({subsystem: "downloads", event: "update", download: payload});
-});
+};
 
 addCallback("downloads", "cancel", function (message) {
     var downloadId = message.downloadId;
