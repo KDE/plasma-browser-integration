@@ -113,6 +113,7 @@ X-Plasma-Runner-Syntax-Descriptions[it]=Trova le schede del browser aperte il cu
 X-Plasma-Runner-Syntax-Descriptions[ka]=იპოვის ბრაუზერის ჩანართს, რომლის სათაური ან ბმული ემთხვევა :q:
 X-Plasma-Runner-Syntax-Descriptions[nl]=Zoek open tabbladen van browser waarvan de titel of URL overeenkomt met :q:
 X-Plasma-Runner-Syntax-Descriptions[pl]=Znajduje otwarte karty przeglądarki, których nazwa lub adres URL odpowiada :q:
+X-Plasma-Runner-Syntax-Descriptions[pt_BR]=Encontre abas abertas do navegador aberta cujo título ou URL correspondam a :q:
 X-Plasma-Runner-Syntax-Descriptions[ru]=Поиск открытых вкладок браузера, заголовки или URL-адреса которых соответствуют :q:
 X-Plasma-Runner-Syntax-Descriptions[sl]=Najdi odprte zavihke brskalnika, katerih naslov ali URL ustreza :q:
 X-Plasma-Runner-Syntax-Descriptions[sv]=Söker efter öppna webbläsarflikar vars rubrik eller webbadress motsvarar :q:
