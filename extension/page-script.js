@@ -8,7 +8,7 @@
             // TODO: Undo other operations
             window.removeEventListener("pbiEvent", eventCallback, {"capture": true});
         } else if (args.action == "mediaSessionsRegister") {
-            MediaSessionsClassName_constructor = function() {
+            const MediaSessionsClassName_constructor = function() {
                 this.callbacks = {};
                 this.pendingCallbacksUpdate = 0;
                 this.metadata = null;
