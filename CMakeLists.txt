@@ -16,6 +16,7 @@ include(KDECompilerSettings NO_POLICY_SCOPE)
 include(FeatureSummary)
 include(KDEClangFormat)
 include(KDEGitCommitHooks)
+include(ECMDeprecationSettings)
 
 find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS
 Gui
@@ -41,7 +42,9 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
 find_package(LibTaskManager ${PROJECT_VERSION} CONFIG REQUIRED)
 
 add_definitions(-DQT_NO_NARROWING_CONVERSIONS_IN_CONNECT)
-#add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x060000)
+ecm_set_disabled_deprecation_versions(QT 5.15.2
+    KF 5.101
+)
 
 # Options
 option(INSTALL_CHROME_MANIFEST "Whether to install a configuration file that makes Chrome automatically download the extension from the store" FALSE)
