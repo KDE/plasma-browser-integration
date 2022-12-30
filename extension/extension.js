@@ -283,3 +283,14 @@ addRuntimeCallback("browserAction", "ready", () => {
         }
     });
 });
+
+// Inject page-script.js into the actual tabs ("MAIN" world) to override
+// some globals. It interfaces with content-script.js through custom events.
+chrome.scripting.registerContentScripts([{
+    allFrames: true,
+    id: "pbi-page-script",
+    js: ["page-script.js"],
+    matches: ["<all_urls>"],
+    world: "MAIN",
+    runAt: "document_start",
+}]);

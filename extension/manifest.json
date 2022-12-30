@@ -55,11 +55,6 @@
     }
   ],
 
-  "web_accessible_resources": [{
-    "matches": ["*://*/*"],
-    "resources": ["page-script.js"]
-  }],
-
   "options_ui": {
     "page": "options.html"
   },
