@@ -102,6 +102,7 @@ X-Plasma-Runner-Syntax-Descriptions[az]=Başlığı və URL ünvanı :q: ilə ox
 X-Plasma-Runner-Syntax-Descriptions[bg]=Намира отворени раздели на браузъра, чието заглавие или URL съвпада с :q:
 X-Plasma-Runner-Syntax-Descriptions[ca]=Cerca pestanyes obertes del navegador el títol o l'URL de les quals coincideixi amb :q:
 X-Plasma-Runner-Syntax-Descriptions[ca@valencia]=Busca pestanyes obertes del navegador el títol o l'URL de les quals coincidisca amb :q:
+X-Plasma-Runner-Syntax-Descriptions[en_GB]=Finds open browser tabs whose title or URL match :q:
 X-Plasma-Runner-Syntax-Descriptions[es]=Encuentra pestañas abiertas en el navegador cuyo título o URL coincidan con :q:
 X-Plasma-Runner-Syntax-Descriptions[eu]=Irekita dauden arakatzaileko fitxen artean haien titulua edo URLa :q:(e)kin bat datozenak aurkitzen ditu
 X-Plasma-Runner-Syntax-Descriptions[fr]=Trouve des onglets ouverts du navigateur dont le titre ou l'URL correspondent :q:
