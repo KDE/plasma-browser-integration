@@ -36,7 +36,7 @@
         "message": "Ouvrir sur « $1 »"
     },
     "kdeconnect_open_via": {
-        "message": "Ouvrir via KDE Connect"
+        "message": "Ouvrir avec KDE Connect"
     },
     "options_about_bugs": {
         "message": "Si vous rencontrez un problème, veuillez vérifier la <a href=\"$1\">liste des bogues ouverts</a> et <a href=\"$2\">remplir un rapport de bogue</a>."
@@ -120,7 +120,7 @@
         "message": "Contrôles multimédia"
     },
     "options_plugin_purpose_description": {
-        "message": "Ajoute une option « Partager... » au menu contextuel et permet aux sites Web d'ouvrir une boîte de dialogue pour partager des contenus à l'aide de l'API Web Share."
+        "message": "Ajoute une option « Partager... » au menu contextuel et permet aux sites Internet d'ouvrir une boîte de dialogue pour partager des contenus à l'aide de l'API « Web Share »."
     },
     "options_plugin_purpose_title": {
         "message": "Partage de contenus"
