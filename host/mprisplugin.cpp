@@ -537,10 +537,6 @@ void MPrisPlugin::processMetadata(const QJsonObject &data)
         if (sizeParts.count() == 2) {
             const int width = sizeParts.first().toInt();
             const int height = sizeParts.last().toInt();
-            if (width <= 0 || height <= 0) {
-                continue;
-            }
-
             actualSize = QSize(width, height);
         }
 
@@ -549,7 +545,7 @@ void MPrisPlugin::processMetadata(const QJsonObject &data)
             continue;
         }
 
-        if (!biggest.isValid() || (actualSize.width() >= biggest.width() && actualSize.height() >= biggest.height())) {
+        if (biggest.isEmpty() || (actualSize.width() >= biggest.width() && actualSize.height() >= biggest.height())) {
             artworkUrl = url;
             biggest = actualSize;
         }
