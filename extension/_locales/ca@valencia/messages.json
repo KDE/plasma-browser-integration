@@ -39,7 +39,7 @@
         "message": "Obri via KDE Connect"
     },
     "options_about_bugs": {
-        "message": "Si trobeu un problema, comproveu la <a href=\"$1\">llista d'errors oberts</a> i després <a href=\"$2\">ompliu un informe d'error</a>."
+        "message": "Si trobeu un problema, comproveu la <a href=\"$1\">llista d'errors oberts</a> i després <a href=\"$2\">empleneu un informe d'error</a>."
     },
     "options_about_changelog_link": {
         "message": "Mostra el registre de canvis"
