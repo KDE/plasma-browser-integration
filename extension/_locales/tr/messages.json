@@ -36,7 +36,7 @@
         "message": "'$1' aygıtında aç"
     },
     "kdeconnect_open_via": {
-        "message": "KDE Connect ile aç"
+        "message": "KDE Bağlan ile aç"
     },
     "options_about_bugs": {
         "message": "Bir sorun bulursanız lütfen <a href=\"$1\">açık hatalar listesi</a>ni denetleyin ve sonrasında <a href=\"$2\">bir hata raporu</a> gönderin."
@@ -105,7 +105,7 @@
         "message": "Bağlantılara bir bağlam menüsü girdisi ekleyerek onları <a href=\"$1\">KDE Connect</a> ile telefonunuza veya başka eşleştirilmiş aygıtlara göndermeyi etkinleştirin."
     },
     "options_plugin_kdeconnect_title": {
-        "message": "KDE Connect ile gönder"
+        "message": "KDE Bağlan ile gönder"
     },
     "options_plugin_mpris_description": {
         "message": "Web sitelerindeki video ve ses oynatıcılarını Ortam Denetleyici Plasmoid'ini kullanarak denetlemenize izin verir."
