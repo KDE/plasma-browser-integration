@@ -584,18 +584,24 @@ function loadMpris() {
         sendPlayerGone();
     });
 
-    // In some cases DOMContentLoaded won't fire, e.g. when watching a video file directly in the browser
-    // it generates a "video player" page for you but won't fire the event
-    registerAllPlayers();
-
-    document.addEventListener("DOMContentLoaded", function() {
+    function documentReady() {
         registerAllPlayers();
 
         observer.observe(document, {
             childList: true,
             subtree: true
         });
-    });
+    }
+
+    // In some cases DOMContentLoaded won't fire, e.g. when watching a video file directly in the browser
+    // it generates a "video player" page for you but won't fire the event.
+    // Also, make sure to install the mutation observer if this codepath is executed after the page is already ready.
+    if (["interactive", "complete"].includes(document.readyState)) {
+        documentReady();
+    } else {
+        registerAllPlayers(); // in case the document isn't ready but the event also doesn't fire...
+        document.addEventListener("DOMContentLoaded", documentReady);
+    }
 
     document.addEventListener("fullscreenchange", () => {
         if (activePlayer) {
