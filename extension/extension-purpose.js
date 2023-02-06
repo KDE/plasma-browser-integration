@@ -17,6 +17,7 @@
 
 const purposeShareMenuId = "purpose_share";
 let hasPurposeMenu = false;
+let hasPurposeTabMenu = false;
 
 // Stores <notification id, share url> so that when you click the finished
 // notification it will open the URL
@@ -84,19 +85,19 @@ function checkPurposeEnabled() {
 
 function updatePurposeMenu() {
     checkPurposeEnabled().then((enabled) => {
-        if (enabled && !hasPurposeMenu) {
-            let props = {
-                id: purposeShareMenuId,
-                contexts: ["link", "page", "image", "audio", "video", "selection"],
-                title: chrome.i18n.getMessage("purpose_share")
-            };
+        let props = {
+            id: purposeShareMenuId,
+            contexts: ["link", "page", "image", "audio", "video", "selection"],
+            title: chrome.i18n.getMessage("purpose_share")
+        };
 
-            if (IS_FIREFOX) {
-                props.icons = {
-                    "16": "icons/document-share-symbolic.svg"
-                }
+        if (IS_FIREFOX) {
+            props.icons = {
+                "16": "icons/document-share-symbolic.svg"
             }
+        }
 
+        if (enabled && !hasPurposeMenu) {
             chrome.contextMenus.create(props, () => {
                 const error = chrome.runtime.lastError;
                 if (error) {
@@ -106,7 +107,7 @@ function updatePurposeMenu() {
                 hasPurposeMenu = true;
             });
         } else if (!enabled && hasPurposeMenu) {
-            chrome.contextMenus.remove(purposeShareMenuId, () => {
+            chrome.contextMenus.remove(props.id, () => {
                 const error = chrome.runtime.lastError;
                 if (error) {
                     console.warn("Error removing purpose context menu", error.message);
@@ -115,11 +116,31 @@ function updatePurposeMenu() {
                 hasPurposeMenu = false;
             });
         }
+
+        // Entry on a tab in the tab bar (Firefox)
+        props.id += "_tab";
+        if (IS_FIREFOX && enabled && !hasPurposeTabMenu) {
+            props.contexts = ["tab"];
+            // TODO restrict patterns also for generic menu (however, needs a split like KDE Connect does).
+            props.documentUrlPatterns = ["http://*/*", "https://*/*"];
+
+            chrome.contextMenus.create(props, () => {
+                if (!chrome.runtime.lastError) {
+                    hasPurposeTabMenu = true;
+                }
+            });
+        } else if (!enabled && hasPurposeTabMenu) {
+            chrome.contextMenus.remove(props.id, () => {
+                if (!chorme.runtime.lastError) {
+                    hasPurposeTabMenu = false;
+                }
+            });
+        }
     });
 }
 
 chrome.contextMenus.onClicked.addListener((info) => {
-    if (info.menuItemId !== purposeShareMenuId) {
+    if (!info.menuItemId.startsWith(purposeShareMenuId)) {
         return;
     }
 
