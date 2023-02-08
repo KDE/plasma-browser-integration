@@ -163,12 +163,18 @@ chrome.contextMenus.onClicked.addListener((info) => {
     // We probably shared the current page, add its title to shareData
     new Promise((resolve, reject) => {
         if (!info.linkUrl && !info.srcUrl && info.pageUrl) {
+            let pageUrlWithoutHash = new URL(info.pageUrl);
+            // chrome.tabs.query url does not match URL hash.
+            pageUrlWithoutHash.hash = "";
+
             chrome.tabs.query({
                 // more correct would probably be currentWindow + activeTab
-                url: info.pageUrl
+                url: pageUrlWithoutHash.href
             }, (tabs) => {
-                if (tabs[0]) {
-                    return resolve(tabs[0].title);
+                for (let tab of tabs) {
+                    if (tab.url === info.pageUrl) {
+                        return resolve(tab.title);
+                    }
                 }
                 resolve("");
             });
