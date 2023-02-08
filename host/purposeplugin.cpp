@@ -177,8 +177,20 @@ void PurposePlugin::showShareMenu(const QJsonObject &data, const QString &mimeTy
 
     debug() << "Share mime type" << mimeType << "with data" << data;
 
-    m_menu->model()->setInputData(shareData);
-    m_menu->reload();
+    auto *alternativesModel = m_menu->model();
+    alternativesModel->setInputData(shareData);
+
+    // Purpose does not tell us when it does not accept the given input data (e.g. missing field).
+    if (alternativesModel->rowCount() == 0) {
+        qWarning() << "Failed to find any share providers for the given data";
+        // NOTE WebShare API asks not to disclose the failure to find a provider
+        // to the caller but we can't just leave the menu dangling.
+        sendPendingReply(false,
+                         {
+                             {QStringLiteral("errorCode"), QStringLiteral("INVALID_ARGUMENT")},
+                         });
+        return;
+    }
 
     m_menu->popup(QCursor::pos());
 }
