@@ -47,9 +47,14 @@ QJsonObject PurposePlugin::handleData(int serial, const QString &event, const QJ
 
         const QJsonObject shareData = data.value(QStringLiteral("data")).toObject();
 
-        const QString title = shareData.value(QStringLiteral("title")).toString();
+        QString title = shareData.value(QStringLiteral("title")).toString();
         const QString text = shareData.value(QStringLiteral("text")).toString();
         const QString urlString = shareData.value(QStringLiteral("url")).toString();
+
+        // Purpose ShareUrl plug-in type mandates a title.
+        if (title.isEmpty()) {
+            title = urlString;
+        }
 
         if (!m_menu) {
             m_menu.reset(new Purpose::Menu());
