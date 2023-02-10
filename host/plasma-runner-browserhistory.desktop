@@ -90,5 +90,6 @@ X-Plasma-Runner-Syntax-Descriptions[en_GB]=Finds websites in the browser history
 X-Plasma-Runner-Syntax-Descriptions[es]=Encuentra sitios web en el historial del navegador cuyo título o URL coincidan con :q:
 X-Plasma-Runner-Syntax-Descriptions[fr]=Trouve les sites Internet dans l'historique du navigateur dont le titre ou l'URL correspondent :q:
 X-Plasma-Runner-Syntax-Descriptions[it]=Trova i siti web nella cronologia del browser il cui titolo o URL corrisponde a :q:
+X-Plasma-Runner-Syntax-Descriptions[nn]=Finn sider i nettlesarloggen med tittel eller adresse som inneheld :q:
 X-Plasma-Runner-Syntax-Descriptions[sv]=Söker efter webbplatser i webbläsarhistoriken vars rubrik eller webbadress motsvarar :q:
 X-Plasma-Runner-Syntax-Descriptions[x-test]=xxFinds websites in the browser history whose title or URL match :q:xx
