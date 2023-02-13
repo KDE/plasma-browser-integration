@@ -5,8 +5,6 @@ add_definitions(-DQT_NO_URL_CAST_FROM_STRING)
 set(kded_browserintegrationreminder browserintegrationreminder.cpp browserintegrationreminder.h)
 
 add_library(browserintegrationreminder MODULE ${kded_browserintegrationreminder})
-kcoreaddons_desktop_to_json(browserintegrationreminder browserintegrationreminder.desktop)
-
 
 target_link_libraries(browserintegrationreminder
     Qt::DBus
