@@ -1,6 +1,16 @@
 {
     "KPlugin": {
         "Description": "Provides a link to the browser extension if the Plasma Browser Integration host is installed",
+        "Description[ca@valencia]": "Proporciona un enllaç cap a l'extensió del navegador si està instal·lat el servidor de la Integració del navegador amb Plasma",
+        "Description[ca]": "Proporciona un enllaç a l'extensió del navegador si està instal·lat el servidor de la Integració del navegador amb el Plasma",
+        "Description[es]": "Proporciona un enlace a la extensión del navegador si se ha instalado el servidor de integración del navegador con Plasma",
+        "Description[ka]": "გაწვდით ბმულს ბრაუზერის გაფართოებაზე, თუ Plasma-ის ბრაუზერის ინტეგრაციის ჰოსტი დაყენებულია",
+        "Description[nl]": "Biedt een koppeling naar de browser-extensie als de host voor Plasma-browserintegratie is geïnstalleerd",
+        "Description[pt_BR]": "Fornece um link para a extensão do navegador se o host da integração dos navegadores no Plasma está instalado",
+        "Description[ta]": "பிளாஸ்மா உலாவி ஒருங்கிணைப்பு புரவன் நிறுவப்படவில்லையெனில் உலாவி துணை நிரலுக்கான இணைப்பை வழங்கும்",
+        "Description[tr]": "Plasma Tarayıcı Tümleştirme istemcisi kuruluysa tarayıcı uzantısı için bir bağlantı sağlar",
+        "Description[uk]": "Надає посилання на розширення браузера, якщо встановлено основну частину засобу інтеграції браузера із Плазмою",
+        "Description[x-test]": "xxProvides a link to the browser extension if the Plasma Browser Integration host is installedxx",
         "Name": "Plasma Browser Integration Installation Reminder",
         "Name[ar]": "تذكير تثبيت تكامل بلازما مع المتصفّح",
         "Name[az]": "Plazma Brauzer İnteqrasiyası Quraşdırma Xatırladıcısı",
