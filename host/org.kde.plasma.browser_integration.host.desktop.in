@@ -35,6 +35,7 @@ Name[tr]=Plasma Tarayıcı Tümleştirme Makinesi
 Name[uk]=Вузол інтеграції браузера із Плазмою
 Name[x-test]=xxPlasma Browser Integration Hostxx
 Name[zh_CN]=Plasma 浏览器集成宿主程序
+Name[zh_TW]=Plasma 瀏覽器整合主程式
 Icon=plasma-browser-integration
 Exec=@CMAKE_INSTALL_PREFIX@/bin/plasma-browser-integration-host
 NoDisplay=true
