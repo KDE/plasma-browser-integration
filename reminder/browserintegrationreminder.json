@@ -1,6 +1,7 @@
 {
     "KPlugin": {
         "Description": "Provides a link to the browser extension if the Plasma Browser Integration host is installed",
+        "Description[az]": "Əgər bələdçi inteqrasiya xidməti Plasma mühitində quraşdırılıbsa, lakin, veb bələdçi üçün uyğun genişlənmə quraşdırılmayıbsa, bu genişlınmənin quraşdırılması üçün keçid ünvanını təqdim edir",
         "Description[bg]": "Предоставя връзка към разширението на браузъра, ако е инсталиран пакета за интеграция на браузър в Plasma",
         "Description[ca@valencia]": "Proporciona un enllaç cap a l'extensió del navegador si està instal·lat el servidor de la Integració del navegador amb Plasma",
         "Description[ca]": "Proporciona un enllaç a l'extensió del navegador si està instal·lat el servidor de la Integració del navegador amb el Plasma",
