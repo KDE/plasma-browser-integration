@@ -9,6 +9,7 @@
         "Description[es]": "Proporciona un enlace a la extensión del navegador si se ha instalado el servidor de integración del navegador con Plasma",
         "Description[eu]": "Arakatzaile hedapenera esteka bat hornitzen du Plasman arakatzaileak bateratzeko ostalaria instalatua badago",
         "Description[fr]": "Fournit un lien vers l'extension du navigateur si l'hôte d'intégration de Plasma au navigateur est installé",
+        "Description[ia]": "Forni un ligamine al extension de navigator (browser) si le hospite de Plasma Browser Integration (Integration de Navigator de Plasma) es installate",
         "Description[it]": "Fornisce un collegamento all'estensione del browser se l'host dell'integrazione del browser con Plasma è installato",
         "Description[ka]": "გაწვდით ბმულს ბრაუზერის გაფართოებაზე, თუ Plasma-ის ბრაუზერის ინტეგრაციის ჰოსტი დაყენებულია",
         "Description[nl]": "Biedt een koppeling naar de browser-extensie als de host voor Plasma-browserintegratie is geïnstalleerd",
