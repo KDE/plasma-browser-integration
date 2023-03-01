@@ -14,6 +14,7 @@
         "Description[ia]": "Forni un ligamine al extension de navigator (browser) si le hospite de Plasma Browser Integration (Integration de Navigator de Plasma) es installate",
         "Description[it]": "Fornisce un collegamento all'estensione del browser se l'host dell'integrazione del browser con Plasma è installato",
         "Description[ka]": "გაწვდით ბმულს ბრაუზერის გაფართოებაზე, თუ Plasma-ის ბრაუზერის ინტეგრაციის ჰოსტი დაყენებულია",
+        "Description[ko]": "Plasma 브라우저 통합 호스트가 설치되어 있을 때 브라우저 확장 기능 설치 링크 제공",
         "Description[nl]": "Biedt een koppeling naar de browser-extensie als de host voor Plasma-browserintegratie is geïnstalleerd",
         "Description[nn]": "Gjev ei lenkje til nettlesarutvidinga viss vert for integrering av Plasma-nettlesar er installert",
         "Description[pt]": "Oferece uma ligação para a extensão do navegador, caso o anfitrião da Integração do Navegador do Plasma esteja instalada",
