@@ -60,7 +60,7 @@
         "message": "Versió del servidor: $1"
     },
     "options_about_kde": {
-        "message": "El KDE és una xarxa mundial d'enginyers informàtics, artistes, escriptors, traductors i creadors compromesos amb el desenvolupament de <a href=\"$1\">programari lliure</a> (Free Software). El KDE ha creat l'entorn d'escriptori Plasma, centenars d'aplicacions, i moltes biblioteques de programari que les fan funcionar. El KDE és una iniciativa cooperativa: cap entitat individual controla la seva direcció ni els seus productes. Altrament, treballem conjuntament per a aconseguir l'objectiu comú de crear el programari lliure més refinat del món. Donem la benvinguda a tothom a <a href=\"$2\">afegir-se i col·laborar</a> amb el KDE, incloent-vos-hi. Visiteu <a href=\"$3\">$3</a> per a més informació sobre la comunitat KDE i el programari que produïm."
+        "message": "KDE és una xarxa mundial d'enginyers informàtics, artistes, escriptors, traductors i creadors compromesos amb el desenvolupament de <a href=\"$1\">programari lliure</a> (Free Software). El KDE ha creat l'entorn d'escriptori Plasma, centenars d'aplicacions, i moltes biblioteques de programari que les fan funcionar. El KDE és una iniciativa cooperativa: cap entitat individual controla la seva direcció ni els seus productes. Altrament, treballem conjuntament per a aconseguir l'objectiu comú de crear el programari lliure més refinat del món. Donem la benvinguda a tothom a <a href=\"$2\">afegir-se i col·laborar</a> amb el KDE, incloent-vos-hi. Visiteu <a href=\"$3\">$3</a> per a més informació sobre la comunitat KDE i el programari que produïm."
     },
     "options_about_license": {
         "message": "Llicència: <a href=\"$1\">Llicència pública general de GNU versió 3</a>"
