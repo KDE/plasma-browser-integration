@@ -103,7 +103,7 @@ void HistoryRunnerPlugin::handleData(const QString &event, const QJsonObject &js
         if (error == s_errorNoPermission) {
             RemoteMatch match;
             match.id = s_idRequestPermission;
-            match.type = Plasma::QueryMatch::NoMatch;
+            match.type = KRunner::QueryMatch::NoMatch;
             match.relevance = 0;
             match.text = i18nc("Dummy search result", "Additional permissions are required");
             match.iconName = qApp->windowIcon().name();
@@ -167,10 +167,10 @@ void HistoryRunnerPlugin::handleData(const QString &event, const QJsonObject &js
                 qreal relevance = 0;
 
                 if (text.compare(query, Qt::CaseInsensitive) == 0 || urlString.compare(query, Qt::CaseInsensitive) == 0) {
-                    match.type = Plasma::QueryMatch::ExactMatch;
+                    match.type = KRunner::QueryMatch::ExactMatch;
                     relevance = 1;
                 } else {
-                    match.type = Plasma::QueryMatch::PossibleMatch;
+                    match.type = KRunner::QueryMatch::PossibleMatch;
 
                     if (text.contains(query, Qt::CaseInsensitive)) {
                         relevance = 0.7;

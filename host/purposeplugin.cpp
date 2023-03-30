@@ -14,7 +14,7 @@
 #include <KIO/MimeTypeFinderJob>
 
 #include <Purpose/AlternativesModel>
-#include <PurposeWidgets/Menu>
+#include <Purpose/Menu>
 
 PurposePlugin::PurposePlugin(QObject *parent)
     : AbstractBrowserPlugin(QStringLiteral("purpose"), 1, parent)

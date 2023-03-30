@@ -40,16 +40,17 @@ target_link_libraries(
     Qt::DBus
     Qt::Gui
     Qt::Widgets
-    KF5::Activities
-    KF5::ConfigCore
-    KF5::CoreAddons
-    KF5::Crash
-    KF5::I18n
-    KF5::JobWidgets
-    KF5::KIOCore
-    KF5::PurposeWidgets
-    KF5::Runner
-    KF5::FileMetaData
+    KF6::Activities
+    KF6::ConfigCore
+    KF6::CoreAddons
+    KF6::Crash
+    KF6::I18n
+    KF6::JobWidgets
+    KF6::KIOCore
+    KF6::PurposeWidgets
+    KF6::Runner
+    KF6::FileMetaData
+    KF6::Service
     PW::LibTaskManager
 )
 

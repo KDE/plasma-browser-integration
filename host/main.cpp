@@ -76,9 +76,6 @@ int main(int argc, char *argv[])
     // otherwise when logging out, session manager will ask the host to quit
     // (it's a "regular X app" after all) and then the browser will complain
     qunsetenv("SESSION_MANAGER");
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    QCoreApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
-#endif
     QApplication a(argc, argv);
     // otherwise will close when download job finishes
     a.setQuitOnLastWindowClosed(false);

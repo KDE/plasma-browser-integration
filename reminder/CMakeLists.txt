@@ -9,13 +9,13 @@ add_library(browserintegrationreminder MODULE ${kded_browserintegrationreminder}
 target_link_libraries(browserintegrationreminder
     Qt::DBus
     Qt::Widgets
-    KF5::CoreAddons
-    KF5::DBusAddons # for KDEDModule
-    KF5::I18n
-    KF5::Notifications # for KStatusNotifierItem
-    KF5::ConfigCore
-    KF5::Activities # for KActivities::ResourceInstance
-    KF5::KIOGui # for KIO::ApplicationLauncherJob
+    KF6::CoreAddons
+    KF6::DBusAddons # for KDEDModule
+    KF6::I18n
+    KF6::Notifications # for KStatusNotifierItem
+    KF6::ConfigCore
+    KF6::Activities # for KActivities::ResourceInstance
+    KF6::KIOGui # for KIO::ApplicationLauncherJob
 )
 
 install(TARGETS browserintegrationreminder  DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf${QT_MAJOR_VERSION}/kded)

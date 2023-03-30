@@ -4,19 +4,19 @@
 Dependencies:
 - 'on': ['@all']
   'require':
-    'frameworks/extra-cmake-modules': '@latest'
-    'frameworks/kio': '@latest'
-    'frameworks/ki18n': '@latest'
-    'frameworks/kcoreaddons': '@latest'
-    'frameworks/kconfig': '@latest'
-    'frameworks/kcrash': '@latest'
-    'frameworks/kdbusaddons': '@latest'
-    'frameworks/knotifications': '@latest'
-    'frameworks/krunner': '@latest'
-    'frameworks/kactivities': '@latest'
-    'frameworks/purpose': '@latest'
-    'frameworks/kfilemetadata': '@latest'
-    'frameworks/kjobwidgets': '@latest'
+    'frameworks/extra-cmake-modules': '@latest-kf6'
+    'frameworks/kio': '@latest-kf6'
+    'frameworks/ki18n': '@latest-kf6'
+    'frameworks/kcoreaddons': '@latest-kf6'
+    'frameworks/kconfig': '@latest-kf6'
+    'frameworks/kcrash': '@latest-kf6'
+    'frameworks/kdbusaddons': '@latest-kf6'
+    'frameworks/knotifications': '@latest-kf6'
+    'frameworks/krunner': '@latest-kf6'
+    'frameworks/kactivities': '@latest-kf6'
+    'frameworks/purpose': '@latest-kf6'
+    'frameworks/kfilemetadata': '@latest-kf6'
+    'frameworks/kjobwidgets': '@latest-kf6'
     'plasma/plasma-workspace': '@same'
 Options:
   require-passing-tests-on: [ 'Linux', 'FreeBSD']

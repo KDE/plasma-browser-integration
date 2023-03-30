@@ -19,8 +19,8 @@
 #include <KProcessList>
 #include <KService>
 
-#include <taskmanager/abstracttasksmodel.h>
-#include <taskmanager/windowtasksmodel.h>
+#include <abstracttasksmodel.h>
+#include <windowtasksmodel.h>
 
 #include "pluginmanager.h"
 
