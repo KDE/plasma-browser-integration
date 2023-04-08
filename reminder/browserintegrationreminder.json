@@ -7,6 +7,7 @@
         "Description[ca@valencia]": "Proporciona un enllaç cap a l'extensió del navegador si està instal·lat el servidor de la Integració del navegador amb Plasma",
         "Description[ca]": "Proporciona un enllaç a l'extensió del navegador si està instal·lat el servidor de la Integració del navegador amb el Plasma",
         "Description[cs]": "Poskytuje odkaz na rozšíření prohlížeče, pokud je hostitel integrace Plasma nainstalován",
+        "Description[de]": "Enthält eine Verknüpfung zur Browser-Erweiterung, wenn die Plasma-Integration für Browser installiert ist",
         "Description[en_GB]": "Provides a link to the browser extension if the Plasma Browser Integration host is installed",
         "Description[es]": "Proporciona un enlace a la extensión del navegador si se ha instalado el servidor de integración del navegador con Plasma",
         "Description[eu]": "Arakatzaile hedapenera esteka bat hornitzen du Plasman arakatzaileak bateratzeko ostalaria instalatua badago",
