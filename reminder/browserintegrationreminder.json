@@ -19,6 +19,7 @@
         "Description[ko]": "Plasma 브라우저 통합 호스트가 설치되어 있을 때 브라우저 확장 기능 설치 링크 제공",
         "Description[nl]": "Biedt een koppeling naar de browser-extensie als de host voor Plasma-browserintegratie is geïnstalleerd",
         "Description[nn]": "Gjev ei lenkje til nettlesarutvidinga viss vert for integrering av Plasma-nettlesar er installert",
+        "Description[pl]": "Dostarcza łącze do rozszerzeń przeglądarki, jeśli gospodarz integracji przeglądarki Plazmy został wgrany",
         "Description[pt]": "Oferece uma ligação para a extensão do navegador, caso o anfitrião da Integração do Navegador do Plasma esteja instalada",
         "Description[pt_BR]": "Fornece um link para a extensão do navegador se o host da integração dos navegadores no Plasma está instalado",
         "Description[ru]": "В случае, если установлена служба интеграции браузера в среду Plasma, но не установлено соответствующее расширение браузера, предоставляет ссылку для установки такого расширения.",
