@@ -180,6 +180,6 @@
         "message": "Enhavo Kunhavita"
     },
     "store_description": {
-        "message": "Plurlaboru efike kontrolante retumilfunkciojn de la labortablo, eĉ dum Chrome estas en la fono. Administru aŭd- kaj videoludadon, kontrolu elŝutojn en la sciiga areo, sendu dosierojn al via telefono per KDE Connect kaj pli ene de la KDE Plasma Desktop!\\n\\nLa plasmo-retumilo-integra pako devas esti instalita por ke ĉi tiu etendaĵo funkciu. Ĝi devus esti havebla de la pakadministranto de via distribuo kiam vi ruliĝas Plasma 5.13 aŭ poste.\\n\\nNOTU: Ĉi tiu etendo ne estas subtenata ĉe Debiano."
+        "message": "Multitask efficiently by controlling browser functions from the desktop, even while Chrome is in the background. Manage audio and video playback, check downloads in the notification area, send files to your phone using KDE Connect and more inside the KDE Plasma Desktop!\\n\\nThe plasma-browser-integration package must be installed for this extension to work. It should be available from your distribution's package manager when running Plasma 5.13 or later.\\n\\nNOTE: This extension is not supported on Debian."
     }
 }
