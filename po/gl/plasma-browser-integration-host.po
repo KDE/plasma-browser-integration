@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the plasma-browser-integration package.
+# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2019, 2023.
 #
-# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-browser-integration\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2021-08-29 00:19+0000\n"
-"PO-Revision-Date: 2019-10-19 21:54+0200\n"
+"PO-Revision-Date: 2023-05-01 11:06+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 19.11.70\n"
+"X-Generator: Lokalize 23.04.0\n"
 
 #: downloadjob.cpp:134
 #, kde-format
@@ -23,6 +23,8 @@ msgid ""
 "This type of file can harm your computer. If you want to keep it, accept "
 "this download from the browser window."
 msgstr ""
+"Este tipo de ficheiro pode danar o seu computador. Se quere quedar con el, "
+"acepte esta descarga desde a xanela do navegador."
 
 #: downloadjob.cpp:231
 #, kde-format
@@ -116,14 +118,14 @@ msgstr "Destino"
 #, kde-format
 msgctxt "Dummy search result"
 msgid "Additional permissions are required"
-msgstr ""
+msgstr "Precísanse permisos adicionais"
 
 #: tabsrunnerplugin.cpp:38
 #, kde-format
 msgid "Mute Tab"
-msgstr ""
+msgstr "Silenciar o separador"
 
 #: tabsrunnerplugin.cpp:43
 #, kde-format
 msgid "Unmute Tab"
-msgstr ""
+msgstr "Activar o son do separador"
