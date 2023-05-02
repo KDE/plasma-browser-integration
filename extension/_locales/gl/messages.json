@@ -30,7 +30,7 @@
         "message": "Erro descoñecido"
     },
     "kdeconnect_call_device": {
-        "message": "Abrir en «$1»"
+        "message": "Chamar desde «$1»"
     },
     "kdeconnect_open_device": {
         "message": "Abrir en «$1»"
@@ -42,10 +42,10 @@
         "message": "Se atopa un problema, revise a <a href=\"$1\">lista de fallos abertos</a> e se non o atopa <a href=\"$2\">informe do fallo</a>."
     },
     "options_about_changelog_link": {
-        "message": "View Changelog"
+        "message": "Ver a lista de cambios"
     },
     "options_about_copyright": {
-        "message": "© 2017-2019 Kai Uwe Broulik e David Edmundson"
+        "message": "© 2017-2020 Kai Uwe Broulik e David Edmundson"
     },
     "options_about_created_by_kde": {
         "message": "Esta extensión de navegador creouna a <a href=\"$1\">comunidade de KDE</a>. Pode atopar máis información sobre o proxecto no <a href=\"$2\">no wiki da comunidade de KDE</a>."
@@ -72,7 +72,7 @@
         "message": "Adrián Chaves (Gallaecio)"
     },
     "options_heading_krunner": {
-        "message": "Plasma Search"
+        "message": "Busca de Plasma"
     },
     "options_not_supported_os": {
         "message": "Esta extensión non é compatíbel con este sistema operativo."
@@ -84,7 +84,7 @@
         "message": "Usar barras de desprazamento co estilo de Breeze."
     },
     "options_plugin_downloads_addToRecentDocuments": {
-        "message": "Add downloaded files to recent documents"
+        "message": "Engadir os ficheiros descargados aos documentos recentes"
     },
     "options_plugin_downloads_saveOriginUrl": {
         "message": "Gardar o URL de orixe dun ficheiro descargado nos atributos do ficheiro"
@@ -96,10 +96,10 @@
         "message": "Mostrar as descargas na área de notificación."
     },
     "options_plugin_historyrunner_description": {
-        "message": "This feature might need <a id=\"$1\" href=\"$2\">additional permissions</a> to be used."
+        "message": "Esta funcionalidade podería precisar <a id=\"$1\" href=\"$2\">permisos adicionais</a> para usarse."
     },
     "options_plugin_historyrunner_title": {
-        "message": "Search through browser history"
+        "message": "Buscar no historial do navegador"
     },
     "options_plugin_kdeconnect_description": {
         "message": "Engade unha entrada ao menú de contexto das ligazóns que lle permite envialas ao seu teléfono ou outros dispositivos emparellados mediante <a href=\"$1\">KDE Connect</a>."
@@ -108,7 +108,7 @@
         "message": "Enviar mediante KDE Connect"
     },
     "options_plugin_mpris_description": {
-        "message": "Permítelle controlar reprodutores de son e vídeo en sitios web usando o plasmoide de controlador de reprodución."
+        "message": "Permítelle controlar reprodutores de son e vídeo en sitios web usando o trebello de controlador de reprodución."
     },
     "options_plugin_mpris_media_sessions_description": {
         "message": "Extraer metadatos e miniaturas do contido que se está a reproducir."
@@ -147,22 +147,22 @@
         "message": "Configuración de integración con Plasma"
     },
     "permission_request_already": {
-        "message": "You have already granted this permission."
+        "message": "Xa concedeu este permiso."
     },
     "permission_request_button_request": {
-        "message": "Request Permission"
+        "message": "Solicitar o permiso"
     },
     "permission_request_button_revoke": {
-        "message": "Revoke Permission"
+        "message": "Revogar o permiso"
     },
     "permission_request_historyrunner_1": {
-        "message": "In order to provide search results for your browser history, additional permissions are required."
+        "message": "Para fornecer resultados de busca para o historial do navegador precísanse permisos adicionais."
     },
     "permission_request_historyrunner_2": {
-        "message": "Asegúrese de que o módulo de «Separadores de navegador» está activado na <a id=\"$1\" href=\"$2\">configuración de busca de Plasma</a>."
+        "message": "Pode desactivar esta funcionalidade na <a id=\"$1\" href=\"$2\">configuración da busca de Plasma</a>."
     },
     "permission_request_title": {
-        "message": "Additional permissions required"
+        "message": "Precísanse permisos adicionais"
     },
     "purpose_share": {
         "message": "Compartir…"
