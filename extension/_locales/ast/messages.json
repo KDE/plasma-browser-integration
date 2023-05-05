@@ -1,72 +1,72 @@
 {
     "browseraction_mpris_enable_on": {
-        "message": "Activar los controles multimedia en:"
+        "message": "Enable media controls on:"
     },
     "browseraction_mpris_title": {
-        "message": "Controles multimedia"
+        "message": "Media Controls"
     },
     "browseraction_title": {
-        "message": "Integración del restolador con Plasma"
+        "message": "Plasma Browser Integration"
     },
     "general_error_host_disconnected_title": {
-        "message": "L'agospiu nativu desconectóse inesperadamente."
+        "message": "The native host disconnected unexpectedly."
     },
     "general_error_not_supported_os": {
-        "message": "Esta estensión namás se sofita en GNU/Linux y FreeBSD."
+        "message": "This extension is only supported on Linux and FreeBSD."
     },
     "general_error_not_supported_os_title": {
-        "message": "Nun se sofita esti sistema operativu."
+        "message": "Unsupported operating system"
     },
     "general_error_startup_failed": {
-        "message": "Asegúrate de que'l paquete «plasma-browser-integration» ta instaláu correutamente y tas executando Plasma 5.13 o mayor."
+        "message": "Make sure the 'plasma-browser-integration' package is installed correctly and that you are running Plasma 5.13 or later."
     },
     "general_error_startup_failed_title": {
-        "message": "Fallu al conectar col agospiu nativu."
+        "message": "Failed to connect to the native host."
     },
     "general_error_startup_failed_wiki_link": {
-        "message": "Visita la páxina wiki del proyeutu pa más información"
+        "message": "Visit project wiki page for more information"
     },
     "general_error_unknown": {
         "message": "Unknown Error"
     },
     "kdeconnect_call_device": {
-        "message": "Llamar per «$1»"
+        "message": "Call on '$1'"
     },
     "kdeconnect_open_device": {
-        "message": "Abrir en «$1»"
+        "message": "Open on '$1'"
     },
     "kdeconnect_open_via": {
-        "message": "Abrir per KDE Connect"
+        "message": "Open via KDE Connect"
     },
     "options_about_bugs": {
-        "message": "Si atopes un fallu, comprueba la <a href=\"$1\">llista de fallos abiertos</a> y <a href=\"$2\">rellena un informe</a> darréu."
+        "message": "If you find an issue, please check the <a href=\"$1\">list of open bugs</a> and then <a href=\"$2\">file a bug report</a>."
     },
     "options_about_changelog_link": {
-        "message": "Ver el rexistru de cambeos"
+        "message": "View Changelog"
     },
     "options_about_copyright": {
-        "message": "© 2017-2020 Kai Uwe Broulik y David Edmundson"
+        "message": "© 2017-2020 Kai Uwe Broulik and David Edmundson"
     },
     "options_about_created_by_kde": {
-        "message": "Esta estensión creóla la <a href=\"$1\">comunidá de KDE</a> y pues atopar más información tocante a esti proyeutu na <a href=\"$2\">wiki de so</a>."
+        "message": "This browser extension was created by the <a href=\"$1\">KDE Community</a>. You can find more information about this project on the <a href=\"$2\">KDE Community Wiki</a>."
     },
     "options_about_donate": {
-        "message": "Si te presta lo que ves, considera <a href=\"$1\">donar a KDE</a> pa que podamos siguir faciendo'l meyor software llibre posible."
+        "message": "If you like what you saw, please consider <a href=\"$1\">donating to KDE</a>, so we can continue to make the best free software possible."
     },
     "options_about_extension_version": {
-        "message": "Versión de la estensión: $1"
+        "message": "Extension version: $1"
     },
     "options_about_host_version": {
-        "message": "Versión del agospiu: $1"
+        "message": "Host version: $1"
     },
     "options_about_kde": {
-        "message": "KDE ye una comunidá global d'inxenieros de software, artistes, escritores, traductores, creadores que tán comprometíos col desendolcu de <a href=\"$1\">software llibre</a> y una empresa cooperativa (nenguna entidá controla la direición o productos de so). Somos los creadores del entornu d'escritoriu Plasma, cientos d'aplicaciones y munches biblioteques de software que les sofiten, amás preferimos trabayar xuntos p'algamar la meta común de facer el meyor software llibre del mundu. Dámos-yos l'acoyida a toles persones que quieran <a href=\"$2\">xunise y collaborar</a> en KDE incluyéndote a ti. Visita <a href=\"$3\">$3</a> pa más información tocante a la comunidá de KDE y el software que producimos."
+        "message": "KDE is a world-wide community of software engineers, artists, writers, translators and creators who are committed to <a href=\"$1\">Free Software</a> development. KDE produces the Plasma desktop environment, hundreds of applications, and the many software libraries that support them. KDE is a cooperative enterprise: no single entity controls its direction or products. Instead, we work together to achieve the common goal of building the world's finest Free Software. Everyone is welcome to <a href=\"$2\">join and contribute</a> to KDE, including you. Visit <a href=\"$3\">$3</a> for more information about the KDE community and the software we produce."
     },
     "options_about_license": {
-        "message": "Llicencia: <a href=\"$1\">Llicencia pública y xeneral de GNU versión 3</a>"
+        "message": "License: <a href=\"$1\">GNU General Public License Version 3</a>"
     },
     "options_about_translated_by": {
-        "message": "Traducción fecha por $1"
+        "message": "Translated by: $1"
     },
     "options_about_translators": {
         "message": "Softastur"
@@ -75,25 +75,25 @@
         "message": "Plasma Search"
     },
     "options_not_supported_os": {
-        "message": "Esta estensión nun ta sofitada nesti sistema operativu."
+        "message": "This extension is not supported on this operating system."
     },
     "options_plugin_breezeScrollBars_description": {
-        "message": "Esto pue interfirir col aspeutu de sitios web que yá aplicaren un estilu personalizáu a les sos barres de desplazamientu."
+        "message": "This may interfere with the appearance of websites that already apply a custom styling to their scroll bars."
     },
     "options_plugin_breezeScrollBars_title": {
-        "message": "Barres de desplazamientu col estilu Breeze"
+        "message": "Use Breeze-style scroll bars"
     },
     "options_plugin_downloads_addToRecentDocuments": {
-        "message": "Amestar los ficheros baxaos a los documentos d'apocayá"
+        "message": "Add downloaded files to recent documents"
     },
     "options_plugin_downloads_saveOriginUrl": {
-        "message": "Guardar la URL dende la que se baxen los ficheros nos sos atributos"
+        "message": "Save URL a file was downloaded from in the file's attributes"
     },
     "options_plugin_downloads_saveOriginUrl_description": {
-        "message": "Nota: La URL pue contener información sensible que podría revelase cuando s'accedan a los ficheros o compartan con otros"
+        "message": "Note: The URL may contain sensitive information that could be disclosed when the file is accessible by or shared with others"
     },
     "options_plugin_downloads_title": {
-        "message": "Amosar les descargues nel área d'avisos"
+        "message": "Show downloads in notification area"
     },
     "options_plugin_historyrunner_description": {
         "message": "This feature might need <a id=\"$1\" href=\"$2\">additional permissions</a> to be used."
@@ -102,28 +102,28 @@
         "message": "Search through browser history"
     },
     "options_plugin_kdeconnect_description": {
-        "message": "Nos enllaces, amiesta una entrada nel menú contestual pa permitite unvialos a otros preseos empareyaos col usu de <a href=\" $1\">KDE Connect</a>."
+        "message": "Adds a context menu entry to links enabling you to send them to your phone and other paired devices using <a href=\"$1\">KDE Connect</a>."
     },
     "options_plugin_kdeconnect_title": {
-        "message": "Unviu per KDE Connect"
+        "message": "Send via KDE Connect"
     },
     "options_plugin_mpris_description": {
-        "message": "Déxate controlar los reproductores de los sitios web col usu del plasmoide de Mandu multimedia."
+        "message": "Lets you control video and audio players in websites using the Media Controller plasmoid."
     },
     "options_plugin_mpris_media_sessions_description": {
-        "message": "Estrái los metadatos y miniatures del conteníu que tea reproduciéndose."
+        "message": "Extract metadata and thumbnails of currently playing content."
     },
     "options_plugin_mpris_media_sessions_title": {
-        "message": "Controles multimedia ameyoraos"
+        "message": "Enhanced Media Controls"
     },
     "options_plugin_mpris_title": {
-        "message": "Controles multimedia"
+        "message": "Media Controls"
     },
     "options_plugin_purpose_description": {
-        "message": "Amiesta la entrada «Compartir…» nel menú contestual y permite a los sitios web abrir un diálogu pa compartir conteníu co usu de l'API de Web Share"
+        "message": "Adds a \"Share...\" context menu entry and allows websites to open a dialog for sharing contents using the Web Share API."
     },
     "options_plugin_purpose_title": {
-        "message": "Compartición de conteníu"
+        "message": "Content Sharing"
     },
     "options_plugin_tabsrunner_description": {
         "message": "Make sure the “Browser Tabs” module is enabled in <a id=\"$1\" href=\"$2\">Plasma Search settings</a>."
@@ -132,19 +132,19 @@
         "message": "Find browser tabs in “Run Command” window"
     },
     "options_save_failed": {
-        "message": "Falló'l guardáu de los axustes"
+        "message": "Saving settings failed"
     },
     "options_save_success": {
-        "message": "Los axustes guardáronse con ésitu"
+        "message": "Settings successfully saved"
     },
     "options_tab_about": {
-        "message": "Tocante a"
+        "message": "About"
     },
     "options_tab_general": {
-        "message": "Xeneral"
+        "message": "General"
     },
     "options_title": {
-        "message": "Axustes de la integración con Plasma"
+        "message": "Plasma Integration Settings"
     },
     "permission_request_already": {
         "message": "You have already granted this permission."
@@ -165,21 +165,21 @@
         "message": "Additional permissions required"
     },
     "purpose_share": {
-        "message": "Compartir…"
+        "message": "Share..."
     },
     "purpose_share_failed_text": {
-        "message": "Nun pudo compartise esti conteníu: $1"
+        "message": "Could not share this content: $1"
     },
     "purpose_share_failed_title": {
-        "message": "La compartición falló"
+        "message": "Sharing Failed"
     },
     "purpose_share_finished_text": {
-        "message": "L'enllaz del conteníu compartíu ($1) copióse al cartafueyu."
+        "message": "The shared content link ($1) has been copied to the clipboard."
     },
     "purpose_share_finished_title": {
-        "message": "Compartióse'l conteníu"
+        "message": "Content Shared"
     },
     "store_description": {
-        "message": "Multixera eficiente controlando les funciones del restolador dende l'escritoriu magar que tea en segundu planu. Xestiona la reproducción d'audiu y videu, comprueba les descargues nel área d'avisos, unvia ficheros a otros preseos qu'usen KDE Connect y muncho más dientro de KDE Plasma.\\n\\nEl paquete plasma-browser-integration ha tar instaláu pa qu'esta estensión funcione. Debería tar disponible nel xestor de paquetes de la to distribución al executar Plasma 5.13 o mayor.\\n\\nNOTA: Esta estensión nun ta sofitada en Debian."
+        "message": "Multitask efficiently by controlling browser functions from the desktop, even while Chrome is in the background. Manage audio and video playback, check downloads in the notification area, send files to your phone using KDE Connect and more inside the KDE Plasma Desktop!\\n\\nThe plasma-browser-integration package must be installed for this extension to work. It should be available from your distribution's package manager when running Plasma 5.13 or later.\\n\\nNOTE: This extension is not supported on Debian."
     }
 }
