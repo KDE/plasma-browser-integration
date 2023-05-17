@@ -30,7 +30,7 @@
         "message": "未知錯誤"
     },
     "kdeconnect_call_device": {
-        "message": "在「$1」上開啟"
+        "message": "用 '$1' 撥打"
     },
     "kdeconnect_open_device": {
         "message": "在「$1」上開啟"
@@ -72,7 +72,7 @@
         "message": "Jeff Huang"
     },
     "options_heading_krunner": {
-        "message": "Plasma Search"
+        "message": "Plasma 搜尋"
     },
     "options_not_supported_os": {
         "message": "這個擴充套件不被此作業系統支援。"
@@ -96,10 +96,10 @@
         "message": "在通知區域顯示下載項目"
     },
     "options_plugin_historyrunner_description": {
-        "message": "This feature might need <a id=\"$1\" href=\"$2\">additional permissions</a> to be used."
+        "message": "這個功能可能需要<a id=\"$1\" href=\"$2\">額外權限</a>才能使用。"
     },
     "options_plugin_historyrunner_title": {
-        "message": "Search through browser history"
+        "message": "搜尋瀏覽器歷史紀錄"
     },
     "options_plugin_kdeconnect_description": {
         "message": "新增連結的選單項目，以讓您可以將它們使用 <a href=\"$1\">KDE 連線</a> 傳送到您的手機或是其他已配對的裝置。"
@@ -147,22 +147,22 @@
         "message": "Plasma 整合設定"
     },
     "permission_request_already": {
-        "message": "You have already granted this permission."
+        "message": "您已經提供這個權限了。"
     },
     "permission_request_button_request": {
-        "message": "Request Permission"
+        "message": "請求權限"
     },
     "permission_request_button_revoke": {
-        "message": "Revoke Permission"
+        "message": "取消權限"
     },
     "permission_request_historyrunner_1": {
-        "message": "In order to provide search results for your browser history, additional permissions are required."
+        "message": "為了提供瀏覽器歷史紀錄的搜尋結果，需要額外的權限。"
     },
     "permission_request_historyrunner_2": {
-        "message": "確保已在 <a id=\"$1\" href=\"$2\">Plasma 搜尋設定</a>中啟用「瀏覽器分頁」模組。"
+        "message": "您可以在<a id=\"$1\" href=\"$2\">Plasma 搜尋設定</a>裡停用這個功能。"
     },
     "permission_request_title": {
-        "message": "Additional permissions required"
+        "message": "需要額外權限"
     },
     "purpose_share": {
         "message": "分享…"
