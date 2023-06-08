@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-browser-integration-reminder\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2021-08-29 00:19+0000\n"
+"POT-Creation-Date: 2023-06-08 02:13+0000\n"
 "PO-Revision-Date: 2018-09-16 19:55+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -19,12 +19,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 2.0\n"
 
-#: browserintegrationreminder.cpp:140
+#: browserintegrationreminder.cpp:141
 #, kde-format
 msgid "Get Plasma Browser Integration"
 msgstr "Obtener integración del navegador en Plasma"
 
-#: browserintegrationreminder.cpp:167
+#: browserintegrationreminder.cpp:168
 #, kde-format
 msgid "Do not show again"
 msgstr "No volver a mostrar"

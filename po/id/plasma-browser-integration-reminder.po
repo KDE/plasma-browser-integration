@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-browser-integration\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2021-08-29 00:19+0000\n"
+"POT-Creation-Date: 2023-06-08 02:13+0000\n"
 "PO-Revision-Date: 2018-10-06 22:36+0700\n"
 "Last-Translator: Wantoyo <wantoyek@gmail.com>\n"
 "Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
@@ -16,12 +16,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: browserintegrationreminder.cpp:140
+#: browserintegrationreminder.cpp:141
 #, kde-format
 msgid "Get Plasma Browser Integration"
 msgstr "Dapatkan Plasma Browser Integration"
 
-#: browserintegrationreminder.cpp:167
+#: browserintegrationreminder.cpp:168
 #, kde-format
 msgid "Do not show again"
 msgstr "Jangan tampilkan lagi"
