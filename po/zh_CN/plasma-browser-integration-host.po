@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2021-08-29 00:19+0000\n"
-"PO-Revision-Date: 2023-05-22 13:58\n"
+"PO-Revision-Date: 2023-06-17 04:09\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -55,7 +55,7 @@ msgstr "文件可能包含恶意内容。"
 #: downloadjob.cpp:237
 #, kde-format
 msgid "A temporary error has occurred. Please try again later."
-msgstr "发生临时错误。请稍后重试。"
+msgstr "发生暂时错误。请稍后重试。"
 
 #: downloadjob.cpp:239
 #, kde-format
