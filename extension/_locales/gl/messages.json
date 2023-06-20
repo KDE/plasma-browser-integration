@@ -93,7 +93,7 @@
         "message": "Nota: O URL pode conter información sensible que podería revelarse cando terceiros accedan ao ficheiro ou se comparta con eles"
     },
     "options_plugin_downloads_title": {
-        "message": "Mostrar as descargas na área de notificación."
+        "message": "Amosar as descargas na área de notificación."
     },
     "options_plugin_historyrunner_description": {
         "message": "Esta funcionalidade podería precisar <a id=\"$1\" href=\"$2\">permisos adicionais</a> para usarse."
