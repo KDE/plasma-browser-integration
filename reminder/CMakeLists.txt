@@ -18,4 +18,4 @@ target_link_libraries(browserintegrationreminder
     KF6::KIOGui # for KIO::ApplicationLauncherJob
 )
 
-install(TARGETS browserintegrationreminder  DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf${QT_MAJOR_VERSION}/kded)
+install(TARGETS browserintegrationreminder  DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf6/kded)
