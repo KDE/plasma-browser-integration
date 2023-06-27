@@ -179,9 +179,9 @@ void BrowserIntegrationReminder::onBrowserStarted(const QString &browser)
 void BrowserIntegrationReminder::unload()
 {
     QDBusConnection dbus = QDBusConnection::sessionBus();
-    QDBusMessage msg = QDBusMessage::createMethodCall(QStringLiteral("org.kde.kded5"),
+    QDBusMessage msg = QDBusMessage::createMethodCall(QStringLiteral("org.kde.kded6"),
                                                       QStringLiteral("/kded"),
-                                                      QStringLiteral("org.kde.kded5"),
+                                                      QStringLiteral("org.kde.kded6"),
                                                       QStringLiteral("unloadModule"));
     msg.setArguments({QVariant(QStringLiteral("browserintegrationreminder"))});
     dbus.call(msg, QDBus::NoBlock);
@@ -190,9 +190,9 @@ void BrowserIntegrationReminder::unload()
 void BrowserIntegrationReminder::disableAutoload()
 {
     QDBusConnection dbus = QDBusConnection::sessionBus();
-    QDBusMessage msg = QDBusMessage::createMethodCall(QStringLiteral("org.kde.kded5"),
+    QDBusMessage msg = QDBusMessage::createMethodCall(QStringLiteral("org.kde.kded6"),
                                                       QStringLiteral("/kded"),
-                                                      QStringLiteral("org.kde.kded5"),
+                                                      QStringLiteral("org.kde.kded6"),
                                                       QStringLiteral("setModuleAutoloading"));
     msg.setArguments({QVariant(QStringLiteral("browserintegrationreminder")), QVariant(false)});
     dbus.call(msg, QDBus::NoBlock);
