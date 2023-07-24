@@ -98,3 +98,5 @@ void DownloadPlugin::handleData(const QString &event, const QJsonObject &payload
         job->update(download);
     }
 }
+
+#include "moc_downloadplugin.cpp"

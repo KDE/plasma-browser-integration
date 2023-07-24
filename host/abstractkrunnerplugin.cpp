@@ -71,3 +71,5 @@ RemoteImage AbstractKRunnerPlugin::serializeImage(const QImage &image)
     };
     return remoteImage;
 }
+
+#include "moc_abstractkrunnerplugin.cpp"

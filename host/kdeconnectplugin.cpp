@@ -148,3 +148,5 @@ void KDEConnectPlugin::handleData(const QString &event, const QJsonObject &json)
         QDBusConnection::sessionBus().call(msg, QDBus::NoBlock);
     }
 }
+
+#include "moc_kdeconnectplugin.cpp"

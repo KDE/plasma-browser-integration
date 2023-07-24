@@ -200,3 +200,5 @@ void BrowserIntegrationReminder::disableAutoload()
 }
 
 #include "browserintegrationreminder.moc"
+
+#include "moc_browserintegrationreminder.cpp"

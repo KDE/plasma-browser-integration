@@ -195,3 +195,5 @@ void TabsRunnerPlugin::handleData(const QString &event, const QJsonObject &json)
         m_requests.clear();
     }
 }
+
+#include "moc_tabsrunnerplugin.cpp"

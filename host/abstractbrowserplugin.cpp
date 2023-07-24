@@ -106,3 +106,5 @@ QJsonObject AbstractBrowserPlugin::settings() const
 {
     return Settings::self().settingsForPlugin(m_subsystem);
 }
+
+#include "moc_abstractbrowserplugin.cpp"

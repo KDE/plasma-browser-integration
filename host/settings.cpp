@@ -314,3 +314,5 @@ QJsonObject Settings::settingsForPlugin(const QString &subsystem) const
 {
     return m_settings.value(subsystem).toObject();
 }
+
+#include "moc_settings.cpp"

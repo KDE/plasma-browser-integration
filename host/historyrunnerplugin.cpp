@@ -223,3 +223,5 @@ void HistoryRunnerPlugin::handleData(const QString &event, const QJsonObject &js
         }
     }
 }
+
+#include "moc_historyrunnerplugin.cpp"

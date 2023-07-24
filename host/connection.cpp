@@ -90,3 +90,5 @@ void Connection::readData()
     const QJsonObject json = QJsonDocument::fromJson(data).object();
     Q_EMIT dataReceived(json);
 }
+
+#include "moc_connection.cpp"

@@ -130,3 +130,5 @@ void PluginManager::onDataReceived(const QJsonObject &json)
         plugin->handleData(event, json);
     }
 }
+
+#include "moc_pluginmanager.cpp"

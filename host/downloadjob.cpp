@@ -338,3 +338,5 @@ void DownloadJob::saveOriginUrl()
 
     md.setOriginUrl(url);
 }
+
+#include "moc_downloadjob.cpp"

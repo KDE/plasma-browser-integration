@@ -182,3 +182,5 @@ void PurposePlugin::showShareMenu(const QJsonObject &data, const QString &mimeTy
 
     m_menu->popup(QCursor::pos());
 }
+
+#include "moc_purposeplugin.cpp"

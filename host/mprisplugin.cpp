@@ -641,3 +641,5 @@ void MPrisPlugin::OpenUri(const QString &uri)
 {
     Q_UNUSED(uri);
 }
+
+#include "moc_mprisplugin.cpp"
