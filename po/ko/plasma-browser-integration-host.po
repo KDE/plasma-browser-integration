@@ -89,7 +89,7 @@ msgstr "서버에 요청한 데이터가 없습니다."
 #: downloadjob.cpp:250
 #, kde-format
 msgid "The browser application closed unexpectedly."
-msgstr "브라우저 프로그램이 예상하지 못하게 종료되었습니다."
+msgstr "브라우저 앱이 예상하지 못하게 종료되었습니다."
 
 #: downloadjob.cpp:256
 #, kde-format
