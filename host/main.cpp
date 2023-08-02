@@ -79,6 +79,7 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     // otherwise will close when download job finishes
     a.setQuitOnLastWindowClosed(false);
+    a.setQuitLockEnabled(false);
     // applicationName etc will be set in Settings once the browser identifies to us
 
     qInstallMessageHandler(msgHandler);
