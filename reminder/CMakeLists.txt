@@ -12,7 +12,8 @@ target_link_libraries(browserintegrationreminder
     KF6::CoreAddons
     KF6::DBusAddons # for KDEDModule
     KF6::I18n
-    KF6::Notifications # for KStatusNotifierItem
+    KF6::Notifications
+    KF6::StatusNotifierItem
     KF6::ConfigCore
     KF6::Activities # for KActivities::ResourceInstance
     KF6::KIOGui # for KIO::ApplicationLauncherJob

@@ -17,6 +17,7 @@ Dependencies:
     'frameworks/purpose': '@latest-kf6'
     'frameworks/kfilemetadata': '@latest-kf6'
     'frameworks/kjobwidgets': '@latest-kf6'
+    'frameworks/kstatusnotifieritem': '@latest-kf6'
     'plasma/plasma-workspace': '@same'
 Options:
   require-passing-tests-on: [ 'Linux', 'FreeBSD']
