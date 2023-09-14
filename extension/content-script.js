@@ -125,13 +125,6 @@ function loadBreezeScrollBars() {
     // "Failed to read the 'cssRules' property from 'CSSStyleSheet': Cannot access rules"
     var styleTag = document.createElement("style");
     styleTag.appendChild(document.createTextNode(`
-html::-webkit-scrollbar {
-    /* we'll add padding as "border" in the thumb*/
-    height: 20px;
-    width: 20px;
-    background: white;
-}
-
 html::-webkit-scrollbar-track {
     border-radius: 20px;
     border: 7px solid white; /* FIXME why doesn't "transparent" work here?! */
