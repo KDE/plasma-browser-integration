@@ -165,7 +165,7 @@
         "message": "Запрос дополнительных разрешений"
     },
     "purpose_share": {
-        "message": "Опубликовать..."
+        "message": "Поделиться..."
     },
     "purpose_share_failed_text": {
         "message": "Не удалось опубликовать: $1 "
