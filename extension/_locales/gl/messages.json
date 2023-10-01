@@ -21,7 +21,7 @@
         "message": "Asegúrese de que o paquete «plasma-browser-integration» está instalado correctamente e de que está a executar Plasma 5.13 ou posterior."
     },
     "general_error_startup_failed_title": {
-        "message": "Non se puido conectar á máquina nativa."
+        "message": "Non foi posíbel conectar á máquina nativa."
     },
     "general_error_startup_failed_wiki_link": {
         "message": "Consulte a páxina do wiki do proxecto para máis información"
@@ -168,7 +168,7 @@
         "message": "Compartir…"
     },
     "purpose_share_failed_text": {
-        "message": "Non se puido compartir este contido: $1"
+        "message": "Non foi posíbel compartir este contido: $1"
     },
     "purpose_share_failed_title": {
         "message": "A compartición fallou"
