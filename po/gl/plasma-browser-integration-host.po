@@ -74,7 +74,7 @@ msgstr "Perdeuse a conexión de rede."
 #: downloadjob.cpp:242
 #, kde-format
 msgid "The server is no longer reachable."
-msgstr "Non se pode acadar o servidor."
+msgstr "Non é posíbel acadar o servidor."
 
 #: downloadjob.cpp:244
 #, kde-format
