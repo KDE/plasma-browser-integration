@@ -174,7 +174,7 @@
         "message": "Ha fallat la compartició"
     },
     "purpose_share_finished_text": {
-        "message": "L'enllaç del contingut compartit ($1) s'ha copiat al porta-retalls."
+        "message": "L'enllaç del contingut compartit ($1) s'ha copiat a dins del porta-retalls."
     },
     "purpose_share_finished_title": {
         "message": "Contingut compartit"
