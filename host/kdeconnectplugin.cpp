@@ -105,7 +105,9 @@ void KDEConnectPlugin::onDeviceAdded(const QString &deviceId)
 
         QVariantMap props = reply.value();
 
-        if (!props.value(QStringLiteral("isReachable")).toBool() || !props.value(QStringLiteral("isTrusted")).toBool()) {
+        // Also check isTrusted for compatibility with older KDEConnect
+        const bool paired = props.value(QStringLiteral("isPaired")).toBool() || props.value(QStringLiteral("isTrusted")).toBool();
+        if (!props.value(QStringLiteral("isReachable")).toBool() || !paired) {
             return;
         }
 
