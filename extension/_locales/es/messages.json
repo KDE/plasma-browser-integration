@@ -51,7 +51,7 @@
         "message": "Esta extensión de navegador fue creada por la <a href=\"$1\">Comunidad KDE</a>. Puede encontrar más información sobre este proyecto en la <a href=\"$2\">Wiki de la Comunidad KDE</a>."
     },
     "options_about_donate": {
-        "message": "Si le gusta lo que ve, considere la posibilidad de <a href=\"$1\">hacer una donación a KDE</a> para que podamos seguir haciendo el mejor software libre que nos sea posible."
+        "message": "Si le gusta lo que ve, considere la posibilidad de <a href=\"$1\">hacer un donativo a KDE</a> para que podamos seguir haciendo el mejor software libre que nos sea posible."
     },
     "options_about_extension_version": {
         "message": "Versión de la extensión: $1"
