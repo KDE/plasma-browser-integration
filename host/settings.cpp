@@ -132,7 +132,7 @@ Settings::Settings()
         connect(m_tasksModel,
                 &TaskManager::WindowTasksModel::dataChanged,
                 this,
-                [this](const QModelIndex &topLeft, const QModelIndex &bottomRight, const QVector<int> &roles) {
+                [this](const QModelIndex &topLeft, const QModelIndex &bottomRight, const QList<int> &roles) {
                     // TODO should we bother checking this, even?
                     if (topLeft.parent().isValid() || bottomRight.parent().isValid() || topLeft.column() != 0 || bottomRight.column() != 0) {
                         return;
