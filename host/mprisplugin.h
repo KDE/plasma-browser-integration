@@ -104,7 +104,9 @@ public:
     void Play();
     void Seek(qlonglong offset);
     void SetPosition(const QDBusObjectPath &path, qlonglong position);
-    void OpenUri(const QString &uri);
+    void OpenUri(const QString & /*uri*/)
+    {
+    }
 
 Q_SIGNALS:
     void fullscreenChanged();

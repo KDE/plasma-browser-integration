@@ -637,9 +637,4 @@ void MPrisPlugin::SetPosition(const QDBusObjectPath &path, qlonglong position)
     sendData(QStringLiteral("setPosition"), {{QStringLiteral("position"), position / 1000.0 / 1000.0}});
 }
 
-void MPrisPlugin::OpenUri(const QString &uri)
-{
-    Q_UNUSED(uri);
-}
-
 #include "moc_mprisplugin.cpp"

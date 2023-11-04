@@ -37,12 +37,7 @@ public:
     ~BrowserIntegrationReminder() override;
 
 private Q_SLOTS:
-    void onResourceScoresChanged(const QString &activity,
-                                 const QString &client,
-                                 const QString &resource,
-                                 double score,
-                                 unsigned int lastUpdate,
-                                 unsigned int firstUpdate);
+    void onResourceScoresChanged(const QString &activity, const QString &client, const QString &resource);
 
     void onBrowserStarted(const QString &browserName);
 

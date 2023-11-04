@@ -16,17 +16,12 @@ AbstractBrowserPlugin::AbstractBrowserPlugin::AbstractBrowserPlugin(const QStrin
 {
 }
 
-void AbstractBrowserPlugin::handleData(const QString &event, const QJsonObject &data)
+void AbstractBrowserPlugin::handleData(const QString & /*event*/, const QJsonObject & /*data*/)
 {
-    Q_UNUSED(event);
-    Q_UNUSED(data);
 }
 
-QJsonObject AbstractBrowserPlugin::handleData(int serial, const QString &event, const QJsonObject &data)
+QJsonObject AbstractBrowserPlugin::handleData(int /*serial*/, const QString & /*event*/, const QJsonObject & /*data*/)
 {
-    Q_UNUSED(serial);
-    Q_UNUSED(event);
-    Q_UNUSED(data);
     return QJsonObject();
 }
 
@@ -64,9 +59,8 @@ bool AbstractBrowserPlugin::onUnload()
     return true;
 }
 
-void AbstractBrowserPlugin::onSettingsChanged(const QJsonObject &newSettings)
+void AbstractBrowserPlugin::onSettingsChanged(const QJsonObject & /*newSettings*/)
 {
-    Q_UNUSED(newSettings);
 }
 
 QJsonObject AbstractBrowserPlugin::status() const

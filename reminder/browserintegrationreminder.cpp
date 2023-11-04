@@ -71,26 +71,15 @@ BrowserIntegrationReminder::BrowserIntegrationReminder(QObject *parent, const QL
                  QStringLiteral("org.kde.ActivityManager.ResourcesScoring"),
                  QStringLiteral("ResourceScoreUpdated"),
                  this,
-                 SLOT(onResourceScoresChanged(QString, QString, QString, double, unsigned int, unsigned int)));
+                 SLOT(onResourceScoresChanged(QString, QString, QString)));
 }
 
 BrowserIntegrationReminder::~BrowserIntegrationReminder()
 {
 }
 
-void BrowserIntegrationReminder::onResourceScoresChanged(const QString &activity,
-                                                         const QString &client,
-                                                         const QString &resource,
-                                                         double score,
-                                                         unsigned int lastUpdate,
-                                                         unsigned int firstUpdate)
+void BrowserIntegrationReminder::onResourceScoresChanged(const QString & /*activity*/, const QString & /*client*/, const QString &resource)
 {
-    Q_UNUSED(activity);
-    Q_UNUSED(score);
-    Q_UNUSED(lastUpdate);
-    Q_UNUSED(firstUpdate);
-    Q_UNUSED(client)
-
     if (!resource.startsWith(QStringLiteral("applications:"))) {
         return;
     }
@@ -117,8 +106,7 @@ void BrowserIntegrationReminder::onBrowserStarted(const QString &browser)
 
     if (!m_watcher) {
         m_watcher = new QDBusServiceWatcher(s_dbusServiceName, bus, QDBusServiceWatcher::WatchForRegistration, this);
-        connect(m_watcher, &QDBusServiceWatcher::serviceRegistered, this, [this](const QString &service) {
-            Q_UNUSED(service);
+        connect(m_watcher, &QDBusServiceWatcher::serviceRegistered, this, [this]() {
             if (m_sni) {
                 m_sni->deleteLater();
                 disableAutoload();

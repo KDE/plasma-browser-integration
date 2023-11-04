@@ -275,11 +275,8 @@ void Settings::setEnvironmentFromExtensionMessage(const QJsonObject &data)
     }
 }
 
-QJsonObject Settings::handleData(int serial, const QString &event, const QJsonObject &data)
+QJsonObject Settings::handleData(int /*serial*/, const QString &event, const QJsonObject & /*data*/)
 {
-    Q_UNUSED(serial)
-    Q_UNUSED(data)
-
     QJsonObject ret;
 
     if (event == QLatin1String("getSubsystemStatus")) {
