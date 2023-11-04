@@ -144,13 +144,13 @@ void MPrisPlugin::handleData(const QString &event, const QJsonObject &data)
     } else if (event == QLatin1String("playing")) {
         setPlaybackStatus(QStringLiteral("Playing"));
 
-        m_pageTitle = data.value(QStringLiteral("pageTitle")).toString();
-        m_tabTitle = data.value(QStringLiteral("tabTitle")).toString();
+        m_pageTitle = data.value(QLatin1String("pageTitle")).toString();
+        m_tabTitle = data.value(QLatin1String("tabTitle")).toString();
 
-        m_url = QUrl(data.value(QStringLiteral("url")).toString());
-        m_mediaSrc = QUrl(data.value(QStringLiteral("mediaSrc")).toString());
+        m_url = QUrl(data.value(QLatin1String("url")).toString());
+        m_mediaSrc = QUrl(data.value(QLatin1String("mediaSrc")).toString());
 
-        const QUrl posterUrl = QUrl(data.value(QStringLiteral("poster")).toString());
+        const QUrl posterUrl = QUrl(data.value(QLatin1String("poster")).toString());
         if (m_posterUrl != posterUrl) {
             m_posterUrl = posterUrl;
             emitPropertyChange(m_player, "Metadata");
@@ -158,21 +158,21 @@ void MPrisPlugin::handleData(const QString &event, const QJsonObject &data)
 
         const qreal oldVolume = volume();
 
-        m_volume = data.value(QStringLiteral("volume")).toDouble(1);
-        m_muted = data.value(QStringLiteral("muted")).toBool();
+        m_volume = data.value(QLatin1String("volume")).toDouble(1);
+        m_muted = data.value(QLatin1String("muted")).toBool();
 
         if (volume() != oldVolume) {
             emitPropertyChange(m_player, "Volume");
         }
 
-        const qreal length = data.value(QStringLiteral("duration")).toDouble();
+        const qreal length = data.value(QLatin1String("duration")).toDouble();
         // <video> duration is in seconds, mpris uses microseconds
         setLength(length * 1000 * 1000);
 
-        const qreal position = data.value(QStringLiteral("currentTime")).toDouble();
+        const qreal position = data.value(QLatin1String("currentTime")).toDouble();
         setPosition(position * 1000 * 1000);
 
-        const qreal playbackRate = data.value(QStringLiteral("playbackRate")).toDouble(1);
+        const qreal playbackRate = data.value(QLatin1String("playbackRate")).toDouble(1);
         if (m_playbackRate != playbackRate) {
             m_playbackRate = playbackRate;
             emitPropertyChange(m_player, "Rate");
@@ -181,26 +181,26 @@ void MPrisPlugin::handleData(const QString &event, const QJsonObject &data)
         // check if we're already looping, that keeps us from forcefully
         // overwriting Playlist loop with Track loop
         const bool oldLoop = m_possibleLoopStatus.value(m_loopStatus);
-        const bool loop = data.value(QStringLiteral("loop")).toBool();
+        const bool loop = data.value(QLatin1String("loop")).toBool();
 
         if (loop != oldLoop) {
             setLoopStatus(loop ? QStringLiteral("Track") : QStringLiteral("None"));
         }
 
-        const bool fullscreen = data.value(QStringLiteral("fullscreen")).toBool();
+        const bool fullscreen = data.value(QLatin1String("fullscreen")).toBool();
         if (m_fullscreen != fullscreen) {
             m_fullscreen = fullscreen;
             emitPropertyChange(m_root, "Fullscreen");
         }
 
-        const bool canSetFullscreen = data.value(QStringLiteral("canSetFullscreen")).toBool();
+        const bool canSetFullscreen = data.value(QLatin1String("canSetFullscreen")).toBool();
         if (m_canSetFullscreen != canSetFullscreen) {
             m_canSetFullscreen = canSetFullscreen;
             emitPropertyChange(m_root, "CanSetFullscreen");
         }
 
-        processMetadata(data.value(QStringLiteral("metadata")).toObject()); // also emits metadataChanged signal
-        processCallbacks(data.value(QStringLiteral("callbacks")).toArray());
+        processMetadata(data.value(QLatin1String("metadata")).toObject()); // also emits metadataChanged signal
+        processCallbacks(data.value(QLatin1String("callbacks")).toArray());
 
         registerService();
     } else if (event == QLatin1String("paused")) {
@@ -218,39 +218,39 @@ void MPrisPlugin::handleData(const QString &event, const QJsonObject &data)
         // canplay is emitted with the player *not* paused
         setPlaybackStatus(QStringLiteral("Playing"));
     } else if (event == QLatin1String("duration")) {
-        const qreal length = data.value(QStringLiteral("duration")).toDouble();
+        const qreal length = data.value(QLatin1String("duration")).toDouble();
 
         // <video> duration is in seconds, mpris uses microseconds
         setLength(length * 1000 * 1000);
     } else if (event == QLatin1String("timeupdate")) {
         // not signalling to avoid excess dbus traffic
         // media controller asks for this property once when it opens
-        m_position = data.value(QStringLiteral("currentTime")).toDouble() * 1000 * 1000;
+        m_position = data.value(QLatin1String("currentTime")).toDouble() * 1000 * 1000;
     } else if (event == QLatin1String("ratechange")) {
-        m_playbackRate = data.value(QStringLiteral("playbackRate")).toDouble(1);
+        m_playbackRate = data.value(QLatin1String("playbackRate")).toDouble(1);
         emitPropertyChange(m_player, "Rate");
     } else if (event == QLatin1String("seeking") || event == QLatin1String("seeked")) {
         // seeked is explicit user interaction, signal a change on dbus
-        const qreal position = data.value(QStringLiteral("currentTime")).toDouble();
+        const qreal position = data.value(QLatin1String("currentTime")).toDouble();
         // FIXME actually invoke "Seeked" signal
         setPosition(position * 1000 * 1000);
     } else if (event == QLatin1String("volumechange")) {
-        m_volume = data.value(QStringLiteral("volume")).toDouble(1);
-        m_muted = data.value(QStringLiteral("muted")).toBool();
+        m_volume = data.value(QLatin1String("volume")).toDouble(1);
+        m_muted = data.value(QLatin1String("muted")).toBool();
         emitPropertyChange(m_player, "Volume");
     } else if (event == QLatin1String("metadata")) {
-        processMetadata(data.value(QStringLiteral("metadata")).toObject());
+        processMetadata(data.value(QLatin1String("metadata")).toObject());
     } else if (event == QLatin1String("callbacks")) {
-        processCallbacks(data.value(QStringLiteral("callbacks")).toArray());
+        processCallbacks(data.value(QLatin1String("callbacks")).toArray());
     } else if (event == QLatin1String("titlechange")) {
         const QString oldTitle = effectiveTitle();
-        m_pageTitle = data.value(QStringLiteral("pageTitle")).toString();
+        m_pageTitle = data.value(QLatin1String("pageTitle")).toString();
 
         if (oldTitle != effectiveTitle()) {
             emitPropertyChange(m_player, "Metadata");
         }
     } else if (event == QLatin1String("fullscreenchange")) {
-        const bool fullscreen = data.value(QStringLiteral("fullscreen")).toBool();
+        const bool fullscreen = data.value(QLatin1String("fullscreen")).toBool();
         if (m_fullscreen != fullscreen) {
             m_fullscreen = fullscreen;
             emitPropertyChange(m_root, "Fullscreen");
@@ -502,22 +502,22 @@ void MPrisPlugin::setPosition(qlonglong position)
 
 void MPrisPlugin::processMetadata(const QJsonObject &data)
 {
-    m_title = data.value(QStringLiteral("title")).toString();
-    m_artist = data.value(QStringLiteral("artist")).toString();
-    m_album = data.value(QStringLiteral("album")).toString();
+    m_title = data.value(QLatin1String("title")).toString();
+    m_artist = data.value(QLatin1String("artist")).toString();
+    m_album = data.value(QLatin1String("album")).toString();
 
     // for simplicity we just use the biggest artwork it offers, perhaps we could limit it to some extent
     // TODO download/cache artwork somewhere
     QSize biggest;
     QUrl artworkUrl;
-    const QJsonArray &artwork = data.value(QStringLiteral("artwork")).toArray();
+    const QJsonArray &artwork = data.value(QLatin1String("artwork")).toArray();
 
     const auto &supportedImageMimes = QImageReader::supportedMimeTypes();
 
     for (auto it = artwork.constBegin(), end = artwork.constEnd(); it != end; ++it) {
         const QJsonObject &item = it->toObject();
 
-        const QUrl url = QUrl(item.value(QStringLiteral("src")).toString());
+        const QUrl url = QUrl(item.value(QLatin1String("src")).toString());
         if (!url.isValid()) {
             continue;
         }
@@ -525,7 +525,7 @@ void MPrisPlugin::processMetadata(const QJsonObject &data)
         // why is this named "sizes" when it's just a string and the examples don't mention how one could specify multiple?
         // also, how on Earth could a single image src have multiple sizes? ...
         // spec says this is a space-separated list of sizes for ... some reason
-        const QString sizeString = item.value(QStringLiteral("sizes")).toString();
+        const QString sizeString = item.value(QLatin1String("sizes")).toString();
         QSize actualSize;
 
         // now parse the size...
@@ -536,7 +536,7 @@ void MPrisPlugin::processMetadata(const QJsonObject &data)
             actualSize = QSize(width, height);
         }
 
-        const QString type = item.value(QStringLiteral("type")).toString();
+        const QString type = item.value(QLatin1String("type")).toString();
         if (!type.isEmpty() && !supportedImageMimes.contains(type.toUtf8())) {
             continue;
         }

@@ -167,7 +167,7 @@ void Settings::handleData(const QString &event, const QJsonObject &data)
             const QString &subsystem = it.key();
             const QJsonObject &settingsObject = it->toObject();
 
-            const QJsonValue enabledVariant = settingsObject.value(QStringLiteral("enabled"));
+            const QJsonValue enabledVariant = settingsObject.value(QLatin1String("enabled"));
             // probably protocol overhead, not a plugin setting, skip.
             if (enabledVariant.type() == QJsonValue::Undefined) {
                 continue;
@@ -246,7 +246,7 @@ bool Settings::setEnvironmentFromTasksModelIndex(const QModelIndex &idx)
 
 void Settings::setEnvironmentFromExtensionMessage(const QJsonObject &data)
 {
-    QString name = data.value(QStringLiteral("browserName")).toString();
+    QString name = data.value(QLatin1String("browserName")).toString();
 
     // Most chromium-based browsers just impersonate Chromium nowadays to keep websites from locking them out
     // so we'll need to make an educated guess from our parent process
@@ -304,7 +304,7 @@ Settings::Environment Settings::environment() const
 
 bool Settings::pluginEnabled(const QString &subsystem) const
 {
-    return settingsForPlugin(subsystem).value(QStringLiteral("enabled")).toBool();
+    return settingsForPlugin(subsystem).value(QLatin1String("enabled")).toBool();
 }
 
 QJsonObject Settings::settingsForPlugin(const QString &subsystem) const

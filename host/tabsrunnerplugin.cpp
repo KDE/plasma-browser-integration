@@ -99,7 +99,7 @@ void TabsRunnerPlugin::Run(const QString &id, const QString &actionId)
 void TabsRunnerPlugin::handleData(const QString &event, const QJsonObject &json)
 {
     if (event == QLatin1String("gotTabs")) {
-        const QJsonArray &tabs = json.value(QStringLiteral("tabs")).toArray();
+        const QJsonArray &tabs = json.value(QLatin1String("tabs")).toArray();
 
         for (auto it = m_requests.constBegin(), end = m_requests.constEnd(); it != end; ++it) {
             const QString query = it.key();
@@ -112,9 +112,9 @@ void TabsRunnerPlugin::handleData(const QString &event, const QJsonObject &json)
 
                 RemoteMatch match;
 
-                const int tabId = tab.value(QStringLiteral("id")).toInt();
-                const QString text = tab.value(QStringLiteral("title")).toString();
-                const QUrl url(tab.value(QStringLiteral("url")).toString());
+                const int tabId = tab.value(QLatin1String("id")).toInt();
+                const QString text = tab.value(QLatin1String("title")).toString();
+                const QUrl url(tab.value(QLatin1String("url")).toString());
 
                 QStringList actions;
 
@@ -160,10 +160,10 @@ void TabsRunnerPlugin::handleData(const QString &event, const QJsonObject &json)
                 urlWithoutPassword.setPassword({});
                 match.properties.insert(QStringLiteral("urls"), QUrl::toStringList(QList<QUrl>{urlWithoutPassword}));
 
-                const bool audible = tab.value(QStringLiteral("audible")).toBool();
+                const bool audible = tab.value(QLatin1String("audible")).toBool();
 
-                const QJsonObject mutedInfo = tab.value(QStringLiteral("mutedInfo")).toObject();
-                const bool muted = mutedInfo.value(QStringLiteral("muted")).toBool();
+                const QJsonObject mutedInfo = tab.value(QLatin1String("mutedInfo")).toObject();
+                const bool muted = mutedInfo.value(QLatin1String("muted")).toBool();
 
                 if (audible) {
                     if (muted) {
@@ -176,7 +176,7 @@ void TabsRunnerPlugin::handleData(const QString &event, const QJsonObject &json)
                 } else {
                     match.iconName = qApp->windowIcon().name();
 
-                    const QImage favIcon = imageFromDataUrl(tab.value(QStringLiteral("favIconData")).toString());
+                    const QImage favIcon = imageFromDataUrl(tab.value(QLatin1String("favIconData")).toString());
                     if (!favIcon.isNull()) {
                         const RemoteImage remoteImage = serializeImage(favIcon);
                         match.properties.insert(QStringLiteral("icon-data"), QVariant::fromValue(remoteImage));

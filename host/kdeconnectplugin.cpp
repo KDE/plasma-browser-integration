@@ -105,7 +105,7 @@ void KDEConnectPlugin::onDeviceAdded(const QString &deviceId)
 
         QVariantMap props = reply.value();
 
-        if (!props.value(QStringLiteral("isReachable")).toBool() || !props.value(QStringLiteral("isTrusted")).toBool()) {
+        if (!props.value(QLatin1String("isReachable")).toBool() || !props.value(QLatin1String("isTrusted")).toBool()) {
             return;
         }
 
@@ -135,8 +135,8 @@ void KDEConnectPlugin::onDeviceVisibilityChanged(const QString &deviceId, bool v
 void KDEConnectPlugin::handleData(const QString &event, const QJsonObject &json)
 {
     if (event == QLatin1String("shareUrl")) {
-        const QString deviceId = json.value(QStringLiteral("deviceId")).toString();
-        const QString url = json.value(QStringLiteral("url")).toString();
+        const QString deviceId = json.value(QLatin1String("deviceId")).toString();
+        const QString url = json.value(QLatin1String("url")).toString();
 
         debug() << "sending kde connect url" << url << "to device" << deviceId;
 

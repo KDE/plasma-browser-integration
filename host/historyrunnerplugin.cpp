@@ -95,8 +95,8 @@ void HistoryRunnerPlugin::Run(const QString &id, const QString &actionId)
 void HistoryRunnerPlugin::handleData(const QString &event, const QJsonObject &json)
 {
     if (event == QLatin1String("found")) {
-        const QString query = json.value(QStringLiteral("query")).toString();
-        const QString error = json.value(QStringLiteral("error")).toString();
+        const QString query = json.value(QLatin1String("query")).toString();
+        const QString error = json.value(QLatin1String("error")).toString();
 
         RemoteMatches matches;
 
@@ -109,7 +109,7 @@ void HistoryRunnerPlugin::handleData(const QString &event, const QJsonObject &js
             match.iconName = qApp->windowIcon().name();
             matches.append(match);
         } else {
-            const QJsonArray results = json.value(QStringLiteral("results")).toArray();
+            const QJsonArray results = json.value(QLatin1String("results")).toArray();
 
             int maxVisitCount = 0;
             int maxTypedCount = 0;
@@ -118,7 +118,7 @@ void HistoryRunnerPlugin::handleData(const QString &event, const QJsonObject &js
             for (auto it = results.begin(), end = results.end(); it != end; ++it) {
                 const QJsonObject &result = it->toObject();
 
-                const QString urlString = result.value(QStringLiteral("url")).toString();
+                const QString urlString = result.value(QLatin1String("url")).toString();
                 QUrl url(urlString);
                 // Skip page anchors but only if they don't look like paths used by old Ajax pages
                 const QString urlFragment = url.fragment();
@@ -135,11 +135,11 @@ void HistoryRunnerPlugin::handleData(const QString &event, const QJsonObject &js
                 }
                 seenUrls.insert(url);
 
-                const QString id = result.value(QStringLiteral("id")).toString();
-                const QString text = result.value(QStringLiteral("title")).toString();
-                const int visitCount = result.value(QStringLiteral("visitCount")).toInt();
-                const int typedCount = result.value(QStringLiteral("typedCount")).toInt();
-                const QString favIconUrl = result.value(QStringLiteral("favIconUrl")).toString();
+                const QString id = result.value(QLatin1String("id")).toString();
+                const QString text = result.value(QLatin1String("title")).toString();
+                const int visitCount = result.value(QLatin1String("visitCount")).toInt();
+                const int typedCount = result.value(QLatin1String("typedCount")).toInt();
+                const QString favIconUrl = result.value(QLatin1String("favIconUrl")).toString();
 
                 maxVisitCount = std::max(maxVisitCount, visitCount);
                 maxTypedCount = std::max(maxTypedCount, typedCount);
@@ -202,8 +202,8 @@ void HistoryRunnerPlugin::handleData(const QString &event, const QJsonObject &js
                 RemoteMatch &match = matches[i];
 
                 const QJsonObject result = results.at(i).toObject();
-                const int visitCount = result.value(QStringLiteral("visitCount")).toInt();
-                const int typedCount = result.value(QStringLiteral("typedCount")).toInt();
+                const int visitCount = result.value(QLatin1String("visitCount")).toInt();
+                const int typedCount = result.value(QLatin1String("typedCount")).toInt();
 
                 if (maxVisitCount > 0) {
                     const qreal visitBoost = visitCount / static_cast<qreal>(maxVisitCount);

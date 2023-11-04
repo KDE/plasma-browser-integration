@@ -34,9 +34,9 @@ bool DownloadPlugin::onUnload()
 
 void DownloadPlugin::handleData(const QString &event, const QJsonObject &payload)
 {
-    const QJsonObject &download = payload.value(QStringLiteral("download")).toObject();
+    const QJsonObject &download = payload.value(QLatin1String("download")).toObject();
 
-    const int id = download.value(QStringLiteral("id")).toInt(-1);
+    const int id = download.value(QLatin1String("id")).toInt(-1);
     if (id < 0) {
         qWarning() << "Cannot update download with invalid id" << id;
         return;

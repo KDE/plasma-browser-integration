@@ -45,11 +45,11 @@ QJsonObject PurposePlugin::handleData(int serial, const QString &event, const QJ
         // store request serial for asynchronous reply
         m_pendingReplySerial = serial;
 
-        const QJsonObject shareData = data.value(QStringLiteral("data")).toObject();
+        const QJsonObject shareData = data.value(QLatin1String("data")).toObject();
 
-        QString title = shareData.value(QStringLiteral("title")).toString();
-        const QString text = shareData.value(QStringLiteral("text")).toString();
-        const QString urlString = shareData.value(QStringLiteral("url")).toString();
+        QString title = shareData.value(QLatin1String("title")).toString();
+        const QString text = shareData.value(QLatin1String("text")).toString();
+        const QString urlString = shareData.value(QLatin1String("url")).toString();
 
         // Purpose ShareUrl plug-in type mandates a title.
         if (title.isEmpty()) {
@@ -99,7 +99,7 @@ QJsonObject PurposePlugin::handleData(int serial, const QString &event, const QJ
                     return;
                 }
 
-                const QString url = output.value(QStringLiteral("url")).toString();
+                const QString url = output.value(QLatin1String("url")).toString();
                 if (!url.isEmpty()) {
                     // Do this here rather than on the extension side to avoid having to request an additional permission after updating
                     QGuiApplication::clipboard()->setText(url);

@@ -88,24 +88,24 @@ void DownloadJob::update(const QJsonObject &payload)
 
     const QUrl oldOriginUrl = originUrl();
 
-    auto it = payload.constFind(QStringLiteral("url"));
+    auto it = payload.constFind(QLatin1String("url"));
     if (it != end) {
         m_url = QUrl(it->toString());
     }
 
-    it = payload.constFind(QStringLiteral("finalUrl"));
+    it = payload.constFind(QLatin1String("finalUrl"));
     if (it != end) {
         m_finalUrl = QUrl(it->toString());
     }
 
-    it = payload.constFind(QStringLiteral("referrer"));
+    it = payload.constFind(QLatin1String("referrer"));
     if (it != end) {
         m_referrer = QUrl(it->toString());
     }
 
     descriptionDirty = (originUrl() != oldOriginUrl);
 
-    it = payload.constFind(QStringLiteral("filename"));
+    it = payload.constFind(QLatin1String("filename"));
     if (it != end) {
         m_fileName = it->toString();
 
@@ -119,12 +119,12 @@ void DownloadJob::update(const QJsonObject &payload)
         }
     }
 
-    it = payload.constFind(QStringLiteral("mime"));
+    it = payload.constFind(QLatin1String("mime"));
     if (it != end) {
         m_mimeType = it->toString();
     }
 
-    it = payload.constFind(QStringLiteral("danger"));
+    it = payload.constFind(QLatin1String("danger"));
     if (it != end) {
         const QString danger = it->toString();
         if (danger == QLatin1String("accepted")) {
@@ -135,12 +135,12 @@ void DownloadJob::update(const QJsonObject &payload)
         }
     }
 
-    it = payload.constFind(QStringLiteral("incognito"));
+    it = payload.constFind(QLatin1String("incognito"));
     if (it != end) {
         m_incognito = it->toBool();
     }
 
-    it = payload.constFind(QStringLiteral("totalBytes"));
+    it = payload.constFind(QLatin1String("totalBytes"));
     if (it != end) {
         const qlonglong totalAmount = it->toDouble();
         if (totalAmount > -1) {
@@ -149,7 +149,7 @@ void DownloadJob::update(const QJsonObject &payload)
     }
 
     const auto oldBytesReceived = m_bytesReceived;
-    it = payload.constFind(QStringLiteral("bytesReceived"));
+    it = payload.constFind(QLatin1String("bytesReceived"));
     if (it != end) {
         m_bytesReceived = it->toDouble();
         setProcessedAmount(Bytes, m_bytesReceived);
@@ -157,7 +157,7 @@ void DownloadJob::update(const QJsonObject &payload)
 
     setTotalAmount(Files, 1);
 
-    it = payload.constFind(QStringLiteral("paused"));
+    it = payload.constFind(QLatin1String("paused"));
     if (it != end) {
         const bool paused = it->toBool();
 
@@ -170,7 +170,7 @@ void DownloadJob::update(const QJsonObject &payload)
 
     bool speedValid = false;
     qulonglong speed = 0;
-    it = payload.constFind(QStringLiteral("estimatedEndTime"));
+    it = payload.constFind(QLatin1String("estimatedEndTime"));
     if (it != end) {
         // now calculate the speed from estimated end time and total size
         // funny how chrome only gives us a time whereas KJob operates on speed
@@ -214,7 +214,7 @@ void DownloadJob::update(const QJsonObject &payload)
         updateDescription();
     }
 
-    const QString error = payload.value(QStringLiteral("error")).toString();
+    const QString error = payload.value(QLatin1String("error")).toString();
     if (!error.isEmpty()) {
         if (error == QLatin1String("USER_CANCELED") || error == QLatin1String("USER_SHUTDOWN")) {
             setError(KIO::ERR_USER_CANCELED); // will keep Notification applet from showing a "finished"/error message
@@ -267,7 +267,7 @@ void DownloadJob::update(const QJsonObject &payload)
         return;
     }
 
-    it = payload.constFind(QStringLiteral("state"));
+    it = payload.constFind(QLatin1String("state"));
     if (it != end) {
         const QString state = it->toString();
 
@@ -304,7 +304,7 @@ void DownloadJob::addToRecentDocuments()
 
     const QJsonObject settings = Settings::self().settingsForPlugin(QStringLiteral("downloads"));
 
-    const bool enabled = settings.value(QStringLiteral("addToRecentDocuments")).toBool();
+    const bool enabled = settings.value(QLatin1String("addToRecentDocuments")).toBool();
     if (!enabled) {
         return;
     }

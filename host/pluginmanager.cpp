@@ -101,7 +101,7 @@ QStringList PluginManager::loadedPluginSubsystems() const
 
 void PluginManager::onDataReceived(const QJsonObject &json)
 {
-    const QString subsystem = json.value(QStringLiteral("subsystem")).toString();
+    const QString subsystem = json.value(QLatin1String("subsystem")).toString();
 
     AbstractBrowserPlugin *plugin = m_plugins.value(subsystem);
     if (!plugin) {
@@ -112,12 +112,12 @@ void PluginManager::onDataReceived(const QJsonObject &json)
         return;
     }
 
-    const QString event = json.value(QStringLiteral("event")).toString();
+    const QString event = json.value(QLatin1String("event")).toString();
     if (event.isEmpty()) {
         return;
     }
 
-    const QJsonValue requestSerialVariant = json.value(QStringLiteral("serial"));
+    const QJsonValue requestSerialVariant = json.value(QLatin1String("serial"));
     if (!requestSerialVariant.isUndefined()) {
         const int requestSerial = requestSerialVariant.toInt();
 
