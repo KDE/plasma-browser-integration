@@ -13,12 +13,13 @@ Dependencies:
     'frameworks/kdbusaddons': '@latest-kf6'
     'frameworks/knotifications': '@latest-kf6'
     'frameworks/krunner': '@latest-kf6'
-    'frameworks/kactivities': '@latest-kf6'
     'frameworks/purpose': '@latest-kf6'
     'frameworks/kfilemetadata': '@latest-kf6'
     'frameworks/kjobwidgets': '@latest-kf6'
     'frameworks/kservice': '@latest-kf6'
     'frameworks/kstatusnotifieritem': '@latest-kf6'
     'plasma/plasma-workspace': '@same'
+    'plasma/kactivities': '@latest-kf6' # Different branch scheme due to being a former Framework
+
 Options:
   require-passing-tests-on: [ 'Linux', 'FreeBSD']
