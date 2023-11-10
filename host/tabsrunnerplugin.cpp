@@ -121,10 +121,10 @@ void TabsRunnerPlugin::handleData(const QString &event, const QJsonObject &json)
                 qreal relevance = 0;
                 // someone was really busy here, typing the *exact* title or url :D
                 if (text.compare(query, Qt::CaseInsensitive) == 0 || url.toString().compare(query, Qt::CaseInsensitive) == 0) {
-                    match.type = KRunner::QueryMatch::ExactMatch;
+                    match.categoryRelevance = qToUnderlying(KRunner::QueryMatch::CategoryRelevance::Highest);
                     relevance = 1;
                 } else {
-                    match.type = KRunner::QueryMatch::PossibleMatch;
+                    match.categoryRelevance = qToUnderlying(KRunner::QueryMatch::CategoryRelevance::High);
 
                     if (KApplicationTrader::isSubsequence(query, text, Qt::CaseInsensitive)) {
                         relevance = 0.85;
