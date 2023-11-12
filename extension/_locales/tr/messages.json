@@ -30,13 +30,13 @@
         "message": "Bilinmeyen Hata"
     },
     "kdeconnect_call_device": {
-        "message": "'$1' aygıtında ara"
+        "message": "'$1' Aygıtında Ara"
     },
     "kdeconnect_open_device": {
-        "message": "'$1' aygıtında aç"
+        "message": "'$1' Aygıtında Aç"
     },
     "kdeconnect_open_via": {
-        "message": "KDE Bağlan ile aç"
+        "message": "KDE Bağlan ile Aç"
     },
     "options_about_bugs": {
         "message": "Bir sorun bulursanız lütfen <a href=\"$1\">açık hatalar listesi</a>ni denetleyin ve sonrasında <a href=\"$2\">bir hata raporu</a> gönderin."
@@ -180,6 +180,6 @@
         "message": "Paylaşılan İçerik"
     },
     "store_description": {
-        "message": "Multitask efficiently by controlling browser functions from the desktop, even while Chrome is in the background. Manage audio and video playback, check downloads in the notification area, send files to your phone using KDE Connect and more inside the KDE Plasma Desktop!\\n\\nThe plasma-browser-integration package must be installed for this extension to work. It should be available from your distribution's package manager when running Plasma 5.13 or later.\\n\\nNOTE: This extension is not supported on Debian."
+        "message": "Tarayıcı işlevlerini masaüstünden denetleyerek efektif bir biçimde birden çok işle uğraşın, Chrome arka planda olsu bile. Ses çalmayı ve video oynatmayı denetleyin, bildirim alanında indirmeleri izleyin, KDE Connect ile telefonunuza dosyalar gönderin ve KDE Plasma Masaüstü içinde çok daha fazlasını yapın!\\n\\nBu uzantının çalışması için plasma-browser-integration-package kurulu olmalıdır. Plasma 5.13 ve sonrası sürümlerde dağıtımınızın paket yöneticisinden olması gerekir.\\n\\nNOT: Bu uzantı Debian üzerinde desteklenmemektedir."
     }
 }
