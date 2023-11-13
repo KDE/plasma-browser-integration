@@ -30,10 +30,10 @@
         "message": "Bilinmeyen Hata"
     },
     "kdeconnect_call_device": {
-        "message": "'$1' aygıtında ara"
+        "message": "'$1' Aygıtında Ara"
     },
     "kdeconnect_open_device": {
-        "message": "'$1' aygıtında aç"
+        "message": "'$1' Aygıtında Aç"
     },
     "kdeconnect_open_via": {
         "message": "KDE Connect ile aç"
