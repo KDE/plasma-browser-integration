@@ -17,7 +17,7 @@
 #include <QMenu>
 #include <QTimer>
 
-#include <KActivities/ResourceInstance>
+#include <PlasmaActivities/ResourceInstance>
 #include <KConfig>
 #include <KConfigGroup>
 #include <KIO/ApplicationLauncherJob>

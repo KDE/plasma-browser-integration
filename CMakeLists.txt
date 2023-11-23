@@ -43,7 +43,7 @@ find_package(KF6 ${KF6_MIN_VERSION} REQUIRED COMPONENTS
     StatusNotifierItem
 )
 
-find_package(KF6Activities ${PROJECT_VERSION} CONFIG REQUIRED)
+find_package(PlasmaActivities ${PROJECT_VERSION} CONFIG REQUIRED)
 find_package(LibTaskManager ${PROJECT_VERSION} CONFIG REQUIRED)
 
 add_definitions(-DQT_NO_NARROWING_CONVERSIONS_IN_CONNECT)

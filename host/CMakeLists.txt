@@ -40,7 +40,7 @@ target_link_libraries(
     Qt::DBus
     Qt::Gui
     Qt::Widgets
-    KF6::Activities
+    Plasma::Activities
     KF6::ConfigCore
     KF6::CoreAddons
     KF6::Crash

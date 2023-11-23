@@ -12,7 +12,7 @@
 #include <QGuiApplication>
 #include <QJsonObject>
 
-#include <KActivities/ResourceInstance>
+#include <PlasmaActivities/ResourceInstance>
 #include <KFileMetaData/UserMetaData>
 #include <KLocalizedString>
 #include <KUiServerV2JobTracker>
