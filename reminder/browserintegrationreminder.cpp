@@ -38,7 +38,7 @@ BrowserIntegrationReminder::BrowserIntegrationReminder(QObject *parent, const QL
     : KDEDModule(parent)
 {
     m_debug = qEnvironmentVariableIsSet("PLASMA_BROWSE_REMIND_FORCE");
-    auto config = KSharedConfig::openConfig()->group("PlasmaBrowserIntegration");
+    auto config = KSharedConfig::openConfig()->group(QStringLiteral("PlasmaBrowserIntegration"));
     m_shownCount = config.readEntry("shownCount", 0);
 
     if (m_shownCount > MAX_SHOW_COUNT && !m_debug) {
@@ -135,7 +135,7 @@ void BrowserIntegrationReminder::onBrowserStarted(const QString &browser)
 
     m_sni = new KStatusNotifierItem(this);
     m_shownCount++;
-    auto config = KSharedConfig::openConfig()->group("PlasmaBrowserIntegration");
+    auto config = KSharedConfig::openConfig()->group(QStringLiteral("PlasmaBrowserIntegration"));
     config.writeEntry("shownCount", m_shownCount);
 
     m_sni->setTitle(i18n("Get Plasma Browser Integration"));
@@ -168,7 +168,7 @@ void BrowserIntegrationReminder::onBrowserStarted(const QString &browser)
     auto *action = new QAction(QIcon::fromTheme(QStringLiteral("view-hidden")), i18n("Do not show again"));
     menu->addAction(action);
     connect(action, &QAction::triggered, this, [this]() {
-        auto config = KSharedConfig::openConfig()->group("PlasmaBrowserIntegration");
+        auto config = KSharedConfig::openConfig()->group(QStringLiteral("PlasmaBrowserIntegration"));
         config.writeEntry("shownCount", 100);
         disableAutoload();
     });
