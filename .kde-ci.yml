@@ -19,7 +19,7 @@ Dependencies:
     'frameworks/kservice': '@latest-kf6'
     'frameworks/kstatusnotifieritem': '@latest-kf6'
     'plasma/plasma-workspace': '@same'
-    'plasma/kactivities': '@latest-kf6' # Different branch scheme due to being a former Framework
+    'plasma/plasma-activities': '@latest-kf6' # Different branch scheme due to being a former Framework
 
 Options:
   require-passing-tests-on: [ 'Linux', 'FreeBSD']
