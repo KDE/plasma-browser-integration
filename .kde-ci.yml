@@ -18,7 +18,7 @@ Dependencies:
     'frameworks/kjobwidgets': '@latest'
     'frameworks/kservice': '@latest'
     'plasma/plasma-workspace': '@same'
-    'plasma/kactivities': '@latest' # Different branching scheme due to being formerly a Framework
+    'plasma/plasma-activities': '@latest' # Different branching scheme due to being formerly a Framework
 
 Options:
   require-passing-tests-on: [ 'Linux', 'FreeBSD']
