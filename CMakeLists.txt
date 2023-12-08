@@ -4,7 +4,7 @@ project(plasma-browser-integration)
 set(PROJECT_VERSION "5.90.0")
 set(PROJECT_VERSION_MAJOR 6)
 
-set(QT_MIN_VERSION "6.4.0")
+set(QT_MIN_VERSION "6.6.0")
 set(KF6_MIN_VERSION "5.240.0")
 
 set(CMAKE_CXX_STANDARD 20)
