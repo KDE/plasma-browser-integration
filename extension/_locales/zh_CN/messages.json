@@ -126,10 +126,10 @@
         "message": "内容分享"
     },
     "options_plugin_tabsrunner_description": {
-        "message": "请确保在 <a id=\"$1\" href=\"$2\">Plasma 搜索设置</a>中启用了“浏览器标签”模块。"
+        "message": "请确保在 <a id=\"$1\" href=\"$2\">Plasma 搜索设置</a>中启用了“浏览器标签页”模块。"
     },
     "options_plugin_tabsrunner_title": {
-        "message": "在“运行命令”窗口中查找浏览器标签"
+        "message": "在“运行命令”窗口中查找浏览器标签页"
     },
     "options_save_failed": {
         "message": "保存设置失败"
