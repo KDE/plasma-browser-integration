@@ -60,7 +60,7 @@
         "message": "ホストのバージョン: $1"
     },
     "options_about_kde": {
-        "message": "KDE はソフトウェアエンジニア、アーティスト、作家、翻訳者、<a href=\"%1\">フリーソフトウェア</a>の開発に協力する人々による世界的なコミュニティです。KDE は Plasma デスクトップ環境や、数百ものアプリケーション、それらをサポートするたくさんのライブラリを作り出しています。KDE は協力事業です: 一つの企業が方向性や製品をコントロールすることはありません。代わりに、私達は世界最高級のフリーソフトウェアを作成するという共通のゴールを達成するために共に働いています。あなたを含む誰もが KDE に<a href=\"%2\">参加して貢献</a>することが歓迎されています。<a href=\"%3\">%3</a>を訪れて KDE Community と私達が作り出したソフトウェアの詳細情報をご覧ください。"
+        "message": "KDE はソフトウェアエンジニア、アーティスト、作家、翻訳者、<a href=\"$1\">フリーソフトウェア</a>の開発に協力する人々による世界的なコミュニティです。KDE は Plasma デスクトップ環境や、数百ものアプリケーション、それらをサポートするたくさんのライブラリを作り出しています。KDE は協力事業です: 一つの企業が方向性や製品をコントロールすることはありません。代わりに、私達は世界最高級のフリーソフトウェアを作成するという共通のゴールを達成するために共に働いています。あなたを含む誰もが KDE に<a href=\"$2\">参加して貢献</a>することが歓迎されています。<a href=\"$3\">$3</a> を訪れて KDE Community と私達が作り出したソフトウェアの詳細情報をご覧ください。"
     },
     "options_about_license": {
         "message": "ライセンス: <a href=\"$1\">GNU General Public License Version 3</a>"
@@ -96,13 +96,13 @@
         "message": "通知エリアにダウンロードを表示"
     },
     "options_plugin_historyrunner_description": {
-        "message": "この機能を使用するには<a id=\"$1\" href=\"$2\">追加の許可</a>が必要かもしれません。"
+        "message": "この機能を使用するには<a id=\"$1\" href=\"$2\">追加の権限</a>が必要かもしれません。"
     },
     "options_plugin_historyrunner_title": {
         "message": "ブラウザ履歴を検索"
     },
     "options_plugin_kdeconnect_description": {
-        "message": "リンクに <a href=\"$1\">KDE Connect</a> を用いてペアリングされたデバイスへリンクを送るコンテキストメニューのエントリを追加します。"
+        "message": "<a href=\"$1\">KDE Connect</a> を用いてペアリングされたデバイスへリンクを送るためのコンテキストメニューのエントリを追加します。"
     },
     "options_plugin_kdeconnect_title": {
         "message": "KDE Connect で送信"
@@ -111,7 +111,7 @@
         "message": "メディアコントローラー Plasmoid から動画やオーディオプレーヤーの操作ができるようになります。"
     },
     "options_plugin_mpris_media_sessions_description": {
-        "message": "再生中のコンテンツのメタデータとサムネイルを展開する"
+        "message": "再生中のコンテンツのメタデータとサムネイルを取得する"
     },
     "options_plugin_mpris_media_sessions_title": {
         "message": "強化されたメディアコントロール"
@@ -147,7 +147,7 @@
         "message": "Plasma Integration 設定"
     },
     "permission_request_already": {
-        "message": "この許可は既に与えられています。"
+        "message": "この権限は既に与えられています。"
     },
     "permission_request_button_request": {
         "message": "許可を要求"
@@ -156,13 +156,13 @@
         "message": "許可を取り消す"
     },
     "permission_request_historyrunner_1": {
-        "message": "ブラウザの履歴を検索するためには、追加の許可が必要です"
+        "message": "ブラウザの履歴を検索するためには、追加の権限が必要です。"
     },
     "permission_request_historyrunner_2": {
         "message": "<a id=\"$1\" href=\"$2\">Plasma 検索設定</a>でこの機能を無効化できます。"
     },
     "permission_request_title": {
-        "message": "追加の許可が必要です"
+        "message": "追加の権限が必要です"
     },
     "purpose_share": {
         "message": "共有..."
