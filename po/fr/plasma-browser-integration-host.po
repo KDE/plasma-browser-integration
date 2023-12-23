@@ -1,5 +1,5 @@
 # William Oprandi <william.oprandi@gmail.com>, 2019.
-# Xavier Besnard <xavier.besnard@neuf.fr>, 2021.
+# Xavier Besnard <xavier.besnard@kde.org>, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-browser-integration\n"
