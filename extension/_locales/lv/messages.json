@@ -1,0 +1,185 @@
+{
+    "browseraction_mpris_enable_on": {
+        "message": "Atļaut multivides vadību:"
+    },
+    "browseraction_mpris_title": {
+        "message": "Multivides vadība"
+    },
+    "browseraction_title": {
+        "message": "„Plasma“ pārlūka integrācija"
+    },
+    "general_error_host_disconnected_title": {
+        "message": "Vietējā saimnieksistēma negaidīti atslēdzās."
+    },
+    "general_error_not_supported_os": {
+        "message": "Šis paplašinājums ir atbalstīts tikai „Linux“ un „FreeBSD“ sistēmām."
+    },
+    "general_error_not_supported_os_title": {
+        "message": "Neatbalstīta operētājsistēma"
+    },
+    "general_error_startup_failed": {
+        "message": "Pārliecinieties, ka „plasma-browser-integration“ pakotne ir korekti instalēta un ka sistēmā darbojas „Plasma“ 5.13 vai vēlāka versija."
+    },
+    "general_error_startup_failed_title": {
+        "message": "Neizdevās savienoties ar vietējo saimnieksistēmu"
+    },
+    "general_error_startup_failed_wiki_link": {
+        "message": "Vairāk informācijas atradīsiet projekta vikilapā"
+    },
+    "general_error_unknown": {
+        "message": "Nezināma kļūda"
+    },
+    "kdeconnect_call_device": {
+        "message": "Zvanīt ierīcē „$1“"
+    },
+    "kdeconnect_open_device": {
+        "message": "Atvērt ierīcē „$1“"
+    },
+    "kdeconnect_open_via": {
+        "message": "Atvērt ar „KDE Connect“"
+    },
+    "options_about_bugs": {
+        "message": "Ja atrodat kļūdu, pārbaudiet <a href=\"$1\">ziņoto kļūdu sarakstu</a>, bet, ja par kļūdu nav ziņots,<a href=\"$2\">iesniedziet kļūdas ziņojumu</a>."
+    },
+    "options_about_changelog_link": {
+        "message": "Skatīt izmaiņu žurnālu"
+    },
+    "options_about_copyright": {
+        "message": "© 2017–2020 Kai Uwe Broulik un David Edmundson"
+    },
+    "options_about_created_by_kde": {
+        "message": "Šo pārlūkprogrammas paplašinājumu izveidoja <a href=\"$1\">KDE kopiena</a>. Vairāk informācijas par šo projektu atradīsiet <a href=\"$2\">KDE kopienas vikilapā</a>."
+    },
+    "options_about_donate": {
+        "message": "Ja redzētais patīk, apsveriet a href=\"$1\">ziedot KDE</a>, kas mums ļaus turpināt veidot labāko iespējamo brīvo programmatūru."
+    },
+    "options_about_extension_version": {
+        "message": "Paplašinājuma versija: $1"
+    },
+    "options_about_host_version": {
+        "message": "Saimnieksistēmas versija: $1"
+    },
+    "options_about_kde": {
+        "message": "KDE ir vispasaules programmētāju, mākslinieku, rakstnieku, tulkotāju un citu veidotāju kopiena, kuras mērķis ir <a href=\"$1\">brīvās programmatūras</a> izstrāde. KDE veido „Plasma“ darbvirsmu, simtiem programmu un daudzas programmatūras bibliotēkas, kas ir tām pamatā. KDE ir uz sadarbību vērsts projekts — tā virzību vai galarezultātu nekontrolē kāda atsevišķa vienība, bet gan mēs strādājam kopā, lai sasniegtu vienotu mērķi radīt pasaulē labāko brīvo programmatūru. Visi ir aicināti <a href=\"$2\">pievienoties un iesaistīties</a> KDE projektā, tostarp arī tu. Apmeklējiet <a href=\"$3\">$3</a>, lai uzzinātu vairāk par KDE kopienu un mūsu veidoto programmatūru."
+    },
+    "options_about_license": {
+        "message": "Licence: <a href=\"$1\">GNU Vispārējā publiskā licence, 3. versija</a>"
+    },
+    "options_about_translated_by": {
+        "message": "Tulkoja: $1"
+    },
+    "options_about_translators": {
+        "message": "Toms Trasūns"
+    },
+    "options_heading_krunner": {
+        "message": "„Plasma“ meklēšana"
+    },
+    "options_not_supported_os": {
+        "message": "Jūsu operētājsistēma neatbalsta šo paplašinājumu."
+    },
+    "options_plugin_breezeScrollBars_description": {
+        "message": "Tas var bojāt tīmekļa vietņu izskatu, kuru dizainā jau tiek izmantots pielāgots ritjoslu stils."
+    },
+    "options_plugin_breezeScrollBars_title": {
+        "message": "Izmantot „Breeze“ stila ritjoslas"
+    },
+    "options_plugin_downloads_addToRecentDocuments": {
+        "message": "Lejupielādētās datnes pievienot nesenajiem dokumentiem"
+    },
+    "options_plugin_downloads_saveOriginUrl": {
+        "message": "Datnes atribūtos saglabāt tīmekļa vietnes adresi, no kuras datnes tika lejupielādēta"
+    },
+    "options_plugin_downloads_saveOriginUrl_description": {
+        "message": "Piezīme: adrese var saturēt sensitīvu informāciju, kuru varat nejauši atklāt, ja šādai datnei ar adresi piekļūst citi cilvēki."
+    },
+    "options_plugin_downloads_title": {
+        "message": "Paziņojumu zonā rādīt lejupielādes"
+    },
+    "options_plugin_historyrunner_description": {
+        "message": "Šai iespējai var būt nepieciešamas <a id=\"$1\" href=\"$2\">papildu atļaujas</a>."
+    },
+    "options_plugin_historyrunner_title": {
+        "message": "Pārmeklēt pārlūkprogrammas vēsturi"
+    },
+    "options_plugin_kdeconnect_description": {
+        "message": "Saitēm pievienot konteksta izvēlnes ierakstu, kas ļauj tās nosūtīt uz telefonu un citām sapārotām ierīcēm, izmantojot <a href=\"$1\">KDE Connect</a>."
+    },
+    "options_plugin_kdeconnect_title": {
+        "message": "Nosūtīt ar „KDE Connect“"
+    },
+    "options_plugin_mpris_description": {
+        "message": "Ļauj kontrolēt tīmekļa vietnēs iegultus video un audio atskaņotājus, izmantojot Multivides vadības plazmoīdu."
+    },
+    "options_plugin_mpris_media_sessions_description": {
+        "message": "Izvilkt atskaņotā satura metadatus un sīktēlus."
+    },
+    "options_plugin_mpris_media_sessions_title": {
+        "message": "Papildināta multivides vadība"
+    },
+    "options_plugin_mpris_title": {
+        "message": "Multivides vadība"
+    },
+    "options_plugin_purpose_description": {
+        "message": "Pievienot „Kopīgot...“ konteksta izvēlnes ierakstu, kas ļauj tīmekļa vietnēs atvērt lodziņu, lai ar saturu dalītos caur „Web Share API“."
+    },
+    "options_plugin_purpose_title": {
+        "message": "Satura kopīgošana"
+    },
+    "options_plugin_tabsrunner_description": {
+        "message": "Pārliecinieties, ka <a id=\"$1\" href=\"$2\">„Plasma“ meklēšanas iestatījumos</a> ir ieslēgts „Pārlūka ciļņu“ modulis."
+    },
+    "options_plugin_tabsrunner_title": {
+        "message": "Atrodiet pārlūkprogrammas cilnes „Palaista komandu“ logā."
+    },
+    "options_save_failed": {
+        "message": "Neizdevās saglabāt iestatījumus"
+    },
+    "options_save_success": {
+        "message": "Iestatījumi ir veiksmīgi saglabāti"
+    },
+    "options_tab_about": {
+        "message": "Par"
+    },
+    "options_tab_general": {
+        "message": "Pamata"
+    },
+    "options_title": {
+        "message": "„Plasma“ integrācijas iestatījumi"
+    },
+    "permission_request_already": {
+        "message": "Šī atļauja ir jau piešķirta."
+    },
+    "permission_request_button_request": {
+        "message": "Pieprasīt atļauju"
+    },
+    "permission_request_button_revoke": {
+        "message": "Atsaukt atļauju"
+    },
+    "permission_request_historyrunner_1": {
+        "message": "Lai meklētu pārlūkprogrammas vēsturē, ir nepieciešamas papildu atļaujas."
+    },
+    "permission_request_historyrunner_2": {
+        "message": "Šo iespēju varat izslēgt<a id=\"$1\" href=\"$2\">„Plasma“ meklēšanas iestatījumos</a>."
+    },
+    "permission_request_title": {
+        "message": "Nepieciešamas papildu atļaujas"
+    },
+    "purpose_share": {
+        "message": "Kopīgot..."
+    },
+    "purpose_share_failed_text": {
+        "message": "Neizdevās kopīgot šo saturu: $1"
+    },
+    "purpose_share_failed_title": {
+        "message": "Kopīgošana neizdevās"
+    },
+    "purpose_share_finished_text": {
+        "message": "Kopīgotā satura saite ($1) ir iekopēt starpliktuvē."
+    },
+    "purpose_share_finished_title": {
+        "message": "Saturs ir kopīgots"
+    },
+    "store_description": {
+        "message": "Efektīvi dariet vairākus darbus vienlaicīgi, kontrolējot pārlūkprogrammas funkcijas no darbvirsmas pat tad, ja „Chrome“ ir ieslēgts fonā. Pārvaldiet audio un video atskaņošanu, paziņojumu zonā apskatiet lejupielādes, nosūtiet datnes uz telefonu ar „KDE Connect“ un daudz ko citu no „KDE Plasma“ darbvirsmas!\\n\\nLai šis papildinājums strādātu, ierīcē ir jāieinstalē „plasma-browser-integration“ pakotne. To vajadzētu nodrošināt jūsu operētājsistēmas versijas izplatītājam, kas piedāvā „Plasma“ 5.13. vai vēlāku versiju.\\n\\nPIEZĪME: „Debian“ šo paplašinājumu neatbalsta."
+    }
+}
