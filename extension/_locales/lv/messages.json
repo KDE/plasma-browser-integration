@@ -51,7 +51,7 @@
         "message": "Šo pārlūkprogrammas paplašinājumu izveidoja <a href=\"$1\">KDE kopiena</a>. Vairāk informācijas par šo projektu atradīsiet <a href=\"$2\">KDE kopienas vikilapā</a>."
     },
     "options_about_donate": {
-        "message": "Ja redzētais patīk, apsveriet a href=\"$1\">ziedot KDE</a>, kas mums ļaus turpināt veidot labāko iespējamo brīvo programmatūru."
+        "message": "Ja redzētais patīk, apsveriet <a href=\"$1\">ziedot KDE</a>, kas mums ļaus turpināt veidot labāko iespējamo brīvo programmatūru."
     },
     "options_about_extension_version": {
         "message": "Paplašinājuma versija: $1"
