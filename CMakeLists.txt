@@ -4,6 +4,7 @@ project(plasma-browser-integration)
 set(PROJECT_VERSION "5.92.90")
 set(PROJECT_VERSION_MAJOR 6)
 
+set(PROJECT_DEP_VERSION "6.0.80")
 set(QT_MIN_VERSION "6.6.0")
 set(KF6_MIN_VERSION "5.240.0")
 
@@ -43,8 +44,8 @@ find_package(KF6 ${KF6_MIN_VERSION} REQUIRED COMPONENTS
     StatusNotifierItem
 )
 
-find_package(PlasmaActivities ${PROJECT_VERSION} CONFIG REQUIRED)
-find_package(LibTaskManager ${PROJECT_VERSION} CONFIG REQUIRED)
+find_package(PlasmaActivities ${PROJECT_DEP_VERSION} CONFIG REQUIRED)
+find_package(LibTaskManager ${PROJECT_DEP_VERSION} CONFIG REQUIRED)
 
 add_definitions(-DQT_NO_NARROWING_CONVERSIONS_IN_CONNECT)
 ecm_set_disabled_deprecation_versions(QT 5.15.2
