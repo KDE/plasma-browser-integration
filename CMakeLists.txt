@@ -1,10 +1,10 @@
 cmake_minimum_required(VERSION 3.16)
 
 project(plasma-browser-integration)
-set(PROJECT_VERSION "5.92.90")
+set(PROJECT_VERSION "5.93.0")
 set(PROJECT_VERSION_MAJOR 6)
 
-set(PROJECT_DEP_VERSION "5.92.90")
+set(PROJECT_DEP_VERSION "5.93.0")
 set(QT_MIN_VERSION "6.6.0")
 set(KF6_MIN_VERSION "5.240.0")
 
