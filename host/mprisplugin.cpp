@@ -32,7 +32,7 @@ MPrisPlugin::MPrisPlugin(QObject *parent)
         return;
     }
 
-    m_propertyChangeSignalTimer.setInterval(0);
+    m_propertyChangeSignalTimer.setInterval(200);
     m_propertyChangeSignalTimer.setSingleShot(true);
     connect(&m_propertyChangeSignalTimer, &QTimer::timeout, this, &MPrisPlugin::sendPropertyChanges);
 
