@@ -20,6 +20,21 @@
 
 static const QString s_serviceName = QStringLiteral("org.mpris.MediaPlayer2.plasma-browser-integration");
 
+static QString sanitizedString(const QString &str)
+{
+    return str.left(200);
+}
+
+static QString sanitizedUrlDisplayString(const QUrl &url)
+{
+    // No blob, no file, please.
+    if (url.scheme() != QLatin1String("https") && url.scheme() != QLatin1String("http")) {
+        return QString();
+    }
+
+    return url.toDisplayString().left(2083); // Supposed limit of what Chrome allows
+}
+
 MPrisPlugin::MPrisPlugin(QObject *parent)
     : AbstractBrowserPlugin(QStringLiteral("mpris"), 1, parent)
     , m_root(new MPrisRoot(this))
@@ -426,14 +441,14 @@ QVariantMap MPrisPlugin::metadata() const
 
     const QString title = effectiveTitle();
     if (!title.isEmpty()) {
-        metadata.insert(QStringLiteral("xesam:title"), title);
+        metadata.insert(QStringLiteral("xesam:title"), sanitizedString(title));
     }
 
-    if (m_url.isValid()) {
-        metadata.insert(QStringLiteral("xesam:url"), m_url.toDisplayString());
+    if (const QString urlString = sanitizedUrlDisplayString(m_url); !urlString.isEmpty()) {
+        metadata.insert(QStringLiteral("xesam:url"), urlString);
     }
-    if (m_mediaSrc.isValid()) {
-        metadata.insert(QStringLiteral("kde:mediaSrc"), m_mediaSrc.toDisplayString());
+    if (const QString mediaSrc = sanitizedUrlDisplayString(m_mediaSrc); !mediaSrc.isEmpty()) {
+        metadata.insert(QStringLiteral("kde:mediaSrc"), mediaSrc);
     }
     if (m_length > 0) {
         metadata.insert(QStringLiteral("mpris:length"), m_length);
@@ -443,22 +458,22 @@ QVariantMap MPrisPlugin::metadata() const
     // https://source.chromium.org/chromium/chromium/src/+/main:services/media_session/public/cpp/media_metadata.h;l=46;drc=098756533733ea50b2dcb1c40d9a9e18d49febbe
     // MediaMetadata.artist is of string type, but "xesam:artist" is of stringlist type
     if (!m_artist.isEmpty()) {
-        metadata.insert(QStringLiteral("xesam:artist"), QStringList{m_artist});
+        metadata.insert(QStringLiteral("xesam:artist"), QStringList{sanitizedString(m_artist)});
     }
 
     QUrl artUrl = m_artworkUrl;
     if (!artUrl.isValid()) {
         artUrl = m_posterUrl;
     }
-    if (artUrl.isValid()) {
-        metadata.insert(QStringLiteral("mpris:artUrl"), artUrl.toDisplayString());
+    if (const QString artUrlStr = sanitizedUrlDisplayString(artUrl); !artUrlStr.isEmpty()) {
+        metadata.insert(QStringLiteral("mpris:artUrl"), artUrlStr);
     }
 
     if (!m_album.isEmpty()) {
-        metadata.insert(QStringLiteral("xesam:album"), m_album);
+        metadata.insert(QStringLiteral("xesam:album"), sanitizedString(m_album));
         // when we don't have artist information use the scheme+domain as "album" (that's what Chrome on Android does)
     } else if (m_artist.isEmpty() && m_url.isValid()) {
-        metadata.insert(QStringLiteral("xesam:album"), m_url.toDisplayString(QUrl::RemovePath | QUrl::RemoveQuery | QUrl::RemoveFragment));
+        metadata.insert(QStringLiteral("xesam:album"), sanitizedString(m_url.toDisplayString(QUrl::RemovePath | QUrl::RemoveQuery | QUrl::RemoveFragment)));
     }
 
     return metadata;
