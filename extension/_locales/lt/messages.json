@@ -33,7 +33,7 @@
         "message": "Skambinti įrenginiu „$1“"
     },
     "kdeconnect_open_device": {
-        "message": "Atverti įrenginyje \"$1\""
+        "message": "Atverti įrenginyje „$1“"
     },
     "kdeconnect_open_via": {
         "message": "Atverti per KDE Connect"
@@ -60,7 +60,7 @@
         "message": "Mazgo versija: $1"
     },
     "options_about_kde": {
-        "message": "KDE yra pasaulinio masto bendruomenė, kurią sudaro programinės įrangos inžinieriai, dailininkai, rašytojai, vertėjai bei kūrėjai, kurie yra pasišventę <a href=\"$1\">laisvosios programinės įrangos</a> plėtojimui. KDE kuria Plasma darbalaukio aplinką, šimtus programų ir daugybę jas palaikančių bibliotekų. KDE yra bendradarbiavimo organizacija: jokia esybė nevaldo jos krypties ar produktų. Vietoj to, mes kartu dirbame, kad pasiektume bendrą tikslą - sukurti geriausią pasaulyje laisvąją programinę įrangą. Visi, įskaitant ir jus, yra kviečiami <a href=\"$2\">prisijungti ir talkinti</a> KDE. Išsamesnei informacijai apie KDE bendruomenę ir mūsų kuriamą programinę įrangą, apsilankykite <a href=\"$3\">$3</a>."
+        "message": "KDE yra pasaulinio masto bendruomenė, kurią sudaro programinės įrangos inžinieriai, dailininkai, rašytojai, vertėjai bei kūrėjai, kurie yra pasišventę <a href=\"$1\">laisvosios programinės įrangos</a> plėtojimui. KDE kuria Plasma darbalaukio aplinką, šimtus programų ir daugybę jas palaikančių bibliotekų. KDE yra bendradarbiavimo organizacija: jokia esybė nevaldo jos krypties ar produktų. Vietoj to, mes kartu dirbame, kad pasiektume bendrą tikslą – sukurtume geriausią pasaulyje laisvąją programinę įrangą. Visi, įskaitant ir jus, yra kviečiami <a href=\"$2\">prisijungti ir talkinti</a> KDE. Išsamesnei informacijai apie KDE bendruomenę ir mūsų kuriamą programinę įrangą, apsilankykite <a href=\"$3\">$3</a>."
     },
     "options_about_license": {
         "message": "Licencija: <a href=\"$1\">GNU Bendroji Viešoji Licencija, versija 3</a>"
