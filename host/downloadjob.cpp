@@ -15,6 +15,7 @@
 #include <PlasmaActivities/ResourceInstance>
 #include <KFileMetaData/UserMetaData>
 #include <KLocalizedString>
+#include <KStringHandler>
 #include <KUiServerV2JobTracker>
 
 #include <KIO/Global>
@@ -292,7 +293,7 @@ void DownloadJob::updateDescription()
 {
     Q_EMIT description(this,
                        i18nc("Job heading, like 'Copying'", "Downloading"),
-                       qMakePair<QString, QString>(i18nc("The URL being downloaded", "Source"), originUrl().toDisplayString()),
+                       qMakePair<QString, QString>(i18nc("The URL being downloaded", "Source"), KStringHandler::csqueeze(originUrl().toDisplayString(), 200)),
                        qMakePair<QString, QString>(i18nc("The location being downloaded to", "Destination"), m_destination.toLocalFile()));
 }
 
