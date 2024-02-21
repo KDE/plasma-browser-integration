@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-browser-integration-host\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2021-08-29 00:19+0000\n"
+"POT-Creation-Date: 2024-02-21 03:08+0000\n"
 "PO-Revision-Date: 2021-05-03 18:56+0200\n"
 "Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
 "Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Generator: Gtranslator 40.0\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-#: downloadjob.cpp:134
+#: downloadjob.cpp:135
 #, kde-format
 msgid ""
 "This type of file can harm your computer. If you want to keep it, accept "
@@ -26,89 +26,89 @@ msgstr ""
 "Tento typ súboru môže poškodiť váš počítač. Ak ho chcete uchovať, prijmite "
 "toto preberanie z okna prehliadača."
 
-#: downloadjob.cpp:231
+#: downloadjob.cpp:232
 #, kde-format
 msgid "Access denied."
 msgstr "Prístup odmietnutý."
 
-#: downloadjob.cpp:232
+#: downloadjob.cpp:233
 #, kde-format
 msgid "Insufficient free space."
 msgstr "Nedostatok voľného miesta."
 
-#: downloadjob.cpp:233
+#: downloadjob.cpp:234
 #, kde-format
 msgid "The file name you have chosen is too long."
 msgstr "Zvolený názov súboru je príliš dlhý."
 
-#: downloadjob.cpp:234
+#: downloadjob.cpp:235
 #, kde-format
 msgid "The file is too large to be downloaded."
 msgstr "Súbor je príliš veľký na stiahnutie."
 
-#: downloadjob.cpp:236
+#: downloadjob.cpp:237
 #, kde-format
 msgid "The file possibly contains malicious contents."
 msgstr "Súbor môže obsahovať škodlivý obsah."
 
-#: downloadjob.cpp:237
+#: downloadjob.cpp:238
 #, kde-format
 msgid "A temporary error has occurred. Please try again later."
 msgstr "Nastal dočasný problém. Skúste prosím znova neskôr."
 
-#: downloadjob.cpp:239
+#: downloadjob.cpp:240
 #, kde-format
 msgid "A network error has occurred."
 msgstr "Nastala chyba siete."
 
-#: downloadjob.cpp:240
+#: downloadjob.cpp:241
 #, kde-format
 msgid "The network operation timed out."
 msgstr "Sieťová operácia trvala prílš dlho."
 
-#: downloadjob.cpp:241
+#: downloadjob.cpp:242
 #, kde-format
 msgid "The network connection has been lost."
 msgstr "Sieťové spojenie bolo stratené."
 
-#: downloadjob.cpp:242
+#: downloadjob.cpp:243
 #, kde-format
 msgid "The server is no longer reachable."
 msgstr "Server už nie je dostupný."
 
-#: downloadjob.cpp:244
+#: downloadjob.cpp:245
 #, kde-format
 msgid "A server error has occurred."
 msgstr "Nastala chyba servera."
 
-#: downloadjob.cpp:248
+#: downloadjob.cpp:249
 #, kde-format
 msgid "The server does not have the requested data."
 msgstr "Server nemá požadované údaje."
 
-#: downloadjob.cpp:250
+#: downloadjob.cpp:251
 #, kde-format
 msgid "The browser application closed unexpectedly."
 msgstr "Aplikácia prehliadača sa neočakávane zatvorila."
 
-#: downloadjob.cpp:256
+#: downloadjob.cpp:257
 #, kde-format
 msgid "An unknown error occurred while downloading."
 msgstr "Počas preberania došlo k neznámej chybe."
 
-#: downloadjob.cpp:294
+#: downloadjob.cpp:295
 #, kde-format
 msgctxt "Job heading, like 'Copying'"
 msgid "Downloading"
 msgstr "Sťahovanie"
 
-#: downloadjob.cpp:295
+#: downloadjob.cpp:296
 #, kde-format
 msgctxt "The URL being downloaded"
 msgid "Source"
 msgstr "Zdroj"
 
-#: downloadjob.cpp:296
+#: downloadjob.cpp:297
 #, kde-format
 msgctxt "The location being downloaded to"
 msgid "Destination"

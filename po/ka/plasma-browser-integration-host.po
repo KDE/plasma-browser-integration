@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-browser-integration\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2021-08-29 00:19+0000\n"
+"POT-Creation-Date: 2024-02-21 03:08+0000\n"
 "PO-Revision-Date: 2022-05-26 13:26+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0.1\n"
 
-#: downloadjob.cpp:134
+#: downloadjob.cpp:135
 #, kde-format
 msgid ""
 "This type of file can harm your computer. If you want to keep it, accept "
@@ -27,89 +27,89 @@ msgstr ""
 "ამ ტიპის ფაილს თქვენი კომპიუტერის ვნება შეუძლია. თუ გნებავთ, შეინახოთ ის, "
 "დაეთანხმეთ გადმოწერას ბრაუზერის ფანჯრიდან."
 
-#: downloadjob.cpp:231
+#: downloadjob.cpp:232
 #, kde-format
 msgid "Access denied."
 msgstr "წვდომა აკრძალულია."
 
-#: downloadjob.cpp:232
+#: downloadjob.cpp:233
 #, kde-format
 msgid "Insufficient free space."
 msgstr "დისკზე არასაკმარისი ადგილია."
 
-#: downloadjob.cpp:233
+#: downloadjob.cpp:234
 #, kde-format
 msgid "The file name you have chosen is too long."
 msgstr "ფაილის არჩეული სახელი ძალიან გრძელია."
 
-#: downloadjob.cpp:234
+#: downloadjob.cpp:235
 #, kde-format
 msgid "The file is too large to be downloaded."
 msgstr "ფაილი გადმოსაწერად ძალიან დიდია."
 
-#: downloadjob.cpp:236
+#: downloadjob.cpp:237
 #, kde-format
 msgid "The file possibly contains malicious contents."
 msgstr "ფაილის შემცველობა დიდი ალბათობით საეჭვოა."
 
-#: downloadjob.cpp:237
+#: downloadjob.cpp:238
 #, kde-format
 msgid "A temporary error has occurred. Please try again later."
 msgstr "დროებითი შეცდომა. მოგვიანებით სცადეთ."
 
-#: downloadjob.cpp:239
+#: downloadjob.cpp:240
 #, kde-format
 msgid "A network error has occurred."
 msgstr "ქსელური შეცდომა."
 
-#: downloadjob.cpp:240
+#: downloadjob.cpp:241
 #, kde-format
 msgid "The network operation timed out."
 msgstr "ქსელური ოპერაციის ვადა გავიდა."
 
-#: downloadjob.cpp:241
+#: downloadjob.cpp:242
 #, kde-format
 msgid "The network connection has been lost."
 msgstr "ქსელური შეერთების შეცდომა."
 
-#: downloadjob.cpp:242
+#: downloadjob.cpp:243
 #, kde-format
 msgid "The server is no longer reachable."
 msgstr "სერვერი მიუწვდომელია."
 
-#: downloadjob.cpp:244
+#: downloadjob.cpp:245
 #, kde-format
 msgid "A server error has occurred."
 msgstr "სერვერის შეცდომა."
 
-#: downloadjob.cpp:248
+#: downloadjob.cpp:249
 #, kde-format
 msgid "The server does not have the requested data."
 msgstr "სერვერს მოთხოვნილი მონაცემები არ გააჩნია."
 
-#: downloadjob.cpp:250
+#: downloadjob.cpp:251
 #, kde-format
 msgid "The browser application closed unexpectedly."
 msgstr "ბრაუზერის აპლიკაცია მოულოდნელად დაიხურა."
 
-#: downloadjob.cpp:256
+#: downloadjob.cpp:257
 #, kde-format
 msgid "An unknown error occurred while downloading."
 msgstr "გადმოწერის უცნობი შეცდომა."
 
-#: downloadjob.cpp:294
+#: downloadjob.cpp:295
 #, kde-format
 msgctxt "Job heading, like 'Copying'"
 msgid "Downloading"
 msgstr "გადმოწერა"
 
-#: downloadjob.cpp:295
+#: downloadjob.cpp:296
 #, kde-format
 msgctxt "The URL being downloaded"
 msgid "Source"
 msgstr "წყარო"
 
-#: downloadjob.cpp:296
+#: downloadjob.cpp:297
 #, kde-format
 msgctxt "The location being downloaded to"
 msgid "Destination"

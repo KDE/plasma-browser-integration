@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-browser-integration\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2021-08-29 00:19+0000\n"
+"POT-Creation-Date: 2024-02-21 03:08+0000\n"
 "PO-Revision-Date: 2021-05-03 06:13+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "|| n%100>=20) ? 1 : 2);\n"
 "X-Generator: Lokalize 20.12.1\n"
 
-#: downloadjob.cpp:134
+#: downloadjob.cpp:135
 #, kde-format
 msgid ""
 "This type of file can harm your computer. If you want to keep it, accept "
@@ -27,89 +27,89 @@ msgstr ""
 "Ten rodzaj pliku może zaszkodzić twojemu komputerowi. Jeśli chcesz go "
 "zachować, to potwierdź pobieranie z okna przeglądarki."
 
-#: downloadjob.cpp:231
+#: downloadjob.cpp:232
 #, kde-format
 msgid "Access denied."
 msgstr "Odmówiono dostępu."
 
-#: downloadjob.cpp:232
+#: downloadjob.cpp:233
 #, kde-format
 msgid "Insufficient free space."
 msgstr "Brak wystarczającej przestrzeni na dysku."
 
-#: downloadjob.cpp:233
+#: downloadjob.cpp:234
 #, kde-format
 msgid "The file name you have chosen is too long."
 msgstr "Nadana nazwa pliku jest zbyt długa."
 
-#: downloadjob.cpp:234
+#: downloadjob.cpp:235
 #, kde-format
 msgid "The file is too large to be downloaded."
 msgstr "Plik jest zbyt duży, aby go pobrać."
 
-#: downloadjob.cpp:236
+#: downloadjob.cpp:237
 #, kde-format
 msgid "The file possibly contains malicious contents."
 msgstr "Plik prawdopodobnie zawiera szkodliwą treść."
 
-#: downloadjob.cpp:237
+#: downloadjob.cpp:238
 #, kde-format
 msgid "A temporary error has occurred. Please try again later."
 msgstr "Wystąpił tymczasowy błąd. Spróbuj ponownie."
 
-#: downloadjob.cpp:239
+#: downloadjob.cpp:240
 #, kde-format
 msgid "A network error has occurred."
 msgstr "Wystąpił błąd sieci."
 
-#: downloadjob.cpp:240
+#: downloadjob.cpp:241
 #, kde-format
 msgid "The network operation timed out."
 msgstr "Upłynął czas oczekiwania na sieć."
 
-#: downloadjob.cpp:241
+#: downloadjob.cpp:242
 #, kde-format
 msgid "The network connection has been lost."
 msgstr "Połączenie sieciowe zostało utracone."
 
-#: downloadjob.cpp:242
+#: downloadjob.cpp:243
 #, kde-format
 msgid "The server is no longer reachable."
 msgstr "Serwer nie jest już osiągalny."
 
-#: downloadjob.cpp:244
+#: downloadjob.cpp:245
 #, kde-format
 msgid "A server error has occurred."
 msgstr "Wystąpił błąd serwera."
 
-#: downloadjob.cpp:248
+#: downloadjob.cpp:249
 #, kde-format
 msgid "The server does not have the requested data."
 msgstr "Serwer nie ma żądanych danych."
 
-#: downloadjob.cpp:250
+#: downloadjob.cpp:251
 #, kde-format
 msgid "The browser application closed unexpectedly."
 msgstr "Aplikacja przeglądarki została nieoczekiwanie zamknięta."
 
-#: downloadjob.cpp:256
+#: downloadjob.cpp:257
 #, kde-format
 msgid "An unknown error occurred while downloading."
 msgstr "Nieznany błąd podczas pobierania."
 
-#: downloadjob.cpp:294
+#: downloadjob.cpp:295
 #, kde-format
 msgctxt "Job heading, like 'Copying'"
 msgid "Downloading"
 msgstr "Pobieranie"
 
-#: downloadjob.cpp:295
+#: downloadjob.cpp:296
 #, kde-format
 msgctxt "The URL being downloaded"
 msgid "Source"
 msgstr "Miejsce źródłowe"
 
-#: downloadjob.cpp:296
+#: downloadjob.cpp:297
 #, kde-format
 msgctxt "The location being downloaded to"
 msgid "Destination"

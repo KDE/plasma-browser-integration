@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-browser-integration\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2021-08-29 00:19+0000\n"
+"POT-Creation-Date: 2024-02-21 03:08+0000\n"
 "PO-Revision-Date: 2020-10-08 09:20+0300\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -17,96 +17,96 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 20.04.2\n"
 
-#: downloadjob.cpp:134
+#: downloadjob.cpp:135
 #, kde-format
 msgid ""
 "This type of file can harm your computer. If you want to keep it, accept "
 "this download from the browser window."
 msgstr ""
 
-#: downloadjob.cpp:231
+#: downloadjob.cpp:232
 #, kde-format
 msgid "Access denied."
 msgstr "Άρνηση πρόσβασης."
 
-#: downloadjob.cpp:232
+#: downloadjob.cpp:233
 #, kde-format
 msgid "Insufficient free space."
 msgstr "Ανεπαρκής ελεύθερος χώρος."
 
-#: downloadjob.cpp:233
+#: downloadjob.cpp:234
 #, kde-format
 msgid "The file name you have chosen is too long."
 msgstr "Το όνομα αρχείου που επιλέξατε είναι πολύ μεγάλο."
 
-#: downloadjob.cpp:234
+#: downloadjob.cpp:235
 #, kde-format
 msgid "The file is too large to be downloaded."
 msgstr "Το αρχείο είναι πολύ μεγάλο για λήψη."
 
-#: downloadjob.cpp:236
+#: downloadjob.cpp:237
 #, kde-format
 msgid "The file possibly contains malicious contents."
 msgstr "Το αρχείο πιθανόν να περιέχει κακόβουλο περιεχόμενο."
 
-#: downloadjob.cpp:237
+#: downloadjob.cpp:238
 #, kde-format
 msgid "A temporary error has occurred. Please try again later."
 msgstr "Παρουσιάστηκε ένα προσωρινό σφάλμα. Προσπαθήστε πάλι αργότερα."
 
-#: downloadjob.cpp:239
+#: downloadjob.cpp:240
 #, kde-format
 msgid "A network error has occurred."
 msgstr "Παρουσιάστηκε σφάλμα στο δίκτυο."
 
-#: downloadjob.cpp:240
+#: downloadjob.cpp:241
 #, kde-format
 msgid "The network operation timed out."
 msgstr "Τέλος χρόνου της δικτυακής λειτουργίας."
 
-#: downloadjob.cpp:241
+#: downloadjob.cpp:242
 #, kde-format
 msgid "The network connection has been lost."
 msgstr "Χάθηκε η σύνδεση με το δίκτυο."
 
-#: downloadjob.cpp:242
+#: downloadjob.cpp:243
 #, kde-format
 msgid "The server is no longer reachable."
 msgstr "Ο εξυπηρετητής δεν είναι πλέον προσβάσιμος."
 
-#: downloadjob.cpp:244
+#: downloadjob.cpp:245
 #, kde-format
 msgid "A server error has occurred."
 msgstr "Παρουσιάστηκε σφάλμα στον εξυπηρετητή."
 
-#: downloadjob.cpp:248
+#: downloadjob.cpp:249
 #, kde-format
 msgid "The server does not have the requested data."
 msgstr "Ο εξυπηρετητής δεν διαθέτει τα απαιτούμενα δεδομένα."
 
-#: downloadjob.cpp:250
+#: downloadjob.cpp:251
 #, kde-format
 msgid "The browser application closed unexpectedly."
 msgstr "Η εφαρμογή του περιηγητή τερματίστηκε απρόσμενα."
 
-#: downloadjob.cpp:256
+#: downloadjob.cpp:257
 #, kde-format
 msgid "An unknown error occurred while downloading."
 msgstr "Παρουσιάστηκε άγνωστο σφάλμα κατά τη λήψη."
 
-#: downloadjob.cpp:294
+#: downloadjob.cpp:295
 #, kde-format
 msgctxt "Job heading, like 'Copying'"
 msgid "Downloading"
 msgstr "Λήψη"
 
-#: downloadjob.cpp:295
+#: downloadjob.cpp:296
 #, kde-format
 msgctxt "The URL being downloaded"
 msgid "Source"
 msgstr "Πηγή"
 
-#: downloadjob.cpp:296
+#: downloadjob.cpp:297
 #, kde-format
 msgctxt "The location being downloaded to"
 msgid "Destination"
