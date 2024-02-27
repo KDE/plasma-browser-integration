@@ -180,6 +180,6 @@
         "message": "Vsebina deljena"
     },
     "store_description": {
-        "message": "Učinkovita večopravilnost z nadzorom funkcij brskalnika z namizja, tudi ko je Chrome v ozadju. Upravljajte predvajanje avdio in video vsebin,preverite prenose v področju z obvestili in pošljite datoteke v telefon s pomočjo KDE Connect in še več znotraj namizja za plazmo KDE!\\n\\nDa bi ta razširitev delovala, mora biti nameščen paket integracije brskalnika v Plasmo. To bi moralo biti na voljo pri upravitelju paketov vaše distribucije pri izvajanju Plazme 5.13 ali novejše.\\n\\nOPOMBA: Ta razširitev ni podprta v Debianu."
+        "message": "Multitask efficiently by controlling browser functions from the desktop, even while Chrome is in the background. Manage audio and video playback, check downloads in the notification area, send files to your phone using KDE Connect and more inside the KDE Plasma Desktop!\\n\\nThe plasma-browser-integration package must be installed for this extension to work. It should be available from your distribution's package manager when running Plasma 5.13 or later.\\n\\nNOTE: This extension is not supported on Debian."
     }
 }
