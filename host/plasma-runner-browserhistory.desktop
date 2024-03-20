@@ -104,6 +104,7 @@ X-Plasma-Runner-Syntax-Descriptions[eu]=Arakatzailearen historian haien titulua 
 X-Plasma-Runner-Syntax-Descriptions[fi]=Etsii selainhistoriasta sivustoja, joiden otsikko tai verkko-osoite vastaa hakua :q:
 X-Plasma-Runner-Syntax-Descriptions[fr]=Trouve les sites Internet dans l'historique du navigateur dont le titre ou l'URL correspondent :q:
 X-Plasma-Runner-Syntax-Descriptions[gl]=Atopa sitios web no historial do navegador cun título ou URL que coincide con :q:
+X-Plasma-Runner-Syntax-Descriptions[hu]=A :q: kifejezésre illeszkedő című vagy URL-ű weboldalak keresése a böngésző előzményeiben
 X-Plasma-Runner-Syntax-Descriptions[ia]=Trova sitos web in le chronologia del navigator le cuje titulo o URL corresponde :q:
 X-Plasma-Runner-Syntax-Descriptions[it]=Trova i siti web nella cronologia del browser il cui titolo o URL corrisponde a :q:
 X-Plasma-Runner-Syntax-Descriptions[ka]=ბრაუზერის ისტორიაში მოძებნის საიტებს, რომლებიც ემთხვევა :q:

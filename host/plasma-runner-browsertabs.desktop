@@ -112,6 +112,7 @@ X-Plasma-Runner-Syntax-Descriptions[eu]=Irekita dauden arakatzaileko fitxen arte
 X-Plasma-Runner-Syntax-Descriptions[fi]=Etsii avoimia selainvälilehtiä, joiden otsikko tai verkko-osoite vastaa hakua :q:
 X-Plasma-Runner-Syntax-Descriptions[fr]=Trouve des onglets ouverts du navigateur dont le titre ou l'URL correspondent :q:
 X-Plasma-Runner-Syntax-Descriptions[gl]=Atopa separadores abertos no navegador cuxo título ou URL coincide con :q:
+X-Plasma-Runner-Syntax-Descriptions[hu]=A :q: kifejezésre illeszkedő című vagy URL-ű megnyitott böngészőlapok keresése
 X-Plasma-Runner-Syntax-Descriptions[ia]=Trova schedas de navigator aperite le cuje titulo o URL corresponde :q:
 X-Plasma-Runner-Syntax-Descriptions[it]=Trova le schede del browser aperte il cui titolo o URL corrisponde a :q:
 X-Plasma-Runner-Syntax-Descriptions[ka]=იპოვის ბრაუზერის ჩანართს, რომლის სათაური ან ბმული ემთხვევა :q:
