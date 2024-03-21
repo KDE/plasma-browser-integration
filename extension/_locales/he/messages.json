@@ -180,6 +180,6 @@
         "message": "תוכן שותף"
     },
     "store_description": {
-        "message": "אפשר לקדם כמה משימות במקביל על ידי שליטה ביכולות הדפדפן דרך שולחן העבודה, אפילו אם כרום רץ ברקע. אפשר לנהול נגינה של שמע וסרטונים, לבדוק מה מצב ההורדת באזור ההתראות, לשלוח קבצים לטלפון שלך בעזרת KDE Connect ועוד בתוך שולחן העבודה פלזמה מבית KDE!\\n\\nהחבילה plasma-browser-integration חייבת להיות מותקנת כדי שההרחבה תעבוד. היא אמורה להיות זמינה דרך מנהל החבילות של ההפצה שלך בעת הרצת פלזמה בגרסה 5.13 ומעלה.\\n\\nנא לשים לב: ההרחבה הזאת לא נתמכת בדביאן."
+        "message": "Multitask efficiently by controlling browser functions from the desktop, even while Chrome is in the background. Manage audio and video playback, check downloads in the notification area, send files to your phone using KDE Connect and more inside the KDE Plasma Desktop!\\n\\nThe plasma-browser-integration package must be installed for this extension to work. It should be available from your distribution's package manager when running Plasma 5.13 or later.\\n\\nNOTE: This extension is not supported on Debian."
     }
 }
