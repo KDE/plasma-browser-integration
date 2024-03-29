@@ -1,22 +1,22 @@
+# translation of plasma-browser-integration-host.pot to Esperanto
+# Copyright (C) 2021 Free Software Foundation, Inc.
+# This file is distributed under the same license as the plasma-browser-integration package.
+# Oliver Kellogg <okellogg@users.sourceforge.net>, 2023.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: kdeorg\n"
+"Project-Id-Version: plasma-browser-integration\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-21 03:08+0000\n"
-"PO-Revision-Date: 2024-03-28 19:24\n"
-"Last-Translator: \n"
-"Language-Team: Chinese Simplified\n"
-"Language: zh_CN\n"
+"PO-Revision-Date: 2023-04-29 12:29+0100\n"
+"Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
+"Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
+"Language: eo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Crowdin-Project: kdeorg\n"
-"X-Crowdin-Project-ID: 269464\n"
-"X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf5-stable/messages/plasma-browser-integration/plasma-"
-"browser-integration-host.pot\n"
-"X-Crowdin-File-ID: 10248\n"
+"X-Generator: translate-po (https://github.com/zcribe/translate-po)\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: downloadjob.cpp:135
 #, kde-format
@@ -24,109 +24,109 @@ msgid ""
 "This type of file can harm your computer. If you want to keep it, accept "
 "this download from the browser window."
 msgstr ""
-"这种类型的文件可能会对您的计算机造成威胁。如果您想保留它，请从浏览器窗口下"
-"载。"
+"Ĉi tiu tipo de dosiero povas damaĝi vian komputilon. Se vi volas konservi "
+"ĝin, akceptu ĉi tiun elŝuton de la retumila fenestro."
 
 #: downloadjob.cpp:232
 #, kde-format
 msgid "Access denied."
-msgstr "拒绝访问。"
+msgstr "Aliro malakceptita."
 
 #: downloadjob.cpp:233
 #, kde-format
 msgid "Insufficient free space."
-msgstr "可用空间不足。"
+msgstr "Nesufiĉa libera spaco."
 
 #: downloadjob.cpp:234
 #, kde-format
 msgid "The file name you have chosen is too long."
-msgstr "您选择的文件名太长。"
+msgstr "La dosiernomo, kiun vi elektis, estas tro longa."
 
 #: downloadjob.cpp:235
 #, kde-format
 msgid "The file is too large to be downloaded."
-msgstr "文件过大，无法下载。"
+msgstr "La dosiero estas tro granda por esti elŝutita."
 
 #: downloadjob.cpp:237
 #, kde-format
 msgid "The file possibly contains malicious contents."
-msgstr "文件可能包含恶意内容。"
+msgstr "La dosiero eble enhavas malican enhavon."
 
 #: downloadjob.cpp:238
 #, kde-format
 msgid "A temporary error has occurred. Please try again later."
-msgstr "发生暂时错误。请稍后重试。"
+msgstr "Provizora eraro okazis. Bonvolu reprovi poste."
 
 #: downloadjob.cpp:240
 #, kde-format
 msgid "A network error has occurred."
-msgstr "发生了网络错误。"
+msgstr "Reta eraro okazis."
 
 #: downloadjob.cpp:241
 #, kde-format
 msgid "The network operation timed out."
-msgstr "网络操作超时。"
+msgstr "La retfunkciado elĉerpiĝis."
 
 #: downloadjob.cpp:242
 #, kde-format
 msgid "The network connection has been lost."
-msgstr "网络连接丢失。"
+msgstr "La retkonekto estas perdita."
 
 #: downloadjob.cpp:243
 #, kde-format
 msgid "The server is no longer reachable."
-msgstr "服务器无法访问。"
+msgstr "La servilo ne plu estas atingebla."
 
 #: downloadjob.cpp:245
 #, kde-format
 msgid "A server error has occurred."
-msgstr "发生服务器错误。"
+msgstr "Okazis servila eraro."
 
 #: downloadjob.cpp:249
 #, kde-format
 msgid "The server does not have the requested data."
-msgstr "服务器没有请求的数据。"
+msgstr "La servilo ne havas la petitajn datumojn."
 
 #: downloadjob.cpp:251
 #, kde-format
 msgid "The browser application closed unexpectedly."
-msgstr "浏览器应用程序意外关闭。"
+msgstr "La retumila aplikaĵo fermiĝis neatendite."
 
 #: downloadjob.cpp:257
 #, kde-format
 msgid "An unknown error occurred while downloading."
-msgstr "下载时发生未知错误。"
+msgstr "Nekonata eraro okazis dum elŝutado."
 
 #: downloadjob.cpp:295
 #, kde-format
 msgctxt "Job heading, like 'Copying'"
 msgid "Downloading"
-msgstr "正在下载"
+msgstr "Elŝutante"
 
 #: downloadjob.cpp:296
 #, kde-format
 msgctxt "The URL being downloaded"
 msgid "Source"
-msgstr "来源"
+msgstr "Fonto"
 
 #: downloadjob.cpp:297
 #, kde-format
 msgctxt "The location being downloaded to"
 msgid "Destination"
-msgstr "目标"
+msgstr "Celo"
 
 #: historyrunnerplugin.cpp:108
 #, kde-format
 msgctxt "Dummy search result"
 msgid "Additional permissions are required"
-msgstr "需要额外权限"
+msgstr "Pliaj permesoj estas bezonataj"
 
 #: tabsrunnerplugin.cpp:38
 #, kde-format
 msgid "Mute Tab"
-msgstr "标签页静音"
+msgstr "Mute Tab"
 
 #: tabsrunnerplugin.cpp:43
 #, kde-format
 msgid "Unmute Tab"
-msgstr "取消标签页静音"
+msgstr "Malmuti langeton"
