@@ -18,7 +18,7 @@
         "message": "Nesubtenata operaciumo"
     },
     "general_error_startup_failed": {
-        "message": "Make sure the 'plasma-browser-integration' package is installed correctly and that you are running Plasma 5.13 or later."
+        "message": "Certigu, ke la pako 'plasma-browser-integration' estas ĝuste instalita kaj ke vi rulas Plasma 5.13 aŭ poste."
     },
     "general_error_startup_failed_title": {
         "message": "Malsukcesis konekti al la denaska gastiganto."
@@ -39,7 +39,7 @@
         "message": "Malfermi per KDE Connect"
     },
     "options_about_bugs": {
-        "message": "If you find an issue, please check the <a href=\"$1\">list of open bugs</a> and then <a href=\"$2\">file a bug report</a>."
+        "message": "Se vi trovas problemon, bonvolu kontroli la <a href=\"$1\">liston de malfermitaj eraroj</a> kaj poste <a href=\"$2\">prezentu cimraporton</a>."
     },
     "options_about_changelog_link": {
         "message": "Vidi Ŝanĝprogramon"
@@ -48,10 +48,10 @@
         "message": "© 2017-2020 Kai Uwe Broulik kaj David Edmundson"
     },
     "options_about_created_by_kde": {
-        "message": "This browser extension was created by the <a href=\"$1\">KDE Community</a>. You can find more information about this project on the <a href=\"$2\">KDE Community Wiki</a>."
+        "message": "Ĉi tiu retumila etendo estis kreita de la <a href=\"$1\">KDE-Komunumo</a>. Vi povas trovi pliajn informojn pri ĉi tiu projekto en la <a href=\"$2\">KDE-Komunuma Vikio</a>."
     },
     "options_about_donate": {
-        "message": "If you like what you saw, please consider <a href=\"$1\">donating to KDE</a>, so we can continue to make the best free software possible."
+        "message": "Se vi ŝatas tion, kion vi vidis, bonvolu konsideri <a href=\"$1\">donaci al KDE</a>, por ke ni povu daŭre ebligi la plej bonan liberan programaron."
     },
     "options_about_extension_version": {
         "message": "Etendaĵversio: $1"
@@ -60,7 +60,7 @@
         "message": "Gastiganta versio: $1"
     },
     "options_about_kde": {
-        "message": "KDE is a world-wide community of software engineers, artists, writers, translators and creators who are committed to <a href=\"$1\">Free Software</a> development. KDE produces the Plasma desktop environment, hundreds of applications, and the many software libraries that support them. KDE is a cooperative enterprise: no single entity controls its direction or products. Instead, we work together to achieve the common goal of building the world's finest Free Software. Everyone is welcome to <a href=\"$2\">join and contribute</a> to KDE, including you. Visit <a href=\"$3\">$3</a> for more information about the KDE community and the software we produce."
+        "message": "KDE estas tutmonda komunumo de programaro-inĝenieroj, artistoj, verkistoj, tradukistoj kaj kreintoj, kiuj engaĝiĝas al disvolviĝo de <a href=\"$1\">Libera Programaro</a>. KDE produktas la Plasma labortabla medio, centojn da aplikoj, kaj la multajn programarbibliotekojn kiuj subtenas ilin. KDE estas kunlabora entrepreno: neniu unuopa ento kontrolas sian direkton aŭ produktojn. Anstataŭe, ni kunlaboras por atingi la komunan celon konstrui la plej bonan Liberan Programaron de la mondo. Ĉiuj bonvenas <a href=\"$2\">aliiĝi kaj kontribui</a> al KDE, inkluzive de vi. Vizitu <a href=\"$3\">$3</a> por pliaj informoj pri la KDE-komunumo kaj la programaro, kiun ni produktas."
     },
     "options_about_license": {
         "message": "Permesilo: <a href=\"$1\">GNU Ĝenerala Publika Permesilo Versio 3</a>"
@@ -78,7 +78,7 @@
         "message": "Ĉi tiu etendo ne estas subtenata en ĉi tiu operaciumo."
     },
     "options_plugin_breezeScrollBars_description": {
-        "message": "This may interfere with the appearance of websites that already apply a custom styling to their scroll bars."
+        "message": "Ĉi tio povas malhelpi la aspekton de retejoj, kiuj jam aplikas kutiman stilon al siaj rultabloj."
     },
     "options_plugin_breezeScrollBars_title": {
         "message": "Uzi la rulstangojn de la stilo Brizo"
@@ -90,25 +90,25 @@
         "message": "Konservu URL el kiu dosiero estis elŝutita en la atributoj de la dosiero"
     },
     "options_plugin_downloads_saveOriginUrl_description": {
-        "message": "Note: The URL may contain sensitive information that could be disclosed when the file is accessible by or shared with others"
+        "message": "Noto: La URL povas enhavi sentemajn informojn, kiuj povus esti malkaŝitaj kiam la dosiero estas alirebla de aŭ dividita kun aliaj"
     },
     "options_plugin_downloads_title": {
         "message": "Montri elŝutojn en sciiga areo"
     },
     "options_plugin_historyrunner_description": {
-        "message": "This feature might need <a id=\"$1\" href=\"$2\">additional permissions</a> to be used."
+        "message": "Ĉi tiu funkcio eble bezonas <a id=\"$1\" href=\"$2\">aldonajn permesojn</a> por esti uzata."
     },
     "options_plugin_historyrunner_title": {
         "message": "Serĉi tra retumila historio"
     },
     "options_plugin_kdeconnect_description": {
-        "message": "Adds a context menu entry to links enabling you to send them to your phone and other paired devices using <a href=\"$1\">KDE Connect</a>."
+        "message": "Aldonas kuntekstmenuon al ligiloj ebligante vin sendi ilin al via telefono kaj aliaj parigitaj aparatoj uzante <a href=\"$1\">KDE Connect</a>."
     },
     "options_plugin_kdeconnect_title": {
         "message": "Sendi per KDE Connect"
     },
     "options_plugin_mpris_description": {
-        "message": "Lets you control video and audio players in websites using the Media Controller plasmoid."
+        "message": "Permesas al vi kontroli video- kaj sonludilojn en retejoj uzante la Plasmoidon Media Controller."
     },
     "options_plugin_mpris_media_sessions_description": {
         "message": "Eltiri metadatumojn kaj bildetojn de nuntempe ludanta enhavo."
@@ -120,13 +120,13 @@
         "message": "Media Kontroloj"
     },
     "options_plugin_purpose_description": {
-        "message": "Adds a \"Share...\" context menu entry and allows websites to open a dialog for sharing contents using the Web Share API."
+        "message": "Aldonas kuntekstan menuon \"Kundividi...\" kaj permesas al retejoj malfermi dialogon por kunhavigi enhavon per la Web Share API."
     },
     "options_plugin_purpose_title": {
         "message": "Kundivido de Enhavo"
     },
     "options_plugin_tabsrunner_description": {
-        "message": "Make sure the “Browser Tabs” module is enabled in <a id=\"$1\" href=\"$2\">Plasma Search settings</a>."
+        "message": "Certigu, ke la modulo \"Retumila langetoj\" estas ebligita en <a id=\"$1\" href=\"$2\">agordoj de Plasma Serĉo</a>."
     },
     "options_plugin_tabsrunner_title": {
         "message": "Trovi foliumilojn en la fenestro \"Run Komando\"."
@@ -156,10 +156,10 @@
         "message": "Revoki Permeson"
     },
     "permission_request_historyrunner_1": {
-        "message": "In order to provide search results for your browser history, additional permissions are required."
+        "message": "Por provizi serĉrezultojn por via retumila historio, aldonaj permesoj estas bezonataj."
     },
     "permission_request_historyrunner_2": {
-        "message": "You can disable this feature in <a id=\"$1\" href=\"$2\">Plasma search settings</a>."
+        "message": "Vi povas malŝalti ĉi tiun funkcion en <a id=\"$1\" href=\"$2\">Agordoj pri Plasma serĉo</a>."
     },
     "permission_request_title": {
         "message": "Pliaj permesoj necesas"
