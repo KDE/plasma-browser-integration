@@ -78,10 +78,10 @@
         "message": "此操作系统不支持此扩展程序。"
     },
     "options_plugin_breezeScrollBars_description": {
-        "message": "这可能会影响本身对滚动条应用了自定义视觉风格的网站的外观。"
+        "message": "这可能会影响某些对滚动条施加自定义外观样式的网站的外观。"
     },
     "options_plugin_breezeScrollBars_title": {
-        "message": "使用 Breeze 微风视觉风格的滚动条"
+        "message": "使用 Breeze 微风外观样式的滚动条"
     },
     "options_plugin_downloads_addToRecentDocuments": {
         "message": "添加下载的文件到最近文档"
