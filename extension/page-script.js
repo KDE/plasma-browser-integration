@@ -6,7 +6,7 @@
         const args = e.detail;
         if (args.action == "unload") {
             // TODO: Undo other operations
-            window.removeEventListener("pbiEvent", eventCallback, {"capture": true});
+            window.removeEventListener("org.kde.pbi.event", eventCallback, {"capture": true});
         } else if (args.action == "mediaSessionsRegister") {
             const MediaSessionsClassName_constructor = function() {
                 this.callbacks = {};
@@ -15,7 +15,7 @@
                 this.playbackState = "none";
 
                 this.sendMessage = function(action, payload) {
-                    let event = new CustomEvent("pbiMprisMessage", {
+                    let event = new CustomEvent("org.kde.pbi.mpris.message", {
                         detail: {
                             action: action,
                             payload: payload
@@ -269,7 +269,7 @@
                         purposeTransferObject.pendingResolve = resolve;
                         purposeTransferObject.pendingReject = reject;
 
-                        const event = new CustomEvent("pbiPurposeMessage", {
+                        const event = new CustomEvent("org.kde.pbi.purpose.message", {
                             detail: {
                                 action: "share",
                                 payload: data
@@ -289,6 +289,6 @@
             console.warn("Unknown page script action" + args.action, args);
         }
     };
-    window.addEventListener("pbiEvent", eventCallback, {"capture": true});
-    window.dispatchEvent(new CustomEvent("pbiInited"));
+    window.addEventListener("org.kde.pbi.event", eventCallback, {"capture": true});
+    window.dispatchEvent(new CustomEvent("org.kde.pbi.inited"));
 }());

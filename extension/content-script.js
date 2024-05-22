@@ -31,7 +31,7 @@ function initPageScript(cb) {
     executePageAction({"action": "unload"});
 
     // The script is only run later, wait for that before sending events.
-    window.addEventListener("pbiInited", cb, {"once": true});
+    window.addEventListener("org.kde.pbi.inited", cb, {"once": true});
 
     var element = document.createElement('script');
     element.src = chrome.runtime.getURL("page-script.js");
@@ -48,7 +48,7 @@ function executePageAction(args) {
         args = cloneInto(args, window);
     }
 
-    window.dispatchEvent(new CustomEvent('pbiEvent', {detail: args}));
+    window.dispatchEvent(new CustomEvent('org.kde.pbi.event', {detail: args}));
 }
 
 chrome.runtime.onMessage.addListener(function (message, sender) {
@@ -625,7 +625,7 @@ function loadMpris() {
 function loadMediaSessionsShim() {
     if (document.documentElement.tagName.toLowerCase() === "html") {
 
-        window.addEventListener("pbiMprisMessage", (e) => {
+        window.addEventListener("org.kde.pbi.mpris.message", (e) => {
             let data = e.detail || {};
 
             let action = data.action;
@@ -695,7 +695,7 @@ function loadPurpose() {
         return;
     }
 
-     window.addEventListener("pbiPurposeMessage", (e) => {
+     window.addEventListener("org.kde.pbi.purpose.message", (e) => {
         const data = e.detail || {};
 
         const action = data.action;
