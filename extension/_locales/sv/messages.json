@@ -102,7 +102,7 @@
         "message": "Sök igenom webbläsarhistorik"
     },
     "options_plugin_kdeconnect_description": {
-        "message": "Lägger till ett sammanhangsberoende menyalternativ till länkar, vilket gör det möjligt att skicka dem till en telefon eller andra ihopparade enheter genom att använda <a href=\"$1\">KDE:s anslutningstjänst</a>."
+        "message": "Lägger till ett sammanhangsberoende menyalternativ till länkar, vilket gör det möjligt att skicka dem till en telefon eller andra parkopplade enheter genom att använda <a href=\"$1\">KDE:s anslutningstjänst</a>."
     },
     "options_plugin_kdeconnect_title": {
         "message": "Skicka via KDE:s anslutningstjänst"
