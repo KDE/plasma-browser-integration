@@ -143,8 +143,8 @@
                 window.MediaMetadata.prototype.artwork = [];
             }
 
-            // here we replace the document.createElement function with our own so we can detect
-            // when an <audio> tag is created that is not added to the DOM which most pages do
+            // Here we replace the HTMLMediaElement.play method with our own so we can detect
+            // when media is played without being part of the DOM.
             // while a <video> tag typically ends up being displayed to the user, audio is not.
             // HACK We cannot really pass variables from the page's scope to our content-script's scope
             // so we just blatantly insert the <audio> tag in the DOM and pick it up through our regular
@@ -155,7 +155,9 @@
             // there's nothing loaded to pause) to the DOM and before we remove it, we note down that
             // we will now get a paused event because of that. When we get it, we just play() the player
             // so it continues playing :-)
-            let addPlayerToDomEvadingAutoPlayBlocking = function(player) {
+            var realPlay = HTMLMediaElement.prototype.play;
+            HTMLMediaElement.prototype.play = function() {
+                let player = this;
                 player.registerInDom = () => {
                     // Needs to be dataset so it's accessible from mutation observer on webpage
                     player.dataset.pbiPausedForDomRemoval = "true";
@@ -178,37 +180,14 @@
                         delete player.dataset.pbiPausedForDomRemoval;
                         player.removeEventListener("pause", player.replyAfterRemoval);
 
-                        player.play();
+                        realPlay.apply(player);
                     }
                 };
 
                 player.addEventListener("play", player.registerInDom);
                 player.addEventListener("pause", player.replayAfterRemoval);
+                return realPlay.apply(player, arguments);
             }
-
-            const oldCreateElement = Document.prototype.createElement;
-            Document.prototype.createElement = function() {
-                const createdTag = oldCreateElement.apply(this, arguments);
-                const tagName = arguments[0];
-
-                if (typeof tagName === "string") {
-                    if (tagName.toLowerCase() === "audio" || tagName.toLowerCase() === "video") {
-                        const player = createdTag;
-                        addPlayerToDomEvadingAutoPlayBlocking(player);
-                    }
-                }
-                return createdTag;
-            };
-
-            // We also briefly add items created as new Audio() to the DOM so we can control it
-            // similar to the document.createElement hack above since we cannot share variables
-            // between the actual website and the background script despite them sharing the same DOM
-            var oldAudio = window.Audio;
-            window.Audio = function(...args) {
-                const player = new oldAudio(...args);
-                addPlayerToDomEvadingAutoPlayBlocking(player);
-                return player;
-            };
         } else if (args.action == "mpris") {
             try {
                 mprisTransferObject.executeCallback(args.mprisCallbackName);
