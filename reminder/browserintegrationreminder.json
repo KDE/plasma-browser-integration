@@ -32,6 +32,7 @@
         "Description[ru]": "В случае, если установлена служба интеграции браузера в среду Plasma, но не установлено соответствующее расширение браузера, предоставляет ссылку для установки такого расширения.",
         "Description[sk]": "Poskytuje odkaz na doplnok prehliadača ak Plasma Browser Integration Host je nainštalovaný",
         "Description[sl]": "Ponuja povezavo do razširitve brskalnika, če je nameščen gostitelj integracije brskalnika v Plasmo",
+        "Description[sv]": "Tillhandahåller en länk till webbläsarutökningen om värden för Plasma webbläsarintegrering är installerade",
         "Description[ta]": "பிளாஸ்மா உலாவி ஒருங்கிணைப்பு புரவன் நிறுவப்படவில்லையெனில் உலாவி துணை நிரலுக்கான இணைப்பை வழங்கும்",
         "Description[tr]": "Plasma Tarayıcı Tümleştirme istemcisi kuruluysa tarayıcı uzantısı için bir bağlantı sağlar",
         "Description[uk]": "Надає посилання на розширення браузера, якщо встановлено основну частину засобу інтеграції браузера із Плазмою",
