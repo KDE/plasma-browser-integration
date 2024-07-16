@@ -15,6 +15,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+// NOTE keep in sync with manifest.json for Firefox.
 self.importScripts(
     "constants.js",
     "utils.js",

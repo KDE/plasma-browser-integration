@@ -20,6 +20,19 @@
   },
 
   "background": {
+    "scripts": [
+      "constants.js",
+      "utils.js",
+      "extension-utils.js",
+
+      "extension-kdeconnect.js",
+      "extension-mpris.js",
+      "extension-downloads.js",
+      "extension-tabsrunner.js",
+      "extension-purpose.js",
+      "extension-historyrunner.js",
+      "extension.js"
+    ],
     "service_worker": "service-worker.js"
   },
 
