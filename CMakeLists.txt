@@ -48,8 +48,8 @@ find_package(PlasmaActivities ${PROJECT_DEP_VERSION} CONFIG REQUIRED)
 find_package(LibTaskManager ${PROJECT_DEP_VERSION} CONFIG REQUIRED)
 
 add_definitions(-DQT_NO_NARROWING_CONVERSIONS_IN_CONNECT)
-ecm_set_disabled_deprecation_versions(QT 5.15.2
-    KF 5.101
+ecm_set_disabled_deprecation_versions(QT 6.7.0
+    KF 6.4.0
 )
 
 # Options
