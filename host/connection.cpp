@@ -33,7 +33,7 @@ void Connection::sendData(const QJsonObject &data)
 {
     const QByteArray rawData = QJsonDocument(data).toJson(QJsonDocument::Compact);
     // note, don't use QDataStream as we need to control the binary format used
-    quint32 len = rawData.count();
+    quint32 len = rawData.length();
     m_stdOut.write((char *)&len, sizeof(len));
     m_stdOut.write(rawData);
     m_stdOut.flush();
