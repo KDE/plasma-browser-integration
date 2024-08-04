@@ -9,6 +9,7 @@
 #include <QDBusConnection>
 #include <QDebug>
 
+#include <KAboutData>
 #include <KCrash>
 
 #include "abstractbrowserplugin.h"
@@ -22,6 +23,8 @@
 #include "purposeplugin.h"
 #include "settings.h"
 #include "tabsrunnerplugin.h"
+
+#include <version.h>
 
 void msgHandler(QtMsgType type, const QMessageLogContext &context, const QString &msg)
 {
@@ -83,6 +86,9 @@ int main(int argc, char *argv[])
     // applicationName etc will be set in Settings once the browser identifies to us
 
     qInstallMessageHandler(msgHandler);
+
+    KAboutData about(QStringLiteral("plasma-browser-integration-host"), QString(), QStringLiteral(PBI_VERSION_STRING));
+    KAboutData::setApplicationData(about);
 
     KCrash::initialize();
 

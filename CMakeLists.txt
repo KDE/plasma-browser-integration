@@ -1,8 +1,9 @@
 cmake_minimum_required(VERSION 3.16)
 
-project(plasma-browser-integration)
 set(PROJECT_VERSION "6.1.80")
 set(PROJECT_VERSION_MAJOR 6)
+
+project(plasma-browser-integration VERSION ${PROJECT_VERSION})
 
 set(PROJECT_DEP_VERSION "6.0.90")
 set(QT_MIN_VERSION "6.6.0")
@@ -21,6 +22,7 @@ include(FeatureSummary)
 include(KDEClangFormat)
 include(KDEGitCommitHooks)
 include(ECMDeprecationSettings)
+include(ECMSetupVersion)
 
 find_package(Qt6 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS
 Gui
@@ -51,6 +53,10 @@ add_definitions(-DQT_NO_NARROWING_CONVERSIONS_IN_CONNECT)
 ecm_set_disabled_deprecation_versions(QT 6.7.0
     KF 6.4.0
 )
+
+ecm_setup_version(PROJECT VARIABLE_PREFIX PBI
+                  VERSION_HEADER ${CMAKE_BINARY_DIR}/version.h
+                  )
 
 # Options
 option(INSTALL_CHROME_MANIFEST "Whether to install a configuration file that makes Chrome automatically download the extension from the store" FALSE)

@@ -35,6 +35,7 @@ qt_add_dbus_adaptor(HOST_SOURCES ../dbus/org.mpris.MediaPlayer2.Player.xml mpris
 qt_add_dbus_adaptor(HOST_SOURCES ../dbus/org.kde.krunner1.xml abstractkrunnerplugin.h AbstractKRunnerPlugin)
 
 add_executable(plasma-browser-integration-host ${HOST_SOURCES})
+target_include_directories(plasma-browser-integration-host PRIVATE ${CMAKE_BINARY_DIR})
 target_link_libraries(
     plasma-browser-integration-host
     Qt::DBus
