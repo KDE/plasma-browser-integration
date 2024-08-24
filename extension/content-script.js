@@ -27,8 +27,18 @@ function addCallback(subsystem, action, callback)
 }
 
 function initPageScript(cb) {
+    // On reloads, unload the previous page-script.
+    executePageAction({"action": "unload"});
+
     // The script is only run later, wait for that before sending events.
     window.addEventListener("org.kde.pbi.inited", cb, {"once": true});
+
+    var element = document.createElement('script');
+    element.src = chrome.runtime.getURL("page-script.js");
+    (document.body || document.head || document.documentElement).prepend(element);
+    // We need to remove the script tag after inserting or else websites relying on the order of items in
+    // document.getElementsByTagName("script") will break (looking at you, Google Hangouts)
+    element.parentNode.removeChild(element);
 }
 
 function executePageAction(args) {
