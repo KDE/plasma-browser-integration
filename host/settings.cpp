@@ -103,6 +103,11 @@ const QMap<Settings::Environment, EnvironmentDescription> Settings::environmentD
      }},
 };
 
+static bool hasDesktopFileName()
+{
+    return !qApp->desktopFileName().isEmpty() && qApp->desktopFileName() != QLatin1String("org.kde.plasma-browser-integration-host");
+}
+
 Settings::Settings()
     : AbstractBrowserPlugin(QStringLiteral("settings"), 1, nullptr)
     // Settings is a singleton and cleaned up only in exit_handlers
@@ -117,7 +122,7 @@ Settings::Settings()
     }
 
     // If we didn't find the browser window yet, monitor the model for changes
-    if (qApp->desktopFileName().isEmpty()) {
+    if (!hasDesktopFileName()) {
         connect(m_tasksModel, &TaskManager::WindowTasksModel::rowsInserted, this, [this](const QModelIndex &parent, int first, int last) {
             if (parent.isValid()) {
                 return;
@@ -264,7 +269,7 @@ void Settings::setEnvironmentFromExtensionMessage(const QJsonObject &data)
     m_environment = Settings::environmentNames.key(name, Settings::Environment::Unknown);
     m_currentEnvironment = Settings::environmentDescriptions.value(m_environment);
 
-    if (qApp->desktopFileName().isEmpty()) {
+    if (!hasDesktopFileName()) {
         qApp->setApplicationName(m_currentEnvironment.applicationName);
         qApp->setApplicationDisplayName(m_currentEnvironment.applicationDisplayName);
         qApp->setDesktopFileName(m_currentEnvironment.desktopFileName);
