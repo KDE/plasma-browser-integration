@@ -1,12 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the plasma-browser-integration package.
-#
 # Frederik Schwarzer <schwarzer@kde.org>, 2019.
 # Burkhard Lück <lueck@hube-lueck.de>, 2019, 2021.
 # Kai Uwe Broulik <kde@privat.broulik.de>, 2021.
+# SPDX-FileCopyrightText: 2024 Johannes Obermayr <johannesobermayr@gmx.de>
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: plasma-browser-integration\n"
+"Project-Id-Version: plasma-browser-integration-host\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-21 00:38+0000\n"
 "PO-Revision-Date: 2021-04-21 15:53+0200\n"
@@ -17,6 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 24.11.70\n"
 
 #: downloadjob.cpp:135
 #, kde-format
