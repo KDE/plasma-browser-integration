@@ -1,10 +1,10 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
 
   "name": "Plasma Integration",
   "short_name": "Plasma",
   "description": "Provides better integration with the KDE Plasma desktop.",
-  "version": "1.9.1",
+  "version": "2.0",
 
   "default_locale": "en",
 
@@ -21,23 +21,22 @@
 
   "background": {
     "scripts": [
-        "constants.js",
-        "utils.js",
-        "extension-utils.js",
+      "constants.js",
+      "utils.js",
+      "extension-utils.js",
 
-        "extension-kdeconnect.js",
-        "extension-mpris.js",
-        "extension-downloads.js",
-        "extension-tabsrunner.js",
-        "extension-purpose.js",
-        "extension-historyrunner.js",
-
-        "extension.js"
+      "extension-kdeconnect.js",
+      "extension-mpris.js",
+      "extension-downloads.js",
+      "extension-tabsrunner.js",
+      "extension-purpose.js",
+      "extension-historyrunner.js",
+      "extension.js"
     ],
-    "persistent": false
+    "service_worker": "service-worker.js"
   },
 
-  "browser_action": {
+  "action": {
     "browser_style": true,
     "default_popup": "action_popup.html",
     "theme_icons": [{
@@ -69,13 +68,13 @@
     }
   ],
 
-  "web_accessible_resources": [
-    "page-script.js"
-  ],
+  "web_accessible_resources": [{
+    "matches": ["*://*/*"],
+    "resources": ["page-script.js"]
+  }],
 
   "options_ui": {
-    "page": "options.html",
-    "chrome_style": true
+    "page": "options.html"
   },
   "permissions": [
     "nativeMessaging",
@@ -83,15 +82,17 @@
     "storage",
     "downloads",
     "tabs",
-    "<all_urls>",
-    "contextMenus"
-  ],
-
-  "optional_permissions": [
+    "scripting",
+    "contextMenus",
+    "favicon",
     "history"
   ],
 
-    "applications": {
+  "host_permissions": [
+    "*://*/*"
+  ],
+
+  "browser_specific_settings": {
     "gecko": {
       "id": "plasma-browser-integration@kde.org",
       "strict_min_version": "50.0"

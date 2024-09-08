@@ -26,11 +26,10 @@ function sendEnvironment() {
         browser = "opera";
     } else if(ua.match(/chrome/i)) {
         browser = "chromium";
-        // Apparently there is no better way to distinuish chromium from chrome
-        for (i in window.navigator.plugins) {
-            if (window.navigator.plugins[i].name === "Chrome PDF Viewer") {
+        const uaData = self.navigator.userAgentData;
+        if (uaData && uaData.brands) {
+            if (uaData.brands.find(item=>item.brand === "Google Chrome")) {
                 browser = "chrome";
-                break;
             }
         }
     } else if(ua.match(/firefox/i)) {
@@ -123,7 +122,7 @@ var portLastErrorMessage = undefined;
 
 function updateBrowserAction() {
     if (portStatus === "UNSUPPORTED_OS" || portStatus === "STARTUP_FAILED") {
-        chrome.browserAction.setIcon({
+        chrome.action.setIcon({
             path: {
                 "16": "icons/plasma-disabled-16.png",
                 "32": "icons/plasma-disabled-32.png",
@@ -134,10 +133,10 @@ function updateBrowserAction() {
     }
 
     if (portLastErrorMessage && receivedMessageOnce) {
-        chrome.browserAction.setBadgeText({ text: "!" });
-        chrome.browserAction.setBadgeBackgroundColor({ color: "#da4453" }); // breeze "negative" color
+        chrome.action.setBadgeText({ text: "!" });
+        chrome.action.setBadgeBackgroundColor({ color: "#da4453" }); // breeze "negative" color
     } else {
-        chrome.browserAction.setBadgeText({ text: "" });
+        chrome.action.setBadgeText({ text: "" });
     }
 }
 updateBrowserAction();

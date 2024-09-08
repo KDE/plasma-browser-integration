@@ -42,17 +42,21 @@ class TabUtils {
     static getCurrentTabFramesUrls() {
         return new Promise((resolve, reject) => {
             TabUtils.getCurrentTab().then((tab) => {
-                chrome.tabs.executeScript({
-                    allFrames: true, // so we also catch iframe videos
-                    code: `window.location.href`,
-                    runAt: "document_start"
+                chrome.scripting.executeScript({
+                    target: {
+                        tabId: tab.id,
+                        allFrames: true
+                    },
+                    func: () => {
+                        return window.location.href;
+                    }
                 }, (result) => {
                     const error = chrome.runtime.lastError;
                     if (error) {
                         return reject(error.message);
                     }
 
-                    resolve(result);
+                    resolve(result.result);
                 });
             });
         });
