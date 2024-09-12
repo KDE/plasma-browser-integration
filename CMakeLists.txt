@@ -5,7 +5,7 @@ set(PROJECT_VERSION_MAJOR 6)
 
 project(plasma-browser-integration VERSION ${PROJECT_VERSION})
 
-set(PROJECT_DEP_VERSION "6.0.90")
+set(PROJECT_DEP_VERSION "6.1.80")
 set(QT_MIN_VERSION "6.6.0")
 set(KF6_MIN_VERSION "6.0.0")
 
