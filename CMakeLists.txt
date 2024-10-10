@@ -23,6 +23,7 @@ include(KDEClangFormat)
 include(KDEGitCommitHooks)
 include(ECMDeprecationSettings)
 include(ECMSetupVersion)
+include(ECMQtDeclareLoggingCategory)
 
 find_package(Qt6 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS
 Gui
@@ -76,6 +77,7 @@ add_feature_info(MOZILLA_DIR On "Mozilla directory is '${MOZILLA_DIR}'")
 
 add_subdirectory(host)
 add_subdirectory(reminder)
+add_subdirectory(flatpak-integrator)
 
 if(NOT DEFINED CHROME_EXTENSION_ID)
     # The extension ID is based on the key used to sign the extension
