@@ -23,6 +23,9 @@
 DownloadJob::DownloadJob()
     : KJob()
 {
+    // start Counting for elapsed time as soon as the job is created
+    startElapsedTimer();
+
     // Tell KJobTracker to show the job right away so that we get a "finished"
     // notification even for tiny downloads
     setProperty("immediateProgressReporting", true);
