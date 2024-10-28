@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-browser-integration-host\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-06 00:40+0000\n"
+"POT-Creation-Date: 2024-10-28 00:41+0000\n"
 "PO-Revision-Date: 2024-08-06 08:47+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -30,7 +30,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "yurchor@ukr.net"
 
-#: downloadjob.cpp:135
+#: downloadjob.cpp:138
 #, kde-format
 msgid ""
 "This type of file can harm your computer. If you want to keep it, accept "
@@ -39,89 +39,89 @@ msgstr ""
 "Файли цього типу можуть зашкодити вашому комп'ютеру. Якщо ви хочете зберегти "
 "такий файл, підтвердьте отримання даних у вікні браузера."
 
-#: downloadjob.cpp:232
+#: downloadjob.cpp:235
 #, kde-format
 msgid "Access denied."
 msgstr "Доступ заборонено."
 
-#: downloadjob.cpp:233
+#: downloadjob.cpp:236
 #, kde-format
 msgid "Insufficient free space."
 msgstr "Недостатньо вільного місця."
 
-#: downloadjob.cpp:234
+#: downloadjob.cpp:237
 #, kde-format
 msgid "The file name you have chosen is too long."
 msgstr "Вибрана вами назва файла є надто довгою."
 
-#: downloadjob.cpp:235
+#: downloadjob.cpp:238
 #, kde-format
 msgid "The file is too large to be downloaded."
 msgstr "Файл є надто великим для отримання."
 
-#: downloadjob.cpp:237
+#: downloadjob.cpp:240
 #, kde-format
 msgid "The file possibly contains malicious contents."
 msgstr "Ймовірно, у файлі міститься шахрайський код."
 
-#: downloadjob.cpp:238
+#: downloadjob.cpp:241
 #, kde-format
 msgid "A temporary error has occurred. Please try again later."
 msgstr "Сталася тимчасова помилка. Будь ласка, повторіть спробу пізніше."
 
-#: downloadjob.cpp:240
+#: downloadjob.cpp:243
 #, kde-format
 msgid "A network error has occurred."
 msgstr "Сталася помилка у мережі."
 
-#: downloadjob.cpp:241
+#: downloadjob.cpp:244
 #, kde-format
 msgid "The network operation timed out."
 msgstr "Перевищено час очікування на завершення дії у мережі."
 
-#: downloadjob.cpp:242
+#: downloadjob.cpp:245
 #, kde-format
 msgid "The network connection has been lost."
 msgstr "Втрачено з'єднання із мережею."
 
-#: downloadjob.cpp:243
+#: downloadjob.cpp:246
 #, kde-format
 msgid "The server is no longer reachable."
 msgstr "Втрачено доступ до сервера."
 
-#: downloadjob.cpp:245
+#: downloadjob.cpp:248
 #, kde-format
 msgid "A server error has occurred."
 msgstr "Сталася помилка на сервері."
 
-#: downloadjob.cpp:249
+#: downloadjob.cpp:252
 #, kde-format
 msgid "The server does not have the requested data."
 msgstr "На сервері немає запитаних даних."
 
-#: downloadjob.cpp:251
+#: downloadjob.cpp:254
 #, kde-format
 msgid "The browser application closed unexpectedly."
 msgstr "Програма-браузер несподівано завершила роботу."
 
-#: downloadjob.cpp:257
+#: downloadjob.cpp:260
 #, kde-format
 msgid "An unknown error occurred while downloading."
 msgstr "Під час отримання даних сталася невідома помилка."
 
-#: downloadjob.cpp:295
+#: downloadjob.cpp:298
 #, kde-format
 msgctxt "Job heading, like 'Copying'"
 msgid "Downloading"
 msgstr "Отримання"
 
-#: downloadjob.cpp:296
+#: downloadjob.cpp:299
 #, kde-format
 msgctxt "The URL being downloaded"
 msgid "Source"
 msgstr "Джерело"
 
-#: downloadjob.cpp:297
+#: downloadjob.cpp:300
 #, kde-format
 msgctxt "The location being downloaded to"
 msgid "Destination"

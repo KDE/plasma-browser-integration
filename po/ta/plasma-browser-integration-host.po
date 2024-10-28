@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-browser-integration\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-06 00:40+0000\n"
+"POT-Creation-Date: 2024-10-28 00:41+0000\n"
 "PO-Revision-Date: 2024-08-18 17:22+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -27,7 +27,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "Kde-l10n-ta@kde.org"
 
-#: downloadjob.cpp:135
+#: downloadjob.cpp:138
 #, kde-format
 msgid ""
 "This type of file can harm your computer. If you want to keep it, accept "
@@ -36,89 +36,89 @@ msgstr ""
 "இந்த வகையான கோப்பு, உங்கள் கணினிக்கு கேடு விளைவிக்கலாம். இதை சேமிக்க வேண்டுமெனில், "
 "உலாவி சாளரத்திலிருந்து பதிவிறக்கத்தை ஏற்கவும்."
 
-#: downloadjob.cpp:232
+#: downloadjob.cpp:235
 #, kde-format
 msgid "Access denied."
 msgstr "அணுகல் மறுக்கப்பட்டது."
 
-#: downloadjob.cpp:233
+#: downloadjob.cpp:236
 #, kde-format
 msgid "Insufficient free space."
 msgstr "காலியிடம் போதவில்லை"
 
-#: downloadjob.cpp:234
+#: downloadjob.cpp:237
 #, kde-format
 msgid "The file name you have chosen is too long."
 msgstr "நீங்கள் தேர்ந்தெடுத்த கோப்புப்பெயர், கூடுதல் நீளமாக உள்ளது."
 
-#: downloadjob.cpp:235
+#: downloadjob.cpp:238
 #, kde-format
 msgid "The file is too large to be downloaded."
 msgstr "பதிவிறக்க கூடியதை விட கோப்பு பெரிதாக உள்ளது."
 
-#: downloadjob.cpp:237
+#: downloadjob.cpp:240
 #, kde-format
 msgid "The file possibly contains malicious contents."
 msgstr "கோப்பு, தீங்கு விளைவிக்க கூடியதாக இருக்கலாம்"
 
-#: downloadjob.cpp:238
+#: downloadjob.cpp:241
 #, kde-format
 msgid "A temporary error has occurred. Please try again later."
 msgstr "தற்காலிக சிக்கல் ஏற்பட்டுள்ளது. தயவுசெய்து பின்னர் முயற்சிக்கவும்."
 
-#: downloadjob.cpp:240
+#: downloadjob.cpp:243
 #, kde-format
 msgid "A network error has occurred."
 msgstr "பிணைய சிக்கல் ஏற்பட்டுள்ளது."
 
-#: downloadjob.cpp:241
+#: downloadjob.cpp:244
 #, kde-format
 msgid "The network operation timed out."
 msgstr "பிணைய செயல்பாடு காலாவதியானது."
 
-#: downloadjob.cpp:242
+#: downloadjob.cpp:245
 #, kde-format
 msgid "The network connection has been lost."
 msgstr "பிணைய இணைப்பு இழக்கப்பட்டது."
 
-#: downloadjob.cpp:243
+#: downloadjob.cpp:246
 #, kde-format
 msgid "The server is no longer reachable."
 msgstr "சேவையகத்தை இப்போது அணுக முடியவில்லை."
 
-#: downloadjob.cpp:245
+#: downloadjob.cpp:248
 #, kde-format
 msgid "A server error has occurred."
 msgstr "சேவையக சிக்கல் ஏற்பட்டது."
 
-#: downloadjob.cpp:249
+#: downloadjob.cpp:252
 #, kde-format
 msgid "The server does not have the requested data."
 msgstr "கோரிய தரவு சேவையகத்திடம் இல்லை."
 
-#: downloadjob.cpp:251
+#: downloadjob.cpp:254
 #, kde-format
 msgid "The browser application closed unexpectedly."
 msgstr "உலாவி எதிர்பாராத விதத்தில் முறிவடைந்தது."
 
-#: downloadjob.cpp:257
+#: downloadjob.cpp:260
 #, kde-format
 msgid "An unknown error occurred while downloading."
 msgstr "பதிவிறக்கும்போது தெரியாத சிக்கல் ஏற்பட்டது."
 
-#: downloadjob.cpp:295
+#: downloadjob.cpp:298
 #, kde-format
 msgctxt "Job heading, like 'Copying'"
 msgid "Downloading"
 msgstr "பதிவிறக்கம்"
 
-#: downloadjob.cpp:296
+#: downloadjob.cpp:299
 #, kde-format
 msgctxt "The URL being downloaded"
 msgid "Source"
 msgstr "மூலம்"
 
-#: downloadjob.cpp:297
+#: downloadjob.cpp:300
 #, kde-format
 msgctxt "The location being downloaded to"
 msgid "Destination"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-browser-integration\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-06 00:40+0000\n"
+"POT-Creation-Date: 2024-10-28 00:41+0000\n"
 "PO-Revision-Date: 2024-09-13 14:48+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -28,7 +28,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "ulysses@fsf.hu"
 
-#: downloadjob.cpp:135
+#: downloadjob.cpp:138
 #, kde-format
 msgid ""
 "This type of file can harm your computer. If you want to keep it, accept "
@@ -37,89 +37,89 @@ msgstr ""
 "Ez a fájltípus árthat a számítógépének. Ha meg akarja tartani, hagyja jóvá a "
 "letöltést a böngésző ablakában."
 
-#: downloadjob.cpp:232
+#: downloadjob.cpp:235
 #, kde-format
 msgid "Access denied."
 msgstr "Hozzáférés megtagadva."
 
-#: downloadjob.cpp:233
+#: downloadjob.cpp:236
 #, kde-format
 msgid "Insufficient free space."
 msgstr "Kevés a lemezterület."
 
-#: downloadjob.cpp:234
+#: downloadjob.cpp:237
 #, kde-format
 msgid "The file name you have chosen is too long."
 msgstr "A megadott fájlnév túl hosszú."
 
-#: downloadjob.cpp:235
+#: downloadjob.cpp:238
 #, kde-format
 msgid "The file is too large to be downloaded."
 msgstr "A fájl túl nagy, nem lehet letölteni."
 
-#: downloadjob.cpp:237
+#: downloadjob.cpp:240
 #, kde-format
 msgid "The file possibly contains malicious contents."
 msgstr "A fájl valószínűleg kártékony."
 
-#: downloadjob.cpp:238
+#: downloadjob.cpp:241
 #, kde-format
 msgid "A temporary error has occurred. Please try again later."
 msgstr "Átmeneti hiba történt. Próbálja újra később."
 
-#: downloadjob.cpp:240
+#: downloadjob.cpp:243
 #, kde-format
 msgid "A network error has occurred."
 msgstr "Hálózati hiba történt."
 
-#: downloadjob.cpp:241
+#: downloadjob.cpp:244
 #, kde-format
 msgid "The network operation timed out."
 msgstr "A hálózati művelet időtúllépés miatt megszakadt."
 
-#: downloadjob.cpp:242
+#: downloadjob.cpp:245
 #, kde-format
 msgid "The network connection has been lost."
 msgstr "A hálózati kapcsolat megszakadt."
 
-#: downloadjob.cpp:243
+#: downloadjob.cpp:246
 #, kde-format
 msgid "The server is no longer reachable."
 msgstr "A kiszolgáló nem érhető el többé."
 
-#: downloadjob.cpp:245
+#: downloadjob.cpp:248
 #, kde-format
 msgid "A server error has occurred."
 msgstr "Kiszolgálóhiba történt."
 
-#: downloadjob.cpp:249
+#: downloadjob.cpp:252
 #, kde-format
 msgid "The server does not have the requested data."
 msgstr "A kiszolgáló nem rendelkezik a kért adatokkal."
 
-#: downloadjob.cpp:251
+#: downloadjob.cpp:254
 #, kde-format
 msgid "The browser application closed unexpectedly."
 msgstr "A böngésző váratlanul bezárult."
 
-#: downloadjob.cpp:257
+#: downloadjob.cpp:260
 #, kde-format
 msgid "An unknown error occurred while downloading."
 msgstr "Ismeretlen hiba történt a letöltés során."
 
-#: downloadjob.cpp:295
+#: downloadjob.cpp:298
 #, kde-format
 msgctxt "Job heading, like 'Copying'"
 msgid "Downloading"
 msgstr "Letöltés"
 
-#: downloadjob.cpp:296
+#: downloadjob.cpp:299
 #, kde-format
 msgctxt "The URL being downloaded"
 msgid "Source"
 msgstr "Forrás"
 
-#: downloadjob.cpp:297
+#: downloadjob.cpp:300
 #, kde-format
 msgctxt "The location being downloaded to"
 msgid "Destination"

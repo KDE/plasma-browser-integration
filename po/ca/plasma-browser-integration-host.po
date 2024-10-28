@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-browser-integration\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-06 00:40+0000\n"
+"POT-Creation-Date: 2024-10-28 00:41+0000\n"
 "PO-Revision-Date: 2024-08-06 13:24+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -30,7 +30,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "txemaq@gmail.com"
 
-#: downloadjob.cpp:135
+#: downloadjob.cpp:138
 #, kde-format
 msgid ""
 "This type of file can harm your computer. If you want to keep it, accept "
@@ -39,89 +39,89 @@ msgstr ""
 "Aquest tipus de fitxer pot malmetre l'ordinador. Si el voleu mantenir, "
 "accepteu aquesta baixada des de la finestra del navegador."
 
-#: downloadjob.cpp:232
+#: downloadjob.cpp:235
 #, kde-format
 msgid "Access denied."
 msgstr "S'ha denegat l'accés."
 
-#: downloadjob.cpp:233
+#: downloadjob.cpp:236
 #, kde-format
 msgid "Insufficient free space."
 msgstr "Espai lliure al disc insuficient."
 
-#: downloadjob.cpp:234
+#: downloadjob.cpp:237
 #, kde-format
 msgid "The file name you have chosen is too long."
 msgstr "El nom del fitxer que heu triat és massa llarg."
 
-#: downloadjob.cpp:235
+#: downloadjob.cpp:238
 #, kde-format
 msgid "The file is too large to be downloaded."
 msgstr "Aquest fitxer és massa gran per a baixar."
 
-#: downloadjob.cpp:237
+#: downloadjob.cpp:240
 #, kde-format
 msgid "The file possibly contains malicious contents."
 msgstr "El fitxer possiblement té contingut maliciós."
 
-#: downloadjob.cpp:238
+#: downloadjob.cpp:241
 #, kde-format
 msgid "A temporary error has occurred. Please try again later."
 msgstr "Hi ha hagut un error temporal. Intenteu-ho més tard."
 
-#: downloadjob.cpp:240
+#: downloadjob.cpp:243
 #, kde-format
 msgid "A network error has occurred."
 msgstr "S'ha produït un error de xarxa."
 
-#: downloadjob.cpp:241
+#: downloadjob.cpp:244
 #, kde-format
 msgid "The network operation timed out."
 msgstr "L'operació de xarxa ha excedit el temps."
 
-#: downloadjob.cpp:242
+#: downloadjob.cpp:245
 #, kde-format
 msgid "The network connection has been lost."
 msgstr "S'ha perdut la connexió de xarxa."
 
-#: downloadjob.cpp:243
+#: downloadjob.cpp:246
 #, kde-format
 msgid "The server is no longer reachable."
 msgstr "Ja no es pot accedir al servidor."
 
-#: downloadjob.cpp:245
+#: downloadjob.cpp:248
 #, kde-format
 msgid "A server error has occurred."
 msgstr "S'ha produït un error del servidor."
 
-#: downloadjob.cpp:249
+#: downloadjob.cpp:252
 #, kde-format
 msgid "The server does not have the requested data."
 msgstr "El servidor no té les dades sol·licitades."
 
-#: downloadjob.cpp:251
+#: downloadjob.cpp:254
 #, kde-format
 msgid "The browser application closed unexpectedly."
 msgstr "L'aplicació d'explorador s'ha tancat inesperadament."
 
-#: downloadjob.cpp:257
+#: downloadjob.cpp:260
 #, kde-format
 msgid "An unknown error occurred while downloading."
 msgstr "S'ha produït un error desconegut en baixar."
 
-#: downloadjob.cpp:295
+#: downloadjob.cpp:298
 #, kde-format
 msgctxt "Job heading, like 'Copying'"
 msgid "Downloading"
 msgstr "S'està baixant"
 
-#: downloadjob.cpp:296
+#: downloadjob.cpp:299
 #, kde-format
 msgctxt "The URL being downloaded"
 msgid "Source"
 msgstr "Origen"
 
-#: downloadjob.cpp:297
+#: downloadjob.cpp:300
 #, kde-format
 msgctxt "The location being downloaded to"
 msgid "Destination"
