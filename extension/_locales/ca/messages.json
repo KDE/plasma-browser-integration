@@ -108,7 +108,7 @@
         "message": "Envia a través del KDE Connect"
     },
     "options_plugin_mpris_description": {
-        "message": "Permet controlar els reproductors de vídeo i àudio a llocs web usant el plasmoide Media Controller."
+        "message": "Permet controlar els reproductors de vídeo i àudio a llocs web usant el plasmoide «Controlador multimèdia»."
     },
     "options_plugin_mpris_media_sessions_description": {
         "message": "Extreu les metadades i les miniatures del contingut actualment en reproducció."
