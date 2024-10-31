@@ -7,6 +7,7 @@
         "Description[ca@valencia]": "Proporciona un enllaç cap a l'extensió del navegador si està instal·lat el servidor de la Integració del navegador amb Plasma",
         "Description[ca]": "Proporciona un enllaç a l'extensió del navegador si està instal·lat el servidor de la Integració del navegador amb el Plasma",
         "Description[cs]": "Poskytuje odkaz na rozšíření prohlížeče, pokud je hostitel integrace Plasma nainstalován",
+        "Description[da]": "Giver et link til den browser-tilføjelsen hvis værtsprogrammet Plasma browser-integration er installeret",
         "Description[de]": "Enthält eine Verknüpfung zur Browser-Erweiterung, wenn die Plasma-Integration für Browser installiert ist",
         "Description[el]": "Παρέχει έναν σύνδεσμο προς την επέκταση του προγράμματος περιήγησης εάν η ενσωμάτωση του προγράμματος περιήγησης Plasma έχει εγκατασταθεί",
         "Description[en_GB]": "Provides a link to the browser extension if the Plasma Browser Integration host is installed",
