@@ -36,7 +36,7 @@
         "message": "在「$1」上開啟"
     },
     "kdeconnect_open_via": {
-        "message": "透過 KDE 連線開啟"
+        "message": "透過 KDE Connect 開啟"
     },
     "options_about_bugs": {
         "message": "若您發現問題，請檢查<a href=\"$1\">開放臭蟲清單</a>並<a href=\"$2\">回報錯誤</a>。"
@@ -102,10 +102,10 @@
         "message": "搜尋瀏覽器歷史紀錄"
     },
     "options_plugin_kdeconnect_description": {
-        "message": "新增連結的選單項目，以讓您可以將它們使用 <a href=\"$1\">KDE 連線</a> 傳送到您的手機或是其他已配對的裝置。"
+        "message": "新增連結的選單項目，以讓您可以將它們使用 <a href=\"$1\">KDE Connect</a> 傳送到您的手機或是其他已配對的裝置。"
     },
     "options_plugin_kdeconnect_title": {
-        "message": "透過 KDE 連線傳送"
+        "message": "透過 KDE Connect 傳送"
     },
     "options_plugin_mpris_description": {
         "message": "讓您使用媒體控制器 plasmoid 控制網頁中的視訊與音訊播放器。"
