@@ -51,7 +51,7 @@
         "message": "Esta extensión de navegador creouna a <a href=\"$1\">comunidade de KDE</a>. Pode atopar máis información sobre o proxecto no <a href=\"$2\">no wiki da comunidade de KDE</a>."
     },
     "options_about_donate": {
-        "message": "Se lle gustou o que viu, considere <a href=\"$1\">doar a KDE</a> para que poidamos contribuír a facer o mellor software libre posíbel."
+        "message": "Se lle gustou o que viu, considere <a href=\"$1\">doar a KDE</a> para que poidamos contribuír a facer os mellores programas libres posíbeis."
     },
     "options_about_extension_version": {
         "message": "Versión da extensión: $1"
@@ -60,7 +60,7 @@
         "message": "Versión da máquina: $1"
     },
     "options_about_kde": {
-        "message": "KDE é unha comunidade mundial de enxeñeiros de software, artistas, escritores, tradutores e creadores comprometidos co desenvolvemento do <a href=\"$1\">software libre</a>. KDE produce o contorno de escritorio Plasma, centos de aplicacións, e as numerosas bibliotecas de software sobre as que están construídos. KDE é un proxecto cooperativo: non hai ningunha entidade que controle por si soa nin a dirección nin os produtos. O que facemos é traballar xuntos para acadar o obxectivo común de construír o mellor software libre do mundo. Todo o mundo é benvido a <a href=\"$2\">unirse e colaborar</a> con KDE, vostede incluído. Visite <a href=\"$3\">$3</a> para obter máis información sobre a comunidade KDE e do software que produce."
+        "message": "KDE é unha comunidade mundial de xente que programa, deseña, escribe, traduce e crea, comprometida co desenvolvemento de <a href=\"$1\">programas libres</a>. KDE produce o contorno de escritorio Plasma, centos de aplicacións, e as numerosas bibliotecas lóxicas sobre as que están construídos. KDE é un proxecto cooperativo: non hai ningunha entidade que controle por si soa nin a dirección nin os produtos. O que facemos é traballar xuntos para acadar o obxectivo común de construír os mellores programas libres do mundo. Todo o mundo é benvido a <a href=\"$2\">unirse e colaborar</a> con KDE, tamén vostede. Visite <a href=\"$3\">$3</a> para máis información sobre a comunidade KDE e os programas que produce."
     },
     "options_about_license": {
         "message": "Licenza: <a href=\"$1\">Licenza Pública Xeral de GNU, versión 3</a>"
