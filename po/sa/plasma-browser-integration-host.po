@@ -19,12 +19,12 @@ msgstr ""
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "भवतः नामानि"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "भवतः ईमेलपत्राणि"
 
 #: downloadjob.cpp:138
 #, kde-format
@@ -109,25 +109,25 @@ msgstr "अवतरणं कुर्वन् अज्ञातदोषः 
 #, kde-format
 msgctxt "Job heading, like 'Copying'"
 msgid "Downloading"
-msgstr ""
+msgstr "डाउनलोड् करणम्"
 
 #: downloadjob.cpp:299
 #, kde-format
 msgctxt "The URL being downloaded"
 msgid "Source"
-msgstr ""
+msgstr "स्रोतः"
 
 #: downloadjob.cpp:300
 #, kde-format
 msgctxt "The location being downloaded to"
 msgid "Destination"
-msgstr ""
+msgstr "गन्तव्य"
 
 #: historyrunnerplugin.cpp:108
 #, kde-format
 msgctxt "Dummy search result"
 msgid "Additional permissions are required"
-msgstr ""
+msgstr "अतिरिक्ताः अनुमतिः आवश्यकाः सन्ति"
 
 #: tabsrunnerplugin.cpp:38
 #, kde-format
