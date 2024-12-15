@@ -1,15 +1,15 @@
 {
     "browseraction_mpris_enable_on": {
-        "message": "Enable media controls on:"
+        "message": "अस्मिन् विषये माध्यमनियन्त्रणानि सक्षमं कुर्वन्तु:"
     },
     "browseraction_mpris_title": {
-        "message": "Media Controls"
+        "message": "मीडिया नियन्त्रणानि"
     },
     "browseraction_title": {
-        "message": "Plasma Browser Integration"
+        "message": "प्लाज्मा ब्राउज़र एकीकरण"
     },
     "general_error_host_disconnected_title": {
-        "message": "The native host disconnected unexpectedly."
+        "message": "देशी मेजबानः अप्रत्याशितरूपेण विच्छिन्नः अभवत् ।"
     },
     "general_error_not_supported_os": {
         "message": "एतत् विस्तारं केवलं Linux तथा FreeBSD इत्यत्र समर्थितम् अस्ति ।"
@@ -18,31 +18,31 @@
         "message": "असमर्थितं प्रचालनतन्त्रम्"
     },
     "general_error_startup_failed": {
-        "message": "Make sure the 'plasma-browser-integration' package is installed correctly and that you are running Plasma 5.13 or later."
+        "message": "'plasma-browser-integration' संकुलं सम्यक् संस्थापितम् अस्ति तथा च भवान् Plasma 5.13 अथवा ततः परं चालयति इति सुनिश्चितं कुर्वन्तु ।"
     },
     "general_error_startup_failed_title": {
-        "message": "Failed to connect to the native host."
+        "message": "देशी-होस्ट्-सङ्गतिं कर्तुं असफलम् ।"
     },
     "general_error_startup_failed_wiki_link": {
         "message": "अधिकविवरणार्थं परियोजना विकिपृष्ठं पश्यन्तु"
     },
     "general_error_unknown": {
-        "message": "Unknown Error"
+        "message": "अज्ञातदोषः"
     },
     "kdeconnect_call_device": {
-        "message": "Call on '$1'"
+        "message": "'$1' इत्यत्र आह्वानं कुर्वन्तु।"
     },
     "kdeconnect_open_device": {
-        "message": "Open on '$1'"
+        "message": "'$1' इत्यत्र उद्घाटितम्।"
     },
     "kdeconnect_open_via": {
-        "message": "Open via KDE Connect"
+        "message": "KDE Connect मार्गेण उद्घाटयन्तु"
     },
     "options_about_bugs": {
         "message": "यदि भवान् कञ्चन समस्यां पश्यति तर्हि कृपया <a href=\"$1\">मुक्तदोषाणां सूचीं</a> पश्यतु ततः <a href=\"$2\">दोषप्रतिवेदनं सञ्चिकां कुर्वन्तु</a> ।"
     },
     "options_about_changelog_link": {
-        "message": "View Changelog"
+        "message": "परिवर्तनवृत्तान्तं पश्यन्तु"
     },
     "options_about_copyright": {
         "message": "© 2017-2020 काई उवे ब्रौलिकः डेविड् एडमण्ड्सनः च"
@@ -54,13 +54,13 @@
         "message": "यदि भवता दृष्टं रोचते तर्हि कृपया <a href=\"$1\">KDE -इत्यस्मै दानं कर्तुं</a> विचारयन्तु , येन वयं उत्तमं मुक्तसॉफ्टवेयरं सम्भवं कर्तुं निरन्तरं शक्नुमः ।"
     },
     "options_about_extension_version": {
-        "message": "Extension version: $1"
+        "message": "विस्तारसंस्करणम् : $1"
     },
     "options_about_host_version": {
-        "message": "Host version: $1"
+        "message": "मेजबानसंस्करणम् : $1"
     },
     "options_about_kde": {
-        "message": "KDE is a world-wide community of software engineers, artists, writers, translators and creators who are committed to <a href=\"$1\">Free Software</a> development. KDE produces the Plasma desktop environment, hundreds of applications, and the many software libraries that support them. KDE is a cooperative enterprise: no single entity controls its direction or products. Instead, we work together to achieve the common goal of building the world's finest Free Software. Everyone is welcome to <a href=\"$2\">join and contribute</a> to KDE, including you. Visit <a href=\"$3\">$3</a> for more information about the KDE community and the software we produce."
+        "message": "KDE इति सॉफ्टवेयर अभियंतानां, कलाकारानां, लेखकानां, अनुवादकानां, निर्मातृणां च विश्वव्यापी समुदायः अस्ति ये <a href=\"$1\">मुक्तसॉफ्टवेयरविकासाय</a> प्रतिबद्धाः सन्ति । KDE Plasma डेस्कटॉप् वातावरणं, शतशः अनुप्रयोगाः, तान् समर्थयन्तः बहवः सॉफ्टवेयरपुस्तकालयाः च उत्पादयति । KDE एकः सहकारी उद्यमः अस्ति : कोऽपि एकः संस्था स्वस्य दिशां वा उत्पादं वा नियन्त्रयति । तस्य स्थाने वयं मिलित्वा विश्वस्य उत्तमस्य मुक्तसॉफ्टवेयरस्य निर्माणस्य साधारणं लक्ष्यं प्राप्तुं कार्यं कुर्मः। भवतां सहितं KDE इत्यत्र <a href=\"$2\">सम्मिलितुं योगदानं च कर्तुं</a> सर्वेषां स्वागतम् अस्ति। KDE समुदायस्य विषये अधिकाधिकं सूचनां प्राप्तुं वयं यत् सॉफ्टवेयरं उत्पादयामः तस्य विषये च <a href=\"$3\">$3</a> पश्यन्तु ।"
     },
     "options_about_license": {
         "message": "अनुज्ञापत्रम् : <a href=\"$1\">GNU सामान्यसार्वजनिक अनुज्ञापत्रसंस्करणम् 3</a>"
@@ -69,67 +69,67 @@
         "message": "अनुवादकः : $1"
     },
     "options_about_translators": {
-        "message": "Your names"
+        "message": "भवतः नामानि"
     },
     "options_heading_krunner": {
-        "message": "Plasma Search"
+        "message": "प्लाज्मा अन्वेषण"
     },
     "options_not_supported_os": {
         "message": "अस्मिन् प्रचालनतन्त्रे एषः विस्तारः समर्थितः नास्ति ।"
     },
     "options_plugin_breezeScrollBars_description": {
-        "message": "This may interfere with the appearance of websites that already apply a custom styling to their scroll bars."
+        "message": "एतेन तेषां जालपुटानां स्वरूपं बाधितुं शक्यते ये पूर्वमेव स्वस्क्रॉल-पट्टिकासु कस्टम्-स्टाइलिंग्-प्रयोगं कुर्वन्ति ।"
     },
     "options_plugin_breezeScrollBars_title": {
-        "message": "Use Breeze-style scroll bars"
+        "message": "Breeze-शैल्याः स्क्रॉल-पट्टिकानां उपयोगं कुर्वन्तु"
     },
     "options_plugin_downloads_addToRecentDocuments": {
-        "message": "Add downloaded files to recent documents"
+        "message": "अद्यतनदस्तावेजेषु डाउनलोड् कृतानि सञ्चिकानि योजयन्तु"
     },
     "options_plugin_downloads_saveOriginUrl": {
-        "message": "Save URL a file was downloaded from in the file's attributes"
+        "message": "URL रक्षतु सञ्चिकायाः विशेषतासु सञ्चिकायाः अवतरणं कृतम्"
     },
     "options_plugin_downloads_saveOriginUrl_description": {
         "message": "नोटः- URL मध्ये संवेदनशीलसूचनाः भवितुम् अर्हन्ति यत् यदा सञ्चिका अन्यैः अभिगम्यते अथवा तेषां सह साझा भवति तदा प्रकटितुं शक्यन्ते"
     },
     "options_plugin_downloads_title": {
-        "message": "Show downloads in notification area"
+        "message": "सूचनाक्षेत्रे डाउनलोड् दर्शयतु"
     },
     "options_plugin_historyrunner_description": {
-        "message": "This feature might need <a id=\"$1\" href=\"$2\">additional permissions</a> to be used."
+        "message": "अस्य विशेषतायाः उपयोगाय <a id=\"$1\" href=\"$2\">अतिरिक्तानुमतिः</a> आवश्यकी भवेत् ।"
     },
     "options_plugin_historyrunner_title": {
-        "message": "Search through browser history"
+        "message": "ब्राउजर् इतिहासस्य माध्यमेन अन्वेषणं कुर्वन्तु"
     },
     "options_plugin_kdeconnect_description": {
-        "message": "Adds a context menu entry to links enabling you to send them to your phone and other paired devices using <a href=\"$1\">KDE Connect</a>."
+        "message": "<a href=\"$1\">KDE Connect इत्यस्य</a> उपयोगेन स्वस्य दूरभाषे अन्ये च युग्मितयन्त्रेषु प्रेषयितुं सक्षमं कृत्वा लिङ्केषु सन्दर्भमेनूप्रविष्टिं योजयति ।"
     },
     "options_plugin_kdeconnect_title": {
-        "message": "Send via KDE Connect"
+        "message": "KDE Connect मार्गेण प्रेषयन्तु"
     },
     "options_plugin_mpris_description": {
-        "message": "Lets you control video and audio players in websites using the Media Controller plasmoid."
+        "message": "Media Controller plasmoid इत्यस्य उपयोगेन वेबसाइट् मध्ये video and audio players इत्यस्य नियन्त्रणं कर्तुं शक्नोति ।"
     },
     "options_plugin_mpris_media_sessions_description": {
-        "message": "Extract metadata and thumbnails of currently playing content."
+        "message": "वर्तमान समये वादयति सामग्रीयाः मेटाडाटा लघुचित्रं च निष्कासयन्तु।"
     },
     "options_plugin_mpris_media_sessions_title": {
-        "message": "Enhanced Media Controls"
+        "message": "वर्धिताः मीडिया नियन्त्रणानि"
     },
     "options_plugin_mpris_title": {
-        "message": "Media Controls"
+        "message": "मीडिया नियन्त्रणानि"
     },
     "options_plugin_purpose_description": {
-        "message": "Adds a \"Share...\" context menu entry and allows websites to open a dialog for sharing contents using the Web Share API."
+        "message": "\"Share...\" सन्दर्भमेनूप्रविष्टिं योजयति तथा च Web Share API इत्यस्य उपयोगेन सामग्रीसाझेदारीार्थं संवादं उद्घाटयितुं वेबसाइट्-स्थानानां अनुमतिं ददाति ।"
     },
     "options_plugin_purpose_title": {
-        "message": "Content Sharing"
+        "message": "सामग्रीसाझेदारी"
     },
     "options_plugin_tabsrunner_description": {
-        "message": "Make sure the “Browser Tabs” module is enabled in <a id=\"$1\" href=\"$2\">Plasma Search settings</a>."
+        "message": "<a id=\"$1\" href=\"$2\">Plasma Search सेटिंग्स्</a> मध्ये “Browser Tabs” मॉड्यूल् सक्षमम् अस्ति इति सुनिश्चितं कुर्वन्तु ।"
     },
     "options_plugin_tabsrunner_title": {
-        "message": "Find browser tabs in “Run Command” window"
+        "message": "“Run Command” विण्डो मध्ये ब्राउजर् ट्याब्स् अन्वेष्टुम्"
     },
     "options_save_failed": {
         "message": "सेटिङ्ग्स् रक्षणं विफलम् अभवत्"
@@ -138,46 +138,46 @@
         "message": "सेटिंग्स् सफलतया रक्षितम्"
     },
     "options_tab_about": {
-        "message": "About"
+        "message": "विषये"
     },
     "options_tab_general": {
-        "message": "General"
+        "message": "सामान्य"
     },
     "options_title": {
-        "message": "Plasma Integration Settings"
+        "message": "प्लाज्मा एकीकरण सेटिंग्स्"
     },
     "permission_request_already": {
         "message": "भवता पूर्वमेव एषा अनुमतिः प्रदत्ता।"
     },
     "permission_request_button_request": {
-        "message": "Request Permission"
+        "message": "अनुमतिं याचना"
     },
     "permission_request_button_revoke": {
-        "message": "Revoke Permission"
+        "message": "अनुमतिं निरस्तं कुर्वन्तु"
     },
     "permission_request_historyrunner_1": {
-        "message": "In order to provide search results for your browser history, additional permissions are required."
+        "message": "भवतः ब्राउजर्-इतिहासस्य अन्वेषणपरिणामान् प्रदातुं अतिरिक्तानुमतिः आवश्यकी भवति ।"
     },
     "permission_request_historyrunner_2": {
-        "message": "You can disable this feature in <a id=\"$1\" href=\"$2\">Plasma search settings</a>."
+        "message": "<a id=\"$1\" href=\"$2\">Plasma search settings</a> इत्यत्र एतत् विशेषतां निष्क्रियं कर्तुं शक्नुवन्ति |"
     },
     "permission_request_title": {
-        "message": "Additional permissions required"
+        "message": "अतिरिक्त अनुमतिः आवश्यकी"
     },
     "purpose_share": {
-        "message": "Share..."
+        "message": "संविभागः..."
     },
     "purpose_share_failed_text": {
-        "message": "Could not share this content: $1"
+        "message": "एतां सामग्रीं साझां कर्तुं न शक्तवान्: $1"
     },
     "purpose_share_failed_title": {
-        "message": "Sharing Failed"
+        "message": "साझेदारी विफलम्"
     },
     "purpose_share_finished_text": {
-        "message": "The shared content link ($1) has been copied to the clipboard."
+        "message": "साझासामग्रीलिङ्क् ($1) क्लिप्बोर्ड् मध्ये प्रतिलिपितः अस्ति ।"
     },
     "purpose_share_finished_title": {
-        "message": "Content Shared"
+        "message": "सामग्री साझा"
     },
     "store_description": {
         "message": "Multitask efficiently by controlling browser functions from the desktop, even while Chrome is in the background. Manage audio and video playback, check downloads in the notification area, send files to your phone using KDE Connect and more inside the KDE Plasma Desktop!\\n\\nThe plasma-browser-integration package must be installed for this extension to work. It should be available from your distribution's package manager when running Plasma 5.13 or later.\\n\\nNOTE: This extension is not supported on Debian."
