@@ -1,0 +1,185 @@
+{
+    "browseraction_mpris_enable_on": {
+        "message": "मीडिया नियंत्रण सक्षम करें:"
+    },
+    "browseraction_mpris_title": {
+        "message": "मीडिया नियंत्रण"
+    },
+    "browseraction_title": {
+        "message": "प्लाज्मा ब्राउज़र एकीकरण"
+    },
+    "general_error_host_disconnected_title": {
+        "message": "मूल होस्ट अप्रत्याशित रूप से डिस्कनेक्ट हो गया।"
+    },
+    "general_error_not_supported_os": {
+        "message": "यह एक्सटेंशन केवल Linux और FreeBSD पर समर्थित है।"
+    },
+    "general_error_not_supported_os_title": {
+        "message": "असमर्थित ऑपरेटिंग सिस्टम"
+    },
+    "general_error_startup_failed": {
+        "message": "सुनिश्चित करें कि 'plasma-browser-integration' पैकेज सही ढंग से स्थापित है और आप Plasma 5.13 या बाद का संस्करण चला रहे हैं।"
+    },
+    "general_error_startup_failed_title": {
+        "message": "मूल होस्ट से कनेक्ट करने में विफल."
+    },
+    "general_error_startup_failed_wiki_link": {
+        "message": "अधिक जानकारी के लिए परियोजना विकि पृष्ठ पर जाएँ"
+    },
+    "general_error_unknown": {
+        "message": "अज्ञात त्रुटि"
+    },
+    "kdeconnect_call_device": {
+        "message": "'$1' पर कॉल करें"
+    },
+    "kdeconnect_open_device": {
+        "message": "'$1' पर खोलें"
+    },
+    "kdeconnect_open_via": {
+        "message": "केडीई कनेक्ट के माध्यम से खोलें"
+    },
+    "options_about_bugs": {
+        "message": "यदि आपको कोई समस्या मिलती है, तो कृपया <a href=\"$1\">खुले बगों की सूची</a> जांचें और फिर <a href=\"$2\">बग रिपोर्ट दर्ज करें</a> ।"
+    },
+    "options_about_changelog_link": {
+        "message": "चेंजलॉग देखें"
+    },
+    "options_about_copyright": {
+        "message": "© 2017-2020 काई उवे ब्रोलिक और डेविड एडमंडसन"
+    },
+    "options_about_created_by_kde": {
+        "message": "यह ब्राउज़र एक्सटेंशन <a href=\"$1\">KDE समुदाय</a> द्वारा बनाया गया था। आप इस प्रोजेक्ट के बारे में अधिक जानकारी <a href=\"$2\">KDE समुदाय विकी</a> पर पा सकते हैं।"
+    },
+    "options_about_donate": {
+        "message": "यदि आपको जो दिखाई दिया वह पसंद आया तो कृपया <a href=\"$1\">केडीई को दान देने</a> पर विचार करें, ताकि हम सर्वोत्तम मुफ्त सॉफ्टवेयर बनाना जारी रख सकें।"
+    },
+    "options_about_extension_version": {
+        "message": "एक्सटेंशन संस्करण: $1"
+    },
+    "options_about_host_version": {
+        "message": "होस्ट संस्करण: $1"
+    },
+    "options_about_kde": {
+        "message": "KDE सॉफ्टवेयर इंजीनियरों, कलाकारों, लेखकों, अनुवादकों और रचनाकारों का एक विश्वव्यापी समुदाय है जो <a href=\"$1\">मुक्त सॉफ्टवेयर</a> विकास के लिए प्रतिबद्ध हैं। KDE प्लाज्मा डेस्कटॉप वातावरण, सैकड़ों एप्लिकेशन और उन्हें समर्थन देने वाली कई सॉफ्टवेयर लाइब्रेरी बनाता है। KDE एक सहकारी उद्यम है: कोई भी एकल इकाई इसके निर्देशन या उत्पादों को नियंत्रित नहीं करती है। इसके बजाय, हम दुनिया के बेहतरीन मुक्त सॉफ्टवेयर के निर्माण के सामान्य लक्ष्य को प्राप्त करने के लिए मिलकर काम करते हैं। आप सहित सभी का KDE में <a href=\"$2\">शामिल होने और योगदान देने के</a> लिए स्वागत है। KDE समुदाय और हमारे द्वारा उत्पादित सॉफ्टवेयर के बारे में अधिक जानकारी के लिए <a href=\"$3\">$3</a> पर जाएँ।"
+    },
+    "options_about_license": {
+        "message": "लाइसेंस: <a href=\"$1\">GNU जनरल पब्लिक लाइसेंस संस्करण 3</a>"
+    },
+    "options_about_translated_by": {
+        "message": "अनुवादक: $1"
+    },
+    "options_about_translators": {
+        "message": "तुम्हारे नाम"
+    },
+    "options_heading_krunner": {
+        "message": "प्लाज्मा खोज"
+    },
+    "options_not_supported_os": {
+        "message": "यह एक्सटेंशन इस ऑपरेटिंग सिस्टम पर समर्थित नहीं है."
+    },
+    "options_plugin_breezeScrollBars_description": {
+        "message": "इससे उन वेबसाइटों के स्वरूप में बाधा उत्पन्न हो सकती है जो पहले से ही अपने स्क्रॉल बार पर कस्टम स्टाइलिंग लागू करती हैं।"
+    },
+    "options_plugin_breezeScrollBars_title": {
+        "message": "ब्रीज़-शैली स्क्रॉल बार का उपयोग करें"
+    },
+    "options_plugin_downloads_addToRecentDocuments": {
+        "message": "डाउनलोड की गई फ़ाइलों को हाल के दस्तावेज़ों में जोड़ें"
+    },
+    "options_plugin_downloads_saveOriginUrl": {
+        "message": "फ़ाइल की विशेषताओं में वह URL सहेजें जिससे फ़ाइल डाउनलोड की गई थी"
+    },
+    "options_plugin_downloads_saveOriginUrl_description": {
+        "message": "नोट: URL में संवेदनशील जानकारी हो सकती है जो तब प्रकट हो सकती है जब फ़ाइल दूसरों के द्वारा एक्सेस की जा सकती है या दूसरों के साथ साझा की जा सकती है"
+    },
+    "options_plugin_downloads_title": {
+        "message": "अधिसूचना क्षेत्र में डाउनलोड दिखाएं"
+    },
+    "options_plugin_historyrunner_description": {
+        "message": "इस सुविधा का उपयोग करने के लिए <a id=\"$1\" href=\"$2\">अतिरिक्त अनुमतियों की</a> आवश्यकता हो सकती है।"
+    },
+    "options_plugin_historyrunner_title": {
+        "message": "ब्राउज़र इतिहास के माध्यम से खोजें"
+    },
+    "options_plugin_kdeconnect_description": {
+        "message": "लिंक में एक संदर्भ मेनू प्रविष्टि जोड़ता है जिससे आप उन्हें <a href=\"$1\">KDE कनेक्ट का</a> उपयोग करके अपने फोन और अन्य युग्मित डिवाइसों पर भेज सकते हैं।"
+    },
+    "options_plugin_kdeconnect_title": {
+        "message": "केडीई कनेक्ट के माध्यम से भेजें"
+    },
+    "options_plugin_mpris_description": {
+        "message": "मीडिया नियंत्रक प्लास्मॉइड का उपयोग करके आपको वेबसाइटों में वीडियो और ऑडियो प्लेयर को नियंत्रित करने की सुविधा देता है।"
+    },
+    "options_plugin_mpris_media_sessions_description": {
+        "message": "वर्तमान में चल रही सामग्री का मेटाडेटा और थंबनेल निकालें।"
+    },
+    "options_plugin_mpris_media_sessions_title": {
+        "message": "उन्नत मीडिया नियंत्रण"
+    },
+    "options_plugin_mpris_title": {
+        "message": "मीडिया नियंत्रण"
+    },
+    "options_plugin_purpose_description": {
+        "message": "एक \"साझा करें...\" संदर्भ मेनू प्रविष्टि जोड़ता है और वेबसाइटों को वेब शेयर API का उपयोग करके सामग्री साझा करने के लिए एक संवाद खोलने की अनुमति देता है।"
+    },
+    "options_plugin_purpose_title": {
+        "message": "सामग्री साझा करना"
+    },
+    "options_plugin_tabsrunner_description": {
+        "message": "सुनिश्चित करें कि <a id=\"$1\" href=\"$2\">प्लाज्मा खोज सेटिंग्स</a> में &quot;ब्राउज़र टैब&quot; मॉड्यूल सक्षम है।"
+    },
+    "options_plugin_tabsrunner_title": {
+        "message": "“रन कमांड” विंडो में ब्राउज़र टैब खोजें"
+    },
+    "options_save_failed": {
+        "message": "सेटिंग सहेजना विफल"
+    },
+    "options_save_success": {
+        "message": "सेटिंग सफलतापूर्वक सहेजी गई"
+    },
+    "options_tab_about": {
+        "message": "के बारे में"
+    },
+    "options_tab_general": {
+        "message": "सामान्य"
+    },
+    "options_title": {
+        "message": "प्लाज्मा एकीकरण सेटिंग्स"
+    },
+    "permission_request_already": {
+        "message": "आपने पहले ही यह अनुमति दे दी है।"
+    },
+    "permission_request_button_request": {
+        "message": "अनुमति का अनुरोध करें"
+    },
+    "permission_request_button_revoke": {
+        "message": "अनुमति रद्द करें"
+    },
+    "permission_request_historyrunner_1": {
+        "message": "आपके ब्राउज़र इतिहास के लिए खोज परिणाम प्रदान करने के लिए अतिरिक्त अनुमतियों की आवश्यकता होती है।"
+    },
+    "permission_request_historyrunner_2": {
+        "message": "आप <a id=\"$1\" href=\"$2\">प्लाज़्मा खोज सेटिंग्स</a> में इस सुविधा को अक्षम कर सकते हैं।"
+    },
+    "permission_request_title": {
+        "message": "अतिरिक्त अनुमतियाँ आवश्यक"
+    },
+    "purpose_share": {
+        "message": "शेयर करना..."
+    },
+    "purpose_share_failed_text": {
+        "message": "यह सामग्री साझा नहीं की जा सकी: $1"
+    },
+    "purpose_share_failed_title": {
+        "message": "साझाकरण विफल"
+    },
+    "purpose_share_finished_text": {
+        "message": "साझा सामग्री लिंक ($1) को क्लिपबोर्ड पर कॉपी कर दिया गया है।"
+    },
+    "purpose_share_finished_title": {
+        "message": "साझा की गई सामग्री"
+    },
+    "store_description": {
+        "message": "Multitask efficiently by controlling browser functions from the desktop, even while Chrome is in the background. Manage audio and video playback, check downloads in the notification area, send files to your phone using KDE Connect and more inside the KDE Plasma Desktop!\\n\\nThe plasma-browser-integration package must be installed for this extension to work. It should be available from your distribution's package manager when running Plasma 5.13 or later.\\n\\nNOTE: This extension is not supported on Debian."
+    }
+}
