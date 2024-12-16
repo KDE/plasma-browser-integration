@@ -1,4 +1,4 @@
-# Sanskrit translations for plasma-browser-integration package.
+# Hindi translations for plasma-browser-integration package.
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the plasma-browser-integration package.
 # Kali <EMAIL@ADDRESS>, 2024.
@@ -8,14 +8,13 @@ msgstr ""
 "Project-Id-Version: plasma-browser-integration\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-08 02:13+0000\n"
-"PO-Revision-Date: 2024-12-13 19:10+0530\n"
+"PO-Revision-Date: 2024-12-15 17:36+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
-"Language-Team: Sanskrit\n"
-"Language: sa\n"
+"Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
+"Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n>2);\n"
 
 #: browserintegrationreminder.cpp:141
 #, kde-format
@@ -25,4 +24,4 @@ msgstr "प्लाज्मा ब्राउज़र एकीकरण प
 #: browserintegrationreminder.cpp:168
 #, kde-format
 msgid "Do not show again"
-msgstr "पुनः न दर्शयतु"
+msgstr "दोबारा न दिखाएं"

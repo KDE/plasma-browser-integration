@@ -1,4 +1,4 @@
-# Sanskrit translations for plasma-browser-integration package.
+# Hindi translations for plasma-browser-integration package.
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the plasma-browser-integration package.
 # Kali <EMAIL@ADDRESS>, 2024.
@@ -8,24 +8,23 @@ msgstr ""
 "Project-Id-Version: plasma-browser-integration\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-28 00:41+0000\n"
-"PO-Revision-Date: 2024-12-13 19:10+0530\n"
+"PO-Revision-Date: 2024-12-15 17:36+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
-"Language-Team: Sanskrit\n"
-"Language: sa\n"
+"Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
+"Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n>2);\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "भवतः नामानि"
+msgstr "तुम्हारे नाम"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "भवतः ईमेलपत्राणि"
+msgstr "आपके ईमेल"
 
 #: downloadjob.cpp:138
 #, kde-format
@@ -33,109 +32,109 @@ msgid ""
 "This type of file can harm your computer. If you want to keep it, accept "
 "this download from the browser window."
 msgstr ""
-"एतादृशी सञ्चिका भवतः सङ्गणकस्य हानिं कर्तुं शक्नोति । यदि भवान् तत् स्थापयितुम् इच्छति तर्हि "
-"ब्राउजर् विण्डोतः एतत् डाउनलोड् स्वीकुरुत ।"
+"इस प्रकार की फ़ाइल आपके कंप्यूटर को नुकसान पहुंचा सकती है। यदि आप इसे रखना चाहते हैं, तो "
+"ब्राउज़र विंडो से इस डाउनलोड को स्वीकार करें।"
 
 #: downloadjob.cpp:235
 #, kde-format
 msgid "Access denied."
-msgstr "प्रवेशः अङ्गीकृतः।"
+msgstr "पहुंच अस्वीकृत।"
 
 #: downloadjob.cpp:236
 #, kde-format
 msgid "Insufficient free space."
-msgstr "अपर्याप्त मुक्तस्थानं।"
+msgstr "अपर्याप्त खाली स्थान."
 
 #: downloadjob.cpp:237
 #, kde-format
 msgid "The file name you have chosen is too long."
-msgstr "भवता चितं सञ्चिकानाम अतिदीर्घम् अस्ति ।"
+msgstr "आपके द्वारा चुना गया फ़ाइल नाम बहुत लंबा है."
 
 #: downloadjob.cpp:238
 #, kde-format
 msgid "The file is too large to be downloaded."
-msgstr "सञ्चिका अतीव विशाला अस्ति यत् अवतरणं कर्तुं न शक्यते ।"
+msgstr "फ़ाइल डाउनलोड करने के लिए बहुत बड़ी है."
 
 #: downloadjob.cpp:240
 #, kde-format
 msgid "The file possibly contains malicious contents."
-msgstr "सञ्चिकायां सम्भवतः दुर्भावनापूर्णसामग्रीः सन्ति ।"
+msgstr "फ़ाइल में संभवतः दुर्भावनापूर्ण सामग्री हो सकती है."
 
 #: downloadjob.cpp:241
 #, kde-format
 msgid "A temporary error has occurred. Please try again later."
-msgstr "अस्थायी दोषः अभवत् । कृपया पश्चात् पुनः प्रयासं कुर्वन्तु।"
+msgstr "एक अस्थायी त्रुटि हुई है। कृपया बाद में पुनः प्रयास करें।"
 
 #: downloadjob.cpp:243
 #, kde-format
 msgid "A network error has occurred."
-msgstr "जालदोषः अभवत् ।"
+msgstr "नेटवर्क त्रुटि उत्पन्न हुई है."
 
 #: downloadjob.cpp:244
 #, kde-format
 msgid "The network operation timed out."
-msgstr "जालसञ्चालनस्य समयः समाप्तः ।"
+msgstr "नेटवर्क संचालन का समय समाप्त हो गया।"
 
 #: downloadjob.cpp:245
 #, kde-format
 msgid "The network connection has been lost."
-msgstr "जालसंयोजनं नष्टम् अस्ति।"
+msgstr "नेटवर्क कनेक्शन टूट गया है."
 
 #: downloadjob.cpp:246
 #, kde-format
 msgid "The server is no longer reachable."
-msgstr "सर्वरः इदानीं न प्राप्यते ।"
+msgstr "सर्वर अब उपलब्ध नहीं है."
 
 #: downloadjob.cpp:248
 #, kde-format
 msgid "A server error has occurred."
-msgstr "सर्वरदोषः अभवत् ।"
+msgstr "सर्वर में त्रुटि उत्पन्न हुई है."
 
 #: downloadjob.cpp:252
 #, kde-format
 msgid "The server does not have the requested data."
-msgstr "सर्वरे अनुरोधितं दत्तांशं नास्ति ।"
+msgstr "सर्वर में अनुरोधित डेटा नहीं है."
 
 #: downloadjob.cpp:254
 #, kde-format
 msgid "The browser application closed unexpectedly."
-msgstr "ब्राउजर्-अनुप्रयोगः अप्रत्याशितरूपेण बन्दः अभवत् ।"
+msgstr "ब्राउज़र अनुप्रयोग अप्रत्याशित रूप से बंद हो गया."
 
 #: downloadjob.cpp:260
 #, kde-format
 msgid "An unknown error occurred while downloading."
-msgstr "अवतरणं कुर्वन् अज्ञातदोषः अभवत् ।"
+msgstr "डाउनलोड करते समय एक अज्ञात त्रुटि घटित हुई."
 
 #: downloadjob.cpp:298
 #, kde-format
 msgctxt "Job heading, like 'Copying'"
 msgid "Downloading"
-msgstr "डाउनलोड् करणम्"
+msgstr "डाउनलोड"
 
 #: downloadjob.cpp:299
 #, kde-format
 msgctxt "The URL being downloaded"
 msgid "Source"
-msgstr "स्रोतः"
+msgstr "स्रोत"
 
 #: downloadjob.cpp:300
 #, kde-format
 msgctxt "The location being downloaded to"
 msgid "Destination"
-msgstr "गन्तव्य"
+msgstr "गंतव्य"
 
 #: historyrunnerplugin.cpp:108
 #, kde-format
 msgctxt "Dummy search result"
 msgid "Additional permissions are required"
-msgstr "अतिरिक्ताः अनुमतिः आवश्यकाः सन्ति"
+msgstr "अतिरिक्त अनुमतियाँ आवश्यक हैं"
 
 #: tabsrunnerplugin.cpp:38
 #, kde-format
 msgid "Mute Tab"
-msgstr "Mute Tab"
+msgstr "म्यूट टैब"
 
 #: tabsrunnerplugin.cpp:43
 #, kde-format
 msgid "Unmute Tab"
-msgstr "अप्रसन्नता टब"
+msgstr "नाराजगी टैब"
