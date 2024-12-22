@@ -111,7 +111,7 @@
         "message": "Web sitelerindeki video ve ses oynatıcılarını Ortam Denetleyicisi Plasmoid’ini kullanarak denetlemenize izin verir."
     },
     "options_plugin_mpris_media_sessions_description": {
-        "message": "Şu anda oynatılan içeriğin üstverisini ve küçük görsellerini çıkar."
+        "message": "Şu anda oynatılan içeriğin üst verisini ve küçük görsellerini çıkarın."
     },
     "options_plugin_mpris_media_sessions_title": {
         "message": "Geliştirilmiş Ortam Denetimleri"
