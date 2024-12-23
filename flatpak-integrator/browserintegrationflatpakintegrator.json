@@ -1,8 +1,11 @@
 {
     "KPlugin": {
         "Description": "Automatically enables support for Firefox Flatpak",
+        "Description[ar]": "تمكين الدعم لفيرفوكس إصدارة فلاتباك تلقائيًا",
         "Description[ca@valencia]": "Activa automàticament el suport per a Flatpak de Firefox",
         "Description[ca]": "Activa automàticament el suport per al Flatpak del Firefox",
+        "Description[es]": "Activa automáticamente el uso del Flatpak de Firefox",
+        "Description[eu]": "Firefox-en Flatpak-erako euskarria automatikoki gaitzen du",
         "Description[gl]": "Activa automaticamente a compatibilidade co Flatpak de Firefox.",
         "Description[he]": "הפעלת תמיכה אוטומטית ב־Flatpak של Firefox",
         "Description[ka]": "ავტომატურად ჩართავს Firefox Flatpak-ის მხარდაჭერას",
@@ -13,9 +16,13 @@
         "Description[tr]": "Firefox Flatpak için kendiliğinden desteği etkinleştirir",
         "Description[uk]": "Автоматично вмикає підтримку для Flatpak Firefox",
         "Description[x-test]": "xxAutomatically enables support for Firefox Flatpakxx",
+        "Description[zh_CN]": "自动启用 Firefox Flatpak 支持",
         "Name": "Plasma Browser Integration Flatpak Integration",
+        "Name[ar]": "تكامل متصفح البلازما مع فلاتباك",
         "Name[ca@valencia]": "Integració de Flatpak de la integració del navegador amb Plasma",
         "Name[ca]": "Integració del Flatpak de la integració del navegador amb el Plasma",
+        "Name[es]": "Compatibilidad con Flatpak de la de la integración del navegador con Plasma",
+        "Name[eu]": "Plasman arakatzaileak bateratzea Flatpak bateratzea",
         "Name[gl]": "Integración con Flatpak da integración co navegador de Plasma",
         "Name[he]": "שילוב פלזמה ודפדפן ב־Flatpak",
         "Name[ka]": "Plasma-ის ბრაუზერის ინტეგრაცია Flatpak-ის ინტეგრაცია",
@@ -25,7 +32,8 @@
         "Name[sl]": "Integracija brskalnika Plasma Integracija Flatpaka",
         "Name[tr]": "Plasma Tarayıcı Tümleştirmesi Flatpak Tümleşimi",
         "Name[uk]": "Інтеграція Flatpak як браузера Плазми",
-        "Name[x-test]": "xxPlasma Browser Integration Flatpak Integrationxx"
+        "Name[x-test]": "xxPlasma Browser Integration Flatpak Integrationxx",
+        "Name[zh_CN]": "Plasma 浏览器集成 Flatpak 集成"
     },
     "X-KDE-DBus-ModuleName": "browserintegrationflatpakintegrator",
     "X-KDE-Kded-autoload": true,
