@@ -23,6 +23,7 @@
         "Description[uk]": "Автоматично вмикає підтримку для Flatpak Firefox",
         "Description[x-test]": "xxAutomatically enables support for Firefox Flatpakxx",
         "Description[zh_CN]": "自动启用 Firefox Flatpak 支持",
+        "Description[zh_TW]": "自動啟用對 Flatpak 版 Firefox 的支援",
         "Name": "Plasma Browser Integration Flatpak Integration",
         "Name[ar]": "تكامل متصفح البلازما مع فلاتباك",
         "Name[bg]": "Интеграция на Flatpak за браузър интеграция в Plasma",
@@ -45,7 +46,8 @@
         "Name[tr]": "Plasma Tarayıcı Tümleştirmesi Flatpak Tümleşimi",
         "Name[uk]": "Інтеграція Flatpak як браузера Плазми",
         "Name[x-test]": "xxPlasma Browser Integration Flatpak Integrationxx",
-        "Name[zh_CN]": "Plasma 浏览器集成 Flatpak 集成"
+        "Name[zh_CN]": "Plasma 浏览器集成 Flatpak 集成",
+        "Name[zh_TW]": "Plasma 瀏覽器整合 Flatpak 整合"
     },
     "X-KDE-DBus-ModuleName": "browserintegrationflatpakintegrator",
     "X-KDE-Kded-autoload": true,
