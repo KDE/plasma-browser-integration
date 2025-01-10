@@ -120,13 +120,13 @@
         "message": "Ortam Denetimleri"
     },
     "options_plugin_purpose_description": {
-        "message": "Bir ‘Paylaş…’ bağlam menüsü girdisi ekler ve web sitelerinin içeriği paylaşmak için Web Share API kullanarak bir iletişim kutusu açmasına izin verir."
+        "message": "Bir “Paylaş…” bağlam menüsü girdisi ekler ve web sitelerinin içeriği paylaşmak için Web Share API kullanarak bir iletişim kutusu açmasına izin verir."
     },
     "options_plugin_purpose_title": {
         "message": "İçerik Paylaşma"
     },
     "options_plugin_tabsrunner_description": {
-        "message": "<a id=\"$1\" href=\"$2\">Plasma Arama Ayarları</a>’nda ‘Tarayıcı Sekmeleri’ modülünün etkinleştirilmiş olduğundan emin olun."
+        "message": "<a id=\"$1\" href=\"$2\">Plasma Arama Ayarları</a>’nda “Tarayıcı Sekmeleri” modülünün etkinleştirilmiş olduğundan emin olun."
     },
     "options_plugin_tabsrunner_title": {
         "message": "Komut Çalıştır penceresinde tarayıcı sekmelerini bul"
