@@ -60,7 +60,7 @@
         "message": "Versión da máquina: $1"
     },
     "options_about_kde": {
-        "message": "KDE é unha comunidade mundial de xente que programa, deseña, escribe, traduce e crea, comprometida co desenvolvemento de <a href=\"$1\">programas libres</a>. KDE produce o contorno de escritorio Plasma, centos de aplicacións, e as numerosas bibliotecas lóxicas sobre as que están construídos. KDE é un proxecto cooperativo: non hai ningunha entidade que controle por si soa nin a dirección nin os produtos. O que facemos é traballar xuntos para acadar o obxectivo común de construír os mellores programas libres do mundo. Todo o mundo é benvido a <a href=\"$2\">unirse e colaborar</a> con KDE, tamén vostede. Visite <a href=\"$3\">$3</a> para máis información sobre a comunidade KDE e os programas que produce."
+        "message": "KDE é unha comunidade mundial de xente que programa, deseña, escribe, traduce e crea, comprometida co desenvolvemento de <a href=\"$1\">programas libres</a>. KDE produce o contorno de escritorio Plasma, centos de aplicacións, e as numerosas bibliotecas lóxicas nas que se apoian. KDE é un proxecto cooperativo: non hai ningunha entidade que controle por si soa nin a dirección nin os produtos. O que facemos é traballar xuntos para acadar o obxectivo común de construír os mellores programas libres do mundo. Todo o mundo é benvido a <a href=\"$2\">unirse e colaborar</a> con KDE, tamén vostede. Visite <a href=\"$3\">$3</a> para máis información sobre a comunidade KDE e os programas que produce."
     },
     "options_about_license": {
         "message": "Licenza: <a href=\"$1\">Licenza Pública Xeral de GNU, versión 3</a>"
@@ -90,7 +90,7 @@
         "message": "Gardar o URL de orixe dun ficheiro descargado nos atributos do ficheiro"
     },
     "options_plugin_downloads_saveOriginUrl_description": {
-        "message": "Nota: O URL pode conter información sensible que podería revelarse cando terceiros accedan ao ficheiro ou se comparta con eles"
+        "message": "Nota: O URL pode conter información sensíbel que podería revelarse cando terceiros accedan ao ficheiro ou se comparta con eles"
     },
     "options_plugin_downloads_title": {
         "message": "Amosar as descargas na área de notificación."
