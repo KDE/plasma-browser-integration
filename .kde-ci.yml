@@ -2,8 +2,8 @@
 # SPDX-License-Identifier: CC0-1.0
 
 Dependencies:
-- 'on': ['@all']
-  'require':
+ - 'on': ['@all']
+   'require':
     'frameworks/extra-cmake-modules': '@latest-kf6'
     'frameworks/kio': '@latest-kf6'
     'frameworks/ki18n': '@latest-kf6'
@@ -22,4 +22,4 @@ Dependencies:
     'plasma/plasma-activities': '@latest-kf6' # Different branch scheme due to being a former Framework
 
 Options:
-  require-passing-tests-on: [ 'Linux', 'FreeBSD']
+ require-passing-tests-on: ['Linux', 'FreeBSD']
