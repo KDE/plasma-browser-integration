@@ -23,6 +23,7 @@
         "Description[pt_BR]": "Habilita automaticamente o suporte para Firefox flatpak",
         "Description[ru]": "Автоматическая активация поддержки браузера Firefox в формате самодостаточного пакета Flatpak",
         "Description[sa]": "स्वयमेव Firefox Flatpak इत्यस्य समर्थनं सक्षमं करोति",
+        "Description[sk]": "Automaticky povolí podporu pre Firefox Flatpak",
         "Description[sl]": "Samodejno omogoči podporo za Firefox Flatpak",
         "Description[sv]": "Aktiverar automatiskt stöd för Firefox Flatpak",
         "Description[tr]": "Firefox Flatpak için kendiliğinden desteği etkinleştirir",
