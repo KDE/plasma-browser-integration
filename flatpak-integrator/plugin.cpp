@@ -115,21 +115,41 @@ class BrowserIntegrationFlatpakIntegrator : public KDEDModule
     Q_CLASSINFO("D-Bus Interface", "org.kde.plasma.browser.integration.FlatpakIntegrator")
 
 public:
+    /** Browser information structure to hold browser-specific configuration */
+    struct BrowserInfo {
+        /** The browser's Flatpak id, e.g. "org.mozilla.firefox" */
+        QString id;
+
+        /** The directory the browser expects its native messaging hosts to be in */
+        QString nativeMessagingHostsDir;
+    };
+
     BrowserIntegrationFlatpakIntegrator(QObject *parent, const QList<QVariant> &)
         : KDEDModule(parent)
     {
-        auto flatpak = new QProcess(this);
-        connect(flatpak, qOverload<int, QProcess::ExitStatus>(&QProcess::finished), this, [flatpak](int, QProcess::ExitStatus) {
-            flatpak->deleteLater();
-        });
-        flatpak->start(u"flatpak"_s, {u"override"_s, u"--user"_s, u"--talk-name=org.kde.plasma.browser.integration"_s, u"org.mozilla.firefox"_s});
+        const QList<BrowserInfo> supportedBrowsers = {
+            {u"org.mozilla.firefox"_s, u"/.mozilla/native-messaging-hosts"_s},
+            {u"io.gitlab.librewolf-community"_s, u"/.librewolf/native-messaging-hosts"_s},
+        };
+
+        // Set up Flatpak permissions for each browser
+        for (const auto &browser : supportedBrowsers) {
+            auto flatpak = new QProcess(this);
+            connect(flatpak, qOverload<int, QProcess::ExitStatus>(&QProcess::finished), this, [flatpak](int, QProcess::ExitStatus) {
+                flatpak->deleteLater();
+            });
+            flatpak->start(u"flatpak"_s, {u"override"_s, u"--user"_s, u"--talk-name=org.kde.plasma.browser.integration"_s, browser.id});
+        }
 
         // Register on separate bus connection to avoid exposing other services to the sandbox
         auto connection = QDBusConnection::connectToBus(QDBusConnection::SessionBus, "org.kde.plasma.browser.integration"_L1);
         connection.registerService("org.kde.plasma.browser.integration"_L1);
         connection.registerObject("/org/kde/plasma/browser/integration"_L1, this, QDBusConnection::ExportAllSlots);
 
-        createMessagingHost(); // always create integration regardless of firefox being installed so we can be ready for the browser
+        // Create messaging hosts for each supported browser
+        for (const auto &browser : supportedBrowsers) {
+            createMessagingHost(browser); // always create integration regardless of the browser being installed so we can be ready for if it is installed
+        }
     }
 
 public Q_SLOTS:
@@ -173,28 +193,32 @@ private:
         return openat(dirfd, ".", flags | O_NOFOLLOW | O_CLOEXEC, mode);
     }
 
-    void createMessagingHost()
+    void createMessagingHost(const BrowserInfo &browser)
     {
-        QDir().mkpath(m_hostWrapperDir);
+        const QString hostWrapperDir = QDir::homePath() + QStringLiteral("/.var/app/") + browser.id;
+        const QString hostWrapperName = "plasma-browser-integration-host"_L1;
+        const QString hostWrapperPath = hostWrapperDir + "/"_L1 + hostWrapperName;
 
-        auto hostWrapperDirFd = openNoSymlinks(qUtf8Printable(m_hostWrapperDir), O_PATH);
+        QDir().mkpath(hostWrapperDir);
+
+        auto hostWrapperDirFd = openNoSymlinks(qUtf8Printable(hostWrapperDir), O_PATH);
         const auto closeHostWrapperDirFd = qScopeGuard([hostWrapperDirFd]() {
             close(hostWrapperDirFd);
         });
         if (hostWrapperDirFd == -1) {
             auto err = errno;
-            qCWarning(INTEGRATOR) << "Failed to open hostWrapper directory." << m_hostWrapperDir << ":" << safe_strerror(err);
+            qCWarning(INTEGRATOR) << "Failed to open hostWrapper directory." << hostWrapperDir << ":" << safe_strerror(err);
             return;
         }
 
         { // host wrapper
-            auto hostWrapperFd = openat(hostWrapperDirFd, qUtf8Printable(m_hostWrapperName), O_WRONLY | O_CLOEXEC | O_CREAT | O_TRUNC | O_NOFOLLOW, S_IRWXU);
+            auto hostWrapperFd = openat(hostWrapperDirFd, qUtf8Printable(hostWrapperName), O_WRONLY | O_CLOEXEC | O_CREAT | O_TRUNC | O_NOFOLLOW, S_IRWXU);
             auto closeHostWrapperFd = qScopeGuard([hostWrapperFd]() {
                 close(hostWrapperFd);
             });
             if (hostWrapperFd == -1) {
                 auto err = errno;
-                qCWarning(INTEGRATOR) << "Failed to open host wrapper file" << m_hostWrapperName << ":" << safe_strerror(err);
+                qCWarning(INTEGRATOR) << "Failed to open host wrapper file" << hostWrapperName << ":" << safe_strerror(err);
                 return;
             }
 
@@ -222,7 +246,7 @@ private:
         }
 
         { // hosts definition
-            const QString extensionDefinitionDir = m_hostWrapperDir + "/.mozilla/native-messaging-hosts"_L1;
+            const QString extensionDefinitionDir = hostWrapperDir + browser.nativeMessagingHostsDir;
             QDir().mkpath(extensionDefinitionDir);
 
             auto defintionsDirFd = openNoSymlinks(qUtf8Printable(extensionDefinitionDir), O_PATH);
@@ -254,17 +278,13 @@ private:
             QJsonObject extensionDefinitionObject({
                 {u"name"_s, u"org.kde.plasma.browser_integration"_s},
                 {u"description"_s, u"Native connector for KDE Plasma"_s},
-                {u"path"_s, m_hostWrapperPath},
+                {u"path"_s, hostWrapperPath},
                 {u"type"_s, u"stdio"_s},
                 {u"allowed_extensions"_s, QJsonArray({u"plasma-browser-integration@kde.org"_s})},
             });
             extensionDefinition.write(QJsonDocument(extensionDefinitionObject).toJson());
         }
     }
-
-    const QString m_hostWrapperDir = QDir::homePath() + "/.var/app/org.mozilla.firefox"_L1;
-    const QString m_hostWrapperName = "plasma-browser-integration-host"_L1;
-    const QString m_hostWrapperPath = m_hostWrapperDir + "/"_L1 + m_hostWrapperName;
 };
 
 K_PLUGIN_FACTORY_WITH_JSON(BrowserIntegrationFlatpakIntegratorFactory,
