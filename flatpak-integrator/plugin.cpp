@@ -115,21 +115,36 @@ class BrowserIntegrationFlatpakIntegrator : public KDEDModule
     Q_CLASSINFO("D-Bus Interface", "org.kde.plasma.browser.integration.FlatpakIntegrator")
 
 public:
-    /** Browser information structure to hold browser-specific configuration */
+    /** Enum for different browser types, i.e. which browser they are based on. */
+    enum BrowserBase {
+        Firefox,
+        Chrome,
+        Chromium,
+    };
+    Q_ENUM(BrowserBase)
+
+    /** Browser information structure to hold browser-specific configuration. */
     struct BrowserInfo {
-        /** The browser's Flatpak id, e.g. "org.mozilla.firefox" */
+        BrowserBase base;
+
+        /** The browser's Flatpak id, e.g. "org.mozilla.firefox". */
         QString id;
 
-        /** The directory the browser expects its native messaging hosts to be in */
+        /** The directory the browser expects its native messaging hosts to be in. */
         QString nativeMessagingHostsDir;
     };
 
     BrowserIntegrationFlatpakIntegrator(QObject *parent, const QList<QVariant> &)
         : KDEDModule(parent)
     {
+        // List of Flatpak browsers we support.
         const QList<BrowserInfo> supportedBrowsers = {
-            {u"org.mozilla.firefox"_s, u"/.mozilla/native-messaging-hosts"_s},
-            {u"io.gitlab.librewolf-community"_s, u"/.librewolf/native-messaging-hosts"_s},
+            {BrowserBase::Firefox, u"org.mozilla.firefox"_s, u"/.mozilla/native-messaging-hosts"_s},
+            {BrowserBase::Firefox, u"io.gitlab.librewolf-community"_s, u"/.librewolf/native-messaging-hosts"_s},
+            {BrowserBase::Chrome, u"com.google.Chrome"_s, u"/config/google-chrome/NativeMessagingHosts"_s},
+            {BrowserBase::Chrome, u"com.google.ChromeDev"_s, u"/config/google-chrome-unstable/NativeMessagingHosts"_s},
+            {BrowserBase::Chromium, u"org.chromium.Chromium"_s, u"/config/chromium/NativeMessagingHosts"_s},
+            {BrowserBase::Chromium, u"io.github.ungoogled_software.ungoogled_chromium"_s, u"/config/chromium/NativeMessagingHosts"_s},
         };
 
         // Set up Flatpak permissions for each browser
@@ -275,13 +290,25 @@ private:
                 qCWarning(INTEGRATOR) << "Failed to open extension definition file";
                 return;
             }
+
             QJsonObject extensionDefinitionObject({
                 {u"name"_s, u"org.kde.plasma.browser_integration"_s},
                 {u"description"_s, u"Native connector for KDE Plasma"_s},
                 {u"path"_s, hostWrapperPath},
                 {u"type"_s, u"stdio"_s},
-                {u"allowed_extensions"_s, QJsonArray({u"plasma-browser-integration@kde.org"_s})},
             });
+
+            // Add browser-specific fields
+            if (browser.base == BrowserBase::Firefox) {
+                extensionDefinitionObject.insert(u"allowed_extensions"_s, QJsonArray({u"plasma-browser-integration@kde.org"_s}));
+            } else if (browser.base == BrowserBase::Chrome || browser.base == BrowserBase::Chromium) {
+                extensionDefinitionObject.insert(u"allowed_origins"_s,
+                                                 QJsonArray({
+                                                     u"chrome-extension://cimiefiiaegbelhefglklhhakcgmhkai/"_s,
+                                                     u"chrome-extension://dnnckbejblnejeabhcmhklcaljjpdjeh/"_s,
+                                                 }));
+            }
+
             extensionDefinition.write(QJsonDocument(extensionDefinitionObject).toJson());
         }
     }
