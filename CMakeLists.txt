@@ -74,6 +74,9 @@ add_feature_info(COPY_MESSAGING_HOST_FILE_HOME ${COPY_MESSAGING_HOST_FILE_HOME} 
 set(MOZILLA_DIR "${CMAKE_INSTALL_PREFIX}/lib/mozilla" CACHE STRING "Mozilla directory")
 add_feature_info(MOZILLA_DIR On "Mozilla directory is '${MOZILLA_DIR}'")
 
+set(LIBREWOLF_DIR "${CMAKE_INSTALL_PREFIX}/lib/librewolf" CACHE STRING "LibreWolf directory")
+add_feature_info(LIBREWOLF_DIR On "LibreWolf directory is '${LIBREWOLF_DIR}'")
+
 add_subdirectory(host)
 add_subdirectory(reminder)
 add_subdirectory(flatpak-integrator)
@@ -101,9 +104,12 @@ install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.plasma.chrome_integration.json
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.plasma.chrome_integration.json DESTINATION ${KDE_INSTALL_FULL_SYSCONFDIR}/opt/edge/native-messaging-hosts/ RENAME org.kde.plasma.browser_integration.json)
 # firefox
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.plasma.firefox_integration.json DESTINATION ${MOZILLA_DIR}/native-messaging-hosts/ RENAME org.kde.plasma.browser_integration.json)
+# LibreWolf
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.plasma.firefox_integration.json DESTINATION ${LIBREWOLF_DIR}/native-messaging-hosts/ RENAME org.kde.plasma.browser_integration.json)
 
 if (COPY_MESSAGING_HOST_FILE_HOME)
     install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.plasma.firefox_integration.json DESTINATION $ENV{HOME}/.mozilla/native-messaging-hosts/ RENAME org.kde.plasma.browser_integration.json)
+    install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.plasma.firefox_integration.json DESTINATION $ENV{HOME}/.librewolf/native-messaging-hosts/ RENAME org.kde.plasma.browser_integration.json)
     install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.plasma.chrome_integration.json DESTINATION $ENV{HOME}/.config/chromium/NativeMessagingHosts/ RENAME org.kde.plasma.browser_integration.json)
     install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.plasma.chrome_integration.json DESTINATION $ENV{HOME}/.config/google-chrome/NativeMessagingHosts/ RENAME org.kde.plasma.browser_integration.json)
     install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.plasma.chrome_integration.json DESTINATION $ENV{HOME}/.config/microsoft-edge/NativeMessagingHosts/ RENAME org.kde.plasma.browser_integration.json)
