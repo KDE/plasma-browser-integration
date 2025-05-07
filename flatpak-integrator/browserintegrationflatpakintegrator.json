@@ -2,6 +2,7 @@
     "KPlugin": {
         "Description": "Automatically enables support for Firefox Flatpak",
         "Description[ar]": "تمكين الدعم لفيرفوكس إصدارة فلاتباك تلقائيًا",
+        "Description[az]": "Firefox Flatpak ilə inteqrasiyanı avtomatik aktiv edir",
         "Description[bg]": "Автоматично активира поддръжката на Firefox Flatpak",
         "Description[ca@valencia]": "Activa automàticament el suport per a Flatpak de Firefox",
         "Description[ca]": "Activa automàticament el suport per al Flatpak del Firefox",
@@ -34,6 +35,7 @@
         "Description[zh_TW]": "自動啟用對 Flatpak 版 Firefox 的支援",
         "Name": "Plasma Browser Integration Flatpak Integration",
         "Name[ar]": "تكامل متصفح البلازما مع فلاتباك",
+        "Name[az]": "Flatpak paketində quraşdırılmış Firefox ilə inteqrasiya",
         "Name[bg]": "Интеграция на Flatpak за браузър интеграция в Plasma",
         "Name[ca@valencia]": "Integració de Flatpak de la integració del navegador amb Plasma",
         "Name[ca]": "Integració del Flatpak de la integració del navegador amb el Plasma",
