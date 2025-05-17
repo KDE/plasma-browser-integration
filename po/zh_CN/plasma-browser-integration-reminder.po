@@ -14,9 +14,9 @@ msgstr ""
 "X-Crowdin-Project: kdeorg\n"
 "X-Crowdin-Project-ID: 269464\n"
 "X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf6-trunk/messages/plasma-browser-integration/plasma-"
+"X-Crowdin-File: /kf6-stable/messages/plasma-browser-integration/plasma-"
 "browser-integration-reminder.pot\n"
-"X-Crowdin-File-ID: 42781\n"
+"X-Crowdin-File-ID: 52134\n"
 
 #: browserintegrationreminder.cpp:141
 #, kde-format
