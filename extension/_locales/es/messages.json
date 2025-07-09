@@ -120,7 +120,7 @@
         "message": "Controles multimedia"
     },
     "options_plugin_purpose_description": {
-        "message": "Añade una entrada de menú de contexto «Compartir...» y permite que los sitios web abran un diálogo para compartir contenido usando la API de Web Share."
+        "message": "Añade una entrada de menú de contexto «Compartir…» y permite que los sitios web abran un diálogo para compartir contenido usando la API de Web Share."
     },
     "options_plugin_purpose_title": {
         "message": "Compartir contenido"
@@ -165,7 +165,7 @@
         "message": "Se necesitan permisos adicionales"
     },
     "purpose_share": {
-        "message": "Compartir..."
+        "message": "Compartir…"
     },
     "purpose_share_failed_text": {
         "message": "No se puede compartir esta contenido: $1"
@@ -180,6 +180,6 @@
         "message": "Contenido compartido"
     },
     "store_description": {
-        "message": "Multitarea eficiente mediante el control de las funciones del navegador desde el escritorio, incluso cuando Chrome está en segundo plano. Gestión de la reproducción de sonido y de vídeo, comprobación de descargas en el área de notificaciones, envío de archivos al teléfono móvil mediante KDE Connect y mucho más desde el escritorio Plasma de KDE.\\n\\nEl paquete «plasma-browser-integration» debe estar instalado para que esta extensión funcione. Debería estar disponible en el gestor de paquetes de su distribución al ejecutar Plasma 5.13 o posterior.\\n\\nNOTA: Esta extensión no está disponible en Debian."
+        "message": "Multitask efficiently by controlling browser functions from the desktop, even while Chrome is in the background. Manage audio and video playback, check downloads in the notification area, send files to your phone using KDE Connect and more inside the KDE Plasma Desktop!\\n\\nThe plasma-browser-integration package must be installed for this extension to work. It should be available from your distribution's package manager when running Plasma 5.13 or later.\\n\\nNOTE: This extension is not supported on Debian."
     }
 }
