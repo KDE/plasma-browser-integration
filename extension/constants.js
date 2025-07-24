@@ -55,4 +55,10 @@ SUPPORTED_PLATFORMS = ["linux", "openbsd", "freebsd"];
 // Default MPRIS settings for websites
 const MPRIS_WEBSITE_SETTINGS = {
     //"https://www.example.com": false
+    // Disable for known conferencing solutions.
+    // It may interfere with webcam or audio and isn't designed for this anyway.
+    "https://meet.google.com": false, // Bug 435418
+    "https://getmibo.com": false,
+    "https://zoom.us": false, // Bug 435100
+    "https://teams.microsoft.com": false, // Bug 503965
 };
