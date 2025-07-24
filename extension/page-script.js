@@ -66,13 +66,14 @@
 
                     let dirty = (!metadata != !this.metadata);
                     if (metadata) {
-                        const keys = Object.getOwnPropertyNames(Object.getPrototypeOf(metadata));
+                        const keys = ["title", "artist", "album", "artwork"];
 
                         const oldMetadata = this.metadata || {};
 
                         keys.forEach((key) => {
                             const value = metadata[key];
-                            if (!value || typeof value === "function") {
+
+                            if (typeof value?.toString !== "function") {
                                 return; // continue
                             }
 
