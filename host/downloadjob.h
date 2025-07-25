@@ -19,13 +19,6 @@ class DownloadJob : public KJob
 public:
     DownloadJob();
 
-    enum class State {
-        None,
-        InProgress,
-        Interrupted,
-        Complete,
-    };
-
     void start() override;
 
     void update(const QJsonObject &payload);
