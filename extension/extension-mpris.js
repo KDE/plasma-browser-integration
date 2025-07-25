@@ -16,6 +16,7 @@
  */
 
 let playerIds = [];
+let supportedImageMimeTypes = [];
 
 function currentPlayer() {
     let playerId = playerIds[playerIds.length - 1];
@@ -128,6 +129,111 @@ function playerGone(playerId) {
     sendPlayerTabMessage(newPlayer, "identify");
 }
 
+function hostSupportsFetchedArtwork() {
+    return supportedImageMimeTypes.length > 0;
+}
+
+function fetchPlayerArtwork(metadata, poster) {
+    let artworkUrl = "";
+    let artworkMimeType = "";
+
+    const player = currentPlayer();
+    if (!player.id) {
+        return artworkUrl;
+    }
+
+    if (metadata) {
+        const artwork = metadata.artwork || [];
+        // Basically MPrisPlugin::processMetadata.
+        let biggest = null;
+        for (let item of artwork) {
+            if (!item.src) {
+                continue;
+            }
+
+            if (item.type && !supportedImageMimeTypes.includes(item.type)) {
+                console.log("Not supported mime", item.type, "of", item.src);
+                continue;
+            }
+
+            if (item.sizes === "any") {
+                artworkUrl = item.src;
+                artworkMimeType = item.type;
+                break;
+            }
+
+            // "sizes" is a space-separated list of sizes, for some reason.
+            let sizes = (item.sizes || "").toLowerCase().split(" ");
+            for (let size of sizes) {
+                const sizeParts = size.split("x");
+
+                let actualSize = {width: NaN, height: NaN};
+                if (sizeParts.length == 2) {
+                    actualSize.width = parseInt(sizeParts[0], 10);
+                    actualSize.height = parseInt(sizeParts[1], 10);
+                }
+
+                if (biggest === null || (actualSize.width >= biggest.width && actualSize.height >= biggest.height)) {
+                    artworkUrl = item.src;
+                    artworkMimeType = item.type;
+                    biggest = {width: actualSize.width, height: actualSize.height};
+                }
+            }
+
+        }
+    }
+
+    if (!artworkUrl) {
+        artworkUrl = poster || "";
+    }
+
+    let payload = {src: artworkUrl};
+
+    if (!artworkUrl) {
+        // Tell the browser that there's nothing more to wait for.
+        sendPortMessage("mpris", "artwork", payload);
+        return artworkUrl;
+    }
+
+    fetch(artworkUrl).then((response) => {
+        // Other player is current by now.
+        if (currentPlayer().id !== player.id) {
+            return;
+        }
+
+        if (!response.ok) {
+            sendPortMessage("mpris", "artwork", payload);
+            return;
+        }
+
+        response.blob().then((blob) => {
+            let reader = new FileReader();
+            reader.onloadend = function() {
+                if (currentPlayer().id === player.id) {
+                    payload.dataUrl = reader.result;
+                    payload.mimeType = artworkMimeType;
+
+                    sendPortMessage("mpris", "artwork", payload);
+                }
+            }
+            reader.readAsDataURL(blob);
+        }, (err) => {
+            console.warn("Failed to read response of", artworkUrl, "as blob", err);
+            if (currentPlayer().id === player.id) {
+                sendPortMessage("mpris", "artwork", payload);
+            }
+        });
+
+    }, (err) => {
+        console.warn("Failed to get artwork from", artworkUrl, err);
+        if (currentPlayer().id === player.id) {
+            sendPortMessage("mpris", "artwork", payload);
+        }
+    });
+
+    return artworkUrl;
+}
+
 // when tab is closed, tell the player is gone
 // below we also have a "gone" signal listener from the content script
 // which is invoked in the pagehide handler of the page
@@ -167,6 +273,10 @@ chrome.tabs.onUpdated.addListener((tabId, changes) => {
 });
 
 // callbacks from host (Plasma) to our extension
+addCallback("mpris", "supportedImageMimeTypes", (message) => {
+    supportedImageMimeTypes = message.mimeTypes;
+});
+
 addCallback("mpris", "raise", function (message) {
     let player = currentPlayer();
     if (player.tabId) {
@@ -232,6 +342,10 @@ addRuntimeCallback("mpris", "playing", function (message, sender) {
     payload.tabTitle = sender.tab.title;
     payload.url = sender.tab.url;
 
+    if (hostSupportsFetchedArtwork()) {
+        payload.pendingArtwork = fetchPlayerArtwork(payload.metadata, payload.poster);
+    }
+
     sendPortMessage("mpris", "playing", payload);
 
     // Add toolbar icon to make it obvious you now have controls to disable the player
@@ -271,12 +385,20 @@ addRuntimeCallback("mpris", ["duration", "timeupdate", "seeking", "seeked", "rat
     }
 });
 
-addRuntimeCallback("mpris", ["metadata", "callbacks"], function (message, sender, action) {
+addRuntimeCallback("mpris", "metadata", function (message, sender) {
     if (currentPlayer().id === playerIdFromSender(sender)) {
-        var payload = {};
-        payload[action] = message;
+        let payload = message || {};
+        if (hostSupportsFetchedArtwork()) {
+            payload.pendingArtwork = fetchPlayerArtwork(payload, "");
+        }
 
-        sendPortMessage("mpris", action, payload);
+        sendPortMessage("mpris", "metadata", payload);
+    }
+});
+
+addRuntimeCallback("mpris", "callbacks", function (message, sender) {
+    if (currentPlayer().id === playerIdFromSender(sender)) {
+        sendPortMessage("mpris", "callbacks", {callbacks: message});
     }
 });
 

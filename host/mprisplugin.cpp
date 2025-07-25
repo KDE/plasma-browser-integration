@@ -10,8 +10,11 @@
 #include <QCoreApplication>
 #include <QDBusConnection>
 #include <QDBusObjectPath>
+#include <QDir>
 #include <QGuiApplication>
 #include <QImageReader>
+#include <QMimeDatabase>
+#include <QMimeType>
 
 #include "mprisplayer.h"
 #include "mprisroot.h"
@@ -58,9 +61,24 @@ MPrisPlugin::MPrisPlugin(QObject *parent)
     };
 }
 
+bool MPrisPlugin::onLoad()
+{
+    // This also effectively tells the extension that our host is able to understand album art being downloaded on the extension side.
+    const QList<QByteArray> imageReaderMimeTypes = QImageReader::supportedMimeTypes();
+    QJsonArray mimeTypes;
+    for (const auto &mimeType : imageReaderMimeTypes) {
+        mimeTypes.append(QString::fromLatin1(mimeType));
+    }
+
+    sendData(QStringLiteral("supportedImageMimeTypes"), QJsonObject{{QStringLiteral("mimeTypes"), mimeTypes}});
+    return true;
+}
+
 bool MPrisPlugin::onUnload()
 {
     unregisterService();
+    m_localArtwork.reset();
+    m_artworkUrl.clear();
     return true;
 }
 
@@ -151,8 +169,13 @@ void MPrisPlugin::handleData(const QString &event, const QJsonObject &data)
         m_mediaSrc.clear();
         m_title.clear();
         m_artist.clear();
+
+        m_localArtwork.reset();
         m_artworkUrl.clear();
+        m_pendingArtworkUrl.clear();
+        m_mediaSessionArtworkUrl.clear();
         m_posterUrl.clear();
+
         m_volume = 1.0;
         m_muted = false;
         m_length = 0;
@@ -182,10 +205,18 @@ void MPrisPlugin::handleData(const QString &event, const QJsonObject &data)
             metadataChanged = true;
         }
 
-        const QUrl posterUrl = QUrl(data.value(QStringLiteral("poster")).toString());
-        if (m_posterUrl != posterUrl) {
-            m_posterUrl = posterUrl;
-            metadataChanged = true;
+        // Extension will download artwork.
+        // It will always send this key, even if empty, to tell us to ignore legacy poster/metadata.
+        const QJsonValue artworkPendingValue = data.value(QStringLiteral("pendingArtwork"));
+        const bool artworkPending = artworkPendingValue.isString();
+        m_pendingArtworkUrl = QUrl(artworkPendingValue.toString());
+
+        if (!artworkPending) {
+            const QUrl posterUrl = QUrl(data.value(QStringLiteral("poster")).toString());
+            if (m_posterUrl != posterUrl) {
+                m_posterUrl = posterUrl;
+                metadataChanged = true;
+            }
         }
 
         const qreal oldVolume = volume();
@@ -275,9 +306,21 @@ void MPrisPlugin::handleData(const QString &event, const QJsonObject &data)
         m_muted = data.value(QStringLiteral("muted")).toBool();
         emitPropertyChange(m_player, "Volume");
     } else if (event == QLatin1String("metadata")) {
-        processMetadata(data.value(QStringLiteral("metadata")).toObject());
+        // Extension will download artwork.
+        const QJsonValue artworkPendingValue = data.value(QStringLiteral("pendingArtwork"));
+        const bool artworkPending = artworkPendingValue.isString();
+        m_pendingArtworkUrl = QUrl(artworkPendingValue.toString());
+
+        if (processMetadata(data, !artworkPending)) {
+            emitPropertyChange(m_player, "Metadata");
+        }
     } else if (event == QLatin1String("callbacks")) {
         processCallbacks(data.value(QStringLiteral("callbacks")).toArray());
+    } else if (event == QLatin1String("artwork")) {
+        // Artwork was downloaded by the extension.
+        if (processFetchedArtwork(data)) {
+            emitPropertyChange(m_player, "Metadata");
+        }
     } else if (event == QLatin1String("titlechange")) {
         const QString oldTitle = effectiveTitle();
         m_pageTitle = data.value(QStringLiteral("pageTitle")).toString();
@@ -482,11 +525,17 @@ QVariantMap MPrisPlugin::metadata() const
         metadata.insert(QStringLiteral("xesam:artist"), QStringList{sanitizedString(m_artist)});
     }
 
-    QUrl artUrl = m_artworkUrl;
-    if (!artUrl.isValid()) {
-        artUrl = m_posterUrl;
+    QString artUrlStr;
+    if (m_localArtwork && !m_localArtwork->fileName().isEmpty()) {
+        artUrlStr = QUrl::fromLocalFile(m_localArtwork->fileName()).toString();
     }
-    if (const QString artUrlStr = sanitizedUrlDisplayString(artUrl); !artUrlStr.isEmpty()) {
+    if (artUrlStr.isEmpty()) {
+        artUrlStr = sanitizedUrlDisplayString(m_mediaSessionArtworkUrl);
+    }
+    if (artUrlStr.isEmpty()) {
+        artUrlStr = sanitizedUrlDisplayString(m_posterUrl);
+    }
+    if (!artUrlStr.isEmpty()) {
         metadata.insert(QStringLiteral("mpris:artUrl"), artUrlStr);
     }
 
@@ -539,7 +588,7 @@ void MPrisPlugin::setPosition(qlonglong position)
     }
 }
 
-void MPrisPlugin::processMetadata(const QJsonObject &data)
+bool MPrisPlugin::processMetadata(const QJsonObject &data, bool processArtwork)
 {
     bool changed = false;
 
@@ -561,8 +610,11 @@ void MPrisPlugin::processMetadata(const QJsonObject &data)
         changed = true;
     }
 
+    if (!processArtwork) {
+        return changed;
+    }
+
     // for simplicity we just use the biggest artwork it offers, perhaps we could limit it to some extent
-    // TODO download/cache artwork somewhere
     QSize biggest;
     QUrl artworkUrl;
     const QJsonArray &artwork = data.value(QStringLiteral("artwork")).toArray();
@@ -606,8 +658,8 @@ void MPrisPlugin::processMetadata(const QJsonObject &data)
         }
     }
 
-    if (m_artworkUrl != artworkUrl) {
-        m_artworkUrl = artworkUrl;
+    if (m_mediaSessionArtworkUrl != artworkUrl) {
+        m_mediaSessionArtworkUrl = artworkUrl;
         changed = true;
     }
 
@@ -627,6 +679,63 @@ void MPrisPlugin::processCallbacks(const QJsonArray &data)
         m_canGoPrevious = canGoPrevious;
         emitPropertyChange(m_player, "CanGoPrevious");
     }
+}
+
+bool MPrisPlugin::processFetchedArtwork(const QJsonObject &payload)
+{
+    const QUrl artworkUrl(payload.value(QStringLiteral("src")).toString());
+    if (m_pendingArtworkUrl != artworkUrl) {
+        // Website has different metadata by the time the download finished.
+        return false;
+    }
+
+    if (m_artworkUrl == artworkUrl) {
+        // Nothing to do.
+        return false;
+    }
+
+    m_localArtwork.reset();
+    m_artworkUrl.clear();
+    m_pendingArtworkUrl.clear();
+
+    const QByteArray data = dataFromDataUrl(payload.value(QStringLiteral("dataUrl")).toString());
+    if (data.isEmpty()) {
+        // Some error, clear artwork.
+        return true;
+    }
+
+    // For completeness' sake, add a file extension.
+    // We cannot really trust the mimeType provided by the website (YouTube claims it's JPEG but it's actually AVIF)
+    // but it doesn't really matter.
+    QMimeDatabase mimeDb;
+    QMimeType mimeType = mimeDb.mimeTypeForName(payload.value(QStringLiteral("mimeType")).toString());
+    if (!mimeType.isValid() || mimeType.isDefault()) {
+        mimeType = mimeDb.mimeTypeForFileNameAndData(artworkUrl.fileName(), data);
+    }
+
+    QString pattern;
+    pattern.append(QStringLiteral("plasma-browser-integration_artwork_XXXXXX"));
+    if (const QString suffix = mimeType.preferredSuffix(); !suffix.isEmpty()) {
+        pattern.append(QLatin1Char('.'));
+        pattern.append(suffix);
+    }
+
+    const QString filePath = QDir::tempPath() + QLatin1Char('/') + pattern;
+    m_localArtwork = std::make_unique<QTemporaryFile>(filePath);
+    if (!m_localArtwork->open()) {
+        qWarning() << "Failed to open artwork temp file" << filePath << "for writing" << m_localArtwork->errorString();
+        // Local failure, clear artwork.
+        return true;
+    }
+
+    m_localArtwork->write(data);
+
+    // Close and flush before we announce the file via MPRIS.
+    // The file remains until the QTemporaryFile is destroyed.
+    m_localArtwork->close();
+
+    m_artworkUrl = artworkUrl;
+    return true;
 }
 
 void MPrisPlugin::Raise()

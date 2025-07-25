@@ -57,6 +57,8 @@ protected:
 
     QJsonObject settings() const;
 
+    static QByteArray dataFromDataUrl(const QString &urlString);
+
     friend class PluginManager;
 
 private:

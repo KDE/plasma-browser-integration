@@ -107,4 +107,20 @@ QJsonObject AbstractBrowserPlugin::settings() const
     return Settings::self().settingsForPlugin(m_subsystem);
 }
 
+QByteArray AbstractBrowserPlugin::dataFromDataUrl(const QString &urlString)
+{
+    if (!urlString.startsWith(QLatin1String("data:"))) {
+        return QByteArray();
+    }
+
+    const auto b64start = urlString.indexOf(QLatin1Char(','));
+    if (b64start == -1) {
+        qWarning() << "Invalid data URL format for" << urlString.left(30);
+        return QByteArray();
+    }
+
+    const QByteArray b64 = QStringView(urlString).right(urlString.length() - b64start - 1).toLatin1();
+    return QByteArray::fromBase64(b64);
+}
+
 #include "moc_abstractbrowserplugin.cpp"

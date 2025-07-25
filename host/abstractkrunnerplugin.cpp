@@ -39,18 +39,10 @@ QImage AbstractKRunnerPlugin::imageFromDataUrl(const QString &dataUrl)
 {
     QImage image;
 
-    if (!dataUrl.startsWith(QLatin1String("data:"))) {
+    const QByteArray data = dataFromDataUrl(dataUrl);
+    if (data.isEmpty()) {
         return image;
     }
-
-    const int b64start = dataUrl.indexOf(QLatin1Char(','));
-    if (b64start == -1) {
-        qWarning() << "Invalid data URL format for" << dataUrl.left(30);
-        return image;
-    }
-
-    const QByteArray b64 = QStringView(dataUrl).right(dataUrl.length() - b64start - 1).toLatin1();
-    const QByteArray data = QByteArray::fromBase64(b64);
 
     if (!image.loadFromData(data)) {
         qWarning() << "Failed to load favicon image from" << dataUrl.left(30);

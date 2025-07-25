@@ -11,8 +11,11 @@
 
 #include <QHash>
 #include <QString>
+#include <QTemporaryFile>
 #include <QTimer>
 #include <QUrl>
+
+#include <memory>
 
 class QDBusObjectPath;
 class QDBusAbstractAdaptor;
@@ -47,6 +50,7 @@ class MPrisPlugin : public AbstractBrowserPlugin
 public:
     explicit MPrisPlugin(QObject *parent);
 
+    bool onLoad() override;
     bool onUnload() override;
 
     using AbstractBrowserPlugin::handleData;
@@ -127,8 +131,10 @@ private:
     void setPlaybackStatus(const QString &playbackStatus);
     bool setLength(qlonglong length);
     void setPosition(qlonglong position);
-    bool processMetadata(const QJsonObject &data);
+
+    bool processMetadata(const QJsonObject &data, bool processArtwork);
     void processCallbacks(const QJsonArray &data);
+    bool processFetchedArtwork(const QJsonObject &payload);
 
     QString effectiveTitle() const;
 
@@ -160,8 +166,13 @@ private:
     QString m_title;
     QString m_artist;
     QString m_album;
-    QUrl m_posterUrl;
+    // Downloaded by extension, cached locally, preferred.
+    QUrl m_pendingArtworkUrl;
     QUrl m_artworkUrl;
+    std::unique_ptr<QTemporaryFile> m_localArtwork;
+    // Provided by website (older extension).
+    QUrl m_mediaSessionArtworkUrl;
+    QUrl m_posterUrl;
 
     qreal m_volume = 1.0;
     bool m_muted = false;
