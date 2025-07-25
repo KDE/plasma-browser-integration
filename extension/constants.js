@@ -16,6 +16,8 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+IS_FIREFOX = (navigator && navigator.userAgent || '').toLowerCase().match(/(?:firefox|fxios)/) !== null;
+
 DEFAULT_EXTENSION_SETTINGS = {
     mpris: {
         enabled: true,
@@ -30,7 +32,9 @@ DEFAULT_EXTENSION_SETTINGS = {
     downloads: {
         enabled: true,
         addToRecentDocuments: true,
-        saveOriginUrl: false
+        saveOriginUrl: false,
+        // Chrome inhibits by itself.
+        inhibitSuspend: IS_FIREFOX,
     },
     tabsrunner: {
         enabled: true
@@ -46,8 +50,6 @@ DEFAULT_EXTENSION_SETTINGS = {
         enabled: false
     }
 };
-
-IS_FIREFOX = (navigator && navigator.userAgent || '').toLowerCase().match(/(?:firefox|fxios)/) !== null;
 
 // NOTE if you change this, make sure to adjust the error message shown in action_popup.html
 SUPPORTED_PLATFORMS = ["linux", "openbsd", "freebsd"];

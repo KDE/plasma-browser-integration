@@ -8,13 +8,30 @@
 #include "downloadplugin.h"
 
 #include "connection.h"
+#include "settings.h"
 
+#include <KInhibitionJobTracker>
 #include <KUiServerV2JobTracker>
 
 DownloadPlugin::DownloadPlugin(QObject *parent)
-    : AbstractBrowserPlugin(QStringLiteral("downloads"), 3, parent)
-    , m_tracker(new KUiServerV2JobTracker(this))
+    : AbstractBrowserPlugin(QStringLiteral("downloads"), 4, parent)
+    , m_uiServerTracker(new KUiServerV2JobTracker(this))
 {
+}
+
+void DownloadPlugin::onSettingsChanged(const QJsonObject &settings)
+{
+    if (settings.value(QStringLiteral("inhibitSuspend")).toBool()) {
+        if (!m_inhibitionTracker) {
+            m_inhibitionTracker = new KInhibitionJobTracker(this);
+        }
+        for (auto *job : std::as_const(m_jobs)) {
+            m_inhibitionTracker->registerJob(job);
+        }
+    } else {
+        delete m_inhibitionTracker;
+        m_inhibitionTracker = nullptr;
+    }
 }
 
 bool DownloadPlugin::onLoad()
@@ -53,7 +70,11 @@ void DownloadPlugin::handleData(const QString &event, const QJsonObject &payload
         job = new DownloadJob();
 
         // first register and then update, otherwise it will miss the initial description() emission
-        m_tracker->registerJob(job);
+        m_uiServerTracker->registerJob(job);
+
+        if (m_inhibitionTracker) {
+            m_inhibitionTracker->registerJob(job);
+        }
 
         job->update(download);
 
