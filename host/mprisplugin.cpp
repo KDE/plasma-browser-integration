@@ -152,6 +152,7 @@ void MPrisPlugin::handleData(const QString &event, const QJsonObject &data)
         m_title.clear();
         m_artist.clear();
         m_artworkUrl.clear();
+        m_posterUrl.clear();
         m_volume = 1.0;
         m_muted = false;
         m_length = 0;
