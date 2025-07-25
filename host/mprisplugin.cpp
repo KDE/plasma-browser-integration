@@ -538,10 +538,14 @@ void MPrisPlugin::processMetadata(const QJsonObject &data)
             continue;
         }
 
-        // why is this named "sizes" when it's just a string and the examples don't mention how one could specify multiple?
-        // also, how on Earth could a single image src have multiple sizes? ...
-        // spec says this is a space-separated list of sizes for ... some reason
-        const QString sizeString = item.value(QStringLiteral("sizes")).toString();
+        // "sizes" is a space-separated list of sizes, for some reason.
+        const QString sizeString = item.value(QStringLiteral("sizes")).toString().toLower();
+
+        if (sizeString == QLatin1String("any")) {
+            artworkUrl = url;
+            break;
+        }
+
         QSize actualSize;
 
         // now parse the size...
