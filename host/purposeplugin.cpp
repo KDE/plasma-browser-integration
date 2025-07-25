@@ -58,6 +58,11 @@ QJsonObject PurposePlugin::handleData(int serial, const QString &event, const QJ
 
         if (!m_menu) {
             m_menu.reset(new Purpose::Menu());
+            // HACK A popup window must have a proper parent but we cannot attach it to
+            // the browser window, so let's just make it a regular menu.
+            if (qGuiApp->platformName().startsWith(QLatin1String("wayland"))) {
+                m_menu->setWindowFlag(Qt::Popup, false);
+            }
             m_menu->model()->setPluginType(QStringLiteral("ShareUrl"));
 
             connect(m_menu.data(), &QMenu::aboutToShow, this, [this] {
@@ -85,6 +90,10 @@ QJsonObject PurposePlugin::handleData(int serial, const QString &event, const QJ
 
             connect(m_menu.data(), &QMenu::triggered, this, [this] {
                 m_menu->setProperty("actionInvoked", true);
+                // If it's not a popup, we need to hide it manually.
+                if (!m_menu->windowFlags().testFlag(Qt::Popup)) {
+                    m_menu->hide();
+                }
             });
 
             connect(m_menu.data(), &Purpose::Menu::finished, this, [this](const QJsonObject &output, int errorCode, const QString &errorMessage) {
