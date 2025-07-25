@@ -100,11 +100,14 @@
                 };
             };
 
-            mprisTransferObject = new MediaSessionsClassName_constructor();
-
             if (!navigator.mediaSession) {
                 navigator.mediaSession = {};
             }
+
+            const oldPlaybackState = navigator.mediaSession.playbackState;
+            const oldMetadata = navigator.mediaSession.metadata;
+
+            mprisTransferObject = new MediaSessionsClassName_constructor();
 
             var noop = function() {};
 
@@ -132,6 +135,12 @@
                     mprisTransferObject.setPlaybackState(newValue);
                 }
             });
+
+            // In case the website was playing at the time we initialized.
+            if (["playing", "paused"].includes(oldPlaybackState)) {
+                mprisTransferObject.playbackState = oldPlaybackState;
+            }
+            mprisTransferObject.metadata = oldMetadata ?? null;
 
             if (!window.MediaMetadata) {
                 window.MediaMetadata = function(data) {
