@@ -62,6 +62,8 @@ QJsonObject PurposePlugin::handleData(int serial, const QString &event, const QJ
             // the browser window, so let's just make it a regular menu.
             if (qGuiApp->platformName().startsWith(QLatin1String("wayland"))) {
                 m_menu->setWindowFlag(Qt::Popup, false);
+                // Hide when it loses focus.
+                m_menu->installEventFilter(this);
             }
             m_menu->model()->setPluginType(QStringLiteral("ShareUrl"));
 
@@ -202,6 +204,15 @@ void PurposePlugin::showShareMenu(const QJsonObject &data, const QString &mimeTy
     }
 
     m_menu->popup(QCursor::pos());
+}
+
+bool PurposePlugin::eventFilter(QObject *watched, QEvent *event)
+{
+    if (event->type() == QEvent::WindowDeactivate && watched == m_menu.data()) {
+        m_menu->hide();
+    }
+
+    return AbstractBrowserPlugin::eventFilter(watched, event);
 }
 
 #include "moc_purposeplugin.cpp"

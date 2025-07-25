@@ -31,6 +31,8 @@ public:
     using AbstractBrowserPlugin::handleData;
     QJsonObject handleData(int serial, const QString &event, const QJsonObject &data) override;
 
+    bool eventFilter(QObject *watched, QEvent *event) override;
+
 private:
     void showShareMenu(const QJsonObject &data, const QString &mimeType = QString());
 
