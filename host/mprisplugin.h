@@ -125,9 +125,9 @@ private:
     bool unregisterService();
 
     void setPlaybackStatus(const QString &playbackStatus);
-    void setLength(qlonglong length);
+    bool setLength(qlonglong length);
     void setPosition(qlonglong position);
-    void processMetadata(const QJsonObject &data);
+    bool processMetadata(const QJsonObject &data);
     void processCallbacks(const QJsonArray &data);
 
     QString effectiveTitle() const;

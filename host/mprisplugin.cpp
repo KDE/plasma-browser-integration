@@ -158,18 +158,34 @@ void MPrisPlugin::handleData(const QString &event, const QJsonObject &data)
         m_length = 0;
         m_position = 0;
     } else if (event == QLatin1String("playing")) {
+        bool metadataChanged = false;
+
         setPlaybackStatus(QStringLiteral("Playing"));
+
+        const QString oldEffectiveTitle = effectiveTitle();
 
         m_pageTitle = data.value(QStringLiteral("pageTitle")).toString();
         m_tabTitle = data.value(QStringLiteral("tabTitle")).toString();
 
-        m_url = QUrl(data.value(QStringLiteral("url")).toString());
-        m_mediaSrc = QUrl(data.value(QStringLiteral("mediaSrc")).toString());
+        if (effectiveTitle() != oldEffectiveTitle) {
+            metadataChanged = true;
+        }
+
+        const QUrl url = QUrl(data.value(QStringLiteral("url")).toString());
+        if (m_url != url) {
+            m_url = url;
+            metadataChanged = true;
+        }
+        const QUrl mediaSrc = QUrl(data.value(QStringLiteral("mediaSrc")).toString());
+        if (m_mediaSrc != mediaSrc) {
+            m_mediaSrc = mediaSrc;
+            metadataChanged = true;
+        }
 
         const QUrl posterUrl = QUrl(data.value(QStringLiteral("poster")).toString());
         if (m_posterUrl != posterUrl) {
             m_posterUrl = posterUrl;
-            emitPropertyChange(m_player, "Metadata");
+            metadataChanged = true;
         }
 
         const qreal oldVolume = volume();
@@ -183,7 +199,7 @@ void MPrisPlugin::handleData(const QString &event, const QJsonObject &data)
 
         const qreal length = data.value(QStringLiteral("duration")).toDouble();
         // <video> duration is in seconds, mpris uses microseconds
-        setLength(length * 1000 * 1000);
+        metadataChanged |= setLength(length * 1000 * 1000);
 
         const qreal position = data.value(QStringLiteral("currentTime")).toDouble();
         setPosition(position * 1000 * 1000);
@@ -215,8 +231,12 @@ void MPrisPlugin::handleData(const QString &event, const QJsonObject &data)
             emitPropertyChange(m_root, "CanSetFullscreen");
         }
 
-        processMetadata(data.value(QStringLiteral("metadata")).toObject()); // also emits metadataChanged signal
+        metadataChanged |= processMetadata(data.value(QStringLiteral("metadata")).toObject(), !artworkPending);
         processCallbacks(data.value(QStringLiteral("callbacks")).toArray());
+
+        if (metadataChanged) {
+            emitPropertyChange(m_player, "Metadata");
+        }
 
         registerService();
     } else if (event == QLatin1String("paused")) {
@@ -493,7 +513,7 @@ void MPrisPlugin::setPlaybackStatus(const QString &playbackStatus)
     }
 }
 
-void MPrisPlugin::setLength(qlonglong length)
+bool MPrisPlugin::setLength(qlonglong length)
 {
     if (m_length != length) {
         const bool oldCanSeek = canSeek();
@@ -504,7 +524,10 @@ void MPrisPlugin::setLength(qlonglong length)
         if (oldCanSeek != canSeek()) {
             emitPropertyChange(m_player, "CanSeek");
         }
+
+        return true;
     }
+    return false;
 }
 
 void MPrisPlugin::setPosition(qlonglong position)
@@ -518,9 +541,25 @@ void MPrisPlugin::setPosition(qlonglong position)
 
 void MPrisPlugin::processMetadata(const QJsonObject &data)
 {
-    m_title = data.value(QStringLiteral("title")).toString();
-    m_artist = data.value(QStringLiteral("artist")).toString();
-    m_album = data.value(QStringLiteral("album")).toString();
+    bool changed = false;
+
+    const QString title = data.value(QStringLiteral("title")).toString();
+    if (m_title != title) {
+        m_title = title;
+        changed = true;
+    }
+
+    const QString artist = data.value(QStringLiteral("artist")).toString();
+    if (m_artist != artist) {
+        m_artist = artist;
+        changed = true;
+    }
+
+    const QString album = data.value(QStringLiteral("album")).toString();
+    if (m_album != album) {
+        m_album = album;
+        changed = true;
+    }
 
     // for simplicity we just use the biggest artwork it offers, perhaps we could limit it to some extent
     // TODO download/cache artwork somewhere
@@ -567,9 +606,12 @@ void MPrisPlugin::processMetadata(const QJsonObject &data)
         }
     }
 
-    m_artworkUrl = artworkUrl;
+    if (m_artworkUrl != artworkUrl) {
+        m_artworkUrl = artworkUrl;
+        changed = true;
+    }
 
-    emitPropertyChange(m_player, "Metadata");
+    return changed;
 }
 
 void MPrisPlugin::processCallbacks(const QJsonArray &data)
