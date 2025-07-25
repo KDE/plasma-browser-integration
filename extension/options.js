@@ -205,6 +205,10 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelectorAll("[data-not-show-in=firefox]").forEach(function (item) {
             item.style.display = "none";
         });
+    } else {
+        document.querySelectorAll("[data-only-show-in=firefox]").forEach(function (item) {
+            item.style.display = "none";
+        });
     }
 
     // check whether the platform is supported before loading and activating settings
