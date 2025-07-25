@@ -189,7 +189,9 @@ void Settings::handleData(const QString &event, const QJsonObject &data)
                 PluginManager::self().unloadPlugin(plugin);
             }
 
-            PluginManager::self().settingsChanged(plugin, settingsObject);
+            if (plugin->isLoaded()) {
+                PluginManager::self().settingsChanged(plugin, settingsObject);
+            }
         }
 
         Q_EMIT changed(data);
