@@ -66,44 +66,54 @@ chrome.runtime.onMessage.addListener(function (message, sender) {
     }
 });
 
-initPageScript(() => {
-    SettingsUtils.get().then((items) => {
-        if (items.breezeScrollBars.enabled) {
-            loadBreezeScrollBars();
-        }
+// Only inject our stuff when running on a supported platform
+// in case the extension gets synced to another computer.
+sendMessage("settings", "isSupportedPlatform").then((isSupportedPlatform) => {
 
-        const mpris = items.mpris;
-        if (mpris.enabled) {
-            const origin = window.location.origin;
+    // undefined means not determined, in doubt, load it anyway.
+    if (isSupportedPlatform === false) {
+        return;
+    }
 
-            const websiteSettings = mpris.websiteSettings || {};
-
-            let mprisAllowed = true;
-            if (typeof MPRIS_WEBSITE_SETTINGS[origin] === "boolean") {
-                mprisAllowed = MPRIS_WEBSITE_SETTINGS[origin];
-            }
-            if (typeof websiteSettings[origin] === "boolean") {
-                mprisAllowed = websiteSettings[origin];
+    initPageScript(() => {
+        SettingsUtils.get().then((items) => {
+            if (items.breezeScrollBars.enabled) {
+                loadBreezeScrollBars();
             }
 
-            if (mprisAllowed) {
-                loadMpris();
-                if (items.mprisMediaSessions.enabled) {
-                    loadMediaSessionsShim();
+            const mpris = items.mpris;
+            if (mpris.enabled) {
+                const origin = window.location.origin;
+
+                const websiteSettings = mpris.websiteSettings || {};
+
+                let mprisAllowed = true;
+                if (typeof MPRIS_WEBSITE_SETTINGS[origin] === "boolean") {
+                    mprisAllowed = MPRIS_WEBSITE_SETTINGS[origin];
+                }
+                if (typeof websiteSettings[origin] === "boolean") {
+                    mprisAllowed = websiteSettings[origin];
+                }
+
+                if (mprisAllowed) {
+                    loadMpris();
+                    if (items.mprisMediaSessions.enabled) {
+                        loadMediaSessionsShim();
+                    }
                 }
             }
-        }
 
-        if (items.purpose.enabled) {
-            sendMessage("settings", "getSubsystemStatus").then((status) => {
-                if (status && status.purpose) {
-                    loadPurpose();
-                }
-            }, (err) => {
-                // No warning, can also happen when port isn't connected for unsupported OS
-                console.log("Failed to get subsystem status for purpose", err);
-            });
-        }
+            if (items.purpose.enabled) {
+                sendMessage("settings", "getSubsystemStatus").then((status) => {
+                    if (status && status.purpose) {
+                        loadPurpose();
+                    }
+                }, (err) => {
+                    // No warning, can also happen when port isn't connected for unsupported OS
+                    console.log("Failed to get subsystem status for purpose", err);
+                });
+            }
+        });
     });
 });
 

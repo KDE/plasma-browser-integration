@@ -120,6 +120,8 @@ var receivedMessageOnce = false;
 var portStatus = "";
 var portLastErrorMessage = undefined;
 
+var isSupportedPlatform = undefined;
+
 function updateBrowserAction() {
     if (portStatus === "UNSUPPORTED_OS" || portStatus === "STARTUP_FAILED") {
         chrome.action.setIcon({
@@ -144,7 +146,9 @@ updateBrowserAction();
 // Check for supported platform to avoid loading it on e.g. Windows and then failing
 // when the extension got synced to another device and then failing
 chrome.runtime.getPlatformInfo(function (info) {
-    if (!SUPPORTED_PLATFORMS.includes(info.os)) {
+    isSupportedPlatform = SUPPORTED_PLATFORMS.includes(info.os);
+
+    if (!isSupportedPlatform) {
         console.log("This extension is not supported on", info.os);
         portStatus = "UNSUPPORTED_OS";
         updateBrowserAction();
@@ -248,6 +252,10 @@ addRuntimeCallback("settings", "getSubsystemStatus", (message, sender, action) =
 
 addRuntimeCallback("settings", "getVersion", () => {
     return sendPortMessageWithReply("settings", "getVersion");
+});
+
+addRuntimeCallback("settings", "isSupportedPlatform", () => {
+    return Promise.resolve(isSupportedPlatform);
 });
 
 addRuntimeCallback("browserAction", "getStatus", (message) => {
