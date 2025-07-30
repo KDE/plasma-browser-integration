@@ -7,6 +7,7 @@
 #include "abstractkrunnerplugin.h"
 
 #include <QDBusConnection>
+#include <QGuiApplication>
 #include <QImage>
 
 #include "krunner1adaptor.h"
@@ -54,6 +55,13 @@ QImage AbstractKRunnerPlugin::imageFromDataUrl(const QString &dataUrl)
     if (!image.loadFromData(data)) {
         qWarning() << "Failed to load favicon image from" << dataUrl.left(30);
     }
+
+    // Limit image size to reduce DBus message size.
+    const int maxIconSize = 64 * qGuiApp->devicePixelRatio();
+    if (image.width() > maxIconSize || image.height() > maxIconSize) {
+        image = image.scaled(maxIconSize, maxIconSize, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+    }
+
     return image;
 }
 
