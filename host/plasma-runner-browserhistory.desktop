@@ -104,7 +104,6 @@ X-Plasma-API=DBus
 X-Plasma-DBusRunner-Service=org.kde.plasma.browser_integration*
 X-Plasma-DBusRunner-Path=/HistoryRunner
 X-Plasma-Request-Actions-Once=true
-X-Plasma-Runner-Min-Letter-Count=3
 X-Plasma-Runner-Syntaxes=:q:
 X-Plasma-Runner-Syntax-Descriptions=Finds websites in the browser history whose title or URL match :q:
 X-Plasma-Runner-Syntax-Descriptions[ar]=يعثر على المواقع في تاريخ المتصفح التي يتطابق عنوانها أو رابطها مع :q:

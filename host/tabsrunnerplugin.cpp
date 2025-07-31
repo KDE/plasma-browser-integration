@@ -49,7 +49,7 @@ RemoteActions TabsRunnerPlugin::Actions()
 
 RemoteMatches TabsRunnerPlugin::Match(const QString &searchTerm)
 {
-    if (searchTerm.length() < 3) {
+    if (searchTerm.length() < 1) {
         sendErrorReply(QDBusError::InvalidArgs, QStringLiteral("Search term too short"));
         return {};
     }
