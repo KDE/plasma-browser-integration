@@ -35,6 +35,10 @@ bool AbstractKRunnerPlugin::onUnload()
     return true;
 }
 
+void AbstractKRunnerPlugin::Teardown()
+{
+}
+
 QImage AbstractKRunnerPlugin::imageFromDataUrl(const QString &dataUrl)
 {
     QImage image;

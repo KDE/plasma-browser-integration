@@ -1,6 +1,11 @@
 <!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN" "http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
 <node>
   <interface name="org.kde.krunner1">
+    <!--
+        This method gets called when a match session is over.
+        It can be used to clear data which should not be kept in memory after a match session.
+    -->
+    <method name="Teardown"/>
 
     <!--
         Returns a list of actions supported by this runner.

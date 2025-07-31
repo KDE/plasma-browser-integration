@@ -31,6 +31,7 @@ public:
     virtual RemoteActions Actions() = 0;
     virtual RemoteMatches Match(const QString &searchTerm) = 0;
     virtual void Run(const QString &id, const QString &actionId) = 0;
+    virtual void Teardown();
 
 private:
     QString m_objectPath;
