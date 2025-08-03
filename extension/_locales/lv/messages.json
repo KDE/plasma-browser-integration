@@ -86,6 +86,9 @@
     "options_plugin_downloads_addToRecentDocuments": {
         "message": "Lejupielādētās datnes pievienot nesenajiem dokumentiem"
     },
+    "options_plugin_downloads_inhibitSuspend": {
+        "message": "Prevent system from going to sleep when downloading"
+    },
     "options_plugin_downloads_saveOriginUrl": {
         "message": "Datnes atribūtos saglabāt tīmekļa vietnes adresi, no kuras datnes tika lejupielādēta"
     },

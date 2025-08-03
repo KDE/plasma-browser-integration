@@ -86,6 +86,9 @@
     "options_plugin_downloads_addToRecentDocuments": {
         "message": "Letöltött fájlok hozzáadása a legutóbbi dokumentumokhoz"
     },
+    "options_plugin_downloads_inhibitSuspend": {
+        "message": "Prevent system from going to sleep when downloading"
+    },
     "options_plugin_downloads_saveOriginUrl": {
         "message": "A fájl letöltési helye URL-címének mentése a fájl attribútumai közé"
     },

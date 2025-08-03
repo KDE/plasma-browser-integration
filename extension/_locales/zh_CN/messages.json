@@ -86,6 +86,9 @@
     "options_plugin_downloads_addToRecentDocuments": {
         "message": "添加下载的文件到最近文档"
     },
+    "options_plugin_downloads_inhibitSuspend": {
+        "message": "Prevent system from going to sleep when downloading"
+    },
     "options_plugin_downloads_saveOriginUrl": {
         "message": "将下载文件的来源 URL 保存到文件属性"
     },

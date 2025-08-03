@@ -86,6 +86,9 @@
     "options_plugin_downloads_addToRecentDocuments": {
         "message": "Aldoni elŝutitajn dosierojn al lastatempaj dokumentoj"
     },
+    "options_plugin_downloads_inhibitSuspend": {
+        "message": "Prevent system from going to sleep when downloading"
+    },
     "options_plugin_downloads_saveOriginUrl": {
         "message": "Konservu URL el kiu dosiero estis elŝutita en la atributoj de la dosiero"
     },

@@ -86,6 +86,9 @@
     "options_plugin_downloads_addToRecentDocuments": {
         "message": "ダウンロードしたファイルを最近のドキュメントに追加する"
     },
+    "options_plugin_downloads_inhibitSuspend": {
+        "message": "Prevent system from going to sleep when downloading"
+    },
     "options_plugin_downloads_saveOriginUrl": {
         "message": "ファイルの属性にダウンロード元の URL を保存する"
     },

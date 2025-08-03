@@ -86,6 +86,9 @@
     "options_plugin_downloads_addToRecentDocuments": {
         "message": "Adicionar os ficheiros transferidos aos documentos recentes"
     },
+    "options_plugin_downloads_inhibitSuspend": {
+        "message": "Prevent system from going to sleep when downloading"
+    },
     "options_plugin_downloads_saveOriginUrl": {
         "message": "Gravar o URL de onde foi transferido o ficheiro nos atributos do mesmo"
     },

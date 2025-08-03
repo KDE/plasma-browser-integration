@@ -86,6 +86,9 @@
     "options_plugin_downloads_addToRecentDocuments": {
         "message": "أضِف الملفات المنزّلة إلى قائمة أحدث المستندات"
     },
+    "options_plugin_downloads_inhibitSuspend": {
+        "message": "Prevent system from going to sleep when downloading"
+    },
     "options_plugin_downloads_saveOriginUrl": {
         "message": "احفظ العنوان الذي نُزّل منه الملف في صفات الملف"
     },

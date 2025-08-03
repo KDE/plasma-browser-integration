@@ -86,6 +86,9 @@
     "options_plugin_downloads_addToRecentDocuments": {
         "message": "Tambahkan file-file yang diunduh ke dokumen baru-baru ini"
     },
+    "options_plugin_downloads_inhibitSuspend": {
+        "message": "Prevent system from going to sleep when downloading"
+    },
     "options_plugin_downloads_saveOriginUrl": {
         "message": "Simpan URL file yang diunduh dari atribut-atribut file"
     },

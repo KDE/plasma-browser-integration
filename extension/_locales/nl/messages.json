@@ -86,6 +86,9 @@
     "options_plugin_downloads_addToRecentDocuments": {
         "message": "Gedownloade bestanden aan recente documenten toevoegen"
     },
+    "options_plugin_downloads_inhibitSuspend": {
+        "message": "Prevent system from going to sleep when downloading"
+    },
     "options_plugin_downloads_saveOriginUrl": {
         "message": "URL opslaan waar vanaf een bestand is gedownload in de attributen van het bestand"
     },

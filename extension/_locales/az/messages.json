@@ -86,6 +86,9 @@
     "options_plugin_downloads_addToRecentDocuments": {
         "message": "Yüklənmiş faylları sononcu sənədlər siyahısına əlavə etmək"
     },
+    "options_plugin_downloads_inhibitSuspend": {
+        "message": "Prevent system from going to sleep when downloading"
+    },
     "options_plugin_downloads_saveOriginUrl": {
         "message": "Faylların yükləndiyi ünvanları faylların atributlarında saxlayın"
     },

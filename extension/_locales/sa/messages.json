@@ -86,6 +86,9 @@
     "options_plugin_downloads_addToRecentDocuments": {
         "message": "अद्यतनदस्तावेजेषु डाउनलोड् कृतानि सञ्चिकानि योजयन्तु"
     },
+    "options_plugin_downloads_inhibitSuspend": {
+        "message": "Prevent system from going to sleep when downloading"
+    },
     "options_plugin_downloads_saveOriginUrl": {
         "message": "URL रक्षतु सञ्चिकायाः विशेषतासु सञ्चिकायाः अवतरणं कृतम्"
     },
