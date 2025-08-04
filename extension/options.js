@@ -51,6 +51,21 @@ function loadSettings() {
 
                 if (control.type === "checkbox") {
                     control.checked = !!value;
+                } else if (control.type === "textarea") {
+                    if (key === "mpris" && settingsKey === "websiteSettings") {
+                        let effectiveSettings = {};
+                        Object.assign(effectiveSettings, MPRIS_WEBSITE_SETTINGS);
+                        Object.assign(effectiveSettings, value);
+
+                        let blockedOrigins = [];
+                        Object.keys(effectiveSettings).forEach((origin) => {
+                            if (effectiveSettings[origin] === false) {
+                                blockedOrigins.push(origin);
+                            }
+                        });
+
+                        control.value = blockedOrigins.join("\n");
+                    }
                 } else {
                     if (value === true) {
                         control.value = "TRUE";
@@ -118,6 +133,50 @@ function saveSettings(cb) {
 
         if (control.type === "checkbox") {
             settings[extension][settingsKey] = control.checked;
+        } else if (control.type === "textarea") {
+            if (extension === "mpris" && settingsKey === "websiteSettings") {
+                let websiteSettings = {};
+
+                const blockedUrls = control.value.split("\n").map(line => line.trim()).filter(line => !!line);
+                for (let url of blockedUrls) {
+                    let sanitizedUrl;
+                    try {
+                        sanitizedUrl = new URL(url);
+                    } catch (e) {
+                        try {
+                            sanitizedUrl = new URL("https://" + url);
+                        } catch (e) {
+                            console.warn("Invalid URL", url);
+                        }
+                    }
+
+                    if (!sanitizedUrl) {
+                        continue;
+                    }
+
+                    const origin = sanitizedUrl.origin;
+                    if (!origin || origin === "null") {
+                        console.warn("URL with invalid origin", url);
+                        continue;
+                    }
+
+                    websiteSettings[sanitizedUrl.origin] = false;
+                }
+
+                Object.keys(MPRIS_WEBSITE_SETTINGS).forEach((defaultOrigin) => {
+                    const defaultSetting = MPRIS_WEBSITE_SETTINGS[defaultOrigin];
+
+                    // Default? No need to store it.
+                    if (defaultSetting === websiteSettings[defaultOrigin]) {
+                        delete websiteSettings[defaultOrigin];
+                    // When removed from blocked URLs but disallowed by default, explicitly allow it.
+                    } else if (!websiteSettings.hasOwnProperty(defaultOrigin)) {
+                        websiteSettings[defaultOrigin] = true;
+                    }
+                });
+
+                settings[extension][settingsKey] = websiteSettings;
+            }
         } else {
             let value = control.value;
             if (value === "TRUE") {
