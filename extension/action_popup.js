@@ -92,7 +92,8 @@ class MPrisBlocker {
                         return "";
                     }
                 }).filter((origin) => {
-                    return !!origin;
+                    // for URLs like about:blank origin is "null" (as string!).
+                    return !!origin && origin !== "null";
                 });
 
                 if (origins.length === 0) {
