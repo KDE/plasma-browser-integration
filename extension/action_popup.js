@@ -56,7 +56,8 @@ class TabUtils {
                         return reject(error.message);
                     }
 
-                    resolve(result.result);
+                    const urls = result.map(result => result.result);
+                    resolve(urls);
                 });
             });
         });
