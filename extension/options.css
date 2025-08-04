@@ -73,17 +73,17 @@ body.startup-failure .startup-failure-info {
     display: block;
 }
 
-#extensions-selection {
+.extensions-selection {
     padding: 0;
 }
-#extensions-selection > li {
+.extensions-selection > li {
     display: block;
     padding: 0;
 }
-#extensions-selection > li.dependent {
+.extensions-selection > li.dependent {
     padding-left: 20px;
 }
-#extensions-selection p {
+.extensions-selection p {
     margin-top: 0;
     opacity: 0.7;
     line-height: 1.3;

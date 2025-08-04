@@ -17,6 +17,7 @@
 
 <ul class="tabbar">
     <li><a href="#" data-tab-link="general" data-tab-active="true" data-i18n="options_tab_general">I18N</a></li>
+    <li><a href="#" data-tab-link="mpris" data-i18n="options_tab_mpris">I18N</a></li>
     <li><a href="#" data-tab-link="about" data-i18n="options_tab_about">I18N</a></li>
 </ul>
 
@@ -41,19 +42,7 @@
         <p id="save-message"></p>
     </div>
 
-    <ul id="extensions-selection">
-        <li>
-            <label>
-                <input type="checkbox" data-extension="mpris" data-settings-key="enabled"> <span data-i18n="options_plugin_mpris_title">I18N</span>
-            </label>
-            <p data-i18n="options_plugin_mpris_description">I18N</p>
-        </li>
-        <li class="dependent">
-            <label>
-                <input type="checkbox" data-extension="mprisMediaSessions" data-settings-key="enabled" data-depends-extension="mpris" data-depends-settings-key="enabled" data-depends-settings-value="TRUE"> <span data-i18n="options_plugin_mpris_media_sessions_title">I18N</span>
-            </label>
-            <p data-i18n="options_plugin_mpris_media_sessions_description">I18N</p>
-        </li>
+    <ul class="extensions-selection">
         <li>
             <label>
                 <input type="checkbox" data-extension="kdeconnect" data-settings-key="enabled"> <span data-i18n="options_plugin_kdeconnect_title">I18N</span>
@@ -110,6 +99,23 @@
                 <input type="checkbox" data-extension="breezeScrollBars" data-settings-key="enabled"> <span data-i18n="options_plugin_breezeScrollBars_title">I18N</span>
             </label>
             <p data-i18n="options_plugin_breezeScrollBars_description" data-i18n-html="true">I18N</p>
+        </li>
+    </ul>
+</div>
+
+<div class="tab" data-tab-id="mpris">
+    <ul class="extensions-selection">
+        <li>
+            <label>
+                <input type="checkbox" data-extension="mpris" data-settings-key="enabled"> <span data-i18n="options_plugin_mpris_title">I18N</span>
+            </label>
+            <p data-i18n="options_plugin_mpris_description">I18N</p>
+        </li>
+        <li class="dependent">
+            <label>
+                <input type="checkbox" data-extension="mprisMediaSessions" data-settings-key="enabled" data-depends-extension="mpris" data-depends-settings-key="enabled" data-depends-settings-value="TRUE"> <span data-i18n="options_plugin_mpris_media_sessions_title">I18N</span>
+            </label>
+            <p data-i18n="options_plugin_mpris_media_sessions_description">I18N</p>
         </li>
     </ul>
 </div>
