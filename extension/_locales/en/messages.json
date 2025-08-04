@@ -36,6 +36,10 @@
         "description": "The 'General settings' tab in settings",
         "message": "General"
     },
+    "options_tab_mpris": {
+        "description": "The 'Media controls settings' tab in settings",
+        "message": "Media Controls"
+    },
     "options_tab_about": {
         "description": "The 'About this plugin' tab in settings",
         "message": "About"
