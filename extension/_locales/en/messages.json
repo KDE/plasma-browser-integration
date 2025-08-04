@@ -63,6 +63,11 @@
         "message": "Extract metadata and thumbnails of currently playing content."
     },
 
+    "options_plugin_mpris_media_blocklist_title": {
+        "description": "Title for Media Controls website block list",
+        "message": "Block media controls on the following domains:"
+    },
+
     "options_plugin_kdeconnect_title": {
         "description": "Title for KDE Connect plugin",
         "message": "Send via KDE Connect"

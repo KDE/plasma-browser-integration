@@ -90,6 +90,12 @@ body.startup-failure .startup-failure-info {
     /* checkbox default width is 13px, try to align the description somewhat*/
     padding-left: 18px;
 }
+.extensions-selection textarea {
+    width: 100%;
+    white-space: nowrap;
+    resize: vertical;
+    min-height: 12lh;
+}
 
 .dialog-button-box {
     float: right;
