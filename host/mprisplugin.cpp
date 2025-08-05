@@ -262,7 +262,7 @@ void MPrisPlugin::handleData(const QString &event, const QJsonObject &data)
             emitPropertyChange(m_root, "CanSetFullscreen");
         }
 
-        metadataChanged |= processMetadata(data.value(QStringLiteral("metadata")).toObject(), !artworkPending);
+        metadataChanged |= processMetadata(data, !artworkPending);
         processCallbacks(data.value(QStringLiteral("callbacks")).toArray());
 
         if (metadataChanged) {
@@ -592,19 +592,21 @@ bool MPrisPlugin::processMetadata(const QJsonObject &data, bool processArtwork)
 {
     bool changed = false;
 
-    const QString title = data.value(QStringLiteral("title")).toString();
+    const QJsonObject metadata = data.value(QStringLiteral("metadata")).toObject();
+
+    const QString title = metadata.value(QStringLiteral("title")).toString();
     if (m_title != title) {
         m_title = title;
         changed = true;
     }
 
-    const QString artist = data.value(QStringLiteral("artist")).toString();
+    const QString artist = metadata.value(QStringLiteral("artist")).toString();
     if (m_artist != artist) {
         m_artist = artist;
         changed = true;
     }
 
-    const QString album = data.value(QStringLiteral("album")).toString();
+    const QString album = metadata.value(QStringLiteral("album")).toString();
     if (m_album != album) {
         m_album = album;
         changed = true;
@@ -617,7 +619,7 @@ bool MPrisPlugin::processMetadata(const QJsonObject &data, bool processArtwork)
     // for simplicity we just use the biggest artwork it offers, perhaps we could limit it to some extent
     QSize biggest;
     QUrl artworkUrl;
-    const QJsonArray &artwork = data.value(QStringLiteral("artwork")).toArray();
+    const QJsonArray &artwork = metadata.value(QStringLiteral("artwork")).toArray();
 
     const auto &supportedImageMimes = QImageReader::supportedMimeTypes();
 

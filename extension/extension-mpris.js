@@ -387,7 +387,9 @@ addRuntimeCallback("mpris", ["duration", "timeupdate", "seeking", "seeked", "rat
 
 addRuntimeCallback("mpris", "metadata", function (message, sender) {
     if (currentPlayer().id === playerIdFromSender(sender)) {
-        let payload = message || {};
+        let payload = {
+            metadata: message
+        };
         if (hostSupportsFetchedArtwork()) {
             payload.pendingArtwork = fetchPlayerArtwork(payload, "");
         }
