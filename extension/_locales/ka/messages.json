@@ -87,7 +87,7 @@
         "message": "გადმოწერილი ფაილების ახლახანს გამოყენებული დოკუმენტების სიაში შენახვა"
     },
     "options_plugin_downloads_inhibitSuspend": {
-        "message": "Prevent system from going to sleep when downloading"
+        "message": "გადმოწერისას სისტემისთვის დაძინების აკრძალვა"
     },
     "options_plugin_downloads_saveOriginUrl": {
         "message": "გადმოწერილი ფაილის ბმულის ფაილის ატრიბუტებში შენახვა"

@@ -87,7 +87,7 @@
         "message": "הוספת קבצים שהורדו למסמכים האחרונים"
     },
     "options_plugin_downloads_inhibitSuspend": {
-        "message": "Prevent system from going to sleep when downloading"
+        "message": "למנוע מהמערכת לישון בזמן הורדה"
     },
     "options_plugin_downloads_saveOriginUrl": {
         "message": "שמירת הכתובת שהקובץ הורד ממנה במאפייני הקובץ"

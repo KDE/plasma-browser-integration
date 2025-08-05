@@ -87,7 +87,7 @@
         "message": "Gehitu zama-jaitsitako fitxategiak oraintsuko dokumentuetara"
     },
     "options_plugin_downloads_inhibitSuspend": {
-        "message": "Prevent system from going to sleep when downloading"
+        "message": "Zama-jaistean sistema lokartzea eragotzi"
     },
     "options_plugin_downloads_saveOriginUrl": {
         "message": "Gorde fitxategi bat zama-jaitsi den URLa fitxategiaren atributuetan"

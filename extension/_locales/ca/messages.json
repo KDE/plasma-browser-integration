@@ -87,7 +87,7 @@
         "message": "Afegeix els fitxers baixats als documents recents"
     },
     "options_plugin_downloads_inhibitSuspend": {
-        "message": "Prevent system from going to sleep when downloading"
+        "message": "Evita que el sistema entri en suspensió en baixar"
     },
     "options_plugin_downloads_saveOriginUrl": {
         "message": "Desa l'URL des del qual s'ha baixat un fitxer en els atributs del fitxer"

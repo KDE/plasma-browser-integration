@@ -87,7 +87,7 @@
         "message": "பதிவிறக்கப்பட்டுள்ள கோப்புகளை சமீப ஆவணங்களின் பட்டியலில் சேர்"
     },
     "options_plugin_downloads_inhibitSuspend": {
-        "message": "Prevent system from going to sleep when downloading"
+        "message": "பதிவிறக்கும்போது கணினியை உறங்கவிடாதே"
     },
     "options_plugin_downloads_saveOriginUrl": {
         "message": "கோப்பின் பண்புகளில் அதை வழங்கிய முகவரியைச் சேமி"

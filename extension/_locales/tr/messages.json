@@ -87,7 +87,7 @@
         "message": "İndirilen dosyaları son kullanılan belgelere ekle"
     },
     "options_plugin_downloads_inhibitSuspend": {
-        "message": "Prevent system from going to sleep when downloading"
+        "message": "İndirme yaparken sistemin uykuya geçmesini engelle"
     },
     "options_plugin_downloads_saveOriginUrl": {
         "message": "URL’yi dosyaya kaydet dosya özniteliklerinden indirildi"

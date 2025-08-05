@@ -87,7 +87,7 @@
         "message": "Lägg till nerladdade filer till senaste dokument"
     },
     "options_plugin_downloads_inhibitSuspend": {
-        "message": "Prevent system from going to sleep when downloading"
+        "message": "Förhindra att systemet försätts i viloläge under nerladdning"
     },
     "options_plugin_downloads_saveOriginUrl": {
         "message": "Spara webbadress som en fil laddades ner från i filens egenskaper"

@@ -87,7 +87,7 @@
         "message": "Додавати отримані файли до списку нещодавніх документів"
     },
     "options_plugin_downloads_inhibitSuspend": {
-        "message": "Prevent system from going to sleep when downloading"
+        "message": "Запобігати присиплянню системи під час отримання даних"
     },
     "options_plugin_downloads_saveOriginUrl": {
         "message": "Зберегти адресу, звідки було завантажено файл, у атрибутах файла"

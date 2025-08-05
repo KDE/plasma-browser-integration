@@ -87,7 +87,7 @@
         "message": "Añadir los archivos descargados a los documentos recientes"
     },
     "options_plugin_downloads_inhibitSuspend": {
-        "message": "Prevent system from going to sleep when downloading"
+        "message": "Impedir que el sistema entre en reposo cuando hay descargas"
     },
     "options_plugin_downloads_saveOriginUrl": {
         "message": "Guardar el URL de donde se ha descargado un archivo en los atributos del archivo"
