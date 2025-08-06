@@ -1,6 +1,6 @@
 {
     "browseraction_mpris_enable_on": {
-        "message": "فعّل التحكّمات بالوسائط في:"
+        "message": "مكّن التحكّمات بالوسائط في:"
     },
     "browseraction_mpris_title": {
         "message": "التحكّمات بالوسائط"
@@ -93,7 +93,7 @@
         "message": "لاحِظ: يمكن أن يحتوي العنوان على معلومات حساسة قد تكون عرضة للكشف حين يُشارك الملف مع الآخرين أو حين يستطيع الآخرين الوصول إليه"
     },
     "options_plugin_downloads_title": {
-        "message": "اعرض التنزيلات في منطقة التنبيهات"
+        "message": "اعرض التنزيلات في منطقة الإشعارات"
     },
     "options_plugin_historyrunner_description": {
         "message": "قد تحتاج هذه الميزة <a id=\"$1\" href=\"$2\">تصاريح إضافية</a> لتستطيع استعمالها."
