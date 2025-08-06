@@ -1,7 +1,7 @@
 {
     "KPlugin": {
         "Description": "Automatically enables support for Firefox Flatpak",
-        "Description[ar]": "تمكين الدعم لفيرفوكس إصدارة فلاتباك تلقائيًا",
+        "Description[ar]": "تمكين الدعم لفيرفوكس إصدارة فلاتباك آليًّا",
         "Description[az]": "Firefox Flatpak ilə inteqrasiyanı avtomatik aktiv edir",
         "Description[bg]": "Автоматично активира поддръжката на Firefox Flatpak",
         "Description[ca@valencia]": "Activa automàticament el suport per a Flatpak de Firefox",
