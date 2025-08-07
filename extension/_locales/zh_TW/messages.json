@@ -87,7 +87,7 @@
         "message": "將下載的檔案加入最近文件"
     },
     "options_plugin_downloads_inhibitSuspend": {
-        "message": "Prevent system from going to sleep when downloading"
+        "message": "下載時防止系統進入睡眠"
     },
     "options_plugin_downloads_saveOriginUrl": {
         "message": "在檔案屬性儲存檔案的下載網址"
