@@ -130,7 +130,7 @@ msgstr "المقصد"
 #, kde-format
 msgctxt "Dummy search result"
 msgid "Additional permissions are required"
-msgstr "مطلوب تصاريح إضافية"
+msgstr "مطلوب أذونات إضافية"
 
 #: tabsrunnerplugin.cpp:38
 #, kde-format
