@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: plasma-browser-integration\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-21 03:08+0000\n"
-"PO-Revision-Date: 2021-08-20 10:59+0300\n"
-"Last-Translator: Safa Alfulaij <safa1996alfulaij@gmail.com>\n"
+"PO-Revision-Date: 2024-08-15 11:42+0400\n"
+"Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
@@ -120,7 +120,7 @@ msgstr "المقصد"
 #, kde-format
 msgctxt "Dummy search result"
 msgid "Additional permissions are required"
-msgstr "مطلوب تصاريح إضافية"
+msgstr "مطلوب أذونات إضافية"
 
 #: tabsrunnerplugin.cpp:38
 #, kde-format
