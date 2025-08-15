@@ -99,7 +99,7 @@
         "message": "اعرض التنزيلات في منطقة الإشعارات"
     },
     "options_plugin_historyrunner_description": {
-        "message": "قد تحتاج هذه الميزة <a id=\"$1\" href=\"$2\">تصاريح إضافية</a> لتستطيع استعمالها."
+        "message": "قد تحتاج هذه الميزة <a id=\"$1\" href=\"$2\">أذونات إضافية</a> لتستطيع استعمالها."
     },
     "options_plugin_historyrunner_title": {
         "message": "ابحث عبر تأريخ المتصفّح"
@@ -150,22 +150,22 @@
         "message": "إعدادات تكامل بلازما مع المتصفح"
     },
     "permission_request_already": {
-        "message": "سبق ومنحتَ هذا التصريح."
+        "message": "سبق ومنحتَ هذا الإذن."
     },
     "permission_request_button_request": {
-        "message": "اطلب التصريح"
+        "message": "اطلب الإذن"
     },
     "permission_request_button_revoke": {
-        "message": "اسحب التصريح"
+        "message": "اسحب الإذن"
     },
     "permission_request_historyrunner_1": {
-        "message": "لعرض نتائج البحث من تأريخ المتصفّح، يحتاج الامتداد تصاريح إضافية."
+        "message": "لعرض نتائج البحث من تأريخ المتصفّح، يحتاج الامتداد أذونات إضافية."
     },
     "permission_request_historyrunner_2": {
         "message": "يمكنك تعطيل هذه الميزة من <a id=\"$1\" href=\"$2\">إعدادات بحث بلازما</a>."
     },
     "permission_request_title": {
-        "message": "مطلوب تصاريح إضافية"
+        "message": "مطلوب أذونات إضافية"
     },
     "purpose_share": {
         "message": "شارِك..."
