@@ -87,7 +87,7 @@
         "message": "Добавяне на изтеглени файлове към последните документи"
     },
     "options_plugin_downloads_inhibitSuspend": {
-        "message": "Prevent system from going to sleep when downloading"
+        "message": "Предотвратяване на преминаването на системата в режим на заспиване по време на изтегляне"
     },
     "options_plugin_downloads_saveOriginUrl": {
         "message": "Запазване на URL адрес, от който е изтеглен файл в атрибутите на файла"

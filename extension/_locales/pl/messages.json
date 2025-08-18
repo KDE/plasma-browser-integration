@@ -87,7 +87,7 @@
         "message": "Dodaj pobrane pliki do ostatnich dokumentów"
     },
     "options_plugin_downloads_inhibitSuspend": {
-        "message": "Prevent system from going to sleep when downloading"
+        "message": "Nie usypiaj systemu podczas pobierania"
     },
     "options_plugin_downloads_saveOriginUrl": {
         "message": "Zachowaj adres URL pobranego pliku we właściwościach pliku"
