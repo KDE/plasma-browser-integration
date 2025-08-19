@@ -63,4 +63,5 @@ const MPRIS_WEBSITE_SETTINGS = {
     "https://getmibo.com": false,
     "https://zoom.us": false, // Bug 435100
     "https://teams.microsoft.com": false, // Bug 503965
+    "https://www.nicovideo.jp": false, // Bug 493809
 };
