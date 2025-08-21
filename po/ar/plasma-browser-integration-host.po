@@ -76,17 +76,17 @@ msgstr "فُقد الاتصال بالشبكة."
 #: downloadjob.cpp:243
 #, kde-format
 msgid "The server is no longer reachable."
-msgstr "لم نعد نستطيع التواصل مع الخادوم."
+msgstr "لم نعد نستطيع التواصل مع الخادم."
 
 #: downloadjob.cpp:245
 #, kde-format
 msgid "A server error has occurred."
-msgstr "وقع عُطل في الخادوم."
+msgstr "وقع عُطل في الخادم."
 
 #: downloadjob.cpp:249
 #, kde-format
 msgid "The server does not have the requested data."
-msgstr "لا يحتوي الخادوم على البيانات المطلوبة."
+msgstr "لا يحتوي الخادم على البيانات المطلوبة."
 
 #: downloadjob.cpp:251
 #, kde-format
