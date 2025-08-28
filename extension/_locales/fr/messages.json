@@ -87,7 +87,7 @@
         "message": "Ajouter les fichiers téléchargés aux documents récents"
     },
     "options_plugin_downloads_inhibitSuspend": {
-        "message": "Prevent system from going to sleep when downloading"
+        "message": "Empêcher le système de se mettre en veille durant le téléchargement"
     },
     "options_plugin_downloads_saveOriginUrl": {
         "message": "Enregistrer l'URL depuis laquelle le fichier a été téléchargé dans les attributs du fichier."
