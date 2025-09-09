@@ -40,7 +40,6 @@
         "Description[ta]": "பிளாஸ்மா உலாவி ஒருங்கிணைப்பு புரவன் நிறுவப்படவில்லையெனில் உலாவி துணை நிரலுக்கான இணைப்பை வழங்கும்",
         "Description[tr]": "Plasma Tarayıcı Tümleştirme istemcisi kuruluysa tarayıcı uzantısı için bir bağlantı sağlar",
         "Description[uk]": "Надає посилання на розширення браузера, якщо встановлено основну частину засобу інтеграції браузера із Плазмою",
-        "Description[x-test]": "xxProvides a link to the browser extension if the Plasma Browser Integration host is installedxx",
         "Description[zh_CN]": "如果 Plasma 浏览器集成主程序已安装，则提供下载浏览器扩展程序的链接",
         "Description[zh_TW]": "有安裝 Plasma 瀏覽器整合主程式時提供它的瀏覽器擴充功能的連結",
         "Name": "Plasma Browser Integration Installation Reminder",
@@ -89,7 +88,6 @@
         "Name[tg]": "Хотиррасонӣ барои насби ҳампайвандии намоишгари Плазма",
         "Name[tr]": "Plasma Tarayıcı Tümleştirmesi Kurulum Anımsatıcısı",
         "Name[uk]": "Нагадування щодо встановлення інтеграції браузера із Плазмою",
-        "Name[x-test]": "xxPlasma Browser Integration Installation Reminderxx",
         "Name[zh_CN]": "Plasma 浏览器集成程序安装提醒",
         "Name[zh_TW]": "Plasma 瀏覽器整合安裝提醒"
     },
