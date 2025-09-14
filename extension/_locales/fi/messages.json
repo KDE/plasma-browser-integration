@@ -87,7 +87,7 @@
         "message": "Lisää ladatut tiedostot viimeaikaisiin tiedostoihin"
     },
     "options_plugin_downloads_inhibitSuspend": {
-        "message": "Prevent system from going to sleep when downloading"
+        "message": "Estä ladattaessa järjestelmän valmiustila"
     },
     "options_plugin_downloads_saveOriginUrl": {
         "message": "Tallenna verkkolatausosoite tiedoston määritteisiin"
