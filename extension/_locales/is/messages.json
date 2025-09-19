@@ -87,7 +87,7 @@
         "message": "Bæta sóttum skrám við nýleg skjöl"
     },
     "options_plugin_downloads_inhibitSuspend": {
-        "message": "Prevent system from going to sleep when downloading"
+        "message": "Koma í veg fyrir að tölvan sé svæfð á meðan hlaðið er niður"
     },
     "options_plugin_downloads_saveOriginUrl": {
         "message": "Vista slóðina sem skráin var á í eigindaupplýsingum skrárinnar"
