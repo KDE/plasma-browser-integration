@@ -24,7 +24,7 @@
         "message": "连接到本地主机失败。"
     },
     "general_error_startup_failed_wiki_link": {
-        "message": "访问本项目的 Wiki 页面以获取更多信息"
+        "message": "访问本项目的百科页面以获取更多信息"
     },
     "general_error_unknown": {
         "message": "未知错误"
