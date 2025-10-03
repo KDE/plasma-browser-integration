@@ -87,7 +87,7 @@
         "message": "Pridėti atsisiųstus failus į paskiausiai naudotus dokumentus"
     },
     "options_plugin_downloads_inhibitSuspend": {
-        "message": "Prevent system from going to sleep when downloading"
+        "message": "Neleisti sistemai būti pristabdytai, kai vyksta atsiuntimas"
     },
     "options_plugin_downloads_saveOriginUrl": {
         "message": "Įrašyti URL, iš kurio buvo atsisiųstas failas, į failo atributus"
