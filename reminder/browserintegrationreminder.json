@@ -32,6 +32,7 @@
         "Description[pl]": "Dostarcza łącze do rozszerzeń przeglądarki, jeśli gospodarz integracji przeglądarki Plazmy został wgrany",
         "Description[pt]": "Oferece uma ligação para a extensão do navegador, caso o anfitrião da Integração do Navegador do Plasma esteja instalada",
         "Description[pt_BR]": "Fornece um link para a extensão do navegador se o host da integração dos navegadores no Plasma está instalado",
+        "Description[ro]": "Oferă o legătură la extensia de navigator dacă e instalată gazda de integrare Plasma cu navigatorul",
         "Description[ru]": "В случае, если установлена служба интеграции браузера в среду Plasma, но не установлено соответствующее расширение браузера, предоставляет ссылку для установки такого расширения.",
         "Description[sa]": "यदि Plasma Browser Integration होस्ट् संस्थापितः अस्ति तर्हि ब्राउजर् विस्तारस्य लिङ्कं प्रदाति",
         "Description[sk]": "Poskytuje odkaz na doplnok prehliadača ak Plasma Browser Integration Host je nainštalovaný",
