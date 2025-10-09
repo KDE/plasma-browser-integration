@@ -87,7 +87,7 @@
         "message": "다운로드한 파일을 최근 문서에 추가"
     },
     "options_plugin_downloads_inhibitSuspend": {
-        "message": "Prevent system from going to sleep when downloading"
+        "message": "다운로드 중에 시스템이 대기 모드로 전환되는 것 방지"
     },
     "options_plugin_downloads_saveOriginUrl": {
         "message": "파일 속성에 파일을 다운로드한 URL 저장"
