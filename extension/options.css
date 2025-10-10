@@ -52,6 +52,18 @@ body.startup-failure .startup-failure-info {
     font-weight: bold;
     background-color: #fff;
 }
+@media (prefers-color-scheme: dark) {
+    .tabbar {
+        background-color: #292c30;
+    }
+    .tabbar > li > a {
+        color: #e3e3e3;
+    }
+    .tabbar > li > a.active {
+        font-weight: bold;
+        background-color: #111;
+    }
+}
 
 .tab {
     display: none;
