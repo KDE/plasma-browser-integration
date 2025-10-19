@@ -15,6 +15,8 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+const MAX_MPRIS_ARTWORK_IMAGE_SIZE = 1024;
+
 let playerIds = [];
 let supportedImageMimeTypes = [];
 
@@ -135,7 +137,6 @@ function hostSupportsFetchedArtwork() {
 
 function fetchPlayerArtwork(metadata, poster, favIconUrl) {
     let artworkUrl = "";
-    let artworkMimeType = "";
 
     const player = currentPlayer();
     if (!player.id) {
@@ -151,14 +152,8 @@ function fetchPlayerArtwork(metadata, poster, favIconUrl) {
                 continue;
             }
 
-            if (item.type && !supportedImageMimeTypes.includes(item.type)) {
-                console.log("Not supported mime", item.type, "of", item.src);
-                continue;
-            }
-
             if (item.sizes === "any") {
                 artworkUrl = item.src;
-                artworkMimeType = item.type;
                 break;
             }
 
@@ -175,7 +170,6 @@ function fetchPlayerArtwork(metadata, poster, favIconUrl) {
 
                 if (biggest === null || (actualSize.width >= biggest.width && actualSize.height >= biggest.height)) {
                     artworkUrl = item.src;
-                    artworkMimeType = item.type;
                     biggest = {width: actualSize.width, height: actualSize.height};
                 }
             }
@@ -207,16 +201,54 @@ function fetchPlayerArtwork(metadata, poster, favIconUrl) {
         }
 
         response.blob().then((blob) => {
-            let reader = new FileReader();
-            reader.onloadend = function() {
-                if (currentPlayer().id === player.id) {
-                    payload.dataUrl = reader.result;
-                    payload.mimeType = artworkMimeType;
+            createImageBitmap(blob).then((imageBitmap) => {
+                let imageWidth = imageBitmap.width;
+                let imageHeight = imageBitmap.height;
 
+                if (imageWidth <= 0 || imageHeight <= 0) {
+                    console.warn("Got invalid image from createImageBitmap", artworkUrl);
+                    if (currentPlayer().id === player.id) {
+                        sendPortMessage("mpris", "artwork", payload);
+                    }
+                    return;
+                }
+
+                // Limit maximum size
+                const scale = Math.min(1, MAX_MPRIS_ARTWORK_IMAGE_SIZE / imageWidth, MAX_MPRIS_ARTWORK_IMAGE_SIZE / imageHeight);
+                imageWidth *= scale;
+                imageHeight *= scale;
+
+                const canvas = new OffscreenCanvas(imageWidth, imageHeight);
+                const ctx = canvas.getContext("2d");
+
+                ctx.drawImage(imageBitmap, 0, 0, imageWidth, imageHeight);
+
+                canvas.convertToBlob({
+                    // Deliberately converting to PNG, so we don't have to deal with exotic file formats.
+                    type: "image/png",
+                }).then((canvasBlob) => {
+                    let reader = new FileReader();
+                    reader.onloadend = () => {
+                        if (currentPlayer().id === player.id) {
+                            payload.dataUrl = reader.result;
+                            payload.mimeType = canvasBlob.type;
+
+                            sendPortMessage("mpris", "artwork", payload);
+                        }
+                    };
+                    reader.readAsDataURL(canvasBlob);
+                }, (err) => {
+                    console.warn("Failed to convert OffscreenCanvas to blob", err);
+                    if (currentPlayer().id === player.id) {
+                        sendPortMessage("mpris", "artwork", payload);
+                    }
+                });
+            }, (err) => {
+                console.warn("Failed to create image bitmap of", artworkUrl, err);
+                if (currentPlayer().id === player.id) {
                     sendPortMessage("mpris", "artwork", payload);
                 }
-            }
-            reader.readAsDataURL(blob);
+            });
         }, (err) => {
             console.warn("Failed to read response of", artworkUrl, "as blob", err);
             if (currentPlayer().id === player.id) {
