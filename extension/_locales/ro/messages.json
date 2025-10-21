@@ -87,7 +87,7 @@
         "message": "Adaugă fișierele descărcate la documentele recente"
     },
     "options_plugin_downloads_inhibitSuspend": {
-        "message": "Prevent system from going to sleep when downloading"
+        "message": "Previne adormirea sistemului în timpul descărcării"
     },
     "options_plugin_downloads_saveOriginUrl": {
         "message": "Salvează URL-ul de la care a fost descărcat un fișier în atributele acestuia"
