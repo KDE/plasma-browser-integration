@@ -137,6 +137,7 @@ function hostSupportsFetchedArtwork() {
 
 function fetchPlayerArtwork(metadata, poster, favIconUrl) {
     let artworkUrl = "";
+    let artworkMimeType = "";
 
     const player = currentPlayer();
     if (!player.id) {
@@ -154,6 +155,7 @@ function fetchPlayerArtwork(metadata, poster, favIconUrl) {
 
             if (item.sizes === "any") {
                 artworkUrl = item.src;
+                artworkMimeType = item.type;
                 break;
             }
 
@@ -170,6 +172,7 @@ function fetchPlayerArtwork(metadata, poster, favIconUrl) {
 
                 if (biggest === null || (actualSize.width >= biggest.width && actualSize.height >= biggest.height)) {
                     artworkUrl = item.src;
+                    artworkMimeType = item.type;
                     biggest = {width: actualSize.width, height: actualSize.height};
                 }
             }
@@ -223,9 +226,16 @@ function fetchPlayerArtwork(metadata, poster, favIconUrl) {
 
                 ctx.drawImage(imageBitmap, 0, 0, imageWidth, imageHeight);
 
+                // Avoid exotic image formats (e.g. AVIF).
+                // WebP generally has better compression than PNG and avoid converting a JPEG to PNG.
+                let targetMimeType = "image/png";
+                if (supportedImageMimeTypes.includes(artworkMimeType)
+                    && ["image/jpeg", "image/webp"].includes(artworkMimeType)) {
+                    targetMimeType = artworkMimeType;
+                }
+
                 canvas.convertToBlob({
-                    // Deliberately converting to PNG, so we don't have to deal with exotic file formats.
-                    type: "image/png",
+                    type: targetMimeType
                 }).then((canvasBlob) => {
                     let reader = new FileReader();
                     reader.onloadend = () => {
