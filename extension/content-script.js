@@ -322,7 +322,7 @@ function setPlayerActive(player) {
     // when playback starts, send along metadata
     // a website might have set Media Sessions metadata prior to playing
     // and then we would have ignored the metadata signal because there was no player
-    sendMessage("mpris", "playing", {
+    let payload = {
         mediaSrc: player.currentSrc || player.src,
         pageTitle: document.title,
         poster: player.poster,
@@ -336,7 +336,31 @@ function setPlayerActive(player) {
         callbacks: playerCallbacks,
         fullscreen: document.fullscreenElement !== null,
         canSetFullscreen: player.tagName.toLowerCase() === "video"
+    }
+
+    // A website can contain multiple "icon" rels,
+    // Tab.favIconUrl is designed for the browser's tab bar,
+    // not necessarily the highest resolution.
+    let biggest = null;
+    const iconTags = (document.head || document).querySelectorAll("link[rel=icon]");
+    iconTags.forEach((iconTag) => {
+        for (let size of iconTag.sizes) {
+            const sizeParts = size.split("x");
+
+            let actualSize = {width: NaN, height: NaN};
+            if (sizeParts.length == 2) {
+                actualSize.width = parseInt(sizeParts[0], 10);
+                actualSize.height = parseInt(sizeParts[1], 10);
+            }
+
+            if (biggest === null || (actualSize.width >= biggest.width && actualSize.height >= biggest.height)) {
+                payload.iconUrl = iconTag.href;
+                biggest = {width: actualSize.width, height: actualSize.height};
+            }
+        }
     });
+
+    sendMessage("mpris", "playing", payload);
 
     if (!titleTagObserver) {
 

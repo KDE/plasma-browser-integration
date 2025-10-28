@@ -135,7 +135,7 @@ function hostSupportsFetchedArtwork() {
     return supportedImageMimeTypes.length > 0;
 }
 
-function fetchPlayerArtwork(metadata, poster, favIconUrl) {
+function fetchPlayerArtwork(metadata, poster, iconUrl, favIconUrl) {
     let artworkUrl = "";
     let artworkMimeType = "";
 
@@ -181,7 +181,7 @@ function fetchPlayerArtwork(metadata, poster, favIconUrl) {
     }
 
     if (!artworkUrl) {
-        artworkUrl = poster || favIconUrl || "";
+        artworkUrl = poster || iconUrl || favIconUrl || "";
     }
 
     let payload = {src: artworkUrl};
@@ -385,7 +385,7 @@ addRuntimeCallback("mpris", "playing", function (message, sender) {
     payload.url = sender.tab.url;
 
     if (hostSupportsFetchedArtwork()) {
-        payload.pendingArtwork = fetchPlayerArtwork(payload.metadata, payload.poster, sender.tab.favIconUrl);
+        payload.pendingArtwork = fetchPlayerArtwork(payload.metadata, payload.poster, payload.iconUrl, sender.tab.favIconUrl);
     }
 
     sendPortMessage("mpris", "playing", payload);
@@ -433,7 +433,7 @@ addRuntimeCallback("mpris", "metadata", function (message, sender) {
             metadata: message
         };
         if (hostSupportsFetchedArtwork()) {
-            payload.pendingArtwork = fetchPlayerArtwork(payload, "", "");
+            payload.pendingArtwork = fetchPlayerArtwork(payload, "", "", "");
         }
 
         sendPortMessage("mpris", "metadata", payload);
