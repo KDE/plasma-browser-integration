@@ -113,6 +113,9 @@
     "options_plugin_mpris_description": {
         "message": "Laat u video- en audiospelers besturen in websites met de plasmoid Mediabesturing."
     },
+    "options_plugin_mpris_media_blocklist_title": {
+        "message": "Block media controls on the following domains:"
+    },
     "options_plugin_mpris_media_sessions_description": {
         "message": "Metagegevens en miniaturen van nu spelende inhoud extraheren."
     },
@@ -145,6 +148,9 @@
     },
     "options_tab_general": {
         "message": "Algemeen"
+    },
+    "options_tab_mpris": {
+        "message": "Media Controls"
     },
     "options_title": {
         "message": "Plasma-integratie-instellingen"

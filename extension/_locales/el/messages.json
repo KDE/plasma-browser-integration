@@ -113,6 +113,9 @@
     "options_plugin_mpris_description": {
         "message": "Σας επιτρέπει να ελέγχετε αναπαραγωγείς βίντεο και ήχου σε ιστοτόπους με χρήση του γραφικού συστατικού Media Controller."
     },
+    "options_plugin_mpris_media_blocklist_title": {
+        "message": "Block media controls on the following domains:"
+    },
     "options_plugin_mpris_media_sessions_description": {
         "message": "Εξαγωγή μεταδεδομένων και εικόνων επισκόπησης του περιεχομένου που αναπαράγεται τώρα."
     },
@@ -145,6 +148,9 @@
     },
     "options_tab_general": {
         "message": "Γενικά"
+    },
+    "options_tab_mpris": {
+        "message": "Media Controls"
     },
     "options_title": {
         "message": "Ρυθμίσεις ενσωμάτωσης Plasma"

@@ -113,6 +113,9 @@
     "options_plugin_mpris_description": {
         "message": "Permite controlar os reprodutores de áudio e vídeo em sites usando o plasmoide controlador de mídia."
     },
+    "options_plugin_mpris_media_blocklist_title": {
+        "message": "Block media controls on the following domains:"
+    },
     "options_plugin_mpris_media_sessions_description": {
         "message": "Extrai metadados e miniaturas do conteúdo atualmente em exibição."
     },
@@ -145,6 +148,9 @@
     },
     "options_tab_general": {
         "message": "Geral"
+    },
+    "options_tab_mpris": {
+        "message": "Media Controls"
     },
     "options_title": {
         "message": "Configurações de integração do Plasma"

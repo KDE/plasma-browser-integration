@@ -113,6 +113,9 @@
     "options_plugin_mpris_description": {
         "message": "საშუალებას გაძლევთ, ვებგვერდებიდან აკონტროლოთ ვიდეო და აუდიო დამკვრელები, მედია კონტროლერის პლაზმოიდით."
     },
+    "options_plugin_mpris_media_blocklist_title": {
+        "message": "Block media controls on the following domains:"
+    },
     "options_plugin_mpris_media_sessions_description": {
         "message": "მიმდინარედ დაკრული შემცველობიდან მეტამონაცემებისა და მინიატურების გამოღება."
     },
@@ -145,6 +148,9 @@
     },
     "options_tab_general": {
         "message": "საერთო"
+    },
+    "options_tab_mpris": {
+        "message": "Media Controls"
     },
     "options_title": {
         "message": "Plasma-ის ინტეგრაციის პარამეტრები"

@@ -113,6 +113,9 @@
     "options_plugin_mpris_description": {
         "message": "Lader dig kontrollere video- og lydafspillere på websider med mediestyrings-plasmoiden."
     },
+    "options_plugin_mpris_media_blocklist_title": {
+        "message": "Block media controls on the following domains:"
+    },
     "options_plugin_mpris_media_sessions_description": {
         "message": "Udtræk metadata og miniaturer på det indhold som afspilles nu ."
     },
@@ -145,6 +148,9 @@
     },
     "options_tab_general": {
         "message": "Generelt"
+    },
+    "options_tab_mpris": {
+        "message": "Media Controls"
     },
     "options_title": {
         "message": "Indstillinger for Plasma-integration"

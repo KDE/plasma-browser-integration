@@ -113,6 +113,9 @@
     "options_plugin_mpris_description": {
         "message": "Media Controller plasmoid इत्यस्य उपयोगेन वेबसाइट् मध्ये video and audio players इत्यस्य नियन्त्रणं कर्तुं शक्नोति ।"
     },
+    "options_plugin_mpris_media_blocklist_title": {
+        "message": "Block media controls on the following domains:"
+    },
     "options_plugin_mpris_media_sessions_description": {
         "message": "वर्तमान समये वादयति सामग्रीयाः मेटाडाटा लघुचित्रं च निष्कासयन्तु।"
     },
@@ -145,6 +148,9 @@
     },
     "options_tab_general": {
         "message": "सामान्य"
+    },
+    "options_tab_mpris": {
+        "message": "Media Controls"
     },
     "options_title": {
         "message": "प्लाज्मा एकीकरण सेटिंग्स्"

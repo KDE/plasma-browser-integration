@@ -113,6 +113,9 @@
     "options_plugin_mpris_description": {
         "message": "मीडिया नियंत्रक प्लास्मॉइड का उपयोग करके आपको वेबसाइटों में वीडियो और ऑडियो प्लेयर को नियंत्रित करने की सुविधा देता है।"
     },
+    "options_plugin_mpris_media_blocklist_title": {
+        "message": "Block media controls on the following domains:"
+    },
     "options_plugin_mpris_media_sessions_description": {
         "message": "वर्तमान में चल रही सामग्री का मेटाडेटा और थंबनेल निकालें।"
     },
@@ -145,6 +148,9 @@
     },
     "options_tab_general": {
         "message": "सामान्य"
+    },
+    "options_tab_mpris": {
+        "message": "Media Controls"
     },
     "options_title": {
         "message": "प्लाज्मा एकीकरण सेटिंग्स"

@@ -113,6 +113,9 @@
     "options_plugin_mpris_description": {
         "message": "Omogoča vam nadzor nad video in zvočnimi predvajalniki na spletnih mestih z uporabo plasmoidnega regulatorja predstavnosti."
     },
+    "options_plugin_mpris_media_blocklist_title": {
+        "message": "Block media controls on the following domains:"
+    },
     "options_plugin_mpris_media_sessions_description": {
         "message": "Izvleci metapodatke in sličice trenutno predvajane vsebine."
     },
@@ -145,6 +148,9 @@
     },
     "options_tab_general": {
         "message": "Splošno"
+    },
+    "options_tab_mpris": {
+        "message": "Media Controls"
     },
     "options_title": {
         "message": "Nastavitve integracije s Plasmo"

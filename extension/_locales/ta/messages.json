@@ -113,6 +113,9 @@
     "options_plugin_mpris_description": {
         "message": "ஊடக இயக்கி பிளாஸ்மாய்டின் மூலம் வலைதளங்களிலுள்ள நிகழ்பட மற்றும் பாடல் இயக்கிகளைக் கட்டுப்படுத்த உதவும்."
     },
+    "options_plugin_mpris_media_blocklist_title": {
+        "message": "Block media controls on the following domains:"
+    },
     "options_plugin_mpris_media_sessions_description": {
         "message": "ஓடிக்கொண்டிருக்கும் பாடல்களின் விவரங்களையும் சிறுபடங்களையும் கண்டறியும்."
     },
@@ -145,6 +148,9 @@
     },
     "options_tab_general": {
         "message": "பொதுவானவை"
+    },
+    "options_tab_mpris": {
+        "message": "Media Controls"
     },
     "options_title": {
         "message": "பிளாஸ்மா ஒருங்கிணைப்பு அமைப்புகள்"

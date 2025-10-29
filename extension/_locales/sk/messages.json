@@ -113,6 +113,9 @@
     "options_plugin_mpris_description": {
         "message": "Umožnuje vám ovládať hudobné a video prehrávače na internetových stránkach pomocou Plasmoidu Ovládač medií."
     },
+    "options_plugin_mpris_media_blocklist_title": {
+        "message": "Block media controls on the following domains:"
+    },
     "options_plugin_mpris_media_sessions_description": {
         "message": "Extrahovať metadáta a náhľady aktuálne prehrávaného obsahu."
     },
@@ -145,6 +148,9 @@
     },
     "options_tab_general": {
         "message": "Všeobecné"
+    },
+    "options_tab_mpris": {
+        "message": "Media Controls"
     },
     "options_title": {
         "message": "Nastavenia Plasma Integration"

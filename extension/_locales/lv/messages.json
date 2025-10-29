@@ -113,6 +113,9 @@
     "options_plugin_mpris_description": {
         "message": "Ļauj kontrolēt tīmekļa vietnēs iegultus video un audio atskaņotājus, izmantojot Multivides vadības plazmoīdu."
     },
+    "options_plugin_mpris_media_blocklist_title": {
+        "message": "Block media controls on the following domains:"
+    },
     "options_plugin_mpris_media_sessions_description": {
         "message": "Izvilkt atskaņotā satura metadatus un sīktēlus."
     },
@@ -145,6 +148,9 @@
     },
     "options_tab_general": {
         "message": "Pamata"
+    },
+    "options_tab_mpris": {
+        "message": "Media Controls"
     },
     "options_title": {
         "message": "„Plasma“ integrācijas iestatījumi"

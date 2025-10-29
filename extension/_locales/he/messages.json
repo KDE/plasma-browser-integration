@@ -113,6 +113,9 @@
     "options_plugin_mpris_description": {
         "message": "מאפשר לך לשלוט בנגני הסרטונים והשמע באתרים באמצעות ה־plasmoid לבקרת מדיה."
     },
+    "options_plugin_mpris_media_blocklist_title": {
+        "message": "Block media controls on the following domains:"
+    },
     "options_plugin_mpris_media_sessions_description": {
         "message": "חילוץ נתוני על ותמונות ממוזערות מתוך שמתנגן כרגע."
     },
@@ -145,6 +148,9 @@
     },
     "options_tab_general": {
         "message": "כללי"
+    },
+    "options_tab_mpris": {
+        "message": "Media Controls"
     },
     "options_title": {
         "message": "הגדרות שילוב עם פלזמה"

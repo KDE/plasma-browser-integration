@@ -113,6 +113,9 @@
     "options_plugin_mpris_description": {
         "message": "Webguneetako bideo eta audio jotzaileak kontrolatzen uzten dizu «Euskarri kontrolatzailea» plasmoidea erabiliz."
     },
+    "options_plugin_mpris_media_blocklist_title": {
+        "message": "Block media controls on the following domains:"
+    },
     "options_plugin_mpris_media_sessions_description": {
         "message": "Atera meta-datuak eta koadro txikiak une honetan jotzen ari den edukitik."
     },
@@ -145,6 +148,9 @@
     },
     "options_tab_general": {
         "message": "Orokorra"
+    },
+    "options_tab_mpris": {
+        "message": "Media Controls"
     },
     "options_title": {
         "message": "Plama bateratze ezarpenak"
