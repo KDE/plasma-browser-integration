@@ -1,6 +1,6 @@
 {
     "browseraction_mpris_enable_on": {
-        "message": "Ortam denetimlerini şurada etkinleştir:"
+        "message": "Şurada ortam denetimlerini etkinleştir:"
     },
     "browseraction_mpris_title": {
         "message": "Ortam Denetimleri"
@@ -114,7 +114,7 @@
         "message": "Web sitelerindeki video ve ses oynatıcılarını Ortam Denetleyicisi Plasmoid’ini kullanarak denetlemenize izin verir."
     },
     "options_plugin_mpris_media_blocklist_title": {
-        "message": "Block media controls on the following domains:"
+        "message": "Şu etki alanları için ortam denetimlerini engelle:"
     },
     "options_plugin_mpris_media_sessions_description": {
         "message": "Şu anda oynatılan içeriğin üst verisini ve küçük görsellerini çıkarın."

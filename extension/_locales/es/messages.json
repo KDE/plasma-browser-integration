@@ -114,7 +114,7 @@
         "message": "Le permite controlar los reproductores de vídeo y de sonido de los sitios web usando el plasmoide del «Controlador multimedia»."
     },
     "options_plugin_mpris_media_blocklist_title": {
-        "message": "Block media controls on the following domains:"
+        "message": "Bloquear controles multimedia en los siguientes dominios:"
     },
     "options_plugin_mpris_media_sessions_description": {
         "message": "Extraer metadatos y miniaturas del contenido que está en reproducción."

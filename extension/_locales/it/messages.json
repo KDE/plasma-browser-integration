@@ -114,7 +114,7 @@
         "message": "Ti permette di controllare riproduttori video e audio presenti in siti web usando il plasmoide «Controllo multimediale»."
     },
     "options_plugin_mpris_media_blocklist_title": {
-        "message": "Block media controls on the following domains:"
+        "message": "Blocca i controlli multimediali sui seguenti domini:"
     },
     "options_plugin_mpris_media_sessions_description": {
         "message": "Estrae metadati e miniature del contenuto in riproduzione."
