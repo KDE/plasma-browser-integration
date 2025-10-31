@@ -1,6 +1,6 @@
 {
     "browseraction_mpris_enable_on": {
-        "message": "Ortam denetimlerini şurada etkinleştir:"
+        "message": "Şurada ortam denetimlerini etkinleştir:"
     },
     "browseraction_mpris_title": {
         "message": "Ortam Denetimleri"
