@@ -114,7 +114,7 @@
         "message": "تُتيح لك التحكّم بمشّغلات الصوت والفديو في المواقع باستعمال بلازمويد ”متحكّم الوسائط“."
     },
     "options_plugin_mpris_media_blocklist_title": {
-        "message": "Block media controls on the following domains:"
+        "message": "احظر متحكمات الوسائط في النطاقات التالية:"
     },
     "options_plugin_mpris_media_sessions_description": {
         "message": "تتيح استخراج البيانات الوصفية والمصغّرات من المحتوى الصوتي/المرئي الذي يعمل حاليًا."
@@ -150,7 +150,7 @@
         "message": "عام"
     },
     "options_tab_mpris": {
-        "message": "التحكّمات بالوسائط"
+        "message": "متحكمات الوسائط"
     },
     "options_title": {
         "message": "إعدادات تكامل بلازما مع المتصفح"
