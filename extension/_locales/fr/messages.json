@@ -114,7 +114,7 @@
         "message": "Vous permet de contrôler les lecteurs audio et vidéo sur les sites Web en utilisant le plasmoïde Contrôleur multimédia."
     },
     "options_plugin_mpris_media_blocklist_title": {
-        "message": "Block media controls on the following domains:"
+        "message": "Bloquer les contrôles multimédia sur les domaines suivants :"
     },
     "options_plugin_mpris_media_sessions_description": {
         "message": "Extraire les métadonnées et les vignettes du contenu en cours de lecture."
@@ -126,7 +126,7 @@
         "message": "Contrôles multimédia"
     },
     "options_plugin_purpose_description": {
-        "message": "Ajoute une option « Partager... » au menu contextuel et permet aux sites Internet d'ouvrir une boîte de dialogue pour partager des contenus à l'aide de l'API « Web Share »."
+        "message": "Ajoute une option « Partager... » au menu contextuel et permet aux sites Internet d'ouvrir une boite de dialogue pour partager des contenus à l'aide de l'API « Web Share »."
     },
     "options_plugin_purpose_title": {
         "message": "Partage de contenus"
