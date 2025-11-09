@@ -114,7 +114,7 @@
         "message": "Leidžia jums internetinėse svetainėse valdyti vaizdo bei garso leistuves, naudojant Medijos valdiklio Plasma įskiepį."
     },
     "options_plugin_mpris_media_blocklist_title": {
-        "message": "Block media controls on the following domains:"
+        "message": "Blokuoti medijos valdiklius šiose srityse:"
     },
     "options_plugin_mpris_media_sessions_description": {
         "message": "Išskleisti šiuo metu atkuriamo turinio metaduomenis ir miniatiūras."
