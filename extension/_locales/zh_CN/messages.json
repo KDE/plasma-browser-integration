@@ -114,7 +114,7 @@
         "message": "允许您使用媒体控制器 Plasma 小程序控制网站中的视频和音频播放器。"
     },
     "options_plugin_mpris_media_blocklist_title": {
-        "message": "Block media controls on the following domains:"
+        "message": "屏蔽以下域的媒体控制："
     },
     "options_plugin_mpris_media_sessions_description": {
         "message": "提取当前播放内容的元数据和缩略图。"

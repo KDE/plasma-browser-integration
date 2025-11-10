@@ -114,7 +114,7 @@
         "message": "Umożliwia ci sterowanie odtwarzaczami obrazu i dźwięku przy użyciu plazmoida."
     },
     "options_plugin_mpris_media_blocklist_title": {
-        "message": "Block media controls on the following domains:"
+        "message": "Zablokuj sterowanie mediami na następujących domenach:"
     },
     "options_plugin_mpris_media_sessions_description": {
         "message": "Wydobywanie metadanych i miniatur dla obecnie odtwarzanej treści."
@@ -150,7 +150,7 @@
         "message": "Ogólne"
     },
     "options_tab_mpris": {
-        "message": "Obsługa odtwarzacza"
+        "message": "Sterowanie mediami"
     },
     "options_title": {
         "message": "Ustawienia integracji Plazmy"
