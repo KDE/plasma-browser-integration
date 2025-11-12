@@ -654,7 +654,7 @@ bool MPrisPlugin::processMetadata(const QJsonObject &data, bool processArtwork)
             continue;
         }
 
-        if (biggest.isEmpty() || (actualSize.width() >= biggest.width() && actualSize.height() >= biggest.height())) {
+        if (!artworkUrl.isValid() || (actualSize.width() >= biggest.width() && actualSize.height() >= biggest.height())) {
             artworkUrl = url;
             biggest = actualSize;
         }
