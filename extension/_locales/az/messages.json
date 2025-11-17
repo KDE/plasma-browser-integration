@@ -1,6 +1,6 @@
 {
     "browseraction_mpris_enable_on": {
-        "message": "Media idarəsini bunda aktiv etmək:"
+        "message": "Media idarəsini burada aktiv etmək:"
     },
     "browseraction_mpris_title": {
         "message": "Media İdarəetməsi"
@@ -114,7 +114,7 @@
         "message": "Veb səhifədəki video və audio pleyerləri Media İdarəetməsi plasmoidi vasitəsi ilə idarə etməyə imkan verir."
     },
     "options_plugin_mpris_media_blocklist_title": {
-        "message": "Block media controls on the following domains:"
+        "message": "Aşağıdakı domenlərdə media idarəetməsini əngəlləmək:"
     },
     "options_plugin_mpris_media_sessions_description": {
         "message": "Hal-hazırda oynayan media tərkiblərindən meta məlumatlarını və miniatürləri çıxartmaq."
