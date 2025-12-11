@@ -87,7 +87,7 @@
         "message": "Přidat stažené soubory mezi nedávné dokumenty"
     },
     "options_plugin_downloads_inhibitSuspend": {
-        "message": "Prevent system from going to sleep when downloading"
+        "message": "Zabránit počítači v uspání během stahování"
     },
     "options_plugin_downloads_saveOriginUrl": {
         "message": "Save URL a file was downloaded from in the file's attributes"
