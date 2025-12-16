@@ -153,6 +153,7 @@ public:
             {BrowserBase::Chromium, u"org.chromium.Chromium"_s, u"/config/chromium/NativeMessagingHosts"_s},
             {BrowserBase::Chromium, u"io.github.ungoogled_software.ungoogled_chromium"_s, u"/config/chromium/NativeMessagingHosts"_s},
             {BrowserBase::Chromium, u"com.microsoft.Edge"_s, u"/config/microsoft-edge/NativeMessagingHosts"_s},
+            {BrowserBase::Chromium, u"com.brave.Browser"_s, u"/config/BraveSoftware/Brave-Browser/NativeMessagingHosts"_s},
         };
 
         // Set up Flatpak permissions for each browser
