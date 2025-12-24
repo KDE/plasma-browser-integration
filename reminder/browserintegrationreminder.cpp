@@ -50,6 +50,7 @@ BrowserIntegrationReminder::BrowserIntegrationReminder(QObject *parent, const QL
     m_browsers[QStringLiteral("firefox.desktop")] = firefox;
     m_browsers[QStringLiteral("nightly.desktop")] = firefox;
     m_browsers[QStringLiteral("librewolf.desktop")] = firefox;
+    m_browsers[QStringLiteral("waterfox.desktop")] = firefox;
 
     QUrl chrome(QStringLiteral("https://chrome.google.com/webstore/detail/plasma-integration/cimiefiiaegbelhefglklhhakcgmhkai"));
     m_browsers[QStringLiteral("google-chrome.desktop")] = chrome;

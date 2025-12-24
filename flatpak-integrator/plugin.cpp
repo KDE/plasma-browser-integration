@@ -141,6 +141,7 @@ public:
         const QList<BrowserInfo> supportedBrowsers = {
             {BrowserBase::Firefox, u"org.mozilla.firefox"_s, u"/.mozilla/native-messaging-hosts"_s},
             {BrowserBase::Firefox, u"io.gitlab.librewolf-community"_s, u"/.librewolf/native-messaging-hosts"_s},
+            {BrowserBase::Firefox, u"net.waterfox.waterfox"_s, u"/.waterfox/native-messaging-hosts"_s},
             {BrowserBase::Chrome, u"com.google.Chrome"_s, u"/config/google-chrome/NativeMessagingHosts"_s},
             {BrowserBase::Chrome, u"com.google.ChromeDev"_s, u"/config/google-chrome-unstable/NativeMessagingHosts"_s},
             {BrowserBase::Chromium, u"org.chromium.Chromium"_s, u"/config/chromium/NativeMessagingHosts"_s},
