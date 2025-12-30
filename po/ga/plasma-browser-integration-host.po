@@ -1,0 +1,129 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the plasma-browser-integration package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-browser-integration\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-11-17 16:18+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <kde-i18n-doc@kde.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: downloadjob.cpp:135
+#, kde-format
+msgid ""
+"This type of file can harm your computer. If you want to keep it, accept "
+"this download from the browser window."
+msgstr ""
+
+#: downloadjob.cpp:232
+#, kde-format
+msgid "Access denied."
+msgstr ""
+
+#: downloadjob.cpp:233
+#, kde-format
+msgid "Insufficient free space."
+msgstr ""
+
+#: downloadjob.cpp:234
+#, kde-format
+msgid "The file name you have chosen is too long."
+msgstr ""
+
+#: downloadjob.cpp:235
+#, kde-format
+msgid "The file is too large to be downloaded."
+msgstr ""
+
+#: downloadjob.cpp:237
+#, kde-format
+msgid "The file possibly contains malicious contents."
+msgstr ""
+
+#: downloadjob.cpp:238
+#, kde-format
+msgid "A temporary error has occurred. Please try again later."
+msgstr ""
+
+#: downloadjob.cpp:240
+#, kde-format
+msgid "A network error has occurred."
+msgstr ""
+
+#: downloadjob.cpp:241
+#, kde-format
+msgid "The network operation timed out."
+msgstr ""
+
+#: downloadjob.cpp:242
+#, kde-format
+msgid "The network connection has been lost."
+msgstr ""
+
+#: downloadjob.cpp:243
+#, kde-format
+msgid "The server is no longer reachable."
+msgstr ""
+
+#: downloadjob.cpp:245
+#, kde-format
+msgid "A server error has occurred."
+msgstr ""
+
+#: downloadjob.cpp:249
+#, kde-format
+msgid "The server does not have the requested data."
+msgstr ""
+
+#: downloadjob.cpp:251
+#, kde-format
+msgid "The browser application closed unexpectedly."
+msgstr ""
+
+#: downloadjob.cpp:257
+#, kde-format
+msgid "An unknown error occurred while downloading."
+msgstr ""
+
+#: downloadjob.cpp:295
+#, kde-format
+msgctxt "Job heading, like 'Copying'"
+msgid "Downloading"
+msgstr ""
+
+#: downloadjob.cpp:296
+#, kde-format
+msgctxt "The URL being downloaded"
+msgid "Source"
+msgstr ""
+
+#: downloadjob.cpp:297
+#, kde-format
+msgctxt "The location being downloaded to"
+msgid "Destination"
+msgstr ""
+
+#: historyrunnerplugin.cpp:108
+#, kde-format
+msgctxt "Dummy search result"
+msgid "Additional permissions are required"
+msgstr ""
+
+#: tabsrunnerplugin.cpp:38
+#, kde-format
+msgid "Mute Tab"
+msgstr ""
+
+#: tabsrunnerplugin.cpp:43
+#, kde-format
+msgid "Unmute Tab"
+msgstr ""
