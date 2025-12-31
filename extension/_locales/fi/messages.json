@@ -114,7 +114,7 @@
         "message": "Antaa sinun hallita sivustojen video- ja äänisoittimia medianhallintaplasmoidilla."
     },
     "options_plugin_mpris_media_blocklist_title": {
-        "message": "Block media controls on the following domains:"
+        "message": "Estä mediasäätimet seuraavilla verkkoalueilla:"
     },
     "options_plugin_mpris_media_sessions_description": {
         "message": "Lue toistettavan sisällön metatiedot ja pienoiskuvat."
