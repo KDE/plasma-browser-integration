@@ -6,7 +6,7 @@
         "message": "Mediensteuerung"
     },
     "browseraction_title": {
-        "message": "Plasma-Integration für Browser"
+        "message": "Plasma-Browser-Integration"
     },
     "general_error_host_disconnected_title": {
         "message": "Der native Host wurde unerwartet beendet."
@@ -45,7 +45,7 @@
         "message": "Änderungsprotokoll ansehen"
     },
     "options_about_copyright": {
-        "message": "© 2017 -2020 Kai Uwe Broulik und David Edmundson"
+        "message": "© 2017–2020 Kai Uwe Broulik und David Edmundson"
     },
     "options_about_created_by_kde": {
         "message": "Diese Browser-Erweiterung wurde von der <a href=\"$1\">KDE-Gemeinschaft</a> erstellt. Weitere Informationen über dieses Projekt finden Sie im <a href=\"$2\">Wiki der KDE-Gemeinschaft</a>."
@@ -87,7 +87,7 @@
         "message": "Heruntergeladene Dateien zu zuletzt geöffnete Dokumenten"
     },
     "options_plugin_downloads_inhibitSuspend": {
-        "message": "Prevent system from going to sleep when downloading"
+        "message": "Den Ruhezustand des Systems verhindern, wenn etwas heruntergeladen wird"
     },
     "options_plugin_downloads_saveOriginUrl": {
         "message": "Adresse, von der eine Datei heruntergeladen wurde, in deren Dateiattributen speichern"
@@ -123,7 +123,7 @@
         "message": "Mediensteuerung"
     },
     "options_plugin_purpose_description": {
-        "message": "Fügt einen „Teilen ...“-Eintrag zum Kontextmenü hinzu und erlaubt es Webseiten mittels Web Share API einen Dialog zum Teilen von Inhalten zu öffnen."
+        "message": "Fügt einen „Teilen …“-Eintrag zum Kontextmenü hinzu und erlaubt es Webseiten mittels Web Share API einen Dialog zum Teilen von Inhalten zu öffnen."
     },
     "options_plugin_purpose_title": {
         "message": "Inhalte teilen"
@@ -168,7 +168,7 @@
         "message": "Zusätzliche Berechtigungen erforderlich"
     },
     "purpose_share": {
-        "message": "Teilen ..."
+        "message": "Teilen …"
     },
     "purpose_share_failed_text": {
         "message": "Inhalt konnte nicht geteilt werden: $1"
