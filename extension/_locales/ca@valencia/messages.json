@@ -9,7 +9,7 @@
         "message": "Integració del navegador amb Plasma"
     },
     "general_error_host_disconnected_title": {
-        "message": "El servidor natiu s'ha desconnectat inesperadament."
+        "message": "L'amfitrió natiu s'ha desconnectat inesperadament."
     },
     "general_error_not_supported_os": {
         "message": "Esta extensió només s'admet a Linux i FreeBSD."
@@ -21,7 +21,7 @@
         "message": "Assegureu-vos que el paquet «plasma-browser-integration» estiga instal·lat correctament i que s'estiga executant Plasma 5.13 o posterior."
     },
     "general_error_startup_failed_title": {
-        "message": "No s'ha pogut connectar amb el servidor nadiu."
+        "message": "Ha fallat mentre es connectava amb l'amfitrió nadiu."
     },
     "general_error_startup_failed_wiki_link": {
         "message": "Visiteu la pàgina wiki del projecte per a obtindre més informació"
@@ -57,7 +57,7 @@
         "message": "Versió de l'extensió: $1"
     },
     "options_about_host_version": {
-        "message": "Versió del servidor: $1"
+        "message": "Versió de l'amfitrió: $1"
     },
     "options_about_kde": {
         "message": "KDE és una xarxa mundial d'enginyers informàtics, artistes, escriptors, traductors i creadors compromesos amb el desenvolupament de <a href=\"$1\">programari lliure</a> (Free Software). KDE ha creat l'entorn d'escriptori Plasma, centenars d'aplicacions, i moltes biblioteques de programari que les fan funcionar. KDE és una iniciativa cooperativa: cap entitat individual controla la seua direcció ni els seus productes. Altrament, treballem conjuntament per a aconseguir l'objectiu comú de crear el programari lliure més refinat del món. Donem la benvinguda a tothom que vullga <a href=\"$2\">afegir-se i col·laborar</a> amb KDE, incloent-vos-hi. Visiteu <a href=\"$3\">$3</a> per a més informació sobre la comunitat KDE i el programari que produïm."
@@ -132,7 +132,7 @@
         "message": "Busca les pestanyes del navegador en la finestra «Executa una ordre»"
     },
     "options_save_failed": {
-        "message": "No s'ha pogut guardar la configuració"
+        "message": "Ha fallat mentre es guardava la configuració"
     },
     "options_save_success": {
         "message": "La configuració s'ha guardat amb èxit"
