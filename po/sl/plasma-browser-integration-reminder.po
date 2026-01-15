@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-browser-integration\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:53+0000\n"
+"POT-Creation-Date: 2026-01-15 00:44+0000\n"
 "PO-Revision-Date: 2020-06-15 13:33+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -18,12 +18,12 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
 
-#: browserintegrationreminder.cpp:141
+#: browserintegrationreminder.cpp:142
 #, kde-format
 msgid "Get Plasma Browser Integration"
 msgstr "Pridobite integracijo brskalnika in Plasme"
 
-#: browserintegrationreminder.cpp:168
+#: browserintegrationreminder.cpp:169
 #, kde-format
 msgid "Do not show again"
 msgstr "Ne prikazuj tega več"
