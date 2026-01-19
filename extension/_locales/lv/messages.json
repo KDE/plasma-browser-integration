@@ -1,6 +1,6 @@
 {
     "browseraction_mpris_enable_on": {
-        "message": "Atļaut multivides vadību:"
+        "message": "Atļaut multivides vadību no:"
     },
     "browseraction_mpris_title": {
         "message": "Multivides vadība"
@@ -114,7 +114,7 @@
         "message": "Ļauj kontrolēt tīmekļa vietnēs iegultus video un audio atskaņotājus, izmantojot Multivides vadības plazmoīdu."
     },
     "options_plugin_mpris_media_blocklist_title": {
-        "message": "Block media controls on the following domains:"
+        "message": "Bloķēt multivides vadību no šiem domēniem:"
     },
     "options_plugin_mpris_media_sessions_description": {
         "message": "Izvilkt atskaņotā satura metadatus un sīktēlus."
