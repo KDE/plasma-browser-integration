@@ -1,0 +1,194 @@
+{
+    "browseraction_mpris_enable_on": {
+        "message": "Vis mediestyring for:"
+    },
+    "browseraction_mpris_title": {
+        "message": "Mediestyring"
+    },
+    "browseraction_title": {
+        "message": "Nettleserintegrering for Plasma"
+    },
+    "general_error_host_disconnected_title": {
+        "message": "Lokalverten koblet uventet fra."
+    },
+    "general_error_not_supported_os": {
+        "message": "Utvidelsen støttes bare på Linux og FreeBSD."
+    },
+    "general_error_not_supported_os_title": {
+        "message": "Ikke-støttet operativsystem"
+    },
+    "general_error_startup_failed": {
+        "message": "Se til at «plasma-browser-integration» er installert og at du bruker Plasma 5.13 eller nyere."
+    },
+    "general_error_startup_failed_title": {
+        "message": "Klarte ikke koble til lokalverten."
+    },
+    "general_error_startup_failed_wiki_link": {
+        "message": "Besøk wiki-siden til prosjektet for mer informasjon"
+    },
+    "general_error_unknown": {
+        "message": "Ukjent feil"
+    },
+    "kdeconnect_call_device": {
+        "message": "Ring opp på «$1»"
+    },
+    "kdeconnect_open_device": {
+        "message": "Åpne på «%1»"
+    },
+    "kdeconnect_open_via": {
+        "message": "Send via KDE Connect"
+    },
+    "options_about_bugs": {
+        "message": "Hvis du finner en feil, se først gjennom oversikten over <a href=\"$1\">åpne feilrapporter</a> og meld så eventuelt inn <a href=\"$2\">en ny feilrapport</a>."
+    },
+    "options_about_changelog_link": {
+        "message": "Vis endringslogg"
+    },
+    "options_about_copyright": {
+        "message": "© 2017–2020 Kai Uwe Broulik og David Edmundson"
+    },
+    "options_about_created_by_kde": {
+        "message": "Denne nettleserutvidelsen ble laget av <a href=\"$1\">KDE-fellesskapet</a>. Du kan lese mer om prosjektet på <a href=\"$2\">wikien</a>."
+    },
+    "options_about_donate": {
+        "message": "Hvis du liker programmet, vurder å <a href=\"$1\">gi en pengegave til KDE</a>, slik at vi kan fortsette med å lage den beste frie programvaren"
+    },
+    "options_about_extension_version": {
+        "message": "Utvidelsesversjon: $1"
+    },
+    "options_about_host_version": {
+        "message": "Vertsversjon: $1"
+    },
+    "options_about_kde": {
+        "message": "KDE er et  verdensomspennende fellesskap av programmere, tegnere, skribenter, oversettere og skapere som bidrar til utvikling av <a href=\"$1\">fri programvare</a>. KDE utvikler skrivebordsmiljøet Plasma, hundrevis av programmer, og de mange programbibliotekene disse bygger på. KDE er et fellesskap der ingen enkelt gruppe, firma eller organisasjon har eierskap til produktene eller styrer retningen den videre utviklingen skal gå i. Derimot arbeider vi sammen for å oppnå vårt felles mål om å lage fri programvare i verdensklasse. Alle er <a href=\"$2\">velkomne til å bidra</a> til KDE, du også. Besøk <a href=\"$3\">$3</a> for mer informasjon om KDE fellesskapet og programmene vi utvikler."
+    },
+    "options_about_license": {
+        "message": "Lisens: <a href=\"$1\">GNU General Public License versjon 3</a>"
+    },
+    "options_about_translated_by": {
+        "message": "Oversatt av: $1"
+    },
+    "options_about_translators": {
+        "message": "Martin Hansen"
+    },
+    "options_heading_krunner": {
+        "message": "Plasma-søk"
+    },
+    "options_not_supported_os": {
+        "message": "Utvidelsen støttes ikke på dette operativsystemet."
+    },
+    "options_plugin_breezeScrollBars_description": {
+        "message": "Dette kan påvirke nettsider som allerede bruker en tilpasset stil på rullefeltet."
+    },
+    "options_plugin_breezeScrollBars_title": {
+        "message": "Bruk rullefelt med Breeze-stil"
+    },
+    "options_plugin_downloads_addToRecentDocuments": {
+        "message": "Legg til nedlastede filer til nylige brukte dokumenter"
+    },
+    "options_plugin_downloads_inhibitSuspend": {
+        "message": "Hindre systemet fra å gå i dvalemodus under nedlasting"
+    },
+    "options_plugin_downloads_saveOriginUrl": {
+        "message": "Lagre nettadressen som filer ble lastet ned fra i filattributt"
+    },
+    "options_plugin_downloads_saveOriginUrl_description": {
+        "message": "Merk: Nettadressen kan inneholde sensitiv informasjon, som andre kan få tilgang til når du deler fila med dem."
+    },
+    "options_plugin_downloads_title": {
+        "message": "Vis nedlastinger i varslingsområde"
+    },
+    "options_plugin_historyrunner_description": {
+        "message": "Denne funksjonen trenger kanskje <a id=\"$1\" href=\"$2\">utvidet tillatelser</a>."
+    },
+    "options_plugin_historyrunner_title": {
+        "message": "Søk i nettleserloggen"
+    },
+    "options_plugin_kdeconnect_description": {
+        "message": "Legger til en høyreklikksmeny for lenker som gjør det mulig å sende dem til telefonen din og andre enheter som bruker <a href=\"$1\">KDE Connect</a>."
+    },
+    "options_plugin_kdeconnect_title": {
+        "message": "Send via KDE Connect"
+    },
+    "options_plugin_mpris_description": {
+        "message": "Lar deg styre video- og lydavspillere på nettsider med skjermelement for mediestyring."
+    },
+    "options_plugin_mpris_media_blocklist_title": {
+        "message": "Blokker mediestyring på følgende domener:"
+    },
+    "options_plugin_mpris_media_sessions_description": {
+        "message": "Hent ut metadata og minibilder fra innholdet som spiller."
+    },
+    "options_plugin_mpris_media_sessions_title": {
+        "message": "Utvidet mediestyring"
+    },
+    "options_plugin_mpris_title": {
+        "message": "Mediestyring"
+    },
+    "options_plugin_purpose_description": {
+        "message": "Legg til «Del …»-oppføring på sprettoppmenyen og tillat nettsider å åpne et vindu for deling av innhold med Web Share-API-et."
+    },
+    "options_plugin_purpose_title": {
+        "message": "Innholdsdeling"
+    },
+    "options_plugin_tabsrunner_description": {
+        "message": "Se til at «nettleserfaner»-modulen er slått på i <a id=\"$1\" href=\"$2\">søkeinnstillingene for Plasma</a>."
+    },
+    "options_plugin_tabsrunner_title": {
+        "message": "Finn nettleserfane i «Kjør kommando»-vinduet"
+    },
+    "options_save_failed": {
+        "message": "Klarte ikke lagre innstillingene"
+    },
+    "options_save_success": {
+        "message": "Innstillingene er nå lagret"
+    },
+    "options_tab_about": {
+        "message": "Om"
+    },
+    "options_tab_general": {
+        "message": "Generelt"
+    },
+    "options_tab_mpris": {
+        "message": "Mediestyring"
+    },
+    "options_title": {
+        "message": "Innstillinger for Plasma-integrering"
+    },
+    "permission_request_already": {
+        "message": "Du har allerede gitt denne tillatelsen."
+    },
+    "permission_request_button_request": {
+        "message": "Be om tillatelse"
+    },
+    "permission_request_button_revoke": {
+        "message": "Ta tilbake tillatelsen"
+    },
+    "permission_request_historyrunner_1": {
+        "message": "For å kunne gi søkeresultat fra nettleserloggen trenger programmet utvidet tillatelse."
+    },
+    "permission_request_historyrunner_2": {
+        "message": "Du kan slå av denne funksjonen i <a id=\"$1\" href=\"$2\">søkeinnstillingene for Plasma</a>."
+    },
+    "permission_request_title": {
+        "message": "Krever utvidet tillatelse"
+    },
+    "purpose_share": {
+        "message": "Del …"
+    },
+    "purpose_share_failed_text": {
+        "message": "Klarte ikke dele dette innholdet: $1"
+    },
+    "purpose_share_failed_title": {
+        "message": "Feil ved deling"
+    },
+    "purpose_share_finished_text": {
+        "message": "Lenka for deling av innhold ($1) er nå kopiert til utklippstavla."
+    },
+    "purpose_share_finished_title": {
+        "message": "Innhold delt"
+    },
+    "store_description": {
+        "message": "Multitask efficiently by controlling browser functions from the desktop, even while Chrome is in the background. Manage audio and video playback, check downloads in the notification area, send files to your phone using KDE Connect and more inside the KDE Plasma Desktop!\\n\\nThe plasma-browser-integration package must be installed for this extension to work. It should be available from your distribution's package manager when running Plasma 5.13 or later.\\n\\nNOTE: This extension is not supported on Debian."
+    }
+}
