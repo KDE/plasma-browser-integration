@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:53+0000\n"
+"POT-Creation-Date: 2026-01-24 02:39+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -18,12 +18,12 @@ msgstr ""
 "browser-integration-reminder.pot\n"
 "X-Crowdin-File-ID: 52134\n"
 
-#: browserintegrationreminder.cpp:141
+#: browserintegrationreminder.cpp:142
 #, kde-format
 msgid "Get Plasma Browser Integration"
 msgstr "获取 Plasma 浏览器集成程序"
 
-#: browserintegrationreminder.cpp:168
+#: browserintegrationreminder.cpp:169
 #, kde-format
 msgid "Do not show again"
 msgstr "不再显示"

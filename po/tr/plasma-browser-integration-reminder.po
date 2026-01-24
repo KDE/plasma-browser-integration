@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-browser-integration\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:53+0000\n"
+"POT-Creation-Date: 2026-01-24 02:39+0000\n"
 "PO-Revision-Date: 2022-03-12 13:38+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -18,12 +18,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Lokalize 21.12.3\n"
 
-#: browserintegrationreminder.cpp:141
+#: browserintegrationreminder.cpp:142
 #, kde-format
 msgid "Get Plasma Browser Integration"
 msgstr "Plasma Tarayıcı Tümleştirmesini Al"
 
-#: browserintegrationreminder.cpp:168
+#: browserintegrationreminder.cpp:169
 #, kde-format
 msgid "Do not show again"
 msgstr "Bir daha gösterme"

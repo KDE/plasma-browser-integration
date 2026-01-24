@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-browser-integration\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:53+0000\n"
+"POT-Creation-Date: 2026-01-24 02:39+0000\n"
 "PO-Revision-Date: 2023-10-03 09:16+0300\n"
 "Last-Translator: \n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -18,12 +18,12 @@ msgstr ""
 "n % 10 == 0) ? 2 : 3));\n"
 "X-Generator: Poedit 3.3.2\n"
 
-#: browserintegrationreminder.cpp:141
+#: browserintegrationreminder.cpp:142
 #, kde-format
 msgid "Get Plasma Browser Integration"
 msgstr "הורדת שילוב בין פלזמה לדפדפן"
 
-#: browserintegrationreminder.cpp:168
+#: browserintegrationreminder.cpp:169
 #, kde-format
 msgid "Do not show again"
 msgstr "לא להציג שוב"
