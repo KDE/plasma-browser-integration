@@ -135,7 +135,7 @@
         "message": "Ziurtatu “Arakatzailearen fitxak” modulua gaitua dagoela <a id=\"$1\" href=\"$2\">Plasmaren bilaketa ezarpenetan</a>."
     },
     "options_plugin_tabsrunner_title": {
-        "message": "Bilatu arakatzaile-fitxak \"Exekutatu komandoa\" leihoan"
+        "message": "Bilatu arakatzaile-fitxak “Exekutatu komandoa” leihoan"
     },
     "options_save_failed": {
         "message": "Ezarpenak gordetzea huts egin du"
