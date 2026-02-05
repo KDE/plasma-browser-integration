@@ -1,31 +1,31 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2026 This file is copyright:
 # This file is distributed under the same license as the plasma-browser-integration package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+# SPDX-FileCopyrightText: 2026 César A. P. Cláudio <cesarapclaudio@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-browser-integration\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:53+0000\n"
-"PO-Revision-Date: 2021-04-25 23:11+0100\n"
-"Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
-"Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
+"PO-Revision-Date: 2026-02-04 22:55+0000\n"
+"Last-Translator: César A. P. Cláudio <cesarapclaudio@gmail.com>\n"
+"Language-Team: pt\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 25.12.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "César A. P. Cláudio"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "cesarapclaudio@gmail.com"
 
 #: downloadjob.cpp:138
 #, kde-format
@@ -33,23 +33,23 @@ msgid ""
 "This type of file can harm your computer. If you want to keep it, accept "
 "this download from the browser window."
 msgstr ""
-"Este tipo de ficheiro pode danificar o seu computador. Se o desejar manter, "
-"aceite esta transferência na janela do navegador."
+"Este tipo de ficheiro pode danificar o seu computador. Se pretender mantê-"
+"lo, aceite esta transferência a partir da janela do navegador."
 
 #: downloadjob.cpp:235
 #, kde-format
 msgid "Access denied."
-msgstr "O acesso foi negado."
+msgstr "Acesso negado."
 
 #: downloadjob.cpp:236
 #, kde-format
 msgid "Insufficient free space."
-msgstr "Não há espaço livre suficiente."
+msgstr "Espaço livre insuficiente."
 
 #: downloadjob.cpp:237
 #, kde-format
 msgid "The file name you have chosen is too long."
-msgstr "O nome do ficheiro que está escolhido é demasiado grande."
+msgstr "O nome de ficheiro que escolheu é demasiado longo."
 
 #: downloadjob.cpp:238
 #, kde-format
@@ -59,12 +59,12 @@ msgstr "O ficheiro é demasiado grande para ser transferido."
 #: downloadjob.cpp:240
 #, kde-format
 msgid "The file possibly contains malicious contents."
-msgstr "O ficheiro provavelmente possui conteúdos maliciosos."
+msgstr "O ficheiro pode conter conteúdo malicioso."
 
 #: downloadjob.cpp:241
 #, kde-format
 msgid "A temporary error has occurred. Please try again later."
-msgstr "Ocorreu um erro temporário. Por favor, tente de novo."
+msgstr "Ocorreu um erro temporário. Por favor, tente novamente mais tarde."
 
 #: downloadjob.cpp:243
 #, kde-format
@@ -74,43 +74,43 @@ msgstr "Ocorreu um erro de rede."
 #: downloadjob.cpp:244
 #, kde-format
 msgid "The network operation timed out."
-msgstr "A operação na rede expirou o tempo-limite."
+msgstr "A operação de rede expirou."
 
 #: downloadjob.cpp:245
 #, kde-format
 msgid "The network connection has been lost."
-msgstr "Perdeu-se a ligação à rede."
+msgstr "A ligação de rede foi perdida."
 
 #: downloadjob.cpp:246
 #, kde-format
 msgid "The server is no longer reachable."
-msgstr "O servidor já não está mais acessível."
+msgstr "O servidor já não está acessível."
 
 #: downloadjob.cpp:248
 #, kde-format
 msgid "A server error has occurred."
-msgstr "Ocorreu um erro do servidor."
+msgstr "Ocorreu um erro no servidor."
 
 #: downloadjob.cpp:252
 #, kde-format
 msgid "The server does not have the requested data."
-msgstr "O servidor não tem os dados pedidos."
+msgstr "O servidor não tem os dados solicitados."
 
 #: downloadjob.cpp:254
 #, kde-format
 msgid "The browser application closed unexpectedly."
-msgstr "A aplicação do navegador fechou de forma inesperada."
+msgstr "A aplicação do navegador fechou inesperadamente."
 
 #: downloadjob.cpp:260
 #, kde-format
 msgid "An unknown error occurred while downloading."
-msgstr "Ocorreu um erro desconhecido na transferência."
+msgstr "Ocorreu um erro desconhecido durante a transferência."
 
 #: downloadjob.cpp:298
 #, kde-format
 msgctxt "Job heading, like 'Copying'"
 msgid "Downloading"
-msgstr "A Transferir"
+msgstr "A transferir"
 
 #: downloadjob.cpp:299
 #, kde-format
@@ -133,9 +133,9 @@ msgstr "São necessárias permissões adicionais"
 #: tabsrunnerplugin.cpp:38
 #, kde-format
 msgid "Mute Tab"
-msgstr "Silenciar a Página"
+msgstr "Silenciar separador"
 
 #: tabsrunnerplugin.cpp:43
 #, kde-format
 msgid "Unmute Tab"
-msgstr "Repor o Som da Página"
+msgstr "Repor som do separador"
