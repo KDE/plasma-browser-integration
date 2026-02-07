@@ -87,7 +87,7 @@
         "message": "Adde files discargate al documentos recente"
     },
     "options_plugin_downloads_inhibitSuspend": {
-        "message": "Prevent system from going to sleep when downloading"
+        "message": "Preveni que le systema dormi quando iles discargante"
     },
     "options_plugin_downloads_saveOriginUrl": {
         "message": "Salveguarda URL unde un file esseva discargate in le attributos del file"
@@ -114,7 +114,7 @@
         "message": "Te permitte controlar reproductores video e audio in sitos web que usa le plasmoid Media Controller (Controlator de multimedia)."
     },
     "options_plugin_mpris_media_blocklist_title": {
-        "message": "Block media controls on the following domains:"
+        "message": "Bloca controlos de medios sur le sequente dominios:"
     },
     "options_plugin_mpris_media_sessions_description": {
         "message": "Extrahe metadatos e miniaturas del contento currentemente reproducente."
