@@ -113,18 +113,20 @@ addCallback("kdeconnect", "deviceAdded", function(message) {
     });
 
     // Entry on tel: phone links
-    createKdeConnectMenuEntry({
-        deviceId,
-        iconName: "call-start-symbolic",
-        key: "call",
-        contexts: ["link"],
-        title: chrome.i18n.getMessage("kdeconnect_call_device", name),
-        args: {
-            targetUrlPatterns: [
-                "tel:*"
-            ]
-        }
-    });
+    if (!["desktop", "tv", "laptop"].includes(type)) {
+        createKdeConnectMenuEntry({
+            deviceId,
+            iconName: "call-start-symbolic",
+            key: "call",
+            contexts: ["link"],
+            title: chrome.i18n.getMessage("kdeconnect_call_device", name),
+            args: {
+                targetUrlPatterns: [
+                    "tel:*"
+                ]
+            }
+        });
+    }
 
     try {
         // Entry on a tab in the tab bar (Firefox)
