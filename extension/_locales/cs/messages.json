@@ -48,10 +48,10 @@
         "message": "© 2017, 2020 Kai Uwe Broulik a David Edmundson"
     },
     "options_about_created_by_kde": {
-        "message": "This browser extension was created by the <a href=\"$1\">KDE Community</a>. You can find more information about this project on the <a href=\"$2\">KDE Community Wiki</a>."
+        "message": "Toto rozšíření prohlížeče bylo vytvořeno <a href=\"$1\">komunitou KDE</a>. Více informací o tomto projektu najdete na <a href=\"$2\">KDE Community Wiki</a>."
     },
     "options_about_donate": {
-        "message": "If you like what you saw, please consider <a href=\"$1\">donating to KDE</a>, so we can continue to make the best free software possible."
+        "message": "Pokud se vám líbí, co jste viděli, zvažte prosím <a href=\"$1\">poskytnutí daru pro KDE</a>, abychom mohli pokračovat ve vývoji nejlepšího možného svobodného softwaru."
     },
     "options_about_extension_version": {
         "message": "Verze rozšíření:  $1"
@@ -78,7 +78,7 @@
         "message": "Toto rozšíření není na tomto operačním systému podporováno."
     },
     "options_plugin_breezeScrollBars_description": {
-        "message": "This may interfere with the appearance of websites that already apply a custom styling to their scroll bars."
+        "message": "To může narušit vzhled webových stránek, které již používají vlastní styl svých posuvníků."
     },
     "options_plugin_breezeScrollBars_title": {
         "message": "Použít styl posuvníku Breeze"
@@ -87,31 +87,31 @@
         "message": "Přidat stažené soubory mezi nedávné dokumenty"
     },
     "options_plugin_downloads_saveOriginUrl": {
-        "message": "Save URL a file was downloaded from in the file's attributes"
+        "message": "Uložit URL, ze které byl soubor stažen, do atributů souboru"
     },
     "options_plugin_downloads_saveOriginUrl_description": {
-        "message": "Note: The URL may contain sensitive information that could be disclosed when the file is accessible by or shared with others"
+        "message": "Poznámka: Adresa URL může obsahovat citlivé informace, které by mohly být odhaleny, pokud je soubor přístupný nebo sdílený s jinými osobami."
     },
     "options_plugin_downloads_title": {
         "message": "Zobrazit stahování v oblasti upozornění"
     },
     "options_plugin_historyrunner_description": {
-        "message": "This feature might need <a id=\"$1\" href=\"$2\">additional permissions</a> to be used."
+        "message": "K použití této funkce mohou být zapotřebí <a id=\"$1\" href=\"$2\">další oprávnění</a>."
     },
     "options_plugin_historyrunner_title": {
         "message": "Prohledávejte historii prohlížení"
     },
     "options_plugin_kdeconnect_description": {
-        "message": "Adds a context menu entry to links enabling you to send them to your phone and other paired devices using <a href=\"$1\">KDE Connect</a>."
+        "message": "Přidá do položku kontextového menu, která vám umožní odeslat odkazy do vašeho telefonu a dalších spárovaných zařízení pomocí <a href=\"$1\">KDE Connect</a>."
     },
     "options_plugin_kdeconnect_title": {
         "message": "Poslat přes KDE Connect"
     },
     "options_plugin_mpris_description": {
-        "message": "Lets you control video and audio players in websites using the Media Controller plasmoid."
+        "message": "Umožňuje ovládat přehrávače videa a zvuku na webových stránkách pomocí plasmoidu Media Controller."
     },
     "options_plugin_mpris_media_sessions_description": {
-        "message": "Extract metadata and thumbnails of currently playing content."
+        "message": "Extrahuje metadata a miniatury aktuálně přehrávaného obsahu."
     },
     "options_plugin_mpris_media_sessions_title": {
         "message": "Rozšířené Ovládání médií"
@@ -120,16 +120,16 @@
         "message": "Ovládání médií"
     },
     "options_plugin_purpose_description": {
-        "message": "Adds a \"Share...\" context menu entry and allows websites to open a dialog for sharing contents using the Web Share API."
+        "message": "Přidá položku „Sdílet...“ do kontextového menu a umožní webovým stránkám otevřít dialogové okno pro sdílení obsahu pomocí rozhraní Web Share API."
     },
     "options_plugin_purpose_title": {
         "message": "Sdílení obsahu"
     },
     "options_plugin_tabsrunner_description": {
-        "message": "Make sure the “Browser Tabs” module is enabled in <a id=\"$1\" href=\"$2\">Plasma Search settings</a>."
+        "message": "Ujistěte se, že je modul \"Záložky prohlížeče\" povolen v <a id=\"$1\" href=\"$2\">nastavení vyhledávání Plasma</a>."
     },
     "options_plugin_tabsrunner_title": {
-        "message": "Find browser tabs in “Run Command” window"
+        "message": "Najde karty prohlížeče v okně \"Spustit příkaz\""
     },
     "options_save_failed": {
         "message": "Uložení nastavení selhalo"
