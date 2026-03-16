@@ -139,9 +139,6 @@ html::-webkit-scrollbar-track {
     width: 6px !important; /* 20px scrollbar - 2 * 7px border */
     box-sizing: content-box;
 }
-html::-webkit-scrollbar-track:hover {
-    background-color: #BFC0C2;
-}
 
 html::-webkit-scrollbar-thumb {
     background-color: #3DAEE9; /* default blue breeze color */
