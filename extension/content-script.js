@@ -159,6 +159,31 @@ html::-webkit-scrollbar-thumb:hover {
 html::-webkit-scrollbar-corner {
     background-color: white; /* FIXME why doesn't "transparent" work here?! */
 }
+
+@media (prefers-color-scheme: dark) {
+    html::-webkit-scrollbar {
+        background: #141618;
+    }
+
+    html::-webkit-scrollbar-track {
+        border-color: #141618;
+        background-color: #141618;
+    }
+
+    html::-webkit-scrollbar-thumb {
+        background-color: #2a546b;
+    }
+    html::-webkit-scrollbar-thumb:window-inactive {
+        background-color: #46494;
+    }
+    html::-webkit-scrollbar-thumb:hover {
+        background-color: #2f6888;
+    }
+
+    html::-webkit-scrollbar-corner {
+        background-color: #141618;
+    }
+}
     `));
 
     document.head.appendChild(styleTag);
