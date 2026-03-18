@@ -155,6 +155,7 @@ void BrowserIntegrationReminder::onBrowserStarted(const QString &browser)
         KIO::ApplicationLauncherJob *job = new KIO::ApplicationLauncherJob(service);
         job->setUrls({m_browsers[browser]});
         job->setUiDelegate(new KNotificationJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled));
+        job->setStartupId(m_sni->providedToken().toUtf8());
         job->start();
 
         KActivities::ResourceInstance::notifyAccessed(QUrl(QStringLiteral("applications:") + browser),
