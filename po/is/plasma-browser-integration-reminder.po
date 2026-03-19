@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-browser-integration\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-15 00:44+0000\n"
+"POT-Creation-Date: 2026-03-19 00:48+0000\n"
 "PO-Revision-Date: 2023-10-01 18:17+0000\n"
 "Last-Translator: Guðmundur Erlingsson <gudmundure@gmail.com>\n"
 "Language-Team: Icelandic <kde-i18n-doc@kde.org>\n"
@@ -22,7 +22,7 @@ msgstr ""
 msgid "Get Plasma Browser Integration"
 msgstr "Sækja Plasma vafrasamþættingu"
 
-#: browserintegrationreminder.cpp:169
+#: browserintegrationreminder.cpp:170
 #, kde-format
 msgid "Do not show again"
 msgstr "Ekki sýna þetta aftur"

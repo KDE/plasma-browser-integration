@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-browser-integration\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-15 00:44+0000\n"
+"POT-Creation-Date: 2026-03-19 00:48+0000\n"
 "PO-Revision-Date: 2019-04-25 00:13+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@euskalnet.net>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -25,7 +25,7 @@ msgstr ""
 msgid "Get Plasma Browser Integration"
 msgstr "Lortu Plasman arakatzailea bateratzea"
 
-#: browserintegrationreminder.cpp:169
+#: browserintegrationreminder.cpp:170
 #, kde-format
 msgid "Do not show again"
 msgstr "Ez erakutsi berriz"
