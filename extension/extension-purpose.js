@@ -23,42 +23,71 @@ let hasPurposeTabMenu = false;
 // notification it will open the URL
 let purposeNotificationUrls = {};
 
+function determineMimeType(url) {
+    return new Promise((resolve, reject) => {
+        fetch(url, {method: "HEAD"}).then((response) => {
+            const mimeType = response.headers.get("Content-Type");
+            resolve(mimeType);
+        }, (error) => {
+            console.warn("Failed to determine mime type for", url, error);
+            resolve("");
+        });
+    });
+}
+
 function purposeShare(data) {
     return new Promise((resolve, reject) => {
-        sendPortMessageWithReply("purpose", "share", {data}).then((reply) => {
-            if (!reply.success) {
-                if (!["BUSY", "CANCELED", "INVALID_ARGUMENT"].includes(reply.errorCode)
-                    && reply.errorCode !== 1 /*ERR_USER_CANCELED*/) {
+        new Promise((resolve, reject) => {
+            if (!data.url) {
+                return resolve("");
+            }
+
+            fetch(data.url, {method: "HEAD"}).then((response) => {
+                const mimeType = response.headers.get("Content-Type");
+                resolve(mimeType);
+            }, (error) => {
+                console.warn("Failed to determine mime type for", data.url, error);
+                resolve("");
+            });
+        }).then((mimeType) => {
+            sendPortMessageWithReply("purpose", "share", {
+                data,
+                mimeType,
+            }).then((reply) => {
+                if (!reply.success) {
+                    if (!["BUSY", "CANCELED", "INVALID_ARGUMENT"].includes(reply.errorCode)
+                        && reply.errorCode !== 1 /*ERR_USER_CANCELED*/) {
+                        chrome.notifications.create(null, {
+                            type: "basic",
+                            title: chrome.i18n.getMessage("purpose_share_failed_title"),
+                            message: chrome.i18n.getMessage("purpose_share_failed_text",
+                                                            reply.errorMessage || chrome.i18n.getMessage("general_error_unknown")),
+                            iconUrl: "icons/document-share-failed.png"
+                        });
+                    }
+
+                    reject();
+                    return;
+                }
+
+                let url = reply.response.url;
+                if (url) {
                     chrome.notifications.create(null, {
                         type: "basic",
-                        title: chrome.i18n.getMessage("purpose_share_failed_title"),
-                        message: chrome.i18n.getMessage("purpose_share_failed_text",
-                                                        reply.errorMessage || chrome.i18n.getMessage("general_error_unknown")),
-                        iconUrl: "icons/document-share-failed.png"
+                        title: chrome.i18n.getMessage("purpose_share_finished_title"),
+                        message: chrome.i18n.getMessage("purpose_share_finished_text", url),
+                        iconUrl: "icons/document-share.png"
+                    }, (notificationId) => {
+                        if (chrome.runtime.lastError) {
+                            return;
+                        }
+
+                        purposeNotificationUrls[notificationId] = url;
                     });
                 }
 
-                reject();
-                return;
-            }
-
-            let url = reply.response.url;
-            if (url) {
-                chrome.notifications.create(null, {
-                    type: "basic",
-                    title: chrome.i18n.getMessage("purpose_share_finished_title"),
-                    message: chrome.i18n.getMessage("purpose_share_finished_text", url),
-                    iconUrl: "icons/document-share.png"
-                }, (notificationId) => {
-                    if (chrome.runtime.lastError) {
-                        return;
-                    }
-
-                    purposeNotificationUrls[notificationId] = url;
-                });
-            }
-
-            resolve();
+                resolve();
+            });
         });
     });
 }
