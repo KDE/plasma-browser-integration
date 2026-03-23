@@ -11,8 +11,6 @@
 #include <QJsonArray>
 #include <QJsonObject>
 
-#include <KIO/MimeTypeFinderJob>
-
 #include <Purpose/AlternativesModel>
 #include <PurposeWidgets/Menu>
 
@@ -44,6 +42,9 @@ QJsonObject PurposePlugin::handleData(int serial, const QString &event, const QJ
 
         // store request serial for asynchronous reply
         m_pendingReplySerial = serial;
+
+        // This is not in share data, our extension sends this by doing a HEAD request on the url, if applicable.
+        const QString mimeType = data.value(QStringLiteral("mimeType")).toString();
 
         const QJsonObject shareData = data.value(QStringLiteral("data")).toObject();
 
@@ -135,12 +136,7 @@ QJsonObject PurposePlugin::handleData(int serial, const QString &event, const QJ
         }
 
         if (!urls.isEmpty()) {
-            auto *mimeJob = new KIO::MimeTypeFinderJob(QUrl(urlString));
-            mimeJob->setAuthenticationPromptEnabled(false);
-            connect(mimeJob, &KIO::MimeTypeFinderJob::result, this, [this, mimeJob, shareJson] {
-                showShareMenu(shareJson, mimeJob->mimeType());
-            });
-            mimeJob->start();
+            showShareMenu(shareJson, mimeType);
             return {};
         }
 
