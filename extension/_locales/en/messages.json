@@ -115,10 +115,6 @@
         "description": "Title for Browser History KRunner plugin",
         "message": "Search through browser history"
     },
-    "options_plugin_historyrunner_description": {
-        "description": "Description for Browser History KRunner plugin",
-        "message": "This feature might need <a id=\"$1\" href=\"$2\">additional permissions</a> to be used."
-    },
 
     "options_plugin_purpose_title": {
         "description": "Title for Purpose / Web Share plugin",
