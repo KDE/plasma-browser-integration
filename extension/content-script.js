@@ -133,8 +133,7 @@ html::-webkit-scrollbar {
 }
 
 html::-webkit-scrollbar-track {
-    border-radius: 20px;
-    border: 7px solid white; /* FIXME why doesn't "transparent" work here?! */
+    border-left: 1px solid #d3d4d4;
     background-color: white;
     width: 6px !important; /* 20px scrollbar - 2 * 7px border */
     box-sizing: content-box;
@@ -168,6 +167,7 @@ html::-webkit-scrollbar-corner {
     html::-webkit-scrollbar-track {
         border-color: #141618;
         background-color: #141618;
+        border-left-color: #424445;
     }
 
     html::-webkit-scrollbar-thumb {
