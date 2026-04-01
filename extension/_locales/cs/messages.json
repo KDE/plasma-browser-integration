@@ -98,9 +98,6 @@
     "options_plugin_downloads_title": {
         "message": "Zobrazit stahování v oblasti upozornění"
     },
-    "options_plugin_historyrunner_description": {
-        "message": "K použití této funkce mohou být zapotřebí <a id=\"$1\" href=\"$2\">další oprávnění</a>."
-    },
     "options_plugin_historyrunner_title": {
         "message": "Prohledávejte historii prohlížení"
     },

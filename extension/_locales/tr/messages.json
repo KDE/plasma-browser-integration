@@ -98,9 +98,6 @@
     "options_plugin_downloads_title": {
         "message": "İndirmeleri bildirim alanında göster"
     },
-    "options_plugin_historyrunner_description": {
-        "message": "Bu özelliğin kullanılabilmesi için <a id=\"$1\" href=\"$2\">ek izinler</a> gerekiyor olabilir."
-    },
     "options_plugin_historyrunner_title": {
         "message": "Tarayıcı geçmişinde ara"
     },

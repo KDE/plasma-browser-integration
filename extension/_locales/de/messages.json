@@ -98,9 +98,6 @@
     "options_plugin_downloads_title": {
         "message": "Herunterladevorgänge im Benachrichtigungsbereich anzeigen"
     },
-    "options_plugin_historyrunner_description": {
-        "message": "Diese Funktion benötigt möglicherweise <a id=\"$1\" href=\"$2\">zusätzliche Berechtigungen</a>, um verwendet werden zu können."
-    },
     "options_plugin_historyrunner_title": {
         "message": "Browserverlauf durchsuchen"
     },

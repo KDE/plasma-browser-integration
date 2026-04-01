@@ -98,9 +98,6 @@
     "options_plugin_downloads_title": {
         "message": "सूचनाक्षेत्रे डाउनलोड् दर्शयतु"
     },
-    "options_plugin_historyrunner_description": {
-        "message": "अस्य विशेषतायाः उपयोगाय <a id=\"$1\" href=\"$2\">अतिरिक्तानुमतिः</a> आवश्यकी भवेत् ।"
-    },
     "options_plugin_historyrunner_title": {
         "message": "ब्राउजर् इतिहासस्य माध्यमेन अन्वेषणं कुर्वन्तु"
     },

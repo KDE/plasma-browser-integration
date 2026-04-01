@@ -98,9 +98,6 @@
     "options_plugin_downloads_title": {
         "message": "Afficher les téléchargements dans la zone de notification"
     },
-    "options_plugin_historyrunner_description": {
-        "message": "Cette fonctionnalité pourrait nécessiter des <a id=\"$1\" href=\"$2\">permissions supplémentaires</a> pour être utilisée."
-    },
     "options_plugin_historyrunner_title": {
         "message": "Rechercher dans l'historique de navigation"
     },

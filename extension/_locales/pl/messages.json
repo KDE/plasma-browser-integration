@@ -98,9 +98,6 @@
     "options_plugin_downloads_title": {
         "message": "Pokaż pobierania w obszarze powiadomień"
     },
-    "options_plugin_historyrunner_description": {
-        "message": "Ta funkcja może wymagać <a id=\"$1\" href=\"$2\">dodatkowych uprawnień</a> przed jej użyciem."
-    },
     "options_plugin_historyrunner_title": {
         "message": "Szukaj w historii przeglądarki"
     },

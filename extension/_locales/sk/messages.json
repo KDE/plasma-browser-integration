@@ -98,9 +98,6 @@
     "options_plugin_downloads_title": {
         "message": "Zobraziť preberania v notifikačnej oblasti"
     },
-    "options_plugin_historyrunner_description": {
-        "message": "Na použitie tejto funkcie môžu byť potrebné <a id=\"$1\" href=\"$2\">ďalšie povolenia</a>."
-    },
     "options_plugin_historyrunner_title": {
         "message": "Vyhľadávať v histórii prehliadača"
     },

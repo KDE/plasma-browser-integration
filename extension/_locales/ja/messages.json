@@ -98,9 +98,6 @@
     "options_plugin_downloads_title": {
         "message": "通知エリアにダウンロードを表示"
     },
-    "options_plugin_historyrunner_description": {
-        "message": "この機能を使用するには<a id=\"$1\" href=\"$2\">追加の権限</a>が必要かもしれません。"
-    },
     "options_plugin_historyrunner_title": {
         "message": "ブラウザ履歴を検索"
     },

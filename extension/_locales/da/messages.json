@@ -98,9 +98,6 @@
     "options_plugin_downloads_title": {
         "message": "Vis downloads i bekendtgørelsesområdet"
     },
-    "options_plugin_historyrunner_description": {
-        "message": "Denne funktioner kræver muligvis <a id=\"$1\" href=\"$2\">yderligere tilladelser</a> for at kunne blive brugt."
-    },
     "options_plugin_historyrunner_title": {
         "message": "Søg gennem din browserhistorik"
     },

@@ -98,9 +98,6 @@
     "options_plugin_downloads_title": {
         "message": "ਡਾਊਨਲੋਡ ਨੋਟੀਫਿਕੇਸ਼ਨ ਖੇਤਰ ਵਿੱਚ ਵੇਖਾਓ"
     },
-    "options_plugin_historyrunner_description": {
-        "message": "This feature might need <a id=\"$1\" href=\"$2\">additional permissions</a> to be used."
-    },
     "options_plugin_historyrunner_title": {
         "message": "Search through browser history"
     },

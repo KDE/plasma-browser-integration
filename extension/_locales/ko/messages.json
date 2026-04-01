@@ -98,9 +98,6 @@
     "options_plugin_downloads_title": {
         "message": "알림 영역에 다운로드 표시"
     },
-    "options_plugin_historyrunner_description": {
-        "message": "이 기능을 사용하려면 <a id=\"$1\" href=\"$2\">추가 권한</a>이 필요할 수도 있습니다."
-    },
     "options_plugin_historyrunner_title": {
         "message": "브라우저 과거 기록 검색"
     },

@@ -98,9 +98,6 @@
     "options_plugin_downloads_title": {
         "message": "Montri elŝutojn en sciiga areo"
     },
-    "options_plugin_historyrunner_description": {
-        "message": "Ĉi tiu funkcio eble bezonas <a id=\"$1\" href=\"$2\">aldonajn permesojn</a> por esti uzata."
-    },
     "options_plugin_historyrunner_title": {
         "message": "Serĉi tra retumila historio"
     },

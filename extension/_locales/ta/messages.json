@@ -98,9 +98,6 @@
     "options_plugin_downloads_title": {
         "message": "அறிவிப்புகளில் பதிவிறக்கங்களைக் காட்டுவது"
     },
-    "options_plugin_historyrunner_description": {
-        "message": "இந்த அம்சத்தைப் பயன்படுத்த <a id=\"$1\" href=\"$2\">கூடுதலான அனுமதிகள்</a> தேவைப்படலாம்."
-    },
     "options_plugin_historyrunner_title": {
         "message": "உலாவி வரலாற்றில் தேடு"
     },

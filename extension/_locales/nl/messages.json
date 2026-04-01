@@ -98,9 +98,6 @@
     "options_plugin_downloads_title": {
         "message": "Downloads tonen in gebied voor meldingen"
     },
-    "options_plugin_historyrunner_description": {
-        "message": "Deze functie heeft misschien <a id=\"$1\" href=\"$2\">extra rechten</a> nodig om gebruikt te worden."
-    },
     "options_plugin_historyrunner_title": {
         "message": "In browsergeschiedenis zoeken"
     },

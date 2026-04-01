@@ -98,9 +98,6 @@
     "options_plugin_downloads_title": {
         "message": "अधिसूचना क्षेत्र में डाउनलोड दिखाएं"
     },
-    "options_plugin_historyrunner_description": {
-        "message": "इस सुविधा का उपयोग करने के लिए <a id=\"$1\" href=\"$2\">अतिरिक्त अनुमतियों की</a> आवश्यकता हो सकती है।"
-    },
     "options_plugin_historyrunner_title": {
         "message": "ब्राउज़र इतिहास के माध्यम से खोजें"
     },

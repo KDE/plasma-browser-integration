@@ -98,9 +98,6 @@
     "options_plugin_downloads_title": {
         "message": "Mostra les baixades a l'àrea de notificacions"
     },
-    "options_plugin_historyrunner_description": {
-        "message": "Aquesta funcionalitat pot necessitar <a id=\"$1\" href=\"$2\">permisos addicionals</a> per a usar-se."
-    },
     "options_plugin_historyrunner_title": {
         "message": "Cerca per l'historial del navegador"
     },

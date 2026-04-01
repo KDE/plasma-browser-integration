@@ -98,9 +98,6 @@
     "options_plugin_downloads_title": {
         "message": "Vis nedlastingar i varslingsområde"
     },
-    "options_plugin_historyrunner_description": {
-        "message": "Denne funksjonen treng kanskje <a id=\"$1\" href=\"$2\">utvida løyve</a>."
-    },
     "options_plugin_historyrunner_title": {
         "message": "Søk i nettlesarloggen"
     },

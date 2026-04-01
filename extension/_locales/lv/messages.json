@@ -98,9 +98,6 @@
     "options_plugin_downloads_title": {
         "message": "Paziņojumu zonā rādīt lejupielādes"
     },
-    "options_plugin_historyrunner_description": {
-        "message": "Šai iespējai var būt nepieciešamas <a id=\"$1\" href=\"$2\">papildu atļaujas</a>."
-    },
     "options_plugin_historyrunner_title": {
         "message": "Pārmeklēt pārlūkprogrammas vēsturi"
     },

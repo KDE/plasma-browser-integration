@@ -98,9 +98,6 @@
     "options_plugin_downloads_title": {
         "message": "Letöltések megjelenítése az értesítési területen"
     },
-    "options_plugin_historyrunner_description": {
-        "message": "Ez a funkció <a id=\"$1\" href=\"$2\">további jogosultságokat</a> igényelhet a működéshez."
-    },
     "options_plugin_historyrunner_title": {
         "message": "Keresés a böngészési előzményekben"
     },

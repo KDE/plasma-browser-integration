@@ -98,9 +98,6 @@
     "options_plugin_downloads_title": {
         "message": "Näytä lataukset ilmoitusalueella"
     },
-    "options_plugin_historyrunner_description": {
-        "message": "Tämä ominaisuus saattaa vaatia käyttöön <a id=\"$1\" href=\"$2\">lisäkäyttöoikeuksia</a>."
-    },
     "options_plugin_historyrunner_title": {
         "message": "Etsi selainhistoriasta"
     },

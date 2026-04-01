@@ -98,9 +98,6 @@
     "options_plugin_downloads_title": {
         "message": "הצגת הורדות באזור ההתראות"
     },
-    "options_plugin_historyrunner_description": {
-        "message": "יכול זו עשויה לדרוש שימוש ב<a id=\"$1\" href=\"$2\">הרשאות נוספות</a>."
-    },
     "options_plugin_historyrunner_title": {
         "message": "חיפוש בהיסטוריית הדפדפן"
     },

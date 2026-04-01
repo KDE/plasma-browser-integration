@@ -98,9 +98,6 @@
     "options_plugin_downloads_title": {
         "message": "Pokaži prenose v področju z obvestili"
     },
-    "options_plugin_historyrunner_description": {
-        "message": "Ta možnost morda potrebuje uporabo <a id=\"$1\" href=\"$2\"> dodatnih pravic."
-    },
     "options_plugin_historyrunner_title": {
         "message": "Iskanje prek zgodovine brskanja"
     },

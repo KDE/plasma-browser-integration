@@ -98,9 +98,6 @@
     "options_plugin_downloads_title": {
         "message": "Amosar as descargas na área de notificación."
     },
-    "options_plugin_historyrunner_description": {
-        "message": "Esta funcionalidade podería precisar <a id=\"$1\" href=\"$2\">permisos adicionais</a> para usarse."
-    },
     "options_plugin_historyrunner_title": {
         "message": "Buscar no historial do navegador"
     },

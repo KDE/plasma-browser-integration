@@ -98,9 +98,6 @@
     "options_plugin_downloads_title": {
         "message": "在通知區域顯示下載項目"
     },
-    "options_plugin_historyrunner_description": {
-        "message": "這個功能可能需要<a id=\"$1\" href=\"$2\">額外權限</a>才能使用。"
-    },
     "options_plugin_historyrunner_title": {
         "message": "搜尋瀏覽器歷史紀錄"
     },

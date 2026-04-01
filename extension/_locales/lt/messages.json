@@ -98,9 +98,6 @@
     "options_plugin_downloads_title": {
         "message": "Rodyti atsiuntimus pranešimų srityje"
     },
-    "options_plugin_historyrunner_description": {
-        "message": "Norint naudoti šią ypatybę, gali prireikti <a id=\"$1\" href=\"$2\">papildomų leidimų</a>."
-    },
     "options_plugin_historyrunner_title": {
         "message": "Ieškoti naršyklės istorijoje"
     },

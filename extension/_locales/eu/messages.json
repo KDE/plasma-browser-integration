@@ -98,9 +98,6 @@
     "options_plugin_downloads_title": {
         "message": "Erakutsi jaitsierak jakinarazpen eremuan"
     },
-    "options_plugin_historyrunner_description": {
-        "message": "Ezaugarri hau erabiltzeko <a id=\"$1\" href=\"$2\">baimen osagarrien</a> beharra izan dezakezu."
-    },
     "options_plugin_historyrunner_title": {
         "message": "Bilatu arakatzailearen historian zehar"
     },

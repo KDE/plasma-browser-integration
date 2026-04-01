@@ -98,9 +98,6 @@
     "options_plugin_downloads_title": {
         "message": "Monstrar discargamentos in area de notification"
     },
-    "options_plugin_historyrunner_description": {
-        "message": "Iste characteristica poterea necessitar <a id=\"$1\" href=\"$2\">permissiones additional </a> per esser usate."
-    },
     "options_plugin_historyrunner_title": {
         "message": "Cerca per chronologia de navigator"
     },

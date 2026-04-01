@@ -98,9 +98,6 @@
     "options_plugin_downloads_title": {
         "message": "اعرض التنزيلات في منطقة الإشعارات"
     },
-    "options_plugin_historyrunner_description": {
-        "message": "قد تحتاج هذه الميزة <a id=\"$1\" href=\"$2\">أذونات إضافية</a> لتستطيع استعمالها."
-    },
     "options_plugin_historyrunner_title": {
         "message": "ابحث عبر تأريخ المتصفّح"
     },

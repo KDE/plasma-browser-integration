@@ -98,9 +98,6 @@
     "options_plugin_downloads_title": {
         "message": "Sýna sóttar skrár í tilkynningasvæðinu"
     },
-    "options_plugin_historyrunner_description": {
-        "message": "Þessi eiginleiki kann að krefjast <a id=\"$1\" href=\"$2\">meiri aðgangsheimilda</a> til að hægt sé að nota hann."
-    },
     "options_plugin_historyrunner_title": {
         "message": "Leita í vafraferli"
     },

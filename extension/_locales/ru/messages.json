@@ -98,9 +98,6 @@
     "options_plugin_downloads_title": {
         "message": "Показ загрузок в области уведомлений"
     },
-    "options_plugin_historyrunner_description": {
-        "message": "Для использования этой функции могут потребоваться <a id=\"$1\" href=\"$2\">дополнительные права доступа</a>."
-    },
     "options_plugin_historyrunner_title": {
         "message": "Поиск в журнале браузера"
     },

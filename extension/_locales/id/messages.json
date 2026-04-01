@@ -98,9 +98,6 @@
     "options_plugin_downloads_title": {
         "message": "Tampilkan unduh-an dalam area notifikasi"
     },
-    "options_plugin_historyrunner_description": {
-        "message": "Fitur ini mungkin memerlukan <a id=\"$1\" href=\"$2\">perizinan tambahan</a> untuk bisa digunakan."
-    },
     "options_plugin_historyrunner_title": {
         "message": "Cari melalui riwayat browser"
     },

@@ -98,9 +98,6 @@
     "options_plugin_downloads_title": {
         "message": "Visa nerladdningar i underrättelseområdet"
     },
-    "options_plugin_historyrunner_description": {
-        "message": "Funktionen kan kräva <a id=\"$1\" href=\"$2\">ytterligare rättigheter</a> för att kunna användas."
-    },
     "options_plugin_historyrunner_title": {
         "message": "Sök igenom webbläsarhistorik"
     },

@@ -98,9 +98,6 @@
     "options_plugin_downloads_title": {
         "message": "Показване на изтеглянията в областта за уведомяване"
     },
-    "options_plugin_historyrunner_description": {
-        "message": "Тази функция може да изисква  <a id=\"$1\" href=\"$2\">допълнителни разрешения</a>, за да бъде използвана."
-    },
     "options_plugin_historyrunner_title": {
         "message": "Търсене в историята на браузъра"
     },

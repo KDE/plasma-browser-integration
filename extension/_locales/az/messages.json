@@ -98,9 +98,6 @@
     "options_plugin_downloads_title": {
         "message": "Yükləmələrə bildiriş sahəsində baxmaq"
     },
-    "options_plugin_historyrunner_description": {
-        "message": "Bu imkanı istifadə etmək üçün <a id=\"$1\" href=\"$2\">əlavə icazələrə</a>ehtiyac ola bilər."
-    },
     "options_plugin_historyrunner_title": {
         "message": "Veb bələdçi tarixçəsində axtarmaq"
     },
