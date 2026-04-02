@@ -186,6 +186,6 @@
         "message": "Conteúdo partilhado"
     },
     "store_description": {
-        "message": "Multitask efficiently by controlling browser functions from the desktop, even while Chrome is in the background. Manage audio and video playback, check downloads in the notification area, send files to your phone using KDE Connect and more inside the KDE Plasma Desktop!\\n\\nThe plasma-browser-integration package must be installed for this extension to work. It should be available from your distribution's package manager when running Plasma 5.13 or later.\\n\\nNOTE: This extension is not supported on Debian."
+        "message": "Trabalhe eficientemente em multitarefa ao controlar funções do navegador a partir do ambiente de trabalho, mesmo com o Chrome em segundo plano. Gerir reprodução áudio e vídeo, verificar transferências na área de notificação, enviar ficheiros para o seu telemóvel através do KDE Connect e muito mais, diretamente no ambiente KDE Plasma!\\n\\nO pacote 'plasma-browser-integration' tem de estar instalado para que esta extensão funcione. Deverá estar disponível no gestor de pacotes da sua distribuição se estiver a utilizar o Plasma 5.13 ou posterior.\\n\\nNOTA: Esta extensão não é suportada no Debian."
     }
 }
