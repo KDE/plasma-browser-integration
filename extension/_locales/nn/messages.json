@@ -87,7 +87,7 @@
         "message": "Legg nedlasta filer til nyleg brukte dokument"
     },
     "options_plugin_downloads_inhibitSuspend": {
-        "message": "Prevent system from going to sleep when downloading"
+        "message": "Hindra systemet å gå i kvile-/dvalemodus ved nedlasting"
     },
     "options_plugin_downloads_saveOriginUrl": {
         "message": "Lagra nettadressa som filer vert lasta ned frå i filattributta"
@@ -114,7 +114,7 @@
         "message": "Lèt deg styra video- og lydavspelarar på nettstadar med skjermelementet for mediestyring."
     },
     "options_plugin_mpris_media_blocklist_title": {
-        "message": "Block media controls on the following domains:"
+        "message": "Blokker mediestyring på desse domena:"
     },
     "options_plugin_mpris_media_sessions_description": {
         "message": "Hent ut metadata og miniatyrbilete frå innhaldet som spelar."
