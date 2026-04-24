@@ -121,6 +121,7 @@ X-Plasma-Runner-Syntax-Descriptions[ca@valencia]=Busca pestanyes obertes del nav
 X-Plasma-Runner-Syntax-Descriptions[cs]=Najde karty prohlížeče, jejichž název nebo URL odpovídá :q:
 X-Plasma-Runner-Syntax-Descriptions[da]=Finder åbne browserfaneblade hvis titel eller URL matcher :q:
 X-Plasma-Runner-Syntax-Descriptions[de]=Findet offene Unterfenster, deren Titel oder Adresse auf :q: passt
+X-Plasma-Runner-Syntax-Descriptions[el]=Εντοπίζει ανοικτές καρτέλες του προγράμματος περιήγησης των οποίων ο τίτλος ή η διεύθυνση URL ταιριάζουν με :q:
 X-Plasma-Runner-Syntax-Descriptions[en_GB]=Finds open browser tabs whose title or URL match :q:
 X-Plasma-Runner-Syntax-Descriptions[eo]=Trovas malfermitajn foliumilojn kies titolo aŭ URL kongruas :q:
 X-Plasma-Runner-Syntax-Descriptions[es]=Encuentra pestañas abiertas en el navegador cuyo título o URL coincidan con :q:
