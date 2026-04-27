@@ -64,7 +64,7 @@ msgstr "Nastala chyba siete."
 #: downloadjob.cpp:241
 #, kde-format
 msgid "The network operation timed out."
-msgstr "Sieťová operácia trvala prílš dlho."
+msgstr "Sieťová operácia trvala príliš dlho."
 
 #: downloadjob.cpp:242
 #, kde-format
