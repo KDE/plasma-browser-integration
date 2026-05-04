@@ -78,7 +78,7 @@
         "message": "Bu uzantı, bu işletim sisteminde desteklenmiyor."
     },
     "options_plugin_breezeScrollBars_description": {
-        "message": "Bu seçenek, halihazırda sarma çubuklarına özel biçem uygulayan web siteleri ile karışıklığa neden olabilir."
+        "message": "Bu seçenek, hâlihazırda sarma çubuklarına özel biçem uygulayan web siteleri ile karışıklığa neden olabilir."
     },
     "options_plugin_breezeScrollBars_title": {
         "message": "Breeze tarzı sarma çubukları kullan"
@@ -153,7 +153,7 @@
         "message": "Plasma Tümleştirme Ayarları"
     },
     "permission_request_already": {
-        "message": "Bu izni halihazırda verdiniz."
+        "message": "Bu izni hâlihazırda verdiniz."
     },
     "permission_request_button_request": {
         "message": "İzin İste"
