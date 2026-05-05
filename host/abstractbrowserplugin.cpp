@@ -74,6 +74,7 @@ QJsonObject AbstractBrowserPlugin::status() const
     return {};
 }
 
+#ifndef QT_NO_DEBUG_OUTPUT
 QDebug AbstractBrowserPlugin::debug() const
 {
     auto d = qDebug();
@@ -81,6 +82,7 @@ QDebug AbstractBrowserPlugin::debug() const
     d.nospace().noquote() << m_subsystem << ":";
     return d;
 }
+#endif
 
 QString AbstractBrowserPlugin::subsystem() const
 {

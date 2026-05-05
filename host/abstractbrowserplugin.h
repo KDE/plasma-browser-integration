@@ -53,7 +53,11 @@ protected:
 
     void sendReply(int requestSerial, const QJsonObject &payload = QJsonObject());
 
+#ifdef QT_NO_DEBUG_OUTPUT
+    inline QNoDebug debug() const { return QMessageLogger().noDebug(); };
+#else
     QDebug debug() const;
+#endif
 
     QJsonObject settings() const;
 
