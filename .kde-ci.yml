@@ -22,4 +22,4 @@ Dependencies:
     'plasma/plasma-activities': '@latest-kf6' # Different branch scheme due to being a former Framework
 
 Options:
- require-passing-tests-on: ['Linux', 'FreeBSD']
+ require-passing-tests-on: ['@all']
