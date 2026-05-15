@@ -111,7 +111,7 @@
         "message": "Lehetővé teszi a weboldalak video- és hanglejátszóinak irányításár a Médiavezérlő plasmoiddal."
     },
     "options_plugin_mpris_media_blocklist_title": {
-        "message": "Block media controls on the following domains:"
+        "message": "Médiavezérlők letiltása a következő domaineken:"
     },
     "options_plugin_mpris_media_sessions_description": {
         "message": "Kigyűjti az éppen lejátszott tartalom metaadatait és bélyegképeit."
