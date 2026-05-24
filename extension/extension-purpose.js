@@ -227,7 +227,19 @@ SettingsUtils.onChanged().addListener((delta) => {
 });
 
 addRuntimeCallback("purpose", "share", (message, sender, action) => {
-    return purposeShare(message);
+    if (!sender.tab.active) {
+        return Promise.reject();
+    }
+
+    return new Promise((resolve, reject) => {
+        chrome.windows.get(sender.tab.windowId).then((win) => {
+            if (!win.focused) {
+                return reject();
+            }
+
+            return purposeShare(message);
+        });
+    });
 });
 
 chrome.notifications.onClicked.addListener((notificationId) => {
