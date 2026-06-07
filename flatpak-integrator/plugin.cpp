@@ -151,7 +151,7 @@ public:
         // Set up Flatpak permissions for each browser
         for (const auto &browser : supportedBrowsers) {
             auto flatpak = new QProcess(this);
-            connect(flatpak, qOverload<int, QProcess::ExitStatus>(&QProcess::finished), this, [flatpak](int, QProcess::ExitStatus) {
+            connect(flatpak, &QProcess::finished, this, [flatpak](int, QProcess::ExitStatus) {
                 flatpak->deleteLater();
             });
             flatpak->start(u"flatpak"_s, {u"override"_s, u"--user"_s, u"--talk-name=org.kde.plasma.browser.integration"_s, browser.id});
