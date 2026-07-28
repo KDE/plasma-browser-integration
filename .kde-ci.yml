@@ -4,22 +4,22 @@
 Dependencies:
  - 'on': ['@all']
    'require':
-    'frameworks/extra-cmake-modules': '@latest-kf6'
-    'frameworks/kio': '@latest-kf6'
-    'frameworks/ki18n': '@latest-kf6'
-    'frameworks/kcoreaddons': '@latest-kf6'
-    'frameworks/kconfig': '@latest-kf6'
-    'frameworks/kcrash': '@latest-kf6'
-    'frameworks/kdbusaddons': '@latest-kf6'
-    'frameworks/knotifications': '@latest-kf6'
-    'frameworks/krunner': '@latest-kf6'
-    'frameworks/purpose': '@latest-kf6'
-    'frameworks/kfilemetadata': '@latest-kf6'
-    'frameworks/kjobwidgets': '@latest-kf6'
-    'frameworks/kservice': '@latest-kf6'
-    'frameworks/kstatusnotifieritem': '@latest-kf6'
+    'frameworks/extra-cmake-modules': 'Frameworks/6.24'
+    'frameworks/kio': 'Frameworks/6.24'
+    'frameworks/ki18n': 'Frameworks/6.24'
+    'frameworks/kcoreaddons': 'Frameworks/6.24'
+    'frameworks/kconfig': 'Frameworks/6.24'
+    'frameworks/kcrash': 'Frameworks/6.24'
+    'frameworks/kdbusaddons': 'Frameworks/6.24'
+    'frameworks/knotifications': 'Frameworks/6.24'
+    'frameworks/krunner': 'Frameworks/6.24'
+    'frameworks/purpose': 'Frameworks/6.24'
+    'frameworks/kfilemetadata': 'Frameworks/6.24'
+    'frameworks/kjobwidgets': 'Frameworks/6.24'
+    'frameworks/kservice': 'Frameworks/6.24'
+    'frameworks/kstatusnotifieritem': 'Frameworks/6.24'
     'plasma/plasma-workspace': '@same'
-    'plasma/plasma-activities': '@latest-kf6' # Different branch scheme due to being a former Framework
+    'plasma/plasma-activities': '@same' # Different branch scheme due to being a former Framework
 
 Options:
  require-passing-tests-on: ['Linux', 'FreeBSD']
