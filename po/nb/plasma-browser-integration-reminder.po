@@ -1,5 +1,6 @@
 # Translation of plasma-browser-integration-reminder to Norwegian Bokmål
 #
+# Martin Hansen <mh306602@gmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-browser-integration\n"
