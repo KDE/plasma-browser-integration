@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
 
-set(PROJECT_VERSION "6.7.4")
+set(PROJECT_VERSION "6.7.5")
 
 project(plasma-browser-integration VERSION ${PROJECT_VERSION})
 
