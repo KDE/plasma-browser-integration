@@ -96,7 +96,7 @@
         "message": "اعرض التنزيلات في منطقة الإشعارات"
     },
     "options_plugin_historyrunner_description": {
-        "message": "قد تحتاج هذه الميزة <a id=\"$1\" href=\"$2\">أذونات إضافية</a> لتستطيع استعمالها."
+        "message": "قد تحتاج هذه الميزة <a id=\"$1\" href=\"$2\">أذون إضافية</a> لتستطيع استعمالها."
     },
     "options_plugin_historyrunner_title": {
         "message": "ابحث عبر تأريخ المتصفّح"
@@ -156,13 +156,13 @@
         "message": "اسحب الإذن"
     },
     "permission_request_historyrunner_1": {
-        "message": "لعرض نتائج البحث من تأريخ المتصفّح، يحتاج الامتداد أذونات إضافية."
+        "message": "لعرض نتائج البحث من تأريخ المتصفّح، يحتاج الامتداد أذون إضافية."
     },
     "permission_request_historyrunner_2": {
         "message": "يمكنك تعطيل هذه الميزة من <a id=\"$1\" href=\"$2\">إعدادات بحث بلازما</a>."
     },
     "permission_request_title": {
-        "message": "مطلوب أذونات إضافية"
+        "message": "مطلوب أذون إضافية"
     },
     "purpose_share": {
         "message": "شارِك..."
