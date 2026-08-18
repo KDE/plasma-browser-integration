@@ -113,7 +113,16 @@ void DownloadJob::update(const QJsonObject &payload)
     if (it != end) {
         m_fileName = it->toString();
 
-        const QUrl destination = QUrl::fromLocalFile(it->toString());
+        // when the save file is selected via XDG portals, the path is something like /run/user/1000/doc/randomchars/filename
+        // but we should show the user the real path. we can get that by querying this xattr
+        // see https://flatpak.github.io/xdg-desktop-portal/docs/doc-org.freedesktop.portal.Documents.html#org-freedesktop-portal-documents-gethostpaths
+        const KFileMetaData::UserMetaData metadata(m_fileName);
+        const QString hostPath = metadata.attribute(QStringLiteral("document-portal.host-path"));
+        if (!hostPath.isEmpty()) {
+            m_fileName = hostPath;
+        }
+
+        const QUrl destination = QUrl::fromLocalFile(m_fileName);
 
         setProperty("destUrl", destination.toString(QUrl::RemoveFilename | QUrl::StripTrailingSlash));
 
