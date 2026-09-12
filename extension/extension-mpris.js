@@ -433,7 +433,7 @@ addRuntimeCallback("mpris", "metadata", function (message, sender) {
             metadata: message
         };
         if (hostSupportsFetchedArtwork()) {
-            payload.pendingArtwork = fetchPlayerArtwork(payload, "", "", "");
+            payload.pendingArtwork = fetchPlayerArtwork(payload.metadata, "", "", "");
         }
 
         sendPortMessage("mpris", "metadata", payload);
