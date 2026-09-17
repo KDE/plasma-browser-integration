@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-browser-integration\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:53+0000\n"
+"POT-Creation-Date: 2026-09-17 00:46+0000\n"
 "PO-Revision-Date: 2024-12-24 20:39+0530\n"
 "Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -29,7 +29,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "skkalwar999@gmail.com"
 
-#: downloadjob.cpp:138
+#: downloadjob.cpp:147
 #, kde-format
 msgid ""
 "This type of file can harm your computer. If you want to keep it, accept "
@@ -38,89 +38,89 @@ msgstr ""
 "एतादृशी सञ्चिका भवतः सङ्गणकस्य हानिं कर्तुं शक्नोति । यदि भवान् तत् स्थापयितुम् इच्छति तर्हि "
 "ब्राउजर् विण्डोतः एतत् डाउनलोड् स्वीकुरुत ।"
 
-#: downloadjob.cpp:235
+#: downloadjob.cpp:244
 #, kde-format
 msgid "Access denied."
 msgstr "प्रवेशः अङ्गीकृतः।"
 
-#: downloadjob.cpp:236
+#: downloadjob.cpp:245
 #, kde-format
 msgid "Insufficient free space."
 msgstr "अपर्याप्त मुक्तस्थानं।"
 
-#: downloadjob.cpp:237
+#: downloadjob.cpp:246
 #, kde-format
 msgid "The file name you have chosen is too long."
 msgstr "भवता चितं सञ्चिकानाम अतिदीर्घम् अस्ति ।"
 
-#: downloadjob.cpp:238
+#: downloadjob.cpp:247
 #, kde-format
 msgid "The file is too large to be downloaded."
 msgstr "सञ्चिका अतीव विशाला अस्ति यत् अवतरणं कर्तुं न शक्यते ।"
 
-#: downloadjob.cpp:240
+#: downloadjob.cpp:249
 #, kde-format
 msgid "The file possibly contains malicious contents."
 msgstr "सञ्चिकायां सम्भवतः दुर्भावनापूर्णसामग्रीः सन्ति ।"
 
-#: downloadjob.cpp:241
+#: downloadjob.cpp:250
 #, kde-format
 msgid "A temporary error has occurred. Please try again later."
 msgstr "अस्थायी दोषः अभवत् । कृपया पश्चात् पुनः प्रयासं कुर्वन्तु।"
 
-#: downloadjob.cpp:243
+#: downloadjob.cpp:252
 #, kde-format
 msgid "A network error has occurred."
 msgstr "जालदोषः अभवत् ।"
 
-#: downloadjob.cpp:244
+#: downloadjob.cpp:253
 #, kde-format
 msgid "The network operation timed out."
 msgstr "जालसञ्चालनस्य समयः समाप्तः ।"
 
-#: downloadjob.cpp:245
+#: downloadjob.cpp:254
 #, kde-format
 msgid "The network connection has been lost."
 msgstr "जालसंयोजनं नष्टम् अस्ति।"
 
-#: downloadjob.cpp:246
+#: downloadjob.cpp:255
 #, kde-format
 msgid "The server is no longer reachable."
 msgstr "सर्वरः इदानीं न प्राप्यते ।"
 
-#: downloadjob.cpp:248
+#: downloadjob.cpp:257
 #, kde-format
 msgid "A server error has occurred."
 msgstr "सर्वरदोषः अभवत् ।"
 
-#: downloadjob.cpp:252
+#: downloadjob.cpp:261
 #, kde-format
 msgid "The server does not have the requested data."
 msgstr "सर्वरे अनुरोधितं दत्तांशं नास्ति ।"
 
-#: downloadjob.cpp:254
+#: downloadjob.cpp:263
 #, kde-format
 msgid "The browser application closed unexpectedly."
 msgstr "ब्राउजर्-अनुप्रयोगः अप्रत्याशितरूपेण बन्दः अभवत् ।"
 
-#: downloadjob.cpp:260
+#: downloadjob.cpp:269
 #, kde-format
 msgid "An unknown error occurred while downloading."
 msgstr "अवतरणं कुर्वन् अज्ञातदोषः अभवत् ।"
 
-#: downloadjob.cpp:298
+#: downloadjob.cpp:307
 #, kde-format
 msgctxt "Job heading, like 'Copying'"
 msgid "Downloading"
 msgstr "डाउनलोड् करणम्"
 
-#: downloadjob.cpp:299
+#: downloadjob.cpp:308
 #, kde-format
 msgctxt "The URL being downloaded"
 msgid "Source"
 msgstr "स्रोतः"
 
-#: downloadjob.cpp:300
+#: downloadjob.cpp:309
 #, kde-format
 msgctxt "The location being downloaded to"
 msgid "Destination"
