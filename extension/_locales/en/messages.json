@@ -122,7 +122,7 @@
     },
     "options_plugin_purpose_description": {
         "description": "Description for Purpose / Web Share plugin",
-        "message": "Adds a \"Share...\" context menu entry and allows websites to open a dialog for sharing contents using the Web Share API."
+        "message": "Adds a \"Share...\" context menu entry."
     },
 
     "options_plugin_breezeScrollBars_title": {

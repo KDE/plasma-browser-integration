@@ -93,17 +93,6 @@ initPageScript(() => {
                 }
             }
         }
-
-        if (items.purpose.enabled) {
-            sendMessage("settings", "getSubsystemStatus").then((status) => {
-                if (status && status.purpose) {
-                    loadPurpose();
-                }
-            }, (err) => {
-                // No warning, can also happen when port isn't connected for unsupported OS
-                console.log("Failed to get subsystem status for purpose", err);
-            });
-        }
     });
 });
 
@@ -723,43 +712,4 @@ function loadMediaSessionsShim() {
 
         executePageAction({"action": "mediaSessionsRegister"});
     }
-}
-
-// PURPOSE / WEB SHARE API
-// ------------------------------------------------------------------------
-//
-var purposeLoaded = false;
-function loadPurpose() {
-    if (purposeLoaded) {
-        return;
-    }
-
-    purposeLoaded = true;
-
-    // navigator.share must only be defined in secure (https) context
-    if (!window.isSecureContext) {
-        return;
-    }
-
-     window.addEventListener("org.kde.pbi.purpose.message", (e) => {
-        const data = e.detail || {};
-
-        const action = data.action;
-        const payload = data.payload;
-
-        if (action !== "share") {
-            return;
-        }
-
-        sendMessage("purpose", "share", payload).then((response) => {
-            executePageAction({"action": "purposeShare"});
-        }, (err) => {
-            // Deliberately not giving any more details about why it got rejected
-            executePageAction({"action": "purposeReject"});
-        }).finally(() => {
-            executePageAction({"action": "purposeReset"});
-        });;
-    });
-
-    executePageAction({"action": "purposeRegister"});
 }

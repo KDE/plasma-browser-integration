@@ -1,5 +1,4 @@
 (function() {
-    let purposeTransferObject = null;
     let mprisTransferObject = null;
     let eventCallback = function(e) {
         e.stopPropagation();
@@ -216,76 +215,6 @@
             } catch (e) {
                 console.warn("Exception executing '" + args.mprisCallbackName + "' media sessions callback", e);
             }
-        } else if (args.action == "purposeRegister") {
-            purposeTransferObject = function() {};
-            purposeTransferObject.reset = () => {
-                purposeTransferObject.pendingResolve = null;
-                purposeTransferObject.pendingReject = null;
-            };
-            purposeTransferObject.reset();
-
-            if (!navigator.canShare) {
-                navigator.canShare = (data) => {
-                    if (!data) {
-                        return false;
-                    }
-
-                    if (data.title === undefined && data.text === undefined && data.url === undefined) {
-                        return false;
-                    }
-
-                    if (data.url) {
-                        // check if URL is valid
-                        try {
-                            new URL(data.url, document.location.href);
-                        } catch (e) {
-                            return false;
-                        }
-                    }
-
-                    return true;
-                }
-            }
-
-            if (!navigator.share) {
-                navigator.share = (data) => {
-                    return new Promise((resolve, reject) => {
-                        if (!navigator.canShare(data)) {
-                            return reject(new TypeError());
-                        }
-
-                        if (data.url) {
-                            // validity already checked in canShare, hence no catch
-                            data.url = new URL(data.url, document.location.href).toString();
-                        }
-
-                        if (!window.event || !window.event.isTrusted) {
-                            return reject(new DOMException("navigator.share can only be called in response to user interaction", "NotAllowedError"));
-                        }
-
-                        if (purposeTransferObject.pendingResolve || purposeTransferObject.pendingReject) {
-                            return reject(new DOMException("A share is already in progress", "AbortError"));
-                        }
-
-                        purposeTransferObject.pendingResolve = resolve;
-                        purposeTransferObject.pendingReject = reject;
-
-                        const event = new CustomEvent("org.kde.pbi.purpose.message", {
-                            detail: {
-                                action: "share",
-                                payload: data
-                            }
-                        });
-                        window.dispatchEvent(event);
-                    });
-                };
-            }
-        } else if (args.action == "purposeShare") {
-            purposeTransferObject.pendingResolve();
-        } else if (args.action == "purposeReject") {
-            purposeTransferObject.pendingReject(new DOMException("Share request aborted", "AbortError"));
-        } else if (args.action == "purposeReset") {
-            purposeTransferObject.reset();
         } else {
             console.warn("Unknown page script action" + args.action, args);
         }
