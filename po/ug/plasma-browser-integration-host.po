@@ -1,22 +1,22 @@
 # Uyghur translation for plasma-browser-integration-host.
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the plasma-browser-integration package.
-# Abduqadir Abliz <sahranbay@gmail.com>, 2026., YEAR.
+# Abduqadir Abliz <sahranbay@gmail.com>, 2026.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-browser-integration\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-17 00:46+0000\n"
-"PO-Revision-Date: 2026-09-23 06:56+0900\n"
+"PO-Revision-Date: 2026-09-24 19:55-0400\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.9\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.9\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -34,6 +34,8 @@ msgid ""
 "This type of file can harm your computer. If you want to keep it, accept "
 "this download from the browser window."
 msgstr ""
+"بۇ خىل ھۆججەت كومپيۇتېرىڭىزغا خەۋپ كەلتۈرۈشى مۇمكىن. ئۇنى چوقۇم ساقلاپ "
+"قالماقچى بولسىڭىز، توركۆرگۈ كۆزنىكىدىن چۈشۈرۈشكە قوشۇلۇڭ."
 
 #: downloadjob.cpp:244
 #, kde-format
@@ -43,67 +45,67 @@ msgstr "زىيارەت رەت قىلىندى."
 #: downloadjob.cpp:245
 #, kde-format
 msgid "Insufficient free space."
-msgstr ""
+msgstr "بىكار بوشلۇق يېتەرلىك ئەمەس."
 
 #: downloadjob.cpp:246
 #, kde-format
 msgid "The file name you have chosen is too long."
-msgstr ""
+msgstr "سىز تاللىغان ھۆججەت ئاتى بەك ئۇزۇن."
 
 #: downloadjob.cpp:247
 #, kde-format
 msgid "The file is too large to be downloaded."
-msgstr ""
+msgstr "ھۆججەت بەك چوڭ، چۈشۈرگىلى بولمايدۇ."
 
 #: downloadjob.cpp:249
 #, kde-format
 msgid "The file possibly contains malicious contents."
-msgstr ""
+msgstr "ھۆججەتتە زەھەرخەندە مەزمۇن بولۇشى مۇمكىن."
 
 #: downloadjob.cpp:250
 #, kde-format
 msgid "A temporary error has occurred. Please try again later."
-msgstr ""
+msgstr "ۋاقىتلىق خاتالىق كۆرۈلدى. كېيىن قايتا سىناڭ."
 
 #: downloadjob.cpp:252
 #, kde-format
 msgid "A network error has occurred."
-msgstr ""
+msgstr "تور خاتالىقى كۆرۈلدى."
 
 #: downloadjob.cpp:253
 #, kde-format
 msgid "The network operation timed out."
-msgstr ""
+msgstr "تور مەشغۇلاتىنىڭ ۋاقتى ئۆتتى."
 
 #: downloadjob.cpp:254
 #, kde-format
 msgid "The network connection has been lost."
-msgstr ""
+msgstr "تور باغلىنىشى ئۈزۈلدى."
 
 #: downloadjob.cpp:255
 #, kde-format
 msgid "The server is no longer reachable."
-msgstr ""
+msgstr "ئەمدى مۇلازىمېتىرنى زىيارەت قىلغىلى بولمايدۇ."
 
 #: downloadjob.cpp:257
 #, kde-format
 msgid "A server error has occurred."
-msgstr ""
+msgstr "مۇلازىمېتىر خاتالىقى كۆرۈلدى."
 
 #: downloadjob.cpp:261
 #, kde-format
 msgid "The server does not have the requested data."
-msgstr ""
+msgstr "مۇلازىمېتىردا ئىلتىماس قىلىنغان ئۇچۇر يوق."
 
 #: downloadjob.cpp:263
 #, kde-format
 msgid "The browser application closed unexpectedly."
-msgstr ""
+msgstr "توركۆرگۈ پىروگراممىسى تاسادىپىي يېپىلدى."
 
 #: downloadjob.cpp:269
 #, kde-format
 msgid "An unknown error occurred while downloading."
-msgstr ""
+msgstr "چۈشۈرۈۋاتقاندا نامەلۇم خاتالىق يۈز بەردى."
 
 #: downloadjob.cpp:307
 #, kde-format
@@ -127,14 +129,14 @@ msgstr "نىشان"
 #, kde-format
 msgctxt "Dummy search result"
 msgid "Additional permissions are required"
-msgstr ""
+msgstr "قوشۇمچە ئىجازەت زۆرۈر"
 
 #: tabsrunnerplugin.cpp:38
 #, kde-format
 msgid "Mute Tab"
-msgstr ""
+msgstr "بەتكۈچ ئۈنسىز"
 
 #: tabsrunnerplugin.cpp:43
 #, kde-format
 msgid "Unmute Tab"
-msgstr ""
+msgstr "بەتكۈچ ئۈنلۈك"
