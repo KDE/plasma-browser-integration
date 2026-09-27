@@ -41,6 +41,7 @@
         "Description[sv]": "Tillhandahåller en länk till webbläsarutökningen om värden för Plasma webbläsarintegrering är installerade",
         "Description[ta]": "பிளாஸ்மா உலாவி ஒருங்கிணைப்பு புரவன் நிறுவப்படவில்லையெனில் உலாவி துணை நிரலுக்கான இணைப்பை வழங்கும்",
         "Description[tr]": "Plasma Tarayıcı Tümleştirme istemcisi kuruluysa tarayıcı uzantısı için bir bağlantı sağlar",
+        "Description[ug]": "ئەگەر Plasma توركۆرگۈ توپلاشتۇرۇلغان مۇلازىمېتىر پىروگراممىسى ئورنىتىلغان بولسا ئۇنداقتا توركۆرگۈ كېڭەيتىلمىسىنىڭ ئۇلانمىسىنى تەمىنلەيدۇ",
         "Description[uk]": "Надає посилання на розширення браузера, якщо встановлено основну частину засобу інтеграції браузера із Плазмою",
         "Description[zh_CN]": "如果 Plasma 浏览器集成主程序已安装，则提供下载浏览器扩展程序的链接",
         "Description[zh_TW]": "有安裝 Plasma 瀏覽器整合主程式時提供它的瀏覽器擴充功能的連結",
