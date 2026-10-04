@@ -123,7 +123,7 @@
         "message": "Controis de reprodución"
     },
     "options_plugin_purpose_description": {
-        "message": "Engade unha entrada de menú contextual de «Compartir…» e permite aos sitios web abrir un diálogo para compartir contido usando a API de compartición web."
+        "message": "Adds a \"Share...\" context menu entry."
     },
     "options_plugin_purpose_title": {
         "message": "Compartición de contido"

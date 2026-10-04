@@ -123,7 +123,7 @@
         "message": "Media İdarəetmələri"
     },
     "options_plugin_purpose_description": {
-        "message": "Kontekst menyuya \"Paylaşmaq...\" sətiri əlavə edir və veb saytların Web Share API funksiyasını istifadə edərək paylaşmaq üçün bir dialoq pəncərəsi açmağa icazə verir."
+        "message": "Adds a \"Share...\" context menu entry."
     },
     "options_plugin_purpose_title": {
         "message": "Məzmun paylaşımı"

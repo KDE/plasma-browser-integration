@@ -123,7 +123,7 @@
         "message": "Mediensteuerung"
     },
     "options_plugin_purpose_description": {
-        "message": "Fügt einen „Teilen …“-Eintrag zum Kontextmenü hinzu und erlaubt es Webseiten mittels Web Share API einen Dialog zum Teilen von Inhalten zu öffnen."
+        "message": "Adds a \"Share...\" context menu entry."
     },
     "options_plugin_purpose_title": {
         "message": "Inhalte teilen"

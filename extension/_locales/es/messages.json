@@ -123,7 +123,7 @@
         "message": "Controles multimedia"
     },
     "options_plugin_purpose_description": {
-        "message": "Añade una entrada de menú de contexto «Compartir…» y permite que los sitios web abran un diálogo para compartir contenido usando la API de Web Share."
+        "message": "Adds a \"Share...\" context menu entry."
     },
     "options_plugin_purpose_title": {
         "message": "Compartir contenido"

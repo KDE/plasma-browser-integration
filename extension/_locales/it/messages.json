@@ -123,7 +123,7 @@
         "message": "Controlli multimediali"
     },
     "options_plugin_purpose_description": {
-        "message": "Aggiunge un menu contestuale «Condividi...» e permette ai siti di web di aprire una finestra di dialogo per condividere contenuti tramite Web Share API."
+        "message": "Adds a \"Share...\" context menu entry."
     },
     "options_plugin_purpose_title": {
         "message": "Condivisione del contenuto"

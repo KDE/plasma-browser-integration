@@ -123,7 +123,7 @@
         "message": "Ortam Denetimleri"
     },
     "options_plugin_purpose_description": {
-        "message": "Bir “Paylaş…” bağlam menüsü girdisi ekler ve web sitelerinin içeriği paylaşmak için Web Share API kullanarak bir iletişim kutusu açmasına izin verir."
+        "message": "Adds a \"Share...\" context menu entry."
     },
     "options_plugin_purpose_title": {
         "message": "İçerik Paylaşma"

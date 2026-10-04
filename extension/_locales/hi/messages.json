@@ -123,7 +123,7 @@
         "message": "मीडिया नियंत्रण"
     },
     "options_plugin_purpose_description": {
-        "message": "एक \"साझा करें...\" संदर्भ मेनू प्रविष्टि जोड़ता है और वेबसाइटों को वेब शेयर API का उपयोग करके सामग्री साझा करने के लिए एक संवाद खोलने की अनुमति देता है।"
+        "message": "Adds a \"Share...\" context menu entry."
     },
     "options_plugin_purpose_title": {
         "message": "सामग्री साझा करना"

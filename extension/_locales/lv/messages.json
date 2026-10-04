@@ -123,7 +123,7 @@
         "message": "Multivides vadība"
     },
     "options_plugin_purpose_description": {
-        "message": "Pievienot „Kopīgot...“ konteksta izvēlnes ierakstu, kas ļauj tīmekļa vietnēs atvērt lodziņu, lai ar saturu dalītos caur „Web Share API“."
+        "message": "Adds a \"Share...\" context menu entry."
     },
     "options_plugin_purpose_title": {
         "message": "Satura kopīgošana"

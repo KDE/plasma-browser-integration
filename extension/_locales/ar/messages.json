@@ -123,7 +123,7 @@
         "message": "التحكّمات بالوسائط"
     },
     "options_plugin_purpose_description": {
-        "message": "تُضيف مُدخلة ”شارِك...“ إلى قائمة السياق، وتُتيح للمواقع فتح حوار لمشاركة المحتوى عبر واجهة مشاركة الوِب (Web Share API)."
+        "message": "Adds a \"Share...\" context menu entry."
     },
     "options_plugin_purpose_title": {
         "message": "مشاركة المحتوى"

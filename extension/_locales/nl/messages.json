@@ -123,7 +123,7 @@
         "message": "Besturing van media"
     },
     "options_plugin_purpose_description": {
-        "message": "Een contextmenu-item \"Delen...\" wordt toegevoegd en biedt websites om een dialoog te openen voor delen van inhoud met de Web Share API."
+        "message": "Adds a \"Share...\" context menu entry."
     },
     "options_plugin_purpose_title": {
         "message": "Inhoud delen"

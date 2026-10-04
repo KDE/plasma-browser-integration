@@ -123,7 +123,7 @@
         "message": "Controles de mídia"
     },
     "options_plugin_purpose_description": {
-        "message": "Adiciona uma entrada no menu de contexto \"Compartilhar...\" e permite aos sites abrir uma janela para compartilhar conteúdos usando a API de compartilhamento da Web."
+        "message": "Adds a \"Share...\" context menu entry."
     },
     "options_plugin_purpose_title": {
         "message": "Compartilhamento de conteúdo"

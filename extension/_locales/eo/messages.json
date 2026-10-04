@@ -123,7 +123,7 @@
         "message": "Media Kontroloj"
     },
     "options_plugin_purpose_description": {
-        "message": "Aldonas kuntekstan menuon \"Kundividi...\" kaj permesas al retejoj malfermi dialogon por kunhavigi enhavon per la Web Share API."
+        "message": "Adds a \"Share...\" context menu entry."
     },
     "options_plugin_purpose_title": {
         "message": "Kundivido de Enhavo"

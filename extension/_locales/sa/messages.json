@@ -123,7 +123,7 @@
         "message": "मीडिया नियन्त्रणानि"
     },
     "options_plugin_purpose_description": {
-        "message": "\"Share...\" सन्दर्भमेनूप्रविष्टिं योजयति तथा च Web Share API इत्यस्य उपयोगेन सामग्रीसाझेदारीार्थं संवादं उद्घाटयितुं वेबसाइट्-स्थानानां अनुमतिं ददाति ।"
+        "message": "Adds a \"Share...\" context menu entry."
     },
     "options_plugin_purpose_title": {
         "message": "सामग्रीसाझेदारी"

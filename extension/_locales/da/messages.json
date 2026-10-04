@@ -123,7 +123,7 @@
         "message": "Mediestyringer"
     },
     "options_plugin_purpose_description": {
-        "message": "Tilføjer en \"Del...\"-kontekstmenu og lader websider åbne en dialog til deling af indhold med brug af webdeling-API'et."
+        "message": "Adds a \"Share...\" context menu entry."
     },
     "options_plugin_purpose_title": {
         "message": "Deling af indhold"

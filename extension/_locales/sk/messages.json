@@ -123,7 +123,7 @@
         "message": "Ovládače médií"
     },
     "options_plugin_purpose_description": {
-        "message": "Pridá kontextovú položku \"Zdieľať...\" a umožní webstránkam otvoriť dialóg na zdieľanie obsahu pomocou Web Share API."
+        "message": "Adds a \"Share...\" context menu entry."
     },
     "options_plugin_purpose_title": {
         "message": "Zdieľanie obsahu"

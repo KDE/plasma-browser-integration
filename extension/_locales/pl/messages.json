@@ -123,7 +123,7 @@
         "message": "Sterowanie mediami"
     },
     "options_plugin_purpose_description": {
-        "message": "Dodaje menu podręczne \"Udostępnij...\" i umożliwia stronom sieciowym otwarcie okna dialogowego do udostępniania treści przy użyciu Web Share API."
+        "message": "Adds a \"Share...\" context menu entry."
     },
     "options_plugin_purpose_title": {
         "message": "Udostępnianie treści"

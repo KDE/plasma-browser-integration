@@ -123,7 +123,7 @@
         "message": "Euskarri-kontrolak"
     },
     "options_plugin_purpose_description": {
-        "message": "\"Partekatu...\" testuinguru menuko sarrera gehitu eta webguneei «Web Share» APIa erabiliz edukiak partekatzeko elkarrizketa-koadro bat irekitzeko baimena ematen die."
+        "message": "Adds a \"Share...\" context menu entry."
     },
     "options_plugin_purpose_title": {
         "message": "Edukia partekatzea"

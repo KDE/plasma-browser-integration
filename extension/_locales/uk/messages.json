@@ -123,7 +123,7 @@
         "message": "Керування відтворенням"
     },
     "options_plugin_purpose_description": {
-        "message": "Додає пункт контекстного меню «Оприлюднити…» і дозволяє сайтам відкривати діалогове вікно для оприлюднення даних за допомогою програмного інтерфейсу Web Share."
+        "message": "Adds a \"Share...\" context menu entry."
     },
     "options_plugin_purpose_title": {
         "message": "Оприлюднення даних"

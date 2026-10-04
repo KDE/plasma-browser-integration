@@ -123,7 +123,7 @@
         "message": "Mediasäätimet"
     },
     "options_plugin_purpose_description": {
-        "message": "Lisää ”Jaa…”-kontekstivalikkokohdan ja sallii verkkosivujen avata ikkunan sisällön jakamiseksi Web Share -APIlla.Lisää ”Jaa…”-kontekstivalikkokohdan ja sallii verkkosivujen avata ikkunan sisällön jakamiseksi Web Share -APIlla."
+        "message": "Adds a \"Share...\" context menu entry."
     },
     "options_plugin_purpose_title": {
         "message": "Sisällön jakaminen"

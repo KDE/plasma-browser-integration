@@ -123,7 +123,7 @@
         "message": "Médiavezérlők"
     },
     "options_plugin_purpose_description": {
-        "message": "Hozzáad egy „Megosztás…” gombot a helyi menühöz, amely lehetővé teszi a weboldalaknak egy párbeszédablak megnyitását tartalmak megosztásához a Web Share API-val."
+        "message": "Adds a \"Share...\" context menu entry."
     },
     "options_plugin_purpose_title": {
         "message": "Tartalommegosztás"

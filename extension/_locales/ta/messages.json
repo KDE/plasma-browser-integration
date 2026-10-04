@@ -123,7 +123,7 @@
         "message": "ஊடக கட்டுப்படுத்தி"
     },
     "options_plugin_purpose_description": {
-        "message": "வலது-க்ளிக் பட்டியில் \"பகிர்...\" எனும் பதிவை சேர்ப்பதுடன், Web Share API மூலமாக விருப்பமானவற்றைப் பகிருமாறு கோரும் சாளரத்தை வலைதளங்கள் திறக்க இது விடும்."
+        "message": "Adds a \"Share...\" context menu entry."
     },
     "options_plugin_purpose_title": {
         "message": "தரவுப் பகிர்வு"

@@ -123,7 +123,7 @@
         "message": "Controale multimedia"
     },
     "options_plugin_purpose_description": {
-        "message": "Adaugă o înregistrare de meniu contextual „Partajează…” și permite saiturilor să deschidă un dialog pentru partajarea conținutului folosind Web Share API."
+        "message": "Adds a \"Share...\" context menu entry."
     },
     "options_plugin_purpose_title": {
         "message": "Partajare conținut"

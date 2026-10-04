@@ -123,7 +123,7 @@
         "message": "Управление мультимедиа"
     },
     "options_plugin_purpose_description": {
-        "message": "Этот модуль позволяет предоставить общий доступ к содержимому из пункта контекстного меню «Поделиться», а также позволяет веб-сайтам открывать диалог открытия общего доступа с использованием Web Share API"
+        "message": "Adds a \"Share...\" context menu entry."
     },
     "options_plugin_purpose_title": {
         "message": "Доступ к содержимому"

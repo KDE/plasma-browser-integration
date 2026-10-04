@@ -123,7 +123,7 @@
         "message": "Miðlastýringar"
     },
     "options_plugin_purpose_description": {
-        "message": "Bætir við valmyndarfærslunni \"Deila...\" þannig að vefsíður geti opnað svarglugga til að deila efni í gegnum Web Share API."
+        "message": "Adds a \"Share...\" context menu entry."
     },
     "options_plugin_purpose_title": {
         "message": "Deiling efnis"

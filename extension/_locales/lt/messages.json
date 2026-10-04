@@ -123,7 +123,7 @@
         "message": "Medijos valdikliai"
     },
     "options_plugin_purpose_description": {
-        "message": "Prideda kontekstinio meniu punktą \"Bendrinti...\" ir leidžia internetinėms svetainėms atverti dialogą, skirtą turinio bendrinimui naudojant saityno bendrinimo API."
+        "message": "Adds a \"Share...\" context menu entry."
     },
     "options_plugin_purpose_title": {
         "message": "Turinio bendrinimas"

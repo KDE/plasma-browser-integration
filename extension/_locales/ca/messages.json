@@ -123,7 +123,7 @@
         "message": "Controls multimèdia"
     },
     "options_plugin_purpose_description": {
-        "message": "Afegeix una entrada «Comparteix...» al menú contextual i permet que els llocs web obrin un diàleg per a compartir contingut usant l'API de la Web Share."
+        "message": "Adds a \"Share...\" context menu entry."
     },
     "options_plugin_purpose_title": {
         "message": "Comparteix el contingut"

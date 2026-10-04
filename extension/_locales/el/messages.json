@@ -123,7 +123,7 @@
         "message": "Γραφικά συστατικά ελέγχου πολυμέσων"
     },
     "options_plugin_purpose_description": {
-        "message": "Προσθέτει μια εγγραφή μενού «Διαμοιρασμός...» και επιτρέπει σε ιστοτόπους να ανοίγουν έναν διάλογο για διαμοιρασμό περιεχομένου με το Web Share API."
+        "message": "Adds a \"Share...\" context menu entry."
     },
     "options_plugin_purpose_title": {
         "message": "Διαμοιρασμός περιεχομένου"
@@ -186,6 +186,6 @@
         "message": "Το περιεχόμενο διαμοιράστηκε"
     },
     "store_description": {
-        "message": "Multitask efficiently by controlling browser functions from the desktop, even while Chrome is in the background. Manage audio and video playback, check downloads in the notification area, send files to your phone using KDE Connect and more inside the KDE Plasma Desktop!\\n\\nThe plasma-browser-integration package must be installed for this extension to work. It should be available from your distribution's package manager when running Plasma 5.13 or later.\\n\\nNOTE: This extension is not supported on Debian."
+        "message": "Χρησιμοποιήστε αποτελεσματικά την πολυδιεργασία ελέγχοντας τις λειτουργίες του περιηγητή από την επιφάνεια εργασίας, ακόμη και όσο ο Chrome είναι στο παρασκήνιο. Διαχειριστείτε την αναπαραγωγή ήχου και βίντεο, ελέγξτε τις λήψεις στην περιοχή ειδοποιήσεων, στείλτε αρχεία στο κινητό σας με το KDE Connect και άλλα πολλά στην επιφάνεια εργασίας KDE Plasma!\\n\\nΤο πακέτο plasma-browser-integration πρέπει να εγκατασταθεί για να λειτουργήσει αυτή η επέκταση. Θα πρέπει να είναι διαθέσιμη από το διαχειριστή πακέτων της διανομής σας όταν ελτελείτε το Plasma 5.13 ή νεότερο.\\n\\nΣΗΜΕΙΩΣΗ:Αυτή η επέκταση δεν υποστηρίχεται στο Debian."
     }
 }

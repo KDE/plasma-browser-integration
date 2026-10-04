@@ -123,7 +123,7 @@
         "message": "ۋاسىتە تىزگىنى"
     },
     "options_plugin_purpose_description": {
-        "message": "مەزمۇن تىزىملىكىگە «ھەمبەھىر…» تىزىملىك تۈرىنى قوشۇپ، تور بېكەتنىڭ تور ھەمبەھىر API نىڭ سۆزلەشكۈسىنى ئېچىپ مەزمۇن ھەمبەھىرلىشىگە يول قويىدۇ."
+        "message": "Adds a \"Share...\" context menu entry."
     },
     "options_plugin_purpose_title": {
         "message": "مەزمۇن ھەمبەھىر"
@@ -186,6 +186,6 @@
         "message": "مەزمۇن ھەمبەھىرلەندى"
     },
     "store_description": {
-        "message": "Multitask efficiently by controlling browser functions from the desktop, even while Chrome is in the background. Manage audio and video playback, check downloads in the notification area, send files to your phone using KDE Connect and more inside the KDE Plasma Desktop!\\n\\nThe plasma-browser-integration package must be installed for this extension to work. It should be available from your distribution's package manager when running Plasma 5.13 or later.\\n\\nNOTE: This extension is not supported on Debian."
+        "message": "گەرچە Chrome ئارقا سۇپىدا تۇرسىمۇ، ئۈستەلئۈستىدىن توركۆرگۈ ئىقتىدارىنى تىزگىنلەپ، كۆپ ۋەزىپىنى ئەمەلىيلەشتۈرگىلى بولىدۇ. ئۈن ۋە سىن ياڭرىتىشنى باشقۇرۇش، ئۇقتۇرۇش رايونىدىكى چۈشۈرۈۋاتقاننى تەكشۈرۈش، KDE باغلىنىش ئارقىلىق ھۆججەتنى يان تېلېفونغا يوللاش، تېخىمۇ كۆپ ئىقتىدارلار KDE Plasma ئۈستەلئۈستى مۇھىتىدا!\\n\\nبۇ كېڭەيتىلمىنىڭ ئىشلىشى ئۈچۈن چوقۇم plasma-browser-integration بوغچىسىنى ئورنىتىش زۆرۈر. ئەگەر Plasma 5.13 نەشرى ياكى يۇقىرى نەشرىنى ئىشلەتسىڭىز، تارقىتىش نەشرىدىكى يۇمشاق دېتال بوغچىسىنى باشقۇرغۇچتا ئۇنى ئورناتقىلى بولىدۇ.\\n\\nئەسكەرتىش: Debian دە بۇ كېڭەيتىلمىنى قوللىمايدۇ."
     }
 }

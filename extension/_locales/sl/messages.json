@@ -123,7 +123,7 @@
         "message": "Nadzor predstavnosti"
     },
     "options_plugin_purpose_description": {
-        "message": "Doda vnos v kontekstni meni \"Deli...\" in spletnim mestom omogoča odpiranje pogovornega okna za skupno rabo vsebine z uporabo spletnega API-ja."
+        "message": "Adds a \"Share...\" context menu entry."
     },
     "options_plugin_purpose_title": {
         "message": "Deljenje vsebine"
