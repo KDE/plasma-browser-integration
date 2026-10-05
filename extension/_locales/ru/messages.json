@@ -174,7 +174,7 @@
         "message": "Опубликовать..."
     },
     "purpose_share_failed_text": {
-        "message": "Не удалось опубликовать: $1 "
+        "message": "Не удалось опубликовать: $1"
     },
     "purpose_share_failed_title": {
         "message": "Ошибка публикации"
