@@ -123,7 +123,7 @@
         "message": "Besturing van media"
     },
     "options_plugin_purpose_description": {
-        "message": "Adds a \"Share...\" context menu entry."
+        "message": "Voegt een contextmenu-item \"Share...\" toe."
     },
     "options_plugin_purpose_title": {
         "message": "Inhoud delen"

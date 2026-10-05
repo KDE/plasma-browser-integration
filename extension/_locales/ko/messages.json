@@ -123,7 +123,7 @@
         "message": "미디어 제어"
     },
     "options_plugin_purpose_description": {
-        "message": "Adds a \"Share...\" context menu entry."
+        "message": "\"공유...\" 상황에 맞는 메뉴 항목을 추가합니다."
     },
     "options_plugin_purpose_title": {
         "message": "콘텐츠 공유"

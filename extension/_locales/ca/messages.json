@@ -123,7 +123,7 @@
         "message": "Controls multimèdia"
     },
     "options_plugin_purpose_description": {
-        "message": "Adds a \"Share...\" context menu entry."
+        "message": "Afegeix una entrada «Comparteix...» al menú contextual."
     },
     "options_plugin_purpose_title": {
         "message": "Comparteix el contingut"

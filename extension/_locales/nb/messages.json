@@ -186,6 +186,6 @@
         "message": "Innhold delt"
     },
     "store_description": {
-        "message": "Du kan styre nettleserfunksjoner fra skrivebordet, selv når Chrome ligger i bakgrunnen. Du kan også blant annet styre lyd- og videoavspilling, vise nedlastinger i systemkurven eller sende filer til telefonen din med KDE Connect, direkte fra Plasma-skrivebordet!\\n\\nPakken «plasma-browser-integration» må være installert for at denne utvidelsen skal fungere. Den bør være tilgjengelig fra pakkebehandleren i distroen din dersom du kjører Plasma 5.13 eller nyere.\\n\\nMERK: Denne utvidelsen støttes ikke på Debian."
+        "message": "Multitask efficiently by controlling browser functions from the desktop, even while Chrome is in the background. Manage audio and video playback, check downloads in the notification area, send files to your phone using KDE Connect and more inside the KDE Plasma Desktop!\\n\\nThe plasma-browser-integration package must be installed for this extension to work. It should be available from your distribution's package manager when running Plasma 5.13 or later.\\n\\nNOTE: This extension is not supported on Debian."
     }
 }
