@@ -1,0 +1,141 @@
+# Nemanja Hiršl <nemhirsl@gmail.com>, 2026.
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-browser-integration\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2026-09-17 00:46+0000\n"
+"PO-Revision-Date: 2026-10-04 12:24+0200\n"
+"Last-Translator: Nemanja Hiršl <nemhirsl@gmail.com>\n"
+"Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
+"Language: sr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+"X-Environment: kde\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Немања Хиршл"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "nemhirsl@gmail.com"
+
+#: downloadjob.cpp:147
+#, kde-format
+msgid ""
+"This type of file can harm your computer. If you want to keep it, accept "
+"this download from the browser window."
+msgstr ""
+"Овај тип фајла може да науди рачунару. Ако желите да га задржите, прихватите "
+"ово преузимање у прозору прегледача."
+
+#: downloadjob.cpp:244
+#, kde-format
+msgid "Access denied."
+msgstr "Приступ је одбијен."
+
+#: downloadjob.cpp:245
+#, kde-format
+msgid "Insufficient free space."
+msgstr "Нема довољно слободног простора."
+
+#: downloadjob.cpp:246
+#, kde-format
+msgid "The file name you have chosen is too long."
+msgstr "Име фајла које сте изабрали је предугачко."
+
+#: downloadjob.cpp:247
+#, kde-format
+msgid "The file is too large to be downloaded."
+msgstr "Фајл је превелик за преузимање."
+
+#: downloadjob.cpp:249
+#, kde-format
+msgid "The file possibly contains malicious contents."
+msgstr "Фајл можда има злонамеран садржај."
+
+#: downloadjob.cpp:250
+#, kde-format
+msgid "A temporary error has occurred. Please try again later."
+msgstr "Дошло је до привремене грешке. Покушајте поново касније."
+
+#: downloadjob.cpp:252
+#, kde-format
+msgid "A network error has occurred."
+msgstr "Дошло је до мрежне грешке."
+
+#: downloadjob.cpp:253
+#, kde-format
+msgid "The network operation timed out."
+msgstr "Истекло је време за мрежни поступак."
+
+#: downloadjob.cpp:254
+#, kde-format
+msgid "The network connection has been lost."
+msgstr "Мрежна веза је изгубљена."
+
+#: downloadjob.cpp:255
+#, kde-format
+msgid "The server is no longer reachable."
+msgstr "Сервер више није доступан."
+
+#: downloadjob.cpp:257
+#, kde-format
+msgid "A server error has occurred."
+msgstr "Дошло је до грешке сервера."
+
+#: downloadjob.cpp:261
+#, kde-format
+msgid "The server does not have the requested data."
+msgstr "Сервер нема захтеване податке."
+
+#: downloadjob.cpp:263
+#, kde-format
+msgid "The browser application closed unexpectedly."
+msgstr "Прегледач се неочекивано затворио."
+
+#: downloadjob.cpp:269
+#, kde-format
+msgid "An unknown error occurred while downloading."
+msgstr "Дошло је до непознате грешке током преузимања."
+
+#: downloadjob.cpp:307
+#, kde-format
+msgctxt "Job heading, like 'Copying'"
+msgid "Downloading"
+msgstr "Преузимање"
+
+#: downloadjob.cpp:308
+#, kde-format
+msgctxt "The URL being downloaded"
+msgid "Source"
+msgstr "Извор"
+
+#: downloadjob.cpp:309
+#, kde-format
+msgctxt "The location being downloaded to"
+msgid "Destination"
+msgstr "Одредиште"
+
+#: historyrunnerplugin.cpp:108
+#, kde-format
+msgctxt "Dummy search result"
+msgid "Additional permissions are required"
+msgstr "Потребне су додатне дозволе"
+
+#: tabsrunnerplugin.cpp:38
+#, kde-format
+msgid "Mute Tab"
+msgstr "Утишај језичак"
+
+#: tabsrunnerplugin.cpp:43
+#, kde-format
+msgid "Unmute Tab"
+msgstr "Врати звук језичка"
