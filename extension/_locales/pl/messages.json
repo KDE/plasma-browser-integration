@@ -135,7 +135,7 @@
         "message": "Znajduj karty przeglądarki w oknie \"Wykonaj polecenie\""
     },
     "options_save_failed": {
-        "message": "Nie udało się zapisywanie ustawień"
+        "message": "Nie udało się zapisać ustawień"
     },
     "options_save_success": {
         "message": "Pomyślnie zapisano ustawienia"
