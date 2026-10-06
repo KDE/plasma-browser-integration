@@ -123,7 +123,7 @@
         "message": "Contrôles multimédia"
     },
     "options_plugin_purpose_description": {
-        "message": "Adds a \"Share...\" context menu entry."
+        "message": "Ajoute une entrée de menu contextuel « Partager... »."
     },
     "options_plugin_purpose_title": {
         "message": "Partage de contenus"
