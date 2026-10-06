@@ -1,0 +1,191 @@
+{
+    "browseraction_mpris_enable_on": {
+        "message": "Uključi upravljanje medijumima na:"
+    },
+    "browseraction_mpris_title": {
+        "message": "Upravljanje medijumima"
+    },
+    "browseraction_title": {
+        "message": "Plasma uklapanje pregledača"
+    },
+    "general_error_host_disconnected_title": {
+        "message": "Izvorni domaćin je neočekivano prekinuo vezu."
+    },
+    "general_error_not_supported_os": {
+        "message": "Ovo proširenje je podržano samo na Linuxu i FreeBSD‑u."
+    },
+    "general_error_not_supported_os_title": {
+        "message": "Nepodržan operativni sistem"
+    },
+    "general_error_startup_failed": {
+        "message": "Uvjerite se da je paket za uklapanje pregledača („plasma-browser-integration“) ispravno instaliran i da koristite Plasmu 5.13 ili noviju."
+    },
+    "general_error_startup_failed_title": {
+        "message": "Ne mogu da se povežem sa izvornim domaćinom."
+    },
+    "general_error_startup_failed_wiki_link": {
+        "message": "Posjetite viki stranicu projekta za više podataka"
+    },
+    "general_error_unknown": {
+        "message": "Nepoznata greška"
+    },
+    "kdeconnect_call_device": {
+        "message": "Pozovi preko „$1“"
+    },
+    "kdeconnect_open_device": {
+        "message": "Otvori na „$1“"
+    },
+    "kdeconnect_open_via": {
+        "message": "Otvori preko KDE‑konekcije"
+    },
+    "options_about_bugs": {
+        "message": "Ako naiđete na problem, provjerite <a href=\"$1\">spisak otvorenih grešaka</a>, pa <a href=\"$2\">podnesite izvještaj o grešci</a>."
+    },
+    "options_about_changelog_link": {
+        "message": "Prikaži dnevnik izmijena"
+    },
+    "options_about_copyright": {
+        "message": "© 2017–2020 Kai Uve Broulik i Dejvid Edmundson"
+    },
+    "options_about_created_by_kde": {
+        "message": "Ovo proširenje pregledača napravila je <a href=\"$1\">zajednica KDE‑a</a>. Više podataka o ovom projektu možete naći na <a href=\"$2\">vikiju zajednice KDE‑a</a>."
+    },
+    "options_about_donate": {
+        "message": "Ako vam se sviđa ono što ste vidjeli, razmislite o <a href=\"$1\">doniranju KDE‑u</a>, kako bismo nastavili da pravimo najbolji mogući slobodni softver."
+    },
+    "options_about_extension_version": {
+        "message": "Izdanje proširenja: $1"
+    },
+    "options_about_host_version": {
+        "message": "Izdanje domaćina: $1"
+    },
+    "options_about_kde": {
+        "message": "KDE je svjetska zajednica softverskih inženjera, grafičara, pisaca, prevodilaca i stvaralaca posvećenih razvoju <a href=\"$1\">slobodnog softvera</a>. KDE stvara okruženje površi Plasma, stotine programa i mnoge softverske biblioteke koje ih podržavaju. KDE je zajednički poduhvat: nijedan entitet ne upravlja njegovim smjerom ni proizvodima. Umjesto toga, radimo zajedno na zajedničkom cilju — stvaranju najboljeg slobodnog softvera na svijetu. Svi su dobrodošli da se <a href=\"$2\">priključe i doprinesu</a> KDE‑u, uključujući i vas. Posjetite <a href=\"$3\">$3</a> za detaljnije informacije o zajednici KDE‑a i softveru koji razvijamo."
+    },
+    "options_about_license": {
+        "message": "Licenca: <a href=\"$1\">GNU‑ova Opšta javna licenca, verzija 3</a>"
+    },
+    "options_about_translated_by": {
+        "message": "Prevod: $1"
+    },
+    "options_about_translators": {
+        "message": "Nemanja Hiršl"
+    },
+    "options_heading_krunner": {
+        "message": "Plasma pretraga"
+    },
+    "options_not_supported_os": {
+        "message": "Ovo proširenje nije podržano na ovom operativnom sistemu."
+    },
+    "options_plugin_breezeScrollBars_description": {
+        "message": "Ovo može da ometa izgled veb sajtova koji već primjenjuju poseban stil na svoje klizačke trake."
+    },
+    "options_plugin_breezeScrollBars_title": {
+        "message": "Koristi klizačke trake u stilu Povetarca"
+    },
+    "options_plugin_downloads_addToRecentDocuments": {
+        "message": "Dodaj preuzete fajlove u nedavne dokumente"
+    },
+    "options_plugin_downloads_inhibitSuspend": {
+        "message": "Spriječi sistem da ode na spavanje tokom preuzimanja"
+    },
+    "options_plugin_downloads_saveOriginUrl": {
+        "message": "Sačuvaj URL sa kog je fajl preuzet u atributima fajla"
+    },
+    "options_plugin_downloads_saveOriginUrl_description": {
+        "message": "Napomena: URL može da sadrži osjetljive podatke koji mogu biti otkriveni kad je fajl dostupan drugima ili se dijeli sa njima"
+    },
+    "options_plugin_downloads_title": {
+        "message": "Prikaži preuzimanja u sistemskoj kaseti"
+    },
+    "options_plugin_historyrunner_title": {
+        "message": "Pretraži istorijat pregledača"
+    },
+    "options_plugin_kdeconnect_description": {
+        "message": "Dodaje vezama stavku kontekstnog menija kojom ih možete poslati na telefon i druge uparene uređaje pomoću <a href=\"$1\">KDE‑konekcije</a>."
+    },
+    "options_plugin_kdeconnect_title": {
+        "message": "Pošalji preko KDE‑konekcije"
+    },
+    "options_plugin_mpris_description": {
+        "message": "Omogućava vam da upravljate video i audio plejerima na veb sajtovima pomoću plazmoida za upravljanje medijumima."
+    },
+    "options_plugin_mpris_media_blocklist_title": {
+        "message": "Blokiraj upravljanje medijumima na sljedećim domenima:"
+    },
+    "options_plugin_mpris_media_sessions_description": {
+        "message": "Izvlači metapodatke i sličice sadržaja koji se trenutno pušta."
+    },
+    "options_plugin_mpris_media_sessions_title": {
+        "message": "Poboljšano upravljanje medijumima"
+    },
+    "options_plugin_mpris_title": {
+        "message": "Upravljanje medijumima"
+    },
+    "options_plugin_purpose_description": {
+        "message": "Dodaje stavku kontekstnog menija „Podijeli...“ i omogućava veb sajtovima da otvore dijalog za dijeljenje sadržaja pomoću Web Share API‑ja."
+    },
+    "options_plugin_purpose_title": {
+        "message": "Dijeljenje sadržaja"
+    },
+    "options_plugin_tabsrunner_description": {
+        "message": "Uvjerite se da je modul „Jezičci pregledača“ uključen u <a id=\"$1\" href=\"$2\">postavkama plasma pretrage</a>."
+    },
+    "options_plugin_tabsrunner_title": {
+        "message": "Nađi jezičke pregledača u prozoru „Izvrši naredbu“"
+    },
+    "options_save_failed": {
+        "message": "Ne mogu da sačuvam postavke"
+    },
+    "options_save_success": {
+        "message": "Postavke su uspješno sačuvane"
+    },
+    "options_tab_about": {
+        "message": "O proširenju"
+    },
+    "options_tab_general": {
+        "message": "Opšte"
+    },
+    "options_tab_mpris": {
+        "message": "Upravljanje medijumima"
+    },
+    "options_title": {
+        "message": "Postavke plasma uklapanja"
+    },
+    "permission_request_already": {
+        "message": "Već ste dali ovu dozvolu."
+    },
+    "permission_request_button_request": {
+        "message": "Zatraži dozvolu"
+    },
+    "permission_request_button_revoke": {
+        "message": "Opozovi dozvolu"
+    },
+    "permission_request_historyrunner_1": {
+        "message": "Za rezultate pretrage iz istorijata pregledača potrebne su dodatne dozvole."
+    },
+    "permission_request_historyrunner_2": {
+        "message": "Ovu mogućnost možete isključiti u <a id=\"$1\" href=\"$2\">postavkama plasma pretrage</a>."
+    },
+    "permission_request_title": {
+        "message": "Potrebne su dodatne dozvole"
+    },
+    "purpose_share": {
+        "message": "Podijeli..."
+    },
+    "purpose_share_failed_text": {
+        "message": "Ne mogu da podijelim ovaj sadržaj: $1"
+    },
+    "purpose_share_failed_title": {
+        "message": "Propalo dijeljenje"
+    },
+    "purpose_share_finished_text": {
+        "message": "Veza ka podijeljenom sadržaju ($1) kopirana je u klipbord."
+    },
+    "purpose_share_finished_title": {
+        "message": "Sadržaj je podijeljen"
+    },
+    "store_description": {
+        "message": "Multitask efficiently by controlling browser functions from the desktop, even while Chrome is in the background. Manage audio and video playback, check downloads in the notification area, send files to your phone using KDE Connect and more inside the KDE Plasma Desktop!\\n\\nThe plasma-browser-integration package must be installed for this extension to work. It should be available from your distribution's package manager when running Plasma 5.13 or later.\\n\\nNOTE: This extension is not supported on Debian."
+    }
+}
