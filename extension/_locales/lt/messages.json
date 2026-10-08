@@ -123,7 +123,7 @@
         "message": "Medijos valdikliai"
     },
     "options_plugin_purpose_description": {
-        "message": "Adds a \"Share...\" context menu entry."
+        "message": "Prideda kontekstinio meniu punktą „Bendrinti...“."
     },
     "options_plugin_purpose_title": {
         "message": "Turinio bendrinimas"
