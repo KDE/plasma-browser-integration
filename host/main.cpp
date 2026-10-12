@@ -6,6 +6,8 @@
 */
 
 #include <QApplication>
+#include <QCommandLineOption>
+#include <QCommandLineParser>
 #include <QDBusConnection>
 #include <QDebug>
 
@@ -91,6 +93,16 @@ int main(int argc, char *argv[])
     KAboutData::setApplicationData(about);
 
     KCrash::initialize();
+
+    QCommandLineParser parser;
+    QCommandLineOption appIdOption{QStringLiteral("app-id"), {}, QStringLiteral("appId")};
+    parser.addOption(appIdOption);
+    parser.process(a);
+
+    const QString appId = parser.value(appIdOption);
+    if (!appId.isEmpty()) {
+        a.setDesktopFileName(appId);
+    }
 
     // NOTE if you add a new plugin here, make sure to adjust the
     // "DEFAULT_EXTENSION_SETTINGS" in constants.js or else it won't

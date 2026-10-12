@@ -108,13 +108,33 @@ static bool hasDesktopFileName()
     return !qApp->desktopFileName().isEmpty() && qApp->desktopFileName() != QLatin1String("org.kde.plasma-browser-integration-host");
 }
 
+static void updateQAppProperties(const KService::Ptr &service)
+{
+    qApp->setApplicationName(service->menuId());
+    qApp->setApplicationDisplayName(service->name());
+    qApp->setDesktopFileName(service->desktopEntryName());
+    qApp->setWindowIcon(QIcon::fromTheme(service->icon()));
+}
+
 Settings::Settings()
     : AbstractBrowserPlugin(QStringLiteral("settings"), 1, nullptr)
+{
+    // Already provided via command-line (Flatpak).
+    if (hasDesktopFileName()) {
+        const auto service = KService::serviceByDesktopName(qApp->desktopFileName());
+        if (service) {
+            updateQAppProperties(service);
+            return;
+        }
+
+        qWarning() << "No such service" << qApp->desktopFileName();
+    }
+
     // Settings is a singleton and cleaned up only in exit_handlers
     // at which point the QPA will already have cleaned up
     // leading to a crash on Wayland
-    , m_tasksModel(new TaskManager::WindowTasksModel(qGuiApp))
-{
+    m_tasksModel = new TaskManager::WindowTasksModel(qGuiApp);
+
     for (int i = 0; i < m_tasksModel->rowCount(); ++i) {
         if (setEnvironmentFromTasksModelIndex(m_tasksModel->index(i, 0))) {
             break;
@@ -239,14 +259,13 @@ bool Settings::setEnvironmentFromTasksModelIndex(const QModelIndex &idx)
         return false;
     }
 
-    qApp->setApplicationName(service->menuId());
-    qApp->setApplicationDisplayName(service->name());
-    qApp->setDesktopFileName(service->desktopEntryName());
-    qApp->setWindowIcon(QIcon::fromTheme(service->icon()));
+    updateQAppProperties(service);
 
-    m_tasksModel->disconnect(this); // prevent further signal emission to not deref a nullptr https://bugs.kde.org/show_bug.cgi?id=435811
-    m_tasksModel->deleteLater();
-    m_tasksModel = nullptr;
+    if (m_tasksModel) {
+        m_tasksModel->disconnect(this); // prevent further signal emission to not deref a nullptr https://bugs.kde.org/show_bug.cgi?id=435811
+        m_tasksModel->deleteLater();
+        m_tasksModel = nullptr;
+    }
 
     return true;
 }

@@ -62,7 +62,8 @@ class Integrator : public QObject
 {
     Q_OBJECT
 public:
-    Integrator(const QStringList &args,
+    Integrator(const QString &appId,
+               const QStringList &args,
                const QDBusUnixFileDescriptor &stdin,
                const QDBusUnixFileDescriptor &stdout,
                const QDBusUnixFileDescriptor &stderr,
@@ -73,7 +74,12 @@ public:
 
         auto host = new QProcess(this);
         host->setProgram(u"plasma-browser-integration-host"_s);
-        host->setArguments(args);
+
+        QStringList finalArgs = args;
+        if (!appId.isEmpty()) {
+            finalArgs.append({QStringLiteral("--app-id"), appId});
+        }
+        host->setArguments(finalArgs);
 
         auto stdinFile = new QFile(this);
 
@@ -170,10 +176,14 @@ public:
     }
 
 public Q_SLOTS:
-    void Link(const QStringList &args, const QDBusUnixFileDescriptor &stdin, const QDBusUnixFileDescriptor &stdout, const QDBusUnixFileDescriptor &stderr)
+    void Link(const QString &appId,
+              const QStringList &args,
+              const QDBusUnixFileDescriptor &stdin,
+              const QDBusUnixFileDescriptor &stdout,
+              const QDBusUnixFileDescriptor &stderr)
     {
         // Gets deleted either on exit or when the remote disconnects from the sockets (see openAndMonitor)
-        new Integrator(args, stdin, stdout, stderr, this);
+        new Integrator(appId, args, stdin, stdout, stderr, this);
     }
 
 private:
