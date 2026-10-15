@@ -176,7 +176,7 @@
                 player.replayAfterRemoval = () => {
                     if (player.dataset.pbiPausedForDomRemoval === "true") {
                         delete player.dataset.pbiPausedForDomRemoval;
-                        player.removeEventListener("pause", player.replyAfterRemoval);
+                        player.removeEventListener("pause", player.replayAfterRemoval);
 
                         player.play();
                     }
