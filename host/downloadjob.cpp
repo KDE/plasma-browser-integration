@@ -160,8 +160,14 @@ void DownloadJob::update(const QJsonObject &payload)
     const auto oldBytesReceived = m_bytesReceived;
     it = payload.constFind(QStringLiteral("bytesReceived"));
     if (it != end) {
-        m_bytesReceived = it->toDouble();
-        setProcessedAmount(Bytes, m_bytesReceived);
+        const qulonglong bytesReceived = it->toDouble();
+        // When a paused download resumes, Firefox reports it as created again with 0 bytes
+        // received before it continues from where it was: keep the progress for that one.
+        // A real restart from scratch shows in the updates after it.
+        if (bytesReceived > 0 || m_bytesReceived == 0) {
+            m_bytesReceived = bytesReceived;
+            setProcessedAmount(Bytes, m_bytesReceived);
+        }
     }
 
     setTotalAmount(Files, 1);
@@ -215,7 +221,8 @@ void DownloadJob::update(const QJsonObject &payload)
 
         // When download size isn't known, we don't get estimatedEndTime but there's
         // also no dedicated speed field, so we'll have to calculate that ourself now
-        if (m_fallbackSpeedTimer.hasExpired(990)) { // not exactly 1000ms to account for some fuzziness
+        // (Not when fewer bytes than before were received, e.g. a download restarted.)
+        if (m_fallbackSpeedTimer.hasExpired(990) && m_bytesReceived >= oldBytesReceived) { // not exactly 1000ms to account for some fuzziness
             const auto deltaBytes = m_bytesReceived - oldBytesReceived;
             speed = (deltaBytes * 1000) / m_fallbackSpeedTimer.elapsed();
             speedValid = true;
