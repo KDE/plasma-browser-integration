@@ -35,13 +35,9 @@ DownloadJob::DownloadJob()
     // it's not a general thing. I think we can always pause/resume downloads
     // unless they're canceled/interrupted at which point we don't have a DownloadJob
     // anymore anyway
+    // Firefox reports a paused download as "interrupted" with a "USER_CANCELED" error, see
+    // the error handling in update().
     setCapabilities(Killable | Suspendable);
-
-    // TODO When suspending on Firefox the download job goes away for some reason?!
-    // Until I have the virtue to figure that out just disallow suspending downloads on Firefox :)
-    if (Settings::self().environment() == Settings::Environment::Firefox) {
-        setCapabilities(Killable);
-    }
 }
 
 void DownloadJob::start()
@@ -176,6 +172,14 @@ void DownloadJob::update(const QJsonObject &payload)
 
         if (paused) {
             suspend();
+        } else if (isSuspended() && Settings::self().environment() == Settings::Environment::Firefox
+                   && payload.value(QStringLiteral("state")).toString() != QLatin1String("in_progress")) {
+            // Firefox resumes a paused download by restarting it, which comes with state "in_progress".
+            // Canceling a paused download only removes the partial data: it's no longer paused
+            // but stays "interrupted" with the "USER_CANCELED" error it got when it was paused.
+            setError(KIO::ERR_USER_CANCELED);
+            emitResult();
+            return;
         } else {
             resume();
         }
@@ -228,6 +232,12 @@ void DownloadJob::update(const QJsonObject &payload)
     }
 
     const QString error = payload.value(QStringLiteral("error")).toString();
+    // Firefox pauses a download by canceling it and keeping the partial data: the update
+    // then says "USER_CANCELED" together with paused = true, which suspended us above.
+    // That's not the end of the download. (Canceling it later is handled with "paused" above.)
+    if (error == QLatin1String("USER_CANCELED") && isSuspended() && Settings::self().environment() == Settings::Environment::Firefox) {
+        return;
+    }
     if (!error.isEmpty()) {
         if (error == QLatin1String("USER_CANCELED") || error == QLatin1String("USER_SHUTDOWN")) {
             setError(KIO::ERR_USER_CANCELED); // will keep Notification applet from showing a "finished"/error message
