@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-browser-integration\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-17 00:46+0000\n"
+"POT-Creation-Date: 2026-10-20 00:54+0000\n"
 "PO-Revision-Date: 2024-08-06 11:38+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -30,7 +30,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "xalba@ni.eus"
 
-#: downloadjob.cpp:147
+#: downloadjob.cpp:143
 #, kde-format
 msgid ""
 "This type of file can harm your computer. If you want to keep it, accept "
@@ -39,89 +39,89 @@ msgstr ""
 "Fitxategi mota honek zure ordenagailua kaltetu dezake. Hura mantendu nahi "
 "baduzu, onartu zama-jaitsiera hau arakatzailearen leihotik."
 
-#: downloadjob.cpp:244
+#: downloadjob.cpp:261
 #, kde-format
 msgid "Access denied."
 msgstr "Sarbidea ukatu da."
 
-#: downloadjob.cpp:245
+#: downloadjob.cpp:262
 #, kde-format
 msgid "Insufficient free space."
 msgstr "Leku nahikorik ez."
 
-#: downloadjob.cpp:246
+#: downloadjob.cpp:263
 #, kde-format
 msgid "The file name you have chosen is too long."
 msgstr "Hautatu duzun fitxategi-izena luzeegia da."
 
-#: downloadjob.cpp:247
+#: downloadjob.cpp:264
 #, kde-format
 msgid "The file is too large to be downloaded."
 msgstr "Fitxategia, jaisteko handiegia da."
 
-#: downloadjob.cpp:249
+#: downloadjob.cpp:266
 #, kde-format
 msgid "The file possibly contains malicious contents."
 msgstr "Fitxategiak beharbada eduki maltzurra du."
 
-#: downloadjob.cpp:250
+#: downloadjob.cpp:267
 #, kde-format
 msgid "A temporary error has occurred. Please try again later."
 msgstr "Behin-behineko errore bat gertatu da. Saiatu berriz beranduago."
 
-#: downloadjob.cpp:252
+#: downloadjob.cpp:269
 #, kde-format
 msgid "A network error has occurred."
 msgstr "Sareko arazo bat gertatu da."
 
-#: downloadjob.cpp:253
+#: downloadjob.cpp:270
 #, kde-format
 msgid "The network operation timed out."
 msgstr "Sareko eragiketak denbora-muga gainditu du."
 
-#: downloadjob.cpp:254
+#: downloadjob.cpp:271
 #, kde-format
 msgid "The network connection has been lost."
 msgstr "Sareko konexioa galdu da."
 
-#: downloadjob.cpp:255
+#: downloadjob.cpp:272
 #, kde-format
 msgid "The server is no longer reachable."
 msgstr "Zerbitzaria ezin da berriz atzitu."
 
-#: downloadjob.cpp:257
+#: downloadjob.cpp:274
 #, kde-format
 msgid "A server error has occurred."
 msgstr "Zerbitzariaren errore bat gertatu da."
 
-#: downloadjob.cpp:261
+#: downloadjob.cpp:278
 #, kde-format
 msgid "The server does not have the requested data."
 msgstr "Zerbitzariak ez dauka eskatutako daturik."
 
-#: downloadjob.cpp:263
+#: downloadjob.cpp:280
 #, kde-format
 msgid "The browser application closed unexpectedly."
 msgstr "Arakatzeko aplikazioa ustekabean itxi da."
 
-#: downloadjob.cpp:269
+#: downloadjob.cpp:286
 #, kde-format
 msgid "An unknown error occurred while downloading."
 msgstr "Errore ezezagun bat gertatu da jaitsi bitartean."
 
-#: downloadjob.cpp:307
+#: downloadjob.cpp:324
 #, kde-format
 msgctxt "Job heading, like 'Copying'"
 msgid "Downloading"
 msgstr "Jaisten"
 
-#: downloadjob.cpp:308
+#: downloadjob.cpp:325
 #, kde-format
 msgctxt "The URL being downloaded"
 msgid "Source"
 msgstr "Sorburua"
 
-#: downloadjob.cpp:309
+#: downloadjob.cpp:326
 #, kde-format
 msgctxt "The location being downloaded to"
 msgid "Destination"
