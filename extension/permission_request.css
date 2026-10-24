@@ -37,7 +37,7 @@ h1 {
 }
 body {
   font-size: 16px;
-  font-family: Noto Sans
+  font-family: system-ui, Noto Sans;
 }
 .permission-request {
   margin-top: 0.5rem;

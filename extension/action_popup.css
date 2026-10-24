@@ -1,5 +1,6 @@
 body {
     width: 24em;
+    font-family: system-ui, Noto Sans;
     /* prevent scroll bars*/
     overflow: hidden;
     margin: 0;

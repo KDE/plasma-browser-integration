@@ -1,6 +1,7 @@
 body {
     width: 600px;
     overflow-x: hidden;
+    font-family: system-ui, Noto Sans;
 }
 
 .os-not-supported-info, .startup-failure-info {
