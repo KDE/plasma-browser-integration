@@ -21,7 +21,7 @@
         "message": "Assegureu-vos que el paquet «plasma-browser-integration» estiga instal·lat correctament i que s'estiga executant Plasma 5.13 o posterior."
     },
     "general_error_startup_failed_title": {
-        "message": "Ha fallat mentre es connectava amb l'amfitrió nadiu."
+        "message": "Ha fallat mentre es connectava amb l'amfitrió natiu."
     },
     "general_error_startup_failed_wiki_link": {
         "message": "Visiteu la pàgina wiki del projecte per a obtindre més informació"
@@ -153,7 +153,7 @@
         "message": "Configureu la integració amb Plasma"
     },
     "permission_request_already": {
-        "message": "Ja se vos ha concedit este permís."
+        "message": "Ja heu atorgat este permís."
     },
     "permission_request_button_request": {
         "message": "Sol·licita el permís"

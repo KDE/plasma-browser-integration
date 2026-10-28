@@ -153,7 +153,7 @@
         "message": "Configuració de la integració amb el Plasma"
     },
     "permission_request_already": {
-        "message": "Ja se us ha concedit aquest permís."
+        "message": "Ja heu atorgat aquest permís."
     },
     "permission_request_button_request": {
         "message": "Sol·licita el permís"

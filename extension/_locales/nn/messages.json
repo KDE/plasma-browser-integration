@@ -123,7 +123,7 @@
         "message": "Mediestyring"
     },
     "options_plugin_purpose_description": {
-        "message": "Adds a \"Share...\" context menu entry."
+        "message": "Legg til menyvalet «Del …» i kontekstmenyen."
     },
     "options_plugin_purpose_title": {
         "message": "Innhaldsdeling"
