@@ -599,17 +599,21 @@ function loadMpris() {
                         continue;
                     }
 
-                    // If the player got temporarily added by us, don't consider it gone
-                    if (player.dataset.pbiPausedForDomRemoval === "true") {
-                        continue;
-                    }
-
                     sendPlayerGone();
                     break;
                 }
             });
         });
     });
+
+    // Players that are never added to the DOM (e.g. new Audio()) are handed to us
+    // by the page script, see announceDetachedPlayer() in page-script.js
+    window.addEventListener("org.kde.pbi.detachedplayer", (e) => {
+        const player = e.relatedTarget;
+        if (player && typeof player.matches === "function" && player.matches("video,audio")) {
+            registerPlayer(player);
+        }
+    }, {"capture": true});
 
     window.addEventListener("pagehide", function () {
         // about to navigate to a different page, tell our extension that the player will be gone shortly
