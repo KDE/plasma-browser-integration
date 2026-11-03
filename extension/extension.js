@@ -91,7 +91,7 @@ function printDebug(payload, fn) {
     }
 }
 
-addCallback("debug", "debug", function(payload) {
+addPortCallback("debug", "debug", function(payload) {
     if (payload.severity === "info") {
         printDebug(payload, console.info);
     } else {
@@ -100,7 +100,7 @@ addCallback("debug", "debug", function(payload) {
 }
 )
 
-addCallback("debug", "warning", function(payload) {
+addPortCallback("debug", "warning", function(payload) {
     if (payload.severity === "critical" || payload.severity === "fatal") {
         printDebug(payload, console.error);
     } else {
@@ -186,8 +186,8 @@ function connectHost() {
             return;
         }
 
-        if (callbacks[subsystem] && callbacks[subsystem][action]) {
-            callbacks[subsystem][action](message.payload, action);
+        if (portCallbacks[subsystem] && portCallbacks[subsystem][action]) {
+            portCallbacks[subsystem][action](message.payload, action);
         } else {
             console.warn("Don't know what to do with host message", subsystem, action);
         }
@@ -205,7 +205,7 @@ function connectHost() {
         // Remove all kde connect menu entries since they won't work without a host
         try {
             Object.keys(kdeConnectDevices).forEach((deviceId) => {
-                callbacks.kdeconnect.deviceRemoved({
+                portCallbacks.kdeconnect.deviceRemoved({
                     id: deviceId
                 });
             });

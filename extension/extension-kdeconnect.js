@@ -65,7 +65,7 @@ const createKdeConnectMenuEntry = (args) => {
     knownKdeConnectMenuEntryIds.add(id);
 };
 
-addCallback("kdeconnect", "deviceAdded", function(message) {
+addPortCallback("kdeconnect", "deviceAdded", function(message) {
     const deviceId = message.id;
     const name = message.name;
     const type = message.type;
@@ -149,7 +149,7 @@ addCallback("kdeconnect", "deviceAdded", function(message) {
     };
 });
 
-addCallback("kdeconnect", "deviceRemoved", function(message) {
+addPortCallback("kdeconnect", "deviceRemoved", function(message) {
     let deviceId = message.id;
 
     if (!kdeConnectDevices[deviceId]) {

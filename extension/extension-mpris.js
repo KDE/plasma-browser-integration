@@ -315,46 +315,46 @@ chrome.tabs.onUpdated.addListener((tabId, changes) => {
 });
 
 // callbacks from host (Plasma) to our extension
-addCallback("mpris", "supportedImageMimeTypes", (message) => {
+addPortCallback("mpris", "supportedImageMimeTypes", (message) => {
     supportedImageMimeTypes = message.mimeTypes;
 });
 
-addCallback("mpris", "raise", function (message) {
+addPortCallback("mpris", "raise", function (message) {
     let player = currentPlayer();
     if (player.tabId) {
         raiseTab(player.tabId);
     }
 });
 
-addCallback("mpris", ["play", "pause", "playPause", "stop", "next", "previous"], function (message, action) {
+addPortCallback("mpris", ["play", "pause", "playPause", "stop", "next", "previous"], function (message, action) {
     sendPlayerTabMessage(currentPlayer(), action);
 });
 
-addCallback("mpris", "setFullscreen", (message) => {
+addPortCallback("mpris", "setFullscreen", (message) => {
     sendPlayerTabMessage(currentPlayer(), "setFullscreen", {
         fullscreen: message.fullscreen
     });
 });
 
-addCallback("mpris", "setVolume", function (message) {
+addPortCallback("mpris", "setVolume", function (message) {
     sendPlayerTabMessage(currentPlayer(), "setVolume", {
         volume: message.volume
     });
 });
 
-addCallback("mpris", "setLoop", function (message) {
+addPortCallback("mpris", "setLoop", function (message) {
     sendPlayerTabMessage(currentPlayer(), "setLoop", {
         loop: message.loop
     });
 });
 
-addCallback("mpris", "setPosition", function (message) {
+addPortCallback("mpris", "setPosition", function (message) {
     sendPlayerTabMessage(currentPlayer(), "setPosition", {
         position: message.position
     });
 })
 
-addCallback("mpris", "setPlaybackRate", function (message) {
+addPortCallback("mpris", "setPlaybackRate", function (message) {
     sendPlayerTabMessage(currentPlayer(), "setPlaybackRate", {
         playbackRate: message.playbackRate
     });

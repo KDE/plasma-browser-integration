@@ -17,7 +17,7 @@
 
 var port;
 
-var callbacks = {}; // TODO rename to "portCallbacks"?
+var portCallbacks = {};
 var runtimeCallbacks = {};
 
 let currentMessageSerial = 0;
@@ -26,19 +26,19 @@ let pendingMessageReplyResolvers = {};
 // Callback is called with following arguments (in that order);
 // - The actual message data/payload
 // - The name of the action triggered
-function addCallback(subsystem, action, callback) // TODO rename to "addPortCallbacks"?
+function addPortCallback(subsystem, action, callback)
 {
     if (Array.isArray(action)) {
         action.forEach(function(item) {
-            addCallback(subsystem, item, callback);
+            addPortCallback(subsystem, item, callback);
         });
         return;
     }
 
-    if (!callbacks[subsystem]) {
-        callbacks[subsystem] = {};
+    if (!portCallbacks[subsystem]) {
+        portCallbacks[subsystem] = {};
     }
-    callbacks[subsystem][action] = callback;
+    portCallbacks[subsystem][action] = callback;
 }
 
 function sendPortMessage(subsystem, event, payload)

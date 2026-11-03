@@ -130,7 +130,7 @@ function onDownloadChanged(delta) {
     port.postMessage({subsystem: "downloads", event: "update", download: payload});
 };
 
-addCallback("downloads", "cancel", function (message) {
+addPortCallback("downloads", "cancel", function (message) {
     var downloadId = message.downloadId;
 
     console.log("Requested to cancel download", downloadId);
@@ -138,7 +138,7 @@ addCallback("downloads", "cancel", function (message) {
     chrome.downloads.cancel(downloadId);
 });
 
-addCallback("downloads", "suspend", function (message) {
+addPortCallback("downloads", "suspend", function (message) {
     var downloadId = message.downloadId;
 
     console.log("Requested to suspend download", downloadId);
@@ -146,7 +146,7 @@ addCallback("downloads", "suspend", function (message) {
     chrome.downloads.pause(downloadId);
 });
 
-addCallback("downloads", "resume", function (message) {
+addPortCallback("downloads", "resume", function (message) {
     var downloadId = message.downloadId;
 
     console.log("Requested to resume download", downloadId);
@@ -154,6 +154,6 @@ addCallback("downloads", "resume", function (message) {
     chrome.downloads.resume(downloadId);
 });
 
-addCallback("downloads", "createAll", () => {
+addPortCallback("downloads", "createAll", () => {
     sendDownloads();
 });

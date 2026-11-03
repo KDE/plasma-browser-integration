@@ -20,7 +20,7 @@ let favIconDataForUrl = {};
 let clearFavIconDataTimeoutId = 0;
 let runningGetTabsQueries = 0;
 
-addCallback("tabsrunner", "activate", function (message) {
+addPortCallback("tabsrunner", "activate", function (message) {
     var tabId = message.tabId;
 
     console.log("Tabs Runner requested to activate tab with id", tabId);
@@ -28,7 +28,7 @@ addCallback("tabsrunner", "activate", function (message) {
     raiseTab(tabId);
 });
 
-addCallback("tabsrunner", "setMuted", function (message) {
+addPortCallback("tabsrunner", "setMuted", function (message) {
 
     var tabId = message.tabId;
     var muted = message.muted;
@@ -50,7 +50,7 @@ var whitelistedTabProperties = [
 
 // FIXME We really should enforce some kind of security policy, so only e.g. plasmashell and krunner
 // may access your tabs
-addCallback("tabsrunner", "getTabs", function (message) {
+addPortCallback("tabsrunner", "getTabs", function (message) {
     ++runningGetTabsQueries;
 
     chrome.tabs.query({

@@ -49,7 +49,7 @@ function getFavicon(url) {
     });
 }
 
-addCallback("historyrunner", "find", (message) => {
+addPortCallback("historyrunner", "find", (message) => {
     const query = message.query;
 
     chrome.permissions.contains({
@@ -125,7 +125,7 @@ addCallback("historyrunner", "find", (message) => {
     });
 });
 
-addCallback("historyrunner", "run", (message) => {
+addPortCallback("historyrunner", "run", (message) => {
     const url = message.url;
 
     chrome.tabs.create({
@@ -133,7 +133,7 @@ addCallback("historyrunner", "run", (message) => {
     });
 });
 
-addCallback("historyrunner", "requestPermission", () => {
+addPortCallback("historyrunner", "requestPermission", () => {
     chrome.tabs.create({
         url: chrome.runtime.getURL("permission_request.html") + "?permission=history"
     });
