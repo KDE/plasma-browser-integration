@@ -156,6 +156,10 @@
             // we will now get a paused event because of that. When we get it, we just play() the player
             // so it continues playing :-)
             let addPlayerToDomEvadingAutoPlayBlocking = function(player) {
+                if (!player || typeof player.addEventListener !== "function") {
+                    return;
+                }
+
                 player.registerInDom = () => {
                     // Needs to be dataset so it's accessible from mutation observer on webpage
                     player.dataset.pbiPausedForDomRemoval = "true";
