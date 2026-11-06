@@ -18,7 +18,7 @@
         "message": "Ei-tuettu käyttöjärjestelmä"
     },
     "general_error_startup_failed": {
-        "message": "Varmista, että ”plasma-browser-integration”-paketti on asetettu oikein ja että käytössä on Plasma 5.13 tai uudempi.Varmista, että ”plasma-browser-integration”-paketti on asetettu oikein ja että käytössä on Plasma 5.13 tai uudempi."
+        "message": "Varmista, että ”plasma-browser-integration”-paketti on asetettu oikein ja että käytössä on Plasma 5.13 tai uudempi."
     },
     "general_error_startup_failed_title": {
         "message": "Natiivi-isäntään yhdistäminen epäonnistui."
@@ -90,7 +90,7 @@
         "message": "Tallenna verkkolatausosoite tiedoston määritteisiin"
     },
     "options_plugin_downloads_saveOriginUrl_description": {
-        "message": "Huomaa: Verkko-osoite voi sisältää henkilökohtaista tietoa, jota ei tulisi paljastaa, kun tiedostoon pääsevät käsiksi muutHuomaa: Verkko-osoite voi sisältää henkilökohtaista tietoa, jota ei tulisi paljastaa, kun tiedostoon pääsevät käsiksi muut"
+        "message": "Huomaa: Verkko-osoite voi sisältää henkilökohtaista tietoa, jota ei tulisi paljastaa, kun tiedostoon pääsevät käsiksi muut"
     },
     "options_plugin_downloads_title": {
         "message": "Näytä lataukset ilmoitusalueella"
@@ -120,7 +120,7 @@
         "message": "Mediasäätimet"
     },
     "options_plugin_purpose_description": {
-        "message": "Lisää ”Jaa…”-kontekstivalikkokohdan ja sallii verkkosivujen avata ikkunan sisällön jakamiseksi Web Share -APIlla.Lisää ”Jaa…”-kontekstivalikkokohdan ja sallii verkkosivujen avata ikkunan sisällön jakamiseksi Web Share -APIlla."
+        "message": "Lisää ”Jaa…”-kontekstivalikkokohdan ja sallii verkkosivujen avata ikkunan sisällön jakamiseksi Web Share -APIlla."
     },
     "options_plugin_purpose_title": {
         "message": "Sisällön jakaminen"
