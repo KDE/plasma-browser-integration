@@ -51,7 +51,7 @@ find_package(LibTaskManager ${PROJECT_DEP_VERSION} CONFIG REQUIRED)
 
 add_definitions(-DQT_NO_NARROWING_CONVERSIONS_IN_CONNECT)
 ecm_set_disabled_deprecation_versions(QT 6.11.0
-    KF 6.23.0
+    KF 6.32.0
 )
 
 ecm_setup_version(PROJECT VARIABLE_PREFIX PBI
