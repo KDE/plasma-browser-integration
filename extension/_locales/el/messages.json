@@ -123,7 +123,7 @@
         "message": "Γραφικά συστατικά ελέγχου πολυμέσων"
     },
     "options_plugin_purpose_description": {
-        "message": "Adds a \"Share...\" context menu entry."
+        "message": "Προσθέτει την επιλογή «Διαμοιρασμός...» στο μενού περιβάλλοντος."
     },
     "options_plugin_purpose_title": {
         "message": "Διαμοιρασμός περιεχομένου"
